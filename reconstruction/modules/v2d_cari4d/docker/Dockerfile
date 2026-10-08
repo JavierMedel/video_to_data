@@ -11,9 +11,7 @@ RUN cd / && wget -q https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.
 
 RUN pip install numpy==1.26.3 scipy joblib scikit-learn ruamel.yaml trimesh pyyaml opencv-python imageio imageio-ffmpeg "imageio[pyav]" open3d transformations warp-lang einops kornia pyrender av h5py hdf5plugin videoio==0.3.0 scikit-image meshcat webdataset omegaconf pypng roma seaborn opencv-contrib-python openpyxl wandb matplotlib tqdm pillow accelerate timm yacs smplx tensorboardx pycocotools rtree xatlas
 RUN pip install pytorch-lightning hydra-core hydra-submitit-launcher hydra-colorlog pyrootutils networkx==3.2.1 rich dill pandas jsonlines loguru optree fvcore cython py-soma-x==0.2.1
-RUN pip install kaolin==0.18.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.5.1_cu124.html
-RUN FORCE_CUDA=1 TORCH_CUDA_ARCH_LIST="8.0 8.6 8.9 9.0" pip install "git+https://github.com/facebookresearch/pytorch3d.git@v0.7.9"
-RUN git clone https://github.com/NVlabs/nvdiffrast /workspace/third_party/nvdiffrast && cd /workspace/third_party/nvdiffrast && pip install setuptools wheel ninja && TORCH_CUDA_ARCH_LIST="8.0 8.6 8.9 9.0" pip install . --no-build-isolation
+RUN git clone https://github.com/NVlabs/nvdiffrast /workspace/third_party/nvdiffrast && pip install setuptools wheel ninja
 RUN pip install --no-deps "git+https://github.com/EasternJournalist/utils3d.git@3fab839f0be9931dac7c8488eb0e1600c236e183" && pip install "git+https://github.com/microsoft/MoGe.git@925b8ed835a7a9cdb7578ba15c658a0afc969030"
 
 RUN apt-get update && apt-get install -y libnvinfer-bin=10.7.0.23-1+cuda12.6 libnvinfer10=10.7.0.23-1+cuda12.6 libnvinfer-lean10=10.7.0.23-1+cuda12.6 libnvinfer-plugin10=10.7.0.23-1+cuda12.6 libnvinfer-vc-plugin10=10.7.0.23-1+cuda12.6 libnvinfer-dispatch10=10.7.0.23-1+cuda12.6 libnvonnxparsers10=10.7.0.23-1+cuda12.6 && rm -rf /var/lib/apt/lists/*
@@ -33,6 +31,9 @@ COPY v2d_sam3d_body /workspace/v2d_sam3d_body
 COPY v2d_cari4d/lib /workspace/v2d_cari4d/lib
 ENV PIP_CONSTRAINT=/workspace/v2d_cari4d/lib/pip-constraints.txt
 RUN pip install -e "/workspace/v2d_common[io]" -e "/workspace/v2d_mv[math,vis]" -e /workspace/v2d_mesh/lib -e /workspace/v2d_foundation_pose/lib -e /workspace/v2d_moge/lib -e /workspace/v2d_sam3d_body/lib -e /workspace/v2d_cari4d/lib
+RUN cd /workspace/third_party/nvdiffrast && TORCH_CUDA_ARCH_LIST="8.0 8.6 8.9 9.0+PTX" MAX_JOBS=1 pip install . --no-build-isolation
+RUN pip install kaolin==0.18.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.8.0_cu128.html
+RUN FORCE_CUDA=1 TORCH_CUDA_ARCH_LIST="8.0 8.6 8.9 9.0+PTX" MAX_JOBS=1 pip install --no-cache-dir --no-build-isolation "git+https://github.com/facebookresearch/pytorch3d.git@v0.7.9"
 RUN pip install pytest==9.1.1
 
 ENV PYTHONPATH=/workspace/v2d_cari4d/lib/cari4d:/workspace/v2d_sam3d_body/lib:/workspace/v2d_foundation_pose/lib/FoundationPose
