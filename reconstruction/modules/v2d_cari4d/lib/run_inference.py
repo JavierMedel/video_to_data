@@ -153,6 +153,11 @@ def run_inference(video_path: str, mask_h5_path: str, object_mesh_path: str, wei
     _flag(postopt_command, symmetric_object, "--symmetric-object")
     _flag(postopt_command, optimize_object_rotation, "--optimize-object-rotation")
     stages.append(_stage_run("07_refinement", postopt_command, [coconet_bundle, aligned_object_mesh, weights["mhr_model"]], [refined_bundle, refinement_checkpoint], marker_root, env, overwrite))
+    # Submission recovery can defer videos: they are not inputs to the official packer.
+    if os.environ.get("V2D_TRACK1_DEFER_RENDER") == "1":
+        _atomic_json(report_path, {"schema": PIPELINE_SCHEMA, "verdict": "READY_FOR_CONVERSION", "sequence": sequence, "stages": stages, "output_root": str(output_root), "render_deferred": True})
+        print(f"CARI4D_RENDER_DEFERRED {sequence}", flush=True)
+        return report_path
     render_command = [python, str(SOURCE_ROOT / "tools/render_mhr_wild_inference.py"), str(export_seq), "--source-video", str(video_path), "--object-mesh", str(aligned_object_mesh), "--before-bundle", str(coconet_bundle), "--after-bundle", str(refined_bundle), "--output", str(output_video), "--comparison-output", str(comparison_video), "--device", device, "--batch-size", str(render_batch_size)]
     _flag(render_command, overwrite, "--overwrite")
     stages.append(_stage_run("08_render", render_command, [export_marker, video_path, aligned_object_mesh, coconet_bundle, refined_bundle], [output_video, comparison_video], marker_root, env, overwrite))
