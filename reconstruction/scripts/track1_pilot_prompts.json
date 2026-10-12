@@ -1,0 +1,120 @@
+{
+  "6": {
+    "object": "iron",
+    "expected_frames": 816,
+    "sam2": {
+      "prompts": [
+        {
+          "frame_index": 205,
+          "object_id": 1,
+          "points": [
+            {
+              "x": 794,
+              "y": 644
+            },
+            {
+              "x": 763,
+              "y": 650
+            },
+            {
+              "x": 754,
+              "y": 600
+            },
+            {
+              "x": 776,
+              "y": 690
+            }
+          ],
+          "point_labels": [
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "object": "paint_roller",
+    "expected_frames": 535,
+    "sam2": {
+      "prompts": [
+        {
+          "frame_index": 0,
+          "object_id": 1,
+          "points": [
+            {
+              "x": 752,
+              "y": 682
+            },
+            {
+              "x": 808,
+              "y": 684
+            },
+            {
+              "x": 781,
+              "y": 686
+            },
+            {
+              "x": 754,
+              "y": 711
+            },
+            {
+              "x": 564,
+              "y": 704
+            }
+          ],
+          "point_labels": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "28": {
+    "object": "white_laptop_cart",
+    "expected_frames": 366,
+    "sam2": {
+      "prompts": [
+        {
+          "frame_index": 0,
+          "object_id": 1,
+          "points": [
+            {
+              "x": 637,
+              "y": 677
+            },
+            {
+              "x": 641,
+              "y": 770
+            },
+            {
+              "x": 609,
+              "y": 839
+            },
+            {
+              "x": 403,
+              "y": 703
+            },
+            {
+              "x": 875,
+              "y": 750
+            }
+          ],
+          "point_labels": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  }
+}

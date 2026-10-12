@@ -11,6 +11,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--root', type=Path, required=True)
 parser.add_argument('--episode', type=int, required=True)
 parser.add_argument('--run', type=Path, required=True)
+parser.add_argument('--out-dir', type=Path)
+parser.add_argument('--progress-report', type=Path)
 args = parser.parse_args()
 if args.episode == 16:
     raise SystemExit('Episode 16 protected: conversion refused')
@@ -23,7 +25,7 @@ from lib_mhr import MHRLayer, MHR_PARAM_DIMS
 from mesh_to_mhr_params import convert
 
 stem = f'episode_{args.episode:06d}'
-out = root/'data/v2d_challenge/track_1/submission_episodes'
+out = args.out_dir or root/'data/v2d_challenge/track_1/submission_episodes'
 target = out/(stem+'.npz'); mesh_target = out/(stem+'_object.glb')
 if target.exists() or mesh_target.exists():
     raise SystemExit('Refusing to overwrite existing submission artifacts')
@@ -51,6 +53,6 @@ np.savez_compressed(tmp, **converted)
 tmp.replace(target)
 import shutil
 shutil.copy2(mesh_source, mesh_target)
-with (root/'incident_reports/track1_submission_progress.md').open('a') as log:
+with (args.progress_report or root/'incident_reports/track1_submission_progress.md').open('a') as log:
     log.write(f'\nConverted {stem} from preserved refined output: {len(frames)} frames. Official converter report: {converted["report"]}\n')
 print(f'CONVERSION_COMPLETE {stem} {target}', flush=True)
