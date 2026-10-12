@@ -1,0 +1,3017 @@
+[
+  {
+    "episode": "episode_000000",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/inference/episode_000000_step200000_reconstruction.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/inference/episode_000000_step200000_before_after.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/mhr_init/episode_000000.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/mhr_init/episode_000000.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/export/episode_000000/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/export/episode_000000/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/foundationpose/episode_000000.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000000_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9990098476409912,
+          0.06895072385668755,
+          0.996320903301239
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000001",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/episode_000001_step200000_reconstruction.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/episode_000001_step200000_before_after.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/mhr_init/episode_000001.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/mhr_init/episode_000001.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/export/episode_000001/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/export/episode_000001/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/foundationpose/episode_000001.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000001/sam3d/candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9985602498054504,
+          0.04944878630340099,
+          0.9474597871303558
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000001/sam3d/candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.26101345596164904,
+          0.01292540796479169,
+          0.24765631665366605
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000001/sam3d/candidate_mesh/object_metric_scaled.glb",
+        "extents_m_or_unverified_units": [
+          0.2610134482383728,
+          0.012925407849252224,
+          0.24765632301568985
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000000_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9990098476409912,
+          0.06895072385668755,
+          0.996320903301239
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000002",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/inference/episode_000002_step200000_reconstruction.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/inference/episode_000002_step200000_before_after.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/mhr_init/episode_000002.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/mhr_init/episode_000002.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/export/episode_000002/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/export/episode_000002/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/foundationpose/episode_000002.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000000_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9990098476409912,
+          0.06895072385668755,
+          0.996320903301239
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000003",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/inference/episode_000003_step200000_reconstruction.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/inference/episode_000003_step200000_before_after.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/mhr_init/episode_000003.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/mhr_init/episode_000003.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/export/episode_000003/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/export/episode_000003/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/foundationpose/episode_000003.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000003_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9968374967575073,
+          0.4290233999490738,
+          0.9979557394981384
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000003_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.11831597983837128,
+          0.05092136189341545,
+          0.11844870075583458
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000004",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/inference/episode_000004_step200000_reconstruction.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/inference/episode_000004_step200000_before_after.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/mhr_init/episode_000004.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/mhr_init/episode_000004.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/export/episode_000004/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/export/episode_000004/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/foundationpose/episode_000004.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000003_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9968374967575073,
+          0.4290233999490738,
+          0.9979557394981384
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000003_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.11831597983837128,
+          0.05092136189341545,
+          0.11844870075583458
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000005",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/inference/episode_000005_step200000_reconstruction.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "08_render",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/inference/episode_000005_step200000_before_after.mp4",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/mhr_init/episode_000005.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/mhr_init/episode_000005.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/export/episode_000005/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/export/episode_000005/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/foundationpose/episode_000005.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000003_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9968374967575073,
+          0.4290233999490738,
+          0.9979557394981384
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000003_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.11831597983837128,
+          0.05092136189341545,
+          0.11844870075583458
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000006",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/mhr_init/episode_000006.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/mhr_init/episode_000006.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/export/episode_000006/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/export/episode_000006/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/foundationpose/episode_000006.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000006/episode_000006/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000006_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9546889066696167,
+          0.991879940032959,
+          0.9887233376502991
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000006_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.30751585960388184,
+          0.3194954991340637,
+          0.3184787184000015
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000007",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/mhr_init/episode_000007.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/mhr_init/episode_000007.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/export/episode_000007/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/export/episode_000007/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/foundationpose/episode_000007.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000006_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9546889066696167,
+          0.991879940032959,
+          0.9887233376502991
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000006_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.30751585960388184,
+          0.3194954991340637,
+          0.3184787184000015
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000008",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/mhr_init/episode_000008.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/mhr_init/episode_000008.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/export/episode_000008/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/export/episode_000008/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/foundationpose/episode_000008.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000006_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9546889066696167,
+          0.991879940032959,
+          0.9887233376502991
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000006_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.30751585960388184,
+          0.3194954991340637,
+          0.3184787184000015
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000009",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/mhr_init/episode_000009.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/mhr_init/episode_000009.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/export/episode_000009/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/export/episode_000009/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/foundationpose/episode_000009.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000009_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          1.0016247034072876,
+          0.39209340512752533,
+          0.6669849455356598
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000009_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.7574340403079987,
+          0.2965031564235687,
+          0.5043776333332062
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000010",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/mhr_init/episode_000010.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/mhr_init/episode_000010.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/export/episode_000010/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/export/episode_000010/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/foundationpose/episode_000010.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000009_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          1.0016247034072876,
+          0.39209340512752533,
+          0.6669849455356598
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000009_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.7574340403079987,
+          0.2965031564235687,
+          0.5043776333332062
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000011",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/mhr_init/episode_000011.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/mhr_init/episode_000011.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/export/episode_000011/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/export/episode_000011/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/foundationpose/episode_000011.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000009_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          1.0016247034072876,
+          0.39209340512752533,
+          0.6669849455356598
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000009_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.7574340403079987,
+          0.2965031564235687,
+          0.5043776333332062
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000012",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/mhr_init/episode_000012.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/mhr_init/episode_000012.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/export/episode_000012/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/export/episode_000012/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/foundationpose/episode_000012.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000012_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9760438501834869,
+          0.2265186607837677,
+          0.9996975064277649
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000012_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.08107861876487732,
+          0.018816594034433365,
+          0.08304349705576897
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000013",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/mhr_init/episode_000013.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/mhr_init/episode_000013.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/export/episode_000013/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/export/episode_000013/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/foundationpose/episode_000013.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000012_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9760438501834869,
+          0.2265186607837677,
+          0.9996975064277649
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000012_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.08107861876487732,
+          0.018816594034433365,
+          0.08304349705576897
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000014",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/mhr_init/episode_000014.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/mhr_init/episode_000014.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/export/episode_000014/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/export/episode_000014/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/foundationpose/episode_000014.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000012_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.9760438501834869,
+          0.2265186607837677,
+          0.9996975064277649
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000012_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.08107861876487732,
+          0.018816594034433365,
+          0.08304349705576897
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000015",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/mhr_init/2026-09-10_16-14-06_foam_grass_block_rotate_02.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/mhr_init/2026-09-10_16-14-06_foam_grass_block_rotate_02.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/export/2026-09-10_16-14-06_foam_grass_block_rotate_02/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/export/2026-09-10_16-14-06_foam_grass_block_rotate_02/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/foundationpose/2026-09-10_16-14-06_foam_grass_block_rotate_02.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000015/sam3d/object.glb",
+        "extents_m_or_unverified_units": [
+          0.47571851313114166,
+          0.48777517676353455,
+          0.48012785613536835
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000015/sam3d/object_scale_diagnostic.glb",
+        "extents_m_or_unverified_units": [
+          0.18341456353664398,
+          0.18806304037570953,
+          0.18511459231376648
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000015/sam3d/object_simplified_backup.glb",
+        "extents_m_or_unverified_units": [
+          0.47573284804821014,
+          0.48781736195087433,
+          0.48003363609313965
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000016",
+    "stages": [
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN"
+    ],
+    "evidence": [],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000016/cari4d_export/2026-09-11_15-12-36_foam_grass_block_rotate_04/object_mesh/output_aligned.glb",
+        "extents_m_or_unverified_units": [
+          0.4754869027767552,
+          0.48652512017776894,
+          0.486974443651256
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000016/sam3d/mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.4870157092809677,
+          0.47570638358592987,
+          0.4866298735141754
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Protected; never rerun without approval"
+  },
+  {
+    "episode": "episode_000017",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/mhr_init/episode_000017.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/mhr_init/episode_000017.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/export/episode_000017/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/export/episode_000017/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/foundationpose/episode_000017.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000018",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/mhr_init/episode_000018.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/mhr_init/episode_000018.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/export/episode_000018/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/export/episode_000018/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/foundationpose/episode_000018.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000018/episode_000018/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000018_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.31712064146995544,
+          0.2823376804590225,
+          0.9966965317726135
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000018_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.03281698375940323,
+          0.029217496514320374,
+          0.10314237326383591
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000019",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/mhr_init/episode_000019.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/mhr_init/episode_000019.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/export/episode_000019/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/export/episode_000019/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/foundationpose/episode_000019.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000018_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.31712064146995544,
+          0.2823376804590225,
+          0.9966965317726135
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000018_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.03281698375940323,
+          0.029217496514320374,
+          0.10314237326383591
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000020",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/mhr_init/episode_000020.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/mhr_init/episode_000020.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/export/episode_000020/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/export/episode_000020/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/foundationpose/episode_000020.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000018_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.31712064146995544,
+          0.2823376804590225,
+          0.9966965317726135
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000018_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.03281698375940323,
+          0.029217496514320374,
+          0.10314237326383591
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000021",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/mhr_init/episode_000021.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/mhr_init/episode_000021.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/export/episode_000021/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/export/episode_000021/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/foundationpose/episode_000021.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000021_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.28601157665252686,
+          0.2398563176393509,
+          0.9998681545257568
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000021_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.0663989968597889,
+          0.05568382889032364,
+          0.23212432861328125
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000022",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/mhr_init/episode_000022.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/mhr_init/episode_000022.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/export/episode_000022/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/export/episode_000022/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/foundationpose/episode_000022.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000021_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.28601157665252686,
+          0.2398563176393509,
+          0.9998681545257568
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000021_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.0663989968597889,
+          0.05568382889032364,
+          0.23212432861328125
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000023",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/mhr_init/episode_000023.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/mhr_init/episode_000023.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/export/episode_000023/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/export/episode_000023/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/foundationpose/episode_000023.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000021_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.28601157665252686,
+          0.2398563176393509,
+          0.9998681545257568
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000021_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.0663989968597889,
+          0.05568382889032364,
+          0.23212432861328125
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000024",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/mhr_init/episode_000024.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/mhr_init/episode_000024.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/export/episode_000024/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/export/episode_000024/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/foundationpose/episode_000024.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000024_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.6438734531402588,
+          0.999430775642395,
+          0.8837502300739288
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000024_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.11086039245128632,
+          0.17207929491996765,
+          0.15216172486543655
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000025",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/mhr_init/episode_000025.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/mhr_init/episode_000025.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/export/episode_000025/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/export/episode_000025/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/foundationpose/episode_000025.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000024_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.6438734531402588,
+          0.999430775642395,
+          0.8837502300739288
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000024_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.11086039245128632,
+          0.17207929491996765,
+          0.15216172486543655
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000026",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/mhr_init/episode_000026.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/mhr_init/episode_000026.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/export/episode_000026/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/export/episode_000026/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/foundationpose/episode_000026.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000024_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.6438734531402588,
+          0.999430775642395,
+          0.8837502300739288
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000024_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.11086039245128632,
+          0.17207929491996765,
+          0.15216172486543655
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000027",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/mhr_init/episode_000027.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/mhr_init/episode_000027.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/export/episode_000027/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/export/episode_000027/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/foundationpose/episode_000027.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000027_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.6624465882778168,
+          0.9984287619590759,
+          0.6395111083984375
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000027_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.18312789499759674,
+          0.27600738406181335,
+          0.1767875701189041
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000028",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/mhr_init/episode_000028.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/mhr_init/episode_000028.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/export/episode_000028/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/export/episode_000028/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/foundationpose/episode_000028.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000028/episode_000028/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000027_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.6624465882778168,
+          0.9984287619590759,
+          0.6395111083984375
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000027_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.18312789499759674,
+          0.27600738406181335,
+          0.1767875701189041
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  },
+  {
+    "episode": "episode_000029",
+    "stages": [
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "COMPLETE",
+      "MISSING"
+    ],
+    "evidence": [
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/inference/refined.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "07_refinement",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/inference/refinement_checkpoint.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/mhr_init/episode_000029.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "03_human_initialization",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/mhr_init/episode_000029.sam3d.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/raw.npy",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/intrinsics.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "01_depth",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/depth_report.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/export/episode_000029/wild_export.json",
+        "identity_match": true
+      },
+      {
+        "stage": "02_export",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/export/episode_000029/object_mesh/output_aligned.glb",
+        "identity_match": true
+      },
+      {
+        "stage": "05_object_pose",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/foundationpose/episode_000029.pkl",
+        "identity_match": true
+      },
+      {
+        "stage": "04_depth_alignment",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/aligned.h5",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/inference/coconet.pth",
+        "identity_match": true
+      },
+      {
+        "stage": "06_coconet",
+        "path": "data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/inference/materialized_inputs.h5",
+        "identity_match": true
+      }
+    ],
+    "meshes": [
+      {
+        "path": "data/v2d_challenge/track_1/episode_000027_candidate_mesh/object.glb",
+        "extents_m_or_unverified_units": [
+          0.6624465882778168,
+          0.9984287619590759,
+          0.6395111083984375
+        ]
+      },
+      {
+        "path": "data/v2d_challenge/track_1/episode_000027_candidate_mesh/object_metric.glb",
+        "extents_m_or_unverified_units": [
+          0.18312789499759674,
+          0.27600738406181335,
+          0.1767875701189041
+        ]
+      }
+    ],
+    "mask_h5_present": true,
+    "errors": [],
+    "next_action": "Preserve; pair ready"
+  }
+]

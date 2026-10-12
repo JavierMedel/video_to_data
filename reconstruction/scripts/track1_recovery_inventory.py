@@ -90,6 +90,15 @@ for meta in metadata:
 report = ROOT / 'incident_reports/track1_submission_progress.md'
 text = f'# Track 1 submission recovery\n\nUpdated {datetime.now(timezone.utc).isoformat()}\n\nBranch: v2d-track1-blackwell. No inference or upload performed during recovery. Episode 16 untouched.\n\nVerified pairs: {valid}/30. Pipelines with all eight marker output identities verified: {full}/30.\n\n' + '\n'.join(table)
 text += '\n\nCOMPLETE stages require matching output sizes and nanosecond timestamps from stage signatures; NPY headers were opened. This verifies preserved checkpoint identities, not full tensor contents. Episode 16 uses legacy artifacts without stage signatures and is UNKNOWN for stage completion. Mesh COMPLETE means loadable finite triangle geometry; metre scale still requires checking against source transform/calibration before inference. Candidate meshes are shared only within their same-object episode triplet.\n\n## Blockers and next execution\n\n- Docker CLI reports missing WSL integration both inside and outside sandbox. `/var/run/docker.sock`, Docker Desktop CLI mount, and Windows Docker executable are unavailable. GPU is visible outside sandbox: RTX 5090 Laptop, 24463 MiB. No host configuration changed.\n- Kaggle authenticated successfully outside sandbox; all five Track 1 competitions entered. No upload issued.\n- Host Python lacks torch and h5py. Existing refined PTH conversion cannot run here without the normal Docker environment or added dependencies.\n- Finish converting episodes 3–5, resume episode 15 at S07 with its existing stage signatures and original command settings, then process remaining missing episodes sequentially using Blackwell images. Preserve every existing stage.\n- Official format is one Parquet file for five metric competitions. No ZIP required. One authorized submission version only.\n- Producing-code GitHub commit must include actual conversion/pipeline changes and be accessible to organizers; current producing worktree is dirty. Do not invent a provenance URL.\n\n## Recorded failure\n\nDocker availability command: `docker ps --format ...`; CLI prints "The command docker could not be found in this WSL 2 distro". GPU command in sandbox exited 255; escalation succeeded. Kaggle entry check in sandbox exited 1 with DNS failure; escalated check exited 0 with all five competitions entered. No inference stage failed in this recovery turn.\n'
+snapshot = report.with_name('track1_submission_inventory.md')
+snapshot.write_text(text)
+if report.exists():
+    previous = report.read_text()
+    history = previous.split('\n\n## Blockers', 1)
+    if len(history) == 2:
+        current = text.split('\n\n## Blockers', 1)[0]
+        current = current.replace('No inference or upload performed during recovery.', 'Sequential recovery in progress; see the execution history below.')
+        text = current + '\n\n## Blockers' + history[1]
 report.write_text(text)
 (report.parent/'track1_recovery_inventory.json').write_text(json.dumps(details,indent=2))
 print('\n'.join(table)); print(f'Valid pairs: {valid}/30; fully verified pipelines: {full}/30')
