@@ -1,3 +1,29 @@
+# Latest status: second submission complete
+
+## Second submission completed
+
+Updated 2026-10-12T20:25:02.678421+00:00
+
+Completed interrupted Episode 18 tracking, 100-step refinement, official conversion, and comparison. All three pilots passed the conservative local promotion checks. Official packer, 30-pair integrity checks, exact scored-row coverage, baseline copy hashes, environment preflight, and authenticated Kaggle dry-run passed. New package has 740,780 rows over 30 episodes; only Episodes 6, 18, and 28 were replaced. Episode 16 and all first-submission artifacts remain preserved. One new version uploaded to all five competitions; all COMPLETE. No remaining jobs or submission blockers.
+
+Archive: `data/v2d_challenge/track_1/submission_packages/track1_improvement_pilot_v1.parquet`
+
+Receipt: `data/v2d_challenge/track_1/submission_packages/track1_improvement_pilot_v1.kaggle-receipt.json`
+
+Producing-code commit: https://github.com/JavierMedel/video_to_data/commit/811b00735b793033d48047217ab1a41872d7637f
+
+| Metric | Baseline | New | Submission ID | Status |
+|---|---:|---:|---|---|
+| cd_h_cm | 15.11851 | 14.99887 | 57118072 | COMPLETE |
+| cd_o_cm | 152.72099 | 75.48250 | 57118073 | COMPLETE |
+| acc_h_cm | 1.62217 | 1.55253 | 57118075 | COMPLETE |
+| acc_o_cm | 7.10147 | 5.43410 | 57118076 | COMPLETE |
+| interpenetration_cm | 0.00213 | 0.00233 | 57118077 | COMPLETE |
+
+Four errors improved. Object CD fell by 50.57%; object acceleration error fell by 23.48%. Interpenetration increased slightly by 0.00020 cm. Local image/motion diagnostics remain distinct from official hidden-reference leaderboard metrics.
+
+---
+
 # Track 1 submission recovery
 
 Updated 2026-10-11T22:46:29.772059+00:00
