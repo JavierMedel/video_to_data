@@ -268,6 +268,11 @@ def _selected_metric_values(metrics, index: int | None) -> dict[str, float | int
 
 def _set_estimator_pose_last(estimator: FoundationPose, pose_centered: np.ndarray) -> None:
     pose_centered = validate_rigid_transform(pose_centered, "selected centered FoundationPose pose")
+    if estimator.pose_last is None:
+        # A fresh estimator has not registered yet when resuming a saved pose.
+        # Its mesh points provide the same CUDA device and floating dtype.
+        estimator.pose_last = torch.as_tensor(pose_centered, dtype=estimator.pts.dtype, device=estimator.pts.device)
+        return
     if not torch.is_tensor(estimator.pose_last):
         raise TypeError(f"FoundationPose pose_last must be a tensor after registration, got {type(estimator.pose_last).__name__}")
     estimator.pose_last = torch.as_tensor(pose_centered, dtype=estimator.pose_last.dtype, device=estimator.pose_last.device)

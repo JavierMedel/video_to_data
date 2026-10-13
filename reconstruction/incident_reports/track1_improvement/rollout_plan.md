@@ -49,7 +49,7 @@ preserved; new work uses `data/v2d_challenge/track_1/improvement_rollout_v1/`.
 - Cache preflight: 27/27 PASS, including legacy Episodes 15 and 16.
 - Tracking recovery: implemented and regression-tested; completed frames are
   saved atomically and resume rejects changed inputs or implementation.
-- Execution: all 27 isolated inputs are prepared; six corrected mask sets passed review. Seven depth-grounded object-group meshes are ready, with the body-only pan mesh preserved and replaced by a full pan/handle mesh. The full queue is running on Episode 19.
+- Execution: all 27 isolated inputs are prepared; six corrected mask sets passed review. Seven depth-grounded object-group meshes are ready, with the body-only pan mesh preserved and replaced by a full pan/handle mesh. The queue resumed on 2026-10-13 from Episode 20’s 59-frame checkpoint; progress beyond the saved frame confirms recovery. Episodes 7, 8, and 19 have completed reconstruction and comparisons; Episode 19 still needs promotion review.
   Corrected segmentation, seven depth-grounded object-group meshes, and the
   remaining sequential episode queue are prepared.
 - Full candidate review complete: 2/27 (Episodes 7 and 8), approved for promotion. Episode 7 mean observed-mask IoU improved from 0.22576 to 0.71487, and translation acceleration proxy decreased from 6.87487 to 1.76550 cm.
