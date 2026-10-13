@@ -1,0 +1,11 @@
+{
+  "7": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Observed object silhouette mean IoU improves from 0.22576 to 0.71487; translation acceleration proxy decreases from 6.87487 to 1.76550 cm and depth drift is reduced. Human silhouette IoU stays stable (0.79538 to 0.79628), root jitter slightly improves, and reviewed overlays remain aligned. Unsigned hand proximity is recorded separately and does not certify penetration.",
+    "evidence_sha256": {
+      "comparison.json": "2fbd9accd0b143a134d8bb74b31f6ae1aef7db6a517ba5760260f6807ef54081",
+      "human_contact_review.json": "da5e66ca4391b0e9211c8cb70d4478297f53c8a9278cb63f9cb93d51594eb933"
+    }
+  }
+}

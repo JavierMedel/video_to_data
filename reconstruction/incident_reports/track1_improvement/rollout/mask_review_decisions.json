@@ -1,0 +1,459 @@
+[
+  {
+    "episode": 7,
+    "object": "iron",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      155,
+      310,
+      388,
+      466,
+      621,
+      686,
+      776
+    ]
+  },
+  {
+    "episode": 8,
+    "object": "iron",
+    "mask_review": "CORRECTION_REQUIRED",
+    "note": "Baseline follows the background tripod throughout sampled frames; correct to foreground iron.",
+    "sample_frames": [
+      0,
+      90,
+      127,
+      253,
+      316,
+      380,
+      506,
+      543,
+      633
+    ]
+  },
+  {
+    "episode": 19,
+    "object": "paint_roller",
+    "mask_review": "CORRECTION_REQUIRED",
+    "note": "Roller cylinder selected but blue handle omitted; regenerate masks including both.",
+    "sample_frames": [
+      0,
+      88,
+      90,
+      177,
+      231,
+      265,
+      354,
+      372,
+      442
+    ]
+  },
+  {
+    "episode": 20,
+    "object": "paint_roller",
+    "mask_review": "CORRECTION_REQUIRED",
+    "note": "Roller cylinder selected but blue handle omitted; regenerate masks including both.",
+    "sample_frames": [
+      0,
+      90,
+      110,
+      219,
+      277,
+      329,
+      438,
+      483,
+      548
+    ]
+  },
+  {
+    "episode": 27,
+    "object": "white_laptop_cart",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      84,
+      88,
+      176,
+      205,
+      263,
+      326,
+      351,
+      439
+    ]
+  },
+  {
+    "episode": 29,
+    "object": "white_laptop_cart",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      38,
+      84,
+      167,
+      171,
+      251,
+      304,
+      334,
+      418
+    ]
+  },
+  {
+    "episode": 0,
+    "object": "hula_hoop",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      158,
+      232,
+      316,
+      473,
+      631,
+      699,
+      789
+    ]
+  },
+  {
+    "episode": 1,
+    "object": "hula_hoop",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      133,
+      151,
+      267,
+      355,
+      400,
+      461,
+      534,
+      667
+    ]
+  },
+  {
+    "episode": 2,
+    "object": "hula_hoop",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      173,
+      236,
+      346,
+      519,
+      692,
+      745,
+      786,
+      865
+    ]
+  },
+  {
+    "episode": 3,
+    "object": "big_red_bowl",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      118,
+      236,
+      294,
+      355,
+      473,
+      501,
+      591
+    ]
+  },
+  {
+    "episode": 4,
+    "object": "big_red_bowl",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      125,
+      149,
+      298,
+      390,
+      448,
+      597,
+      649,
+      746
+    ]
+  },
+  {
+    "episode": 5,
+    "object": "big_red_bowl",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      133,
+      267,
+      347,
+      400,
+      534,
+      577,
+      667
+    ]
+  },
+  {
+    "episode": 9,
+    "object": "white_desk",
+    "mask_review": "CORRECTION_REQUIRED",
+    "note": "Baseline follows static background desks; correct to overturned foreground white desk.",
+    "sample_frames": [
+      0,
+      83,
+      90,
+      166,
+      248,
+      252,
+      331,
+      414
+    ]
+  },
+  {
+    "episode": 10,
+    "object": "white_desk",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      115,
+      230,
+      298,
+      346,
+      461,
+      507,
+      576
+    ]
+  },
+  {
+    "episode": 11,
+    "object": "white_desk",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      175,
+      350,
+      401,
+      526,
+      701,
+      802,
+      876
+    ]
+  },
+  {
+    "episode": 12,
+    "object": "black_pan",
+    "mask_review": "CORRECTION_REQUIRED",
+    "note": "Pan body selected but handle omitted; regenerate masks including both.",
+    "sample_frames": [
+      0,
+      69,
+      81,
+      162,
+      202,
+      242,
+      323,
+      365,
+      404
+    ]
+  },
+  {
+    "episode": 13,
+    "object": "black_pan",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      75,
+      85,
+      146,
+      170,
+      254,
+      339,
+      370,
+      424
+    ]
+  },
+  {
+    "episode": 14,
+    "object": "black_pan",
+    "mask_review": "CORRECTION_REQUIRED",
+    "note": "Pan body selected but handle omitted; regenerate masks including both.",
+    "sample_frames": [
+      0,
+      88,
+      90,
+      176,
+      265,
+      339,
+      353,
+      387,
+      441
+    ]
+  },
+  {
+    "episode": 15,
+    "object": "foam_grass_block",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      81,
+      100,
+      200,
+      259,
+      300,
+      400,
+      436,
+      500
+    ]
+  },
+  {
+    "episode": 16,
+    "object": "foam_grass_block",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      50,
+      72,
+      144,
+      170,
+      215,
+      287,
+      289,
+      359
+    ]
+  },
+  {
+    "episode": 17,
+    "object": "foam_grass_block",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      75,
+      84,
+      167,
+      213,
+      251,
+      334,
+      351,
+      418
+    ]
+  },
+  {
+    "episode": 21,
+    "object": "pink_foam_roll",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      112,
+      225,
+      263,
+      337,
+      436,
+      450,
+      562
+    ]
+  },
+  {
+    "episode": 22,
+    "object": "pink_foam_roll",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      18,
+      106,
+      213,
+      244,
+      319,
+      426,
+      469,
+      532
+    ]
+  },
+  {
+    "episode": 23,
+    "object": "pink_foam_roll",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      90,
+      110,
+      220,
+      289,
+      331,
+      441,
+      488,
+      551
+    ]
+  },
+  {
+    "episode": 24,
+    "object": "short_wood_stool",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      61,
+      84,
+      168,
+      181,
+      251,
+      302,
+      335,
+      419
+    ]
+  },
+  {
+    "episode": 25,
+    "object": "short_wood_stool",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      73,
+      90,
+      146,
+      199,
+      218,
+      291,
+      308,
+      364
+    ]
+  },
+  {
+    "episode": 26,
+    "object": "short_wood_stool",
+    "mask_review": "PASS_SAMPLED_VISUAL_REVIEW",
+    "note": "Target object remains selected through sampled initial, scored, motion/occlusion, and final frames; reviewed baseline masks can be reused.",
+    "sample_frames": [
+      0,
+      80,
+      85,
+      159,
+      225,
+      239,
+      318,
+      365,
+      398
+    ]
+  }
+]

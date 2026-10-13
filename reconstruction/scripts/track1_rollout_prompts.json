@@ -1,0 +1,32 @@
+{
+  "8": {
+    "object": "iron",
+    "sam2": {"prompts": [{"frame_index": 0, "object_id": 1, "box": {"x0": 815, "y0": 778, "x1": 875, "y1": 877}}]},
+    "reason": "Select the upright iron on the foreground floor; the baseline selected a background tripod. Coordinates were reviewed in the source RGB frame."
+  },
+  "9": {
+    "object": "white_desk",
+    "sam2": {"prompts": [{"frame_index": 0, "object_id": 1, "box": {"x0": 405, "y0": 650, "x1": 790, "y1": 985}}]},
+    "reason": "Select the overturned foreground desk; exclude the static desks and seated people in the background. Coordinates were reviewed in the source RGB frame."
+  },
+  "12": {
+    "object": "black_pan",
+    "sam2": {"prompts": [{"frame_index": 0, "object_id": 1, "points": [{"x":646,"y":723},{"x":585,"y":716},{"x":603,"y":739},{"x":695,"y":729}], "point_labels": [1,1,0,0]}]},
+    "reason": "Include both the pan body and left-pointing handle; baseline omitted the handle. Coordinates reviewed in the original-resolution RGB crop."
+  },
+  "14": {
+    "object": "black_pan",
+    "sam2": {"prompts": [{"frame_index": 0, "object_id": 1, "points": [{"x":695,"y":711},{"x":752,"y":701},{"x":742,"y":719},{"x":685,"y":694}], "point_labels": [1,1,0,0]}]},
+    "reason": "Include both the pan body and right-pointing handle; baseline omitted the handle. Coordinates reviewed in the original-resolution RGB crop."
+  },
+  "19": {
+    "object": "paint_roller",
+    "sam2": {"prompts": [{"frame_index": 0, "object_id": 1, "points": [{"x":764,"y":656},{"x":789,"y":654},{"x":781,"y":674},{"x":797,"y":681},{"x":720,"y":652}], "point_labels": [1,1,1,0,0]}]},
+    "reason": "Include the striped cylinder and blue handle below it; baseline included only the cylinder. Coordinates reviewed in the original-resolution RGB crop."
+  },
+  "20": {
+    "object": "paint_roller",
+    "sam2": {"prompts": [{"frame_index": 0, "object_id": 1, "points": [{"x":764,"y":686},{"x":759,"y":694},{"x":710,"y":679},{"x":706,"y":698},{"x":796,"y":706}], "point_labels": [1,1,1,0,0]}]},
+    "reason": "Include the striped cylinder and blue handle to its left; baseline included only the cylinder. Coordinates reviewed in the original-resolution RGB crop."
+  }
+}

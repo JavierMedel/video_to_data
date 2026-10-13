@@ -13,9 +13,11 @@ parser.add_argument('--episode', type=int, required=True)
 parser.add_argument('--run', type=Path, required=True)
 parser.add_argument('--out-dir', type=Path)
 parser.add_argument('--progress-report', type=Path)
+parser.add_argument('--allow-episode-16', action='store_true')
 args = parser.parse_args()
 if args.episode == 16:
-    raise SystemExit('Episode 16 protected: conversion refused')
+    if not args.allow_episode_16 or args.out_dir is None or not args.out_dir.resolve().is_relative_to(args.root.resolve()/'data/v2d_challenge/track_1/improvement_rollout_v1'):
+        raise SystemExit('Episode 16 requires explicit approval and isolated rollout output')
 root = args.root
 sys.path.insert(0, str(root/'modules/v2d_cari4d/lib/cari4d'))
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')

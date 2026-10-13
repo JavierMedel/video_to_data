@@ -1,0 +1,542 @@
+[
+  {
+    "episode": 7,
+    "status": "PASS",
+    "frames": 777,
+    "depth_ranges_first_last_m": [
+      [
+        1.8700000047683716,
+        8.39900016784668
+      ],
+      [
+        1.8389999866485596,
+        8.192000389099121
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/mhr_init/episode_000007.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 8,
+    "status": "PASS",
+    "frames": 634,
+    "depth_ranges_first_last_m": [
+      [
+        1.725000023841858,
+        9.649999618530273
+      ],
+      [
+        1.7489999532699585,
+        9.815999984741211
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/mhr_init/episode_000008.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 19,
+    "status": "PASS",
+    "frames": 443,
+    "depth_ranges_first_last_m": [
+      [
+        1.7510000467300415,
+        7.739999771118164
+      ],
+      [
+        1.7259999513626099,
+        7.835999965667725
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/mhr_init/episode_000019.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 20,
+    "status": "PASS",
+    "frames": 549,
+    "depth_ranges_first_last_m": [
+      [
+        1.812999963760376,
+        7.7179999351501465
+      ],
+      [
+        1.8040000200271606,
+        7.801000118255615
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/mhr_init/episode_000020.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 27,
+    "status": "PASS",
+    "frames": 440,
+    "depth_ranges_first_last_m": [
+      [
+        1.8849999904632568,
+        8.875
+      ],
+      [
+        1.909000039100647,
+        8.993000030517578
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/mhr_init/episode_000027.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 29,
+    "status": "PASS",
+    "frames": 419,
+    "depth_ranges_first_last_m": [
+      [
+        1.7599999904632568,
+        7.644000053405762
+      ],
+      [
+        1.815000057220459,
+        8.017999649047852
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/mhr_init/episode_000029.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 0,
+    "status": "PASS",
+    "frames": 790,
+    "depth_ranges_first_last_m": [
+      [
+        1.7649999856948853,
+        8.210000038146973
+      ],
+      [
+        1.7280000448226929,
+        7.956999778747559
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/mhr_init/episode_000000.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 1,
+    "status": "PASS",
+    "frames": 668,
+    "depth_ranges_first_last_m": [
+      [
+        1.7589999437332153,
+        8.156999588012695
+      ],
+      [
+        1.7369999885559082,
+        8.005000114440918
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/mhr_init/episode_000001.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 2,
+    "status": "PASS",
+    "frames": 866,
+    "depth_ranges_first_last_m": [
+      [
+        1.871000051498413,
+        8.62399959564209
+      ],
+      [
+        1.8869999647140503,
+        8.479999542236328
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/mhr_init/episode_000002.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 3,
+    "status": "PASS",
+    "frames": 592,
+    "depth_ranges_first_last_m": [
+      [
+        1.840000033378601,
+        8.119000434875488
+      ],
+      [
+        1.8270000219345093,
+        8.079000473022461
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/mhr_init/episode_000003.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 4,
+    "status": "PASS",
+    "frames": 747,
+    "depth_ranges_first_last_m": [
+      [
+        1.8109999895095825,
+        10.090999603271484
+      ],
+      [
+        1.7549999952316284,
+        9.685999870300293
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/mhr_init/episode_000004.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 5,
+    "status": "PASS",
+    "frames": 668,
+    "depth_ranges_first_last_m": [
+      [
+        1.6990000009536743,
+        9.414999961853027
+      ],
+      [
+        1.7829999923706055,
+        9.788999557495117
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/mhr_init/episode_000005.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 9,
+    "status": "PASS",
+    "frames": 415,
+    "depth_ranges_first_last_m": [
+      [
+        1.7640000581741333,
+        9.567000389099121
+      ],
+      [
+        1.819000005722046,
+        9.854999542236328
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/mhr_init/episode_000009.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 10,
+    "status": "PASS",
+    "frames": 577,
+    "depth_ranges_first_last_m": [
+      [
+        1.7640000581741333,
+        7.795000076293945
+      ],
+      [
+        1.7549999952316284,
+        7.767000198364258
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/mhr_init/episode_000010.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 11,
+    "status": "PASS",
+    "frames": 877,
+    "depth_ranges_first_last_m": [
+      [
+        1.7419999837875366,
+        7.666999816894531
+      ],
+      [
+        1.8480000495910645,
+        8.468000411987305
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/mhr_init/episode_000011.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 12,
+    "status": "PASS",
+    "frames": 405,
+    "depth_ranges_first_last_m": [
+      [
+        1.996999979019165,
+        9.951000213623047
+      ],
+      [
+        1.9459999799728394,
+        9.935999870300293
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/mhr_init/episode_000012.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 13,
+    "status": "PASS",
+    "frames": 425,
+    "depth_ranges_first_last_m": [
+      [
+        1.819000005722046,
+        8.041999816894531
+      ],
+      [
+        1.8669999837875366,
+        8.310999870300293
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/mhr_init/episode_000013.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 14,
+    "status": "PASS",
+    "frames": 442,
+    "depth_ranges_first_last_m": [
+      [
+        1.871999979019165,
+        9.095000267028809
+      ],
+      [
+        1.8899999856948853,
+        9.376999855041504
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/mhr_init/episode_000014.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 15,
+    "status": "PASS",
+    "frames": 501,
+    "depth_ranges_first_last_m": [
+      [
+        1.9609999656677246,
+        8.970000267028809
+      ],
+      [
+        1.9739999771118164,
+        8.932000160217285
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/mhr_init/2026-09-10_16-14-06_foam_grass_block_rotate_02.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 16,
+    "status": "PASS",
+    "frames": 360,
+    "depth_ranges_first_last_m": [
+      [
+        1.3200000524520874,
+        4.678999900817871
+      ],
+      [
+        1.0720000267028809,
+        3.885999917984009
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/episode_000016/cari4d_sam3d_body.pt",
+      "depth": "/repo/data/v2d_challenge/track_1/episode_000016/cari4d_aligned_depth.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/episode_000016/moge/cari4d_intrinsics.joblib"
+    }
+  },
+  {
+    "episode": 17,
+    "status": "PASS",
+    "frames": 419,
+    "depth_ranges_first_last_m": [
+      [
+        1.7999999523162842,
+        8.083999633789062
+      ],
+      [
+        1.8020000457763672,
+        7.938000202178955
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/mhr_init/episode_000017.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 21,
+    "status": "PASS",
+    "frames": 563,
+    "depth_ranges_first_last_m": [
+      [
+        1.843000054359436,
+        7.933000087738037
+      ],
+      [
+        1.8140000104904175,
+        7.831999778747559
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/mhr_init/episode_000021.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 22,
+    "status": "PASS",
+    "frames": 533,
+    "depth_ranges_first_last_m": [
+      [
+        1.9229999780654907,
+        9.890999794006348
+      ],
+      [
+        1.8910000324249268,
+        9.503999710083008
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/mhr_init/episode_000022.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 23,
+    "status": "PASS",
+    "frames": 552,
+    "depth_ranges_first_last_m": [
+      [
+        1.878000020980835,
+        9.388999938964844
+      ],
+      [
+        1.8849999904632568,
+        9.720000267028809
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/mhr_init/episode_000023.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 24,
+    "status": "PASS",
+    "frames": 420,
+    "depth_ranges_first_last_m": [
+      [
+        1.8489999771118164,
+        9.319999694824219
+      ],
+      [
+        1.8910000324249268,
+        9.515999794006348
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/mhr_init/episode_000024.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 25,
+    "status": "PASS",
+    "frames": 365,
+    "depth_ranges_first_last_m": [
+      [
+        1.9329999685287476,
+        8.864999771118164
+      ],
+      [
+        1.805999994277954,
+        9.295999526977539
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/mhr_init/episode_000025.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/intrinsics.pkl"
+    }
+  },
+  {
+    "episode": 26,
+    "status": "PASS",
+    "frames": 399,
+    "depth_ranges_first_last_m": [
+      [
+        1.8990000486373901,
+        8.788999557495117
+      ],
+      [
+        1.8799999952316284,
+        8.543999671936035
+      ]
+    ],
+    "cache_paths": {
+      "init": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/mhr_init/episode_000026.pkl",
+      "depth": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/aligned.h5",
+      "intrinsics": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/intrinsics.pkl"
+    }
+  }
+]
