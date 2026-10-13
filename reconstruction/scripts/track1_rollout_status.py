@@ -19,6 +19,11 @@ for i in ORDER:
         p=work/(stage+'.log')
         if p.exists(): logs.append((p.stat().st_mtime,i,stage,p))
 result={'total_remaining_episodes':27,'inputs_prepared':prepared,'converted':converted,'object_comparisons_complete':compared,'human_contact_reviews_complete':reviewed}
+decisions=report/'promotion_decisions.json'
+if decisions.exists():
+    reviews=json.loads(decisions.read_text())
+    result['promoted_episodes']=[int(i) for i,d in reviews.items() if d['verdict']=='PROMOTE']
+    result['retained_episodes']=[int(i) for i,d in reviews.items() if d['verdict']=='RETAIN_SECOND_SUBMISSION']
 if (report/'status.json').exists(): result['runner_status']=json.loads((report/'status.json').read_text())
 if logs:
     timestamp,i,stage,p=max(logs)
@@ -26,7 +31,7 @@ if logs:
         f.seek(max(0,p.stat().st_size-2000)); tail=f.read().decode(errors='replace').replace('\r','\n').splitlines()
     result['latest_gpu_log']={'episode':i,'stage':stage,'mtime_epoch':timestamp,'last_lines':tail[-3:]}
 if a.compact:
-    result={**{k:len(result[k]) for k in ('inputs_prepared','converted','object_comparisons_complete','human_contact_reviews_complete')},'total':27,'runner':result.get('runner_status',{}),'latest_gpu_log':result.get('latest_gpu_log',{})}
+    result={**{k:len(result.get(k,[])) for k in ('inputs_prepared','converted','object_comparisons_complete','human_contact_reviews_complete','promoted_episodes','retained_episodes')},'total':27,'runner':result.get('runner_status',{}),'latest_gpu_log':result.get('latest_gpu_log',{})}
     result['runner'].pop('requested',None)
     result['runner']['completed_count']=len(result['runner'].pop('completed',[]))
     print(json.dumps(result))

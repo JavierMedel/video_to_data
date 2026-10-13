@@ -4,8 +4,17 @@
     "visual_review_complete": true,
     "reason": "Observed object silhouette mean IoU improves from 0.22576 to 0.71487; translation acceleration proxy decreases from 6.87487 to 1.76550 cm and depth drift is reduced. Human silhouette IoU stays stable (0.79538 to 0.79628), root jitter slightly improves, and reviewed overlays remain aligned. Unsigned hand proximity is recorded separately and does not certify penetration.",
     "evidence_sha256": {
-      "comparison.json": "2fbd9accd0b143a134d8bb74b31f6ae1aef7db6a517ba5760260f6807ef54081",
+      "comparison.json": "9dae191d307c61e433b81af21a62f0af444e955514adb24b1078182cab94c658",
       "human_contact_review.json": "da5e66ca4391b0e9211c8cb70d4478297f53c8a9278cb63f9cb93d51594eb933"
+    }
+  },
+  "8": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Corrected wrong-object masks now target the foreground iron. Mean visible object IoU improves from 0 to 0.71756; translation acceleration proxy decreases from 9.50600 to 1.58816 cm and sampled surface acceleration from 13.15445 to 3.08162 cm. Large rotation jumps decrease from 59 to 33. Human visible IoU decreases by 0.00983 (within the 0.03 review tolerance), while root jitter decreases from 4.08382 to 3.64226 cm. Whole-clip sampled object/human overlays support promotion; unsigned hand proximity is not a penetration certificate.",
+    "evidence_sha256": {
+      "comparison.json": "4a9d20e817ffb1e2993df28ac346ad12b13d15277c6d374f876380b49790f8a9",
+      "human_contact_review.json": "873e92f09cddc1f2bce944b893cee806ad5e8bd3bf1363101a3e2f64a35d7797"
     }
   }
 }

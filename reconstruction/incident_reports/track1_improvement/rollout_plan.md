@@ -49,10 +49,12 @@ preserved; new work uses `data/v2d_challenge/track_1/improvement_rollout_v1/`.
 - Cache preflight: 27/27 PASS, including legacy Episodes 15 and 16.
 - Tracking recovery: implemented and regression-tested; completed frames are
   saved atomically and resume rejects changed inputs or implementation.
-- Execution: all 27 isolated inputs are prepared; six corrected mask sets passed review. Seven depth-grounded object-group meshes are ready, with the body-only pan mesh preserved and replaced by a full pan/handle mesh. The full queue is running on Episode 8.
+- Execution: all 27 isolated inputs are prepared; six corrected mask sets passed review. Seven depth-grounded object-group meshes are ready, with the body-only pan mesh preserved and replaced by a full pan/handle mesh. The full queue is running on Episode 19.
   Corrected segmentation, seven depth-grounded object-group meshes, and the
   remaining sequential episode queue are prepared.
-- Full candidate review complete: 1/27 (Episode 7), approved for promotion. Episode 7 mean observed-mask IoU improved from 0.22576 to 0.71487, and translation acceleration proxy decreased from 6.87487 to 1.76550 cm.
+- Full candidate review complete: 2/27 (Episodes 7 and 8), approved for promotion. Episode 7 mean observed-mask IoU improved from 0.22576 to 0.71487, and translation acceleration proxy decreased from 6.87487 to 1.76550 cm.
+- Episode 8 now targets the foreground iron rather than the background tripod: object IoU improves from 0 to 0.71756, and sampled surface acceleration decreases from 13.15445 to 3.08162 cm. Human silhouette IoU decreases by 0.00983, within the 0.03 review tolerance; reviewed overlays remain aligned.
+- Motion review includes rotation jumps and sampled surface acceleration; remaining flips are recorded rather than hidden by translation-only diagnostics.
 - Episode 16 isolated rerun: approved by the user's follow-up “yes continue.” Originals remain preserved.
 - One validated third version across five competitions: approved by the same follow-up.
 - Current GPU plan: sequential jobs on the 24 GiB GPU; concurrent inference jobs

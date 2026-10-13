@@ -26,6 +26,7 @@ old_path=q['baseline_run']/'inference/refined.pth' if a.episode!=16 else q['base
 bundles={'baseline':torch.load(old_path,map_location='cpu',weights_only=False),'candidate':torch.load(work/'run/inference/refined.pth',map_location='cpu',weights_only=False)}
 scored=json.loads((a.root/'incident_reports/track1_scored_frames.json').read_text())[str(a.episode)]
 frames=np.array(scored)[np.linspace(0,len(scored)-1,min(33,len(scored))).round().astype(int)]
+panel_indices={0,len(frames)//2,len(frames)-1}
 k=np.asarray(json.loads((export/'wild_export.json').read_text())['intrinsics'])
 layer=MHRLayer.from_mhr_assets(mhr_assets_root=str(a.root/'data/weights/sam3d_body'),device='cuda')
 faces=layer.mesh_faces(device='cuda').detach().cpu().numpy().astype(np.int32)
@@ -58,7 +59,7 @@ for label,bundle in bundles.items():
         hand_local=(vertices[j][hand_ids]-translations[frame])@rotations[frame]
         distances,_=tree.query(hand_local,k=1)
         rows.append({'frame':int(frame),'human_visible_iou':iou,'nearest_hand_object_vertex_distance_cm_proxy':float(distances.min()*100)})
-        if j<3:
+        if j in panel_indices:
             rgb=cv2.resize(read_rgb(export,0,f'{frame:06d}'),(shape[1],shape[0]))
             rgb[target]=(rgb[target]*.65+np.array([0,180,255])*.35).astype(np.uint8)
             contours,_=cv2.findContours(visible.astype(np.uint8),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
