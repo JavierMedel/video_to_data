@@ -1,0 +1,266 @@
+[
+  {
+    "episode": 1,
+    "frames": 668,
+    "mesh_extents_m": [
+      0.041666413832585084,
+      0.8088169701279165,
+      0.8105755007189505
+    ],
+    "stages": {
+      "tracker": {
+        "rotation_step_degrees_mean_proxy": 13.393096205644134,
+        "rotation_step_degrees_p95_proxy": 89.12190270377657,
+        "rotation_step_degrees_max_proxy": 179.79579979565028,
+        "rotation_jumps_over_45_degrees": 49,
+        "sampled_vertex_acceleration_cm_proxy": 11.098955081088627,
+        "sampled_vertex_count": 1020,
+        "orthogonality_error_max": 2.7418136596679688e-06,
+        "determinant_min": 0.9999983310699463,
+        "center_depth_median_m": 3.243539571762085
+      },
+      "coconet": {
+        "rotation_step_degrees_mean_proxy": 14.070589167825355,
+        "rotation_step_degrees_p95_proxy": 76.50955412072243,
+        "rotation_step_degrees_max_proxy": 179.8873286444291,
+        "rotation_jumps_over_45_degrees": 47,
+        "sampled_vertex_acceleration_cm_proxy": 10.672594446225544,
+        "sampled_vertex_count": 1020,
+        "orthogonality_error_max": 2.7418136596679688e-06,
+        "determinant_min": 0.9999982714653015,
+        "center_depth_median_m": 3.0306525230407715
+      },
+      "refined": {
+        "rotation_step_degrees_mean_proxy": 14.070589167825355,
+        "rotation_step_degrees_p95_proxy": 76.50955412072243,
+        "rotation_step_degrees_max_proxy": 179.8873286444291,
+        "rotation_jumps_over_45_degrees": 47,
+        "sampled_vertex_acceleration_cm_proxy": 9.634888160338287,
+        "sampled_vertex_count": 1020,
+        "orthogonality_error_max": 2.7418136596679688e-06,
+        "determinant_min": 0.9999982714653015,
+        "center_depth_median_m": 3.031956195831299
+      }
+    }
+  },
+  {
+    "episode": 2,
+    "frames": 866,
+    "mesh_extents_m": [
+      0.041666413832585084,
+      0.8088169701279165,
+      0.8105755007189505
+    ],
+    "stages": {
+      "tracker": {
+        "rotation_step_degrees_mean_proxy": 15.760597823365774,
+        "rotation_step_degrees_p95_proxy": 117.7878153135194,
+        "rotation_step_degrees_max_proxy": 178.72120657896912,
+        "rotation_jumps_over_45_degrees": 65,
+        "sampled_vertex_acceleration_cm_proxy": 14.807555172071519,
+        "sampled_vertex_count": 1020,
+        "orthogonality_error_max": 2.1457672119140625e-06,
+        "determinant_min": 0.9999982714653015,
+        "center_depth_median_m": 2.9863839149475098
+      },
+      "coconet": {
+        "rotation_step_degrees_mean_proxy": 16.697696015858426,
+        "rotation_step_degrees_p95_proxy": 118.05766432522361,
+        "rotation_step_degrees_max_proxy": 179.52354986953017,
+        "rotation_jumps_over_45_degrees": 63,
+        "sampled_vertex_acceleration_cm_proxy": 12.62668026873032,
+        "sampled_vertex_count": 1020,
+        "orthogonality_error_max": 2.2649765014648438e-06,
+        "determinant_min": 0.9999982714653015,
+        "center_depth_median_m": 2.844036817550659
+      },
+      "refined": {
+        "rotation_step_degrees_mean_proxy": 16.697696015858426,
+        "rotation_step_degrees_p95_proxy": 118.05766432522361,
+        "rotation_step_degrees_max_proxy": 179.52354986953017,
+        "rotation_jumps_over_45_degrees": 63,
+        "sampled_vertex_acceleration_cm_proxy": 11.78437490259052,
+        "sampled_vertex_count": 1020,
+        "orthogonality_error_max": 2.2649765014648438e-06,
+        "determinant_min": 0.9999982714653015,
+        "center_depth_median_m": 2.8417720794677734
+      }
+    }
+  },
+  {
+    "episode": 12,
+    "frames": 405,
+    "mesh_extents_m": [
+      0.05684067843755858,
+      0.22024536979320664,
+      0.3939009696059516
+    ],
+    "stages": {
+      "tracker": {
+        "rotation_step_degrees_mean_proxy": 24.98045966084025,
+        "rotation_step_degrees_p95_proxy": 168.9756967689517,
+        "rotation_step_degrees_max_proxy": 179.93710745550854,
+        "rotation_jumps_over_45_degrees": 61,
+        "sampled_vertex_acceleration_cm_proxy": 17.87902900489789,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.0265579223632812e-06,
+        "determinant_min": 0.9999991059303284,
+        "center_depth_median_m": 2.7943387031555176
+      },
+      "coconet": {
+        "rotation_step_degrees_mean_proxy": 28.487682670029464,
+        "rotation_step_degrees_p95_proxy": 171.19300020503334,
+        "rotation_step_degrees_max_proxy": 179.86799809160394,
+        "rotation_jumps_over_45_degrees": 72,
+        "sampled_vertex_acceleration_cm_proxy": 7.961382945365514,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 1.9669532775878906e-06,
+        "determinant_min": 0.9999989867210388,
+        "center_depth_median_m": 2.8025307655334473
+      },
+      "refined": {
+        "rotation_step_degrees_mean_proxy": 28.487682670029464,
+        "rotation_step_degrees_p95_proxy": 171.19300020503334,
+        "rotation_step_degrees_max_proxy": 179.86799809160394,
+        "rotation_jumps_over_45_degrees": 72,
+        "sampled_vertex_acceleration_cm_proxy": 6.267820659373494,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 1.9669532775878906e-06,
+        "determinant_min": 0.9999989867210388,
+        "center_depth_median_m": 2.8025453090667725
+      }
+    }
+  },
+  {
+    "episode": 14,
+    "frames": 442,
+    "mesh_extents_m": [
+      0.05684067843755858,
+      0.22024536979320664,
+      0.3939009696059516
+    ],
+    "stages": {
+      "tracker": {
+        "rotation_step_degrees_mean_proxy": 18.776754660640226,
+        "rotation_step_degrees_p95_proxy": 152.1440371286882,
+        "rotation_step_degrees_max_proxy": 179.76365157143817,
+        "rotation_jumps_over_45_degrees": 53,
+        "sampled_vertex_acceleration_cm_proxy": 17.567013082071753,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.9802322387695312e-06,
+        "determinant_min": 0.9999985694885254,
+        "center_depth_median_m": 2.760772466659546
+      },
+      "coconet": {
+        "rotation_step_degrees_mean_proxy": 21.924163325597483,
+        "rotation_step_degrees_p95_proxy": 166.20526889473715,
+        "rotation_step_degrees_max_proxy": 179.8261932427483,
+        "rotation_jumps_over_45_degrees": 59,
+        "sampled_vertex_acceleration_cm_proxy": 6.3205284483637785,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.9802322387695312e-06,
+        "determinant_min": 0.9999985694885254,
+        "center_depth_median_m": 2.792654275894165
+      },
+      "refined": {
+        "rotation_step_degrees_mean_proxy": 21.924163325597483,
+        "rotation_step_degrees_p95_proxy": 166.20526889473715,
+        "rotation_step_degrees_max_proxy": 179.8261932427483,
+        "rotation_jumps_over_45_degrees": 59,
+        "sampled_vertex_acceleration_cm_proxy": 5.253366095078798,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.9802322387695312e-06,
+        "determinant_min": 0.9999985694885254,
+        "center_depth_median_m": 2.7910232543945312
+      }
+    }
+  },
+  {
+    "episode": 19,
+    "frames": 443,
+    "mesh_extents_m": [
+      0.09229514127787508,
+      0.3234491543380858,
+      0.3259291900754737
+    ],
+    "stages": {
+      "tracker": {
+        "rotation_step_degrees_mean_proxy": 22.594514915333292,
+        "rotation_step_degrees_p95_proxy": 176.65285220243774,
+        "rotation_step_degrees_max_proxy": 179.92981700118443,
+        "rotation_jumps_over_45_degrees": 53,
+        "sampled_vertex_acceleration_cm_proxy": 7.761130711633263,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.9206275939941406e-06,
+        "determinant_min": 0.9999978542327881,
+        "center_depth_median_m": 3.103389024734497
+      },
+      "coconet": {
+        "rotation_step_degrees_mean_proxy": 24.6114076148075,
+        "rotation_step_degrees_p95_proxy": 175.71917867604168,
+        "rotation_step_degrees_max_proxy": 179.9089359021501,
+        "rotation_jumps_over_45_degrees": 57,
+        "sampled_vertex_acceleration_cm_proxy": 8.282746984447089,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.86102294921875e-06,
+        "determinant_min": 0.9999979734420776,
+        "center_depth_median_m": 3.1154425144195557
+      },
+      "refined": {
+        "rotation_step_degrees_mean_proxy": 24.6114076148075,
+        "rotation_step_degrees_p95_proxy": 175.71917867604168,
+        "rotation_step_degrees_max_proxy": 179.9089359021501,
+        "rotation_jumps_over_45_degrees": 57,
+        "sampled_vertex_acceleration_cm_proxy": 7.504519712316811,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 2.86102294921875e-06,
+        "determinant_min": 0.9999979734420776,
+        "center_depth_median_m": 3.1176300048828125
+      }
+    }
+  },
+  {
+    "episode": 20,
+    "frames": 549,
+    "mesh_extents_m": [
+      0.09229514127787508,
+      0.3234491543380858,
+      0.3259291900754737
+    ],
+    "stages": {
+      "tracker": {
+        "rotation_step_degrees_mean_proxy": 7.430242597317333,
+        "rotation_step_degrees_p95_proxy": 15.59089691234406,
+        "rotation_step_degrees_max_proxy": 179.8122114543217,
+        "rotation_jumps_over_45_degrees": 20,
+        "sampled_vertex_acceleration_cm_proxy": 3.1372048713605065,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 5.960464477539062e-07,
+        "determinant_min": 0.9999997019767761,
+        "center_depth_median_m": 2.8457071781158447
+      },
+      "coconet": {
+        "rotation_step_degrees_mean_proxy": 9.970063646267441,
+        "rotation_step_degrees_p95_proxy": 20.320611516609087,
+        "rotation_step_degrees_max_proxy": 179.7799023853,
+        "rotation_jumps_over_45_degrees": 23,
+        "sampled_vertex_acceleration_cm_proxy": 4.1858216781958575,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 5.960464477539062e-07,
+        "determinant_min": 0.9999996423721313,
+        "center_depth_median_m": 2.8729286193847656
+      },
+      "refined": {
+        "rotation_step_degrees_mean_proxy": 9.970063646267441,
+        "rotation_step_degrees_p95_proxy": 20.320611516609087,
+        "rotation_step_degrees_max_proxy": 179.7799023853,
+        "rotation_jumps_over_45_degrees": 23,
+        "sampled_vertex_acceleration_cm_proxy": 3.2545191206772586,
+        "sampled_vertex_count": 1023,
+        "orthogonality_error_max": 5.960464477539062e-07,
+        "determinant_min": 0.9999996423721313,
+        "center_depth_median_m": 2.872450351715088
+      }
+    }
+  }
+]

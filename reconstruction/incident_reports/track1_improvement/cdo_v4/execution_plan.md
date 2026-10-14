@@ -32,7 +32,7 @@ Fit a constant camera-depth offset on two-thirds of samples and evaluate on the 
 | 20 | submitted_v3 | -0.201 | 0.431 → 0.405 | 20.35 → 6.07 |
 | 20 | rollout_candidate | -0.201 | 0.431 → 0.405 | 20.35 → 6.07 |
 
-## Phase 3: seeded refinement experiments running
+## Phase 3: seeded refinement experiments complete, reviewed, not selected
 
 Episode 12 uses the same CoCoNet bundle and mesh in all experiments, seed 42 and identical settings except the named factor:
 
@@ -40,4 +40,20 @@ Episode 12 uses the same CoCoNet bundle and mesh in all experiments, seed 42 and
 2. `rotation_100_batch64`: enable rotation refinement only.
 3. `steps300_batch64`: increase steps only; preserve fixed rotation and batch size.
 
-GPU experiments run sequentially. Full-clip batching is a separate planned factor, deferred until these results and memory use are known. Runtime/progress is recorded in `ablation_status.json`; logs and checkpoints reside in the isolated data folders. Completed outputs still require diagnostic/visual review. No fourth submission has been packaged or uploaded.
+The separate 100-step full-clip experiment also completed. Compared with the seeded 64-frame control, IoU changes from 0.71401 to 0.71302, translation acceleration proxy from 3.70186 to 3.47259 cm, and large rotation jumps remain 72. The 300-step and rotation-enabled experiments also retain the flip failures. None is selected for submission. Full-clip batching is not sufficient to fix tracking ambiguity.
+
+## Phase 4: temporal selection, geometry and contact review complete
+
+The stage audit locates the flip failures upstream in tracking. A dynamic-programming selector evaluates twelve orientations per frame against the actual mesh silhouette; alternative orientations are hypotheses, not assumed symmetries. A separate circular-hoop mode transports an unoriented plane normal and removes irrelevant spin. It is explicitly restricted to the hoop metadata and geometry, so pans retain their asymmetric handles.
+
+Translation smoothing is checked against video alignment. Shared scale/depth factors are fitted on 22 frames and checked on 11 separate frames using identical common depth pixels. Episode 14 accepts a -0.05m correction and Episode 19 accepts -0.10m. Episode 20 accepts a separately fitted -0.08m correction that reduces signed penetration on both fitting and evaluation frames.
+
+All candidates copy the exact scored v3 human pose, scales and shape. Signed body intersection uses the actual submitted human decoder and a validated watertight 4000-vertex collision proxy, with deterministic area-weighted object samples. This is a local physical check, not the official hidden-reference PEN score.
+
+Selected episodes: **2, 12, 14, 19, 20**. Episode 1's metric-ring and body-aware plane fits improve image alignment and motion but fail the signed-penetration gate; retain v3. Episode 2's unsigned hand distance worsens despite improved geometry/alignment and reduced motion; this uncertainty is recorded in its review decision.
+
+Seven synthetic and exhaustive-reference tests pass. Exact Episode 12 before/after videos contain all 405 frames at 30fps and were decoded to validate completion. Review evidence and decisions are in `promotion_decisions.json` and `final_review.md`.
+
+## Phase 5: package, official validation, one submission
+
+Build a complete 30-episode package, verify every original v3 artifact against its recorded hash, check exact human-array identity, schema, scored-frame coverage, finite values, positive scales, rotations and meshes. Pack with the official converter and producing Git commit. Run official preflight and upload dry-run, then submit one version across all five metrics with an exclusive receipt. Compare official scores with v3; local diagnostics do not establish a leaderboard improvement.
