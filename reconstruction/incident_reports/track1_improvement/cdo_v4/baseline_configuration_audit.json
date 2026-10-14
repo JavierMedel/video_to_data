@@ -1,0 +1,52 @@
+{
+  "schema": "v2d.track1.cdo_audit.v1",
+  "reference_scope": "repository standard inference defaults; leaderboard baseline full recipe/artifacts not independently available",
+  "weights": {
+    "checkpoint": {
+      "file": "reconstruction/data/weights/cari4d/2026-08-25-09-35-57/step200000.pth",
+      "sha256": "78ff5cb874dd012a272382e3f2d8bc11226d5b7d0ecc739a60fbb4a97a5a5ba3",
+      "matches_release_manifest": true
+    },
+    "config": {
+      "file": "reconstruction/data/weights/cari4d/2026-08-25-09-35-57/resolved_config.yaml",
+      "sha256": "ea8d3279eb63ea1595232a1c69e235381e8021b7e0acdd823cab44e587228697",
+      "matches_release_manifest": true
+    }
+  },
+  "differences": [
+    {
+      "component": "object_geometry",
+      "standard": "provided metric mesh; optional generated mesh externally calibrated",
+      "v3": "single-frame SAM3D plus aligned depth scale, shared within object group"
+    },
+    {
+      "component": "object_tracking",
+      "standard": "run_foundationpose_mhr_export register-first-then-track with retry selection",
+      "v3": "custom observed-mask/depth quality-gated tracker with carry/reacquisition"
+    },
+    {
+      "component": "postopt_steps",
+      "standard": 300,
+      "v3": 100
+    },
+    {
+      "component": "postopt_batch_size",
+      "standard": 0,
+      "v3": 64,
+      "zero_means": "full_clip"
+    },
+    {
+      "component": "object_rotation",
+      "standard": "fixed unless explicitly enabled",
+      "v3": "fixed at CoCoNet prediction"
+    }
+  ],
+  "matching_settings": [
+    "released step200000 checkpoint and resolved configuration hashes",
+    "CoCoNet stride 96, renderer batch 32, crop workers 8, buffer 2",
+    "smplh_parity mode",
+    "temporal weight 100; human pose prior 200; contact eligibility distance 0.05m",
+    "offline checkpoint supervision contract"
+  ],
+  "experiment_policy": "Isolated new outputs only; submitted artifact hashes remain controls; compare single-factor changes first."
+}
