@@ -23,6 +23,7 @@ from scipy.signal import savgol_filter
 p = argparse.ArgumentParser()
 p.add_argument('--root', type=Path, default=Path('/repo'))
 p.add_argument('--episodes', type=int, nargs='+', default=[12, 14, 2, 1, 19, 20])
+p.add_argument('--iteration', type=int, choices=[4, 5], default=4)
 a = p.parse_args()
 sys.path.insert(0, '/workspace/v2d_foundation_pose/lib/FoundationPose')
 sys.path.insert(0, str(a.root / 'modules/v2d_cari4d/lib/cari4d'))
@@ -35,7 +36,11 @@ from prep.trajectory_diagnostics import rigid_motion_diagnostics
 import Utils
 
 data = a.root / 'data/v2d_challenge/track_1'
-report = a.root / 'incident_reports/track1_improvement/cdo_v4'
+experiment = f'cdo_v{a.iteration}'
+control_label = f'submitted_v{a.iteration-1}'
+control_dir = data / ('improvement_rollout_v1/candidate_episodes' if a.iteration == 4 else 'cdo_v4_experiments/candidate_episodes')
+report = a.root / 'incident_reports/track1_improvement' / experiment
+report.mkdir(parents=True, exist_ok=True)
 scored = json.loads((a.root / 'incident_reports/track1_scored_frames.json').read_text())
 ctx = dr.RasterizeCudaContext()
 
@@ -113,13 +118,16 @@ with torch.inference_mode():
     assert mask[32, 48] and abs(z[32, 48] - 2.5) < 1e-4
     for episode in a.episodes:
         q = paths(a.root, episode); stem = q['stem']; work = q['work']; export = work / 'run/export' / stem
-        out = data / 'cdo_v4_experiments/pose_candidates' / stem
+        if episode in (6, 18, 28):
+            work = data / 'improvement_pilot_v1' / stem
+            export = work / 'run/export' / stem
+        out = data / f'{experiment}_experiments/pose_candidates' / stem
         if (out / 'review.json').exists():
             all_results.append(json.loads((out / 'review.json').read_text()))
             print('TEMPORAL_CANDIDATE_REUSED', episode, flush=True)
             continue
         out.mkdir(parents=True, exist_ok=True)
-        v3_path = data / 'improvement_rollout_v1/candidate_episodes' / (stem + '.npz')
+        v3_path = control_dir / (stem + '.npz')
         old_hash = sha(v3_path)
         v3 = dict(np.load(v3_path, allow_pickle=False))
         parent = dict(np.load(work / 'submission_episodes' / (stem + '.npz'), allow_pickle=False))
@@ -206,7 +214,7 @@ with torch.inference_mode():
         summary = {}
         panels = []
         old_mesh = trimesh.load(v3_path.with_name(stem + '_object.glb'), force='mesh', process=False)
-        for label, v, faces, sequence in [('submitted_v3', old_mesh.vertices * float(v3['object_scale']), old_mesh.faces, pose_from_npz(v3)),
+        for label, v, faces, sequence in [(control_label, old_mesh.vertices * float(v3['object_scale']), old_mesh.faces, pose_from_npz(v3)),
                                           ('previous_rollout', vertices, mesh.faces, poses), ('temporal_rotation', vertices, mesh.faces, temporal),
                                           ('final_candidate', vertices * final_scale, mesh.faces, final)]:
             rend = make_renderer(v, faces); rows, _ = evaluate(rend, sequence, obs, w2c)
@@ -226,7 +234,7 @@ with torch.inference_mode():
         sheet = np.concatenate([np.concatenate(panels[j:j+6], axis=1) for j in range(0, len(panels), 6)], axis=0)
         cv2.imwrite(str(out / 'comparison.jpg'), cv2.cvtColor(sheet, cv2.COLOR_RGB2BGR))
         review = {'episode': episode, 'state': 'CANDIDATE_COMPLETE_CONTACT_REVIEW_PENDING', 'ground_truth_used': False,
-                  'human_parameters_identical_to_submitted_v3': True, 'submitted_v3_sha256': old_hash,
+                  'human_parameters_identical_to_submitted_control': True, 'submitted_control_sha256': old_hash, 'control_version': a.iteration-1,
                   'rotation_objective': objective, 'motion_weight': .04, 'hypotheses': 'predicted/tracked/local-average x four mesh-scored orientations; no assumed symmetry',
                   'translation_smoothing_accepted': bool(smooth_accept), 'geometry_review': geometry_review,
                   'geometry_grid': grid, 'fit_frames': fit.tolist(), 'held_out_frames': held.tolist(),

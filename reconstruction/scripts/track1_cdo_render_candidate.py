@@ -11,7 +11,7 @@ import imageio.v2 as imageio
 import numpy as np
 import torch
 
-p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); args = p.parse_args()
+p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5], default=4); args = p.parse_args()
 root = args.root; data = root / 'data/v2d_challenge/track_1'; stem = f'episode_{args.episode:06d}'
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
 sys.path.insert(0, '/workspace/v2d_foundation_pose/lib/FoundationPose')
@@ -25,16 +25,21 @@ from lib_mhr.human_texture import batched_vertex_normals
 from mesh_to_mhr_params import MHR
 
 candidate = None
-for group in ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection'):
-    folder = data / 'cdo_v4_experiments' / group / stem
+experiment = f'cdo_v{args.iteration}'
+control_label = f'Scored v{args.iteration-1}'
+groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection') if args.iteration == 4 else ('pose_candidates', 'hand_safe_candidates', 'hand_contact_candidates')
+for group in groups:
+    folder = data / f'{experiment}_experiments' / group / stem
     if (folder / 'review.json').exists():
         candidate = folder
 assert candidate
-folders = {'Scored v3': data / 'improvement_rollout_v1/candidate_episodes', 'New candidate': candidate}
+control_dir = data/('improvement_rollout_v1/candidate_episodes' if args.iteration == 4 else 'cdo_v4_experiments/candidate_episodes')
+folders = {control_label: control_dir, 'New candidate': candidate}
 bundles = {label: dict(np.load(folder / (stem + '.npz'), allow_pickle=False)) for label, folder in folders.items()}
 for key in ('pose', 'scales', 'shape'):
-    assert np.array_equal(bundles['Scored v3'][key], bundles['New candidate'][key])
-export = data / 'improvement_rollout_v1' / stem / 'run/export' / stem
+    assert np.array_equal(bundles[control_label][key], bundles['New candidate'][key])
+work_group = 'improvement_pilot_v1' if args.episode in (6, 18, 28) else 'improvement_rollout_v1'
+export = data / work_group / stem / 'run/export' / stem
 video = data / 'videos/chunk-000/observation.images.exo_camera' / (stem + '.mp4')
 fps, rate, total, width, height = _source_video_properties(video)
 assert all(len(b['pose']) == total for b in bundles.values())
@@ -74,12 +79,13 @@ faces = layer.mesh_faces(device='cuda').cpu().numpy().astype(np.int32)
 del layer; torch.cuda.empty_cache()
 model = MHR(str(root / 'data/weights/track1_submission_mhr/mhr_model.pt'), 'cuda', 2, 'float32')
 renderer = NvdiffMeshRenderer(device='cuda')
-out = data / 'cdo_v4_experiments/review_videos' / stem; out.mkdir(parents=True, exist_ok=True)
-outputs = [out/(stem+'_v3_vs_v4.mp4'), out/(stem+'_v3_vs_v4_object_closeups.mp4')]
+out = data / f'{experiment}_experiments/review_videos' / stem; out.mkdir(parents=True, exist_ok=True)
+video_stem = stem+f'_v{args.iteration-1}_vs_v{args.iteration}'
+outputs = [out/(video_stem+'.mp4'), out/(video_stem+'_object_closeups.mp4')]
 assert not any(path.exists() for path in outputs)
 temporary = [path.with_name('.'+path.stem+'.tmp.mp4') for path in outputs]
 writers = [imageio.get_writer(str(path), format='FFMPEG', fps=fps, codec='libx264', pixelformat='yuv420p', macro_block_size=None, input_params=['-r', rate], ffmpeg_params=['-crf', '18', '-preset', 'medium']) for path in temporary]
-human = bundles['Scored v3']; identity = torch.as_tensor(np.r_[human['scales'], human['shape']][None], device='cuda', dtype=torch.float64)
+human = bundles[control_label]; identity = torch.as_tensor(np.r_[human['scales'], human['shape']][None], device='cuda', dtype=torch.float64)
 written = 0
 try:
     for start in range(0, total, 2):

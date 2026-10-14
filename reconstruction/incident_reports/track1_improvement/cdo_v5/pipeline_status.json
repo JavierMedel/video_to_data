@@ -1,0 +1,52 @@
+{
+  "state": "REVIEW_COMPLETE_PACKAGING_PENDING",
+  "control_version": 4,
+  "control_cd_o_cm": 28.45924,
+  "audited_episodes": 24,
+  "selected_for_experiments": [
+    23,
+    18,
+    21,
+    16,
+    13
+  ],
+  "selection": "Highest large-rotation-jump fraction among remaining episodes",
+  "stages": {
+    "ranking": "COMPLETE",
+    "penetration_definition_audit": "COMPLETE_MISMATCH_FOUND",
+    "candidate_generation": "COMPLETE: 5 episodes",
+    "hand_inside_object_validation": "COMPLETE",
+    "visual_review": "COMPLETE",
+    "package_validation": "PENDING",
+    "single_submission": "PENDING"
+  },
+  "penetration_findings": {
+    "previous_check": "Object surface inside predicted full-body proxy",
+    "official_check": "Predicted hand vertices inside submitted object mesh by generalized winding number; mean depth scaled by first-frame human similarity alignment",
+    "alignment_scale": "Unknown positive per-episode scalar; unchanged human arrays preserve it",
+    "remaining_limit": "Public participant metric omits exact role vertex indices; use a clearly labelled full-hand check unless public subset becomes available",
+    "v4_diagnostic_delta_cm": 0.00012338,
+    "official_v4_delta_cm": 0.00013,
+    "algorithm": "Generalized winding classification with float64 fallback within 0.01 of the 0.5 threshold; tests compare final depths with released CPU metric"
+  },
+  "metric_parity_tests": "4 PASS, including real dense meshes",
+  "held_out_passed_episodes": [
+    23,
+    21,
+    16
+  ],
+  "held_out_rejected_episodes": [
+    18,
+    13
+  ],
+  "promoted_episodes": [
+    16,
+    21,
+    23
+  ],
+  "retained_tested_episodes": [
+    13,
+    18
+  ],
+  "tests": "9 PASS"
+}
