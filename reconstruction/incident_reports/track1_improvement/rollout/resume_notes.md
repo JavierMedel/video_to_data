@@ -1,3 +1,9 @@
+# Submission complete
+
+All 27 reruns and final review are complete; the validated third version was uploaded and scored on all five leaderboards. See submission_results.md. Do not restart the queue or repeat the upload.
+
+## Historical recovery notes
+
 # Rollout resumed on 2026-10-13
 
 Docker Desktop was restarted. The queue resumed Episode 20 from 59 saved frames and advanced to 62 frames, confirming recovery. A fresh FoundationPose estimator now initializes its saved pose tensor using its mesh point dtype/device before tracking. Completed candidates 7, 8, and 19 remain preserved; Episode 19 still needs promotion review.

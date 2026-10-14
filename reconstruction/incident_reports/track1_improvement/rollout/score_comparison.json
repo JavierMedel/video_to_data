@@ -1,0 +1,37 @@
+{
+  "cd_h_cm": {
+    "previous": 14.99887,
+    "new": 15.43955,
+    "percent_change": 2.9380880026295353,
+    "improved": false,
+    "submission_id": 57188874
+  },
+  "cd_o_cm": {
+    "previous": 75.4825,
+    "new": 34.15571,
+    "percent_change": -54.75016063325937,
+    "improved": true,
+    "submission_id": 57188875
+  },
+  "acc_h_cm": {
+    "previous": 1.55253,
+    "new": 1.15894,
+    "percent_change": -25.351522997945285,
+    "improved": true,
+    "submission_id": 57188879
+  },
+  "acc_o_cm": {
+    "previous": 5.4341,
+    "new": 1.10054,
+    "percent_change": -79.74752028854823,
+    "improved": true,
+    "submission_id": 57188881
+  },
+  "interpenetration_cm": {
+    "previous": 0.00233,
+    "new": 0.00318,
+    "percent_change": 36.480686695278976,
+    "improved": false,
+    "submission_id": 57188885
+  }
+}

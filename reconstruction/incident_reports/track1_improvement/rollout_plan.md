@@ -70,3 +70,7 @@ preserved; new work uses `data/v2d_challenge/track_1/improvement_rollout_v1/`.
 The local quality measures are diagnostics, not predictions of hidden-reference
 leaderboard scores. Object accuracy improved substantially in the pilot, but its
 interpenetration score worsened slightly; contact must remain part of the review.
+
+## Final selection and submission (2026-10-14)
+
+All 27 reruns completed. Final visual/diagnostic review selected 23 improved candidates and retained second-submission predictions for Episodes 1, 2, 12, and 14. The three prior pilot predictions are reused. The complete 30-episode package passed array, geometry, frame coverage, exact sample row ID, official packing, preflight, and authenticated dry-run validation (740,780 rows). Upload and scoring completed on all five leaderboards. Submission IDs and measured improvements/regressions are recorded in rollout/submission_results.md and rollout/submission_receipt.json.

@@ -1,0 +1,52 @@
+{
+  "track": "track_1",
+  "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_improvement_rollout_v1.parquet",
+  "message": "Track 1 rollout v3: 23 reviewed improvements, corrected masks and metric meshes, gated tracking and refinement",
+  "submissions": {
+    "cd_h_cm": {
+      "slug": "v2d-challenge-track1-cd-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_improvement_rollout_v1.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-H (cm)",
+      "ref": 57188874,
+      "public_score": "15.43955",
+      "error": ""
+    },
+    "cd_o_cm": {
+      "slug": "v2d-challenge-track1-cd-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_improvement_rollout_v1.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-O (cm)",
+      "ref": 57188875,
+      "public_score": "34.15571",
+      "error": ""
+    },
+    "acc_h_cm": {
+      "slug": "v2d-challenge-track1-acc-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_improvement_rollout_v1.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-H (cm)",
+      "ref": 57188879,
+      "public_score": "1.15894",
+      "error": ""
+    },
+    "acc_o_cm": {
+      "slug": "v2d-challenge-track1-acc-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_improvement_rollout_v1.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-O (cm)",
+      "ref": 57188881,
+      "public_score": "1.10054",
+      "error": ""
+    },
+    "interpenetration_cm": {
+      "slug": "v2d-challenge-track1-pen",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_improvement_rollout_v1.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - PEN (cm)",
+      "ref": 57188885,
+      "public_score": "0.00318",
+      "error": ""
+    }
+  }
+}
