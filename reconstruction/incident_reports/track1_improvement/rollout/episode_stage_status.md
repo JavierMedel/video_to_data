@@ -1,0 +1,32 @@
+| Episode | Inputs | Tracking | CoCoNet | Refinement | Conversion | Object check | Human/contact check | Final decision |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 00 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 01 | Done | Done | Done | Done | Done | Done | Done | Retain previous |
+| 02 | Done | Done | Done | Done | Done | Done | Done | Retain previous |
+| 03 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 04 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 05 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 06 | Pilot | Pilot | Pilot | Pilot | Pilot | Pilot | Pilot | Reuse approved pilot |
+| 07 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 08 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 09 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 10 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 11 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 12 | Done | Done | Done | Done | Done | Done | Done | Retain previous |
+| 13 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 14 | Done | Done | Done | Done | Done | Done | Done | Retain previous |
+| 15 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 16 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 17 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 18 | Pilot | Pilot | Pilot | Pilot | Pilot | Pilot | Pilot | Reuse approved pilot |
+| 19 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 20 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 21 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 22 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 23 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 24 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 25 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 26 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 27 | Done | Done | Done | Done | Done | Done | Done | Approved |
+| 28 | Pilot | Pilot | Pilot | Pilot | Pilot | Pilot | Pilot | Reuse approved pilot |
+| 29 | Done | Done | Done | Done | Done | Done | Done | Approved |

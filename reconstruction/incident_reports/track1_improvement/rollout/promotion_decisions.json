@@ -16,5 +16,230 @@
       "comparison.json": "4a9d20e817ffb1e2993df28ac346ad12b13d15277c6d374f876380b49790f8a9",
       "human_contact_review.json": "873e92f09cddc1f2bce944b893cee806ad5e8bd3bf1363101a3e2f64a35d7797"
     }
+  },
+  "0": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.00873 to 0.74261; translation acceleration 2.07378 to 1.17481 cm; human IoU 0.80299 to 0.80989. Sampled surface acceleration slightly increases despite lower translation jitter; approximately rotationally symmetric hoop/bowl and sampled overlays support the large placement improvement. This proxy does not establish physical rotation correctness. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "9d44eecf2d4b95b6eb5307a36d21bb94e9b815bae94967ee91000da05fce7675",
+      "human_contact_review.json": "12d6032f80265bb5bdd839154d4f7635c491e91c3a2db4890e83035d7cb4ed7b"
+    }
+  },
+  "1": {
+    "verdict": "RETAIN_SECOND_SUBMISSION",
+    "visual_review_complete": true,
+    "reason": "Candidate object silhouette IoU 0.178 is below the 0.30 threshold; sampled overlays show poor hoop alignment and surface motion also regresses. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "7e51510234ad99886faaee687d3af403c830a6c2fca33a4bd6b466ed62c5e469",
+      "human_contact_review.json": "2a5097effb644bb3cd882e76fe3081cb78e6e9eb079bce104e0088796ff01fe4"
+    }
+  },
+  "2": {
+    "verdict": "RETAIN_SECOND_SUBMISSION",
+    "visual_review_complete": true,
+    "reason": "Object silhouette improves, but sampled surface acceleration increases from 3.60 to 11.78 cm; retain previous predictions because rotational motion remains uncertain. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "05d65eec500749a4f781902971a852b3ef91ee4562151d37dc14d886c2f61095",
+      "human_contact_review.json": "aefa26fc3aa080776bee076886f9042be32f9d4270af7480e55f46f56fa39fbc"
+    }
+  },
+  "3": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.20663 to 0.90590; translation acceleration 1.86798 to 0.49597 cm; human IoU 0.75669 to 0.76131. Sampled surface acceleration slightly increases despite lower translation jitter; approximately rotationally symmetric hoop/bowl and sampled overlays support the large placement improvement. This proxy does not establish physical rotation correctness. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "2f7999e349118087d126a15bfc77a81da9a05662d79d374393c96cc78344f4b1",
+      "human_contact_review.json": "954b9bf2b99319229d48f7f9cf66f789c6e04ea769cb9f634e6cb5da47621863"
+    }
+  },
+  "4": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.10927 to 0.86344; translation acceleration 6.92845 to 0.94859 cm; human IoU 0.77744 to 0.77783. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "3bebf09dc289fc758f8da3cd3dd8003f5d09a392bca36fe00074ec5e4aef08ea",
+      "human_contact_review.json": "3279eb4b920a8c83f5748827e34d85e437909d10572ea7cfd52f4afeea5353ea"
+    }
+  },
+  "5": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.04907 to 0.90960; translation acceleration 8.29293 to 0.57271 cm; human IoU 0.80196 to 0.80492. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "ed460deea0c3f5a0f67e3aebd68ee5dc07b3add964d7c754045e795c21b1f446",
+      "human_contact_review.json": "eb8a2a81f277387f28560576ec92c2d6c42a17ef0020616bac69adccc2cab41c"
+    }
+  },
+  "9": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.00000 to 0.73748; translation acceleration 8.21820 to 0.71657 cm; human IoU 0.77496 to 0.79602. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "3b7988d7bce39c3ed481c26e15a1563f90c5296a43144cb2f8418e1843467580",
+      "human_contact_review.json": "032e8eebe13b30be62b7044af4d8316bb986ff77b2f9aa18dde61a784215fe9a"
+    }
+  },
+  "10": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.08327 to 0.50004; translation acceleration 5.60980 to 0.56517 cm; human IoU 0.79853 to 0.81224. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "a9eb843410a2caef024a744d1bd5ba055a1e867c5f5acd92d640f932d8ccb77f",
+      "human_contact_review.json": "28848f24c9e922874e84f89ecb78f242112d233f0f075796b05a766a98f9b098"
+    }
+  },
+  "11": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.12350 to 0.57052; translation acceleration 5.72614 to 1.02860 cm; human IoU 0.77603 to 0.77999. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "9b7f1ce120724a341fcdaa1d5cc89e2dfdb005bd53fae89c5f4f1f9091ef5f7a",
+      "human_contact_review.json": "03e79198369503cb78f3ff481fe26562cc2d71cb61c43c42b1e5e464b8eb2766"
+    }
+  },
+  "12": {
+    "verdict": "RETAIN_SECOND_SUBMISSION",
+    "visual_review_complete": true,
+    "reason": "Pan silhouette improves but sampled surface acceleration increases from 4.26 to 6.27 cm; remaining handle/orientation uncertainty outweighs promotion. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "5a3dde79ed6c686e454e9de81fed3a889e63e7e9732d0d582efa26e3fa6ade15",
+      "human_contact_review.json": "ae4ab9a54b4d012de317eb7a0b3097c2564e5779d7b46643b292d76b2e2167ca"
+    }
+  },
+  "13": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.05303 to 0.66520; translation acceleration 3.55410 to 2.27323 cm; human IoU 0.86661 to 0.85700. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "40deb005253cfd38d10842e42647f601a6fec70afad445d3df38426d683879b3",
+      "human_contact_review.json": "e8afe812dc9660b1358f7a35347e5df6bbb6bb443edbc89df3c2595bd3f57eb3"
+    }
+  },
+  "14": {
+    "verdict": "RETAIN_SECOND_SUBMISSION",
+    "visual_review_complete": true,
+    "reason": "Pan silhouette improves but sampled surface acceleration increases from 3.78 to 5.25 cm; retain previous predictions because orientation/motion remains uncertain. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "91e7bb3ed9c865dbc83806a121a6db46979966a3eb238b07751a8ad348f16618",
+      "human_contact_review.json": "bac6f3095375ffafbd9e779a617e81c43f00fbd83a63cc6de13f56d461c6d704"
+    }
+  },
+  "15": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.28170 to 0.90802; translation acceleration 3.38839 to 0.47067 cm; human IoU 0.80088 to 0.80617. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "31207ddf956e8d6f49ef6f03f54b85ee295ed957f726e35bebc2a2c80db3f435",
+      "human_contact_review.json": "3558558818801384c836e7d68b9a2bfb58ef1c4fc8f74b2e73159c1fceed7831"
+    }
+  },
+  "16": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.35697 to 0.73531; translation acceleration 1.83881 to 0.80613 cm; human IoU 0.69747 to 0.79317. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "8d329127b2fc775e72c2cefbc77a2be80b8eb400efc7cb70491bf8d0221a5669",
+      "human_contact_review.json": "476b30ffed8dbd4e4b514e2664bbeb164b5f4c73add30dec8008ce9fc2134a94"
+    }
+  },
+  "17": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.30424 to 0.86221; translation acceleration 4.53661 to 0.57054 cm; human IoU 0.80497 to 0.79972. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "81c890f2ec9cb9d739ef95c520d8356ce8825703a93200f3e9a9d2aa2c79dd33",
+      "human_contact_review.json": "21b0354eeed6709e8c9eeabfd60016bf4ce08440a199f732e5764d82b237837c"
+    }
+  },
+  "19": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.05136 to 0.45236; translation acceleration 11.90535 to 1.07682 cm; human IoU 0.81158 to 0.82108. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "5f89bb30f8d3c4a2f7dfcfc96b73824819e28823e9d7ed63671ac892c85aa519",
+      "human_contact_review.json": "afbcd6c1ce9a540ab77f22d199bc2f771d3e62be5962b6e92b0bfa071b395114"
+    }
+  },
+  "20": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.06007 to 0.42536; translation acceleration 9.21493 to 0.88704 cm; human IoU 0.78318 to 0.78103. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "518cc2e33f587b51c03cbb9e24a8299ebc0703f4db97d572d98431ca89879e8d",
+      "human_contact_review.json": "8bb6e7a2af8e1acffb5199438ba9f940f82d43ad126e1e137186b0359a54d2e0"
+    }
+  },
+  "21": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.05788 to 0.72527; translation acceleration 9.34120 to 0.51314 cm; human IoU 0.80296 to 0.81070. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "3ad3fd6e6415abed060fd9809991fce699464e91f96aaa57751dd411e643cd81",
+      "human_contact_review.json": "34afcfaee8b609d2190cf90b65d76936fccb9ce4404babfd07e40e3acd1fc33a"
+    }
+  },
+  "22": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.12161 to 0.77360; translation acceleration 4.44664 to 1.27922 cm; human IoU 0.75829 to 0.75646. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "c9ff478d0de9d171ee7ef5c6412645d558a5bb4ac880de2c099b97cd6983fc6a",
+      "human_contact_review.json": "811243cf7babbb3d76ab1813f78d4800d1da2ca1f060224167a6d2be72ac0896"
+    }
+  },
+  "23": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.02428 to 0.76276; translation acceleration 6.58279 to 0.44760 cm; human IoU 0.81956 to 0.82610. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "2e10878df762a9db4aa611c1781c1d31ca35db270dee1d1347a53c76d69f3bf7",
+      "human_contact_review.json": "0bbc0d24c9a7f3c8745d4bfc5aac8d42537ce6253412076ae3ce253ae65e101c"
+    }
+  },
+  "24": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.09083 to 0.66808; translation acceleration 2.97684 to 0.45238 cm; human IoU 0.82200 to 0.82915. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "6e687e5485168e890bf7effd8774d2dff796f0f1e49a554929a59db98fd7af85",
+      "human_contact_review.json": "7c3514e49b4c82cd63c74af01c20e01e7dd83365e6d074e4e850adfa45b4c88c"
+    }
+  },
+  "25": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.06574 to 0.68627; translation acceleration 12.80431 to 0.56915 cm; human IoU 0.78928 to 0.79503. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "3de0a32c3ab94358ddfc15acd1a114e63e05df67968fa30d702b4946c2a28026",
+      "human_contact_review.json": "4f584e2022493e8b41ce8c4b816fa4a41fa177efcb8ff05e932416fc81cf1554"
+    }
+  },
+  "26": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.08940 to 0.49595; translation acceleration 3.80313 to 0.74992 cm; human IoU 0.84554 to 0.84540. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "fd266903d7737156ac931e47ae471df76be6a4a2c9a2f8ad06b06925a98d3bc2",
+      "human_contact_review.json": "3919eaf1ea5fcdf65838ed0af4d06475d5b1580d3fbb2192551b4f8b40f39682"
+    }
+  },
+  "27": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.05545 to 0.64687; translation acceleration 7.22044 to 0.79257 cm; human IoU 0.79447 to 0.80339. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "7fff93805f9e62dd1f771d56296cceb1eacb6d250d4ce0ea5e76821e930d22b7",
+      "human_contact_review.json": "c11623b07b760996d86370ef38c67b85f38e2fc51e96ea0ebd34af7607d98815"
+    }
+  },
+  "29": {
+    "verdict": "PROMOTE",
+    "visual_review_complete": true,
+    "reason": "Reviewed multi-frame object and beginning/middle/end human overlays support improved placement while human alignment stays within tolerance. Object IoU 0.09454 to 0.49248; translation acceleration 11.37829 to 0.40675 cm; human IoU 0.80460 to 0.80536. Unsigned hand proximity is only a diagnostic and does not certify penetration or contact.",
+    "evidence_sha256": {
+      "comparison.json": "37f4af15c1b4f98e1abc9799c08ec625696a1f0eb25ba147e93f9b123a184f71",
+      "human_contact_review.json": "61f256df43ef0a970789bb970e85aad1a13774a53f0a68298a7a8742b0d06315"
+    }
   }
 }
