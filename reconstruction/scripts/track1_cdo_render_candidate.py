@@ -11,7 +11,7 @@ import imageio.v2 as imageio
 import numpy as np
 import torch
 
-p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5], default=4); args = p.parse_args()
+p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5, 6], default=4); args = p.parse_args()
 root = args.root; data = root / 'data/v2d_challenge/track_1'; stem = f'episode_{args.episode:06d}'
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
 sys.path.insert(0, '/workspace/v2d_foundation_pose/lib/FoundationPose')
@@ -28,12 +28,14 @@ candidate = None
 experiment = f'cdo_v{args.iteration}'
 control_label = f'Scored v{args.iteration-1}'
 groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection') if args.iteration == 4 else ('pose_candidates', 'hand_safe_candidates', 'hand_contact_candidates')
+if args.iteration == 6:
+    groups = ('hand_clearance_candidates',)
 for group in groups:
     folder = data / f'{experiment}_experiments' / group / stem
     if (folder / 'review.json').exists():
         candidate = folder
 assert candidate
-control_dir = data/('improvement_rollout_v1/candidate_episodes' if args.iteration == 4 else 'cdo_v4_experiments/candidate_episodes')
+control_dir = data/('improvement_rollout_v1/candidate_episodes' if args.iteration == 4 else f'cdo_v{args.iteration-1}_experiments/candidate_episodes')
 folders = {control_label: control_dir, 'New candidate': candidate}
 bundles = {label: dict(np.load(folder / (stem + '.npz'), allow_pickle=False)) for label, folder in folders.items()}
 for key in ('pose', 'scales', 'shape'):
@@ -74,7 +76,7 @@ if args.mask_sheet:
     raise SystemExit(0)
 render_width = 768; render_height = int(round(height * render_width / width / 2)) * 2
 scaled_k = k.copy(); scaled_k[0] *= render_width/width; scaled_k[1] *= render_height/height
-layer = MHRLayer.from_mhr_assets(mhr_assets_root=os.environ['MHR_ASSETS_ROOT'], device='cuda')
+layer = MHRLayer.from_mhr_assets(mhr_assets_root=os.environ.get('MHR_ASSETS_ROOT', str(root/'data/weights/sam3d_body')), device='cuda')
 faces = layer.mesh_faces(device='cuda').cpu().numpy().astype(np.int32)
 del layer; torch.cuda.empty_cache()
 model = MHR(str(root / 'data/weights/track1_submission_mhr/mhr_model.pt'), 'cuda', 2, 'float32')

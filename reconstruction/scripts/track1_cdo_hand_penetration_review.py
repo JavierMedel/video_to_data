@@ -21,7 +21,11 @@ p.add_argument('--root', type=Path, default=Path('/repo'))
 p.add_argument('--episodes', type=int, nargs='+', default=[23, 18, 21, 16, 13])
 p.add_argument('--sample-count', type=int, default=33, help='0 evaluates every scored frame')
 p.add_argument('--audit-v4', action='store_true', help='Compare the five v4 changes against v3')
+p.add_argument('--iteration', type=int, choices=[5, 6], default=5)
+p.add_argument('--candidate-group', help='Evaluate one isolated candidate group')
 a = p.parse_args()
+assert not a.audit_v4 or (a.iteration == 5 and a.candidate_group is None)
+assert a.candidate_group is None or Path(a.candidate_group).name == a.candidate_group
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
 sys.path.insert(0, str(a.root/'modules/v2d_cari4d/lib/cari4d'))
 sys.path.insert(0, str(a.root/'v2d_submission_kit/v2d_submission_kit/tools/track1'))
@@ -30,7 +34,10 @@ from lib_mhr.hand_surface_contact import load_mhr_hand_surface_spec
 from lib_mhr.mesh_penetration_review import MeshPenetrationReview
 
 data = a.root/'data/v2d_challenge/track_1'
-report = a.root/'incident_reports/track1_improvement/cdo_v5'
+report = a.root/f'incident_reports/track1_improvement/cdo_v{a.iteration}'
+if a.candidate_group:
+    report = report/a.candidate_group
+report.mkdir(parents=True, exist_ok=True)
 scored = json.loads((a.root/'incident_reports/track1_scored_frames.json').read_text())
 spec = load_mhr_hand_surface_spec(a.root/'modules/v2d_cari4d/lib/cari4d/lib_mhr/assets/mhr_hand_surface_spec.npz')
 hand_ids = spec.vertex_indices.reshape(-1)
@@ -47,13 +54,13 @@ with torch.inference_mode():
     for episode in a.episodes:
         started = time.monotonic()
         stem = f'episode_{episode:06d}'
-        before_dir = data/('improvement_rollout_v1/candidate_episodes' if a.audit_v4 else 'cdo_v4_experiments/candidate_episodes')
-        after_dir = data/('cdo_v4_experiments/candidate_episodes' if a.audit_v4 else f'cdo_v5_experiments/pose_candidates/{stem}')
-        hand_safe = data/'cdo_v5_experiments/hand_safe_candidates'/stem
-        if not a.audit_v4 and (hand_safe/'review.json').exists():
+        before_dir = data/('improvement_rollout_v1/candidate_episodes' if a.audit_v4 else f'cdo_v{a.iteration-1}_experiments/candidate_episodes')
+        after_dir = data/('cdo_v4_experiments/candidate_episodes' if a.audit_v4 else f'cdo_v{a.iteration}_experiments/{a.candidate_group or "pose_candidates"}/{stem}')
+        hand_safe = data/f'cdo_v{a.iteration}_experiments/hand_safe_candidates'/stem
+        if not a.audit_v4 and not a.candidate_group and (hand_safe/'review.json').exists():
             after_dir = hand_safe
-        hand_contact = data/'cdo_v5_experiments/hand_contact_candidates'/stem
-        if not a.audit_v4 and (hand_contact/'review.json').exists():
+        hand_contact = data/f'cdo_v{a.iteration}_experiments/hand_contact_candidates'/stem
+        if not a.audit_v4 and not a.candidate_group and (hand_contact/'review.json').exists():
             after_dir = hand_contact
         output_name = 'hand_penetration_review' + ('.sampled' if a.sample_count else '') + '.json'
         existing = None

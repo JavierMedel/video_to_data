@@ -1,0 +1,67 @@
+{
+  "hoop_candidates": {
+    "source_artifact_sha256": {
+      "episode_000001.npz": "9c895dfa11b3e059c1d0ca7f89d0e9cceb8ab4e825d8ff9fd982266e91aef9ed",
+      "episode_000001_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "summary": {
+      "visible_iou_mean": 0.17793561554880757,
+      "translation_acceleration_cm_proxy": 0.553847810871029,
+      "rotation_step_degrees_mean_proxy": 1.8160458788584481,
+      "rotation_step_degrees_p95_proxy": 6.409655325006582,
+      "rotation_step_degrees_max_proxy": 30.98930163174725,
+      "rotation_jumps_over_45_degrees": 0,
+      "sampled_vertex_acceleration_cm_proxy": 0.7642548602571925,
+      "sampled_vertex_count": 1020
+    }
+  },
+  "hoop_geometry": {
+    "source_artifact_sha256": {
+      "episode_000001.npz": "b159802ca19c69c02aea445bca4e2de1b441dbfc3e07ddd503eae05d6835d118",
+      "episode_000001_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "summary": {
+      "visible_iou_mean": 0.6221212975003503,
+      "translation_acceleration_cm_proxy": 0.5077515372434886,
+      "rotation_step_degrees_mean_proxy": 1.3076653269948941,
+      "rotation_step_degrees_p95_proxy": 5.205473473918036,
+      "rotation_step_degrees_max_proxy": 18.245757781294436,
+      "rotation_jumps_over_45_degrees": 0,
+      "sampled_vertex_acceleration_cm_proxy": 0.5962725128132227,
+      "sampled_vertex_count": 1020
+    }
+  },
+  "physics_hoop_v2": {
+    "source_artifact_sha256": {
+      "episode_000001.npz": "07b5b76daeed1153b47564f40cae28a0ae19a75fa06a4963be7727ce3f04add2",
+      "episode_000001_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "summary": {
+      "visible_iou_mean": 0.5480050374612664,
+      "translation_acceleration_cm_proxy": 0.559745929237536,
+      "rotation_step_degrees_mean_proxy": 1.7144908875172509,
+      "rotation_step_degrees_p95_proxy": 6.966180790765566,
+      "rotation_step_degrees_max_proxy": 20.51545408564419,
+      "rotation_jumps_over_45_degrees": 0,
+      "sampled_vertex_acceleration_cm_proxy": 0.7172967393088224,
+      "sampled_vertex_count": 1020
+    }
+  },
+  "hand_clearance_candidates": {
+    "source_artifact_sha256": {
+      "episode_000001.npz": "de4c3b6051201fd6842991088a55ecccda72166b670060dddf1007546155d317",
+      "clearance_selection.npz": "1729faa21af06118c00f0069134754d4b976588506e4b5dfce9f4a9436b25ac5",
+      "episode_000001_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "summary": {
+      "visible_iou_mean": 0.6293702484376129,
+      "translation_acceleration_cm_proxy": 0.4936796101097889,
+      "rotation_step_degrees_mean_proxy": 1.3076599537142413,
+      "rotation_step_degrees_p95_proxy": 5.205463304077711,
+      "rotation_step_degrees_max_proxy": 18.245762985953544,
+      "rotation_jumps_over_45_degrees": 0,
+      "sampled_vertex_acceleration_cm_proxy": 0.5833821601541027,
+      "sampled_vertex_count": 1020
+    }
+  }
+}

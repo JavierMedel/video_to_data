@@ -1,0 +1,14 @@
+{
+  "state": "VIDEO_VALIDATION",
+  "episode": 1,
+  "control": "v5",
+  "hand_penetration": "PASS_ALL_174_SCORED_FRAMES",
+  "image_iou": 0.6293702484376129,
+  "remaining": [
+    "video validation and review",
+    "code commit",
+    "package and official validation",
+    "single upload and score polling",
+    "results report and git push"
+  ]
+}

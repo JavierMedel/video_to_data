@@ -16,7 +16,14 @@ from scipy.signal import savgol_filter
 from scipy.spatial import cKDTree
 
 root = Path('/repo'); data = root/'data/v2d_challenge/track_1'
-p = argparse.ArgumentParser(); p.add_argument('--contact-aware', action='store_true'); args = p.parse_args()
+p = argparse.ArgumentParser(); p.add_argument('--contact-aware', action='store_true')
+p.add_argument('--iteration', type=int, choices=[5, 6], default=5)
+p.add_argument('--parent-group', default='pose_candidates')
+p.add_argument('--output-group')
+args = p.parse_args()
+assert Path(args.parent_group).name == args.parent_group
+assert args.output_group is None or Path(args.output_group).name == args.output_group
+assert args.iteration != 6 or args.contact_aware
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
 sys.path.insert(0, '/workspace/v2d_foundation_pose/lib/FoundationPose')
 sys.path.insert(0, str(root/'modules/v2d_cari4d/lib/cari4d'))
@@ -29,7 +36,7 @@ from lib_mhr.hand_surface_contact import load_mhr_hand_surface_spec
 from lib_mhr.mesh_penetration_review import MeshPenetrationReview
 from mesh_to_mhr_params import MHR
 
-report = root/'incident_reports/track1_improvement/cdo_v5'
+report = root/f'incident_reports/track1_improvement/cdo_v{args.iteration}'
 scored = json.loads((root/'incident_reports/track1_scored_frames.json').read_text())
 spec = load_mhr_hand_surface_spec(root/'modules/v2d_cari4d/lib/cari4d/lib_mhr/assets/mhr_hand_surface_spec.npz')
 hand_ids = spec.vertex_indices.reshape(-1)
@@ -45,14 +52,14 @@ def poses_from(bundle):
 
 
 with torch.inference_mode():
-    for episode in ((23, 18, 21, 16, 13) if args.contact_aware else (23, 18, 16, 13)):
+    for episode in ((1,) if args.iteration == 6 else ((23, 18, 21, 16, 13) if args.contact_aware else (23, 18, 16, 13))):
         stem = f'episode_{episode:06d}'
-        parent_dir = data/'cdo_v5_experiments/pose_candidates'/stem
-        out = data/'cdo_v5_experiments'/('hand_contact_candidates' if args.contact_aware else 'hand_safe_candidates')/stem
+        parent_dir = data/f'cdo_v{args.iteration}_experiments'/args.parent_group/stem
+        out = data/f'cdo_v{args.iteration}_experiments'/(args.output_group or ('hand_contact_candidates' if args.contact_aware else 'hand_safe_candidates'))/stem
         if (out/'probe.json').exists():
             print('HAND_SAFE_REUSED', episode, flush=True); continue
         out.mkdir(parents=True, exist_ok=True)
-        control_dir = data/'cdo_v4_experiments/candidate_episodes'
+        control_dir = data/f'cdo_v{args.iteration-1}_experiments/candidate_episodes'
         control = dict(np.load(control_dir/(stem+'.npz'), allow_pickle=False))
         candidate = dict(np.load(parent_dir/(stem+'.npz'), allow_pickle=False))
         mesh = trimesh.load(parent_dir/(stem+'_object.glb'), force='mesh', process=False)
@@ -60,7 +67,7 @@ with torch.inference_mode():
         frames = np.array(scored[str(episode)]); frames = frames[np.linspace(0, len(frames)-1, 33).round().astype(int)]
         fit = np.flatnonzero(np.arange(len(frames))%3 != 2); held = np.flatnonzero(np.arange(len(frames))%3 == 2)
         cached_path = data/'cdo_v5_experiments/hand_safe_candidates'/stem/'probe.json'
-        cached = json.loads(cached_path.read_text()) if args.contact_aware and cached_path.exists() else None
+        cached = json.loads(cached_path.read_text()) if args.iteration == 5 and args.contact_aware and cached_path.exists() else None
         if cached:
             assert cached['fit_frames'] == frames[fit].tolist() and cached['held_out_frames'] == frames[held].tolist()
             fingerprints = json.loads((parent_dir/'hand_penetration_review.sampled.json').read_text())
@@ -103,15 +110,17 @@ with torch.inference_mode():
         old_held_full = cached['old_held_mean_depth_cm'] if cached else float(old_depth[held].mean())
         old_held_fps = cached['old_held_fps512_depth_cm'] if cached else float(old_depth[held][:, fps_ids].mean())
         options = []
-        for offset in (-.06, -.03, 0., .03, .06):
+        offsets = (-.12, -.09, -.06, -.03, 0., .03, .06, .09, .12) if args.iteration == 6 else (-.06, -.03, 0., .03, .06)
+        for offset in offsets:
             poses = poses_from(candidate)
             z = poses[:, 2, 3].copy(); poses[:, :3, 3] *= ((z+offset)/z)[:, None]
             options.append((f'ray_{offset:+.2f}', poses, float(candidate['object_scale'])))
         # Separate removal of the depth/scale probe, keeping temporal selection.
-        neutral = poses_from(control)
-        neutral[:, :3, :3] = np.load(parent_dir/'rotation_selection.npz')['selected_rotations']
-        neutral[:, :3, 3] = savgol_filter(neutral[:, :3, 3], 7, 2, axis=0)
-        options.append(('temporal_without_geometry_probe', neutral, float(control['object_scale'])))
+        if args.iteration == 5:
+            neutral = poses_from(control)
+            neutral[:, :3, :3] = np.load(parent_dir/'rotation_selection.npz')['selected_rotations']
+            neutral[:, :3, 3] = savgol_filter(neutral[:, :3, 3], 7, 2, axis=0)
+            options.append(('temporal_without_geometry_probe', neutral, float(control['object_scale'])))
         rows = []; best = None
         cached_options = {row['label']: row for row in cached['options']} if cached else {}
         for label, poses, scale in options:
@@ -127,7 +136,7 @@ with torch.inference_mode():
             proximity_fit_pass = not len(fit_increase) or (float(np.median(fit_increase)) <= 1.0 and float(np.quantile(fit_increase, .95)) <= 2.0)
             if args.contact_aware:
                 eligible = eligible and proximity_fit_pass
-            objective = max(fit_full/(old_full+1e-8), fit_fps/(old_fps+1e-8))
+            objective = -float(ious[fit].mean()) if args.iteration == 6 else max(fit_full/(old_full+1e-8), fit_fps/(old_fps+1e-8))
             row = {'label': label, 'fit_mean_depth_cm': fit_full, 'fit_fps512_depth_cm': fit_fps, 'fit_iou': float(ious[fit].mean()),
                    'held_mean_depth_cm': held_full, 'held_fps512_depth_cm': held_fps, 'held_iou': float(ious[held].mean()),
                    'fit_eligible': bool(eligible), 'fit_objective': objective,
@@ -162,5 +171,6 @@ with torch.inference_mode():
                  'reused_penetration_probe_sha256': hashlib.sha256(cached_path.read_bytes()).hexdigest() if cached else None,
                  'scope': 'Fit one option on 22 frames, check once on 11 disjoint frames. Full scored-frame review still required.'}
         (out/'probe.json').write_text(json.dumps(probe, indent=2)+'\n')
-        (report/(stem+('_hand_contact_probe.json' if args.contact_aware else '_hand_safe_probe.json'))).write_text(json.dumps(probe, indent=2)+'\n')
+        report_name = stem+'_'+args.output_group+'_probe.json' if args.output_group else stem+('_hand_contact_probe.json' if args.contact_aware else '_hand_safe_probe.json')
+        (report/report_name).write_text(json.dumps(probe, indent=2)+'\n')
         print('HAND_SAFE_COMPLETE', episode, bool(accepted), chosen_label, flush=True)

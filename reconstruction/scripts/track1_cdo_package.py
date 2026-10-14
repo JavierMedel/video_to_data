@@ -18,12 +18,12 @@ KIT = ROOT / 'v2d_submission_kit/v2d_submission_kit'
 p = argparse.ArgumentParser()
 p.add_argument('--commit', help='Git commit URL or hash; required when packing')
 p.add_argument('--review-only', action='store_true')
-p.add_argument('--iteration', type=int, choices=[4, 5], default=4)
+p.add_argument('--iteration', type=int, choices=[4, 5, 6], default=4)
 a = p.parse_args()
 experiment = f'cdo_v{a.iteration}'
 control_label = f'submitted_v{a.iteration-1}'
 REPORT = ROOT/'incident_reports/track1_improvement'/experiment
-control_dir = DATA/('improvement_rollout_v1/candidate_episodes' if a.iteration == 4 else 'cdo_v4_experiments/candidate_episodes')
+control_dir = DATA/('improvement_rollout_v1/candidate_episodes' if a.iteration == 4 else f'cdo_v{a.iteration-1}_experiments/candidate_episodes')
 sys.path.insert(0, str(KIT))
 from v2dlb.mhr_submission import EPISODE_FRAME, _rotations
 from submit.v2d_submit import validate_submission
@@ -34,11 +34,13 @@ def sha(path):
 
 
 decisions = {}
-tested = (1, 2, 12, 14, 19, 20) if a.iteration == 4 else (23, 18, 21, 16, 13)
+tested = (1, 2, 12, 14, 19, 20) if a.iteration == 4 else ((23, 18, 21, 16, 13) if a.iteration == 5 else (1,))
 for episode in tested:
     stem = f'episode_{episode:06d}'
     selected = None
     groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection') if a.iteration == 4 else ('pose_candidates', 'hand_safe_candidates', 'hand_contact_candidates')
+    if a.iteration == 6:
+        groups = ('hand_clearance_candidates',)
     for group in groups:
         candidate = DATA / f'{experiment}_experiments' / group / stem
         if (candidate / 'review.json').exists():
@@ -54,13 +56,13 @@ for episode in tested:
             selected = DATA/f'{experiment}_experiments/pose_candidates'/stem
     review = json.loads((selected / 'review.json').read_text())
     contact_name = 'contact_review.json' if a.iteration == 4 else 'hand_penetration_review.json'
-    if a.iteration == 5 and not (selected/contact_name).exists() and held_probe is not None and not held_probe['accepted']:
+    if a.iteration >= 5 and not (selected/contact_name).exists() and held_probe is not None and not held_probe['accepted']:
         contact_name = 'hand_penetration_review.sampled.json'
     contact = json.loads((selected / contact_name).read_text())
     assert contact['candidate_npz_sha256'] == sha(selected / (stem + '.npz'))
     assert contact['candidate_mesh_sha256'] == sha(selected / (stem + '_object.glb'))
     old, new = review['summary'][control_label], review['summary']['final_candidate']
-    if a.iteration == 5:
+    if a.iteration >= 5:
         if held_probe is None or held_probe['accepted']:
             assert contact['all_scored_frames'], 'Sampled screening is insufficient for promotion'
         assert contact['control_npz_sha256'] == sha(control_dir/(stem+'.npz'))
@@ -71,10 +73,13 @@ for episode in tested:
              'translation_motion': new['translation_acceleration_cm_proxy'] <= max(.1, old['translation_acceleration_cm_proxy']*1.1),
              'surface_motion': new['sampled_vertex_acceleration_cm_proxy'] <= max(.1, old['sampled_vertex_acceleration_cm_proxy']*1.1),
              'signed_penetration': pen_pass, 'human_arrays_unchanged': human_pass}
-    if a.iteration == 5:
+    if a.iteration >= 5:
         gates['grasp_proximity'] = contact.get('grasp_proximity_gate_pass', False)
         gates['all_scored_frames_reviewed'] = contact['all_scored_frames']
-        gates['held_out_contact'] = held_probe is None or bool(held_probe['accepted'])
+        if a.iteration == 6:
+            gates['all_scored_image_frames_reviewed'] = review['hand_clearance']['scored_frames'] == contact['frames']
+        else:
+            gates['held_out_contact'] = held_probe is None or bool(held_probe['accepted'])
     passed = all(gates.values())
     decisions[str(episode)] = {'verdict': 'PROMOTE' if passed else f'RETAIN_V{a.iteration-1}', 'gates': gates,
                                'source': str(selected), 'summary': {control_label: old, 'candidate': new},
@@ -102,7 +107,7 @@ archive = DATA / f'submission_packages/track1_{experiment}.parquet'
 assert not episodes.exists() and not archive.exists(), 'Preserve existing package'
 episodes.mkdir(parents=True)
 v3 = control_dir
-hash_report = ROOT / ('incident_reports/track1_improvement/rollout/candidate_validation.json' if a.iteration == 4 else 'incident_reports/track1_improvement/cdo_v4/candidate_validation.json')
+hash_report = ROOT / ('incident_reports/track1_improvement/rollout/candidate_validation.json' if a.iteration == 4 else f'incident_reports/track1_improvement/cdo_v{a.iteration-1}/candidate_validation.json')
 v3_hashes = json.loads(hash_report.read_text())['artifact_sha256']
 sample = pd.read_parquet(KIT / 'data/track_1_sample_submission.parquet', columns=['row_id'])
 parts = sample.row_id.str.split('_', expand=True)
