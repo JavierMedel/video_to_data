@@ -17,3 +17,15 @@ All comparisons use immutable scored v4 as control. Human parameters are preserv
 - Episode 13: Retain v4. Temporal correction improves silhouette and motion but its hand penetration increases; none of the bounded contact-preserving options meets all fitting/held-out conditions.
 
 Four numerical parity tests pass against the released PEN implementation, including the actual dense meshes. Five temporal-selection tests pass. Source and evidence hashes are recorded in the decisions.
+
+## Official results
+
+| Metric | Previous v4 | New v5 | Change | Submission ID |
+|---|---:|---:|---:|---:|
+| cd_h_cm | 15.43955 | 15.43955 | +0.00% | 57197586 |
+| cd_o_cm | 28.45924 | 28.14623 | -1.10% | 57197588 |
+| acc_h_cm | 1.15894 | 1.15894 | +0.00% | 57197591 |
+| acc_o_cm | 0.88239 | 0.86183 | -2.33% | 57197592 |
+| interpenetration_cm | 0.00331 | 0.00325 | -1.81% | 57197593 |
+
+All three object metrics improve; human scores are unchanged. Exact scores and limitations are in `submission_results.md`.

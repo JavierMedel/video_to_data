@@ -1,0 +1,52 @@
+{
+  "track": "track_1",
+  "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+  "message": "Track 1 v5: temporal poses with hand-inside-object and contact-preserving validation",
+  "submissions": {
+    "cd_h_cm": {
+      "slug": "v2d-challenge-track1-cd-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-H (cm)",
+      "ref": 57197586,
+      "public_score": "15.43955",
+      "error": ""
+    },
+    "cd_o_cm": {
+      "slug": "v2d-challenge-track1-cd-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-O (cm)",
+      "ref": 57197588,
+      "public_score": "28.14623",
+      "error": ""
+    },
+    "acc_h_cm": {
+      "slug": "v2d-challenge-track1-acc-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-H (cm)",
+      "ref": 57197591,
+      "public_score": "1.15894",
+      "error": ""
+    },
+    "acc_o_cm": {
+      "slug": "v2d-challenge-track1-acc-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-O (cm)",
+      "ref": 57197592,
+      "public_score": "0.86183",
+      "error": ""
+    },
+    "interpenetration_cm": {
+      "slug": "v2d-challenge-track1-pen",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - PEN (cm)",
+      "ref": 57197593,
+      "public_score": "0.00325",
+      "error": ""
+    }
+  }
+}

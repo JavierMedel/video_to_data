@@ -1,5 +1,5 @@
 {
-  "state": "REVIEW_COMPLETE_PACKAGING_PENDING",
+  "state": "SUBMISSION_COMPLETE",
   "control_version": 4,
   "control_cd_o_cm": 28.45924,
   "audited_episodes": 24,
@@ -13,12 +13,12 @@
   "selection": "Highest large-rotation-jump fraction among remaining episodes",
   "stages": {
     "ranking": "COMPLETE",
-    "penetration_definition_audit": "COMPLETE_MISMATCH_FOUND",
-    "candidate_generation": "COMPLETE: 5 episodes",
+    "penetration_definition_audit": "COMPLETE",
+    "candidate_generation": "COMPLETE",
     "hand_inside_object_validation": "COMPLETE",
     "visual_review": "COMPLETE",
-    "package_validation": "PENDING",
-    "single_submission": "PENDING"
+    "package_validation": "COMPLETE",
+    "single_submission": "COMPLETE"
   },
   "penetration_findings": {
     "previous_check": "Object surface inside predicted full-body proxy",
@@ -48,5 +48,74 @@
     13,
     18
   ],
-  "tests": "9 PASS"
+  "tests": "9 PASS",
+  "updated_utc": "2026-10-14T23:22:10.310619+00:00",
+  "package_sha256": "03cff99bcb9bbb8f0d869226580fd0c1740eb4b2c0c31856f062c06c823be68c",
+  "producing_commit": "https://github.com/JavierMedel/video_to_data/commit/1c3a1efca3c049c8cff229f25163254e518558d3",
+  "all_human_arrays_identical_to_v4": true,
+  "official_preflight": "PASS",
+  "official_dry_run": "PASS",
+  "quota_before_upload_per_metric": 3,
+  "receipt": "data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.kaggle-receipt.json",
+  "submissions": {
+    "cd_h_cm": {
+      "slug": "v2d-challenge-track1-cd-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-H (cm)",
+      "ref": 57197586,
+      "public_score": "15.43955",
+      "error": ""
+    },
+    "cd_o_cm": {
+      "slug": "v2d-challenge-track1-cd-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-O (cm)",
+      "ref": 57197588,
+      "public_score": "28.14623",
+      "error": ""
+    },
+    "acc_h_cm": {
+      "slug": "v2d-challenge-track1-acc-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-H (cm)",
+      "ref": 57197591,
+      "public_score": "1.15894",
+      "error": ""
+    },
+    "acc_o_cm": {
+      "slug": "v2d-challenge-track1-acc-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-O (cm)",
+      "ref": 57197592,
+      "public_score": "0.86183",
+      "error": ""
+    },
+    "interpenetration_cm": {
+      "slug": "v2d-challenge-track1-pen",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v5.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - PEN (cm)",
+      "ref": 57197593,
+      "public_score": "0.00325",
+      "error": ""
+    }
+  },
+  "gpu_experiments": "COMPLETE",
+  "duplicate_upload_allowed": false,
+  "remaining_current_batch_steps": [],
+  "official_scores": {
+    "cd_h_cm": 15.43955,
+    "cd_o_cm": 28.14623,
+    "acc_h_cm": 1.15894,
+    "acc_o_cm": 0.86183,
+    "interpenetration_cm": 0.00325
+  },
+  "next_iteration_priorities": [
+    "Revisit Episode 1 with the corrected penetration definition",
+    "Improve depth and geometry; CD-O remains above 23.16246 baseline"
+  ]
 }
