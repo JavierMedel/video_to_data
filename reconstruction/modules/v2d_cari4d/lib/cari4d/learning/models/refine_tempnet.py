@@ -10,6 +10,7 @@ from pytorch3d.transforms import so3_exp_map, so3_log_map
 import torch.nn as nn
 
 from .util import AlphaBlender
+from .dinov2_loader import load_dinov2
 from .network_modules import *
 from Utils import *
 from .feat_model import Encoder16x16
@@ -81,7 +82,7 @@ class DINOTempRefineNet(nn.Module):
         # This disables the specific function that triggers the 403 error, avoid frequent rate limit error.
         torch.hub._validate_not_a_forked_repo = lambda a, b, c: True
 
-        self.encoder_rgb = torch.hub.load('facebookresearch/dinov2', cfg.dino_model)
+        self.encoder_rgb = load_dinov2(cfg.dino_model)
         for name, params in self.encoder_rgb.named_parameters():
             if 'feat_fuser' in name:
                 params.requires_grad = True
@@ -207,7 +208,7 @@ class DINOTempRefineNet(nn.Module):
 
     @staticmethod
     def load_dino_with_more_channels(c_in, model_name='dinov2_vits14'):
-        model = torch.hub.load('facebookresearch/dinov2', model_name)
+        model = load_dinov2(model_name)
         state = model.state_dict()
 
         # now modify the layers
@@ -366,8 +367,7 @@ class DINOTempHORefineDeltaAndAbs(DINOTempRefineNet):
             self.init_mhr_prediction_heads(embed_dim)
             return
 
-        self.encoder_mask = self.encoder_rgb if self.cfg.mask_dino_type == 'dinov2_vitb14' else torch.hub.load(
-            'facebookresearch/dinov2', self.cfg.mask_dino_type)
+        self.encoder_mask = self.encoder_rgb if self.cfg.mask_dino_type == 'dinov2_vitb14' else load_dinov2(self.cfg.mask_dino_type)
         embed_dim = self.encoder_mask.embed_dim
         print(f'using {self.cfg.mask_dino_type} for binary mask encoding, embed dim={embed_dim}!')
         c_out = self.cfg.feat_dim_mask  # 768//4
