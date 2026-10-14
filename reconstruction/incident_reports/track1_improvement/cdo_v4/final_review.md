@@ -23,3 +23,15 @@ All 30 human parameter arrays must match v3 exactly when packing. The 25 unselec
 Full-clip/300-step/rotation-only refinement tests were completed and not selected; they retain 71–72 large rotation jumps on Episode 12.
 
 Video: `data/v2d_challenge/track_1/cdo_v4_experiments/review_videos/episode_000012/episode_000012_v3_vs_v4.mp4` (405 frames, 30fps, 1536x656). Matching close-ups: `episode_000012_v3_vs_v4_object_closeups.mp4` (405 frames, 30fps, 1024x464).
+
+## Official result
+
+| Metric | Previous v3 | New v4 | Change | Submission ID |
+|---|---:|---:|---:|---:|
+| cd_h_cm | 15.43955 | 15.43955 | +0.00% | 57196175 |
+| cd_o_cm | 34.15571 | 28.45924 | -16.68% | 57196176 |
+| acc_h_cm | 1.15894 | 1.15894 | +0.00% | 57196178 |
+| acc_o_cm | 1.10054 | 0.88239 | -19.82% | 57196179 |
+| interpenetration_cm | 0.00318 | 0.00331 | +4.09% | 57196182 |
+
+CD-O and ACC-O improve; human scores are unchanged; official penetration worsens slightly despite the local proxy gate. See `submission_results.md`.

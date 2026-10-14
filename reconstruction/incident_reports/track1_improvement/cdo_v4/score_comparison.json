@@ -1,0 +1,51 @@
+{
+  "previous_submission": 3,
+  "new_submission": 4,
+  "lower_is_better": true,
+  "baseline_cd_o_cm": 23.16246,
+  "metrics": {
+    "cd_h_cm": {
+      "previous": 15.43955,
+      "new": 15.43955,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57196175,
+      "state": "COMPLETE"
+    },
+    "cd_o_cm": {
+      "previous": 34.15571,
+      "new": 28.45924,
+      "delta": -5.696469999999998,
+      "relative_change_percent": -16.677943453671432,
+      "submission_id": 57196176,
+      "state": "COMPLETE"
+    },
+    "acc_h_cm": {
+      "previous": 1.15894,
+      "new": 1.15894,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57196178,
+      "state": "COMPLETE"
+    },
+    "acc_o_cm": {
+      "previous": 1.10054,
+      "new": 0.88239,
+      "delta": -0.21815000000000007,
+      "relative_change_percent": -19.82208733894271,
+      "submission_id": 57196179,
+      "state": "COMPLETE"
+    },
+    "interpenetration_cm": {
+      "previous": 0.00318,
+      "new": 0.00331,
+      "delta": 0.0001299999999999999,
+      "relative_change_percent": 4.088050314465406,
+      "submission_id": 57196182,
+      "state": "COMPLETE"
+    }
+  },
+  "baseline_gap_cm": 5.296780000000002,
+  "baseline_gap_percent": 22.867950986207862,
+  "further_reduction_required_percent": 18.611811137612953
+}

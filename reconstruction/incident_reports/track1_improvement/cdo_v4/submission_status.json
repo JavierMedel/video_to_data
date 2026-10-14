@@ -1,0 +1,74 @@
+{
+  "state": "SUBMISSION_COMPLETE",
+  "updated_utc": "2026-10-14T22:00:02.715399+00:00",
+  "package_sha256": "29ee18c4ec3e9343d1869d3d41c8b46942e9738443303d6ad0fdda5987b9dedb",
+  "producing_commit": "https://github.com/JavierMedel/video_to_data/commit/6be2d01585ddd1f98fa52c0fc25534621afc1493",
+  "promoted_episodes": [
+    2,
+    12,
+    14,
+    19,
+    20
+  ],
+  "retained_experimental_episode": 1,
+  "human_arrays_identical_to_v3": true,
+  "local_validation": "PASS",
+  "official_preflight": "PASS",
+  "official_upload_dry_run": "PASS",
+  "receipt": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v4.kaggle-receipt.json",
+  "duplicate_upload_allowed": false,
+  "gpu_experiments": "COMPLETE",
+  "submissions": {
+    "cd_h_cm": {
+      "slug": "v2d-challenge-track1-cd-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v4.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-H (cm)",
+      "ref": 57196175,
+      "public_score": "15.43955",
+      "error": ""
+    },
+    "cd_o_cm": {
+      "slug": "v2d-challenge-track1-cd-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v4.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-O (cm)",
+      "ref": 57196176,
+      "public_score": "28.45924",
+      "error": ""
+    },
+    "acc_h_cm": {
+      "slug": "v2d-challenge-track1-acc-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v4.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-H (cm)",
+      "ref": 57196178,
+      "public_score": "1.15894",
+      "error": ""
+    },
+    "acc_o_cm": {
+      "slug": "v2d-challenge-track1-acc-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v4.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-O (cm)",
+      "ref": 57196179,
+      "public_score": "0.88239",
+      "error": ""
+    },
+    "interpenetration_cm": {
+      "slug": "v2d-challenge-track1-pen",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v4.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - PEN (cm)",
+      "ref": 57196182,
+      "public_score": "0.00331",
+      "error": ""
+    }
+  },
+  "remaining_current_batch_steps": [],
+  "next_iteration_priorities": [
+    "Resolve Episode 1 physical intersections before promotion",
+    "Reduce official penetration regression; predicted-body proxy did not guarantee the hidden-reference result",
+    "Close the remaining 5.29678 cm CD-O gap to baseline"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "videos": [
+    {
+      "path": "/repo/data/v2d_challenge/track_1/cdo_v4_experiments/review_videos/episode_000012/episode_000012_v3_vs_v4.mp4",
+      "frames": 405,
+      "fps": "30",
+      "width": 1536,
+      "height": 656
+    },
+    {
+      "path": "/repo/data/v2d_challenge/track_1/cdo_v4_experiments/review_videos/episode_000012/episode_000012_v3_vs_v4_object_closeups.mp4",
+      "frames": 405,
+      "fps": "30",
+      "width": 1024,
+      "height": 464
+    }
+  ],
+  "candidate": "/repo/data/v2d_challenge/track_1/cdo_v4_experiments/pose_candidates/episode_000012",
+  "human_arrays_identical": true
+}

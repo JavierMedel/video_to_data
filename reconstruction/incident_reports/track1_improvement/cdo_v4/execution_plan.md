@@ -54,6 +54,8 @@ Selected episodes: **2, 12, 14, 19, 20**. Episode 1's metric-ring and body-aware
 
 Seven synthetic and exhaustive-reference tests pass. Exact Episode 12 before/after videos contain all 405 frames at 30fps and were decoded to validate completion. Review evidence and decisions are in `promotion_decisions.json` and `final_review.md`.
 
-## Phase 5: package, official validation, one submission
+## Phase 5: package, official validation, one submission complete
 
 Build a complete 30-episode package, verify every original v3 artifact against its recorded hash, check exact human-array identity, schema, scored-frame coverage, finite values, positive scales, rotations and meshes. Pack with the official converter and producing Git commit. Run official preflight and upload dry-run, then submit one version across all five metrics with an exclusive receipt. Compare official scores with v3; local diagnostics do not establish a leaderboard improvement.
+
+All five submissions are COMPLETE. CD-O 28.45924 (16.68% better), ACC-O 0.88239 (19.82% better), human scores unchanged, PEN 0.00331 (4.09% worse). No current-batch steps remain. The 23.16246 baseline target remains unmet; next iteration must address physical consistency and the remaining CD-O gap. Exact values and IDs are in `submission_results.md`.
