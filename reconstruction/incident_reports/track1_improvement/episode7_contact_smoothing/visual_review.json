@@ -1,0 +1,29 @@
+{
+  "reviewer": "Codex visual inspection",
+  "source_frame_mask_samples": [
+    90,
+    209,
+    328,
+    448,
+    567,
+    686
+  ],
+  "exact_video_closeup_samples": [
+    90,
+    209,
+    328,
+    448,
+    567,
+    686
+  ],
+  "midpoint_preview": 388,
+  "finding": "Gross projected alignment, iron size and hand interaction remain comparable to v6 in the inspected floor, pickup and held-object samples. The midpoint object is occluded; visible-object samples supply the separate object evidence.",
+  "scope": "Sampled visual inspection only; complete videos were decoded, not visually inspected at every frame. Local checks do not establish hidden-reference accuracy.",
+  "artifact_sha256": {
+    "data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007/exact_candidate_comparison.jpg": "ea87a6770309f2f799f106c8e87cc4d2c8b7679ee4577e77cbb6170a66f5ab14",
+    "data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007/videos/review_closeups.jpg": "e2c19bf8650214b5d8882e64c71909d59a0376556581d0bf3114567191635908",
+    "data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007/videos/preview.jpg": "90ac720720cb07a59d8f082335d4af09655c2a3ac3808230fc58971ffdc07cf7",
+    "data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007/videos/closeup_preview.jpg": "daf10189f6e21c2f3c4819398002d0bdbd64e5c23a72b356523cc6129ac52adc"
+  },
+  "automatic_promotion": false
+}

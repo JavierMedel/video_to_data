@@ -1,0 +1,17 @@
+{
+  "scope": "Frame-weighted local magnitude proxies for the selected 30-episode package; not official error metrics or GT-aligned values.",
+  "metrics": {
+    "translation_acceleration_cm_proxy": {
+      "before_cm_proxy": 0.8271853628222251,
+      "after_cm_proxy": 0.7042641961315552,
+      "reduction_pct": 14.860171881098383,
+      "consecutive_scored_triples": 9747
+    },
+    "sampled_vertex_acceleration_cm_proxy": {
+      "before_cm_proxy": 2.285616141165905,
+      "after_cm_proxy": 2.2034718378156244,
+      "reduction_pct": 3.5939675902174173,
+      "consecutive_scored_triples": 9747
+    }
+  }
+}

@@ -11,7 +11,12 @@ import imageio.v2 as imageio
 import numpy as np
 import torch
 
-p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5, 6, 7], default=4); args = p.parse_args()
+p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5, 6, 7], default=4)
+p.add_argument('--control-dir', type=Path); p.add_argument('--candidate-dir', type=Path); p.add_argument('--output-dir', type=Path)
+p.add_argument('--candidate-label', default='New candidate')
+args = p.parse_args()
+assert (args.control_dir is None) == (args.candidate_dir is None)
+assert args.candidate_dir is None or args.mask_sheet or args.output_dir is not None
 root = args.root; data = root / 'data/v2d_challenge/track_1'; stem = f'episode_{args.episode:06d}'
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
 sys.path.insert(0, '/workspace/v2d_foundation_pose/lib/FoundationPose')
@@ -36,12 +41,15 @@ for group in groups:
     folder = data / f'{experiment}_experiments' / group / stem
     if (folder / 'review.json').exists():
         candidate = folder
+if args.candidate_dir is not None:candidate=args.candidate_dir
 assert candidate
 control_dir = data/('improvement_rollout_v1/candidate_episodes' if args.iteration == 4 else f'cdo_v{args.iteration-1}_experiments/candidate_episodes')
-folders = {control_label: control_dir, 'New candidate': candidate}
+if args.control_dir is not None:control_dir=args.control_dir
+assert args.candidate_label != control_label
+folders = {control_label: control_dir, args.candidate_label: candidate}
 bundles = {label: dict(np.load(folder / (stem + '.npz'), allow_pickle=False)) for label, folder in folders.items()}
 for key in ('pose', 'scales', 'shape'):
-    assert np.array_equal(bundles[control_label][key], bundles['New candidate'][key])
+    assert np.array_equal(bundles[control_label][key], bundles[args.candidate_label][key])
 work_group = 'improvement_pilot_v1' if args.episode in (6, 18, 28) else 'improvement_rollout_v1'
 export = data / work_group / stem / 'run/export' / stem
 video = data / 'videos/chunk-000/observation.images.exo_camera' / (stem + '.mp4')
@@ -55,7 +63,7 @@ if args.mask_sheet:
     from prep.run_foundationpose_mhr_export import _render_candidate_masks, _scaled_image_grid
     frames = np.array(json.loads((root/'incident_reports/track1_scored_frames.json').read_text())[str(args.episode)])
     frames = frames[np.linspace(0, len(frames)-1, 6).round().astype(int)]
-    panels = []
+    panels = []; crop_panels = []
     with torch.inference_mode():
         for label, bundle in bundles.items():
             mesh = trimesh.load(folders[label]/(stem+'_object.glb'), force='mesh', process=False)
@@ -70,10 +78,20 @@ if args.mask_sheet:
                 rgb[obj] = (rgb[obj]*.6 + np.array([0, 255, 0])*.4).astype(np.uint8)
                 contours, _ = cv2.findContours(mask.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
                 cv2.drawContours(rgb, contours, -1, (255, 60, 60), 2)
+                yy, xx = np.nonzero(obj)
+                if len(xx):
+                    cw = int(min(shape[1], max(180, (xx.max()-xx.min())*3, (yy.max()-yy.min())*4)))
+                    ch = int(min(shape[0], max(1, cw*.75)))
+                    cx, cy = int((xx.min()+xx.max())/2), int((yy.min()+yy.max())/2)
+                    x = max(0, min(shape[1]-cw, cx-cw//2)); y = max(0, min(shape[0]-ch, cy-ch//2))
+                else:
+                    x, y, cw, ch = 0, 0, shape[1], shape[0]
+                crop_panels.append(_header(cv2.resize(rgb[y:y+ch, x:x+cw], (512, 384)), f'{label} f{frame}'))
                 rgb = cv2.resize(rgb, (512, 384))
                 panels.append(_header(rgb, f'{label} f{frame}'))
     output = candidate/'exact_candidate_comparison.jpg'
     cv2.imwrite(str(output), cv2.cvtColor(np.concatenate([np.concatenate(panels[:6], axis=1), np.concatenate(panels[6:], axis=1)], axis=0), cv2.COLOR_RGB2BGR))
+    cv2.imwrite(str(candidate/'exact_candidate_closeups.jpg'), cv2.cvtColor(np.concatenate([np.concatenate(crop_panels[:6], axis=1), np.concatenate(crop_panels[6:], axis=1)], axis=0), cv2.COLOR_RGB2BGR))
     print('EXACT_CANDIDATE_MASK_SHEET', output, flush=True)
     raise SystemExit(0)
 render_width = 768; render_height = int(round(height * render_width / width / 2)) * 2
@@ -83,8 +101,8 @@ faces = layer.mesh_faces(device='cuda').cpu().numpy().astype(np.int32)
 del layer; torch.cuda.empty_cache()
 model = MHR(str(root / 'data/weights/track1_submission_mhr/mhr_model.pt'), 'cuda', 2, 'float32')
 renderer = NvdiffMeshRenderer(device='cuda')
-out = data / f'{experiment}_experiments/review_videos' / stem; out.mkdir(parents=True, exist_ok=True)
-video_stem = stem+f'_v{args.iteration-1}_vs_v{args.iteration}'
+out = args.output_dir or data / f'{experiment}_experiments/review_videos' / stem; out.mkdir(parents=True, exist_ok=True)
+video_stem = stem + ('_control_vs_candidate' if args.candidate_dir is not None else f'_v{args.iteration-1}_vs_v{args.iteration}')
 outputs = [out/(video_stem+'.mp4'), out/(video_stem+'_object_closeups.mp4')]
 assert not any(path.exists() for path in outputs)
 temporary = [path.with_name('.'+path.stem+'.tmp.mp4') for path in outputs]

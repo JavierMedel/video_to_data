@@ -23,7 +23,14 @@ p.add_argument('--sample-count', type=int, default=33, help='0 evaluates every s
 p.add_argument('--audit-v4', action='store_true', help='Compare the five v4 changes against v3')
 p.add_argument('--iteration', type=int, choices=[5, 6, 7], default=5)
 p.add_argument('--candidate-group', help='Evaluate one isolated candidate group')
+p.add_argument('--control-dir', type=Path)
+p.add_argument('--candidate-dir', type=Path)
+p.add_argument('--report-dir', type=Path)
+p.add_argument('--control-review', type=Path, help='Reuse a hash- and frame-matched control diagnostic; pointwise deltas remain unavailable')
 a = p.parse_args()
+assert (a.control_dir is None) == (a.candidate_dir is None)
+assert a.control_dir is None or (a.report_dir is not None and not a.audit_v4 and a.candidate_group is None)
+assert a.control_review is None or a.control_dir is not None
 assert not a.audit_v4 or (a.iteration == 5 and a.candidate_group is None)
 assert a.candidate_group is None or Path(a.candidate_group).name == a.candidate_group
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
@@ -35,6 +42,8 @@ from lib_mhr.mesh_penetration_review import MeshPenetrationReview
 
 data = a.root/'data/v2d_challenge/track_1'
 report = a.root/f'incident_reports/track1_improvement/cdo_v{a.iteration}'
+if a.report_dir is not None:
+    report = a.report_dir
 if a.candidate_group:
     report = report/a.candidate_group
 report.mkdir(parents=True, exist_ok=True)
@@ -56,11 +65,13 @@ with torch.inference_mode():
         stem = f'episode_{episode:06d}'
         before_dir = data/('improvement_rollout_v1/candidate_episodes' if a.audit_v4 else f'cdo_v{a.iteration-1}_experiments/candidate_episodes')
         after_dir = data/('cdo_v4_experiments/candidate_episodes' if a.audit_v4 else f'cdo_v{a.iteration}_experiments/{a.candidate_group or "pose_candidates"}/{stem}')
+        if a.control_dir is not None:
+            before_dir, after_dir = a.control_dir, a.candidate_dir
         hand_safe = data/f'cdo_v{a.iteration}_experiments/hand_safe_candidates'/stem
-        if not a.audit_v4 and not a.candidate_group and (hand_safe/'review.json').exists():
+        if a.candidate_dir is None and not a.audit_v4 and not a.candidate_group and (hand_safe/'review.json').exists():
             after_dir = hand_safe
         hand_contact = data/f'cdo_v{a.iteration}_experiments/hand_contact_candidates'/stem
-        if not a.audit_v4 and not a.candidate_group and (hand_contact/'review.json').exists():
+        if a.candidate_dir is None and not a.audit_v4 and not a.candidate_group and (hand_contact/'review.json').exists():
             after_dir = hand_contact
         output_name = 'hand_penetration_review' + ('.sampled' if a.sample_count else '') + '.json'
         frames = np.array(scored[str(episode)])
@@ -81,6 +92,15 @@ with torch.inference_mode():
                 continue
         before = dict(np.load(before_dir/(stem+'.npz'), allow_pickle=False))
         after = dict(np.load(after_dir/(stem+'.npz'), allow_pickle=False))
+        cached_control = None
+        if a.control_review is not None:
+            cached_control = json.loads(a.control_review.read_text())
+            assert cached_control['control_npz_sha256'] == digest(before_dir/(stem+'.npz'))
+            assert cached_control['control_mesh_sha256'] == digest(before_dir/(stem+'_object.glb'))
+            assert cached_control['frames'] == frames.tolist()
+            assert cached_control['all_scored_frames'] == (a.sample_count == 0)
+            assert cached_control['hand_vertex_count'] == len(hand_ids)
+            assert cached_control['fps_sample_vertex_count'] == len(sample_ids)
         for key in ('pose', 'scales', 'shape'):
             assert np.array_equal(before[key], after[key]), (episode, key)
         human, _ = model.run(torch.as_tensor(before['pose'][frames], device='cuda', dtype=torch.float64),
@@ -96,6 +116,15 @@ with torch.inference_mode():
             local = torch.einsum('tpi,tij->tpj', hands-translation[:, None], rotation)/scale
             nearest = cKDTree(np.asarray(mesh.vertices)).query(local[:, sample_ids].cpu().numpy().reshape(-1, 3), workers=4)[0]
             proximities[label] = nearest.reshape(len(frames), len(sample_ids)).min(axis=1)*scale*100.
+            if label == 'control' and cached_control is not None:
+                summaries[label] = cached_control['summary']['control']
+                print('HAND_CONTROL_REVIEW_REUSED', episode, str(a.control_review), flush=True)
+                continue
+            if label == 'candidate' and digest(before_dir/(stem+'.npz')) == digest(after_dir/(stem+'.npz')) and digest(before_dir/(stem+'_object.glb')) == digest(after_dir/(stem+'_object.glb')):
+                summaries[label] = summaries['control']
+                if 'control' in depths_by_version:
+                    depths_by_version[label] = depths_by_version['control']
+                continue
             if existing is not None:
                 summaries[label] = existing['summary'][label]
                 continue
@@ -118,15 +147,16 @@ with torch.inference_mode():
         # Require non-increasing means for BOTH independent hand selections.
         # A very small numerical allowance is only 1e-8 cm in the mean.
         passed = c['mean_full_hand_depth_cm_unaligned'] <= b['mean_full_hand_depth_cm_unaligned']+1e-8 and c['mean_fps512_depth_cm_unaligned'] <= b['mean_fps512_depth_cm_unaligned']+1e-8
-        difference = depths_by_version['candidate']-depths_by_version['control'] if existing is None else None
+        difference = depths_by_version['candidate']-depths_by_version['control'] if all(k in depths_by_version for k in ('candidate', 'control')) else None
         contact_like = proximities['control'] <= 1.5
         increase = proximities['candidate'][contact_like]-proximities['control'][contact_like]
         proximity_pass = not contact_like.any() or (float(np.median(increase)) <= 1.0 and float(np.quantile(increase, .95)) <= 2.0)
         result = {'episode': episode, 'sample_count': len(frames), 'frames': frames.tolist(), 'all_scored_frames': not bool(a.sample_count),
                   'human_arrays_identical': True, 'summary': summaries, 'hand_penetration_gate_pass': bool(passed),
                   'hand_vertex_count': len(hand_ids), 'fps_sample_vertex_count': len(sample_ids),
-                  'max_pointwise_depth_increase_cm': float(difference.max()) if existing is None else existing['max_pointwise_depth_increase_cm'],
-                  'pointwise_nonincrease': bool((difference <= 1e-6).all()) if existing is None else existing['pointwise_nonincrease'],
+                  'max_pointwise_depth_increase_cm': float(difference.max()) if difference is not None else (existing['max_pointwise_depth_increase_cm'] if existing else None),
+                  'pointwise_nonincrease': bool((difference <= 1e-6).all()) if difference is not None else (existing['pointwise_nonincrease'] if existing else None),
+                  'control_review_sha256': digest(a.control_review) if a.control_review is not None else None,
                   'grasp_proximity_gate_pass': bool(proximity_pass),
                   'grasp_proximity': {'control_contact_like_frames': int(contact_like.sum()), 'control_threshold_cm': 1.5,
                       'median_gap_increase_cm': float(np.median(increase)) if len(increase) else None,

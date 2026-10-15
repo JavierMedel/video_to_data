@@ -1,0 +1,43 @@
+{
+  "reviewer": "Codex visual inspection",
+  "branches": {
+    "smoothing_only": {
+      "mask_sheet_sha256": "792bd22813b13533b26740ca97267080d403aa5ce8fec2431f3dbac28c5f3f5f",
+      "frames": [
+        90,
+        209,
+        328,
+        448,
+        567,
+        686
+      ],
+      "finding": "Gross projected alignment remains comparable to v6 across the six inspected source frames. Differences are subtle at this scale; masks do not establish depth or grasp correctness."
+    },
+    "depth_only": {
+      "mask_sheet_sha256": "0b06fe45522f1e8d1608b0746102362b5ee5ebdf4fe750018c6bcb619d527a5c",
+      "frames": [
+        90,
+        209,
+        328,
+        448,
+        567,
+        686
+      ],
+      "finding": "Gross projected alignment remains comparable to v6 across the six inspected source frames. Differences are subtle at this scale; masks do not establish depth or grasp correctness."
+    },
+    "combined": {
+      "mask_sheet_sha256": "db3d5d9b376126f449274a68c782cda728fb0bd49ba6008c31be3922a4adb1f1",
+      "frames": [
+        90,
+        209,
+        328,
+        448,
+        567,
+        686
+      ],
+      "finding": "Gross projected alignment remains comparable to v6 across the six inspected source frames. Differences are subtle at this scale; masks do not establish depth or grasp correctness."
+    }
+  },
+  "scope": "18 candidate panels against the same six v6 panels; source-video object mask overlays, not full reconstructed-hand videos.",
+  "promotion_decision": null
+}

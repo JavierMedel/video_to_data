@@ -1,0 +1,242 @@
+{
+  "7": {
+    "review_complete": true,
+    "source_record": "incident_reports/track1_improvement/episode7_contact_smoothing/visual_review.json",
+    "source_record_sha256": "5a3005d26111418009ab375dc8362549561bcc9cbd98191e15613f40c6992142",
+    "reason": "Reuse completed six-frame source and exact-video visual review; original full videos decoded at 777 frames."
+  },
+  "26": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      85,
+      141,
+      197,
+      253,
+      309,
+      365
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000026/exact_candidate_comparison.jpg": "f4d40728a8c5f3cb07c0dd7bead9b2f00361c252b594b86f6dec6d567b60a3c9",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000026/exact_candidate_closeups.jpg": "fc95afae03ff0e64dea62b7b6b010b23c86d58ab6a16ac63477b23783aca0ba5"
+    },
+    "reason": "Inspected six matching source close-ups. Projected size and stool/person relationship remain comparable to v6 through standing, seated and floor views. The inherited stool-outline mismatch remains; the candidate does not introduce a gross new drift.",
+    "scope": "Source RGB, observed mask and exact projected mesh contours; sampled visual check, not reconstructed-human rendering or hidden-reference accuracy."
+  },
+  "12": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      69,
+      111,
+      165,
+      223,
+      323,
+      365
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000012/exact_candidate_comparison.jpg": "4f99e57207233915f84a1dee383ec87660180b19f60df140d7cf2f32af3a4b9c",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000012/exact_candidate_closeups.jpg": "a6b4003d48e704244a43937cc2f57690b7d88eb0f985f4788b3b8b9fc2269526"
+    },
+    "reason": "Inspected six matching pan close-ups through tabletop, pickup and held views. Object extent and hand relationship remain comparable to v6; small contour offsets and the inherited handle-orientation mismatch are visible in both versions. No gross new displacement in these samples.",
+    "scope": "Source RGB, observed mask and exact mesh contours; sampled visual evidence, not a full reconstructed-human video or hidden-reference accuracy."
+  },
+  "9": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      90,
+      155,
+      220,
+      284,
+      349,
+      414
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000009/exact_candidate_comparison.jpg": "b487a285a3e5d03a109966136c3b109bb7c898408ca79737029f2fb9eecc8dac",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000009/exact_candidate_closeups.jpg": "0414b32f87dc83cd87c792de1f3b629ab75bcb4d1d5b02e067c409c7e66679a9"
+    },
+    "reason": "Inspected six desk views through lift, rotation and held positions. Projected tabletop/leg extent and observed grip remain comparable to v6, with small outline offsets shared by both versions and no gross new drift.",
+    "scope": "Six source RGB/mask/mesh-contour samples; not a full reconstructed-human video or hidden-reference accuracy."
+  },
+  "17": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      75,
+      130,
+      185,
+      241,
+      296,
+      351
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000017/exact_candidate_comparison.jpg": "3affc6e4899e1a7acdceb19fb9db34260b47a2ca078a27dbb253cbc4a4ce550f",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000017/exact_candidate_closeups.jpg": "66a5873403fe8dfec750d78363a355d0ebe164eb929b4e7122b6900dc41f5859"
+    },
+    "reason": "Inspected six foam-block views across tabletop, held, turning and floor placement. Block extent and hand relationship remain comparable to v6; observed-mask agreement is high in these samples and no gross new separation is visible.",
+    "scope": "Six source RGB/mask/mesh-contour samples; not a full reconstructed-human video or hidden-reference accuracy."
+  },
+  "24": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      61,
+      109,
+      157,
+      206,
+      254,
+      302
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000024/exact_candidate_comparison.jpg": "9f3f4a718bfb7668d4206177c2c27a61cdddc9e3d7d13161e5fdb1d3ebb21a5b",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000024/exact_candidate_closeups.jpg": "c51dafc4a94d59376578f7b25eb5c1d192a92a10bf101aa6ce9eabd94f7dbb2b"
+    },
+    "reason": "Inspected six stool views before sitting, while seated and during the final bend. Footprint and stool/person relationship remain comparable to v6, with small contour shifts and inherited outline mismatch. No gross new displacement or apparent seat-height change in these samples.",
+    "scope": "Sampled source/mask/mesh-contour evidence; full body contact is not a numerical guard and hidden-reference accuracy is unmeasured."
+  },
+  "29": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      38,
+      91,
+      144,
+      198,
+      251,
+      304
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000029/exact_candidate_comparison.jpg": "26864276a143da4a71a92a95d8ca432dea9f69f9c8e7e2cf08a2692e500714f0",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000029/exact_candidate_closeups.jpg": "ba4f8e12c090ff41d4fe5afc4ef6a186696616969216fb40527650bcc161c3a4"
+    },
+    "reason": "Inspected six rolling-cart close-ups through translation and turning. Tabletop, stem and base remain comparable to v6, with small contour shifts and an inherited wider base outline. No gross new floor-height or hand/cart displacement in these samples.",
+    "scope": "Sampled source/mask/mesh contours; inherited geometry mismatch remains and official accuracy is unknown."
+  },
+  "14": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      90,
+      106,
+      129,
+      347,
+      371,
+      387
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000014/exact_candidate_comparison.jpg": "501ec50b906bb5fbc9746db2d0c86d14d6e7dd5524cb73a56d0c8e1d3011429e",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000014/exact_candidate_closeups.jpg": "65c2c0ae4c2299a65811378c6654f5ccdef1cad195d66945632b63b168c348c0"
+    },
+    "reason": "Inspected six pan views across tabletop, pickup and return. Small outline translations remain comparable to v6 and hand placement is coherent in visible samples. The inherited handle/outline mismatch is present in both versions; no gross new displacement or scale change is visible.",
+    "scope": "Six source/mask/mesh-contour samples; middle unscored portions are not evidence of official improvement."
+  },
+  "22": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      18,
+      108,
+      198,
+      289,
+      379,
+      469
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000022/exact_candidate_comparison.jpg": "b97c89a610495cde190eb7deb312add4daff38bad18d27b22baf66771d5596af",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000022/exact_candidate_closeups.jpg": "757ffc5445b5edf18eb82302474e305d7b5515d84684bc53c04c6970b7f64598"
+    },
+    "reason": "Inspected six roller views spanning the upright start and tabletop rolling. Projected cylinder extent, tabletop placement and visible hands remain comparable to v6; small contour shifts introduce no gross new drift in these samples.",
+    "scope": "Source RGB/masks/mesh contours at six frames; local diagnostic evidence, not official errors or full-body contact certification."
+  },
+  "1": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      151,
+      240,
+      325,
+      373,
+      426,
+      461
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000001/exact_candidate_comparison.jpg": "9c5d286be9f9ca198122a136c574b52d1ee937e21670076ec93058471c15b95c",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000001/exact_candidate_closeups.jpg": "6a72b494c2f8f93124956e89bdb02a0234ffd9001200fc0eb88e573578940ce3"
+    },
+    "reason": "Inspected six hula-hoop views spanning held, stepping-through and bent poses. The v6 circular geometry and orientation are preserved; small contour translations retain comparable observed arcs and hand/body relationship. Occluded portions cannot establish depth accuracy, but no gross new drift is visible.",
+    "scope": "Six source RGB/mask/mesh-contour samples; not a full reconstructed-human video or hidden-reference score."
+  },
+  "8": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      90,
+      181,
+      271,
+      362,
+      452,
+      543
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000008/exact_candidate_comparison.jpg": "28d9ccbcdd8aad2aea82233bc1e6aee639c335f8d5ced01d941dd54fdfb089ee",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000008/exact_candidate_closeups.jpg": "363150874cb27b01c580d48808e31186d5714e52422838363fc861e6562f638a"
+    },
+    "reason": "Inspected six floor-level iron views while upright and tilted under the hand. Object extent and hand relationship remain comparable to v6; small contour shifts introduce no gross floor-placement or grasp displacement in these samples.",
+    "scope": "Six source RGB/mask/mesh-contour samples; not a full reconstructed-human video or hidden-reference score."
+  },
+  "2": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      236,
+      410,
+      736,
+      753,
+      769,
+      786
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000002/exact_candidate_comparison.jpg": "02ca0387c4aaa0ea63566a022a68e3902748ff06d8ebdd3ea19f522d33707ebf",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000002/exact_candidate_closeups.jpg": "b810e0f6e695a6746161c42c781ccb68289a42ef2197b32bb5499f98be313a81"
+    },
+    "reason": "Inspected six hoop views including held poses, lowering and the final ground-level ring. Projected arcs, extent and body/hand relationship remain comparable to v6, with minor contour shifts and inherited mismatch. No gross new drift or ring-size change is visible.",
+    "scope": "Six matching source RGB/mask/mesh-contour samples; no claim of full-video reconstructed-human inspection or hidden-reference accuracy."
+  },
+  "6": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      90,
+      217,
+      344,
+      471,
+      598,
+      725
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000006/exact_candidate_comparison.jpg": "036678198e08bbbba21051335ac81b15eaec63dd7d8d696ca6a1738b1b719c8a",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000006/exact_candidate_closeups.jpg": "59b3c360a4dc092c457ccf7ad32e742dc64d87bfb7ee289bb282064b01083ce4"
+    },
+    "reason": "Inspected six iron views on the table, tilted in hand and upright. Footprint and visible hand relationship remain comparable to v6; small contour translations introduce no gross new tabletop-placement or grasp displacement.",
+    "scope": "Six matching source RGB/mask/mesh-contour samples; no claim of full-video reconstructed-human inspection or hidden-reference accuracy."
+  },
+  "11": {
+    "review_complete": true,
+    "reviewer": "Codex visual inspection",
+    "frames": [
+      0,
+      160,
+      321,
+      481,
+      642,
+      802
+    ],
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000011/exact_candidate_comparison.jpg": "b335369b828ff3a3b3ca77c9a908831e178a6cf58f663386511a734b27b0cd15",
+      "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000011/exact_candidate_closeups.jpg": "e6db809e50ce4af61eabd5028dfb2845241a7f40dfe44cc8ba545f830e63d4f7"
+    },
+    "reason": "Inspected six desk views through upright motion and the final tip onto its side. Tabletop, legs and observed hand positions remain comparable to v6. The inherited leg/outline overshoot is present in both versions; no gross new floor-height or grip change is visible.",
+    "scope": "Six matching source RGB/mask/mesh-contour samples; no claim of full-video reconstructed-human inspection or hidden-reference accuracy."
+  }
+}

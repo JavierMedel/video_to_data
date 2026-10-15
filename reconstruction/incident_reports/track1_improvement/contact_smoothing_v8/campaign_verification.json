@@ -1,0 +1,43 @@
+{
+  "episodes": 30,
+  "video_frames": 16563,
+  "evaluated_frame_options": 33126,
+  "source_inputs_preserved": true,
+  "all_selected_frame_constraints_pass": true,
+  "promoted": [
+    1,
+    2,
+    6,
+    7,
+    8,
+    9,
+    11,
+    14,
+    22,
+    24,
+    26,
+    29
+  ],
+  "retained_v6": [
+    0,
+    3,
+    4,
+    5,
+    10,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    27,
+    28
+  ],
+  "cpu_tests_passed": 8,
+  "fused_mesh_comparisons_passed": 6
+}

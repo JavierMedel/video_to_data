@@ -1,0 +1,17 @@
+{
+  "source_hashes_preserved": true,
+  "all_non_translation_arrays_identical": true,
+  "all_777_frame_fit_constraints_pass": true,
+  "all_597_scored_frame_gates_pass": true,
+  "video_frames": [
+    777,
+    777
+  ],
+  "video_sha256": {
+    "/repo/data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007/videos/episode_000007_control_vs_candidate.mp4": "4ac8edf35c7812ca8feac1e85a63903a63eca660a4457e6e2768d6729a22d8f4",
+    "/repo/data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007/videos/episode_000007_control_vs_candidate_object_closeups.mp4": "3528bf3a8d03c22cfad4c703d2bf1413c198d4ef5ad1462d53f79eba6f85f182"
+  },
+  "resume_check_pass": true,
+  "automatic_promotion": false,
+  "upload_performed": false
+}

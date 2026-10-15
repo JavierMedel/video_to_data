@@ -12,7 +12,11 @@ import nvdiffrast.torch as dr
 import torch
 import trimesh
 
-p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=Path('/repo'));p.add_argument('--episodes',type=int,nargs='+',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=Path('/repo'));p.add_argument('--episodes',type=int,nargs='+',required=True)
+p.add_argument('--control-dir',type=Path);p.add_argument('--candidate-dir',type=Path);p.add_argument('--report-dir',type=Path)
+a=p.parse_args()
+assert (a.control_dir is None)==(a.candidate_dir is None)
+assert a.control_dir is None or a.report_dir is not None
 sys.path.insert(0,'/workspace/v2d_foundation_pose/lib/FoundationPose')
 sys.path.insert(0,str(a.root/'modules/v2d_cari4d/lib/cari4d'))
 from prep.run_foundationpose_mhr_export import _render_candidate_masks, _scaled_image_grid
@@ -21,6 +25,8 @@ from prep.foundationpose_pose_selection import measure_visible_silhouettes
 from track1_rollout_common import paths
 import Utils
 data=a.root/'data/v2d_challenge/track_1';report=a.root/'incident_reports/track1_improvement/cdo_v7'
+if a.report_dir is not None:report=a.report_dir
+report.mkdir(parents=True,exist_ok=True)
 scored=json.loads((a.root/'incident_reports/track1_scored_frames.json').read_text());ctx=dr.RasterizeCudaContext()
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 with torch.inference_mode():
@@ -31,6 +37,7 @@ with torch.inference_mode():
         if (rescue/'review.json').exists():candidate=rescue
         hoop=data/'cdo_v7_experiments/temporal_hoop_candidates'/stem
         if (hoop/'review.json').exists():candidate=hoop
+        if a.control_dir is not None:control,candidate=a.control_dir,a.candidate_dir
         out=candidate/'all_scored_image_review.json'
         fingerprints={f'{label}_{kind}_sha256':sha(folder/(stem+suffix)) for label,folder in [('control',control),('candidate',candidate)] for kind,suffix in [('npz','.npz'),('mesh','_object.glb')]}
         if out.exists():

@@ -1,0 +1,1010 @@
+{
+  "state": "COMPLETE",
+  "scope": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "control_version": 6,
+  "workers": 2,
+  "control_sha256": {
+    "episode_000000.npz": "687b4726ab4dc54d80386f8b0dabce0b817221aa7965c010a814934d24022b0e",
+    "episode_000000_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+    "episode_000001.npz": "de4c3b6051201fd6842991088a55ecccda72166b670060dddf1007546155d317",
+    "episode_000001_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+    "episode_000002.npz": "8422b57dff83cac731844e3332979ec9a48d7f6bc8ee43fc8d8222bfbb76b5d4",
+    "episode_000002_object.glb": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+    "episode_000003.npz": "6dc75885bc4a3455fa506fa777710579fd047467458f2884bd63052934fac2a1",
+    "episode_000003_object.glb": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+    "episode_000004.npz": "333c32e399f7ea2e02a698436c308c97a30dbb49193161f5c9186964ed17f3f7",
+    "episode_000004_object.glb": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+    "episode_000005.npz": "c77255c678863af69ac0246d7b1788ed157671a1c0fb3747a5e8e135e8581a58",
+    "episode_000005_object.glb": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+    "episode_000006.npz": "29bcf71aa1030132a84624449e63e250f6397417b9c1658fd0c2ad36cc5ef03d",
+    "episode_000006_object.glb": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+    "episode_000007.npz": "baa6073070007e3ca06eec22af96abffd276f74f9f3fc995619845ea5f2403c7",
+    "episode_000007_object.glb": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+    "episode_000008.npz": "ff178b6963e4b754127e3183e131b27e9711d87d171ec6236a73860b543eb77a",
+    "episode_000008_object.glb": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+    "episode_000009.npz": "ff31616f40a7625431b9b513fa16af3e4915b90b3fb13e0d704f035cd92c956b",
+    "episode_000009_object.glb": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19",
+    "episode_000010.npz": "63d81078b0cb98b891e25566cb30e8f3a99f880dd9ab6db33b618fb929af3d8a",
+    "episode_000010_object.glb": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19",
+    "episode_000011.npz": "ad4d26b288fd6ea834536bb81615129ffc35bb90321ed85476c1ee575d91bd41",
+    "episode_000011_object.glb": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19",
+    "episode_000012.npz": "0a6ecd7e32145c7d5461d398033d4571794b6504d782051e7585e875167214bf",
+    "episode_000012_object.glb": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b",
+    "episode_000013.npz": "fbe45dfc9f15891243bb28075941ad586ea266b5f4abca1c267a1d35733a9db3",
+    "episode_000013_object.glb": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b",
+    "episode_000014.npz": "7a07f29d06f11a1111febb45e7a583b73de66e8e1022d2e680159ea3f94bb8ad",
+    "episode_000014_object.glb": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b",
+    "episode_000015.npz": "02fecef6caa446a7a42a1ac7ec3794fcd38ce4c8d8a6789c65697fd642ff6c26",
+    "episode_000015_object.glb": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+    "episode_000016.npz": "65353a34fe84849c6b6402126d5fc0e9712114854767f046057da0f2b586a23e",
+    "episode_000016_object.glb": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+    "episode_000017.npz": "9bba768a2f67ae949bf02c7d623c2b5d5156fd498cf713115c33ca2696a0bb0d",
+    "episode_000017_object.glb": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+    "episode_000018.npz": "b41ca71d3c73a90c2fbd41c67008122a6aa363f43b69aef1e0bde58835974c96",
+    "episode_000018_object.glb": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+    "episode_000019.npz": "9cf65ed9154a82bde3084287bbcf5361621d15c6052ed0fe1067e3bdf80bfd87",
+    "episode_000019_object.glb": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+    "episode_000020.npz": "2514d88ee3e395a7d50230c835682496cfafdc194ec2dfdff027a0dbd9d7220a",
+    "episode_000020_object.glb": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+    "episode_000021.npz": "32401da14cc79bcdd7570e123bfbd3c545cb9d9e6a7e4251fd8030f0f0e39539",
+    "episode_000021_object.glb": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584",
+    "episode_000022.npz": "222483e63b2600c99af28c8bbea1da3c5dcb78b40e0ae46c688bbdb05316b1b5",
+    "episode_000022_object.glb": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584",
+    "episode_000023.npz": "60cf7330add0457d1f70e8fdd34cbcb80d27c2b73391f53fb798f92d2cd89dae",
+    "episode_000023_object.glb": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584",
+    "episode_000024.npz": "b710d692bb4bade4ece84c7c92f8e212ef0b6540c7fe78073143ee2584e04131",
+    "episode_000024_object.glb": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1",
+    "episode_000025.npz": "7c0ea09899fd833b5a58ab3dbdb916e25d6b392f979141ffe33ecb770d438348",
+    "episode_000025_object.glb": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1",
+    "episode_000026.npz": "de75a0dbbe70a931cef44415ac741be82792212d515eea3d436f775a12e4d505",
+    "episode_000026_object.glb": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1",
+    "episode_000027.npz": "ead0c28647d0371e71a5df55c3c0bf287b8a7fb4d6df1d5b3a42dc7933dc1751",
+    "episode_000027_object.glb": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4",
+    "episode_000028.npz": "73136f3c96a763062af8bf94ef591ca5bef36487b8d7e2cdeb907511772bfdf9",
+    "episode_000028_object.glb": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4",
+    "episode_000029.npz": "623319740bef02299a430a0faa5985d6747d1a6e6314e9fd2ad9f7cdadd7fade",
+    "episode_000029_object.glb": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4"
+  },
+  "episodes": {
+    "0": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000000",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000000/status.json",
+      "frames": 790,
+      "selected_smoothed_frames": 614,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 8.705747898237437,
+          "rotation_step_degrees_p95_proxy": 23.327374282687863,
+          "rotation_step_degrees_max_proxy": 179.02852248883127,
+          "rotation_jumps_over_45_degrees": 16,
+          "sampled_vertex_acceleration_cm_proxy": 5.514188040726506,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 1.1748104213603643
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 8.705747898237437,
+          "rotation_step_degrees_p95_proxy": 23.327374282687863,
+          "rotation_step_degrees_max_proxy": 179.02852248883127,
+          "rotation_jumps_over_45_degrees": 16,
+          "sampled_vertex_acceleration_cm_proxy": 5.354955448689015,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.7445186191150138
+        }
+      },
+      "candidate_npz_sha256": "807c5da11c2679a2bfb495fc2ab663a2aa9164001a8afac7d70253509f488197"
+    },
+    "1": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000001",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000001/status.json",
+      "frames": 668,
+      "selected_smoothed_frames": 598,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 1.3076599537142413,
+          "rotation_step_degrees_p95_proxy": 5.205463304077711,
+          "rotation_step_degrees_max_proxy": 18.245762985953544,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.5833832415065352,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.49368084180837196
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 1.3076599537142413,
+          "rotation_step_degrees_p95_proxy": 5.205463304077711,
+          "rotation_step_degrees_max_proxy": 18.245762985953544,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.5134634316094253,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.4171875857001288
+        }
+      },
+      "candidate_npz_sha256": "4c9909124ea7498f0755ca9088e7d3524d1784076068f1e529681c0cf7bbce48"
+    },
+    "2": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000002",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000002/status.json",
+      "frames": 866,
+      "selected_smoothed_frames": 654,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 1.6769802734639991,
+          "rotation_step_degrees_p95_proxy": 8.506748335404785,
+          "rotation_step_degrees_max_proxy": 27.797305021203222,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.9170188888219654,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.7951555473230849
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 1.6769802734639991,
+          "rotation_step_degrees_p95_proxy": 8.506748335404785,
+          "rotation_step_degrees_max_proxy": 27.797305021203222,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.8097682680403941,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.669339512473673
+        }
+      },
+      "candidate_npz_sha256": "297b2af37ed1aa29dfedafcd290dd7d7f2aedaeb5e7994de5f61ea3084f4d73f"
+    },
+    "3": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000003",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000003/status.json",
+      "frames": 592,
+      "selected_smoothed_frames": 314,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 9.94303236484877,
+          "rotation_step_degrees_p95_proxy": 33.16865204034508,
+          "rotation_step_degrees_max_proxy": 173.72251087212157,
+          "rotation_jumps_over_45_degrees": 20,
+          "sampled_vertex_acceleration_cm_proxy": 2.633594874282652,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.4959711764270805
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 9.94303236484877,
+          "rotation_step_degrees_p95_proxy": 33.16865204034508,
+          "rotation_step_degrees_max_proxy": 173.72251087212157,
+          "rotation_jumps_over_45_degrees": 20,
+          "sampled_vertex_acceleration_cm_proxy": 2.571617298600632,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.32167330522615634
+        }
+      },
+      "candidate_npz_sha256": "c604d502786e051984b1cad3ac4a5f2cd863b98473f97e1e93e66eb5a12c06fc"
+    },
+    "4": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000004",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000004/status.json",
+      "frames": 747,
+      "selected_smoothed_frames": 351,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 13.046574070200602,
+          "rotation_step_degrees_p95_proxy": 41.28288709155707,
+          "rotation_step_degrees_max_proxy": 131.84866447134613,
+          "rotation_jumps_over_45_degrees": 25,
+          "sampled_vertex_acceleration_cm_proxy": 3.179105223578009,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.948588161158979
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 13.046574070200602,
+          "rotation_step_degrees_p95_proxy": 41.28288709155707,
+          "rotation_step_degrees_max_proxy": 131.84866447134613,
+          "rotation_jumps_over_45_degrees": 25,
+          "sampled_vertex_acceleration_cm_proxy": 3.026759814028562,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.6280047045253555
+        }
+      },
+      "candidate_npz_sha256": "3ab8b6c873a33946b6f123a821760207296bfb36599458b55d8ac0cfcd2ba311"
+    },
+    "5": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000005",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000005/status.json",
+      "frames": 668,
+      "selected_smoothed_frames": 364,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 11.449143980200029,
+          "rotation_step_degrees_p95_proxy": 44.10099907256161,
+          "rotation_step_degrees_max_proxy": 168.05116406757423,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.842218232356458,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.5727147800362427
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 11.449143980200029,
+          "rotation_step_degrees_p95_proxy": 44.10099907256161,
+          "rotation_step_degrees_max_proxy": 168.05116406757423,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.769765917198531,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.37088979340866796
+        }
+      },
+      "candidate_npz_sha256": "8f4a2a30bdc809497522d10bd60dc5616c609c2ccba5df7648e97ad82223696b"
+    },
+    "6": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000006",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000006/status.json",
+      "frames": 816,
+      "selected_smoothed_frames": 474,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 7.10468175884606,
+          "rotation_step_degrees_p95_proxy": 11.845443419350016,
+          "rotation_step_degrees_max_proxy": 179.07453933589719,
+          "rotation_jumps_over_45_degrees": 22,
+          "sampled_vertex_acceleration_cm_proxy": 1.6040086033046206,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.7627159567420114
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 7.10468175884606,
+          "rotation_step_degrees_p95_proxy": 11.845443419350016,
+          "rotation_step_degrees_max_proxy": 179.07453933589719,
+          "rotation_jumps_over_45_degrees": 22,
+          "sampled_vertex_acceleration_cm_proxy": 1.4258173217478771,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.4952557756722194
+        }
+      },
+      "candidate_npz_sha256": "9dbf5bb81ccfce1c7ac840c2bd85acad6a047fde1edfa0fb0cafecafef36b783"
+    },
+    "7": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007",
+      "status": "incident_reports/track1_improvement/episode7_contact_smoothing/status.json",
+      "frames": 777,
+      "selected_smoothed_frames": 377,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 14.171884344802915,
+          "rotation_step_degrees_p95_proxy": 127.85306535668177,
+          "rotation_step_degrees_max_proxy": 179.94956331915697,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 3.4662265677921895,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.7655030142281938
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 14.171884344802915,
+          "rotation_step_degrees_p95_proxy": 127.85306535668177,
+          "rotation_step_degrees_max_proxy": 179.94956331915697,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 3.0531950342218566,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.229680903365094
+        }
+      },
+      "candidate_npz_sha256": "d04aa53e899734c40d2304c4714fdb7d546b3c889389ba77a3781178600ce87c",
+      "reused": true
+    },
+    "8": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000008",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000008/status.json",
+      "frames": 634,
+      "selected_smoothed_frames": 279,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 12.009649435384949,
+          "rotation_step_degrees_p95_proxy": 55.08975431695168,
+          "rotation_step_degrees_max_proxy": 179.84944271792003,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 3.081620073854462,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.5881623488104593
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 12.009649435384949,
+          "rotation_step_degrees_p95_proxy": 55.08975431695168,
+          "rotation_step_degrees_max_proxy": 179.84944271792003,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.748800347664506,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.1888332742624759
+        }
+      },
+      "candidate_npz_sha256": "003f72967dfc30f4647d6cc62686d1bbca782b4c429ec058d710d22bc8e53ffd"
+    },
+    "9": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000009",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000009/status.json",
+      "frames": 415,
+      "selected_smoothed_frames": 171,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.7998687009615294,
+          "rotation_step_degrees_p95_proxy": 1.8139039098450986,
+          "rotation_step_degrees_max_proxy": 8.066699856051423,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 1.039485520480685,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.7165749100003381
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.7998687009615294,
+          "rotation_step_degrees_p95_proxy": 1.8139039098450986,
+          "rotation_step_degrees_max_proxy": 8.066699856051423,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.9475924701591716,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.5289881734569118
+        }
+      },
+      "candidate_npz_sha256": "57b0b9925e4c417111315a52f7a29543986d38fa777d31041c8370cdb78b211d"
+    },
+    "10": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000010",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000010/status.json",
+      "frames": 577,
+      "selected_smoothed_frames": 243,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.5709594503974544,
+          "rotation_step_degrees_p95_proxy": 1.2756732821870551,
+          "rotation_step_degrees_max_proxy": 2.6760293682168106,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.8411845132216045,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.5651717896430234
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.5709594503974544,
+          "rotation_step_degrees_p95_proxy": 1.2756732821870551,
+          "rotation_step_degrees_max_proxy": 2.6760293682168106,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.7334925450382573,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.3695258747618675
+        }
+      },
+      "candidate_npz_sha256": "5a5503e33a6636d677fd6e4d822c4e51a33882710468acd4ec738280d84e70f4"
+    },
+    "11": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000011",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000011/status.json",
+      "frames": 877,
+      "selected_smoothed_frames": 458,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 1.2223401745195763,
+          "rotation_step_degrees_p95_proxy": 2.0366537669997515,
+          "rotation_step_degrees_max_proxy": 110.90332502760886,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.7108067947531331,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 1.0285975842165098
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 1.2223401745195763,
+          "rotation_step_degrees_p95_proxy": 2.0366537669997515,
+          "rotation_step_degrees_max_proxy": 110.90332502760886,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.461552777094612,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.6273297234829689
+        }
+      },
+      "candidate_npz_sha256": "1f7fcd2f271dbebb59ceaa6412782c441b033c05fda17ca96d05e244906f5d83"
+    },
+    "12": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000012",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000012/status.json",
+      "frames": 405,
+      "selected_smoothed_frames": 217,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 8.995696215914531,
+          "rotation_step_degrees_p95_proxy": 39.76757172623949,
+          "rotation_step_degrees_max_proxy": 104.62166922158009,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.759420874358675,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.192151649067722
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 8.995696215914531,
+          "rotation_step_degrees_p95_proxy": 39.76757172623949,
+          "rotation_step_degrees_max_proxy": 104.62166922158009,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.61966093539191,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.0298499453173862
+        }
+      },
+      "candidate_npz_sha256": "7af78096554357e18e46dfe903fcdba04b247977817572db5cbb9a4e37a9ecff"
+    },
+    "13": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000013",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000013/status.json",
+      "frames": 425,
+      "selected_smoothed_frames": 119,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 15.172383598886464,
+          "rotation_step_degrees_p95_proxy": 133.60422122465948,
+          "rotation_step_degrees_max_proxy": 179.71419404779604,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 3.4781651759060317,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 2.2732320979015226
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 15.172383598886464,
+          "rotation_step_degrees_p95_proxy": 133.60422122465948,
+          "rotation_step_degrees_max_proxy": 179.71419404779604,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 3.366535046159985,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 2.0896859301486472
+        }
+      },
+      "candidate_npz_sha256": "26c12177dbd524af4ad09823aa57787b383acf43165e160c0a96e29afc21721c"
+    },
+    "14": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000014",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000014/status.json",
+      "frames": 442,
+      "selected_smoothed_frames": 242,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 7.842210640362526,
+          "rotation_step_degrees_p95_proxy": 34.657030362898276,
+          "rotation_step_degrees_max_proxy": 124.03196517287084,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.5089232978252123,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.0868924418745685
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 7.842210640362526,
+          "rotation_step_degrees_p95_proxy": 34.657030362898276,
+          "rotation_step_degrees_max_proxy": 124.03196517287084,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.324466568788544,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.8784624987689166
+        }
+      },
+      "candidate_npz_sha256": "447860b6c723fcec4a76cde5789523d7daa5ef21f8bec05cee8377af4b80f979"
+    },
+    "15": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000015",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000015/status.json",
+      "frames": 501,
+      "selected_smoothed_frames": 240,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 6.675267851781542,
+          "rotation_step_degrees_p95_proxy": 13.947432823830193,
+          "rotation_step_degrees_max_proxy": 178.33732254904723,
+          "rotation_jumps_over_45_degrees": 7,
+          "sampled_vertex_acceleration_cm_proxy": 1.7201827412356419,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.47066506243060996
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 6.675267851781542,
+          "rotation_step_degrees_p95_proxy": 13.947432823830193,
+          "rotation_step_degrees_max_proxy": 178.33732254904723,
+          "rotation_jumps_over_45_degrees": 7,
+          "sampled_vertex_acceleration_cm_proxy": 1.6442143316488633,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.3096666178926888
+        }
+      },
+      "candidate_npz_sha256": "368461b3e186df9832d11dcfa65cd68648d0a33b9084f5d2d6a7d76318c0b010"
+    },
+    "16": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000016",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000016/status.json",
+      "frames": 360,
+      "selected_smoothed_frames": 174,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 6.869586801549116,
+          "rotation_step_degrees_p95_proxy": 20.937863327038954,
+          "rotation_step_degrees_max_proxy": 97.47162789350634,
+          "rotation_jumps_over_45_degrees": 6,
+          "sampled_vertex_acceleration_cm_proxy": 1.536350695718709,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.4174616354248891
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 6.869586801549116,
+          "rotation_step_degrees_p95_proxy": 20.937863327038954,
+          "rotation_step_degrees_max_proxy": 97.47162789350634,
+          "rotation_jumps_over_45_degrees": 6,
+          "sampled_vertex_acceleration_cm_proxy": 1.5177343895327449,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.37479922013180983
+        }
+      },
+      "candidate_npz_sha256": "499d9ad7ac3af7f9a80c6e19b0a11d657451abfbd1a27d9fc4f7a688e9ab9184"
+    },
+    "17": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000017",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000017/status.json",
+      "frames": 419,
+      "selected_smoothed_frames": 243,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 4.886778043645617,
+          "rotation_step_degrees_p95_proxy": 13.11776685470391,
+          "rotation_step_degrees_max_proxy": 150.59473761343588,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.5751101522203308,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.5705440229988453
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 4.886778043645617,
+          "rotation_step_degrees_p95_proxy": 13.11776685470391,
+          "rotation_step_degrees_max_proxy": 150.59473761343588,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.481326705424862,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.3884715453140184
+        }
+      },
+      "candidate_npz_sha256": "ec55a3e61399d07d948c722dcd60d05a977dda57241ee8dd11fc43d420dcef50"
+    },
+    "18": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000018",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000018/status.json",
+      "frames": 535,
+      "selected_smoothed_frames": 337,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 19.164692058470834,
+          "rotation_step_degrees_p95_proxy": 175.23098178744223,
+          "rotation_step_degrees_max_proxy": 179.98444756566101,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 5.5753569987291645,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.0897525817704312
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 19.164692058470834,
+          "rotation_step_degrees_p95_proxy": 175.23098178744223,
+          "rotation_step_degrees_max_proxy": 179.98444756566101,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 5.434273061491555,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.7639357856626812
+        }
+      },
+      "candidate_npz_sha256": "84eae945609f83d2c83a7a8e9e51c531e282e9ba085d7733dff700016b78dce5"
+    },
+    "19": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000019",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000019/status.json",
+      "frames": 443,
+      "selected_smoothed_frames": 328,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 4.935237345434038,
+          "rotation_step_degrees_p95_proxy": 13.289527698060036,
+          "rotation_step_degrees_max_proxy": 126.40910213565715,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.8406609397994003,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.4145612441298087
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 4.935237345434038,
+          "rotation_step_degrees_p95_proxy": 13.289527698060036,
+          "rotation_step_degrees_max_proxy": 126.40910213565715,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.8039268224542895,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.31600569935794165
+        }
+      },
+      "candidate_npz_sha256": "5683097f062bc47232e0846863a16eae05df8e015f3fda9cf982d859b7f9fefa"
+    },
+    "20": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000020",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000020/status.json",
+      "frames": 549,
+      "selected_smoothed_frames": 365,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 3.7317936769871287,
+          "rotation_step_degrees_p95_proxy": 12.742376864583294,
+          "rotation_step_degrees_max_proxy": 111.44598149151004,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.5230679484337497,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.4720621239813993
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 3.7317936769871287,
+          "rotation_step_degrees_p95_proxy": 12.742376864583294,
+          "rotation_step_degrees_max_proxy": 111.44598149151004,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.4938178234602009,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.4209897563485327
+        }
+      },
+      "candidate_npz_sha256": "540e5acc58bb31712c9c7a629c612be516622655f7268b79a3784dd8092d4d06"
+    },
+    "21": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000021",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000021/status.json",
+      "frames": 563,
+      "selected_smoothed_frames": 456,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 7.30547849987562,
+          "rotation_step_degrees_p95_proxy": 35.6297981790068,
+          "rotation_step_degrees_max_proxy": 82.38521372037368,
+          "rotation_jumps_over_45_degrees": 18,
+          "sampled_vertex_acceleration_cm_proxy": 1.1755676025795154,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.257197357524304
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 7.30547849987562,
+          "rotation_step_degrees_p95_proxy": 35.6297981790068,
+          "rotation_step_degrees_max_proxy": 82.38521372037368,
+          "rotation_jumps_over_45_degrees": 18,
+          "sampled_vertex_acceleration_cm_proxy": 1.154590717646165,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.21733937680749735
+        }
+      },
+      "candidate_npz_sha256": "0228049155e7020b3c9494a05cdb126cf0b2be917a5fa3d8c12b38a918458968"
+    },
+    "22": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000022",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000022/status.json",
+      "frames": 533,
+      "selected_smoothed_frames": 221,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 9.061628421355694,
+          "rotation_step_degrees_p95_proxy": 48.62771673275608,
+          "rotation_step_degrees_max_proxy": 177.01038101046652,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.2386260624237755,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 1.2792180483605622
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 9.061628421355694,
+          "rotation_step_degrees_p95_proxy": 48.62771673275608,
+          "rotation_step_degrees_max_proxy": 177.01038101046652,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 1.9081203820655974,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.8720897347913759
+        }
+      },
+      "candidate_npz_sha256": "8eb41cb6e05c479700928367ebdeca74150d244cc0285b6f77a7d31e3679f17b"
+    },
+    "23": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000023",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000023/status.json",
+      "frames": 552,
+      "selected_smoothed_frames": 426,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 8.557250445000241,
+          "rotation_step_degrees_p95_proxy": 49.00071514467634,
+          "rotation_step_degrees_max_proxy": 85.94618578356719,
+          "rotation_jumps_over_45_degrees": 30,
+          "sampled_vertex_acceleration_cm_proxy": 1.5224236170369947,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.22299320668717668
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 8.557250445000241,
+          "rotation_step_degrees_p95_proxy": 49.00071514467634,
+          "rotation_step_degrees_max_proxy": 85.94618578356719,
+          "rotation_jumps_over_45_degrees": 30,
+          "sampled_vertex_acceleration_cm_proxy": 1.5078492817863236,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.1854933227897051
+        }
+      },
+      "candidate_npz_sha256": "972110a6e71a56c5ee65354a821f0b293c42eb8694aee2385b7cd46dbe531025"
+    },
+    "24": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000024",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000024/status.json",
+      "frames": 420,
+      "selected_smoothed_frames": 299,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.48148505359093297,
+          "rotation_step_degrees_p95_proxy": 1.0767642777036406,
+          "rotation_step_degrees_max_proxy": 2.6464626257359725,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.5292409573415797,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.45237852476460855
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.48148505359093297,
+          "rotation_step_degrees_p95_proxy": 1.0767642777036406,
+          "rotation_step_degrees_max_proxy": 2.6464626257359725,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.35752979188646433,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.2387228749073303
+        }
+      },
+      "candidate_npz_sha256": "d901d22974a18e5c2f56b60d66d8bf363e93e11de02fe3294a297f175d1b800e"
+    },
+    "25": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000025",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000025/status.json",
+      "frames": 365,
+      "selected_smoothed_frames": 180,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 5.929148223733091,
+          "rotation_step_degrees_p95_proxy": 5.91813486479413,
+          "rotation_step_degrees_max_proxy": 179.88249360211972,
+          "rotation_jumps_over_45_degrees": 10,
+          "sampled_vertex_acceleration_cm_proxy": 2.632051014028553,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.5691519362127829
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 5.929148223733091,
+          "rotation_step_degrees_p95_proxy": 5.91813486479413,
+          "rotation_step_degrees_max_proxy": 179.88249360211972,
+          "rotation_jumps_over_45_degrees": 10,
+          "sampled_vertex_acceleration_cm_proxy": 2.546133428006232,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.43280380233455157
+        }
+      },
+      "candidate_npz_sha256": "fad94f10699b35310b2531f70113f06f79303ce4ebb793a820e8150146a98d59"
+    },
+    "26": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000026",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000026/status.json",
+      "frames": 399,
+      "selected_smoothed_frames": 259,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 2.325458173298037,
+          "rotation_step_degrees_p95_proxy": 3.0143826392165742,
+          "rotation_step_degrees_max_proxy": 179.91625108210064,
+          "rotation_jumps_over_45_degrees": 3,
+          "sampled_vertex_acceleration_cm_proxy": 1.51169579050997,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.7499235829004304
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 2.325458173298037,
+          "rotation_step_degrees_p95_proxy": 3.0143826392165742,
+          "rotation_step_degrees_max_proxy": 179.91625108210064,
+          "rotation_jumps_over_45_degrees": 3,
+          "sampled_vertex_acceleration_cm_proxy": 1.2971207441705512,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.3980439184432962
+        }
+      },
+      "candidate_npz_sha256": "aa64165bfc3973462f8adc3319ecc88f85ebff90d2fb7cb04476f29428dfa4c4"
+    },
+    "27": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000027",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000027/status.json",
+      "frames": 440,
+      "selected_smoothed_frames": 210,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 2.383432166966219,
+          "rotation_step_degrees_p95_proxy": 4.628790303617501,
+          "rotation_step_degrees_max_proxy": 177.53253493927144,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.5474112921384753,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.7925710339824601
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 2.383432166966219,
+          "rotation_step_degrees_p95_proxy": 4.628790303617501,
+          "rotation_step_degrees_max_proxy": 177.53253493927144,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.3979783075204195,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.5446669664096739
+        }
+      },
+      "candidate_npz_sha256": "f0578af360f3ec87c91772ba05dd166b115af0015f3ad925eace929b686c1e6e"
+    },
+    "28": {
+      "state": "COMPLETE",
+      "verdict": "RETAIN_V6",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000028",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000028/status.json",
+      "frames": 366,
+      "selected_smoothed_frames": 188,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 2.7570094183850866,
+          "rotation_step_degrees_p95_proxy": 3.079787305647145,
+          "rotation_step_degrees_max_proxy": 176.31900537532394,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.8034306278195904,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.9663893574198194
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 2.7570094183850866,
+          "rotation_step_degrees_p95_proxy": 3.079787305647145,
+          "rotation_step_degrees_max_proxy": 176.31900537532394,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.7337384315443045,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.803364092501444
+        }
+      },
+      "candidate_npz_sha256": "16ae1bf13e7d2e7232289fabe87854f27e36a4a7ef3e7b043a3139292e78d8f9"
+    },
+    "29": {
+      "state": "COMPLETE",
+      "verdict": "LOCAL_PASS",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000029",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000029/status.json",
+      "frames": 419,
+      "selected_smoothed_frames": 158,
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.9426128532379318,
+          "rotation_step_degrees_p95_proxy": 1.9550810788975892,
+          "rotation_step_degrees_max_proxy": 3.498552724124301,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.7213327162109819,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.4067485487148939
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.9426128532379318,
+          "rotation_step_degrees_p95_proxy": 1.9550810788975892,
+          "rotation_step_degrees_max_proxy": 3.498552724124301,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.6703172409064089,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.2991446878793255
+        }
+      },
+      "candidate_npz_sha256": "fe29de1000ab7b19aaf41e1d9dd608df7092e1a29d928215b655bb301a3625c8"
+    }
+  },
+  "uploaded": false,
+  "hand_review_scope": "Exact all-video-frame finite-option mesh checks reused after path selection; no independent rerender claim.",
+  "updated_utc": "2026-10-15T16:00:04.110540+00:00",
+  "local_pass": [
+    1,
+    2,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    14,
+    17,
+    22,
+    24,
+    26,
+    27,
+    29
+  ],
+  "retained_v6": [
+    0,
+    3,
+    4,
+    5,
+    13,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    28
+  ],
+  "source_hashes_preserved": true
+}

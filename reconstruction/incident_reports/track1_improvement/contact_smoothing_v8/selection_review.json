@@ -1,0 +1,1541 @@
+{
+  "state": "COMPLETE",
+  "episodes": {
+    "0": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000000",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000000/status.json",
+      "status_sha256": "b84a44dbfa5a30a6c13ab965a445ff9e05917cd6fb863182ee1df992e41bed98",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 157,
+          "translation_acceleration_cm_proxy": 0.6154102031151728,
+          "sampled_vertex_acceleration_cm_proxy": 2.923388143159448,
+          "sampled_vertex_count": 1020
+        },
+        "candidate": {
+          "consecutive_scored_triples": 157,
+          "translation_acceleration_cm_proxy": 0.30472051186508,
+          "sampled_vertex_acceleration_cm_proxy": 2.8200725521710686,
+          "sampled_vertex_count": 1020
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 8.705747898237437,
+          "rotation_step_degrees_p95_proxy": 23.327374282687863,
+          "rotation_step_degrees_max_proxy": 179.02852248883127,
+          "rotation_jumps_over_45_degrees": 16,
+          "sampled_vertex_acceleration_cm_proxy": 5.514188040726506,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 1.1748104213603643
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 8.705747898237437,
+          "rotation_step_degrees_p95_proxy": 23.327374282687863,
+          "rotation_step_degrees_max_proxy": 179.02852248883127,
+          "rotation_jumps_over_45_degrees": 16,
+          "sampled_vertex_acceleration_cm_proxy": 5.354955448689015,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.7445186191150138
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "807c5da11c2679a2bfb495fc2ab663a2aa9164001a8afac7d70253509f488197",
+      "candidate_mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "1": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000001",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000001/status.json",
+      "status_sha256": "f4b0c0ebf2c3056bdbe5bd4112c73e6d617d23cb194326961385d82f9a35da83",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 162,
+          "translation_acceleration_cm_proxy": 0.7630526435675165,
+          "sampled_vertex_acceleration_cm_proxy": 0.7928635469796654,
+          "sampled_vertex_count": 1020
+        },
+        "candidate": {
+          "consecutive_scored_triples": 162,
+          "translation_acceleration_cm_proxy": 0.65979650401868,
+          "sampled_vertex_acceleration_cm_proxy": 0.6910406366458671,
+          "sampled_vertex_count": 1020
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 1.3076599537142413,
+          "rotation_step_degrees_p95_proxy": 5.205463304077711,
+          "rotation_step_degrees_max_proxy": 18.245762985953544,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.5833832415065352,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.49368084180837196
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 1.3076599537142413,
+          "rotation_step_degrees_p95_proxy": 5.205463304077711,
+          "rotation_step_degrees_max_proxy": 18.245762985953544,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.5134634316094253,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.4171875857001288
+        }
+      },
+      "reason": "Inspected six hula-hoop views spanning held, stepping-through and bent poses. The v6 circular geometry and orientation are preserved; small contour translations retain comparable observed arcs and hand/body relationship. Occluded portions cannot establish depth accuracy, but no gross new drift is visible.",
+      "candidate_npz_sha256": "4c9909124ea7498f0755ca9088e7d3524d1784076068f1e529681c0cf7bbce48",
+      "candidate_mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "2": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000002",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000002/status.json",
+      "status_sha256": "ab9e3934a9374c09cbe753f907b89880b71102e5a3f50be8fa1f2140480abea3",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 78,
+          "translation_acceleration_cm_proxy": 0.45735326828809714,
+          "sampled_vertex_acceleration_cm_proxy": 0.4770182023321386,
+          "sampled_vertex_count": 1020
+        },
+        "candidate": {
+          "consecutive_scored_triples": 78,
+          "translation_acceleration_cm_proxy": 0.3496019578492814,
+          "sampled_vertex_acceleration_cm_proxy": 0.37344733999063917,
+          "sampled_vertex_count": 1020
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 1.6769802734639991,
+          "rotation_step_degrees_p95_proxy": 8.506748335404785,
+          "rotation_step_degrees_max_proxy": 27.797305021203222,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.9170188888219654,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.7951555473230849
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 1.6769802734639991,
+          "rotation_step_degrees_p95_proxy": 8.506748335404785,
+          "rotation_step_degrees_max_proxy": 27.797305021203222,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.8097682680403941,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.669339512473673
+        }
+      },
+      "reason": "Inspected six hoop views including held poses, lowering and the final ground-level ring. Projected arcs, extent and body/hand relationship remain comparable to v6, with minor contour shifts and inherited mismatch. No gross new drift or ring-size change is visible.",
+      "candidate_npz_sha256": "297b2af37ed1aa29dfedafcd290dd7d7f2aedaeb5e7994de5f61ea3084f4d73f",
+      "candidate_mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d"
+    },
+    "3": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000003",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000003/status.json",
+      "status_sha256": "4f0441f5dfdbb1521205a3be4a38d7694d201dc2579c3455b836752ecbec90bb",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 326,
+          "translation_acceleration_cm_proxy": 0.5429504544093992,
+          "sampled_vertex_acceleration_cm_proxy": 3.589215705728615,
+          "sampled_vertex_count": 1024
+        },
+        "candidate": {
+          "consecutive_scored_triples": 326,
+          "translation_acceleration_cm_proxy": 0.41045898141398074,
+          "sampled_vertex_acceleration_cm_proxy": 3.559287559214467,
+          "sampled_vertex_count": 1024
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 9.94303236484877,
+          "rotation_step_degrees_p95_proxy": 33.16865204034508,
+          "rotation_step_degrees_max_proxy": 173.72251087212157,
+          "rotation_jumps_over_45_degrees": 20,
+          "sampled_vertex_acceleration_cm_proxy": 2.633594874282652,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.4959711764270805
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 9.94303236484877,
+          "rotation_step_degrees_p95_proxy": 33.16865204034508,
+          "rotation_step_degrees_max_proxy": 173.72251087212157,
+          "rotation_jumps_over_45_degrees": 20,
+          "sampled_vertex_acceleration_cm_proxy": 2.571617298600632,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.32167330522615634
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "c604d502786e051984b1cad3ac4a5f2cd863b98473f97e1e93e66eb5a12c06fc",
+      "candidate_mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370"
+    },
+    "4": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000004",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000004/status.json",
+      "status_sha256": "1f891566c54c29d574e887dc31ce975dd70e96cd1731409e6286d236f1699e9e",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 515,
+          "translation_acceleration_cm_proxy": 0.8775560070655523,
+          "sampled_vertex_acceleration_cm_proxy": 2.8927361319664446,
+          "sampled_vertex_count": 1024
+        },
+        "candidate": {
+          "consecutive_scored_triples": 515,
+          "translation_acceleration_cm_proxy": 0.700036143630459,
+          "sampled_vertex_acceleration_cm_proxy": 2.800904331817434,
+          "sampled_vertex_count": 1024
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 13.046574070200602,
+          "rotation_step_degrees_p95_proxy": 41.28288709155707,
+          "rotation_step_degrees_max_proxy": 131.84866447134613,
+          "rotation_jumps_over_45_degrees": 25,
+          "sampled_vertex_acceleration_cm_proxy": 3.179105223578009,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.948588161158979
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 13.046574070200602,
+          "rotation_step_degrees_p95_proxy": 41.28288709155707,
+          "rotation_step_degrees_max_proxy": 131.84866447134613,
+          "rotation_jumps_over_45_degrees": 25,
+          "sampled_vertex_acceleration_cm_proxy": 3.026759814028562,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.6280047045253555
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "3ab8b6c873a33946b6f123a821760207296bfb36599458b55d8ac0cfcd2ba311",
+      "candidate_mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370"
+    },
+    "5": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000005",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000005/status.json",
+      "status_sha256": "4515755e5c6360def73362e74e2c2c044778087f904c48f12d129a05460847a4",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 400,
+          "translation_acceleration_cm_proxy": 0.5615632970410611,
+          "sampled_vertex_acceleration_cm_proxy": 3.461737961216228,
+          "sampled_vertex_count": 1024
+        },
+        "candidate": {
+          "consecutive_scored_triples": 400,
+          "translation_acceleration_cm_proxy": 0.4146256090136569,
+          "sampled_vertex_acceleration_cm_proxy": 3.4214627290677297,
+          "sampled_vertex_count": 1024
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 11.449143980200029,
+          "rotation_step_degrees_p95_proxy": 44.10099907256161,
+          "rotation_step_degrees_max_proxy": 168.05116406757423,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.842218232356458,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.5727147800362427
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 11.449143980200029,
+          "rotation_step_degrees_p95_proxy": 44.10099907256161,
+          "rotation_step_degrees_max_proxy": 168.05116406757423,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.769765917198531,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.37088979340866796
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "8f4a2a30bdc809497522d10bd60dc5616c609c2ccba5df7648e97ad82223696b",
+      "candidate_mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370"
+    },
+    "6": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000006",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000006/status.json",
+      "status_sha256": "13c1476f88e391f0e799f9d5ed0c2ea5989605f5836055fa8fb56951e1b477bc",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 634,
+          "translation_acceleration_cm_proxy": 0.8100094456903231,
+          "sampled_vertex_acceleration_cm_proxy": 1.7211765324846788,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 634,
+          "translation_acceleration_cm_proxy": 0.5516729201038876,
+          "sampled_vertex_acceleration_cm_proxy": 1.549129681859226,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 7.10468175884606,
+          "rotation_step_degrees_p95_proxy": 11.845443419350016,
+          "rotation_step_degrees_max_proxy": 179.07453933589719,
+          "rotation_jumps_over_45_degrees": 22,
+          "sampled_vertex_acceleration_cm_proxy": 1.6040086033046206,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.7627159567420114
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 7.10468175884606,
+          "rotation_step_degrees_p95_proxy": 11.845443419350016,
+          "rotation_step_degrees_max_proxy": 179.07453933589719,
+          "rotation_jumps_over_45_degrees": 22,
+          "sampled_vertex_acceleration_cm_proxy": 1.4258173217478771,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.4952557756722194
+        }
+      },
+      "reason": "Inspected six iron views on the table, tilted in hand and upright. Footprint and visible hand relationship remain comparable to v6; small contour translations introduce no gross new tabletop-placement or grasp displacement.",
+      "candidate_npz_sha256": "9dbf5bb81ccfce1c7ac840c2bd85acad6a047fde1edfa0fb0cafecafef36b783",
+      "candidate_mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a"
+    },
+    "7": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/episode7_contact_smoothing/episode_000007",
+      "status": "incident_reports/track1_improvement/episode7_contact_smoothing/status.json",
+      "status_sha256": "7258d888fdd68dc4347a02988c8d2e7a886671faf82178eb8647ecf520193737",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 595,
+          "translation_acceleration_cm_proxy": 1.8106213864433043,
+          "sampled_vertex_acceleration_cm_proxy": 3.9480599190449515,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 595,
+          "translation_acceleration_cm_proxy": 1.437432270698286,
+          "sampled_vertex_acceleration_cm_proxy": 3.68958370222127,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 14.171884344802915,
+          "rotation_step_degrees_p95_proxy": 127.85306535668177,
+          "rotation_step_degrees_max_proxy": 179.94956331915697,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 3.4662265677921895,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.7655030142281938
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 14.171884344802915,
+          "rotation_step_degrees_p95_proxy": 127.85306535668177,
+          "rotation_step_degrees_max_proxy": 179.94956331915697,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 3.0531950342218566,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.229680903365094
+        }
+      },
+      "reason": "Reuse completed six-frame source and exact-video visual review; original full videos decoded at 777 frames.",
+      "candidate_npz_sha256": "d04aa53e899734c40d2304c4714fdb7d546b3c889389ba77a3781178600ce87c",
+      "candidate_mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a"
+    },
+    "8": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000008",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000008/status.json",
+      "status_sha256": "1c889b61f0abb8b3d15bab52a32235738e29afad1031652fe94d0e5f77b6fc2f",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 452,
+          "translation_acceleration_cm_proxy": 1.8103620567413978,
+          "sampled_vertex_acceleration_cm_proxy": 3.6928084154301786,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 452,
+          "translation_acceleration_cm_proxy": 1.5075104670239072,
+          "sampled_vertex_acceleration_cm_proxy": 3.4344154426350437,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 12.009649435384949,
+          "rotation_step_degrees_p95_proxy": 55.08975431695168,
+          "rotation_step_degrees_max_proxy": 179.84944271792003,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 3.081620073854462,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.5881623488104593
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 12.009649435384949,
+          "rotation_step_degrees_p95_proxy": 55.08975431695168,
+          "rotation_step_degrees_max_proxy": 179.84944271792003,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.748800347664506,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 1.1888332742624759
+        }
+      },
+      "reason": "Inspected six floor-level iron views while upright and tilted under the hand. Object extent and hand relationship remain comparable to v6; small contour shifts introduce no gross floor-placement or grasp displacement in these samples.",
+      "candidate_npz_sha256": "003f72967dfc30f4647d6cc62686d1bbca782b4c429ec058d710d22bc8e53ffd",
+      "candidate_mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a"
+    },
+    "9": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000009",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000009/status.json",
+      "status_sha256": "6c34687d34443851b61de5fa55745f7603752d12624e1221c63a8b22ffa2f4d5",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 323,
+          "translation_acceleration_cm_proxy": 0.635188088999946,
+          "sampled_vertex_acceleration_cm_proxy": 1.0011403371774579,
+          "sampled_vertex_count": 1019
+        },
+        "candidate": {
+          "consecutive_scored_triples": 323,
+          "translation_acceleration_cm_proxy": 0.48711484303471386,
+          "sampled_vertex_acceleration_cm_proxy": 0.9319319070405205,
+          "sampled_vertex_count": 1019
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.7998687009615294,
+          "rotation_step_degrees_p95_proxy": 1.8139039098450986,
+          "rotation_step_degrees_max_proxy": 8.066699856051423,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 1.039485520480685,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.7165749100003381
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.7998687009615294,
+          "rotation_step_degrees_p95_proxy": 1.8139039098450986,
+          "rotation_step_degrees_max_proxy": 8.066699856051423,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.9475924701591716,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.5289881734569118
+        }
+      },
+      "reason": "Inspected six desk views through lift, rotation and held positions. Projected tabletop/leg extent and observed grip remain comparable to v6, with small outline offsets shared by both versions and no gross new drift.",
+      "candidate_npz_sha256": "57b0b9925e4c417111315a52f7a29543986d38fa777d31041c8370cdb78b211d",
+      "candidate_mesh_sha256": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19"
+    },
+    "10": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000010",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000010/status.json",
+      "status_sha256": "4e609ee1605be78d265592b287b1c1e5325496fe48933a142b121fc12462bfc1",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 416,
+          "translation_acceleration_cm_proxy": 0.4653472578652498,
+          "sampled_vertex_acceleration_cm_proxy": 0.7936136203508972,
+          "sampled_vertex_count": 1019
+        },
+        "candidate": {
+          "consecutive_scored_triples": 416,
+          "translation_acceleration_cm_proxy": 0.36349263389740444,
+          "sampled_vertex_acceleration_cm_proxy": 0.7576794983719889,
+          "sampled_vertex_count": 1019
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.5709594503974544,
+          "rotation_step_degrees_p95_proxy": 1.2756732821870551,
+          "rotation_step_degrees_max_proxy": 2.6760293682168106,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.8411845132216045,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.5651717896430234
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.5709594503974544,
+          "rotation_step_degrees_p95_proxy": 1.2756732821870551,
+          "rotation_step_degrees_max_proxy": 2.6760293682168106,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.7334925450382573,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.3695258747618675
+        }
+      },
+      "reason": "No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "5a5503e33a6636d677fd6e4d822c4e51a33882710468acd4ec738280d84e70f4",
+      "candidate_mesh_sha256": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19"
+    },
+    "11": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000011",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000011/status.json",
+      "status_sha256": "0187d8af1485840338c096c3c02074eee95481e0d646d95ce1f55a329bd58c8d",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 801,
+          "translation_acceleration_cm_proxy": 1.0459365678632995,
+          "sampled_vertex_acceleration_cm_proxy": 1.7788192124375386,
+          "sampled_vertex_count": 1019
+        },
+        "candidate": {
+          "consecutive_scored_triples": 801,
+          "translation_acceleration_cm_proxy": 0.6522120285539453,
+          "sampled_vertex_acceleration_cm_proxy": 1.545359585328552,
+          "sampled_vertex_count": 1019
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 1.2223401745195763,
+          "rotation_step_degrees_p95_proxy": 2.0366537669997515,
+          "rotation_step_degrees_max_proxy": 110.90332502760886,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.7108067947531331,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 1.0285975842165098
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 1.2223401745195763,
+          "rotation_step_degrees_p95_proxy": 2.0366537669997515,
+          "rotation_step_degrees_max_proxy": 110.90332502760886,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.461552777094612,
+          "sampled_vertex_count": 1019,
+          "translation_acceleration_cm_proxy": 0.6273297234829689
+        }
+      },
+      "reason": "Inspected six desk views through upright motion and the final tip onto its side. Tabletop, legs and observed hand positions remain comparable to v6. The inherited leg/outline overshoot is present in both versions; no gross new floor-height or grip change is visible.",
+      "candidate_npz_sha256": "1f7fcd2f271dbebb59ceaa6412782c441b033c05fda17ca96d05e244906f5d83",
+      "candidate_mesh_sha256": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19"
+    },
+    "12": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000012",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000012/status.json",
+      "status_sha256": "c56b10765fe92d5994c5347ca159ef6950f06fa946e74d7f795f551118fa8c14",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 199,
+          "translation_acceleration_cm_proxy": 1.2771688161675665,
+          "sampled_vertex_acceleration_cm_proxy": 2.868537397336074,
+          "sampled_vertex_count": 1023
+        },
+        "candidate": {
+          "consecutive_scored_triples": 199,
+          "translation_acceleration_cm_proxy": 1.1298062071580537,
+          "sampled_vertex_acceleration_cm_proxy": 2.755805653567881,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 8.995696215914531,
+          "rotation_step_degrees_p95_proxy": 39.76757172623949,
+          "rotation_step_degrees_max_proxy": 104.62166922158009,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.759420874358675,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.192151649067722
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 8.995696215914531,
+          "rotation_step_degrees_p95_proxy": 39.76757172623949,
+          "rotation_step_degrees_max_proxy": 104.62166922158009,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.61966093539191,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.0298499453173862
+        }
+      },
+      "reason": "No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "7af78096554357e18e46dfe903fcdba04b247977817572db5cbb9a4e37a9ecff",
+      "candidate_mesh_sha256": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b"
+    },
+    "13": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000013",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000013/status.json",
+      "status_sha256": "b532ca2189a124ab324fce239208f5b081cda1e80975707c6dbd6c1db9ece50f",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 98,
+          "translation_acceleration_cm_proxy": 1.9637143026966268,
+          "sampled_vertex_acceleration_cm_proxy": 2.9753248411094755,
+          "sampled_vertex_count": 1023
+        },
+        "candidate": {
+          "consecutive_scored_triples": 98,
+          "translation_acceleration_cm_proxy": 1.922628582072536,
+          "sampled_vertex_acceleration_cm_proxy": 2.9611474191204348,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 15.172383598886464,
+          "rotation_step_degrees_p95_proxy": 133.60422122465948,
+          "rotation_step_degrees_max_proxy": 179.71419404779604,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 3.4781651759060317,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 2.2732320979015226
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 15.172383598886464,
+          "rotation_step_degrees_p95_proxy": 133.60422122465948,
+          "rotation_step_degrees_max_proxy": 179.71419404779604,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 3.366535046159985,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 2.0896859301486472
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "26c12177dbd524af4ad09823aa57787b383acf43165e160c0a96e29afc21721c",
+      "candidate_mesh_sha256": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b"
+    },
+    "14": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000014",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000014/status.json",
+      "status_sha256": "e1b79835667144fd2872209536f1efaebe70d0361e5d2a5bde546a9f8258b91e",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 75,
+          "translation_acceleration_cm_proxy": 0.7428498574667759,
+          "sampled_vertex_acceleration_cm_proxy": 2.1670420005683555,
+          "sampled_vertex_count": 1023
+        },
+        "candidate": {
+          "consecutive_scored_triples": 75,
+          "translation_acceleration_cm_proxy": 0.5012485523828433,
+          "sampled_vertex_acceleration_cm_proxy": 1.9525463892399941,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 7.842210640362526,
+          "rotation_step_degrees_p95_proxy": 34.657030362898276,
+          "rotation_step_degrees_max_proxy": 124.03196517287084,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.5089232978252123,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.0868924418745685
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 7.842210640362526,
+          "rotation_step_degrees_p95_proxy": 34.657030362898276,
+          "rotation_step_degrees_max_proxy": 124.03196517287084,
+          "rotation_jumps_over_45_degrees": 14,
+          "sampled_vertex_acceleration_cm_proxy": 2.324466568788544,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.8784624987689166
+        }
+      },
+      "reason": "Inspected six pan views across tabletop, pickup and return. Small outline translations remain comparable to v6 and hand placement is coherent in visible samples. The inherited handle/outline mismatch is present in both versions; no gross new displacement or scale change is visible.",
+      "candidate_npz_sha256": "447860b6c723fcec4a76cde5789523d7daa5ef21f8bec05cee8377af4b80f979",
+      "candidate_mesh_sha256": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b"
+    },
+    "15": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000015",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000015/status.json",
+      "status_sha256": "1e8040a90c1f6e5ee694c70ec095d31df8d8366586bd7f62db7e902b8723987f",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 354,
+          "translation_acceleration_cm_proxy": 0.4461140200149188,
+          "sampled_vertex_acceleration_cm_proxy": 1.9530805496754053,
+          "sampled_vertex_count": 1020
+        },
+        "candidate": {
+          "consecutive_scored_triples": 354,
+          "translation_acceleration_cm_proxy": 0.37303051918174174,
+          "sampled_vertex_acceleration_cm_proxy": 1.9243232795744252,
+          "sampled_vertex_count": 1020
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 6.675267851781542,
+          "rotation_step_degrees_p95_proxy": 13.947432823830193,
+          "rotation_step_degrees_max_proxy": 178.33732254904723,
+          "rotation_jumps_over_45_degrees": 7,
+          "sampled_vertex_acceleration_cm_proxy": 1.7201827412356419,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.47066506243060996
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 6.675267851781542,
+          "rotation_step_degrees_p95_proxy": 13.947432823830193,
+          "rotation_step_degrees_max_proxy": 178.33732254904723,
+          "rotation_jumps_over_45_degrees": 7,
+          "sampled_vertex_acceleration_cm_proxy": 1.6442143316488633,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.3096666178926888
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "368461b3e186df9832d11dcfa65cd68648d0a33b9084f5d2d6a7d76318c0b010",
+      "candidate_mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40"
+    },
+    "16": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000016",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000016/status.json",
+      "status_sha256": "616e97bcab6d6b8b9675e0c7a6e3bf53978119e5250311c9d3edefac7fb9061a",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 238,
+          "translation_acceleration_cm_proxy": 0.3761963039721759,
+          "sampled_vertex_acceleration_cm_proxy": 1.2952213131058699,
+          "sampled_vertex_count": 1020
+        },
+        "candidate": {
+          "consecutive_scored_triples": 238,
+          "translation_acceleration_cm_proxy": 0.3487607508945011,
+          "sampled_vertex_acceleration_cm_proxy": 1.2841959452807945,
+          "sampled_vertex_count": 1020
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 6.869586801549116,
+          "rotation_step_degrees_p95_proxy": 20.937863327038954,
+          "rotation_step_degrees_max_proxy": 97.47162789350634,
+          "rotation_jumps_over_45_degrees": 6,
+          "sampled_vertex_acceleration_cm_proxy": 1.536350695718709,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.4174616354248891
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 6.869586801549116,
+          "rotation_step_degrees_p95_proxy": 20.937863327038954,
+          "rotation_step_degrees_max_proxy": 97.47162789350634,
+          "rotation_jumps_over_45_degrees": 6,
+          "sampled_vertex_acceleration_cm_proxy": 1.5177343895327449,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.37479922013180983
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "499d9ad7ac3af7f9a80c6e19b0a11d657451abfbd1a27d9fc4f7a688e9ab9184",
+      "candidate_mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40"
+    },
+    "17": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000017",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000017/status.json",
+      "status_sha256": "ffb1613a19b1ecbd955a9c08597e52356f88bcebcac07d27b2b9617575022a50",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 275,
+          "translation_acceleration_cm_proxy": 0.6094276925589097,
+          "sampled_vertex_acceleration_cm_proxy": 1.9879721616370298,
+          "sampled_vertex_count": 1020
+        },
+        "candidate": {
+          "consecutive_scored_triples": 275,
+          "translation_acceleration_cm_proxy": 0.47666469066506134,
+          "sampled_vertex_acceleration_cm_proxy": 1.9377837716882864,
+          "sampled_vertex_count": 1020
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 4.886778043645617,
+          "rotation_step_degrees_p95_proxy": 13.11776685470391,
+          "rotation_step_degrees_max_proxy": 150.59473761343588,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.5751101522203308,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.5705440229988453
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 4.886778043645617,
+          "rotation_step_degrees_p95_proxy": 13.11776685470391,
+          "rotation_step_degrees_max_proxy": 150.59473761343588,
+          "rotation_jumps_over_45_degrees": 2,
+          "sampled_vertex_acceleration_cm_proxy": 1.481326705424862,
+          "sampled_vertex_count": 1020,
+          "translation_acceleration_cm_proxy": 0.3884715453140184
+        }
+      },
+      "reason": "No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "ec55a3e61399d07d948c722dcd60d05a977dda57241ee8dd11fc43d420dcef50",
+      "candidate_mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40"
+    },
+    "18": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000018",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000018/status.json",
+      "status_sha256": "294de507139c681d86cacb482f12bcaedba42fc4b493cfa2ceb998c38cf5e4c9",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 418,
+          "translation_acceleration_cm_proxy": 1.0206479831187012,
+          "sampled_vertex_acceleration_cm_proxy": 5.3239535237346525,
+          "sampled_vertex_count": 1023
+        },
+        "candidate": {
+          "consecutive_scored_triples": 418,
+          "translation_acceleration_cm_proxy": 0.7526248925249932,
+          "sampled_vertex_acceleration_cm_proxy": 5.239533544851735,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 19.164692058470834,
+          "rotation_step_degrees_p95_proxy": 175.23098178744223,
+          "rotation_step_degrees_max_proxy": 179.98444756566101,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 5.5753569987291645,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 1.0897525817704312
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 19.164692058470834,
+          "rotation_step_degrees_p95_proxy": 175.23098178744223,
+          "rotation_step_degrees_max_proxy": 179.98444756566101,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 5.434273061491555,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.7639357856626812
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "84eae945609f83d2c83a7a8e9e51c531e282e9ba085d7733dff700016b78dce5",
+      "candidate_mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279"
+    },
+    "19": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000019",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000019/status.json",
+      "status_sha256": "5903c7ad017e4b59287af947175543829b8c8a4866773e9a81810a4bf82a1c43",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 281,
+          "translation_acceleration_cm_proxy": 0.3948118210864308,
+          "sampled_vertex_acceleration_cm_proxy": 2.0325260225787516,
+          "sampled_vertex_count": 1023
+        },
+        "candidate": {
+          "consecutive_scored_triples": 281,
+          "translation_acceleration_cm_proxy": 0.32002267052616185,
+          "sampled_vertex_acceleration_cm_proxy": 2.0053014413360724,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 4.935237345434038,
+          "rotation_step_degrees_p95_proxy": 13.289527698060036,
+          "rotation_step_degrees_max_proxy": 126.40910213565715,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.8406609397994003,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.4145612441298087
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 4.935237345434038,
+          "rotation_step_degrees_p95_proxy": 13.289527698060036,
+          "rotation_step_degrees_max_proxy": 126.40910213565715,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.8039268224542895,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.31600569935794165
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "5683097f062bc47232e0846863a16eae05df8e015f3fda9cf982d859b7f9fefa",
+      "candidate_mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279"
+    },
+    "20": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000020",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000020/status.json",
+      "status_sha256": "f31c3b4fc812bde6647a34dc2d5221d106539519e577f7ac38f4daf5578b371e",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 371,
+          "translation_acceleration_cm_proxy": 0.46576562424500884,
+          "sampled_vertex_acceleration_cm_proxy": 1.5477860720199215,
+          "sampled_vertex_count": 1023
+        },
+        "candidate": {
+          "consecutive_scored_triples": 371,
+          "translation_acceleration_cm_proxy": 0.42535405287781236,
+          "sampled_vertex_acceleration_cm_proxy": 1.5254529404084003,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 3.7317936769871287,
+          "rotation_step_degrees_p95_proxy": 12.742376864583294,
+          "rotation_step_degrees_max_proxy": 111.44598149151004,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.5230679484337497,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.4720621239813993
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 3.7317936769871287,
+          "rotation_step_degrees_p95_proxy": 12.742376864583294,
+          "rotation_step_degrees_max_proxy": 111.44598149151004,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.4938178234602009,
+          "sampled_vertex_count": 1023,
+          "translation_acceleration_cm_proxy": 0.4209897563485327
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "540e5acc58bb31712c9c7a629c612be516622655f7268b79a3784dd8092d4d06",
+      "candidate_mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279"
+    },
+    "21": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000021",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000021/status.json",
+      "status_sha256": "2236985312426d4493c7645246e80ddc56d3ca9fc5c20e0d3502bba31ad9271f",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 345,
+          "translation_acceleration_cm_proxy": 0.2645169120836977,
+          "sampled_vertex_acceleration_cm_proxy": 1.4290347247242488,
+          "sampled_vertex_count": 1024
+        },
+        "candidate": {
+          "consecutive_scored_triples": 345,
+          "translation_acceleration_cm_proxy": 0.24342563866265327,
+          "sampled_vertex_acceleration_cm_proxy": 1.4204150064440155,
+          "sampled_vertex_count": 1024
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 7.30547849987562,
+          "rotation_step_degrees_p95_proxy": 35.6297981790068,
+          "rotation_step_degrees_max_proxy": 82.38521372037368,
+          "rotation_jumps_over_45_degrees": 18,
+          "sampled_vertex_acceleration_cm_proxy": 1.1755676025795154,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.257197357524304
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 7.30547849987562,
+          "rotation_step_degrees_p95_proxy": 35.6297981790068,
+          "rotation_step_degrees_max_proxy": 82.38521372037368,
+          "rotation_jumps_over_45_degrees": 18,
+          "sampled_vertex_acceleration_cm_proxy": 1.154590717646165,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.21733937680749735
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "0228049155e7020b3c9494a05cdb126cf0b2be917a5fa3d8c12b38a918458968",
+      "candidate_mesh_sha256": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584"
+    },
+    "22": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000022",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000022/status.json",
+      "status_sha256": "fce965648a4a1957045064d026c42b3161a3e622443b61b7504566ea46c8b5df",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 450,
+          "translation_acceleration_cm_proxy": 0.950253601030304,
+          "sampled_vertex_acceleration_cm_proxy": 2.0575174763995263,
+          "sampled_vertex_count": 1024
+        },
+        "candidate": {
+          "consecutive_scored_triples": 450,
+          "translation_acceleration_cm_proxy": 0.7267399364427707,
+          "sampled_vertex_acceleration_cm_proxy": 1.8944621047153993,
+          "sampled_vertex_count": 1024
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 9.061628421355694,
+          "rotation_step_degrees_p95_proxy": 48.62771673275608,
+          "rotation_step_degrees_max_proxy": 177.01038101046652,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 2.2386260624237755,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 1.2792180483605622
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 9.061628421355694,
+          "rotation_step_degrees_p95_proxy": 48.62771673275608,
+          "rotation_step_degrees_max_proxy": 177.01038101046652,
+          "rotation_jumps_over_45_degrees": 33,
+          "sampled_vertex_acceleration_cm_proxy": 1.9081203820655974,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.8720897347913759
+        }
+      },
+      "reason": "Inspected six roller views spanning the upright start and tabletop rolling. Projected cylinder extent, tabletop placement and visible hands remain comparable to v6; small contour shifts introduce no gross new drift in these samples.",
+      "candidate_npz_sha256": "8eb41cb6e05c479700928367ebdeca74150d244cc0285b6f77a7d31e3679f17b",
+      "candidate_mesh_sha256": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584"
+    },
+    "23": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000023",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000023/status.json",
+      "status_sha256": "5a3c248556e3e94b67cd2c40ff7c97ff1cdc6c9526ef888f90fc312d3b39fe51",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 397,
+          "translation_acceleration_cm_proxy": 0.2282057227622704,
+          "sampled_vertex_acceleration_cm_proxy": 1.1232845699104548,
+          "sampled_vertex_count": 1024
+        },
+        "candidate": {
+          "consecutive_scored_triples": 397,
+          "translation_acceleration_cm_proxy": 0.20249320689809647,
+          "sampled_vertex_acceleration_cm_proxy": 1.111506990174524,
+          "sampled_vertex_count": 1024
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 8.557250445000241,
+          "rotation_step_degrees_p95_proxy": 49.00071514467634,
+          "rotation_step_degrees_max_proxy": 85.94618578356719,
+          "rotation_jumps_over_45_degrees": 30,
+          "sampled_vertex_acceleration_cm_proxy": 1.5224236170369947,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.22299320668717668
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 8.557250445000241,
+          "rotation_step_degrees_p95_proxy": 49.00071514467634,
+          "rotation_step_degrees_max_proxy": 85.94618578356719,
+          "rotation_jumps_over_45_degrees": 30,
+          "sampled_vertex_acceleration_cm_proxy": 1.5078492817863236,
+          "sampled_vertex_count": 1024,
+          "translation_acceleration_cm_proxy": 0.1854933227897051
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "972110a6e71a56c5ee65354a821f0b293c42eb8694aee2385b7cd46dbe531025",
+      "candidate_mesh_sha256": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584"
+    },
+    "24": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000024",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000024/status.json",
+      "status_sha256": "429875632c8ec56fd34bcc217f616dc40ce15dc5fd3239a3a52a7572a3598ead",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 240,
+          "translation_acceleration_cm_proxy": 0.4338453881445691,
+          "sampled_vertex_acceleration_cm_proxy": 0.5385754911560664,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 240,
+          "translation_acceleration_cm_proxy": 0.2712396858135748,
+          "sampled_vertex_acceleration_cm_proxy": 0.42514384909368275,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.48148505359093297,
+          "rotation_step_degrees_p95_proxy": 1.0767642777036406,
+          "rotation_step_degrees_max_proxy": 2.6464626257359725,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.5292409573415797,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.45237852476460855
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.48148505359093297,
+          "rotation_step_degrees_p95_proxy": 1.0767642777036406,
+          "rotation_step_degrees_max_proxy": 2.6464626257359725,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.35752979188646433,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.2387228749073303
+        }
+      },
+      "reason": "Inspected six stool views before sitting, while seated and during the final bend. Footprint and stool/person relationship remain comparable to v6, with small contour shifts and inherited outline mismatch. No gross new displacement or apparent seat-height change in these samples.",
+      "candidate_npz_sha256": "d901d22974a18e5c2f56b60d66d8bf363e93e11de02fe3294a297f175d1b800e",
+      "candidate_mesh_sha256": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1"
+    },
+    "25": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000025",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000025/status.json",
+      "status_sha256": "5e8cd2a7ad7543c7a9e62801d3b0065e46eecaf9b3aa4849ff989d80fdfeb55c",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 217,
+          "translation_acceleration_cm_proxy": 0.7151669415993512,
+          "sampled_vertex_acceleration_cm_proxy": 4.125842613575569,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 217,
+          "translation_acceleration_cm_proxy": 0.6217903156794381,
+          "sampled_vertex_acceleration_cm_proxy": 4.089727388523743,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 5.929148223733091,
+          "rotation_step_degrees_p95_proxy": 5.91813486479413,
+          "rotation_step_degrees_max_proxy": 179.88249360211972,
+          "rotation_jumps_over_45_degrees": 10,
+          "sampled_vertex_acceleration_cm_proxy": 2.632051014028553,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.5691519362127829
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 5.929148223733091,
+          "rotation_step_degrees_p95_proxy": 5.91813486479413,
+          "rotation_step_degrees_max_proxy": 179.88249360211972,
+          "rotation_jumps_over_45_degrees": 10,
+          "sampled_vertex_acceleration_cm_proxy": 2.546133428006232,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.43280380233455157
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "fad94f10699b35310b2531f70113f06f79303ce4ebb793a820e8150146a98d59",
+      "candidate_mesh_sha256": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1"
+    },
+    "26": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000026",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000026/status.json",
+      "status_sha256": "d4c07a965600ffde20f219f7c01cd2c4e000b2d707f65b3cb6843a8dad90650c",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 279,
+          "translation_acceleration_cm_proxy": 0.8495276310417164,
+          "sampled_vertex_acceleration_cm_proxy": 1.4918584301645308,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 279,
+          "translation_acceleration_cm_proxy": 0.47384754564451725,
+          "sampled_vertex_acceleration_cm_proxy": 1.275826044418454,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 2.325458173298037,
+          "rotation_step_degrees_p95_proxy": 3.0143826392165742,
+          "rotation_step_degrees_max_proxy": 179.91625108210064,
+          "rotation_jumps_over_45_degrees": 3,
+          "sampled_vertex_acceleration_cm_proxy": 1.51169579050997,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.7499235829004304
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 2.325458173298037,
+          "rotation_step_degrees_p95_proxy": 3.0143826392165742,
+          "rotation_step_degrees_max_proxy": 179.91625108210064,
+          "rotation_jumps_over_45_degrees": 3,
+          "sampled_vertex_acceleration_cm_proxy": 1.2971207441705512,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.3980439184432962
+        }
+      },
+      "reason": "Inspected six matching source close-ups. Projected size and stool/person relationship remain comparable to v6 through standing, seated and floor views. The inherited stool-outline mismatch remains; the candidate does not introduce a gross new drift.",
+      "candidate_npz_sha256": "aa64165bfc3973462f8adc3319ecc88f85ebff90d2fb7cb04476f29428dfa4c4",
+      "candidate_mesh_sha256": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1"
+    },
+    "27": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000027",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000027/status.json",
+      "status_sha256": "65ad2bee945a43f13d9f3ef74876ab1a511ae2f12f7e69e98f4e9cbf40883155",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 241,
+          "translation_acceleration_cm_proxy": 1.0084736928880393,
+          "sampled_vertex_acceleration_cm_proxy": 2.2647315626460776,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 241,
+          "translation_acceleration_cm_proxy": 0.7898465452207829,
+          "sampled_vertex_acceleration_cm_proxy": 2.166847320024359,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 2.383432166966219,
+          "rotation_step_degrees_p95_proxy": 4.628790303617501,
+          "rotation_step_degrees_max_proxy": 177.53253493927144,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.5474112921384753,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.7925710339824601
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 2.383432166966219,
+          "rotation_step_degrees_p95_proxy": 4.628790303617501,
+          "rotation_step_degrees_max_proxy": 177.53253493927144,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.3979783075204195,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.5446669664096739
+        }
+      },
+      "reason": "No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "f0578af360f3ec87c91772ba05dd166b115af0015f3ad925eace929b686c1e6e",
+      "candidate_mesh_sha256": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4"
+    },
+    "28": {
+      "verdict": "RETAIN_V6",
+      "gates": {
+        "original_numerical_screen": false,
+        "scored_meaningful_gain": false,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": false
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000028",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000028/status.json",
+      "status_sha256": "1deea5c865d116479970897389fb8193a5446be344f160c52fc07dbf04efc2fd",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 145,
+          "translation_acceleration_cm_proxy": 1.5668721159864636,
+          "sampled_vertex_acceleration_cm_proxy": 3.1106079969953013,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 145,
+          "translation_acceleration_cm_proxy": 1.4853334872407489,
+          "sampled_vertex_acceleration_cm_proxy": 3.0752760531694303,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 2.7570094183850866,
+          "rotation_step_degrees_p95_proxy": 3.079787305647145,
+          "rotation_step_degrees_max_proxy": 176.31900537532394,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.8034306278195904,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.9663893574198194
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 2.7570094183850866,
+          "rotation_step_degrees_p95_proxy": 3.079787305647145,
+          "rotation_step_degrees_max_proxy": 176.31900537532394,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.7337384315443045,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.803364092501444
+        }
+      },
+      "reason": "Original full-image/depth/hand/motion screen failed; No meaningful retained gain on consecutive scored triples, image IoU or cached depth",
+      "candidate_npz_sha256": "16ae1bf13e7d2e7232289fabe87854f27e36a4a7ef3e7b043a3139292e78d8f9",
+      "candidate_mesh_sha256": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4"
+    },
+    "29": {
+      "verdict": "PROMOTE",
+      "gates": {
+        "original_numerical_screen": true,
+        "scored_meaningful_gain": true,
+        "motion_regression_guard": true,
+        "translation_changed": true,
+        "visual_review_complete": true
+      },
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/episode_000029",
+      "status": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000029/status.json",
+      "status_sha256": "6de7b25fcef0f4e3a96c8aef941d22b9f1ec95388d2aa0848c5a0185f35b323f",
+      "scored_motion": {
+        "control": {
+          "consecutive_scored_triples": 265,
+          "translation_acceleration_cm_proxy": 0.39104089728584357,
+          "sampled_vertex_acceleration_cm_proxy": 0.6655459368839981,
+          "sampled_vertex_count": 1022
+        },
+        "candidate": {
+          "consecutive_scored_triples": 265,
+          "translation_acceleration_cm_proxy": 0.29852640103707395,
+          "sampled_vertex_acceleration_cm_proxy": 0.6274032654338086,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "summary": {
+        "submitted_v6": {
+          "rotation_step_degrees_mean_proxy": 0.9426128532379318,
+          "rotation_step_degrees_p95_proxy": 1.9550810788975892,
+          "rotation_step_degrees_max_proxy": 3.498552724124301,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.7213327162109819,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.4067485487148939
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 0.9426128532379318,
+          "rotation_step_degrees_p95_proxy": 1.9550810788975892,
+          "rotation_step_degrees_max_proxy": 3.498552724124301,
+          "rotation_jumps_over_45_degrees": 0,
+          "sampled_vertex_acceleration_cm_proxy": 0.6703172409064089,
+          "sampled_vertex_count": 1022,
+          "translation_acceleration_cm_proxy": 0.2991446878793255
+        }
+      },
+      "reason": "Inspected six rolling-cart close-ups through translation and turning. Tabletop, stem and base remain comparable to v6, with small contour shifts and an inherited wider base outline. No gross new floor-height or hand/cart displacement in these samples.",
+      "candidate_npz_sha256": "fe29de1000ab7b19aaf41e1d9dd608df7092e1a29d928215b655bb301a3625c8",
+      "candidate_mesh_sha256": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4"
+    }
+  },
+  "promoted": [
+    1,
+    2,
+    6,
+    7,
+    8,
+    9,
+    11,
+    14,
+    22,
+    24,
+    26,
+    29
+  ],
+  "pending_visual_review": [],
+  "retained_v6": [
+    0,
+    3,
+    4,
+    5,
+    10,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    27,
+    28
+  ],
+  "scope": "Original full-video screen retained, plus meaningful gain and regression guards on consecutive scored triples. Proxies are not official error scores."
+}

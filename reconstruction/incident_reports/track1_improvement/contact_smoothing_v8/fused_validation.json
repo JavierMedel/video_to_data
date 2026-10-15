@@ -1,0 +1,12 @@
+{
+  "matched_meshes": 6,
+  "max_depth_difference_m": 0.0,
+  "eager_seconds": 0.5977048486665808,
+  "fused_seconds": 0.34216703233353957,
+  "observed_speedup": 1.7468218506917599,
+  "torch": "2.8.0+cu128",
+  "triton": "3.4.0",
+  "fused_source_sha256": "114c32d03dbe2e2ddecf8cea96081a0e8b484f28392ba6f70e9339ea0b103692",
+  "eager_source_sha256": "ba0d6f56b4beb31b3dce3db87d462d2fa48655a576a2b162393a7a981eb24cb3",
+  "scope": "Box, open box, reversed box and dense v6 meshes for Episodes 1,16,25, with near-surface and interior/exterior queries. All depth comparisons passed at 2e-7 m absolute tolerance; timing under concurrent campaign load."
+}
