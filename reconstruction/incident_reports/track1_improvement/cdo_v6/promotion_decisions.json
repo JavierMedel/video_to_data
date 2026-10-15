@@ -400,8 +400,16 @@
         "penetrating_hand_vertex_fraction": 0.0
       }
     },
-    "visual_review_complete": false,
+    "visual_review_complete": true,
     "review_sha256": "da12be65c1eb8923457fac2080b3a62f02d4674d827c95173000173e625c26aa",
-    "contact_sha256": "8cc6609782b80824dc089264311029091ca6506182771be32ee5d6904e76e944"
+    "contact_sha256": "8cc6609782b80824dc089264311029091ca6506182771be32ee5d6904e76e944",
+    "reason": "Inspected six scored-frame mask comparisons and the exact reconstruction close-up at frame 334: hoop position and size follow the observed ring much more closely. Both complete 668-frame videos decoded successfully. All 174 scored-frame actual-mesh hand depths remain zero, motion proxies improve, and human arrays are identical. The control has no contact-like frames, so proximity is not evidence of grasp accuracy.",
+    "visual_evidence_sha256": {
+      "reconstruction/data/v2d_challenge/track_1/cdo_v6_experiments/hand_clearance_candidates/episode_000001/exact_candidate_comparison.jpg": "260410b7376e256ff2a753e13324ead56a9d1f65a433c68f5e96f4e976c7c9c5",
+      "reconstruction/data/v2d_challenge/track_1/cdo_v6_experiments/review_videos/episode_000001/closeup_preview.jpg": "98bf158c090961d43c406eb4ead7a416661c795006855e887303b550f348cff9",
+      "reconstruction/data/v2d_challenge/track_1/cdo_v6_experiments/review_videos/episode_000001/validation.json": "050914e3d285d8df30819f29d126e9241703195770f64d7a467b4d273c529590",
+      "reconstruction/data/v2d_challenge/track_1/cdo_v6_experiments/review_videos/episode_000001/episode_000001_v5_vs_v6.mp4": "0e8ebfd1be27895a2e8dfa94f8d324b38eb0d209efc0f28c0f99ec59c8936b49",
+      "reconstruction/data/v2d_challenge/track_1/cdo_v6_experiments/review_videos/episode_000001/episode_000001_v5_vs_v6_object_closeups.mp4": "c39afd0ec4c9a845df83956c71841f124cf721a8b7488db10f47ba5ec4c86415"
+    }
   }
 }

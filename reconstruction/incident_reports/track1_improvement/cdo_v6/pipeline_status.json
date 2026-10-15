@@ -1,14 +1,61 @@
 {
-  "state": "VIDEO_VALIDATION",
-  "episode": 1,
-  "control": "v5",
-  "hand_penetration": "PASS_ALL_174_SCORED_FRAMES",
-  "image_iou": 0.6293702484376129,
-  "remaining": [
-    "video validation and review",
-    "code commit",
-    "package and official validation",
-    "single upload and score polling",
-    "results report and git push"
-  ]
+  "state": "SUBMISSION_COMPLETE",
+  "episode_changed": 1,
+  "producing_commit": "https://github.com/JavierMedel/video_to_data/commit/f53d46d3b4220a216c258b5306c438721a20653b",
+  "package": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_cdo_v6.parquet",
+  "package_sha256": "eb014ea2b52fb3faace7ae71209cec512bd528fbd8a984b2d09ee45c1cc76a14",
+  "stages": {
+    "screening": "COMPLETE",
+    "depth_refinement": "COMPLETE",
+    "full_scored_validation": "COMPLETE",
+    "video_review": "COMPLETE",
+    "package": "COMPLETE",
+    "official_dry_run": "COMPLETE",
+    "upload": "COMPLETE",
+    "scoring": "COMPLETE",
+    "results_report": "COMPLETE"
+  },
+  "metrics": {
+    "cd_h_cm": {
+      "previous": 15.43955,
+      "new": 15.43955,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57201702,
+      "state": "COMPLETE"
+    },
+    "cd_o_cm": {
+      "previous": 28.14623,
+      "new": 23.48489,
+      "delta": -4.661339999999999,
+      "relative_change_percent": -16.56115223957169,
+      "submission_id": 57201706,
+      "state": "COMPLETE"
+    },
+    "acc_h_cm": {
+      "previous": 1.15894,
+      "new": 1.15894,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57201708,
+      "state": "COMPLETE"
+    },
+    "acc_o_cm": {
+      "previous": 0.86183,
+      "new": 0.81013,
+      "delta": -0.05169999999999997,
+      "relative_change_percent": -5.99886288479166,
+      "submission_id": 57201712,
+      "state": "COMPLETE"
+    },
+    "interpenetration_cm": {
+      "previous": 0.00325,
+      "new": 0.00325,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57201713,
+      "state": "COMPLETE"
+    }
+  },
+  "remaining_steps": []
 }

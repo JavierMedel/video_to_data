@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "videos": [
+    {
+      "path": "/repo/data/v2d_challenge/track_1/cdo_v6_experiments/review_videos/episode_000001/episode_000001_v5_vs_v6.mp4",
+      "frames": 668,
+      "fps": "30",
+      "width": 1536,
+      "height": 656
+    },
+    {
+      "path": "/repo/data/v2d_challenge/track_1/cdo_v6_experiments/review_videos/episode_000001/episode_000001_v5_vs_v6_object_closeups.mp4",
+      "frames": 668,
+      "fps": "30",
+      "width": 1024,
+      "height": 464
+    }
+  ],
+  "candidate": "/repo/data/v2d_challenge/track_1/cdo_v6_experiments/hand_clearance_candidates/episode_000001",
+  "human_arrays_identical": true
+}

@@ -8,4 +8,4 @@ Actual-mesh generalized-winding and triangle-distance checks on all 174 scored f
 
 The control hoop is far from predicted hands, so there are no control-contact-like frames. The proximity guard is therefore inapplicable; it does not establish grasp accuracy. Exact host hand-role IDs and hidden alignment scale are unavailable. Human pose, shape and scale arrays are unchanged.
 
-Six mask-overlay comparisons inspected: frames 151, 240, 325, 373, 426 and 461. The new ring follows observed hoop size and location, while the old ring is much too small and displaced. Full video validation and final review pending.
+Six mask-overlay comparisons inspected: frames 151, 240, 325, 373, 426 and 461. The new ring follows observed hoop size and location, while the old ring is much too small and displaced. Also inspected the exact reconstruction close-up at frame 334. Both full videos decoded successfully: 668 frames at 30 fps each. Visual review accepted with the stated contact limitations. Five temporal-selection tests and syntax/diff checks passed. Official package validation and all five leaderboard scores are complete; see submission_results.md.
