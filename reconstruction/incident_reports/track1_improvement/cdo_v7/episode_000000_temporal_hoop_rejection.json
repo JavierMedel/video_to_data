@@ -1,0 +1,8 @@
+{
+  "episode": 0,
+  "accepted": false,
+  "reason": "No ray-depth option satisfies the conservative hand tube and pointwise contact limits",
+  "frames": [
+    337
+  ]
+}

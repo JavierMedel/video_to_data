@@ -1,0 +1,302 @@
+{
+  "episode": 4,
+  "metadata": {
+    "episode_index": 4,
+    "sequence_id": "2026-06-08_15-30-20_big_red_bowl_push_05",
+    "camera": "front_stereo_camera_left",
+    "object": "big_red_bowl",
+    "object_prompt": "A red plastic bowl.",
+    "video_key": "observation.images.exo_camera"
+  },
+  "frames": 747,
+  "sample_frames": [
+    125,
+    147,
+    163,
+    180,
+    196,
+    212,
+    228,
+    244,
+    261,
+    277,
+    293,
+    309,
+    325,
+    341,
+    358,
+    374,
+    390,
+    406,
+    422,
+    439,
+    455,
+    471,
+    487,
+    503,
+    519,
+    536,
+    552,
+    568,
+    584,
+    600,
+    617,
+    633,
+    649
+  ],
+  "visible_iou_mean": 0.8673259326905916,
+  "depth_supported_frames": 32,
+  "median_depth_bias_cm": 7.1017444133758545,
+  "median_depth_error_cm": 7.307654619216919,
+  "center_depth_median_m": 3.0578784942626953,
+  "mesh_extents_m": [
+    0.13331048162196496,
+    0.3183405614931212,
+    0.31884985389076237
+  ],
+  "motion": {
+    "translation_acceleration_cm_proxy": 0.948588161158979,
+    "rotation_step_degrees_mean_proxy": 13.046574070200602,
+    "rotation_step_degrees_p95_proxy": 41.28288709155707,
+    "rotation_step_degrees_max_proxy": 131.84866447134613,
+    "rotation_jumps_over_45_degrees": 25,
+    "sampled_vertex_acceleration_cm_proxy": 3.179105223578009,
+    "sampled_vertex_count": 1024
+  },
+  "control_npz_sha256": "333c32e399f7ea2e02a698436c308c97a30dbb49193161f5c9186964ed17f3f7",
+  "control_mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+  "samples": [
+    {
+      "frame": 125,
+      "iou": 0.8505747318267822,
+      "support_pixels": 296,
+      "depth_bias_cm": 11.213946342468262,
+      "depth_error_cm": 11.222898960113525
+    },
+    {
+      "frame": 147,
+      "iou": 0.809116780757904,
+      "support_pixels": 284,
+      "depth_bias_cm": 10.114467144012451,
+      "depth_error_cm": 10.122489929199219
+    },
+    {
+      "frame": 163,
+      "iou": 0.9350282549858093,
+      "support_pixels": 331,
+      "depth_bias_cm": 9.166741371154785,
+      "depth_error_cm": 9.166836738586426
+    },
+    {
+      "frame": 180,
+      "iou": 0.9008264541625977,
+      "support_pixels": 327,
+      "depth_bias_cm": 6.529426574707031,
+      "depth_error_cm": 6.625819206237793
+    },
+    {
+      "frame": 196,
+      "iou": 0.90625,
+      "support_pixels": 319,
+      "depth_bias_cm": -0.9525775909423828,
+      "depth_error_cm": 2.11031436920166
+    },
+    {
+      "frame": 212,
+      "iou": 0.882022500038147,
+      "support_pixels": 314,
+      "depth_bias_cm": 2.216160297393799,
+      "depth_error_cm": 2.309143543243408
+    },
+    {
+      "frame": 228,
+      "iou": 0.8616352081298828,
+      "support_pixels": 274,
+      "depth_bias_cm": -0.3277301788330078,
+      "depth_error_cm": 2.675461769104004
+    },
+    {
+      "frame": 244,
+      "iou": 0.8571428656578064,
+      "support_pixels": 270,
+      "depth_bias_cm": 11.82783842086792,
+      "depth_error_cm": 11.956775188446045
+    },
+    {
+      "frame": 261,
+      "iou": 0.9385665655136108,
+      "support_pixels": 275,
+      "depth_bias_cm": 10.039591789245605,
+      "depth_error_cm": 10.142874717712402
+    },
+    {
+      "frame": 277,
+      "iou": 0.88345867395401,
+      "support_pixels": 235,
+      "depth_bias_cm": 8.109259605407715,
+      "depth_error_cm": 8.817243576049805
+    },
+    {
+      "frame": 293,
+      "iou": 0.8367347121238708,
+      "support_pixels": 123,
+      "depth_bias_cm": 18.10152530670166,
+      "depth_error_cm": 18.10152530670166
+    },
+    {
+      "frame": 309,
+      "iou": 0.0,
+      "support_pixels": 0,
+      "depth_bias_cm": null,
+      "depth_error_cm": null
+    },
+    {
+      "frame": 325,
+      "iou": 0.913294792175293,
+      "support_pixels": 158,
+      "depth_bias_cm": 6.1400651931762695,
+      "depth_error_cm": 6.483209133148193
+    },
+    {
+      "frame": 341,
+      "iou": 0.9171974658966064,
+      "support_pixels": 288,
+      "depth_bias_cm": 4.543721675872803,
+      "depth_error_cm": 4.979848861694336
+    },
+    {
+      "frame": 358,
+      "iou": 0.9361022114753723,
+      "support_pixels": 293,
+      "depth_bias_cm": 6.480526924133301,
+      "depth_error_cm": 6.797695159912109
+    },
+    {
+      "frame": 374,
+      "iou": 0.9411764740943909,
+      "support_pixels": 272,
+      "depth_bias_cm": 6.945490837097168,
+      "depth_error_cm": 7.255434989929199
+    },
+    {
+      "frame": 390,
+      "iou": 0.9216417670249939,
+      "support_pixels": 247,
+      "depth_bias_cm": 6.768703460693359,
+      "depth_error_cm": 7.178592681884766
+    },
+    {
+      "frame": 406,
+      "iou": 0.9051383137702942,
+      "support_pixels": 229,
+      "depth_bias_cm": 2.284407615661621,
+      "depth_error_cm": 2.7703285217285156
+    },
+    {
+      "frame": 422,
+      "iou": 0.8340249061584473,
+      "support_pixels": 201,
+      "depth_bias_cm": 11.20445728302002,
+      "depth_error_cm": 11.20445728302002
+    },
+    {
+      "frame": 439,
+      "iou": 0.8518518805503845,
+      "support_pixels": 184,
+      "depth_bias_cm": 10.420036315917969,
+      "depth_error_cm": 10.420036315917969
+    },
+    {
+      "frame": 455,
+      "iou": 0.8333333134651184,
+      "support_pixels": 175,
+      "depth_bias_cm": 14.081406593322754,
+      "depth_error_cm": 14.081406593322754
+    },
+    {
+      "frame": 471,
+      "iou": 0.8549019694328308,
+      "support_pixels": 218,
+      "depth_bias_cm": 8.829295635223389,
+      "depth_error_cm": 9.078919887542725
+    },
+    {
+      "frame": 487,
+      "iou": 0.9314079284667969,
+      "support_pixels": 258,
+      "depth_bias_cm": 7.787024974822998,
+      "depth_error_cm": 7.810389995574951
+    },
+    {
+      "frame": 503,
+      "iou": 0.9102166891098022,
+      "support_pixels": 294,
+      "depth_bias_cm": 7.771956920623779,
+      "depth_error_cm": 7.815408706665039
+    },
+    {
+      "frame": 519,
+      "iou": 0.9305136203765869,
+      "support_pixels": 308,
+      "depth_bias_cm": 7.257997989654541,
+      "depth_error_cm": 7.359874248504639
+    },
+    {
+      "frame": 536,
+      "iou": 0.8924418687820435,
+      "support_pixels": 307,
+      "depth_bias_cm": 8.64095687866211,
+      "depth_error_cm": 8.660745620727539
+    },
+    {
+      "frame": 552,
+      "iou": 0.9341317415237427,
+      "support_pixels": 312,
+      "depth_bias_cm": 4.004645347595215,
+      "depth_error_cm": 4.110836982727051
+    },
+    {
+      "frame": 568,
+      "iou": 0.9761193990707397,
+      "support_pixels": 327,
+      "depth_bias_cm": 3.2002925872802734,
+      "depth_error_cm": 3.3846139907836914
+    },
+    {
+      "frame": 584,
+      "iou": 0.961077868938446,
+      "support_pixels": 321,
+      "depth_bias_cm": 5.499434471130371,
+      "depth_error_cm": 5.572962760925293
+    },
+    {
+      "frame": 600,
+      "iou": 0.8838527202606201,
+      "support_pixels": 312,
+      "depth_bias_cm": 5.806517601013184,
+      "depth_error_cm": 5.905866622924805
+    },
+    {
+      "frame": 617,
+      "iou": 0.8742856979370117,
+      "support_pixels": 306,
+      "depth_bias_cm": 5.225920677185059,
+      "depth_error_cm": 5.225920677185059
+    },
+    {
+      "frame": 633,
+      "iou": 0.8696883916854858,
+      "support_pixels": 307,
+      "depth_bias_cm": 0.6384372711181641,
+      "depth_error_cm": 0.9383201599121094
+    },
+    {
+      "frame": 649,
+      "iou": 0.8880000114440918,
+      "support_pixels": 333,
+      "depth_bias_cm": 7.295083999633789,
+      "depth_error_cm": 7.3760986328125
+    }
+  ],
+  "scope": "Predicted-mask image alignment and cached monocular depth diagnostics; not official per-episode scores."
+}

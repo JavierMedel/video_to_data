@@ -1,0 +1,28 @@
+{
+  "audited": 30,
+  "geometry_tested": 30,
+  "geometry_pass": 14,
+  "initial_hand_pass": [
+    26
+  ],
+  "contact_corrections_tested": 13,
+  "contact_correction_pass": [
+    0,
+    5,
+    7
+  ],
+  "full_hand_pass": [
+    5,
+    7
+  ],
+  "full_image_depth_meaningful_pass": [
+    7
+  ],
+  "additional_pending": [],
+  "control_version": 6,
+  "official_v7_uploads": 1,
+  "additional_hoop_trial": "REJECT_NO_FEASIBLE_PATH",
+  "final_promotions": [
+    7
+  ]
+}

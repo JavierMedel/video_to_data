@@ -1,0 +1,23 @@
+{
+  "temporal_unit_tests": {
+    "passed": 5
+  },
+  "real_data_selection_regression": "PASS",
+  "real_mesh_tube_bound_regression": {
+    "status": "PASS",
+    "random_face_witnesses": 830176
+  },
+  "syntax_and_diff_checks": "PASS",
+  "official_preflight": "PASS",
+  "official_dry_run": "PASS",
+  "all_control_artifact_hashes_verified": 60,
+  "episode_pairs_validated": 30,
+  "all_human_arrays_identical_to_v6": true,
+  "promoted_episodes": [
+    7
+  ],
+  "every_scored_frame_reviewed_for_promotion": 597,
+  "video_frames_each": 777,
+  "video_fps": 30,
+  "archive_sha256": "121b97736636aa88ec9d6a0f0fc40e6919415ddd37377e1b2c0169937486cafe"
+}

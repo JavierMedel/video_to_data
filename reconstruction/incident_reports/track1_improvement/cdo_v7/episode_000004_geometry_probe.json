@@ -1,0 +1,369 @@
+{
+  "episode": 4,
+  "accepted": false,
+  "fit_frames": [
+    125,
+    147,
+    180,
+    196,
+    228,
+    244,
+    277,
+    293,
+    325,
+    341,
+    374,
+    390,
+    422,
+    439,
+    471,
+    487,
+    519,
+    536,
+    568,
+    584,
+    617,
+    633
+  ],
+  "held_out_frames": [
+    163,
+    212,
+    261,
+    309,
+    358,
+    406,
+    455,
+    503,
+    552,
+    600,
+    649
+  ],
+  "translation_smoothing": true,
+  "selected_fit": {
+    "scale_factor": 0.95,
+    "depth_offset_m": -0.1,
+    "fit_iou": 0.8858008330518549,
+    "fit_common_depth": {
+      "supported_frames": 22,
+      "before_cm": 7.248449325561523,
+      "after_cm": 3.9127767086029053
+    },
+    "fit_eligible": true,
+    "fit_objective": 0.023376970424274626
+  },
+  "held_out": {
+    "control_iou": 0.822399301962419,
+    "candidate_iou": 0.8162242336706682,
+    "common_depth": {
+      "supported_frames": 10,
+      "before_cm": 7.004523277282715,
+      "after_cm": 4.468291997909546
+    },
+    "depth_driven": true
+  },
+  "grid": [
+    {
+      "scale_factor": 0.9,
+      "depth_offset_m": -0.1,
+      "fit_iou": 0.8457512638785623,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.189458608627319,
+        "after_cm": 3.5985350608825684
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.0144127741876577
+    },
+    {
+      "scale_factor": 0.9,
+      "depth_offset_m": -0.05,
+      "fit_iou": 0.8258874443444338,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.119202613830566,
+        "after_cm": 4.589700698852539
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.04276836869857157
+    },
+    {
+      "scale_factor": 0.9,
+      "depth_offset_m": 0.0,
+      "fit_iou": 0.8084956055337732,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.076746225357056,
+        "after_cm": 9.186440706253052
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.09727418657074365
+    },
+    {
+      "scale_factor": 0.9,
+      "depth_offset_m": 0.05,
+      "fit_iou": 0.7909229126843539,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.012665271759033,
+        "after_cm": 14.232182502746582
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.15572587526026757
+    },
+    {
+      "scale_factor": 0.9,
+      "depth_offset_m": 0.1,
+      "fit_iou": 0.7699208313768561,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 6.97745680809021,
+        "after_cm": 19.366151094436646
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.19897223847004789
+    },
+    {
+      "scale_factor": 0.95,
+      "depth_offset_m": -0.1,
+      "fit_iou": 0.8858008330518549,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.248449325561523,
+        "after_cm": 3.9127767086029053
+      },
+      "fit_eligible": true,
+      "fit_objective": 0.023376970424274626
+    },
+    {
+      "scale_factor": 0.95,
+      "depth_offset_m": -0.05,
+      "fit_iou": 0.880065457387404,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.224780321121216,
+        "after_cm": 4.366999864578247
+      },
+      "fit_eligible": false,
+      "fit_objective": 0.013818070702650205
+    },
+    {
+      "scale_factor": 0.95,
+      "depth_offset_m": 0.0,
+      "fit_iou": 0.8669303032484922,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.195937633514404,
+        "after_cm": 8.174347877502441
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.030007001632197897
+    },
+    {
+      "scale_factor": 0.95,
+      "depth_offset_m": 0.05,
+      "fit_iou": 0.8496645309708335,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.176297903060913,
+        "after_cm": 13.299262523651123
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.08842960729862072
+    },
+    {
+      "scale_factor": 0.95,
+      "depth_offset_m": 0.1,
+      "fit_iou": 0.8324567350474271,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.162261009216309,
+        "after_cm": 18.457520008087158
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.13665409038441378
+    },
+    {
+      "scale_factor": 1.0,
+      "depth_offset_m": -0.1,
+      "fit_iou": 0.8741014328869906,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 4.776978492736816
+      },
+      "fit_eligible": false,
+      "fit_objective": 0.005019499212170055
+    },
+    {
+      "scale_factor": 1.0,
+      "depth_offset_m": -0.05,
+      "fit_iou": 0.8826813968745145,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 3.538942337036133
+      },
+      "fit_eligible": false,
+      "fit_objective": 0.023503379766346522
+    },
+    {
+      "scale_factor": 1.0,
+      "depth_offset_m": 0.0,
+      "fit_iou": 0.8892425894737244,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.30515718460083,
+        "after_cm": 7.319474220275879
+      },
+      "fit_eligible": true,
+      "fit_objective": -0.0002000405165491187
+    },
+    {
+      "scale_factor": 1.0,
+      "depth_offset_m": 0.05,
+      "fit_iou": 0.8859730688008395,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.248234748840332,
+        "after_cm": 12.347966432571411
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.044153262343468426
+    },
+    {
+      "scale_factor": 1.0,
+      "depth_offset_m": 0.1,
+      "fit_iou": 0.8815617452968251,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.224780321121216,
+        "after_cm": 17.425143718719482
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.08776712194728928
+    },
+    {
+      "scale_factor": 1.05,
+      "depth_offset_m": -0.1,
+      "fit_iou": 0.8363366506316445,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 5.653280019760132
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.039974046200636645
+    },
+    {
+      "scale_factor": 1.05,
+      "depth_offset_m": -0.05,
+      "fit_iou": 0.8534562045877631,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 2.780526876449585
+      },
+      "fit_eligible": false,
+      "fit_objective": 0.0001271733660196972
+    },
+    {
+      "scale_factor": 1.05,
+      "depth_offset_m": 0.0,
+      "fit_iou": 0.8648773431777954,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 6.270641088485718
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.01637296678190315
+    },
+    {
+      "scale_factor": 1.05,
+      "depth_offset_m": 0.05,
+      "fit_iou": 0.874885848977349,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 11.329680681228638
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.04683714824512228
+    },
+    {
+      "scale_factor": 1.05,
+      "depth_offset_m": 0.1,
+      "fit_iou": 0.8838600976900621,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 16.42131209373474
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.07859632680543172
+    },
+    {
+      "scale_factor": 1.1,
+      "depth_offset_m": -0.1,
+      "fit_iou": 0.7854485267942602,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 6.035411357879639
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.09413779697750183
+    },
+    {
+      "scale_factor": 1.1,
+      "depth_offset_m": -0.05,
+      "fit_iou": 0.8059242774139751,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 3.441941738128662
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.0529146366527619
+    },
+    {
+      "scale_factor": 1.1,
+      "depth_offset_m": 0.0,
+      "fit_iou": 0.8227402649142526,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 5.387455224990845
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.051663109655650595
+    },
+    {
+      "scale_factor": 1.1,
+      "depth_offset_m": 0.05,
+      "fit_iou": 0.8411599885333668,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 10.416394472122192
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.07347525795401864
+    },
+    {
+      "scale_factor": 1.1,
+      "depth_offset_m": 0.1,
+      "fit_iou": 0.8547763851555911,
+      "fit_common_depth": {
+        "supported_frames": 22,
+        "before_cm": 7.307654619216919,
+        "after_cm": 15.475773811340332
+      },
+      "fit_eligible": false,
+      "fit_objective": -0.10033425929438643
+    }
+  ],
+  "control_npz_sha256": "333c32e399f7ea2e02a698436c308c97a30dbb49193161f5c9186964ed17f3f7",
+  "control_mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+  "scope": "Bounded depth/scale fit with disjoint frame checks; full hand and every-scored-frame validation are still required."
+}

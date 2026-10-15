@@ -1,0 +1,54 @@
+{
+  "previous_submission": 6,
+  "new_submission": 7,
+  "lower_is_better": true,
+  "outcome": "MIXED_ACC_O_IMPROVED_CD_O_REGRESSED",
+  "metrics": {
+    "cd_h_cm": {
+      "previous": 15.43955,
+      "new": 15.43955,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57215485,
+      "state": "COMPLETE"
+    },
+    "cd_o_cm": {
+      "previous": 23.48489,
+      "new": 23.6143,
+      "delta": 0.12941000000000003,
+      "relative_change_percent": 0.5510351549443069,
+      "submission_id": 57215489,
+      "state": "COMPLETE"
+    },
+    "acc_h_cm": {
+      "previous": 1.15894,
+      "new": 1.15894,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57215493,
+      "state": "COMPLETE"
+    },
+    "acc_o_cm": {
+      "previous": 0.81013,
+      "new": 0.77219,
+      "delta": -0.037939999999999974,
+      "relative_change_percent": -4.683198992754246,
+      "submission_id": 57215494,
+      "state": "COMPLETE"
+    },
+    "interpenetration_cm": {
+      "previous": 0.00325,
+      "new": 0.00325,
+      "delta": 0.0,
+      "relative_change_percent": 0.0,
+      "submission_id": 57215499,
+      "state": "COMPLETE"
+    }
+  },
+  "baseline_cd_o_cm": 23.16246,
+  "new_submission_baseline_gap_cm": 0.4518400000000007,
+  "best_cd_o_version": 6,
+  "best_cd_o_cm": 23.48489,
+  "best_cd_o_baseline_gap_cm": 0.32243000000000066,
+  "reduction_needed_from_best_percent": 1.372925314957833
+}

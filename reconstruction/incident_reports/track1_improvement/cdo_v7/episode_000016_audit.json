@@ -1,0 +1,302 @@
+{
+  "episode": 16,
+  "metadata": {
+    "episode_index": 16,
+    "sequence_id": "2026-09-11_15-12-36_foam_grass_block_rotate_04",
+    "camera": "front_stereo_camera_left",
+    "object": "foam_grass_block",
+    "object_prompt": "a foam block with a pixalated design of various shades of green and various shades of brown.",
+    "video_key": "observation.images.exo_camera"
+  },
+  "frames": 360,
+  "sample_frames": [
+    50,
+    57,
+    65,
+    72,
+    80,
+    87,
+    95,
+    102,
+    110,
+    117,
+    125,
+    132,
+    140,
+    147,
+    155,
+    162,
+    170,
+    177,
+    184,
+    192,
+    199,
+    207,
+    214,
+    222,
+    229,
+    237,
+    244,
+    252,
+    259,
+    267,
+    274,
+    282,
+    289
+  ],
+  "visible_iou_mean": 0.7321355975035465,
+  "depth_supported_frames": 33,
+  "median_depth_bias_cm": -46.641552448272705,
+  "median_depth_error_cm": 46.787428855895996,
+  "center_depth_median_m": 2.657475471496582,
+  "mesh_extents_m": [
+    0.210179555993948,
+    0.21107809252678383,
+    0.21226203049725184
+  ],
+  "motion": {
+    "translation_acceleration_cm_proxy": 0.4174616354248891,
+    "rotation_step_degrees_mean_proxy": 6.869586801549116,
+    "rotation_step_degrees_p95_proxy": 20.937863327038954,
+    "rotation_step_degrees_max_proxy": 97.47162789350634,
+    "rotation_jumps_over_45_degrees": 6,
+    "sampled_vertex_acceleration_cm_proxy": 1.536350695718709,
+    "sampled_vertex_count": 1020
+  },
+  "control_npz_sha256": "65353a34fe84849c6b6402126d5fc0e9712114854767f046057da0f2b586a23e",
+  "control_mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+  "samples": [
+    {
+      "frame": 50,
+      "iou": 0.7185184955596924,
+      "support_pixels": 485,
+      "depth_bias_cm": -27.335786819458008,
+      "depth_error_cm": 27.335786819458008
+    },
+    {
+      "frame": 57,
+      "iou": 0.7157738208770752,
+      "support_pixels": 481,
+      "depth_bias_cm": -35.90421676635742,
+      "depth_error_cm": 36.13581657409668
+    },
+    {
+      "frame": 65,
+      "iou": 0.730182945728302,
+      "support_pixels": 479,
+      "depth_bias_cm": -34.082961082458496,
+      "depth_error_cm": 34.082961082458496
+    },
+    {
+      "frame": 72,
+      "iou": 0.7672281861305237,
+      "support_pixels": 501,
+      "depth_bias_cm": -32.99219608306885,
+      "depth_error_cm": 32.99219608306885
+    },
+    {
+      "frame": 80,
+      "iou": 0.7483870983123779,
+      "support_pixels": 464,
+      "depth_bias_cm": -39.009273052215576,
+      "depth_error_cm": 39.009273052215576
+    },
+    {
+      "frame": 87,
+      "iou": 0.7817896604537964,
+      "support_pixels": 498,
+      "depth_bias_cm": -46.32502794265747,
+      "depth_error_cm": 46.351516246795654
+    },
+    {
+      "frame": 95,
+      "iou": 0.7842323780059814,
+      "support_pixels": 567,
+      "depth_bias_cm": -43.645596504211426,
+      "depth_error_cm": 43.75483989715576
+    },
+    {
+      "frame": 102,
+      "iou": 0.8284106850624084,
+      "support_pixels": 589,
+      "depth_bias_cm": -44.84219551086426,
+      "depth_error_cm": 45.072150230407715
+    },
+    {
+      "frame": 110,
+      "iou": 0.8366197347640991,
+      "support_pixels": 594,
+      "depth_bias_cm": -46.641552448272705,
+      "depth_error_cm": 46.79681062698364
+    },
+    {
+      "frame": 117,
+      "iou": 0.7656012177467346,
+      "support_pixels": 503,
+      "depth_bias_cm": -58.605146408081055,
+      "depth_error_cm": 58.605146408081055
+    },
+    {
+      "frame": 125,
+      "iou": 0.6945288777351379,
+      "support_pixels": 457,
+      "depth_bias_cm": -50.44851303100586,
+      "depth_error_cm": 50.550222396850586
+    },
+    {
+      "frame": 132,
+      "iou": 0.7633135914802551,
+      "support_pixels": 516,
+      "depth_bias_cm": -45.78424692153931,
+      "depth_error_cm": 45.82258462905884
+    },
+    {
+      "frame": 140,
+      "iou": 0.7605224847793579,
+      "support_pixels": 524,
+      "depth_bias_cm": -44.33434009552002,
+      "depth_error_cm": 44.43460702896118
+    },
+    {
+      "frame": 147,
+      "iou": 0.7303851842880249,
+      "support_pixels": 512,
+      "depth_bias_cm": -46.20027542114258,
+      "depth_error_cm": 46.37312889099121
+    },
+    {
+      "frame": 155,
+      "iou": 0.7666666507720947,
+      "support_pixels": 483,
+      "depth_bias_cm": -47.074174880981445,
+      "depth_error_cm": 47.093963623046875
+    },
+    {
+      "frame": 162,
+      "iou": 0.7439446449279785,
+      "support_pixels": 430,
+      "depth_bias_cm": -52.02770233154297,
+      "depth_error_cm": 52.02770233154297
+    },
+    {
+      "frame": 170,
+      "iou": 0.7839046120643616,
+      "support_pixels": 526,
+      "depth_bias_cm": -46.512603759765625,
+      "depth_error_cm": 46.61383628845215
+    },
+    {
+      "frame": 177,
+      "iou": 0.7246175408363342,
+      "support_pixels": 521,
+      "depth_bias_cm": -48.80328178405762,
+      "depth_error_cm": 49.00531768798828
+    },
+    {
+      "frame": 184,
+      "iou": 0.7643678188323975,
+      "support_pixels": 532,
+      "depth_bias_cm": -46.430957317352295,
+      "depth_error_cm": 46.519410610198975
+    },
+    {
+      "frame": 192,
+      "iou": 0.7181687951087952,
+      "support_pixels": 502,
+      "depth_bias_cm": -54.00874614715576,
+      "depth_error_cm": 54.00874614715576
+    },
+    {
+      "frame": 199,
+      "iou": 0.7149389982223511,
+      "support_pixels": 469,
+      "depth_bias_cm": -48.87979030609131,
+      "depth_error_cm": 48.895978927612305
+    },
+    {
+      "frame": 207,
+      "iou": 0.794670820236206,
+      "support_pixels": 507,
+      "depth_bias_cm": -46.787428855895996,
+      "depth_error_cm": 46.787428855895996
+    },
+    {
+      "frame": 214,
+      "iou": 0.8041733503341675,
+      "support_pixels": 501,
+      "depth_bias_cm": -36.975669860839844,
+      "depth_error_cm": 37.09306716918945
+    },
+    {
+      "frame": 222,
+      "iou": 0.714046835899353,
+      "support_pixels": 427,
+      "depth_bias_cm": -49.04637336730957,
+      "depth_error_cm": 49.08134937286377
+    },
+    {
+      "frame": 229,
+      "iou": 0.7249602675437927,
+      "support_pixels": 456,
+      "depth_bias_cm": -51.6790509223938,
+      "depth_error_cm": 51.685476303100586
+    },
+    {
+      "frame": 237,
+      "iou": 0.6693810820579529,
+      "support_pixels": 411,
+      "depth_bias_cm": -43.973517417907715,
+      "depth_error_cm": 43.973517417907715
+    },
+    {
+      "frame": 244,
+      "iou": 0.6045454740524292,
+      "support_pixels": 399,
+      "depth_bias_cm": -52.298641204833984,
+      "depth_error_cm": 52.298641204833984
+    },
+    {
+      "frame": 252,
+      "iou": 0.6232557892799377,
+      "support_pixels": 402,
+      "depth_bias_cm": -51.35855674743652,
+      "depth_error_cm": 51.35855674743652
+    },
+    {
+      "frame": 259,
+      "iou": 0.6487730145454407,
+      "support_pixels": 423,
+      "depth_bias_cm": -52.85675525665283,
+      "depth_error_cm": 52.85675525665283
+    },
+    {
+      "frame": 267,
+      "iou": 0.6163328289985657,
+      "support_pixels": 400,
+      "depth_bias_cm": -52.64770984649658,
+      "depth_error_cm": 52.64770984649658
+    },
+    {
+      "frame": 274,
+      "iou": 0.6456310749053955,
+      "support_pixels": 399,
+      "depth_bias_cm": -48.856353759765625,
+      "depth_error_cm": 48.856353759765625
+    },
+    {
+      "frame": 282,
+      "iou": 0.7021604776382446,
+      "support_pixels": 455,
+      "depth_bias_cm": -49.27568435668945,
+      "depth_error_cm": 49.27568435668945
+    },
+    {
+      "frame": 289,
+      "iou": 0.7704402804374695,
+      "support_pixels": 490,
+      "depth_bias_cm": -33.561909198760986,
+      "depth_error_cm": 33.561909198760986
+    }
+  ],
+  "scope": "Predicted-mask image alignment and cached monocular depth diagnostics; not official per-episode scores."
+}
