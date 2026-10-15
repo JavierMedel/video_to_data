@@ -17,7 +17,8 @@ from scipy.spatial import cKDTree
 
 root = Path('/repo'); data = root/'data/v2d_challenge/track_1'
 p = argparse.ArgumentParser(); p.add_argument('--contact-aware', action='store_true')
-p.add_argument('--iteration', type=int, choices=[5, 6], default=5)
+p.add_argument('--iteration', type=int, choices=[5, 6, 7], default=5)
+p.add_argument('--episodes', type=int, nargs='+')
 p.add_argument('--parent-group', default='pose_candidates')
 p.add_argument('--output-group')
 args = p.parse_args()
@@ -52,7 +53,7 @@ def poses_from(bundle):
 
 
 with torch.inference_mode():
-    for episode in ((1,) if args.iteration == 6 else ((23, 18, 21, 16, 13) if args.contact_aware else (23, 18, 16, 13))):
+    for episode in (args.episodes or ((1,) if args.iteration == 6 else ((23, 18, 21, 16, 13) if args.contact_aware else (23, 18, 16, 13)))):
         stem = f'episode_{episode:06d}'
         parent_dir = data/f'cdo_v{args.iteration}_experiments'/args.parent_group/stem
         out = data/f'cdo_v{args.iteration}_experiments'/(args.output_group or ('hand_contact_candidates' if args.contact_aware else 'hand_safe_candidates'))/stem
@@ -77,7 +78,7 @@ with torch.inference_mode():
             print('HAND_SAFE_REUSE_PENETRATION_METRICS', episode, flush=True)
         human, _ = model.run(torch.as_tensor(control['pose'][frames], device='cuda', dtype=torch.float64), torch.as_tensor(np.r_[control['scales'], control['shape']][None], device='cuda', dtype=torch.float64))
         hands = human[:, hand_ids]/1000.
-        work = data/('improvement_pilot_v1' if episode == 18 else 'improvement_rollout_v1')/stem
+        work = data/('improvement_pilot_v1' if episode in (6, 18, 28) else 'improvement_rollout_v1')/stem
         export = work/'run/export'/stem
         k, w2c = camera_calibration(load_edex(export), 0); assert np.allclose(w2c, np.eye(4))
         obs = {}
@@ -136,7 +137,10 @@ with torch.inference_mode():
             proximity_fit_pass = not len(fit_increase) or (float(np.median(fit_increase)) <= 1.0 and float(np.quantile(fit_increase, .95)) <= 2.0)
             if args.contact_aware:
                 eligible = eligible and proximity_fit_pass
-            objective = -float(ious[fit].mean()) if args.iteration == 6 else max(fit_full/(old_full+1e-8), fit_fps/(old_fps+1e-8))
+            # Once penetration/proximity are feasible, prefer image evidence.
+            # A zero-depth control makes every safe ratio zero; picking the
+            # first such offset can undo the original geometry improvement.
+            objective = -float(ious[fit].mean()) if args.iteration >= 6 else max(fit_full/(old_full+1e-8), fit_fps/(old_fps+1e-8))
             row = {'label': label, 'fit_mean_depth_cm': fit_full, 'fit_fps512_depth_cm': fit_fps, 'fit_iou': float(ious[fit].mean()),
                    'held_mean_depth_cm': held_full, 'held_fps512_depth_cm': held_fps, 'held_iou': float(ious[held].mean()),
                    'fit_eligible': bool(eligible), 'fit_objective': objective,

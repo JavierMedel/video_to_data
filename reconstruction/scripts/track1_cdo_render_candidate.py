@@ -11,7 +11,7 @@ import imageio.v2 as imageio
 import numpy as np
 import torch
 
-p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5, 6], default=4); args = p.parse_args()
+p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5, 6, 7], default=4); args = p.parse_args()
 root = args.root; data = root / 'data/v2d_challenge/track_1'; stem = f'episode_{args.episode:06d}'
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
 sys.path.insert(0, '/workspace/v2d_foundation_pose/lib/FoundationPose')
@@ -30,6 +30,8 @@ control_label = f'Scored v{args.iteration-1}'
 groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection') if args.iteration == 4 else ('pose_candidates', 'hand_safe_candidates', 'hand_contact_candidates')
 if args.iteration == 6:
     groups = ('hand_clearance_candidates',)
+if args.iteration == 7:
+    groups = ('geometry_candidates', 'hand_contact_candidates_v2')
 for group in groups:
     folder = data / f'{experiment}_experiments' / group / stem
     if (folder / 'review.json').exists():

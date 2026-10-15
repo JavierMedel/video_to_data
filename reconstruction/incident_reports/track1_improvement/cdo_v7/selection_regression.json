@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "case": "Episode 0: equally penetration-free shifts must not select the first candidate",
+  "old_selection": "ray_-0.06",
+  "corrected_selection": "ray_+0.03",
+  "selected_fit_iou": 0.7736935886469755,
+  "held_out_accepted": true,
+  "old_probe_sha256": "3a8666599967f53a69e1b04211693c408d12af143b3593da10025381fcd17092",
+  "new_probe_sha256": "3e884d1f78470a235d6ed27da30d6bc655d792858b1f93e70ac13d0b870e0342",
+  "scope": "Real-data regression from the stopped provisional run; selection uses fit evidence only. Full scored-frame checks remain mandatory."
+}

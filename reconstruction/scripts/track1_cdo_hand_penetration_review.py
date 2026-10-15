@@ -21,7 +21,7 @@ p.add_argument('--root', type=Path, default=Path('/repo'))
 p.add_argument('--episodes', type=int, nargs='+', default=[23, 18, 21, 16, 13])
 p.add_argument('--sample-count', type=int, default=33, help='0 evaluates every scored frame')
 p.add_argument('--audit-v4', action='store_true', help='Compare the five v4 changes against v3')
-p.add_argument('--iteration', type=int, choices=[5, 6], default=5)
+p.add_argument('--iteration', type=int, choices=[5, 6, 7], default=5)
 p.add_argument('--candidate-group', help='Evaluate one isolated candidate group')
 a = p.parse_args()
 assert not a.audit_v4 or (a.iteration == 5 and a.candidate_group is None)
@@ -63,11 +63,18 @@ with torch.inference_mode():
         if not a.audit_v4 and not a.candidate_group and (hand_contact/'review.json').exists():
             after_dir = hand_contact
         output_name = 'hand_penetration_review' + ('.sampled' if a.sample_count else '') + '.json'
+        frames = np.array(scored[str(episode)])
+        if a.sample_count:
+            frames = frames[np.linspace(0, len(frames)-1, min(a.sample_count, len(frames))).round().astype(int)]
         existing = None
         if not a.audit_v4 and (after_dir/output_name).exists():
             existing = json.loads((after_dir/output_name).read_text())
             assert existing['candidate_npz_sha256'] == digest(after_dir/(stem+'.npz'))
             assert existing['candidate_mesh_sha256'] == digest(after_dir/(stem+'_object.glb'))
+            assert existing['control_npz_sha256'] == digest(before_dir/(stem+'.npz'))
+            assert existing['control_mesh_sha256'] == digest(before_dir/(stem+'_object.glb'))
+            assert existing['all_scored_frames'] == (a.sample_count == 0)
+            assert existing['frames'] == frames.tolist()
             if 'grasp_proximity_gate_pass' in existing:
                 results.append(existing)
                 print('HAND_PEN_REVIEW_REUSED', episode, flush=True)
@@ -76,9 +83,6 @@ with torch.inference_mode():
         after = dict(np.load(after_dir/(stem+'.npz'), allow_pickle=False))
         for key in ('pose', 'scales', 'shape'):
             assert np.array_equal(before[key], after[key]), (episode, key)
-        frames = np.array(scored[str(episode)])
-        if a.sample_count:
-            frames = frames[np.linspace(0, len(frames)-1, min(a.sample_count, len(frames))).round().astype(int)]
         human, _ = model.run(torch.as_tensor(before['pose'][frames], device='cuda', dtype=torch.float64),
                              torch.as_tensor(np.r_[before['scales'], before['shape']][None], device='cuda', dtype=torch.float64))
         hands = (human[:, hand_ids]/1000.).double()

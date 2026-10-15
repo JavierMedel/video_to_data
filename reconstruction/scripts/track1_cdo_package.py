@@ -18,7 +18,7 @@ KIT = ROOT / 'v2d_submission_kit/v2d_submission_kit'
 p = argparse.ArgumentParser()
 p.add_argument('--commit', help='Git commit URL or hash; required when packing')
 p.add_argument('--review-only', action='store_true')
-p.add_argument('--iteration', type=int, choices=[4, 5, 6], default=4)
+p.add_argument('--iteration', type=int, choices=[4, 5, 6, 7], default=4)
 a = p.parse_args()
 experiment = f'cdo_v{a.iteration}'
 control_label = f'submitted_v{a.iteration-1}'
@@ -35,12 +35,25 @@ def sha(path):
 
 decisions = {}
 tested = (1, 2, 12, 14, 19, 20) if a.iteration == 4 else ((23, 18, 21, 16, 13) if a.iteration == 5 else (1,))
+if a.iteration == 7:
+    tested = tuple(range(30))
 for episode in tested:
     stem = f'episode_{episode:06d}'
     selected = None
     groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection') if a.iteration == 4 else ('pose_candidates', 'hand_safe_candidates', 'hand_contact_candidates')
     if a.iteration == 6:
         groups = ('hand_clearance_candidates',)
+    if a.iteration == 7:
+        groups = ('geometry_candidates', 'hand_contact_candidates_v2')
+        probe_path = DATA/f'{experiment}_experiments/geometry_candidates'/stem/'probe.json'
+        geometry_probe = json.loads(probe_path.read_text())
+        assert geometry_probe['control_npz_sha256'] == sha(control_dir/(stem+'.npz'))
+        assert geometry_probe['control_mesh_sha256'] == sha(control_dir/(stem+'_object.glb'))
+        if not geometry_probe['accepted']:
+            decisions[str(episode)] = {'verdict': 'RETAIN_V6', 'gates': {'held_out_geometry': False}, 'source': str(control_dir),
+                                      'review_sha256': sha(probe_path), 'contact_sha256': None,
+                                      'visual_review_complete': False, 'reason': 'Bounded fit failed the disjoint-frame image/depth or meaningful-improvement checks; no change proposed.'}
+            continue
     for group in groups:
         candidate = DATA / f'{experiment}_experiments' / group / stem
         if (candidate / 'review.json').exists():
@@ -58,12 +71,14 @@ for episode in tested:
     contact_name = 'contact_review.json' if a.iteration == 4 else 'hand_penetration_review.json'
     if a.iteration >= 5 and not (selected/contact_name).exists() and held_probe is not None and not held_probe['accepted']:
         contact_name = 'hand_penetration_review.sampled.json'
+    if a.iteration == 7 and not (selected/contact_name).exists():
+        contact_name = 'hand_penetration_review.sampled.json'
     contact = json.loads((selected / contact_name).read_text())
     assert contact['candidate_npz_sha256'] == sha(selected / (stem + '.npz'))
     assert contact['candidate_mesh_sha256'] == sha(selected / (stem + '_object.glb'))
     old, new = review['summary'][control_label], review['summary']['final_candidate']
     if a.iteration >= 5:
-        if held_probe is None or held_probe['accepted']:
+        if a.iteration != 7 and (held_probe is None or held_probe['accepted']):
             assert contact['all_scored_frames'], 'Sampled screening is insufficient for promotion'
         assert contact['control_npz_sha256'] == sha(control_dir/(stem+'.npz'))
         assert contact['control_mesh_sha256'] == sha(control_dir/(stem+'_object.glb'))
@@ -78,6 +93,19 @@ for episode in tested:
         gates['all_scored_frames_reviewed'] = contact['all_scored_frames']
         if a.iteration == 6:
             gates['all_scored_image_frames_reviewed'] = review['hand_clearance']['scored_frames'] == contact['frames']
+        elif a.iteration == 7:
+            image_path = selected/'all_scored_image_review.json'
+            image = json.loads(image_path.read_text()) if image_path.exists() else None
+            gates['held_out_geometry'] = bool(geometry_probe['accepted'])
+            gates['all_scored_image_frames_reviewed'] = image is not None and image['all_scored_frames'] and image['frames'] == contact['frames']
+            gates['full_image_alignment'] = image is not None and image['image_gate_pass']
+            gates['full_depth_validation'] = image is not None and image['depth_gate_pass']
+            if image is not None:
+                for key in ('candidate_npz_sha256','candidate_mesh_sha256','control_npz_sha256','control_mesh_sha256'):
+                    assert image[key] == contact[key]
+            rescue_path = DATA/f'{experiment}_experiments/hand_contact_candidates_v2'/stem/'probe.json'
+            if selected.parent.name == 'hand_contact_candidates_v2':
+                gates['held_out_hand_refinement'] = json.loads(rescue_path.read_text())['accepted']
         else:
             gates['held_out_contact'] = held_probe is None or bool(held_probe['accepted'])
     passed = all(gates.values())
@@ -85,6 +113,9 @@ for episode in tested:
                                'source': str(selected), 'summary': {control_label: old, 'candidate': new},
                                'contact_summary': contact['summary'], 'visual_review_complete': False,
                                'review_sha256': sha(selected/'review.json'), 'contact_sha256': sha(selected/contact_name)}
+    if a.iteration == 7:
+        decisions[str(episode)]['geometry_probe_sha256'] = sha(probe_path)
+        decisions[str(episode)]['image_review_sha256'] = sha(image_path) if image is not None else None
     if held_probe is not None:
         decisions[str(episode)]['held_out_probe_sha256'] = sha(probe_path)
 out = REPORT / 'promotion_decisions.json'
@@ -99,7 +130,11 @@ for episode, decision in decisions.items():
     recorded = approved[episode]
     assert all(recorded[k] == decision[k] for k in ('verdict', 'gates', 'source', 'review_sha256', 'contact_sha256'))
     assert recorded.get('held_out_probe_sha256') == decision.get('held_out_probe_sha256')
-    assert recorded['visual_review_complete'] and recorded.get('reason'), episode
+    assert recorded.get('geometry_probe_sha256') == decision.get('geometry_probe_sha256')
+    assert recorded.get('image_review_sha256') == decision.get('image_review_sha256')
+    assert recorded.get('reason'), episode
+    if decision['verdict'] == 'PROMOTE':
+        assert recorded['visual_review_complete'], episode
 promoted = [int(i) for i, d in approved.items() if d['verdict'] == 'PROMOTE']
 assert promoted
 episodes = DATA / f'{experiment}_experiments/candidate_episodes'
