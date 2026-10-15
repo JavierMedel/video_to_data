@@ -31,7 +31,7 @@ groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop',
 if args.iteration == 6:
     groups = ('hand_clearance_candidates',)
 if args.iteration == 7:
-    groups = ('geometry_candidates', 'hand_contact_candidates_v2')
+    groups = ('geometry_candidates', 'hand_contact_candidates_v2', 'temporal_hoop_candidates')
 for group in groups:
     folder = data / f'{experiment}_experiments' / group / stem
     if (folder / 'review.json').exists():

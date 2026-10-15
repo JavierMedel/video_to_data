@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "triangles": 103772,
+  "random_face_witnesses": 830176,
+  "tube_surface_bound_m": 0.021285293178423575,
+  "max_witness_distance_m": 0.02122487846794116,
+  "face_interpolation_allowance_m": 5.734980544414318e-05,
+  "proposal_safety_margin_m": 0.002,
+  "scope": "Real mesh witnesses supplement the radial Hessian bound; actual-mesh full hand validation remains required."
+}

@@ -29,6 +29,8 @@ with torch.inference_mode():
         candidate=data/'cdo_v7_experiments/geometry_candidates'/stem
         rescue=data/'cdo_v7_experiments/hand_contact_candidates_v2'/stem
         if (rescue/'review.json').exists():candidate=rescue
+        hoop=data/'cdo_v7_experiments/temporal_hoop_candidates'/stem
+        if (hoop/'review.json').exists():candidate=hoop
         out=candidate/'all_scored_image_review.json'
         fingerprints={f'{label}_{kind}_sha256':sha(folder/(stem+suffix)) for label,folder in [('control',control),('candidate',candidate)] for kind,suffix in [('npz','.npz'),('mesh','_object.glb')]}
         if out.exists():
@@ -70,13 +72,17 @@ with torch.inference_mode():
                 depth_rows.append({'frame':int(frame),'before_cm':float(np.median(abs(bz[support]-observed[support]))*100),'after_cm':float(np.median(abs(nz[support]-observed[support]))*100)})
             if i%80==0:print('FULL_IMAGE_REVIEW_PROGRESS',episode,i,len(frames),flush=True)
         old,new=[np.array(versions[label][2]) for label in ['control','candidate']]
-        passed=new.mean()>=max(.3,old.mean()-.005) and float(np.mean(new<old-.05))<=.1
+        alignment_pass=new.mean()>=max(.3,old.mean()-.005) and float(np.mean(new<old-.05))<=.1
         held_depth=[row for row in depth_rows if row['frame'] in review['held_out_frames']]
         depth_summary={'supported_frames':len(depth_rows),'before_cm':float(np.median([r['before_cm'] for r in depth_rows])) if depth_rows else None,'after_cm':float(np.median([r['after_cm'] for r in depth_rows])) if depth_rows else None}
         held_summary={'supported_frames':len(held_depth),'before_cm':float(np.median([r['before_cm'] for r in held_depth])) if held_depth else None,'after_cm':float(np.median([r['after_cm'] for r in held_depth])) if held_depth else None}
         depth_driven=review['geometry_review']['held_out']['depth_driven']
         depth_pass=(len(depth_rows)<4 or depth_summary['after_cm']<=depth_summary['before_cm']+.5) and (not depth_driven or (len(held_depth)>=4 and held_summary['after_cm']<=held_summary['before_cm']-.5))
-        result={'episode':episode,'all_scored_frames':True,'frames':frames.tolist(),'image_gate_pass':bool(passed),
+        old_motion=review['summary']['submitted_v6']['sampled_vertex_acceleration_cm_proxy']
+        new_motion=review['summary']['final_candidate']['sampled_vertex_acceleration_cm_proxy']
+        meaningful=(new.mean()-old.mean()>=.005 or (len(depth_rows)>=4 and depth_summary['before_cm']-depth_summary['after_cm']>=1.) or new_motion<=old_motion*.95)
+        passed=alignment_pass and meaningful
+        result={'episode':episode,'all_scored_frames':True,'frames':frames.tolist(),'image_gate_pass':bool(passed),'alignment_gate_pass':bool(alignment_pass),'meaningful_gain_gate_pass':bool(meaningful),
                 'depth_gate_pass':bool(depth_pass),'common_depth':depth_summary,'held_out_common_depth':held_summary,
                 'summary':{'control':{'visible_iou_mean':float(old.mean())},'candidate':{'visible_iou_mean':float(new.mean())}},
                 'fraction_frames_iou_drop_over_005':float(np.mean(new<old-.05)),'p10_iou_delta':float(np.quantile(new-old,.1)),

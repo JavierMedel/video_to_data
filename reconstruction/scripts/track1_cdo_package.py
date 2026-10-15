@@ -44,7 +44,7 @@ for episode in tested:
     if a.iteration == 6:
         groups = ('hand_clearance_candidates',)
     if a.iteration == 7:
-        groups = ('geometry_candidates', 'hand_contact_candidates_v2')
+        groups = ('geometry_candidates', 'hand_contact_candidates_v2', 'temporal_hoop_candidates')
         probe_path = DATA/f'{experiment}_experiments/geometry_candidates'/stem/'probe.json'
         geometry_probe = json.loads(probe_path.read_text())
         assert geometry_probe['control_npz_sha256'] == sha(control_dir/(stem+'.npz'))
@@ -106,6 +106,9 @@ for episode in tested:
             rescue_path = DATA/f'{experiment}_experiments/hand_contact_candidates_v2'/stem/'probe.json'
             if selected.parent.name == 'hand_contact_candidates_v2':
                 gates['held_out_hand_refinement'] = json.loads(rescue_path.read_text())['accepted']
+            if selected.parent.name == 'temporal_hoop_candidates':
+                gates['temporal_hoop_contact_constraints'] = review['hand_clearance']['contact_aware']
+                gates['temporal_hoop_scored_coverage'] = review['hand_clearance']['scored_frames'] == contact['frames']
         else:
             gates['held_out_contact'] = held_probe is None or bool(held_probe['accepted'])
     passed = all(gates.values())

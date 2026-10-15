@@ -25,6 +25,8 @@ for e in range(30):
     stem=f'episode_{e:06d}';audit=read(report/(stem+'_audit.json'));geometry=experiment/'geometry_candidates'/stem
     probe=read(geometry/'probe.json');correction=experiment/'hand_contact_candidates_v2'/stem;correction_probe=read(correction/'probe.json')
     candidate=correction if (correction/'review.json').exists() else geometry
+    hoop=experiment/'temporal_hoop_candidates'/stem
+    if (hoop/'review.json').exists():candidate=hoop
     hand=read(candidate/'hand_penetration_review.sampled.json');full=read(candidate/'hand_penetration_review.json');image=read(candidate/'all_scored_image_review.json')
     video=read(experiment/'review_videos'/stem/'validation.json');decision=decisions.get(str(e),{}).get('verdict','PENDING')
     if probe and not probe['accepted']:decision='RETAIN_V6'
