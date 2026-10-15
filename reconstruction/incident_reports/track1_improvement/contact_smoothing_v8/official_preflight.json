@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "python": "3.11",
+  "dependencies": "All official checks pass",
+  "authentication": "PASS",
+  "registered_leaderboards": 5,
+  "dry_run": "PASS",
+  "rows": 740780,
+  "episodes": 30,
+  "remaining_before_upload_per_metric": 3,
+  "remote_producing_commit": "b29d19010a14c39c5402ae7a8d0420bf6e0c925e"
+}

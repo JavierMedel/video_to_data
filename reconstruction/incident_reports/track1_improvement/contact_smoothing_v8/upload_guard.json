@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-15T16:21:18.683892+00:00",
+  "authorization_context": "User requested a new submission assessment, then requested complete 30-episode run and explicitly chose applying contact-constrained smoothing to all 30. One reviewed version across five metrics.",
+  "package_sha256": "bd73a931e9f9ec85b920884415c5dc2123d86e2d3d91395c7820ebf564fd3198",
+  "producing_commit": "https://github.com/JavierMedel/video_to_data/commit/b29d19010a14c39c5402ae7a8d0420bf6e0c925e",
+  "changed_episodes": [
+    1,
+    2,
+    6,
+    7,
+    8,
+    9,
+    11,
+    14,
+    22,
+    24,
+    26,
+    29
+  ],
+  "receipt": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.kaggle-receipt.json"
+}

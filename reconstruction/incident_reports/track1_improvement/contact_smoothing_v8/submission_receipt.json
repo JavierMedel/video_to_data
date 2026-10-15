@@ -1,0 +1,50 @@
+{
+  "track": "track_1",
+  "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+  "message": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+  "submissions": {
+    "cd_h_cm": {
+      "slug": "v2d-challenge-track1-cd-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-H (cm)",
+      "ref": 57237204,
+      "public_score": "15.43955",
+      "error": ""
+    },
+    "cd_o_cm": {
+      "slug": "v2d-challenge-track1-cd-o",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - CD-O (cm)",
+      "ref": 57237207,
+      "public_score": "23.48324",
+      "error": ""
+    },
+    "acc_h_cm": {
+      "slug": "v2d-challenge-track1-acc-h",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-H (cm)",
+      "ref": 57237209,
+      "public_score": "1.15894",
+      "error": ""
+    },
+    "acc_o_cm": {
+      "slug": "v2d-challenge-track1-acc-o",
+      "state": "PENDING",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - ACC-O (cm)",
+      "ref": 57237210
+    },
+    "interpenetration_cm": {
+      "slug": "v2d-challenge-track1-pen",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+      "message": "Successfully submitted to Track 1 - Reconstruction - PEN (cm)",
+      "ref": 57237212,
+      "public_score": "0.00322",
+      "error": ""
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "state": "STAGED_VALIDATED",
+  "state": "OFFICIAL_PACK_VALIDATED",
   "episodes": 30,
   "expected_rows": 740780,
   "changed_episodes": [
@@ -83,5 +83,12 @@
     "episode_000029_object.glb": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4"
   },
   "selection_review_sha256": "8949dd94674ddf094f710ac515a4cba534cda3de65fb26122335b8985ac0f505",
-  "uploaded": false
+  "uploaded": true,
+  "rows": 740780,
+  "archive": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
+  "sha256": "bd73a931e9f9ec85b920884415c5dc2123d86e2d3d91395c7820ebf564fd3198",
+  "commit": "https://github.com/JavierMedel/video_to_data/commit/b29d19010a14c39c5402ae7a8d0420bf6e0c925e",
+  "packed_non_translation_rows_identical": true,
+  "changed_packed_rows": 2056,
+  "submission_receipt": "reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.kaggle-receipt.json"
 }

@@ -1,0 +1,37 @@
+{
+  "cd_h_cm": {
+    "v6": 15.43955,
+    "v8": 15.43955,
+    "state": "COMPLETE",
+    "submission_id": 57237204,
+    "delta": 0.0
+  },
+  "cd_o_cm": {
+    "v6": 23.48489,
+    "v8": 23.48324,
+    "state": "COMPLETE",
+    "submission_id": 57237207,
+    "delta": -0.0016500000000014836
+  },
+  "acc_h_cm": {
+    "v6": 1.15894,
+    "v8": 1.15894,
+    "state": "COMPLETE",
+    "submission_id": 57237209,
+    "delta": 0.0
+  },
+  "acc_o_cm": {
+    "v6": 0.81013,
+    "v8": null,
+    "state": "PENDING",
+    "submission_id": 57237210,
+    "delta": null
+  },
+  "interpenetration_cm": {
+    "v6": 0.00325,
+    "v8": 0.00322,
+    "state": "COMPLETE",
+    "submission_id": 57237212,
+    "delta": -2.9999999999999645e-05
+  }
+}
