@@ -1,0 +1,86 @@
+[
+  {
+    "episode": 1,
+    "sample_count": 3,
+    "frames": [
+      151,
+      355,
+      461
+    ],
+    "all_scored_frames": false,
+    "human_arrays_identical": false,
+    "summary": {
+      "control": {
+        "mean_full_hand_depth_cm_unaligned": 0.0,
+        "mean_fps512_depth_cm_unaligned": 0.0,
+        "per_frame_full_hand_depth_cm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "per_frame_fps512_depth_cm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_hand_vertex_depth_cm": 0.0,
+        "penetrating_hand_vertex_fraction": 0.0
+      },
+      "candidate": {
+        "mean_full_hand_depth_cm_unaligned": 0.0,
+        "mean_fps512_depth_cm_unaligned": 0.0,
+        "per_frame_full_hand_depth_cm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "per_frame_fps512_depth_cm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_hand_vertex_depth_cm": 0.0,
+        "penetrating_hand_vertex_fraction": 0.0
+      }
+    },
+    "hand_penetration_gate_pass": true,
+    "review_source_sha256": "22afb921f991bf81b4a6028e1f14b777a1a1e6108caa7494a7f418f2875a5161",
+    "review_fingerprint": {
+      "scripts/track1_cdo_hand_penetration_review.py": "22afb921f991bf81b4a6028e1f14b777a1a1e6108caa7494a7f418f2875a5161",
+      "scripts/track1_review_humans.py": "f5d4f35e6f698d26f19ae541442419d02f0281ade0860bf61a773e834167de61",
+      "data/weights/track1_submission_mhr/mhr_model.pt": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+      "modules/v2d_cari4d/lib/cari4d/lib_mhr/mesh_penetration_review.py": "ba0d6f56b4beb31b3dce3db87d462d2fa48655a576a2b162393a7a981eb24cb3",
+      "modules/v2d_cari4d/lib/cari4d/lib_mhr/assets/mhr_hand_surface_spec.npz": "65e467ae534281c8c5370b76d672c80cf99b95bc73af9c3ac64d5bea6c7f60c8"
+    },
+    "framewise_contact": false,
+    "hand_vertex_count": 4636,
+    "fps_sample_vertex_count": 512,
+    "max_pointwise_depth_increase_cm": 0.0,
+    "pointwise_nonincrease": true,
+    "control_review_sha256": null,
+    "grasp_proximity_gate_pass": true,
+    "grasp_proximity": {
+      "control_contact_like_frames": 1,
+      "control_threshold_cm": 1.5,
+      "median_gap_increase_cm": 1.70741489167181e-05,
+      "p95_gap_increase_cm": 1.70741489167181e-05,
+      "control_nearest_vertex_cm": [
+        1.162937714257114,
+        12.096911033906135,
+        4.401413207270923
+      ],
+      "candidate_nearest_vertex_cm": [
+        1.1629547884060307,
+        11.567836156153882,
+        4.224074246187707
+      ],
+      "scope": "Unsigned nearest mesh-vertex proxy on local FPS512 points; checks only control-contact-like frames. This is not a grasp label or a penetration calculation."
+    },
+    "candidate_npz_sha256": "50b246ae1b16cf53694156c4724d4ee8d6e67c4d3bc6b8205f620a12f781cc00",
+    "candidate_mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+    "control_npz_sha256": "4c9909124ea7498f0755ca9088e7d3524d1784076068f1e529681c0cf7bbce48",
+    "control_mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+    "elapsed_seconds": 16.2592119560004,
+    "scope": "Released generalized-winding containment and triangle distance; full predicted hands plus local FPS512 subset. Exact host hand-role IDs and positive GT alignment scale are unavailable. This is not an official PEN score."
+  }
+]

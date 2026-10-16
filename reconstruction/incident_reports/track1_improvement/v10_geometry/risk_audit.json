@@ -1,0 +1,1207 @@
+{
+  "parent": "v8",
+  "parent_parquet_sha256": "bd73a931e9f9ec85b920884415c5dc2123d86e2d3d91395c7820ebf564fd3198",
+  "source_sha256": "7b2497b327461676e4a9edd66afa252261dd9825366f7ca353e4dd641ad672e0",
+  "episodes": [
+    {
+      "episode": 0,
+      "object": "hula_hoop",
+      "npz_sha256": "687b4726ab4dc54d80386f8b0dabce0b817221aa7965c010a814934d24022b0e",
+      "mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000000/status.json",
+      "image_evidence_sha256": "b84a44dbfa5a30a6c13ab965a445ff9e05917cd6fb863182ee1df992e41bed98",
+      "visible_iou_mean": 0.7287961643123062,
+      "scaled_extents_m": [
+        0.041666413832585084,
+        0.8088169701279165,
+        0.8105755007189505
+      ],
+      "origin_centroid_offset_m": 0.0035294893526106744,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.041666413832585084,
+          0.8088169701279165,
+          0.8105755007189505
+        ],
+        "area_m2_unscaled": 0.37955002522441683,
+        "components_after_vertex_weld": 43,
+        "area_outside_largest_component_fraction": 0.2929577395976616,
+        "watertight_after_vertex_weld": true,
+        "vertices": 51970,
+        "faces": 103772,
+        "centroid": [
+          0.0003233156506895758,
+          -0.0016991990764253886,
+          0.0030766027658582122
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 1,
+      "object": "hula_hoop",
+      "npz_sha256": "4c9909124ea7498f0755ca9088e7d3524d1784076068f1e529681c0cf7bbce48",
+      "mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000001/status.json",
+      "image_evidence_sha256": "f4b0c0ebf2c3056bdbe5bd4112c73e6d617d23cb194326961385d82f9a35da83",
+      "visible_iou_mean": 0.5921667877627516,
+      "scaled_extents_m": [
+        0.041666413832585084,
+        0.8088169701279165,
+        0.8105755007189505
+      ],
+      "origin_centroid_offset_m": 0.0035294893526106744,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.041666413832585084,
+          0.8088169701279165,
+          0.8105755007189505
+        ],
+        "area_m2_unscaled": 0.37955002522441683,
+        "components_after_vertex_weld": 43,
+        "area_outside_largest_component_fraction": 0.2929577395976616,
+        "watertight_after_vertex_weld": true,
+        "vertices": 51970,
+        "faces": 103772,
+        "centroid": [
+          0.0003233156506895758,
+          -0.0016991990764253886,
+          0.0030766027658582122
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 2,
+      "object": "hula_hoop",
+      "npz_sha256": "297b2af37ed1aa29dfedafcd290dd7d7f2aedaeb5e7994de5f61ea3084f4d73f",
+      "mesh_sha256": "ef2f782683e412e74eabe62273abb7ebe6eb26b28fc4fdf6f5c92f445330687d",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000002/status.json",
+      "image_evidence_sha256": "ab9e3934a9374c09cbe753f907b89880b71102e5a3f50be8fa1f2140480abea3",
+      "visible_iou_mean": 0.6721142040831702,
+      "scaled_extents_m": [
+        0.041666413832585084,
+        0.8088169701279165,
+        0.8105755007189505
+      ],
+      "origin_centroid_offset_m": 0.0035294893526106744,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.041666413832585084,
+          0.8088169701279165,
+          0.8105755007189505
+        ],
+        "area_m2_unscaled": 0.37955002522441683,
+        "components_after_vertex_weld": 43,
+        "area_outside_largest_component_fraction": 0.2929577395976616,
+        "watertight_after_vertex_weld": true,
+        "vertices": 51970,
+        "faces": 103772,
+        "centroid": [
+          0.0003233156506895758,
+          -0.0016991990764253886,
+          0.0030766027658582122
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 3,
+      "object": "big_red_bowl",
+      "npz_sha256": "6dc75885bc4a3455fa506fa777710579fd047467458f2884bd63052934fac2a1",
+      "mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000003/status.json",
+      "image_evidence_sha256": "4f0441f5dfdbb1521205a3be4a38d7694d201dc2579c3455b836752ecbec90bb",
+      "visible_iou_mean": 0.8976341827827341,
+      "scaled_extents_m": [
+        0.13331048162196496,
+        0.3183405614931212,
+        0.31884985389076237
+      ],
+      "origin_centroid_offset_m": 0.00449339996269444,
+      "rotation_jumps_over_45_consecutive_scored_frames": 20,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.13331048162196496,
+          0.3183405614931212,
+          0.31884985389076237
+        ],
+        "area_m2_unscaled": 0.304470264706188,
+        "components_after_vertex_weld": 12,
+        "area_outside_largest_component_fraction": 0.009898608312037704,
+        "watertight_after_vertex_weld": true,
+        "vertices": 280438,
+        "faces": 560832,
+        "centroid": [
+          0.004434591798164632,
+          -0.0005633880391733458,
+          -0.0004556673410611999
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 4,
+      "object": "big_red_bowl",
+      "npz_sha256": "333c32e399f7ea2e02a698436c308c97a30dbb49193161f5c9186964ed17f3f7",
+      "mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000004/status.json",
+      "image_evidence_sha256": "1f891566c54c29d574e887dc31ce975dd70e96cd1731409e6286d236f1699e9e",
+      "visible_iou_mean": 0.8569484500928651,
+      "scaled_extents_m": [
+        0.13331048162196496,
+        0.3183405614931212,
+        0.31884985389076237
+      ],
+      "origin_centroid_offset_m": 0.00449339996269444,
+      "rotation_jumps_over_45_consecutive_scored_frames": 9,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.13331048162196496,
+          0.3183405614931212,
+          0.31884985389076237
+        ],
+        "area_m2_unscaled": 0.304470264706188,
+        "components_after_vertex_weld": 12,
+        "area_outside_largest_component_fraction": 0.009898608312037704,
+        "watertight_after_vertex_weld": true,
+        "vertices": 280438,
+        "faces": 560832,
+        "centroid": [
+          0.004434591798164632,
+          -0.0005633880391733458,
+          -0.0004556673410611999
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 5,
+      "object": "big_red_bowl",
+      "npz_sha256": "c77255c678863af69ac0246d7b1788ed157671a1c0fb3747a5e8e135e8581a58",
+      "mesh_sha256": "e47ed5bd558decaee0fe0b78816d0ace06f5fbec8ffcb0122d5c103fc79a0370",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000005/status.json",
+      "image_evidence_sha256": "4515755e5c6360def73362e74e2c2c044778087f904c48f12d129a05460847a4",
+      "visible_iou_mean": 0.905442539349343,
+      "scaled_extents_m": [
+        0.13331048162196496,
+        0.3183405614931212,
+        0.31884985389076237
+      ],
+      "origin_centroid_offset_m": 0.00449339996269444,
+      "rotation_jumps_over_45_consecutive_scored_frames": 30,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.13331048162196496,
+          0.3183405614931212,
+          0.31884985389076237
+        ],
+        "area_m2_unscaled": 0.304470264706188,
+        "components_after_vertex_weld": 12,
+        "area_outside_largest_component_fraction": 0.009898608312037704,
+        "watertight_after_vertex_weld": true,
+        "vertices": 280438,
+        "faces": 560832,
+        "centroid": [
+          0.004434591798164632,
+          -0.0005633880391733458,
+          -0.0004556673410611999
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 6,
+      "object": "iron",
+      "npz_sha256": "9dbf5bb81ccfce1c7ac840c2bd85acad6a047fde1edfa0fb0cafecafef36b783",
+      "mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000006/status.json",
+      "image_evidence_sha256": "13c1476f88e391f0e799f9d5ed0c2ea5989605f5836055fa8fb56951e1b477bc",
+      "visible_iou_mean": 0.8319773067655803,
+      "scaled_extents_m": [
+        0.10621226749260852,
+        0.16147441917978334,
+        0.32573308870802675
+      ],
+      "origin_centroid_offset_m": 0.010894565096422925,
+      "rotation_jumps_over_45_consecutive_scored_frames": 20,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.10621226749260852,
+          0.16147441917978334,
+          0.32573308870802675
+        ],
+        "area_m2_unscaled": 0.25540952519399684,
+        "components_after_vertex_weld": 10,
+        "area_outside_largest_component_fraction": 0.04042910464827243,
+        "watertight_after_vertex_weld": true,
+        "vertices": 202300,
+        "faces": 404596,
+        "centroid": [
+          -0.0003636661818287075,
+          0.009789953098368331,
+          -0.004766142452774479
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 7,
+      "object": "iron",
+      "npz_sha256": "d04aa53e899734c40d2304c4714fdb7d546b3c889389ba77a3781178600ce87c",
+      "mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+      "image_evidence": "incident_reports/track1_improvement/episode7_contact_smoothing/status.json",
+      "image_evidence_sha256": "7258d888fdd68dc4347a02988c8d2e7a886671faf82178eb8647ecf520193737",
+      "visible_iou_mean": 0.7054997784283692,
+      "scaled_extents_m": [
+        0.10621226749260852,
+        0.16147441917978334,
+        0.32573308870802675
+      ],
+      "origin_centroid_offset_m": 0.010894565096422925,
+      "rotation_jumps_over_45_consecutive_scored_frames": 48,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.10621226749260852,
+          0.16147441917978334,
+          0.32573308870802675
+        ],
+        "area_m2_unscaled": 0.25540952519399684,
+        "components_after_vertex_weld": 10,
+        "area_outside_largest_component_fraction": 0.04042910464827243,
+        "watertight_after_vertex_weld": true,
+        "vertices": 202300,
+        "faces": 404596,
+        "centroid": [
+          -0.0003636661818287075,
+          0.009789953098368331,
+          -0.004766142452774479
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 8,
+      "object": "iron",
+      "npz_sha256": "003f72967dfc30f4647d6cc62686d1bbca782b4c429ec058d710d22bc8e53ffd",
+      "mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000008/status.json",
+      "image_evidence_sha256": "1c889b61f0abb8b3d15bab52a32235738e29afad1031652fe94d0e5f77b6fc2f",
+      "visible_iou_mean": 0.7067724384925439,
+      "scaled_extents_m": [
+        0.10621226749260852,
+        0.16147441917978334,
+        0.32573308870802675
+      ],
+      "origin_centroid_offset_m": 0.010894565096422925,
+      "rotation_jumps_over_45_consecutive_scored_frames": 31,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.10621226749260852,
+          0.16147441917978334,
+          0.32573308870802675
+        ],
+        "area_m2_unscaled": 0.25540952519399684,
+        "components_after_vertex_weld": 10,
+        "area_outside_largest_component_fraction": 0.04042910464827243,
+        "watertight_after_vertex_weld": true,
+        "vertices": 202300,
+        "faces": 404596,
+        "centroid": [
+          -0.0003636661818287075,
+          0.009789953098368331,
+          -0.004766142452774479
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 9,
+      "object": "white_desk",
+      "npz_sha256": "57b0b9925e4c417111315a52f7a29543986d38fa777d31041c8370cdb78b211d",
+      "mesh_sha256": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000009/status.json",
+      "image_evidence_sha256": "6c34687d34443851b61de5fa55745f7603752d12624e1221c63a8b22ffa2f4d5",
+      "visible_iou_mean": 0.7365465840926537,
+      "scaled_extents_m": [
+        0.7603996499855947,
+        0.9895271346485526,
+        1.1489859132944935
+      ],
+      "origin_centroid_offset_m": 0.2649710684768951,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.7603996499855947,
+          0.9895271346485526,
+          1.1489859132944935
+        ],
+        "area_m2_unscaled": 3.23424831068529,
+        "components_after_vertex_weld": 3,
+        "area_outside_largest_component_fraction": 0.18408754493395396,
+        "watertight_after_vertex_weld": true,
+        "vertices": 175220,
+        "faces": 350428,
+        "centroid": [
+          -0.006154395016001976,
+          0.26465308163548223,
+          0.011425276041182581
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 10,
+      "object": "white_desk",
+      "npz_sha256": "63d81078b0cb98b891e25566cb30e8f3a99f880dd9ab6db33b618fb929af3d8a",
+      "mesh_sha256": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000010/status.json",
+      "image_evidence_sha256": "4e609ee1605be78d265592b287b1c1e5325496fe48933a142b121fc12462bfc1",
+      "visible_iou_mean": 0.5048264362737893,
+      "scaled_extents_m": [
+        0.7603996499855947,
+        0.9895271346485526,
+        1.1489859132944935
+      ],
+      "origin_centroid_offset_m": 0.2649710684768951,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.7603996499855947,
+          0.9895271346485526,
+          1.1489859132944935
+        ],
+        "area_m2_unscaled": 3.23424831068529,
+        "components_after_vertex_weld": 3,
+        "area_outside_largest_component_fraction": 0.18408754493395396,
+        "watertight_after_vertex_weld": true,
+        "vertices": 175220,
+        "faces": 350428,
+        "centroid": [
+          -0.006154395016001976,
+          0.26465308163548223,
+          0.011425276041182581
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 11,
+      "object": "white_desk",
+      "npz_sha256": "1f7fcd2f271dbebb59ceaa6412782c441b033c05fda17ca96d05e244906f5d83",
+      "mesh_sha256": "f9da432cf1c86288f118cbc9759bb2ba7b1b37844d1d82e6da4406e6634bfa19",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000011/status.json",
+      "image_evidence_sha256": "0187d8af1485840338c096c3c02074eee95481e0d646d95ce1f55a329bd58c8d",
+      "visible_iou_mean": 0.5658379245739649,
+      "scaled_extents_m": [
+        0.7603996499855947,
+        0.9895271346485526,
+        1.1489859132944935
+      ],
+      "origin_centroid_offset_m": 0.2649710684768951,
+      "rotation_jumps_over_45_consecutive_scored_frames": 2,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.7603996499855947,
+          0.9895271346485526,
+          1.1489859132944935
+        ],
+        "area_m2_unscaled": 3.23424831068529,
+        "components_after_vertex_weld": 3,
+        "area_outside_largest_component_fraction": 0.18408754493395396,
+        "watertight_after_vertex_weld": true,
+        "vertices": 175220,
+        "faces": 350428,
+        "centroid": [
+          -0.006154395016001976,
+          0.26465308163548223,
+          0.011425276041182581
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 12,
+      "object": "black_pan",
+      "npz_sha256": "0a6ecd7e32145c7d5461d398033d4571794b6504d782051e7585e875167214bf",
+      "mesh_sha256": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000012/status.json",
+      "image_evidence_sha256": "c56b10765fe92d5994c5347ca159ef6950f06fa946e74d7f795f551118fa8c14",
+      "visible_iou_mean": 0.72659581842605,
+      "scaled_extents_m": [
+        0.05684067843755858,
+        0.22024536979320664,
+        0.3939009696059516
+      ],
+      "origin_centroid_offset_m": 0.06552098379009125,
+      "rotation_jumps_over_45_consecutive_scored_frames": 7,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.05684067843755858,
+          0.22024536979320664,
+          0.3939009696059516
+        ],
+        "area_m2_unscaled": 0.12831561742147665,
+        "components_after_vertex_weld": 3,
+        "area_outside_largest_component_fraction": 0.04861224313373669,
+        "watertight_after_vertex_weld": true,
+        "vertices": 68532,
+        "faces": 137052,
+        "centroid": [
+          0.006384234220136104,
+          -0.009635689552934262,
+          0.06449336676808953
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 13,
+      "object": "black_pan",
+      "npz_sha256": "fbe45dfc9f15891243bb28075941ad586ea266b5f4abca1c267a1d35733a9db3",
+      "mesh_sha256": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000013/status.json",
+      "image_evidence_sha256": "b532ca2189a124ab324fce239208f5b081cda1e80975707c6dbd6c1db9ece50f",
+      "visible_iou_mean": 0.657235881085244,
+      "scaled_extents_m": [
+        0.05684067843755858,
+        0.22024536979320664,
+        0.3939009696059516
+      ],
+      "origin_centroid_offset_m": 0.06552098379009125,
+      "rotation_jumps_over_45_consecutive_scored_frames": 7,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.05684067843755858,
+          0.22024536979320664,
+          0.3939009696059516
+        ],
+        "area_m2_unscaled": 0.12831561742147665,
+        "components_after_vertex_weld": 3,
+        "area_outside_largest_component_fraction": 0.04861224313373669,
+        "watertight_after_vertex_weld": true,
+        "vertices": 68532,
+        "faces": 137052,
+        "centroid": [
+          0.006384234220136104,
+          -0.009635689552934262,
+          0.06449336676808953
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 14,
+      "object": "black_pan",
+      "npz_sha256": "447860b6c723fcec4a76cde5789523d7daa5ef21f8bec05cee8377af4b80f979",
+      "mesh_sha256": "65543fe84fdef781f5c2f37361de89d75b2431e9735e887ad12f8c4a368bed2b",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000014/status.json",
+      "image_evidence_sha256": "e1b79835667144fd2872209536f1efaebe70d0361e5d2a5bde546a9f8258b91e",
+      "visible_iou_mean": 0.7407392996800951,
+      "scaled_extents_m": [
+        0.05684067843755858,
+        0.22024536979320664,
+        0.3939009696059516
+      ],
+      "origin_centroid_offset_m": 0.06552098379009125,
+      "rotation_jumps_over_45_consecutive_scored_frames": 1,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.05684067843755858,
+          0.22024536979320664,
+          0.3939009696059516
+        ],
+        "area_m2_unscaled": 0.12831561742147665,
+        "components_after_vertex_weld": 3,
+        "area_outside_largest_component_fraction": 0.04861224313373669,
+        "watertight_after_vertex_weld": true,
+        "vertices": 68532,
+        "faces": 137052,
+        "centroid": [
+          0.006384234220136104,
+          -0.009635689552934262,
+          0.06449336676808953
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 15,
+      "object": "foam_grass_block",
+      "npz_sha256": "02fecef6caa446a7a42a1ac7ec3794fcd38ce4c8d8a6789c65697fd642ff6c26",
+      "mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000015/status.json",
+      "image_evidence_sha256": "1e8040a90c1f6e5ee694c70ec095d31df8d8366586bd7f62db7e902b8723987f",
+      "visible_iou_mean": 0.8985607622379668,
+      "scaled_extents_m": [
+        0.210179555993948,
+        0.21107809252678383,
+        0.21226203049725184
+      ],
+      "origin_centroid_offset_m": 0.0006258799250064569,
+      "rotation_jumps_over_45_consecutive_scored_frames": 7,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.210179555993948,
+          0.21107809252678383,
+          0.21226203049725184
+        ],
+        "area_m2_unscaled": 0.4707023361846248,
+        "components_after_vertex_weld": 2,
+        "area_outside_largest_component_fraction": 0.4804911967549369,
+        "watertight_after_vertex_weld": true,
+        "vertices": 176402,
+        "faces": 352796,
+        "centroid": [
+          0.0006169304321112922,
+          -9.897875388660921e-05,
+          -3.641055808576051e-05
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 16,
+      "object": "foam_grass_block",
+      "npz_sha256": "65353a34fe84849c6b6402126d5fc0e9712114854767f046057da0f2b586a23e",
+      "mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000016/status.json",
+      "image_evidence_sha256": "616e97bcab6d6b8b9675e0c7a6e3bf53978119e5250311c9d3edefac7fb9061a",
+      "visible_iou_mean": 0.7336907940606276,
+      "scaled_extents_m": [
+        0.210179555993948,
+        0.21107809252678383,
+        0.21226203049725184
+      ],
+      "origin_centroid_offset_m": 0.0006258799250064569,
+      "rotation_jumps_over_45_consecutive_scored_frames": 2,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.210179555993948,
+          0.21107809252678383,
+          0.21226203049725184
+        ],
+        "area_m2_unscaled": 0.4707023361846248,
+        "components_after_vertex_weld": 2,
+        "area_outside_largest_component_fraction": 0.4804911967549369,
+        "watertight_after_vertex_weld": true,
+        "vertices": 176402,
+        "faces": 352796,
+        "centroid": [
+          0.0006169304321112922,
+          -9.897875388660921e-05,
+          -3.641055808576051e-05
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 17,
+      "object": "foam_grass_block",
+      "npz_sha256": "9bba768a2f67ae949bf02c7d623c2b5d5156fd498cf713115c33ca2696a0bb0d",
+      "mesh_sha256": "12e1aba19c5b20db2cdccd72931e9fc60402ae7073a4ab9846dd9de8bb887d40",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000017/status.json",
+      "image_evidence_sha256": "ffb1613a19b1ecbd955a9c08597e52356f88bcebcac07d27b2b9617575022a50",
+      "visible_iou_mean": 0.8546483099245422,
+      "scaled_extents_m": [
+        0.210179555993948,
+        0.21107809252678383,
+        0.21226203049725184
+      ],
+      "origin_centroid_offset_m": 0.0006258799250064569,
+      "rotation_jumps_over_45_consecutive_scored_frames": 2,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.210179555993948,
+          0.21107809252678383,
+          0.21226203049725184
+        ],
+        "area_m2_unscaled": 0.4707023361846248,
+        "components_after_vertex_weld": 2,
+        "area_outside_largest_component_fraction": 0.4804911967549369,
+        "watertight_after_vertex_weld": true,
+        "vertices": 176402,
+        "faces": 352796,
+        "centroid": [
+          0.0006169304321112922,
+          -9.897875388660921e-05,
+          -3.641055808576051e-05
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 18,
+      "object": "paint_roller",
+      "npz_sha256": "b41ca71d3c73a90c2fbd41c67008122a6aa363f43b69aef1e0bde58835974c96",
+      "mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000018/status.json",
+      "image_evidence_sha256": "294de507139c681d86cacb482f12bcaedba42fc4b493cfa2ceb998c38cf5e4c9",
+      "visible_iou_mean": 0.4148214519733474,
+      "scaled_extents_m": [
+        0.09229514127787508,
+        0.3234491543380858,
+        0.3259291900754737
+      ],
+      "origin_centroid_offset_m": 0.010316874887004276,
+      "rotation_jumps_over_45_consecutive_scored_frames": 37,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.09229514127787508,
+          0.3234491543380858,
+          0.3259291900754737
+        ],
+        "area_m2_unscaled": 0.35021471600500187,
+        "components_after_vertex_weld": 10,
+        "area_outside_largest_component_fraction": 0.7186821816082617,
+        "watertight_after_vertex_weld": true,
+        "vertices": 291530,
+        "faces": 583024,
+        "centroid": [
+          0.001341118092331065,
+          -0.004411213313786492,
+          -0.009229328621129197
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 19,
+      "object": "paint_roller",
+      "npz_sha256": "9cf65ed9154a82bde3084287bbcf5361621d15c6052ed0fe1067e3bdf80bfd87",
+      "mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000019/status.json",
+      "image_evidence_sha256": "5903c7ad017e4b59287af947175543829b8c8a4866773e9a81810a4bf82a1c43",
+      "visible_iou_mean": 0.4533993674264464,
+      "scaled_extents_m": [
+        0.09229514127787508,
+        0.3234491543380858,
+        0.3259291900754737
+      ],
+      "origin_centroid_offset_m": 0.010316874887004276,
+      "rotation_jumps_over_45_consecutive_scored_frames": 4,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.09229514127787508,
+          0.3234491543380858,
+          0.3259291900754737
+        ],
+        "area_m2_unscaled": 0.35021471600500187,
+        "components_after_vertex_weld": 10,
+        "area_outside_largest_component_fraction": 0.7186821816082617,
+        "watertight_after_vertex_weld": true,
+        "vertices": 291530,
+        "faces": 583024,
+        "centroid": [
+          0.001341118092331065,
+          -0.004411213313786492,
+          -0.009229328621129197
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 20,
+      "object": "paint_roller",
+      "npz_sha256": "2514d88ee3e395a7d50230c835682496cfafdc194ec2dfdff027a0dbd9d7220a",
+      "mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000020/status.json",
+      "image_evidence_sha256": "f31c3b4fc812bde6647a34dc2d5221d106539519e577f7ac38f4daf5578b371e",
+      "visible_iou_mean": 0.4130478248993556,
+      "scaled_extents_m": [
+        0.09229514127787508,
+        0.3234491543380858,
+        0.3259291900754737
+      ],
+      "origin_centroid_offset_m": 0.010316874887004276,
+      "rotation_jumps_over_45_consecutive_scored_frames": 3,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.09229514127787508,
+          0.3234491543380858,
+          0.3259291900754737
+        ],
+        "area_m2_unscaled": 0.35021471600500187,
+        "components_after_vertex_weld": 10,
+        "area_outside_largest_component_fraction": 0.7186821816082617,
+        "watertight_after_vertex_weld": true,
+        "vertices": 291530,
+        "faces": 583024,
+        "centroid": [
+          0.001341118092331065,
+          -0.004411213313786492,
+          -0.009229328621129197
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 21,
+      "object": "pink_foam_roll",
+      "npz_sha256": "32401da14cc79bcdd7570e123bfbd3c545cb9d9e6a7e4251fd8030f0f0e39539",
+      "mesh_sha256": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000021/status.json",
+      "image_evidence_sha256": "2236985312426d4493c7645246e80ddc56d3ca9fc5c20e0d3502bba31ad9271f",
+      "visible_iou_mean": 0.7756704294715904,
+      "scaled_extents_m": [
+        0.14034859815196538,
+        0.14146416055485556,
+        0.5949096624732464
+      ],
+      "origin_centroid_offset_m": 0.0003587568740753197,
+      "rotation_jumps_over_45_consecutive_scored_frames": 14,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.15594289096659292,
+          0.15718240478041792,
+          0.6610107535921899
+        ],
+        "area_m2_unscaled": 0.7942629784823959,
+        "components_after_vertex_weld": 1,
+        "area_outside_largest_component_fraction": 0.0,
+        "watertight_after_vertex_weld": true,
+        "vertices": 152454,
+        "faces": 304908,
+        "centroid": [
+          8.957029381816164e-05,
+          -0.0001992956157964371,
+          -0.00033339966322834107
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 22,
+      "object": "pink_foam_roll",
+      "npz_sha256": "8eb41cb6e05c479700928367ebdeca74150d244cc0285b6f77a7d31e3679f17b",
+      "mesh_sha256": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000022/status.json",
+      "image_evidence_sha256": "fce965648a4a1957045064d026c42b3161a3e622443b61b7504566ea46c8b5df",
+      "visible_iou_mean": 0.7764919675820696,
+      "scaled_extents_m": [
+        0.15594289096659292,
+        0.15718240478041792,
+        0.6610107535921899
+      ],
+      "origin_centroid_offset_m": 0.00039861875953236837,
+      "rotation_jumps_over_45_consecutive_scored_frames": 33,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.15594289096659292,
+          0.15718240478041792,
+          0.6610107535921899
+        ],
+        "area_m2_unscaled": 0.7942629784823959,
+        "components_after_vertex_weld": 1,
+        "area_outside_largest_component_fraction": 0.0,
+        "watertight_after_vertex_weld": true,
+        "vertices": 152454,
+        "faces": 304908,
+        "centroid": [
+          8.957029381816164e-05,
+          -0.0001992956157964371,
+          -0.00033339966322834107
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.1111111405455043,
+        1.1111111405455045,
+        1.1111111405455043
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 23,
+      "object": "pink_foam_roll",
+      "npz_sha256": "60cf7330add0457d1f70e8fdd34cbcb80d27c2b73391f53fb798f92d2cd89dae",
+      "mesh_sha256": "c175edcd70a8482fa69fb9066b926c5e2598408d417efe4a0260b5482c2d5584",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000023/status.json",
+      "image_evidence_sha256": "5a3c248556e3e94b67cd2c40ff7c97ff1cdc6c9526ef888f90fc312d3b39fe51",
+      "visible_iou_mean": 0.7991278359764501,
+      "scaled_extents_m": [
+        0.14034859815196538,
+        0.14146416055485556,
+        0.5949096624732464
+      ],
+      "origin_centroid_offset_m": 0.0003587568740753197,
+      "rotation_jumps_over_45_consecutive_scored_frames": 13,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.15594289096659292,
+          0.15718240478041792,
+          0.6610107535921899
+        ],
+        "area_m2_unscaled": 0.7942629784823959,
+        "components_after_vertex_weld": 1,
+        "area_outside_largest_component_fraction": 0.0,
+        "watertight_after_vertex_weld": true,
+        "vertices": 152454,
+        "faces": 304908,
+        "centroid": [
+          8.957029381816164e-05,
+          -0.0001992956157964371,
+          -0.00033339966322834107
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 24,
+      "object": "short_wood_stool",
+      "npz_sha256": "d901d22974a18e5c2f56b60d66d8bf363e93e11de02fe3294a297f175d1b800e",
+      "mesh_sha256": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000024/status.json",
+      "image_evidence_sha256": "429875632c8ec56fd34bcc217f616dc40ce15dc5fd3239a3a52a7572a3598ead",
+      "visible_iou_mean": 0.6643462402761475,
+      "scaled_extents_m": [
+        0.3424317702330975,
+        0.46746525370721487,
+        0.5319266077887108
+      ],
+      "origin_centroid_offset_m": 0.11115718245682318,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.3424317702330975,
+          0.46746525370721487,
+          0.5319266077887108
+        ],
+        "area_m2_unscaled": 1.4290950352319658,
+        "components_after_vertex_weld": 26,
+        "area_outside_largest_component_fraction": 0.08992004309017199,
+        "watertight_after_vertex_weld": true,
+        "vertices": 378990,
+        "faces": 757976,
+        "centroid": [
+          0.0013166015627925963,
+          -0.0003251057889774027,
+          0.11114890947863729
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 25,
+      "object": "short_wood_stool",
+      "npz_sha256": "7c0ea09899fd833b5a58ab3dbdb916e25d6b392f979141ffe33ecb770d438348",
+      "mesh_sha256": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000025/status.json",
+      "image_evidence_sha256": "5e8cd2a7ad7543c7a9e62801d3b0065e46eecaf9b3aa4849ff989d80fdfeb55c",
+      "visible_iou_mean": 0.6859279266775471,
+      "scaled_extents_m": [
+        0.3424317702330975,
+        0.46746525370721487,
+        0.5319266077887108
+      ],
+      "origin_centroid_offset_m": 0.11115718245682318,
+      "rotation_jumps_over_45_consecutive_scored_frames": 10,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.3424317702330975,
+          0.46746525370721487,
+          0.5319266077887108
+        ],
+        "area_m2_unscaled": 1.4290950352319658,
+        "components_after_vertex_weld": 26,
+        "area_outside_largest_component_fraction": 0.08992004309017199,
+        "watertight_after_vertex_weld": true,
+        "vertices": 378990,
+        "faces": 757976,
+        "centroid": [
+          0.0013166015627925963,
+          -0.0003251057889774027,
+          0.11114890947863729
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 26,
+      "object": "short_wood_stool",
+      "npz_sha256": "aa64165bfc3973462f8adc3319ecc88f85ebff90d2fb7cb04476f29428dfa4c4",
+      "mesh_sha256": "0cb6bc1db43d39eb38c3616bb4d0cab1673248a3ae31937b6f02397d2b394ed1",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000026/status.json",
+      "image_evidence_sha256": "d4c07a965600ffde20f219f7c01cd2c4e000b2d707f65b3cb6843a8dad90650c",
+      "visible_iou_mean": 0.4980319709752378,
+      "scaled_extents_m": [
+        0.3424317702330975,
+        0.46746525370721487,
+        0.5319266077887108
+      ],
+      "origin_centroid_offset_m": 0.11115718245682318,
+      "rotation_jumps_over_45_consecutive_scored_frames": 2,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.3424317702330975,
+          0.46746525370721487,
+          0.5319266077887108
+        ],
+        "area_m2_unscaled": 1.4290950352319658,
+        "components_after_vertex_weld": 26,
+        "area_outside_largest_component_fraction": 0.08992004309017199,
+        "watertight_after_vertex_weld": true,
+        "vertices": 378990,
+        "faces": 757976,
+        "centroid": [
+          0.0013166015627925963,
+          -0.0003251057889774027,
+          0.11114890947863729
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 27,
+      "object": "white_laptop_cart",
+      "npz_sha256": "ead0c28647d0371e71a5df55c3c0bf287b8a7fb4d6df1d5b3a42dc7933dc1751",
+      "mesh_sha256": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000027/status.json",
+      "image_evidence_sha256": "65ad2bee945a43f13d9f3ef74876ab1a511ae2f12f7e69e98f4e9cbf40883155",
+      "visible_iou_mean": 0.6468460071724629,
+      "scaled_extents_m": [
+        0.5755504011911421,
+        0.5839783160218988,
+        0.8221780254284259
+      ],
+      "origin_centroid_offset_m": 0.15630927889951732,
+      "rotation_jumps_over_45_consecutive_scored_frames": 4,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.5755504011911421,
+          0.5839783160218988,
+          0.8221780254284259
+        ],
+        "area_m2_unscaled": 2.1796605790251227,
+        "components_after_vertex_weld": 11,
+        "area_outside_largest_component_fraction": 0.13805996402028298,
+        "watertight_after_vertex_weld": false,
+        "vertices": 261454,
+        "faces": 523238,
+        "centroid": [
+          -0.0038755641537649124,
+          -0.0006349598854880077,
+          -0.15625993567937035
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 28,
+      "object": "white_laptop_cart",
+      "npz_sha256": "73136f3c96a763062af8bf94ef591ca5bef36487b8d7e2cdeb907511772bfdf9",
+      "mesh_sha256": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000028/status.json",
+      "image_evidence_sha256": "1deea5c865d116479970897389fb8193a5446be344f160c52fc07dbf04efc2fd",
+      "visible_iou_mean": 0.6812271771787786,
+      "scaled_extents_m": [
+        0.5755504011911421,
+        0.5839783160218988,
+        0.8221780254284259
+      ],
+      "origin_centroid_offset_m": 0.15630927889951732,
+      "rotation_jumps_over_45_consecutive_scored_frames": 4,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.5755504011911421,
+          0.5839783160218988,
+          0.8221780254284259
+        ],
+        "area_m2_unscaled": 2.1796605790251227,
+        "components_after_vertex_weld": 11,
+        "area_outside_largest_component_fraction": 0.13805996402028298,
+        "watertight_after_vertex_weld": false,
+        "vertices": 261454,
+        "faces": 523238,
+        "centroid": [
+          -0.0038755641537649124,
+          -0.0006349598854880077,
+          -0.15625993567937035
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    },
+    {
+      "episode": 29,
+      "object": "white_laptop_cart",
+      "npz_sha256": "fe29de1000ab7b19aaf41e1d9dd608df7092e1a29d928215b655bb301a3625c8",
+      "mesh_sha256": "4212c65b7680a8bba112b282caac605fd700159037095a4b6f846ced05b3efe4",
+      "image_evidence": "incident_reports/track1_improvement/contact_smoothing_v8/episode_000029/status.json",
+      "image_evidence_sha256": "6de7b25fcef0f4e3a96c8aef941d22b9f1ec95388d2aa0848c5a0185f35b323f",
+      "visible_iou_mean": 0.4932995741063736,
+      "scaled_extents_m": [
+        0.5755504011911421,
+        0.5839783160218988,
+        0.8221780254284259
+      ],
+      "origin_centroid_offset_m": 0.15630927889951732,
+      "rotation_jumps_over_45_consecutive_scored_frames": 0,
+      "geometry": {
+        "extents_m_unscaled": [
+          0.5755504011911421,
+          0.5839783160218988,
+          0.8221780254284259
+        ],
+        "area_m2_unscaled": 2.1796605790251227,
+        "components_after_vertex_weld": 11,
+        "area_outside_largest_component_fraction": 0.13805996402028298,
+        "watertight_after_vertex_weld": false,
+        "vertices": 261454,
+        "faces": 523238,
+        "centroid": [
+          -0.0038755641537649124,
+          -0.0006349598854880077,
+          -0.15625993567937035
+        ]
+      },
+      "sorted_extent_ratio_to_label_group_median": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scope": "Object labels group episodes; physical identity and common local orientation not established by this ratio. Extents/IoU/components are risk signals, not hidden CD-O."
+    }
+  ]
+}

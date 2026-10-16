@@ -1,0 +1,30 @@
+[
+  {
+    "episode": 1,
+    "max_unwrap_only_vertex_displacement_cm": 0.00012789195720092934
+  },
+  {
+    "episode": 4,
+    "max_unwrap_only_vertex_displacement_cm": 0.00018342308471941084
+  },
+  {
+    "episode": 7,
+    "max_unwrap_only_vertex_displacement_cm": 0.00012504616948811318
+  },
+  {
+    "episode": 11,
+    "max_unwrap_only_vertex_displacement_cm": 0.00015334893220704483
+  },
+  {
+    "episode": 13,
+    "max_unwrap_only_vertex_displacement_cm": 0.00010561700865506922
+  },
+  {
+    "episode": 24,
+    "max_unwrap_only_vertex_displacement_cm": 0.00012947511862546648
+  },
+  {
+    "episode": 28,
+    "max_unwrap_only_vertex_displacement_cm": 0.00012566807868979747
+  }
+]

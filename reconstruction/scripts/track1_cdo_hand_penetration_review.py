@@ -14,6 +14,7 @@ from pathlib import Path
 import numpy as np
 import torch
 import trimesh
+from track1_review_humans import humans_identical, decode_bundle_human, framewise_contact_pass
 from scipy.spatial import cKDTree
 
 p = argparse.ArgumentParser()
@@ -27,10 +28,14 @@ p.add_argument('--control-dir', type=Path)
 p.add_argument('--candidate-dir', type=Path)
 p.add_argument('--report-dir', type=Path)
 p.add_argument('--control-review', type=Path, help='Reuse a hash- and frame-matched control diagnostic; pointwise deltas remain unavailable')
+p.add_argument('--allow-human-change', action='store_true', help='Decode control and candidate humans separately; explicit directories required')
+p.add_argument('--framewise-contact', action='store_true', help='Require v8-style per-frame full/FPS non-increase and <=0.5 cm active gap increase')
 a = p.parse_args()
 assert (a.control_dir is None) == (a.candidate_dir is None)
 assert a.control_dir is None or (a.report_dir is not None and not a.audit_v4 and a.candidate_group is None)
 assert a.control_review is None or a.control_dir is not None
+assert not a.allow_human_change or a.control_dir is not None
+assert not a.framewise_contact or (a.control_dir is not None and a.sample_count == 0 and a.control_review is None)
 assert not a.audit_v4 or (a.iteration == 5 and a.candidate_group is None)
 assert a.candidate_group is None or Path(a.candidate_group).name == a.candidate_group
 sys.path.insert(0, '/workspace/v2d_sam3d_body/lib')
@@ -59,6 +64,13 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+review_fingerprint = {str(path.relative_to(a.root)): digest(path) for path in (
+    Path(__file__).resolve(), Path(__file__).with_name('track1_review_humans.py').resolve(),
+    a.root/'data/weights/track1_submission_mhr/mhr_model.pt',
+    a.root/'modules/v2d_cari4d/lib/cari4d/lib_mhr/mesh_penetration_review.py',
+    a.root/'modules/v2d_cari4d/lib/cari4d/lib_mhr/assets/mhr_hand_surface_spec.npz')}
+
+
 with torch.inference_mode():
     for episode in a.episodes:
         started = time.monotonic()
@@ -80,13 +92,17 @@ with torch.inference_mode():
         existing = None
         if not a.audit_v4 and (after_dir/output_name).exists():
             existing = json.loads((after_dir/output_name).read_text())
+            if (existing.get('review_fingerprint') != review_fingerprint
+                    or existing.get('framewise_contact', False) != a.framewise_contact):
+                existing = None
+        if existing is not None:
             assert existing['candidate_npz_sha256'] == digest(after_dir/(stem+'.npz'))
             assert existing['candidate_mesh_sha256'] == digest(after_dir/(stem+'_object.glb'))
             assert existing['control_npz_sha256'] == digest(before_dir/(stem+'.npz'))
             assert existing['control_mesh_sha256'] == digest(before_dir/(stem+'_object.glb'))
             assert existing['all_scored_frames'] == (a.sample_count == 0)
             assert existing['frames'] == frames.tolist()
-            if 'grasp_proximity_gate_pass' in existing:
+            if 'grasp_proximity_gate_pass' in existing and existing.get('framewise_contact', False) == a.framewise_contact:
                 results.append(existing)
                 print('HAND_PEN_REVIEW_REUSED', episode, flush=True)
                 continue
@@ -101,13 +117,13 @@ with torch.inference_mode():
             assert cached_control['all_scored_frames'] == (a.sample_count == 0)
             assert cached_control['hand_vertex_count'] == len(hand_ids)
             assert cached_control['fps_sample_vertex_count'] == len(sample_ids)
-        for key in ('pose', 'scales', 'shape'):
-            assert np.array_equal(before[key], after[key]), (episode, key)
-        human, _ = model.run(torch.as_tensor(before['pose'][frames], device='cuda', dtype=torch.float64),
-                             torch.as_tensor(np.r_[before['scales'], before['shape']][None], device='cuda', dtype=torch.float64))
-        hands = (human[:, hand_ids]/1000.).double()
+        same_human = humans_identical(before, after)
+        assert a.allow_human_change or same_human, 'Explicitly enable review of changed humans'
+        to_tensor = lambda values: torch.as_tensor(values, device='cuda', dtype=torch.float64)
         summaries = {}; depths_by_version = {}; proximities = {}
         for label, folder, bundle in [('control', before_dir, before), ('candidate', after_dir, after)]:
+            human, _ = decode_bundle_human(model, bundle, frames, to_tensor)
+            hands = (human[:, hand_ids]/1000.).double()
             mesh = trimesh.load(folder/(stem+'_object.glb'), force='mesh', process=False)
             check = MeshPenetrationReview(mesh.vertices, mesh.faces)
             rotation = torch.as_tensor(bundle['object_rotation'][frames], device='cuda', dtype=torch.float64)
@@ -139,6 +155,7 @@ with torch.inference_mode():
             summaries[label] = {'mean_full_hand_depth_cm_unaligned': float(depth.mean()),
                                 'mean_fps512_depth_cm_unaligned': float(depth[:, sample_ids].mean()),
                                 'per_frame_full_hand_depth_cm': depth.mean(axis=1).tolist(),
+                                'per_frame_fps512_depth_cm': depth[:, sample_ids].mean(axis=1).tolist(),
                                 'max_hand_vertex_depth_cm': float(depth.max()),
                                 'penetrating_hand_vertex_fraction': float((depth > 0.).mean())}
             print('HAND_PEN_SUMMARY', episode, label, summaries[label]['mean_full_hand_depth_cm_unaligned'], summaries[label]['mean_fps512_depth_cm_unaligned'], flush=True)
@@ -151,8 +168,13 @@ with torch.inference_mode():
         contact_like = proximities['control'] <= 1.5
         increase = proximities['candidate'][contact_like]-proximities['control'][contact_like]
         proximity_pass = not contact_like.any() or (float(np.median(increase)) <= 1.0 and float(np.quantile(increase, .95)) <= 2.0)
+        if a.framewise_contact:
+            passed, proximity_pass = framewise_contact_pass(b,c,proximities['control'],proximities['candidate'])
         result = {'episode': episode, 'sample_count': len(frames), 'frames': frames.tolist(), 'all_scored_frames': not bool(a.sample_count),
-                  'human_arrays_identical': True, 'summary': summaries, 'hand_penetration_gate_pass': bool(passed),
+                  'human_arrays_identical': same_human, 'summary': summaries, 'hand_penetration_gate_pass': bool(passed),
+                  'review_source_sha256': digest(Path(__file__)),
+                  'review_fingerprint': review_fingerprint,
+                  'framewise_contact': a.framewise_contact,
                   'hand_vertex_count': len(hand_ids), 'fps_sample_vertex_count': len(sample_ids),
                   'max_pointwise_depth_increase_cm': float(difference.max()) if difference is not None else (existing['max_pointwise_depth_increase_cm'] if existing else None),
                   'pointwise_nonincrease': bool((difference <= 1e-6).all()) if difference is not None else (existing['pointwise_nonincrease'] if existing else None),

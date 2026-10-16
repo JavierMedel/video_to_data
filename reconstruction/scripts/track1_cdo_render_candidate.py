@@ -1,5 +1,6 @@
 """Render the exact candidate NPZ/GLB pair beside the scored v3 prediction."""
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -10,10 +11,14 @@ import cv2
 import imageio.v2 as imageio
 import numpy as np
 import torch
+from track1_review_humans import humans_identical, decode_bundle_human
 
 p = argparse.ArgumentParser(); p.add_argument('--root', type=Path, default=Path('/repo')); p.add_argument('--episode', type=int, default=12); p.add_argument('--mask-sheet', action='store_true'); p.add_argument('--iteration', type=int, choices=[4, 5, 6, 7], default=4)
 p.add_argument('--control-dir', type=Path); p.add_argument('--candidate-dir', type=Path); p.add_argument('--output-dir', type=Path)
 p.add_argument('--candidate-label', default='New candidate')
+p.add_argument('--allow-human-change', action='store_true')
+p.add_argument('--control-label', help='Label for explicit parent directory')
+p.add_argument('--diagnostic-frame-limit', type=int, help='Render only a short prefix for tool verification; explicitly not full-video review')
 args = p.parse_args()
 assert (args.control_dir is None) == (args.candidate_dir is None)
 assert args.candidate_dir is None or args.mask_sheet or args.output_dir is not None
@@ -32,6 +37,7 @@ from mesh_to_mhr_params import MHR
 candidate = None
 experiment = f'cdo_v{args.iteration}'
 control_label = f'Scored v{args.iteration-1}'
+if args.control_label: control_label = args.control_label
 groups = ('pose_candidates', 'hoop_candidates', 'hoop_geometry', 'physics_hoop', 'physics_hoop_v2', 'contact_projection') if args.iteration == 4 else ('pose_candidates', 'hand_safe_candidates', 'hand_contact_candidates')
 if args.iteration == 6:
     groups = ('hand_clearance_candidates',)
@@ -48,13 +54,17 @@ if args.control_dir is not None:control_dir=args.control_dir
 assert args.candidate_label != control_label
 folders = {control_label: control_dir, args.candidate_label: candidate}
 bundles = {label: dict(np.load(folder / (stem + '.npz'), allow_pickle=False)) for label, folder in folders.items()}
-for key in ('pose', 'scales', 'shape'):
-    assert np.array_equal(bundles[control_label][key], bundles[args.candidate_label][key])
+same_human = humans_identical(bundles[control_label], bundles[args.candidate_label])
+assert same_human or (args.allow_human_change and args.candidate_dir is not None)
 work_group = 'improvement_pilot_v1' if args.episode in (6, 18, 28) else 'improvement_rollout_v1'
 export = data / work_group / stem / 'run/export' / stem
 video = data / 'videos/chunk-000/observation.images.exo_camera' / (stem + '.mp4')
 fps, rate, total, width, height = _source_video_properties(video)
 assert all(len(b['pose']) == total for b in bundles.values())
+source_total = total
+if args.diagnostic_frame_limit is not None:
+    assert args.candidate_dir is not None and not args.mask_sheet and args.diagnostic_frame_limit > 0
+    total = min(total, args.diagnostic_frame_limit)
 k, w2c = camera_calibration(load_edex(export), 0); assert np.allclose(w2c, np.eye(4))
 if args.mask_sheet:
     import trimesh
@@ -107,16 +117,15 @@ outputs = [out/(video_stem+'.mp4'), out/(video_stem+'_object_closeups.mp4')]
 assert not any(path.exists() for path in outputs)
 temporary = [path.with_name('.'+path.stem+'.tmp.mp4') for path in outputs]
 writers = [imageio.get_writer(str(path), format='FFMPEG', fps=fps, codec='libx264', pixelformat='yuv420p', macro_block_size=None, input_params=['-r', rate], ffmpeg_params=['-crf', '18', '-preset', 'medium']) for path in temporary]
-human = bundles[control_label]; identity = torch.as_tensor(np.r_[human['scales'], human['shape']][None], device='cuda', dtype=torch.float64)
 written = 0
 try:
     for start in range(0, total, 2):
         stop = min(start+2, total)
-        body, _ = model.run(torch.as_tensor(human['pose'][start:stop], device='cuda', dtype=torch.float64), identity)
-        vertices = (body/1000.).cpu().numpy().astype(np.float32)
-        normals = batched_vertex_normals(vertices, faces)
         renders = {}
         for label, bundle in bundles.items():
+            body, _ = decode_bundle_human(model, bundle, slice(start, stop), lambda v: torch.as_tensor(v, device='cuda', dtype=torch.float64))
+            vertices = (body/1000.).cpu().numpy().astype(np.float32)
+            normals = batched_vertex_normals(vertices, faces)
             poses = np.tile(np.eye(4), (stop-start, 1, 1)).astype(np.float32)
             poses[:, :3, :3] = bundle['object_rotation'][start:stop] * float(bundle['object_scale'])
             poses[:, :3, 3] = bundle['object_translation'][start:stop]
@@ -124,7 +133,7 @@ try:
         for j, frame in enumerate(range(start, stop)):
             rgb = cv2.resize(read_rgb(export, 0, f'{frame:06d}'), (render_width, render_height))
             panels = [(label, _overlay_frame(rgb, render[j], mask[j])) for label, (render, mask) in renders.items()]
-            grid = _header(np.concatenate([_header(image, label) for label, image in panels], axis=1), f'Episode {args.episode} | frame {frame} | identical human parameters', height=40)
+            grid = _header(np.concatenate([_header(image, label) for label, image in panels], axis=1), f'Episode {args.episode} | frame {frame} | '+('identical humans' if same_human else 'each panel uses its own human'), height=40)
             writers[0].append_data(grid)
             observed = cv2.resize(read_mask(export, 'object', 0, f'{frame:06d}').astype(np.uint8), (render_width, render_height), interpolation=cv2.INTER_NEAREST)
             yy, xx = np.nonzero(observed)
@@ -155,5 +164,10 @@ for tmp, final in zip(temporary, outputs):
         assert count == total and abs(float(stream.average_rate)-fps) < 1e-6
         validation.append({'path': str(final), 'frames': count, 'fps': str(stream.average_rate), 'width': stream.width, 'height': stream.height})
     os.replace(tmp, final)
-(out/'validation.json').write_text(json.dumps({'status': 'PASS', 'videos': validation, 'candidate': str(candidate), 'human_arrays_identical': True}, indent=2)+'\n')
+digest = lambda path: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+fingerprints = {str(path): digest(path) for path in [Path(__file__), Path(__file__).with_name('track1_review_humans.py'), root/'data/weights/track1_submission_mhr/mhr_model.pt']}
+for label, folder in folders.items():
+    for suffix in ('.npz','_object.glb'):
+        path=folder/(stem+suffix); fingerprints[str(path)]=digest(path)
+(out/'validation.json').write_text(json.dumps({'status': 'PASS' if args.diagnostic_frame_limit is None else 'DIAGNOSTIC_PASS', 'videos': validation, 'candidate': str(candidate), 'human_arrays_identical': same_human, 'source_video_frames': source_total, 'full_video_review': args.diagnostic_frame_limit is None, 'input_sha256': fingerprints}, indent=2)+'\n')
 print('CANDIDATE_VIDEOS_READY', json.dumps(validation), flush=True)

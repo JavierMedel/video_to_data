@@ -1,0 +1,32 @@
+{
+  "status": "DIAGNOSTIC_PASS",
+  "videos": [
+    {
+      "path": "/repo/data/v2d_challenge/track_1/v9_temporal/review_videos/tool_verification_episode_000007/episode_000007_control_vs_candidate.mp4",
+      "frames": 4,
+      "fps": "30",
+      "width": 1536,
+      "height": 656
+    },
+    {
+      "path": "/repo/data/v2d_challenge/track_1/v9_temporal/review_videos/tool_verification_episode_000007/episode_000007_control_vs_candidate_object_closeups.mp4",
+      "frames": 4,
+      "fps": "30",
+      "width": 1024,
+      "height": 464
+    }
+  ],
+  "candidate": "/repo/data/v2d_challenge/track_1/v9_temporal/human/plain/initial/lam_3/episode_000007",
+  "human_arrays_identical": false,
+  "source_video_frames": 777,
+  "full_video_review": false,
+  "input_sha256": {
+    "/repo/scripts/track1_cdo_render_candidate.py": "3fe7f43a147e8960b367cef676f70cc08a13a088020f7700003c1412ca1d7957",
+    "/repo/scripts/track1_review_humans.py": "f5d4f35e6f698d26f19ae541442419d02f0281ade0860bf61a773e834167de61",
+    "/repo/data/weights/track1_submission_mhr/mhr_model.pt": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "/repo/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000007.npz": "d04aa53e899734c40d2304c4714fdb7d546b3c889389ba77a3781178600ce87c",
+    "/repo/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000007_object.glb": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+    "/repo/data/v2d_challenge/track_1/v9_temporal/human/plain/initial/lam_3/episode_000007/episode_000007.npz": "c2fd43577321bd20929776f1d4fbf42ec1f2ba8c31d26616b886db3e24894527",
+    "/repo/data/v2d_challenge/track_1/v9_temporal/human/plain/initial/lam_3/episode_000007/episode_000007_object.glb": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a"
+  }
+}

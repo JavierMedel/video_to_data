@@ -1,0 +1,128 @@
+{
+  "state": "PILOT_REJECTED_NO_EXPANSION",
+  "parent": "v8",
+  "promoted": [],
+  "episodes": {
+    "0": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "1": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "2": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "3": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "4": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "5": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "6": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "7": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "8": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "9": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "10": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "11": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "12": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "13": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "14": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "15": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "16": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "17": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "18": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "19": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "20": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "21": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "22": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "23": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "24": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "25": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "26": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "27": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    },
+    "28": {
+      "verdict": "RETAIN_V8",
+      "reason": "Temporal pilot failed expansion gates"
+    },
+    "29": {
+      "verdict": "RETAIN_V8",
+      "reason": "No all30 expansion; not fitted in this round"
+    }
+  },
+  "uploaded": false
+}

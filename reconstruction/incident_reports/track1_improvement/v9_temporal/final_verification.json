@@ -1,0 +1,29 @@
+{
+  "state": "PASS",
+  "unit_tests_passed": 20,
+  "suites": {
+    "test_track1_whittaker.py": 7,
+    "test_track1_contact_smoothing.py": 8,
+    "test_track1_review_humans.py": 2,
+    "test_track1_package_from_parent.py": 3
+  },
+  "compiled_sources": [
+    "track1_whittaker.py",
+    "track1_v9_temporal.py",
+    "track1_v9_motion_report.py",
+    "track1_v9_pilot_review.py",
+    "track1_v10_risk_audit.py",
+    "track1_package_from_parent.py",
+    "track1_review_humans.py",
+    "track1_cdo_hand_penetration_review.py",
+    "track1_cdo_render_candidate.py"
+  ],
+  "parent_pairs_preserved": 60,
+  "parent_parquet_preserved": true,
+  "pilot_fits_verified": 168,
+  "decoded_human_candidates": 84,
+  "promotions": 0,
+  "uploads": 0,
+  "short_renderer_smoke_frames_per_clip": 4,
+  "complete_reconstruction_video_review": false
+}
