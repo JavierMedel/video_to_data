@@ -32,10 +32,12 @@
     },
     "acc_o_cm": {
       "slug": "v2d-challenge-track1-acc-o",
-      "state": "PENDING",
+      "state": "COMPLETE",
       "file": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_contact_smoothing_v8.parquet",
       "message": "Successfully submitted to Track 1 - Reconstruction - ACC-O (cm)",
-      "ref": 57237210
+      "ref": 57237210,
+      "public_score": "0.71908",
+      "error": ""
     },
     "interpenetration_cm": {
       "slug": "v2d-challenge-track1-pen",

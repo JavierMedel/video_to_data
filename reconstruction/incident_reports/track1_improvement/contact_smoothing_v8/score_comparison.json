@@ -22,10 +22,10 @@
   },
   "acc_o_cm": {
     "v6": 0.81013,
-    "v8": null,
-    "state": "PENDING",
+    "v8": 0.71908,
+    "state": "COMPLETE",
     "submission_id": 57237210,
-    "delta": null
+    "delta": -0.09104999999999996
   },
   "interpenetration_cm": {
     "v6": 0.00325,
