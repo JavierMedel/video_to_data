@@ -68,8 +68,8 @@ and the ends of the logs before resuming; this document is a snapshot.
   association, depth alignment and diagnostic overlays. The final HaMeR pass
   has **263 real frames for each hand**, with no gap interpolation needed.
   Evidence: `episode_000038/hamer_pipeline.json`.
-- A depth-preparation batch is running for the **other 19 scored episodes**,
-  shortest clips first, one GPU container at a time. It uses the same raw RGB
+- The depth-preparation batch completed all **other 19 scored episodes** at
+  `2026-10-17T18:49:31Z`, making depth/intrinsics available for all 20 episodes. It uses the same raw RGB
   and MoGe baseline as the pilot. This prepares depth/intrinsics and does not
   imply complete reconstructions or policies for those episodes. See
   `depth_batch/execution.json` and `depth_batch.log` for live progress.
@@ -104,8 +104,8 @@ hashes, image identity, commands, output hashes and exact frame coverage. Its
 completed outputs are under `reconstruction/data/track3/episodes/episode_XXXXXX/`;
 Episode 38's original pilot outputs remain in their existing directory.
 The first batch job reached 100% GPU utilization using roughly 7.6k MiB VRAM.
-Keep checking its timestamped report rather than assuming the queued 19 are
-complete. A failure stops the queue and records the error.
+The timestamped report confirms all 19 completed; no depth GPU job remains.
+A failure in any subsequent batch stops that queue and records the error.
 
 Diagnostic hand MP4s currently use the renderer's native 30 fps default, with
 all source frame indices preserved. Their playback cadence is not the motion
@@ -396,3 +396,39 @@ and the PyTorch allocator cap remains 70%. Hand/FoundationPose guards and the
 historical crash-recovery settings remain 19,000 MiB. The queue restart preserves completed results with their original provenance;
 the episode active at restart is rerun. Episodes 32 and 30 completed before
 rollout, bringing the preserved non-pilot depth total to twelve.
+
+## Camera-motion continuation
+
+The user requested resuming the pipeline after the depth batch completed.
+`reconstruction/scripts/run_track3_camera_batch.py` now queues DROID-SLAM for
+all 20 scored episodes, with Episode 38 first. It waits for an isolated
+`v2d_track3_droid_slam:blackwell` build, then acquires the shared GPU lock.
+Live state: `incident_reports/track3_baseline/camera_batch/execution.json`;
+build log: `incident_reports/track3_baseline/droid_build_cuda128.log`;
+queue log: `incident_reports/track3_baseline/camera_batch.log`. Read these
+actual states before claiming any camera stage completed.
+
+The original CARI image has torch 2.8/cu128 but a CUDA 12.4 compiler, which
+rejected compute_120. The dedicated image instead derives from
+`pytorch/pytorch:2.8.0-cuda12.8-cudnn9-devel`, pins DROID to
+`2dfd39f0dcad44012ca7bbb8aa70b55edbfa9c99` with its submodules, removes
+lietorch's hardcoded legacy architecture flags and compiles for sm_120.
+The official Google Drive checkpoint downloaded and passed a CPU
+`torch.load(weights_only=True)` check with 102 state-dictionary entries.
+Its actual hash is recorded in the camera queue state before GPU execution.
+
+Camera stages use 512x384 inputs, stride one, a 384-keyframe buffer, 70%
+PyTorch allocation, a 21,000 MiB total-GPU guard, 20 GiB RAM/22 GiB combined
+RAM+swap, eight CPUs and one GPU container at a time. They use existing
+MoGe depth as a bundle-adjustment sensor prior and median source intrinsics.
+Every exact source frame must have a finite camera pose with unit quaternion
+and unit scale. Reports preserve commands, image identity, code/model/input
+and output hashes, frame coverage, translation ranges and largest pose step.
+
+Outputs are `camera_poses_slam/`, `camera_trajectory_slam.txt`, and
+`camera_slam_manifest.json` in each episode's existing work directory.
+These poses are world_T_camera with wxyz quaternions in an arbitrary SLAM
+world. No factory calibration rotation is applied. Metric scale remains tied
+to unverified monocular depth, and gravity/support alignment, visual tracking
+review, composing camera/object/hand transforms, retargeting and learned-policy
+training remain. Completion of this queue alone does not make a submission.

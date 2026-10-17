@@ -10,6 +10,7 @@ import run_track3_object_pilot as pilot
 import run_track3_pose_pilot as tracking
 import run_track3_hand_pilot as hands
 import run_track3_depth_batch as depth_batch
+import run_track3_camera_batch as camera_batch
 
 
 def test_resume_rejects_modified_inputs_and_outputs(tmp_path, monkeypatch):
@@ -53,9 +54,11 @@ def test_failed_stage_is_not_reused(tmp_path, monkeypatch):
 @pytest.mark.parametrize('memory', [18000, 19001, 20999, 21000, 21001])
 @pytest.mark.parametrize('module,target', [(tracking, 'v2d-track3-pilot-tracking'),
                                           (hands, 'v2d-track3-hand-stage'),
-                                          (depth_batch, 'v2d-track3-depth-stage')])
+                                          (depth_batch, 'v2d-track3-depth-stage'),
+                                          (camera_batch, 'v2d-track3-camera-stage')])
 def test_memory_guard_stops_only_its_container(tmp_path, monkeypatch, memory, module, target):
-    threshold = depth_batch.GPU_MEMORY_GUARD_MIB if module is depth_batch else 19000
+    threshold = (depth_batch.GPU_MEMORY_GUARD_MIB if module is depth_batch
+                 else camera_batch.GPU_LIMIT_MIB if module is camera_batch else 19000)
     should_stop = memory >= threshold
     calls = []
 
@@ -122,3 +125,17 @@ def test_budget_resume_preserves_evidence_and_rejects_changed_data(tmp_path, mon
     source.write_text('weights')
     frame.write_bytes(b'corrupted')
     assert not reuse()
+
+
+def test_camera_pose_validation_rejects_missing_frames_and_bad_quaternions(tmp_path):
+    pose = {'rotation': [1, 0, 0, 0], 'translation': [0, 0, 0], 'scale': [1, 1, 1]}
+    (tmp_path / '000000.json').write_text(json.dumps(pose))
+    with pytest.raises(ValueError, match='every source frame'):
+        camera_batch.validate_poses(tmp_path, 2)
+    pose['translation'] = [0.01, 0, 0]
+    (tmp_path / '000001.json').write_text(json.dumps(pose))
+    assert camera_batch.validate_poses(tmp_path, 2)['largest_translation_step_m'] == .01
+    pose['rotation'] = [0, 0, 0, 0]
+    (tmp_path / '000001.json').write_text(json.dumps(pose))
+    with pytest.raises(ValueError, match='rotation/scale'):
+        camera_batch.validate_poses(tmp_path, 2)

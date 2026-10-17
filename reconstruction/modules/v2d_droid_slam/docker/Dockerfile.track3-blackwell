@@ -1,0 +1,22 @@
+# Isolated Track 3 camera-motion image; keep existing Track 1/2 images intact.
+ARG BASE_IMAGE=pytorch/pytorch:2.8.0-cuda12.8-cudnn9-devel
+FROM ${BASE_IMAGE}
+ARG DROID_COMMIT=2dfd39f0dcad44012ca7bbb8aa70b55edbfa9c99
+ENV TORCH_CUDA_ARCH_LIST=12.0 MAX_JOBS=4 FORCE_CUDA=1
+WORKDIR /opt
+RUN apt-get update && apt-get install -y git libgl1 libglib2.0-0 && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir numpy scipy opencv-python-headless Pillow gdown einops tqdm ninja
+RUN git clone --recursive https://github.com/princeton-vl/DROID-SLAM.git droid-slam && \
+    cd droid-slam && git checkout ${DROID_COMMIT} && git submodule update --init --recursive
+# The pinned lietorch setup hardcodes pre-Blackwell architectures. Let torch's
+# extension builder use TORCH_CUDA_ARCH_LIST instead of those legacy flags.
+RUN python -c "from pathlib import Path; p=Path('/opt/droid-slam/thirdparty/lietorch/setup.py'); p.write_text(''.join(line for line in p.read_text().splitlines(True) if '-gencode=' not in line))"
+RUN pip install --no-cache-dir gdown && \
+    pip install --no-build-isolation --no-deps /opt/droid-slam/thirdparty/pytorch_scatter && \
+    pip install --no-build-isolation --no-deps /opt/droid-slam/thirdparty/lietorch && \
+    pip install --no-build-isolation --no-deps /opt/droid-slam
+COPY modules/v2d_common /workspace/v2d_common
+COPY modules/v2d_droid_slam/lib /workspace/v2d_droid_slam/lib
+RUN pip install --no-deps -e /workspace/v2d_common -e /workspace/v2d_droid_slam/lib
+ENV PYTHONPATH=/opt/droid-slam:/opt/droid-slam/droid_slam
+RUN python -c "import torch, torch_scatter, lietorch, droid_backends; from droid import Droid; assert torch.__version__.startswith('2.8.0'); print('Blackwell DROID imports OK')"
