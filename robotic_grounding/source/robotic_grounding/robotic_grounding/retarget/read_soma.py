@@ -401,6 +401,7 @@ class SOMA:
             scale=scale,
             joint_orient=joint_orient,
             keep_root=keep_root,
+            bone_length_flexibles=params.get("bone_length_flexibles"),
         )
 
         # Compute the first-frame normalization transform so callers (e.g.
@@ -449,6 +450,7 @@ class SOMA:
         scale: np.ndarray,
         joint_orient: np.ndarray,
         keep_root: bool,
+        bone_length_flexibles: np.ndarray | None = None,
     ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Run SOMALayer and return ``(joints, joints_wxyz, vertices)`` in source frame.
 
@@ -474,6 +476,12 @@ class SOMA:
                 torch.from_numpy(scale).to(device).unsqueeze(0).expand(T_frames, -1)
             )
             transl_t = torch.from_numpy(transl).to(device)
+            model_kwargs = None
+            if bone_length_flexibles is not None:
+                flex = np.asarray(bone_length_flexibles, dtype=np.float32)
+                if flex.shape != (T_frames, 6) or not np.isfinite(flex).all():
+                    raise ValueError("bone_length_flexibles must be finite with shape (T, 6)")
+                model_kwargs = {"bone_length_flexibles": torch.from_numpy(flex).to(device)}
 
             output = self.layer(
                 poses_t,
@@ -486,6 +494,7 @@ class SOMA:
                 # rotations are unaffected — correctives perturb rest-shape
                 # vertices, not forward kinematics.
                 apply_correctives=False,
+                kwargs=model_kwargs,
             )
             verts_t = output["vertices"]
             joints_t = output["joints"]

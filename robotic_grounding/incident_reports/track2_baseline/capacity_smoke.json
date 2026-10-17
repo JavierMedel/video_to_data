@@ -1,0 +1,17 @@
+{
+  "status": "CAPACITY_TRAIN_SAVE_PASS",
+  "submission_candidate": false,
+  "world_count": 1024,
+  "environment_steps": 524288,
+  "replay_capacity": 1000000,
+  "minimum_replay_size": 102400,
+  "batch_size": 1024,
+  "updates_per_collection": 4,
+  "sampled_combined_gpu_usage_mib": 13494,
+  "training_loop_seconds_including_learner_compile": 52.0,
+  "artifacts": {
+    "policy_524288.safetensors": "baf607ccd71a7d646fd8478becd85affad763738f47214e5bb4d9f0951466074",
+    "state_524288.safetensors": "e70cb326593c4ac4feb5f9c78f3a59314523ebaa939f841a42b59e0aad4f5a5f"
+  },
+  "image_id": "sha256:0b378eda5d11ffae62e5974fb3af37aa9c564d558c725666ffea4d20ce1233a5"
+}

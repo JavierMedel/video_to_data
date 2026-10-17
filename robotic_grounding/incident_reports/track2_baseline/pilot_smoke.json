@@ -1,0 +1,101 @@
+{
+  "status": "DIAGNOSTIC_TRAIN_SAVE_EVALUATE_EXPORT_VERIFIED",
+  "submission_candidate": false,
+  "steps": 65536,
+  "worlds": 128,
+  "evaluation": {
+    "checkpoint": "/repo/data/track2/tier1/pilot_smoke/episode_000016/policy_65536.safetensors",
+    "checkpoint_sha256": "8560bf5507f66b7d74a3e7562dca6da0102b7045d9afc697eaac0304291c2113",
+    "environment_steps": 65536,
+    "metrics": {
+      "add_auc": 0.26323375262054505,
+      "add_auc_per_body": [
+        0.26323375262054505
+      ],
+      "add_std_m": 0.4108657570416632,
+      "add_std_per_body_m": [
+        0.4108657570416632
+      ],
+      "chord_sr": 0.0,
+      "gated_causes": [
+        "wrist",
+        "object"
+      ],
+      "maniptrans_sr": 0.0,
+      "mean_add_m": 0.58203804050377,
+      "mean_per_point_error_cm": 57.685120495257955,
+      "mppe_cm": 57.68512049525797,
+      "object_body_names": [
+        "object"
+      ],
+      "object_orientation_error_deg": 83.77882740188824,
+      "object_orientation_error_per_body_rad": [
+        1.4622163816229963
+      ],
+      "object_orientation_error_rad": 1.4622163816229963,
+      "object_orientation_error_std_deg": 0.0,
+      "object_orientation_error_std_rad": 0.0,
+      "object_position_error_m": 0.5748734209550518,
+      "object_position_error_per_body_m": [
+        0.5748734209550518
+      ],
+      "object_position_error_std_m": 0.0,
+      "position_mean_centered": false,
+      "relative_position_error_cm": 0.0,
+      "spider_position_error_centered_m": 0.5905371783166032,
+      "spider_sr_uncentered": 0.0,
+      "step_count": 477,
+      "termination_cause_fraction": {
+        "object": 1.0,
+        "wrist": 1.0
+      },
+      "world_count": 1
+    },
+    "motion_end_frame": -1,
+    "motion_start_frame": 0,
+    "non_finite_worlds": [],
+    "object_orientation_threshold_rad": 1.5,
+    "object_position_threshold_m": 0.1,
+    "parquet": "/repo/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-12_15-06-36_spray_bottle_left_desk_ground_02/robot_name=g1/data.parquet",
+    "reference_tracking": {
+      "failure_cause_fraction": {
+        "object": 1.0,
+        "palm": 1.0,
+        "pelvis": 1.0
+      },
+      "reference_end_fraction": 1.0,
+      "success_rate": 0.0
+    },
+    "reset_mode": "explicit",
+    "settling_steps": 0,
+    "sim_control_fps": 50.0,
+    "sim_physics_fps": 200.0,
+    "start_frame": 0,
+    "step_count": 477,
+    "world_count": 1
+  },
+  "evaluation_rows": 477,
+  "trajectory_provenance": {
+    "flash_chord.schema": "flash_chord_object_trajectories_v1",
+    "flash_chord.position_unit": "meter",
+    "flash_chord.quaternion_order": "xyzw",
+    "flash_chord.row_order": "step,environment_id,object_body_id",
+    "flash_chord.control_fps": "50.0",
+    "flash_chord.start_frame": "0",
+    "flash_chord.step_count": "477",
+    "flash_chord.world_count": "1",
+    "flash_chord.object_body_count": "1",
+    "flash_chord.pose_width": "7",
+    "flash_chord.checkpoint_sha256": "8560bf5507f66b7d74a3e7562dca6da0102b7045d9afc697eaac0304291c2113",
+    "flash_chord.eval_code_sha256": "b1b3ebe3ae4629d1687a83f420149e3f6fdfc154d70acad55c12fc8fa69811a1",
+    "flash_chord.reference_parquet": "/repo/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-12_15-06-36_spray_bottle_left_desk_ground_02/robot_name=g1/data.parquet",
+    "flash_chord.eval_script_sha256": "160d24f5fbeb70ccd569ca4192056f1892b2a9f2999066db9d8279461648fdf1"
+  },
+  "artifact_sha256": {
+    "evaluation.json": "53d9548a5e45fdc0ec6fb82ceaeae261577e8a2498377aefc2ce6b898b169b21",
+    "episode_000016.parquet": "b4266d78f6b0b9f6d52988c9a5f331a30d214424c31d042a19565bac96cd4fae",
+    "state_65536.safetensors": "dfa54056e9db020d2837695c66a0f9932cff307719d1672ca833974409b5fe86",
+    "policy_65536.safetensors": "8560bf5507f66b7d74a3e7562dca6da0102b7045d9afc697eaac0304291c2113"
+  },
+  "wrapper_exit_note": "Evaluator finished and exported complete results. Host wrapper exited 1 after launcher was edited during execution; preserve artifacts. Launcher is now frozen while active."
+}

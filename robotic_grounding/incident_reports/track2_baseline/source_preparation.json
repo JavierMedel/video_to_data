@@ -1,0 +1,780 @@
+{
+  "status": "RETARGET_PILOT_COMPLETE",
+  "prepared_episodes": 30,
+  "prepared_frames": 22990,
+  "pilot_episode": 16,
+  "pilot_frames": 477,
+  "retarget_sha256": "1e297bca97786d88f9f4178c04273c06f6f190ab90e6c45d9965659aa8c5fb63",
+  "finite_robot_joints": true,
+  "object_translation_rigid_fit_max_error_m": 7.300513673749802e-08,
+  "object_translation_rigid_fit_mean_error_m": 3.63606265490678e-08,
+  "object_rotation_check": "PASS: one constant SE(3) maps every released object pose to retargeted pose",
+  "source_manifests": [
+    {
+      "episode_index": 17,
+      "sequence_id": "2026-05-01_17-04-55_traffic_cone_ground_table_02",
+      "object": "traffic_cone",
+      "frames": 440,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000017.parquet": "ebc23d6052c823a30ce8e5b1252cb3e9325388f532b60b4303d69cc0d6bd5978",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/traffic_cone/traffic_cone.glb": "2acace9fcb3e53afcb6665db7b4717710e5cfc3a17c0ed5196a36df5ec340a16",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-01_17-04-55_traffic_cone_ground_table_02.json": "c562daeef17dc786416e5d64d7de7bddec32f421de7718ce558c62bc306dd801",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-01_17-04-55_traffic_cone_ground_table_02_support.usda": "56084f9551eb7c705cfc24d97d46037694ed186f986ac5cdc9bcdcabad8d1161",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "56084f9551eb7c705cfc24d97d46037694ed186f986ac5cdc9bcdcabad8d1161",
+        "soma_params.npz": "4c1d19017469fbd9771bf23d5be1f0511a7c7412001c17878889e39412638b09",
+        "ground_plane.json": "c562daeef17dc786416e5d64d7de7bddec32f421de7718ce558c62bc306dd801",
+        "poses.npy": "5fbac716743e88f4d82082cc139f59c71cacca29bb244d973664b3a8623dae14",
+        "reconstructed_mesh/output_aligned.glb": "2acace9fcb3e53afcb6665db7b4717710e5cfc3a17c0ed5196a36df5ec340a16"
+      }
+    },
+    {
+      "episode_index": 4,
+      "sequence_id": "2026-04-24_11-40-52_baseball_bat_rotate_05",
+      "object": "baseball_bat",
+      "frames": 803,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000004.parquet": "9b5796e50133f90a9a7278efcbf5bac6e815b3d9f0ad6e1fc0c1a902b9ef05a9",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/baseball_bat/baseball_bat.glb": "5aa2294d698eb370d0d1435963e42022cc1064faa355b547e492ffe893e51cd7",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-04-24_11-40-52_baseball_bat_rotate_05.json": "90a0a9e68820ab7f79790cfc921dd6ac6dc5959c475d8924efd8ccae68d47e4c",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-04-24_11-40-52_baseball_bat_rotate_05_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "1f6696c3449e4592713963107b1c7261e70df3cc62d054072170e1511192b1a5",
+        "ground_plane.json": "90a0a9e68820ab7f79790cfc921dd6ac6dc5959c475d8924efd8ccae68d47e4c",
+        "poses.npy": "8e4cf775f91bdd2ac960bc1f73224fa24338dc28a4d3ba684df0a4bea4a36d0b",
+        "reconstructed_mesh/output_aligned.glb": "5aa2294d698eb370d0d1435963e42022cc1064faa355b547e492ffe893e51cd7"
+      }
+    },
+    {
+      "episode_index": 24,
+      "sequence_id": "2026-05-29_15-43-20_watering_can_pour_right_02",
+      "object": "watering_can",
+      "frames": 748,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000024.parquet": "ee42ecc73402d67d153ec3713f8234918ba63cdf2619e84707adc05b2fb8f980",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/watering_can/watering_can.glb": "6289b834daf9ac457729cccb550b83eb5da1bc165a78bb970a9e651ab9ce94c2",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-29_15-43-20_watering_can_pour_right_02.json": "b4652f8e497c76163ad89c1b620dc2bed757c203e3df58196a96f06c5993b2ad",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-29_15-43-20_watering_can_pour_right_02_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "db7199f40aaa339602c99475f66039c37057be73bb1c1c22b9c59f08891f2a5a",
+        "ground_plane.json": "b4652f8e497c76163ad89c1b620dc2bed757c203e3df58196a96f06c5993b2ad",
+        "poses.npy": "e2a6f4a3b75a247aaaaedf3eba4e4ca51673871bfb1a60284e095d6abcca4372",
+        "reconstructed_mesh/output_aligned.glb": "6289b834daf9ac457729cccb550b83eb5da1bc165a78bb970a9e651ab9ce94c2"
+      }
+    },
+    {
+      "episode_index": 29,
+      "sequence_id": "2026-06-05_18-27-40_rolling_luggage_left_foot_push_06",
+      "object": "rolling_luggage",
+      "frames": 467,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000029.parquet": "10dcc0044722477e73ba2e4670ee10b8ab59a29b2f1757c170648be899c34e2f",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/rolling_luggage/rolling_luggage.glb": "cd4c9c2b4d80e47bb5228461d39bec195f5ed0395942b2ebd0d4585eac341b67",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-05_18-27-40_rolling_luggage_left_foot_push_06.json": "2a1e4ae6de1eeadd297c4de854fe018da0b6f2c594a9f1911321903061f4c0b9",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-05_18-27-40_rolling_luggage_left_foot_push_06_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "cf8acd2b2de3bc4c39007b54069ebbf3a0ed55947f6064a8ee52d05071a73887",
+        "ground_plane.json": "2a1e4ae6de1eeadd297c4de854fe018da0b6f2c594a9f1911321903061f4c0b9",
+        "poses.npy": "018d34553320e3c185c32cdc1c15c14a9f38313dc730a5136fe98363f1839cfe",
+        "reconstructed_mesh/output_aligned.glb": "cd4c9c2b4d80e47bb5228461d39bec195f5ed0395942b2ebd0d4585eac341b67"
+      }
+    },
+    {
+      "episode_index": 6,
+      "sequence_id": "2026-06-01_11-26-44_monitor_rotate_05",
+      "object": "monitor",
+      "frames": 546,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000006.parquet": "7e472b98cc8dd6e4cd3726e4c352e8fdb7914ba2708f4639614795ea70fecbc5",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/monitor/monitor.glb": "e961a7da1bcecc1087c6aa3be2241c8ac166e37d7b30ff3e9fa5bdd3859bf4b6",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-01_11-26-44_monitor_rotate_05.json": "a1d3fdd69410fb64e2a271c99f4f0b7cbe6ed01558ec8bf47fcec6f7ea980def",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-01_11-26-44_monitor_rotate_05_support.usda": "fcf2d81a9f93d8e8649dffb6c9dbc2df0de9c2d2eccbc8d230294750c8677580",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "fcf2d81a9f93d8e8649dffb6c9dbc2df0de9c2d2eccbc8d230294750c8677580",
+        "soma_params.npz": "28cf7adc7a70f26160153166a3794edf64330a018e269fdaac9f074b63bd4012",
+        "ground_plane.json": "a1d3fdd69410fb64e2a271c99f4f0b7cbe6ed01558ec8bf47fcec6f7ea980def",
+        "poses.npy": "5ccfdf64c7c3362b63c4c8845398199b08533e8968e4ec33e86130b20f89a3be",
+        "reconstructed_mesh/output_aligned.glb": "e961a7da1bcecc1087c6aa3be2241c8ac166e37d7b30ff3e9fa5bdd3859bf4b6"
+      }
+    },
+    {
+      "episode_index": 9,
+      "sequence_id": "2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03",
+      "object": "big_red_bowl",
+      "frames": 870,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000009.parquet": "7838c26d6dbe7efb3d8f0377cf755a4e45926b92e3b7d3266a78e1dfeda913d5",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/big_red_bowl/big_red_bowl.glb": "473b0466c0a05c3f2e586e793c4dc81f4c1281534d1402809f32e94e7e6e915d",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03.json": "47bf9516d299dc2a6b7190f74bfd46058d11d611587e2995abc6d05c11f84282",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03_support.usda": "b7161801e90c201de75045dcbb5b9bbc3fe12fab45c4b8d2ae46e216b7b9f426",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "b7161801e90c201de75045dcbb5b9bbc3fe12fab45c4b8d2ae46e216b7b9f426",
+        "soma_params.npz": "dfc9602e8ba0fef4d101aa8c898cf456432b0258bd9955829cdbeba62061df05",
+        "ground_plane.json": "47bf9516d299dc2a6b7190f74bfd46058d11d611587e2995abc6d05c11f84282",
+        "poses.npy": "1126d5f940f4a917c34c6d6e3326f47331702d4a9d48330b87f31c175de1c862",
+        "reconstructed_mesh/output_aligned.glb": "473b0466c0a05c3f2e586e793c4dc81f4c1281534d1402809f32e94e7e6e915d"
+      }
+    },
+    {
+      "episode_index": 14,
+      "sequence_id": "2026-05-28_14-44-09_round_table_flip_08",
+      "object": "round_table",
+      "frames": 993,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000014.parquet": "3a94f6e897cdf5696bc8d54319bfd43730e9a7944aef656f8c1cfb1087f990de",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/round_table/round_table.glb": "e53b35a958f513728d52db9303a86ee23bdb4fe796d25f5b1560d3df9e402546",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-28_14-44-09_round_table_flip_08.json": "26869d9aafe1b9e945e8b006058da3628e0421dac05452bff005d0c9b289757a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-28_14-44-09_round_table_flip_08_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "ad36a67dbc52ed59225b3f5cc8fe510cd8436010a5d53cb5fb5b8c260279981a",
+        "ground_plane.json": "26869d9aafe1b9e945e8b006058da3628e0421dac05452bff005d0c9b289757a",
+        "poses.npy": "eeeb7375e767403cadac9713d75c8231db620ade82930f5b30ca17f633d05302",
+        "reconstructed_mesh/output_aligned.glb": "e53b35a958f513728d52db9303a86ee23bdb4fe796d25f5b1560d3df9e402546"
+      }
+    },
+    {
+      "episode_index": 15,
+      "sequence_id": "2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08",
+      "object": "wet_floor_sign",
+      "frames": 715,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000015.parquet": "decef969180f0fdf6b15ecc3ac6623db4155299d2250d60f88bb61ca93300c01",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/wet_floor_sign/wet_floor_sign.glb": "7a762ca67b09823ce9476441cd3a2396a7fc135d2dcb74533067952360dac1f5",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08.json": "2eb28c6af4ea9f597e48e47db8d2f87ddcca9730c7d4825ed43d89d4be93390c",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "52ec383c4f0b06115f239a5de783900c29ec316b8f7e4ba39ebcc8cf95fd7080",
+        "ground_plane.json": "2eb28c6af4ea9f597e48e47db8d2f87ddcca9730c7d4825ed43d89d4be93390c",
+        "poses.npy": "c12ad735bc06f506d462b0457fcd6725949761da5e0ce0520c4f4eb600e32a72",
+        "reconstructed_mesh/output_aligned.glb": "7a762ca67b09823ce9476441cd3a2396a7fc135d2dcb74533067952360dac1f5"
+      }
+    },
+    {
+      "episode_index": 12,
+      "sequence_id": "2026-04-25_17-20-04_black_platform_turn_05",
+      "object": "black_platform",
+      "frames": 700,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000012.parquet": "195a4598b1176c695b52de656040c33d2978a0e54f4cc0a8e0d63776c4245c34",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/black_platform/black_platform.glb": "5c27db3c4896bbc494c3d68721b97cf130b15e4fd4e6110e2f2a6e92beecea4a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-04-25_17-20-04_black_platform_turn_05.json": "50eba8f29dd2f1ea30657dfcb7aad72956b0b7770c1570a58cf444a8bc0edc1e",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-04-25_17-20-04_black_platform_turn_05_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "72f4045a1151d49e146f9c554547d616da639e7620aa38b2901c287ca12207a5",
+        "ground_plane.json": "50eba8f29dd2f1ea30657dfcb7aad72956b0b7770c1570a58cf444a8bc0edc1e",
+        "poses.npy": "e4ec9d57f3e5e5ac3b427bc84a6ddab5e941741e25cb0c225ea5f0e0dadfb7e5",
+        "reconstructed_mesh/output_aligned.glb": "5c27db3c4896bbc494c3d68721b97cf130b15e4fd4e6110e2f2a6e92beecea4a"
+      }
+    },
+    {
+      "episode_index": 7,
+      "sequence_id": "2026-05-29_15-20-43_iron_round_table_02",
+      "object": "iron",
+      "frames": 896,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000007.parquet": "6232ec336f31fa4212d2eb157a735ce25c31d23e6e0cd38a11a55d3de9191b21",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/iron/iron.glb": "714f94b07baaa29ec5bb35ed3ae9dc3ff32a651ea763db45e5efe59af0dc9e83",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-29_15-20-43_iron_round_table_02.json": "7c49ce58caac4f7b4ae82826a9b43485f84afafd15742ec9e828a1c9ef27a0d4",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-29_15-20-43_iron_round_table_02_support.usda": "4db58f51b22190a7f0d6d3de01fd1f71056b2c4eaf45d96cb4db01b3af07038a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4db58f51b22190a7f0d6d3de01fd1f71056b2c4eaf45d96cb4db01b3af07038a",
+        "soma_params.npz": "42cec96276d798fbe0d353503af1a22dffd475266b25b20ef899f8632f7373fe",
+        "ground_plane.json": "7c49ce58caac4f7b4ae82826a9b43485f84afafd15742ec9e828a1c9ef27a0d4",
+        "poses.npy": "ef3841a6a826b2bb0df7e38633f38c05a6dab224dfc3bdffb412b81a7001eb02",
+        "reconstructed_mesh/output_aligned.glb": "714f94b07baaa29ec5bb35ed3ae9dc3ff32a651ea763db45e5efe59af0dc9e83"
+      }
+    },
+    {
+      "episode_index": 27,
+      "sequence_id": "2026-05-01_11-15-05_woven_basket_ground_desk_10",
+      "object": "woven_basket",
+      "frames": 565,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000027.parquet": "84a7a29f6e6b7cc3c5f6a9c0e0d41c4f819ca5195b680c36808e2107b95c579d",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/woven_basket/woven_basket.glb": "1725abaac462412da58bc35c772aa0c6ae6449c5471c220811cb895243ce6822",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-01_11-15-05_woven_basket_ground_desk_10.json": "14377eadb8889d353c6db760ffbbd843823e37c9d5cebf8fecff3588f4751c28",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-01_11-15-05_woven_basket_ground_desk_10_support.usda": "506e23bcdd184a0064a2403793ae95feaf86e53e97b0357d249225dd12ae0618",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "506e23bcdd184a0064a2403793ae95feaf86e53e97b0357d249225dd12ae0618",
+        "soma_params.npz": "47d3910b5ae7c04576715eaf7ad35194e2ffe062aa4be3edfd0f275f3dd88cbe",
+        "ground_plane.json": "14377eadb8889d353c6db760ffbbd843823e37c9d5cebf8fecff3588f4751c28",
+        "poses.npy": "5732f8c6d3b1a0ddd463079c0c6a93e9e9f9234a61cda925fb10274686ea6312",
+        "reconstructed_mesh/output_aligned.glb": "1725abaac462412da58bc35c772aa0c6ae6449c5471c220811cb895243ce6822"
+      }
+    },
+    {
+      "episode_index": 18,
+      "sequence_id": "2026-05-06_10-00-19_blue_trash_can_drag_sideways_08",
+      "object": "blue_trash_can",
+      "frames": 858,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000018.parquet": "913ec5f8f80bbd9473340a3c1bd3d6feae74a2ff27fa8b0bccd868c8912edf8e",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/blue_trash_can/blue_trash_can.glb": "14c18e9bd96383ebeb5c3d786f013c7fcb43d55cecef609de0f73a1c8a269f5b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-06_10-00-19_blue_trash_can_drag_sideways_08.json": "a082b1d29a00aad577496189d4841eb2e1d45cb085c386bd72420a5e3361466a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-06_10-00-19_blue_trash_can_drag_sideways_08_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "ecc1f81ce03692d8b2a2121ecbc01694abba1efba446d013dd4fe1b3f1a098cc",
+        "ground_plane.json": "a082b1d29a00aad577496189d4841eb2e1d45cb085c386bd72420a5e3361466a",
+        "poses.npy": "61fd48f2a44d3e71256749409fac41f6276d094dc10ec17e8fc4badfb89c23bb",
+        "reconstructed_mesh/output_aligned.glb": "14c18e9bd96383ebeb5c3d786f013c7fcb43d55cecef609de0f73a1c8a269f5b"
+      }
+    },
+    {
+      "episode_index": 5,
+      "sequence_id": "2026-03-18_19-36-56_g1_box_rotate_01",
+      "object": "big_black_box",
+      "frames": 1003,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000005.parquet": "f3b8be40e98efdf5dfc46016a891a6eccc1e56641deb03214a4bd845738ac338",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/big_black_box/big_black_box.glb": "e6d434d16811524b8b3725e32c9ba2781bb878c47962f2e6a25b22e0cc2e4427",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-03-18_19-36-56_g1_box_rotate_01.json": "4d0e30bd89205874ecabeaf1b402aa12df861b1888b18b7a8aa9a224d4222207",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-03-18_19-36-56_g1_box_rotate_01_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "ad90c99322bdc8a543c875f2e82ed26459514e7370c2a3b7a6a4b636e472edd7",
+        "ground_plane.json": "4d0e30bd89205874ecabeaf1b402aa12df861b1888b18b7a8aa9a224d4222207",
+        "poses.npy": "0e2e9cbdb624eac8ad727745e539948e19cd420842defa0db04c9d42bcee08c3",
+        "reconstructed_mesh/output_aligned.glb": "e6d434d16811524b8b3725e32c9ba2781bb878c47962f2e6a25b22e0cc2e4427"
+      }
+    },
+    {
+      "episode_index": 23,
+      "sequence_id": "2026-06-03_15-08-03_toy_stroller_back_forth_ground_04",
+      "object": "toy_stroller",
+      "frames": 946,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000023.parquet": "2a3388abb6251772f7c56c58cbf9fcd50f90056ec04c167b99592f9ecece8893",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/toy_stroller/toy_stroller.glb": "a9c278ea07d4dac5157210c4e67819fcfaf3254a6afc801c988a3e66b83b9636",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-03_15-08-03_toy_stroller_back_forth_ground_04.json": "5c693e01593f88a582037a02da0a237112db8aec24ed1aa76b1cfa3a00ce0156",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-03_15-08-03_toy_stroller_back_forth_ground_04_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "e7e6185c4817c74098064dedc0d0063d1311acdbc61b583b4f2c12f73e0d00ce",
+        "ground_plane.json": "5c693e01593f88a582037a02da0a237112db8aec24ed1aa76b1cfa3a00ce0156",
+        "poses.npy": "c6cec9fa3e072e84e0005c12ed115a0c7a0a16cbf7e734548171937d048d554c",
+        "reconstructed_mesh/output_aligned.glb": "a9c278ea07d4dac5157210c4e67819fcfaf3254a6afc801c988a3e66b83b9636"
+      }
+    },
+    {
+      "episode_index": 1,
+      "sequence_id": "2026-05-18_17-06-21_vacuum_left_lean_02",
+      "object": "vacuum",
+      "frames": 747,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000001.parquet": "bca2d29dbc37c0e9e45b4c5925247630146dc296ddb72483beb933335a8de7a5",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/vacuum/vacuum.glb": "fc017067c2783cd29cf7536988d7f662c7c1fbd49e6b1336a3f32fbdd47cebee",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-18_17-06-21_vacuum_left_lean_02.json": "d19ecbb803d769063fe296f8075e895d1c8830496f8095e01531c5a9bf13f4c2",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-18_17-06-21_vacuum_left_lean_02_support.usda": "db234e4fdc148e1eb42a3229673373f819dbdd367e2a5c0acff750e86405f0a4",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "db234e4fdc148e1eb42a3229673373f819dbdd367e2a5c0acff750e86405f0a4",
+        "soma_params.npz": "567f1590c48d7d4bbf4780983c047f0272e35d3e8fa4195d2fe7c1e065437149",
+        "ground_plane.json": "d19ecbb803d769063fe296f8075e895d1c8830496f8095e01531c5a9bf13f4c2",
+        "poses.npy": "5a508903109f2835f5b0dc08220a7ef00317ee94a540da1422eb1843f5df675a",
+        "reconstructed_mesh/output_aligned.glb": "fc017067c2783cd29cf7536988d7f662c7c1fbd49e6b1336a3f32fbdd47cebee"
+      }
+    },
+    {
+      "episode_index": 22,
+      "sequence_id": "2026-05-22_16-52-36_step_ladder_drag_03",
+      "object": "step_ladder",
+      "frames": 719,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000022.parquet": "e25cc44536d8d9b95a39cecb47b97ae3d34db8350c054509e746181cfe29d61a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/step_ladder/step_ladder.glb": "047a78a75436d9ae5e773074a9b4f2508bd35823a7067149f166f04a33341ee1",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-22_16-52-36_step_ladder_drag_03.json": "d9976877635c28eed040edccb0e1611af7c62ae033375656930235fd4af3b071",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-22_16-52-36_step_ladder_drag_03_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "76bca427eb6e2a56b6beccda22112f0375b1aa9efbc567134be87428a92086c2",
+        "ground_plane.json": "d9976877635c28eed040edccb0e1611af7c62ae033375656930235fd4af3b071",
+        "poses.npy": "002de146006e8d63fd9d78db6abdcf8dc67ab0c5e89a77fcfba26f2e81a14d1e",
+        "reconstructed_mesh/output_aligned.glb": "047a78a75436d9ae5e773074a9b4f2508bd35823a7067149f166f04a33341ee1"
+      }
+    },
+    {
+      "episode_index": 28,
+      "sequence_id": "2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_",
+      "object": "squeegee",
+      "frames": 988,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000028.parquet": "e05489ffd6cf6d7a7566e8463edd9f8e537b129c574839def589bf64ce0ea579",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/squeegee/squeegee.glb": "aa3e2fad95d7201aab1e76b0e2321ad34d593e42a6fa8996031e4b4d5f690cc2",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_.json": "353bc4a5271c942f3d11d174bdadf6625177bf5f7ec385c075f0e33560ec6fe8",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-19_11-27-07_squeegee_sweep_away_from_you_03__support.usda": "6bb833e83154505d6548a83c3f06501bc58903c052e2c3d5b152383233513bd6",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "6bb833e83154505d6548a83c3f06501bc58903c052e2c3d5b152383233513bd6",
+        "soma_params.npz": "7b54445fcfc5e38d8ca5a3727725677bb9a597fdde416c6885b524f1ee3682dd",
+        "ground_plane.json": "353bc4a5271c942f3d11d174bdadf6625177bf5f7ec385c075f0e33560ec6fe8",
+        "poses.npy": "142e7e391d8eea73ba1fc7559f306a89bf9f3bf3d0e5bd0e5e1e1f7200947690",
+        "reconstructed_mesh/output_aligned.glb": "aa3e2fad95d7201aab1e76b0e2321ad34d593e42a6fa8996031e4b4d5f690cc2"
+      }
+    },
+    {
+      "episode_index": 16,
+      "sequence_id": "2026-03-12_15-06-36_spray_bottle_left_desk_ground_02",
+      "object": "spray_bottle",
+      "frames": 477,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000016.parquet": "8128ab328b44dfc2ab1a2bea915eed580e935acab18f2e2efe7e6fe8e047c14b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/spray_bottle/spray_bottle.glb": "e5063cd7014d97475b1fed361e6c2383579ab7d3e48e589f1c43d0040f61f372",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-03-12_15-06-36_spray_bottle_left_desk_ground_02.json": "c2aa033a12ed0081c8b8d06bcb83be766ca0bfd650db4bc713aa9d71055eba5f",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-03-12_15-06-36_spray_bottle_left_desk_ground_02_support.usda": "6af119ca0c8ab9d17031b600fe2ba98b1bc823ceeac979d3efa2ad98973184d1",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "6af119ca0c8ab9d17031b600fe2ba98b1bc823ceeac979d3efa2ad98973184d1",
+        "soma_params.npz": "3a1b0b4d5b6f15df91f86e6ec9bff4127705a932df26f42f156ba30bc3e06210",
+        "ground_plane.json": "c2aa033a12ed0081c8b8d06bcb83be766ca0bfd650db4bc713aa9d71055eba5f",
+        "poses.npy": "ab076693af759194bb5585e94ffde3aa300c84eca8064c4af5e26afc06765b1a",
+        "reconstructed_mesh/output_aligned.glb": "e5063cd7014d97475b1fed361e6c2383579ab7d3e48e589f1c43d0040f61f372"
+      }
+    },
+    {
+      "episode_index": 10,
+      "sequence_id": "2026-05-01_11-36-40_white_desk_lower_to_ground_10",
+      "object": "white_desk",
+      "frames": 794,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000010.parquet": "d4ea82c39e92297871d53cf21fe8d85b628c64fcb8e713da1c9c99f5457329d3",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/white_desk/white_desk.glb": "20bc239794adf00df9089347eef7bb72c9540ab03379d1fb3762c9d156a4fefd",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-01_11-36-40_white_desk_lower_to_ground_10.json": "dabe43e74a47b01d94c7b34096d402a7fb4e03a6d0da417231d6d45c9a069926",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-01_11-36-40_white_desk_lower_to_ground_10_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "9714160bac3de1d77cffb63ebdf43c8d6400820d61fb5d1ca5a613b44d80023f",
+        "ground_plane.json": "dabe43e74a47b01d94c7b34096d402a7fb4e03a6d0da417231d6d45c9a069926",
+        "poses.npy": "a9e8b643f3ea48adca7375f104299c79b0ffc228df84469e830a893b1ba3475e",
+        "reconstructed_mesh/output_aligned.glb": "20bc239794adf00df9089347eef7bb72c9540ab03379d1fb3762c9d156a4fefd"
+      }
+    },
+    {
+      "episode_index": 8,
+      "sequence_id": "2026-06-05_15-08-08_skinny_wood_chair_push_10",
+      "object": "skinny_wood_chair",
+      "frames": 708,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000008.parquet": "df6f722ea8fb413db581d757981a25cdc22d543a34a94d92338cb7c4891cbf5e",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/skinny_wood_chair/skinny_wood_chair.glb": "7982ef074fe2e8b2bbab813ccb4cc848c05571e7c3adef42458b73449481d35a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-05_15-08-08_skinny_wood_chair_push_10.json": "33e86866ebc96590fcaa3dd2346af1885a2c1c61e9683ffe491e5b105bb72a9e",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-05_15-08-08_skinny_wood_chair_push_10_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "cbd5e11ad777a8273012e3c0ebdc8692b5173383577bd23173d5387172170935",
+        "ground_plane.json": "33e86866ebc96590fcaa3dd2346af1885a2c1c61e9683ffe491e5b105bb72a9e",
+        "poses.npy": "69d9c3b3b11d143f1c02edc7307256ea246cbf95e25f724b3dede53c2be50eb0",
+        "reconstructed_mesh/output_aligned.glb": "7982ef074fe2e8b2bbab813ccb4cc848c05571e7c3adef42458b73449481d35a"
+      }
+    },
+    {
+      "episode_index": 11,
+      "sequence_id": "2026-04-24_13-56-58_light_blue_book_pick_place_09",
+      "object": "light_blue_book",
+      "frames": 901,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000011.parquet": "e2a9f15075069267f9d4ab6d4318bf648fb4197f8fe5554652e8c3eb270bcf4b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/light_blue_book/light_blue_book.glb": "4c797e20fe013f3376efb41d140e4663ee5b2bd00e55708575f536343503d0b7",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-04-24_13-56-58_light_blue_book_pick_place_09.json": "7dccbbd3948706dae8686200433928d6905ecc972033ef6bb76c0140a19b3c4a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-04-24_13-56-58_light_blue_book_pick_place_09_support.usda": "20f71ba53ba3b302ba44ad22b2cc0e8abdf21c59bff79d01316922634751422c",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [
+        900
+      ],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "20f71ba53ba3b302ba44ad22b2cc0e8abdf21c59bff79d01316922634751422c",
+        "soma_params.npz": "cab1db66582ba29b080c1693fe75b334f41bca664211c2fffa4b98d9bcfe99c2",
+        "ground_plane.json": "7dccbbd3948706dae8686200433928d6905ecc972033ef6bb76c0140a19b3c4a",
+        "poses.npy": "f2d01d17e55378da34f5be73dd18491bcb831b76b4d73f81393485ec99d668f9",
+        "reconstructed_mesh/output_aligned.glb": "4c797e20fe013f3376efb41d140e4663ee5b2bd00e55708575f536343503d0b7"
+      }
+    },
+    {
+      "episode_index": 20,
+      "sequence_id": "2026-06-08_16-57-34_rice_cooker_clockwise_04",
+      "object": "rice_cooker",
+      "frames": 553,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000020.parquet": "5d24335b44fe18c7ec82376f241e91608bb365c8fab643fb8047847e74031779",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/rice_cooker/rice_cooker.glb": "969ef0080979446b5713d6f3c5c450658998844d7db699c01366d93ed11b6d21",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-08_16-57-34_rice_cooker_clockwise_04.json": "bea0e61fffef9b6c6d5284aec9ce1776abd2e82cf78ff69ff7cb111364433f9f",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-08_16-57-34_rice_cooker_clockwise_04_support.usda": "1a76797209599615a3a4496443163bbcf7ccf72fc5af1a2ba6ffaa0062a5cce8",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "1a76797209599615a3a4496443163bbcf7ccf72fc5af1a2ba6ffaa0062a5cce8",
+        "soma_params.npz": "fe2aa0c8b312c980dc674330e2f99bed3c3391c5e97e22df330efa13c7f2c3fa",
+        "ground_plane.json": "bea0e61fffef9b6c6d5284aec9ce1776abd2e82cf78ff69ff7cb111364433f9f",
+        "poses.npy": "5e0b79633cb917c737df02cd4913e476482dec73983e1ce557021c44d764260b",
+        "reconstructed_mesh/output_aligned.glb": "969ef0080979446b5713d6f3c5c450658998844d7db699c01366d93ed11b6d21"
+      }
+    },
+    {
+      "episode_index": 3,
+      "sequence_id": "2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05",
+      "object": "contigo_coffee_mug",
+      "frames": 781,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000003.parquet": "d5f9412f0c46b20df10f508098a32ca0c91e5882529d4697bafdeb11d5c0a528",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/contigo_coffee_mug/contigo_coffee_mug.glb": "6ac9976cc09e5dfb8b068672d91a00fafa73a774035e96cad4faa7e50aec283f",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05.json": "edee94f6e18f17bca636511710ff0d6e4a7f912683b44f32ab64828c421e3fc6",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05_support.usda": "11b4daee99ee0c47a63200b748a26905c93f20c93753febc553273612b270d22",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "11b4daee99ee0c47a63200b748a26905c93f20c93753febc553273612b270d22",
+        "soma_params.npz": "5093b2114e9e5fe437d31f36b3033c5d4b2930eea536e82dd08906e5c51ebd9b",
+        "ground_plane.json": "edee94f6e18f17bca636511710ff0d6e4a7f912683b44f32ab64828c421e3fc6",
+        "poses.npy": "cff2f6ea7423b71a096fae09a2c8d720c71d2dd985fd5efc9909988eb733f801",
+        "reconstructed_mesh/output_aligned.glb": "6ac9976cc09e5dfb8b068672d91a00fafa73a774035e96cad4faa7e50aec283f"
+      }
+    },
+    {
+      "episode_index": 26,
+      "sequence_id": "2026-06-05_16-05-08_skateboard_rotate_ground_10",
+      "object": "skateboard",
+      "frames": 669,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000026.parquet": "38750aa5a90389b17c439f8fdcf62f4f1d544ae34d200dc4932e49534badde04",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/skateboard/skateboard.glb": "4b011286643070adeac57d1846d89614bbae2636d63ac286e35c48b8478adde6",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-05_16-05-08_skateboard_rotate_ground_10.json": "d4bcce3a69b84b02c06f144b4f77f88e3f6f656da8bd384268961a961bcce7b5",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-05_16-05-08_skateboard_rotate_ground_10_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "9d6462edfb006c2fdec2e90aae4529047e54bd62cdea7f53b066898c0bf1f6f5",
+        "ground_plane.json": "d4bcce3a69b84b02c06f144b4f77f88e3f6f656da8bd384268961a961bcce7b5",
+        "poses.npy": "54d9b30702c348d6dc5fa9804de43c4ae9f19f52b2821a4f7e15a0855cda710b",
+        "reconstructed_mesh/output_aligned.glb": "4b011286643070adeac57d1846d89614bbae2636d63ac286e35c48b8478adde6"
+      }
+    },
+    {
+      "episode_index": 25,
+      "sequence_id": "2026-03-20_11-59-57_cyan_water_bottle_rotate_01",
+      "object": "cyan_water_bottle",
+      "frames": 859,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000025.parquet": "78a5dd5b82bb8465ce8890c5d199d02704016eccf39f5417b3e496f0c37bc071",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/cyan_water_bottle/cyan_water_bottle.glb": "ebc656d5de2c6fb0075acd136503ac936b6c821fbfe05b21286efbc9af7225d6",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-03-20_11-59-57_cyan_water_bottle_rotate_01.json": "ae70886b882558cba4b9dc2be7884a02e7df41edded8e1dcf67fadd84f21ae94",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-03-20_11-59-57_cyan_water_bottle_rotate_01_support.usda": "cc6cbdf1db8ea5896ee82bb731a0ab96cb6e605a2d3f8e28e7e123c1cb2e2fb4",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "cc6cbdf1db8ea5896ee82bb731a0ab96cb6e605a2d3f8e28e7e123c1cb2e2fb4",
+        "soma_params.npz": "1b5fda59dd8fb1b372e2a326ea3295a238fbbfe63b7a3713ddb477fea3879f85",
+        "ground_plane.json": "ae70886b882558cba4b9dc2be7884a02e7df41edded8e1dcf67fadd84f21ae94",
+        "poses.npy": "1e2fcd2f36d0ff4579b1ce6ce34e45101335c4e57838fa102316642d114912e3",
+        "reconstructed_mesh/output_aligned.glb": "ebc656d5de2c6fb0075acd136503ac936b6c821fbfe05b21286efbc9af7225d6"
+      }
+    },
+    {
+      "episode_index": 0,
+      "sequence_id": "2026-06-04_14-16-23_tall_bar_stool_tip_up_04",
+      "object": "tall_bar_stool",
+      "frames": 778,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000000.parquet": "718952f41703d67068eb652b0c8fada544c41bf79fd06bad8b514b0ef70b8eee",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/tall_bar_stool/tall_bar_stool.glb": "cc214961423d674d55239077043e670c0696bf9113e225e11c1c2623c7ed26ad",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-04_14-16-23_tall_bar_stool_tip_up_04.json": "b0d527d5e2a57a98f845f20ac639b0bb918f448edf3186d89d147b6a38655dd4",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-04_14-16-23_tall_bar_stool_tip_up_04_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "5cf0a46ab4f979333c7d9fcc21e3267c52a7e24028a113fca1834a0c1de0b3ec",
+        "ground_plane.json": "b0d527d5e2a57a98f845f20ac639b0bb918f448edf3186d89d147b6a38655dd4",
+        "poses.npy": "5bb70ebc299c367acc45aeff4af492022e74a70673bba712789146dbeb84b9d2",
+        "reconstructed_mesh/output_aligned.glb": "cc214961423d674d55239077043e670c0696bf9113e225e11c1c2623c7ed26ad"
+      }
+    },
+    {
+      "episode_index": 21,
+      "sequence_id": "2026-04-29_11-53-57_tall_bar_stool_pull_08",
+      "object": "tall_bar_stool",
+      "frames": 678,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000021.parquet": "6cc8d0b209ee264775b7c52f47c409cc214e5bbc9a0c394900cfccb844ed1776",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/tall_bar_stool/tall_bar_stool.glb": "cc214961423d674d55239077043e670c0696bf9113e225e11c1c2623c7ed26ad",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-04-29_11-53-57_tall_bar_stool_pull_08.json": "a6fadc51b4d4e5bfc59266cc3ea6ac149a06c45debb8e3ece59d9402d54f2dec",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-04-29_11-53-57_tall_bar_stool_pull_08_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "433d601631c8a96d5d64ec954f742753acdd88b3d070c9c0e50a7fb330a666e9",
+        "ground_plane.json": "a6fadc51b4d4e5bfc59266cc3ea6ac149a06c45debb8e3ece59d9402d54f2dec",
+        "poses.npy": "138d17fa36c06ecd7f955d97ab8e6ff0a9b5ebe5682a51945f0a38efb90c681f",
+        "reconstructed_mesh/output_aligned.glb": "cc214961423d674d55239077043e670c0696bf9113e225e11c1c2623c7ed26ad"
+      }
+    },
+    {
+      "episode_index": 13,
+      "sequence_id": "2026-06-09_10-19-09_snack_box_desk_through_06",
+      "object": "snack_box",
+      "frames": 922,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000013.parquet": "f77a64ae12c4abe0bf6ec74d271f6302715ed73187e294557b09d14af4dd2d70",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/snack_box/snack_box.glb": "6a3c61c171534be9226a383db02a00b4d951569a7b228c60fc0a2f56e06cd441",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-09_10-19-09_snack_box_desk_through_06.json": "a81074aec2ce6f52c5e3002195c43dca4501cc7f6202e2e35586502fb822198f",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-09_10-19-09_snack_box_desk_through_06_support.usda": "fab817f62953cf05f5f9d2bd2c5244402aea334bddb3b7e5d87815fd20bc9e0f",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "fab817f62953cf05f5f9d2bd2c5244402aea334bddb3b7e5d87815fd20bc9e0f",
+        "soma_params.npz": "0d4ef1aedd144f78e049c5aa5085fed29e392e4fd07ad8c33cc824d4b957b689",
+        "ground_plane.json": "a81074aec2ce6f52c5e3002195c43dca4501cc7f6202e2e35586502fb822198f",
+        "poses.npy": "0b01f4e0ac3066cbca7985e4b9da3eefab9af57df23eb93f270cfd12fce00b53",
+        "reconstructed_mesh/output_aligned.glb": "6a3c61c171534be9226a383db02a00b4d951569a7b228c60fc0a2f56e06cd441"
+      }
+    },
+    {
+      "episode_index": 19,
+      "sequence_id": "2026-05-19_10-19-48_cane_swing_05",
+      "object": "cane",
+      "frames": 886,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000019.parquet": "f6a92df4aff1fad783f8acf5df27072ec5bc52875e3f0d7d9d5ee477004f5996",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/cane/cane.glb": "33a74ed590f246417efd58260ec1083966195c669a4ee02a9eb6b8a5b9c3e737",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-05-19_10-19-48_cane_swing_05.json": "cf0b612cfa15ede4ae33f2ed4d46ab28257d840ee274fa75a69da80bd1e66856",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-05-19_10-19-48_cane_swing_05_support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "soma_params.npz": "685aff7193ca8d494533adcfcb247a6243997d30252b619108c45abb2d2b1b20",
+        "ground_plane.json": "cf0b612cfa15ede4ae33f2ed4d46ab28257d840ee274fa75a69da80bd1e66856",
+        "poses.npy": "574335dfa248c70c9e182b1c057d4fdd6b8dbcaa41ef7e1df07ace11ed6850fe",
+        "reconstructed_mesh/output_aligned.glb": "33a74ed590f246417efd58260ec1083966195c669a4ee02a9eb6b8a5b9c3e737"
+      }
+    },
+    {
+      "episode_index": 2,
+      "sequence_id": "2026-06-02_10-04-42_blue_easter_basket_place_10",
+      "object": "blue_easter_basket",
+      "frames": 980,
+      "fps": 30,
+      "coordinate_frame": "released_track2_opencv_world",
+      "input_sha256": {
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/data/chunk-000/episode_000002.parquet": "ac7063548bde13b4ffec121f32c2624f844250749e1d1060d58b6d03f1e83c3a",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/mesh/blue_easter_basket/blue_easter_basket.glb": "802e074320c9b516bf2b66d26630584a74124e30dc2f479e05de1fb9c16344c4",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/ground_plane/2026-06-02_10-04-42_blue_easter_basket_place_10.json": "2b4ea9ce46bb055739f2943a9f8261b3a355b8ca9b07999d569291227e835165",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/support_surface/2026-06-02_10-04-42_blue_easter_basket_place_10_support.usda": "1557cc70737264b04aadb12d15ca3255a19d99e746d22bad7ba71ef01e1f107d",
+        "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_2/tier_1_multiview_caption/meta/info.json": "bc081f38acdcd13cc1166a8cb5ab2221f17cb8f7452ff96ee8213cbc98da8c24"
+      },
+      "interpolated_object_frames": [],
+      "adapter_sha256": "c77b6f1f937016bfa4b622483ea99b7b8ba257aae961c01acfbd91472c36997d",
+      "output_sha256": {
+        "support.usda": "1557cc70737264b04aadb12d15ca3255a19d99e746d22bad7ba71ef01e1f107d",
+        "soma_params.npz": "e92034c0b7c6d82d1648c62415b4bc4c02cdf452a31ca31b44dcfc552999e6ff",
+        "ground_plane.json": "2b4ea9ce46bb055739f2943a9f8261b3a355b8ca9b07999d569291227e835165",
+        "poses.npy": "1dd2c9930ff0dfccde00ac1bc8fd1e0a76027101f7e9972b280541f4b6c65fd5",
+        "reconstructed_mesh/output_aligned.glb": "802e074320c9b516bf2b66d26630584a74124e30dc2f479e05de1fb9c16344c4"
+      }
+    }
+  ],
+  "object_se3_translation_max_error_m": 1.0270488812713525e-07,
+  "object_se3_rotation_max_frobenius_error": 1.1942665166016054e-07,
+  "released_world_to_retarget_world": [
+    [
+      0.9766527486536032,
+      -0.006290530267873083,
+      -0.21473201385985943,
+      -0.13796492843694874
+    ],
+    [
+      0.21403054820964276,
+      -0.05734568348258357,
+      0.9751422445053823,
+      -2.347742364112327
+    ],
+    [
+      -0.018448115904928043,
+      -0.9983345640690121,
+      -0.054660453754922546,
+      1.3852025415199891
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "soma_assets_revision": "466879a83d57eabf3d875ded2d869f2075f90348",
+  "soma_asset_sha256": {
+    "SOMA_neutral.npz": "515f7d5bb74be4e370e9adf5e779760ec3581556374c0b33212a32d13ab3b53f",
+    "correctives_model.pt": "067237a235f626eedc217bf25ab71a2000d29e9a4801c9b93bf300917977e12f",
+    "MHR/mhr_model_lod1.pt": "93f1b6d7fbcfb10ea7b2390ba7d544cede3f30ede413170fec89bb04557caaf0",
+    "MHR/base_body_lod1.obj": "e8bbb3f3681d76737635c10a9e6f6a058ad3d9be5a75547f84a578cea572e916",
+    "MHR/SOMA_wrap_lod1.obj": "9ab7a2328d5b026c17ef1d09ed692ffeb68f96d3fc74970cba72e667dbe0f728"
+  },
+  "registration": {
+    "user_reported_complete": true,
+    "api_last_check": "not entered on four Tier 1 competitions",
+    "configured_kaggle_username": "iorideepp",
+    "followup_pending": false,
+    "user_confirmed_same_account": true,
+    "api_recheck_before_upload_required": true
+  }
+}

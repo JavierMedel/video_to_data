@@ -1,0 +1,16 @@
+# Separate from reconstruction's immutable runtime; CPU Pink IK with GPU SOMA decoding.
+FROM v2d_cari4d:blackwell
+# The reconstruction image pins NumPy 1.x. Pinocchio's native Boost closure
+# requires NumPy 2.2; this derived image is used only for SOMA/Pink retargeting.
+ENV PIP_CONSTRAINT=""
+RUN python -m pip install --no-cache-dir \
+    numpy==2.2.6 py-soma-x==0.2.1 pyarrow==24.0.0 viser==1.0.30 pytest \
+    pin==3.7.0 pin-pink==4.2.0 coal==3.0.1 eigenpy==3.10.3 \
+    cmeel==0.57.3 cmeel-boost==1.87.0.1 cmeel-urdfdom==4.0.1 \
+    cmeel-console-bridge==1.0.2.3 cmeel-tinyxml2==10.0.0 \
+    cmeel-tinyxml==2.6.2.3 cmeel-assimp==5.4.3.1 cmeel-octomap==1.10.0 \
+    cmeel-qhull==8.0.2.1 cmeel-zlib==1.3.1 qpsolvers[daqp] loop-rate-limiters \
+    usd-core==26.5
+ENV PYTHONPATH=/repo/source/robotic_grounding
+WORKDIR /repo
+ENTRYPOINT ["python"]

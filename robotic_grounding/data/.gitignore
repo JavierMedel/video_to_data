@@ -1,0 +1,4 @@
+# Local challenge inputs, generated retargets, and checkpoints are reproducible
+# artifacts. Record their hashes and paths under incident_reports instead.
+*
+!.gitignore
