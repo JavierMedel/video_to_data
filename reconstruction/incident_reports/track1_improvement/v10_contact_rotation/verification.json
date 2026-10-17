@@ -21,5 +21,11 @@
   "uploaded": false,
   "mask_renderer_gpu_parity": "PASS at both resolutions; source-extracted upstream helper oracle",
   "full_source_video_frames_per_clip": 535,
-  "independent_hand_check_frames": 33
+  "independent_hand_check_frames": 33,
+  "official_rows": 740780,
+  "changed_packed_rows": 657,
+  "changed_rows_confined_to_episode18_rotation": true,
+  "official_dry_run": "PASS",
+  "public_producing_code": "PASS",
+  "submission_eligibility": "UNRESOLVED_WEEKLY_LIMIT"
 }

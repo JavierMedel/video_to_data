@@ -1,0 +1,28 @@
+{
+  "state": "READY_PENDING_WEEKLY_ELIGIBILITY",
+  "checked_utc": "2026-10-17T00:03:29.616087+00:00",
+  "archive": "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/submission_packages/track1_v10_contact_rotation.parquet",
+  "sha256": "78d56ea2d8bbc63784aff01e4642625d6ddbee8d2aca560a91a4173509c8e87a",
+  "bytes": 15708468,
+  "rows": 740780,
+  "episodes": 30,
+  "promoted": [
+    18
+  ],
+  "changed_packed_rows": 657,
+  "allowed_array": 3,
+  "parent": "v8",
+  "producing_commit": "https://github.com/JavierMedel/video_to_data/commit/8feab58e16031461639d7e3a1ec7dbef1705c3a3",
+  "public_commit_accessible": true,
+  "official_pack_validation": "PASS",
+  "official_environment_preflight": "PASS",
+  "authenticated_dry_run": "PASS",
+  "remaining_daily_quota_per_metric": 5,
+  "this_calendar_week_versions": 7,
+  "weekly_policy_limit": 5,
+  "upload_authorized_by_user": true,
+  "organizer_exception_or_updated_limit_confirmed": false,
+  "uploaded": false,
+  "new_submission_ids": [],
+  "hold_reason": "Published website policy is five versions per week; authenticated history shows seven this week. No organizer-confirmed exception or revised allowance supplied. Daily API quota does not resolve the published weekly policy."
+}
