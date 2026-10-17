@@ -1,0 +1,25 @@
+{
+  "state": "PASS",
+  "unit_tests_passed": 24,
+  "suites": {
+    "test_track1_whittaker.py": 7,
+    "test_track1_contact_smoothing.py": 8,
+    "test_track1_review_humans.py": 2,
+    "test_track1_package_from_parent.py": 4,
+    "test_track1_rotation_selection.py": 2,
+    "test_track1_rotation_surface_selection.py": 1
+  },
+  "source_syntax": "PASS",
+  "parent": "v8",
+  "complete_package_pairs": 30,
+  "changed_episode": 18,
+  "changed_field": "object_rotation only",
+  "other_59_files_identical": true,
+  "promoted": [
+    18
+  ],
+  "uploaded": false,
+  "mask_renderer_gpu_parity": "PASS at both resolutions; source-extracted upstream helper oracle",
+  "full_source_video_frames_per_clip": 535,
+  "independent_hand_check_frames": 33
+}

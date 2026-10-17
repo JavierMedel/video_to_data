@@ -1,0 +1,33 @@
+{
+  "state": "COMPLETE",
+  "videos": [
+    {
+      "frames": 535,
+      "fps": "30",
+      "path": "/repo/data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/episode_000018_object_rotation_comparison.mp4",
+      "sha256": "9332bcc44e0c73c97d08f6c5b73693add44f4300fde0f6263ef14fe920928183"
+    },
+    {
+      "frames": 535,
+      "fps": "30",
+      "path": "/repo/data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/episode_000018_object_rotation_closeups.mp4",
+      "sha256": "8f8a2c829b1d4933324d455e2d33ccb8445b3096e7dbc0cf4a7c867cea81282d"
+    }
+  ],
+  "input_sha256": {
+    "/repo/scripts/track1_render_object_comparison.py": "bf9f50cd51ff3cd47fb1604628c155d03c8e244534ff3793268a76abfa19728c",
+    "/repo/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000018.npz": "b41ca71d3c73a90c2fbd41c67008122a6aa363f43b69aef1e0bde58835974c96",
+    "/repo/data/v2d_challenge/track_1/v10_contact_rotation/surface_selection/episode_000018/episode_000018.npz": "1b0787bca8e2f58575de9854009527a920669c0223216611573c38118170cbd4",
+    "/repo/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000018_object.glb": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+    "/repo/data/v2d_challenge/track_1/improvement_pilot_v1/episode_000018/run/export/episode_000018/edex": "f40c614484f739e219502c4dd61b6f306966f4a4b8805b08a9a3f04fa00c8e37"
+  },
+  "sample_frames": [
+    72,
+    156,
+    240,
+    323,
+    407,
+    491
+  ],
+  "scope": "Actual normal-shaded object projection on full source RGB; observed human masks occlude mesh. Humans/meshes/translation/scale unchanged. No reconstructed-human rendering or exhaustive visual inspection claim."
+}

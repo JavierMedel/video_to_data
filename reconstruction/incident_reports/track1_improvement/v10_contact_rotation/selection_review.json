@@ -1,0 +1,386 @@
+{
+  "state": "LOCAL_VALIDATION_COMPLETE",
+  "parent": "v8",
+  "parent_parquet_sha256": "bd73a931e9f9ec85b920884415c5dc2123d86e2d3d91395c7820ebf564fd3198",
+  "episodes": {
+    "0": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "1": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "2": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "3": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "4": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "5": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "6": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "7": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "candidate": "data/v2d_challenge/track_1/v10_contact_rotation/surface_selection/episode_000007",
+      "status": "incident_reports/track1_improvement/v10_contact_rotation/surface_selection/episode_000007/status.json",
+      "status_sha256": "957a10edca4ebbc4c70c670c342f2ffffdaeaef57216f06b4c50b74b98091c77",
+      "gates": {
+        "mean_iou_gain_at_least_002": false,
+        "full_image_alignment": true,
+        "common_depth": true,
+        "surface_motion_both_scopes": true,
+        "framewise_full_hand_fps_nonincrease": true,
+        "framewise_contact_gap": true,
+        "only_rotation_changed": true,
+        "independent_sampled_hand_check": false,
+        "visual_review": false
+      },
+      "iou_gain": 0.011512577171800986,
+      "summary": {
+        "submitted_v8": {
+          "rotation_step_degrees_mean_proxy": 14.171884344802915,
+          "rotation_step_degrees_p95_proxy": 127.85306535668177,
+          "rotation_step_degrees_max_proxy": 179.94956331915697,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 3.053195034221857,
+          "sampled_vertex_count": 1022
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 14.33215597919418,
+          "rotation_step_degrees_p95_proxy": 114.65990258868509,
+          "rotation_step_degrees_max_proxy": 179.5394889031502,
+          "rotation_jumps_over_45_degrees": 49,
+          "sampled_vertex_acceleration_cm_proxy": 3.0257881560381104,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "scored_motion": {
+        "submitted_v8": {
+          "consecutive_scored_triples": 595,
+          "translation_acceleration_cm_proxy": 1.437432270698286,
+          "sampled_vertex_acceleration_cm_proxy": 3.68958370222127,
+          "sampled_vertex_count": 1022
+        },
+        "final_candidate": {
+          "consecutive_scored_triples": 595,
+          "translation_acceleration_cm_proxy": 1.437432270698286,
+          "sampled_vertex_acceleration_cm_proxy": 3.6589229819497913,
+          "sampled_vertex_count": 1022
+        }
+      },
+      "reason": "mean_iou_gain_at_least_002; independent_sampled_hand_check; visual_review"
+    },
+    "8": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "9": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "10": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "11": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "12": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "13": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "14": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "15": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "16": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "17": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "18": {
+      "verdict": "PROMOTE",
+      "source": "data/v2d_challenge/track_1/v10_contact_rotation/surface_selection/episode_000018",
+      "candidate": "data/v2d_challenge/track_1/v10_contact_rotation/surface_selection/episode_000018",
+      "status": "incident_reports/track1_improvement/v10_contact_rotation/surface_selection/episode_000018/status.json",
+      "status_sha256": "170eded682b36985ff237356cb00082da0a5d3894b78c9b08675ea4c0e55d7b5",
+      "gates": {
+        "mean_iou_gain_at_least_002": true,
+        "full_image_alignment": true,
+        "common_depth": true,
+        "surface_motion_both_scopes": true,
+        "framewise_full_hand_fps_nonincrease": true,
+        "framewise_contact_gap": true,
+        "only_rotation_changed": true,
+        "independent_sampled_hand_check": true,
+        "visual_review": true
+      },
+      "iou_gain": 0.02303755171597005,
+      "summary": {
+        "submitted_v8": {
+          "rotation_step_degrees_mean_proxy": 19.164692058470834,
+          "rotation_step_degrees_p95_proxy": 175.23098178744223,
+          "rotation_step_degrees_max_proxy": 179.98444756566101,
+          "rotation_jumps_over_45_degrees": 48,
+          "sampled_vertex_acceleration_cm_proxy": 5.5753569987291645,
+          "sampled_vertex_count": 1023
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 17.14103245195376,
+          "rotation_step_degrees_p95_proxy": 170.852147507041,
+          "rotation_step_degrees_max_proxy": 179.885154704288,
+          "rotation_jumps_over_45_degrees": 43,
+          "sampled_vertex_acceleration_cm_proxy": 4.851727865850205,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "scored_motion": {
+        "submitted_v8": {
+          "consecutive_scored_triples": 418,
+          "translation_acceleration_cm_proxy": 1.0206479831187012,
+          "sampled_vertex_acceleration_cm_proxy": 5.3239535237346525,
+          "sampled_vertex_count": 1023
+        },
+        "final_candidate": {
+          "consecutive_scored_triples": 418,
+          "translation_acceleration_cm_proxy": 1.0206479831187012,
+          "sampled_vertex_acceleration_cm_proxy": 4.77028261522647,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "reason": "Six object crops and two full-scene source/actual-mesh comparisons inspected; small orientation changes remain comparable with modest outline gains and no new gross displacement. Inherited geometry mismatch remains. Numerical image/depth/contact/motion gates independently required."
+    },
+    "19": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "20": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "candidate": "data/v2d_challenge/track_1/v10_contact_rotation/surface_selection/episode_000020",
+      "status": "incident_reports/track1_improvement/v10_contact_rotation/surface_selection/episode_000020/status.json",
+      "status_sha256": "f421d0137ccd76be59b273b83578d70ef1d5aa68ecf0ed3b9ac199dfdcba1f4a",
+      "gates": {
+        "mean_iou_gain_at_least_002": false,
+        "full_image_alignment": true,
+        "common_depth": true,
+        "surface_motion_both_scopes": true,
+        "framewise_full_hand_fps_nonincrease": true,
+        "framewise_contact_gap": true,
+        "only_rotation_changed": true,
+        "independent_sampled_hand_check": false,
+        "visual_review": false
+      },
+      "iou_gain": 0.01539177634318667,
+      "summary": {
+        "submitted_v8": {
+          "rotation_step_degrees_mean_proxy": 3.7317936769871287,
+          "rotation_step_degrees_p95_proxy": 12.742376864583294,
+          "rotation_step_degrees_max_proxy": 111.44598149151004,
+          "rotation_jumps_over_45_degrees": 4,
+          "sampled_vertex_acceleration_cm_proxy": 1.5230679484337495,
+          "sampled_vertex_count": 1023
+        },
+        "final_candidate": {
+          "rotation_step_degrees_mean_proxy": 3.8824356980533987,
+          "rotation_step_degrees_p95_proxy": 10.750656781342906,
+          "rotation_step_degrees_max_proxy": 111.2263525921177,
+          "rotation_jumps_over_45_degrees": 3,
+          "sampled_vertex_acceleration_cm_proxy": 1.427921548458791,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "scored_motion": {
+        "submitted_v8": {
+          "consecutive_scored_triples": 371,
+          "translation_acceleration_cm_proxy": 0.46576562424500884,
+          "sampled_vertex_acceleration_cm_proxy": 1.5477860720199215,
+          "sampled_vertex_count": 1023
+        },
+        "final_candidate": {
+          "consecutive_scored_triples": 371,
+          "translation_acceleration_cm_proxy": 0.46576562424500884,
+          "sampled_vertex_acceleration_cm_proxy": 1.4658962470192054,
+          "sampled_vertex_count": 1023
+        }
+      },
+      "reason": "mean_iou_gain_at_least_002; independent_sampled_hand_check; visual_review"
+    },
+    "21": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "22": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "23": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "24": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "25": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "26": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "27": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "28": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    },
+    "29": {
+      "verdict": "RETAIN_V8",
+      "source": "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes",
+      "gates": {
+        "parent_hashes_match": true
+      },
+      "reason": "No accepted isolated change for this episode"
+    }
+  },
+  "pending": [],
+  "promoted": [
+    18
+  ],
+  "uploaded": false,
+  "source_sha256": "0bb15ff22946b7e84e9baec705ca5ee2ab41b7dfb30c0e840ae1d728c402b04e",
+  "scope": "Three targeted orientation fits; complete30 package retains verified v8 elsewhere. Local checks do not establish an official score."
+}

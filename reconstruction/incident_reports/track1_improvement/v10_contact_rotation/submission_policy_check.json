@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-10-16T23:51:49.083871+00:00",
+  "calendar_week_start_utc": "2026-10-12T00:00:00+00:00",
+  "metric": "cd_o_cm",
+  "this_calendar_week_versions": 7,
+  "submissions": [
+    {
+      "ref": 57237207,
+      "date": "2026-10-15T16:21:27.253000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6"
+    },
+    {
+      "ref": 57215489,
+      "date": "2026-10-15T03:58:38.597000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "v7 all-episode depth and geometry sweep: validated Episode 7 object refinement; fixed v6 humans and retained controls"
+    },
+    {
+      "ref": 57201706,
+      "date": "2026-10-15T01:38:20.597000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "v6 Episode 1 hoop geometry with temporal hand-clear depth correction; v5 humans and other episodes unchanged"
+    },
+    {
+      "ref": 57197588,
+      "date": "2026-10-14T23:19:43.887000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "Track 1 v5: temporal poses with hand-inside-object and contact-preserving validation"
+    },
+    {
+      "ref": 57196176,
+      "date": "2026-10-14T21:56:30.793000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "Track 1 v4: temporal object poses, hoop continuity, held-out depth and signed-contact checks"
+    },
+    {
+      "ref": 57188875,
+      "date": "2026-10-14T16:30:06.407000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "Track 1 rollout v3: 23 reviewed improvements, corrected masks and metric meshes, gated tracking and refinement"
+    },
+    {
+      "ref": 57118073,
+      "date": "2026-10-12T20:22:24.240000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "Corrected masks and quality-gated reconstruction pilot: episodes 6, 18, 28"
+    },
+    {
+      "ref": 57084320,
+      "date": "2026-10-11T19:52:32.437000+00:00",
+      "state": "SubmissionStatus.COMPLETE",
+      "description": "First CARI4D Blackwell reconstruction"
+    }
+  ],
+  "official_website_policy": "five submissions per week; unlimited final three days",
+  "api_daily_limit_is_not_weekly_authorization": true
+}

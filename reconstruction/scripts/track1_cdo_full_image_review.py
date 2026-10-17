@@ -19,7 +19,7 @@ assert (a.control_dir is None)==(a.candidate_dir is None)
 assert a.control_dir is None or a.report_dir is not None
 sys.path.insert(0,'/workspace/v2d_foundation_pose/lib/FoundationPose')
 sys.path.insert(0,str(a.root/'modules/v2d_cari4d/lib/cari4d'))
-from prep.run_foundationpose_mhr_export import _render_candidate_masks, _scaled_image_grid
+from track1_mask_render import _render_candidate_masks, _scaled_image_grid
 from prep.mhr_export_utils import read_mask, read_depth_m, camera_calibration, load_edex
 from prep.foundationpose_pose_selection import measure_visible_silhouettes
 from track1_rollout_common import paths
@@ -85,7 +85,7 @@ with torch.inference_mode():
         held_summary={'supported_frames':len(held_depth),'before_cm':float(np.median([r['before_cm'] for r in held_depth])) if held_depth else None,'after_cm':float(np.median([r['after_cm'] for r in held_depth])) if held_depth else None}
         depth_driven=review['geometry_review']['held_out']['depth_driven']
         depth_pass=(len(depth_rows)<4 or depth_summary['after_cm']<=depth_summary['before_cm']+.5) and (not depth_driven or (len(held_depth)>=4 and held_summary['after_cm']<=held_summary['before_cm']-.5))
-        old_motion=review['summary']['submitted_v6']['sampled_vertex_acceleration_cm_proxy']
+        old_motion=review['summary'][review.get('control_label','submitted_v6')]['sampled_vertex_acceleration_cm_proxy']
         new_motion=review['summary']['final_candidate']['sampled_vertex_acceleration_cm_proxy']
         meaningful=(new.mean()-old.mean()>=.005 or (len(depth_rows)>=4 and depth_summary['before_cm']-depth_summary['after_cm']>=1.) or new_motion<=old_motion*.95)
         passed=alignment_pass and meaningful

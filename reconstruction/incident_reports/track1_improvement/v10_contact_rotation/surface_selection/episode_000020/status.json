@@ -1,0 +1,55 @@
+{
+  "state": "CANDIDATE_READY",
+  "episode": 20,
+  "inputs": {
+    "scripts/track1_contact_rotation_surface.py": "ca0c702c3f54594f074aecd413302168febcc6570b29da0338ea467295738a4b",
+    "scripts/track1_rotation_surface_selection.py": "03560ff9c5241921c39c7f1fc97869182b3a5761916486263d29c7771627f7fd",
+    "incident_reports/track1_improvement/v10_contact_rotation/episode_000020/status.json": "8cab01d566151eba773cdec8df0ef9b7ad628e174db89c0a12226e412a87008e",
+    "data/v2d_challenge/track_1/v10_contact_rotation/episode_000020/contact_costs.npz": "7107569c29428319fc0447c8c1106bca6979aee55b0fc289c586938c518a018f",
+    "data/v2d_challenge/track_1/v10_contact_rotation/episode_000020/image_choices.npz": "2ba38ad89374c63d593c8a097db9ebbf86370832ae745cce6b97e7e82bcf7b68"
+  },
+  "parent": "v8",
+  "surface_weight": 0.02,
+  "objective_before": 386.3699745681252,
+  "objective_after": 360.6582469842059,
+  "selected_nonparent_frames": 222,
+  "changed_scored_frames": 143,
+  "candidate_npz_sha256": "b1d9acd531d3c65c4801e5a564c1cd8f228ba95bf0f1c65e5f7139b9be4c0a99",
+  "candidate_mesh_sha256": "06081d95e6171862246bfeb1d3157cb651ab39b354ea19e0aaef47807aa47279",
+  "summary": {
+    "submitted_v8": {
+      "rotation_step_degrees_mean_proxy": 3.7317936769871287,
+      "rotation_step_degrees_p95_proxy": 12.742376864583294,
+      "rotation_step_degrees_max_proxy": 111.44598149151004,
+      "rotation_jumps_over_45_degrees": 4,
+      "sampled_vertex_acceleration_cm_proxy": 1.5230679484337495,
+      "sampled_vertex_count": 1023
+    },
+    "final_candidate": {
+      "rotation_step_degrees_mean_proxy": 3.8824356980533987,
+      "rotation_step_degrees_p95_proxy": 10.750656781342906,
+      "rotation_step_degrees_max_proxy": 111.2263525921177,
+      "rotation_jumps_over_45_degrees": 3,
+      "sampled_vertex_acceleration_cm_proxy": 1.427921548458791,
+      "sampled_vertex_count": 1023
+    }
+  },
+  "scored_motion": {
+    "submitted_v8": {
+      "consecutive_scored_triples": 371,
+      "translation_acceleration_cm_proxy": 0.46576562424500884,
+      "sampled_vertex_acceleration_cm_proxy": 1.5477860720199215,
+      "sampled_vertex_count": 1023
+    },
+    "final_candidate": {
+      "consecutive_scored_triples": 371,
+      "translation_acceleration_cm_proxy": 0.46576562424500884,
+      "sampled_vertex_acceleration_cm_proxy": 1.4658962470192054,
+      "sampled_vertex_count": 1023
+    }
+  },
+  "framewise_contact_pass": true,
+  "explicit_mesh_evaluations": 1538,
+  "source_contact_cache_sha256": "7107569c29428319fc0447c8c1106bca6979aee55b0fc289c586938c518a018f",
+  "uploaded": false
+}

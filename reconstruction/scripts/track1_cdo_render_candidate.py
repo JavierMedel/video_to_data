@@ -70,7 +70,7 @@ if args.mask_sheet:
     import trimesh
     import nvdiffrast.torch as dr
     from types import SimpleNamespace
-    from prep.run_foundationpose_mhr_export import _render_candidate_masks, _scaled_image_grid
+    from track1_mask_render import _render_candidate_masks, _scaled_image_grid
     frames = np.array(json.loads((root/'incident_reports/track1_scored_frames.json').read_text())[str(args.episode)])
     frames = frames[np.linspace(0, len(frames)-1, 6).round().astype(int)]
     panels = []; crop_panels = []

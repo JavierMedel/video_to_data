@@ -1,0 +1,64 @@
+{
+  "episode": 7,
+  "state": "CANDIDATE_READY",
+  "inputs": {
+    "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000007.npz": "d04aa53e899734c40d2304c4714fdb7d546b3c889389ba77a3781178600ce87c",
+    "data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000007_object.glb": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+    "data/weights/track1_submission_mhr/mhr_model.pt": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "modules/v2d_cari4d/lib/cari4d/lib_mhr/assets/mhr_hand_surface_spec.npz": "65e467ae534281c8c5370b76d672c80cf99b95bc73af9c3ac64d5bea6c7f60c8",
+    "data/v2d_challenge/track_1/improvement_rollout_v1/episode_000007/run/export/episode_000007/edex": "782e4bc1567b0aa8445c7995fe6f39fed93ded242bb630a48b71376bdb67251c",
+    "scripts/track1_contact_rotation.py": "9fbaadf66ded3ddc41d0aada52a906ad1ee021b892f821e168ae89c3151c40dc",
+    "scripts/track1_rotation_selection.py": "51f6ed85bd293efb37eeb002a19cfd951ecdaf66b45bdee9a91e454d135619b2",
+    "scripts/track1_mask_render.py": "038925f295c6315d1e209295d59cb9616866319515eb5944ef4008d4a5260d74",
+    "scripts/track1_contact_smoothing.py": "a97a9c9947cfcf933c493a7adabd6c69ced3d14a92e7b81a6a71e8d60e26321a",
+    "modules/v2d_cari4d/lib/cari4d/lib_mhr/mesh_penetration_review.py": "ba0d6f56b4beb31b3dce3db87d462d2fa48655a576a2b162393a7a981eb24cb3",
+    "modules/v2d_cari4d/lib/cari4d/lib_mhr/fused_mesh_penetration_review.py": "114c32d03dbe2e2ddecf8cea96081a0e8b484f28392ba6f70e9339ea0b103692",
+    "v2d_submission_kit/v2d_submission_kit/tools/track1/mesh_to_mhr_params.py": "c799ad612fca19620563fcb93bf61e5a4adad0a04251482358746b5f27f8a52e",
+    "incident_reports/track1_scored_frames.json": "3c52a5cff89dd7f6d1bba2b587a70bff1b6b7df673c5d7fbf8750910ec408777"
+  },
+  "parent": "v8",
+  "uploaded": false,
+  "scope": "All-video fitting using predicted masks/actual meshes; same-video diagnostics, not held-out or official scores.",
+  "eligible_nonparent_options": 1263,
+  "image_choices_sha256": "0f08ba573fbf09431f3ec42bd21184f9170366a6bbfc3348ed7681aa849d609e",
+  "completed_frame_options": 2331,
+  "selected_nonparent_frames": 449,
+  "changed_scored_frames": 292,
+  "feasible_nonparent_options": 760,
+  "candidate_npz_sha256": "24ac2ac671b9df9dfb7cacf6edd4e29b28545819ad00916b9f0cd17789bb41ee",
+  "candidate_mesh_sha256": "aa094f61b16eb98cdb0b4ec457f8a09738309c02e80fd04038b1eb1f924ad06a",
+  "contact_costs_sha256": "c2e104f9ec1422aa14358b8382b5ca4fbe9e1f41ce7297ab1a053b7a0b46c955",
+  "summary": {
+    "submitted_v8": {
+      "rotation_step_degrees_mean_proxy": 14.171884344802915,
+      "rotation_step_degrees_p95_proxy": 127.85306535668177,
+      "rotation_step_degrees_max_proxy": 179.94956331915697,
+      "rotation_jumps_over_45_degrees": 48,
+      "sampled_vertex_acceleration_cm_proxy": 3.0531950342218566,
+      "sampled_vertex_count": 1022
+    },
+    "final_candidate": {
+      "rotation_step_degrees_mean_proxy": 16.770790685991976,
+      "rotation_step_degrees_p95_proxy": 116.68761588844782,
+      "rotation_step_degrees_max_proxy": 178.77752079115382,
+      "rotation_jumps_over_45_degrees": 49,
+      "sampled_vertex_acceleration_cm_proxy": 3.4496433106947553,
+      "sampled_vertex_count": 1022
+    }
+  },
+  "scored_motion": {
+    "submitted_v8": {
+      "consecutive_scored_triples": 595,
+      "translation_acceleration_cm_proxy": 1.437432270698286,
+      "sampled_vertex_acceleration_cm_proxy": 3.68958370222127,
+      "sampled_vertex_count": 1022
+    },
+    "final_candidate": {
+      "consecutive_scored_triples": 595,
+      "translation_acceleration_cm_proxy": 1.437432270698286,
+      "sampled_vertex_acceleration_cm_proxy": 4.0606465733847035,
+      "sampled_vertex_count": 1022
+    }
+  },
+  "framewise_contact_pass": true
+}

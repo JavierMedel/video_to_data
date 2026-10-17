@@ -43,7 +43,7 @@ def main():
     p.add_argument('--allowed-arrays',default='0,4');p.add_argument('--commit',help='Actual full SHA, or GitHub URL ending with that SHA')
     p.add_argument('--out',type=Path,required=True);p.add_argument('--report',type=Path,required=True)
     a=p.parse_args(); root=a.root.resolve();allowed={int(x) for x in a.allowed_arrays.split(',')}
-    assert allowed <= {0,4},'This temporal packer deliberately supports only arrays0/4'
+    assert allowed <= {0,3,4},'Supported changes are human pose, object rotation and translation'
     decisions=json.loads(a.selection.read_text());assert decisions['state']=='LOCAL_VALIDATION_COMPLETE' and set(decisions['episodes'])==set(map(str,range(30)))
     frames=json.loads((root/'incident_reports/track1_scored_frames.json').read_text())
     kit=root/'v2d_submission_kit/v2d_submission_kit';sys.path.insert(0,str(kit))
@@ -60,13 +60,13 @@ def main():
         assert artifacts[stem+'_object.glb']==sha(a.parent_episodes/(stem+'_object.glb'))
         mesh=trimesh.load(a.candidate_episodes/(stem+'_object.glb'),force='mesh',process=False)
         assert len(mesh.faces) and np.isfinite(mesh.vertices).all() and mesh.area>0
-        changed=any(not np.array_equal(parent[k],candidate[k]) for k in ('pose','object_translation'))
+        changed=any(not np.array_equal(parent[k],candidate[k]) for k in ('pose','object_rotation','object_translation'))
         if changed: assert all(decisions['episodes'][str(e)]['gates'].values()),'Unreviewed changed episode'
     result={'state':'PAIRS_VALIDATED','parent_parquet_sha256':sha(a.parent_parquet),'artifact_sha256':artifacts,'selection_sha256':sha(a.selection),'uploaded':False}
     if a.commit:
         match=re.fullmatch(r'(?:https://github.com/JavierMedel/video_to_data/commit/)?([0-9a-f]{40})',a.commit);assert match
         commit=match[1];subprocess.run(['git','cat-file','-e',commit+'^{commit}'],cwd=root,check=True)
-        critical=['scripts/'+n for n in ['track1_whittaker.py','track1_v9_temporal.py','track1_v9_motion_report.py','track1_package_from_parent.py','track1_review_humans.py','track1_cdo_hand_penetration_review.py','track1_cdo_render_candidate.py']]
+        critical=['scripts/'+n for n in ['track1_whittaker.py','track1_v9_temporal.py','track1_v9_motion_report.py','track1_package_from_parent.py','track1_review_humans.py','track1_cdo_hand_penetration_review.py','track1_cdo_render_candidate.py','track1_contact_rotation.py','track1_rotation_selection.py','track1_cdo_full_image_review.py','track1_mask_render.py','track1_contact_rotation_surface.py','track1_rotation_surface_selection.py','track1_contact_rotation_review.py','track1_render_object_comparison.py']]
         subprocess.run(['git','ls-files','--error-unmatch',*critical],cwd=root,check=True,stdout=subprocess.DEVNULL)
         subprocess.run(['git','diff','--quiet',commit,'--',*critical],cwd=root,check=True)
         assert not a.out.exists(),'Preserve existing packed archive'

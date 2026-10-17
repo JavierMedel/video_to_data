@@ -21,6 +21,11 @@ class PackageTests(unittest.TestCase):
             c={k:v.copy() for k,v in self.p.items()};mutate(c)
             with self.assertRaises(ValueError):validate_pair(self.p,c,2,{0,4})
 
+    def test_rotation_change_requires_rotation_whitelist(self):
+        c={k:v.copy() for k,v in self.p.items()};c['object_rotation'][3]=np.diag([-1.,-1.,1.])
+        with self.assertRaises(ValueError):validate_pair(self.p,c,2,{0,4})
+        validate_pair(self.p,c,2,{3})
+
     def test_packed_alignment_rows_and_row_identity_are_checked_against_parquet(self):
         import pandas as pd
         rows=['t1_000000_000002_0_000000','t1_000000_000003_0_000000','t1_000000_000003_4_000000','t1_000000_999999_5_000000']

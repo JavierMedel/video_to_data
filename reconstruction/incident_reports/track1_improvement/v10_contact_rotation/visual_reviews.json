@@ -1,0 +1,37 @@
+{
+  "18": {
+    "review_complete": true,
+    "reason": "Six object crops and two full-scene source/actual-mesh comparisons inspected; small orientation changes remain comparable with modest outline gains and no new gross displacement. Inherited geometry mismatch remains. Numerical image/depth/contact/motion gates independently required.",
+    "sample_observations": {
+      "72": "Placement remains comparable; both retain inherited mask/mesh mismatch on the tabletop.",
+      "156": "Held roller view remains comparable; mask support is incomplete and cannot establish full geometry.",
+      "240": "End-on view shows a modest orientation difference; inherited mesh area outside the observed mask persists.",
+      "323": "Candidate outline changes slightly while table/hand context stays comparable; no new gross displacement observed.",
+      "407": "Horizontal roller view retains the same center and scale with small silhouette improvement.",
+      "491": "Set-down view remains comparable; candidate has no gross new offset in this sample."
+    },
+    "full_scene_samples": [
+      240,
+      407
+    ],
+    "video_frames_decoded_per_clip": 535,
+    "artifact_sha256": {
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/episode_000018_object_rotation_closeups.mp4": "8f8a2c829b1d4933324d455e2d33ccb8445b3096e7dbc0cf4a7c867cea81282d",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/frame_000156.jpg": "b68cdddb67b80509eff1f3f7810496534bb5ca6f92d1567d882a66da8251cd0e",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/validation.json": "fb12c19f37d9dee0d35045f676342e254f5f1688d191fb6dfe2ed3e59c8eb499",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/crop_000323.jpg": "c113ac26b5e93946385d8f6fffce9a2d5d8af5b4ded9f43ee8fcc4af79d3f3e2",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/crop_000407.jpg": "2f27b03985712da9ca12ec5450ef075a53a399b256f105df598a6022afb3ec2c",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/frame_000323.jpg": "a00195d751896b1ed5fe2736a724542433ea69e58a9aab9b68472ada8606a742",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/frame_000491.jpg": "bf01c005f41de29ee4824876417922a640326df8a007e1bbc755e8a6806f44be",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/crop_000156.jpg": "eb1159d47abe766afda5cef1ec161933e123d4ea1d0369a059dd26c6dab49de6",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/frame_000072.jpg": "d6fa1d6b7b50a1003045be8a18d3c115d5577b37abe8bbbe4882c6ab7ea33542",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/crop_000072.jpg": "5dcfd8ad0b04f8f89de1f983c6d7ae67e499645ea7fe0398969c0d2446516a2a",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/crop_000491.jpg": "af42dd86c347500e075f7f004ef48551a814b4889a63526c0c37f3ba022c90d6",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/crop_000240.jpg": "71cdc1179a54392e3469d715f51dc3beae45cecb57189607f6f7c01b09f4e9af",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/episode_000018_object_rotation_comparison.mp4": "9332bcc44e0c73c97d08f6c5b73693add44f4300fde0f6263ef14fe920928183",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/frame_000240.jpg": "c347ec2938967af2e758f5c2db8e586199c5c827b12a2b8f782b721e1c573cd1",
+      "data/v2d_challenge/track_1/v10_contact_rotation/review_videos/episode_000018/frame_000407.jpg": "17c106c4e8ff8e0921a2264378d0a27b85e1486de1df54cf4c58abfff2d35e61"
+    },
+    "scope": "Normal-shaded actual object projection over full source RGB; observed human masks provide occlusion. Humans unchanged. Sampled visual inspection only; not a full reconstructed-human video."
+  }
+}
