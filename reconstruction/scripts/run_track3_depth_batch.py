@@ -19,6 +19,7 @@ from run_track3_hand_pilot import command
 NAME = 'v2d-track3-depth-stage'
 MEMORY_FRACTION = .70
 BATCH_SIZE = 8
+GPU_MEMORY_GUARD_MIB = 21000
 
 
 def guard(stop, path):
@@ -28,8 +29,8 @@ def guard(stop, path):
                                     capture_output=True, text=True, timeout=5)
             if sample.returncode: raise RuntimeError(sample.stderr)
             used = float(sample.stdout.strip().splitlines()[0])
-            if used < 19000: continue
-            reason = f'GPU memory reached {used} MiB (limit 19000)'
+            if used < GPU_MEMORY_GUARD_MIB: continue
+            reason = f'GPU memory reached {used} MiB (limit {GPU_MEMORY_GUARD_MIB})'
         except (subprocess.TimeoutExpired, RuntimeError, ValueError, IndexError) as exc:
             reason = f'GPU monitor unavailable: {exc}'
         save(path, {'state': 'STOPPED_BY_GPU_GUARD', 'reason': reason,
@@ -93,7 +94,7 @@ def main():
     state = {'state': 'QUEUED_FOR_GPU', 'track': 'track_3', 'episode_count': len(episodes),
              'completed_episode_indices': [], 'existing_completed_pilot_episode': 38,
              'dataset_revision': inventory['dataset_revision'], 'batch_size': BATCH_SIZE,
-             'pytorch_memory_fraction': MEMORY_FRACTION, 'preserved_episode_indices': [], 'gpu_memory_guard_mib': 19000,
+             'pytorch_memory_fraction': MEMORY_FRACTION, 'preserved_episode_indices': [], 'gpu_memory_guard_mib': GPU_MEMORY_GUARD_MIB,
              'container_ram_limit_gib': 16, 'policy_trained': False, 'submission_ready': False, 'uploaded': False}
     save(report / 'execution.json', state)
     print('QUEUED: remaining 19 depth episodes, shortest first; one GPU container at a time', flush=True)

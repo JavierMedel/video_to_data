@@ -98,7 +98,7 @@ weights and the completed mask/association pipeline before starting.
 
 The remaining-depth runner shares that GPU lock, releasing it between episodes.
 It uses batch size eight, a 70% PyTorch allocator budget (increased from 55%, then 65%, on
-2026-10-17), the same 19,000 MiB total GPU watchdog/RAM limits and a named
+2026-10-17), a 21,000 MiB total GPU watchdog, the same RAM limits and a named
 `v2d-track3-depth-stage` container. Each episode records source-video and model
 hashes, image identity, commands, output hashes and exact frame coverage. Its
 completed outputs are under `reconstruction/data/track3/episodes/episode_XXXXXX/`;
@@ -387,3 +387,11 @@ valid and keep their original provenance; new batches may have small floating-po
 differences. It retains original per-episode producing reports
 and lists preserved episodes separately in `execution.json`. Only this queue
 script's hash may differ; do not use this option after computational changes.
+
+On 2026-10-17 the user requested a further watchdog increase. The active depth
+queue now stops its own container at total GPU usage >=21,000 MiB, leaving
+3,463 MiB below the reported 24,463 MiB GPU capacity. This is a stop threshold,
+not a memory reservation; polling can overshoot it. Batch size remains eight
+and the PyTorch allocator cap remains 70%. Hand/FoundationPose guards and the
+historical crash-recovery settings remain 19,000 MiB. The queue is restarted
+at an episode boundary so completed results retain their original provenance.

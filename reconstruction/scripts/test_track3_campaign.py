@@ -50,11 +50,13 @@ def test_failed_stage_is_not_reused(tmp_path, monkeypatch):
     assert json.loads((reports / 'stage.json').read_text())['state'] == 'FAILED'
 
 
-@pytest.mark.parametrize('memory,should_stop', [(18000, False), (19001, True)])
+@pytest.mark.parametrize('memory', [18000, 19001, 20999, 21000, 21001])
 @pytest.mark.parametrize('module,target', [(tracking, 'v2d-track3-pilot-tracking'),
                                           (hands, 'v2d-track3-hand-stage'),
                                           (depth_batch, 'v2d-track3-depth-stage')])
-def test_memory_guard_stops_only_its_container(tmp_path, monkeypatch, memory, should_stop, module, target):
+def test_memory_guard_stops_only_its_container(tmp_path, monkeypatch, memory, module, target):
+    threshold = depth_batch.GPU_MEMORY_GUARD_MIB if module is depth_batch else 19000
+    should_stop = memory >= threshold
     calls = []
 
     class Stop:
