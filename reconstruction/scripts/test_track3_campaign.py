@@ -139,3 +139,36 @@ def test_camera_pose_validation_rejects_missing_frames_and_bad_quaternions(tmp_p
     (tmp_path / '000001.json').write_text(json.dumps(pose))
     with pytest.raises(ValueError, match='rotation/scale'):
         camera_batch.validate_poses(tmp_path, 2)
+
+
+def test_multi_object_merge_preserves_shared_world_and_contact_body_ids():
+    import copy
+    import run_track3_full_campaign as full
+    row = {'fps': 20., 'object_body_position': [[[0., 0., 1.]], [[0., 0., 1.]]],
+           'object_body_wxyz': [[[1., 0., 0., 0.]], [[1., 0., 0., 0.]]],
+           'object_body_names': ['first'], 'object_mesh_paths': ['first.obj'],
+           'object_urdf_paths': ['first.urdf'], 'object_mesh_radius': [.1]}
+    for side in ('left', 'right'):
+        row[f'mano_{side}_joints'] = [[[0., 0., 1.]], [[0., 0., 1.]]]
+        row[f'mano_{side}_object_contact_positions'] = [[[0., 0., 1.]], [[0., 0., 1.]]]
+        row[f'mano_{side}_object_contact_normals'] = [[[0., 0., 1.]], [[0., 0., 1.]]]
+        row[f'mano_{side}_object_contact_part_ids'] = [[1], [0]]
+        row[f'mano_{side}_tips_distance'] = [[.1], [.2]]
+    second = copy.deepcopy(row)
+    second.update(object_body_names=['second'], object_mesh_paths=['second.obj'], object_urdf_paths=['second.urdf'])
+    second['object_body_position'] = [[[.25, 0., 1.]], [[.25, 0., 1.]]]
+    out = full.merge_rows([row, second], {'episode_index': 10, 'frames': 2})
+    assert out['object_body_position'][0] == [[0., 0., 1.], [.25, 0., 1.]]
+    assert out['mano_left_object_contact_part_ids'] == [[1, 2], [0, 0]]
+    second['mano_left_joints'][0][0][0] = .1
+    with pytest.raises(ValueError, match='one hand/world'):
+        full.merge_rows([row, second], {'episode_index': 10, 'frames': 2})
+
+
+def test_reconstruction_detection_does_not_assign_same_box_to_two_objects():
+    from run_track3_reconstruction_campaign import choose_detection
+    primary = {'confidence': .9, 'box': {'x0': 0, 'y0': 0, 'x1': 100, 'y1': 100}}
+    other = {'confidence': .7, 'box': {'x0': 110, 'y0': 0, 'x1': 200, 'y1': 100}}
+    assert choose_detection([primary, other], [primary]) == other
+    with pytest.raises(ValueError, match='distinct confident'):
+        choose_detection([primary], [primary])

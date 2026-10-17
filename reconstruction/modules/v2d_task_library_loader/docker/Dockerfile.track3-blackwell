@@ -1,0 +1,9 @@
+# GPL MANO inference is scoped to this loader image, separate from policy training.
+FROM v2d_track3_hands:blackwell
+ENV PIP_CONSTRAINT=""
+RUN pip install --no-cache-dir pyarrow==24.0.0 viser==1.0.30
+COPY modules/v2d_task_library_loader/lib /workspace/v2d_task_library_loader/lib
+RUN pip install --no-deps -e /workspace/v2d_task_library_loader/lib
+ENV PYTHONPATH=/repo/robotic_grounding/source/robotic_grounding
+ENV PYTHONUNBUFFERED=1
+RUN pip install --no-cache-dir deprecation

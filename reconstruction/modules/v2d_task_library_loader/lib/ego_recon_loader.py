@@ -43,6 +43,7 @@ Runs stage 1 of the two-stage pipeline:
 """
 
 import argparse
+import json
 import logging
 import shutil
 import warnings
@@ -166,6 +167,16 @@ class EgoReconDatasetLoader(DatasetLoaderBase):
         if sid in self._align_cache:
             return self._align_cache[sid]
 
+        shared_alignment = getattr(self._args, "scene_alignment_path", None)
+        if shared_alignment:
+            matrix = np.asarray(json.loads(Path(shared_alignment).read_text())["world_alignment"], dtype=float)
+            if (matrix.shape != (4, 4) or not np.isfinite(matrix).all()
+                    or not np.allclose(matrix[3], [0, 0, 0, 1])
+                    or not np.allclose(matrix[:3, :3].T @ matrix[:3, :3], np.eye(3), atol=1e-6)
+                    or abs(np.linalg.det(matrix[:3, :3]) - 1) > 1e-6):
+                raise ValueError("Shared scene alignment must be a finite rigid SE(3)")
+            self._align_cache[sid] = (matrix[:3, :3], matrix[:3, 3])
+            return self._align_cache[sid]
         src: EgoReconSequenceSource = sequence_info.source
         with np.load(src.npz_path) as npz:
             T0 = npz["object_to_world_transform"][0].astype(np.float64)
@@ -463,8 +474,8 @@ class EgoReconDatasetLoader(DatasetLoaderBase):
         return {"flat_hand_mean": True, "center_idx": None}
 
     def get_fps(self) -> float:
-        """Ego clip frame rate (source video is 30 fps)."""
-        return EGO_FPS
+        """Preserve the actual source cadence when explicitly supplied."""
+        return float(getattr(self._args, "fps", EGO_FPS))
 
     @staticmethod
     def _mesh_signature(path: Path, scale: float) -> tuple[int, tuple[float, ...]]:
@@ -589,6 +600,10 @@ def parse_args() -> argparse.Namespace:
         mesh_dir=EGO_MESH_DIR,
         output_dir=LOADED_SAVE_DIR,
     )
+    parser.add_argument("--scene_alignment_path", type=Path, default=None,
+                        help="Shared world-alignment JSON for every object in a multi-object episode.")
+    parser.add_argument("--fps", type=float, default=EGO_FPS,
+                        help="Actual source frames per second; Track 3 videos use 20.")
     parser.add_argument(
         "--object_name",
         type=str,

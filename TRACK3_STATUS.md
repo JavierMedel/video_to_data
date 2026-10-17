@@ -446,3 +446,130 @@ that all twenty camera trajectories finished.
 DROID checkpoint SHA-256:
 `46476ef64cde45a97504910d6f3de2eef7b398ec1c6e4e668815c29076024526`.
 All 25 CPU checks passed after the dependency fix.
+
+## Unattended full-pipeline campaign (October 17 continuation)
+
+The user authorized completing Track 3 and leaving this laptop computing while
+away for several hours. This starts an actual reconstruction/retarget/training
+queue, rather than stopping after each completed batch. It can take substantially
+longer than a few hours: the native full training budget is **250,003,456
+transitions per episode**, up to roughly five billion transitions across all 20.
+No completion time or leaderboard quality is guaranteed by launching it.
+
+Two host processes coordinate through the existing exclusive GPU lock:
+
+- `reconstruction/scripts/run_track3_reconstruction_campaign.py`: preserves the
+  Episode 38 reference estimates, then detects each other scored object using
+  its semantic prompt, propagates SAM2 masks, reconstructs a new depth-grounded
+  SAM3D mesh, scales its baked scene once, and runs FoundationPose. Two-object
+  clips keep both slots and distinct detection boxes. Several reference views
+  are tried before an undetected object is recorded as a failure.
+- The same reconstruction queue runs WiLoR, chooses an observed two-hand seed,
+  renders silhouette prompts, propagates separate hand masks, runs HaMeR,
+  depth-aligns hands, and fills only bounded interior gaps (15 source frames;
+  no extrapolation). Missing hands are not invented. It packages one portable
+  result bundle per episode/object using the same camera and hand tracks.
+- `reconstruction/scripts/run_track3_full_campaign.py`: watches completed
+  reconstruction manifests and prepares simulation references on CPU while
+  the GPU reconstructs later clips. Once reconstruction ends, it trains and
+  evaluates each prepared episode sequentially, then invokes the official
+  Track 3 packer only if every required episode was successfully evaluated.
+- `reconstruction/scripts/run_track3_policy_stage.py`: runs native FlashCHORD
+  training/evaluation under the shared GPU lock, with a 21,000 MiB total-memory
+  watchdog. Training uses JAX/Warp/Newton, so a PyTorch allocator cap does not
+  apply to it. XLA preallocation is disabled. Reconstruction uses PyTorch:
+  70% normally, 80% for SAM3D generation, 55% for TensorRT tracking; each has
+  the same 21,000 MiB total-memory stop guard. One GPU job runs at a time.
+
+Live files (paths relative to `reconstruction/`):
+
+- `incident_reports/track3_baseline/reconstruction_campaign/execution.json`
+- `incident_reports/track3_baseline/reconstruction_campaign.log`
+- `incident_reports/track3_baseline/full_campaign/execution.json`
+- `incident_reports/track3_baseline/full_campaign.log`
+- `incident_reports/track3_baseline/pilot_training_smoke.log`
+- Per-object producing commands, image IDs, inputs/output hashes and logs live
+  under `reconstruction_campaign/episode_XXXXXX/`.
+- Per-episode loading, alignment, retargeting, training, evaluation and packing
+  evidence lives under `full_campaign/`.
+
+Simulation data and checkpoints remain ignored under
+`robotic_grounding/data/track3/`; reconstructed references remain ignored under
+`reconstruction/data/track3/`. This is separate from Track 1/2 runtime data.
+The native loader image is `v2d_track3_loader:blackwell`; CPU retargeting reuses
+`v2d_track2_retarget:baseline` with Track 3 inputs and isolated data roots.
+This image reuse does **not** imply reusing Track 2 reference motion.
+FlashCHORD uses `flash_chord:track2-baseline` with `experiment=sharpa_flash_sac`,
+which selects floating Sharpa hands, rather than Track 2's G1 embodiment.
+
+### Corrections and validated pilot handoff
+
+The portable bundle writer expects OBJ input. Generated GLBs are exported to
+metric OBJ before packaging; the same baked body geometry is retained. The
+FoundationPose image contains compiled `mycpp` binaries, so its host source
+mount is omitted: hiding those image binaries caused a startup failure in the
+first expanded tracking attempt. Failed attempts remain recorded locally.
+Other source mounts remain available for pure-Python model wrappers.
+
+The native ego loader assumed **30 fps**. A backwards-compatible `--fps`
+argument preserves that default for other users but explicitly sets **20 fps**
+for this campaign. Both simulation control and task playback are configured
+at 20 fps and speed 1.0. `source_frame_playback` stays false because that flag
+is supported only for motion_v1, while the ego loader produces ManoSharpaData.
+At matching source/control rates, all original source-frame indices remain.
+
+The downloaded HaMeR bundle contains only MANO_RIGHT.pkl. HaMeR predicts left
+hands using that right model followed by reflection. To use the native two-side
+FK loader consistently, `provision_track3_mirrored_mano.py` derives an explicit
+**mirrored-right left asset**, not an official independent MANO_LEFT model.
+It reflects template/shape/pose blend shapes, axis-angle statistics and face
+winding. A fixed-seed random-pose FK check matches mirrored vertices and the
+native left-tip convention exactly (maximum error 0.0 m in the observed check).
+Both original and derived hashes and this limitation are recorded in
+`data/weights/track3_mano/mirrored_left_manifest.json`. No model binary is
+committed. Native world re-pose gates passed for both pilot hands at submicron
+numerical error; this is coordinate consistency, not real-world accuracy.
+
+Episode 38 completed native loading, 20-fps Parquet export, Sharpa IK retargeting,
+and rigid-object URDF generation. The short training smoke uses 128 worlds and
+65,536 transitions to test the simulation/checkpoint handoff. Its checkpoint
+must not be confused with a full-budget trained submission candidate. Read its
+log and actual artifacts before claiming it completed or passed evaluation.
+
+### Shared worlds, policies, and completion gates
+
+Each episode's object bundles use one camera trajectory. CPU preparation
+estimates one global rigid alignment from the primary reconstructed object's
+thin PCA axis and sets the union of initial reconstructed meshes on z=0.
+This is a support/gravity heuristic, **not independently measured gravity**.
+The loader accepts a validated rigid `--scene_alignment_path`, applying the
+same SE(3) to every object's motion and both hands. Numeric gates verify the
+loader's object motions equal this transform applied to the raw bundle for
+every source frame, and that both objects' hand tracks agree in one world.
+
+Object bodies are concatenated in scored slot order. Per-body mesh/URDF/radius
+metadata stays separate; active contact IDs are remapped to slot+1, and contact
+slots from both objects are retained. One merged episode is retargeted and
+trained, so two-object scenes are not replaced by independent single-object
+policy rollouts. Each instance gets a unique mesh filename; public development
+scans and other episodes' reconstructed meshes are never substituted.
+
+Full policies use 512 worlds, one-million-entry replay, 51,200 warmup entries,
+1024 samples per update, seed 42, disabled remote logging, and the native
+250M-transition curriculum, including its zero-assistance stages. Real learner
+`state_*.safetensors` checkpoints allow resuming training. Training/evaluation
+resources are bounded to 20 GiB RAM, 22 GiB combined RAM/swap and eight CPUs.
+Native evaluation uses explicit initial resets, one world, actual achieved
+object trajectories, and no object assistance. It preserves failures rather
+than relabelling reference trajectories as achieved motion.
+
+Before packing, every episode must have the exact required frame/object grid,
+finite valid rollout worlds, real checkpoint/evaluator provenance, and all 36
+reconstructed meshes in the same body frames as their achieved poses. Geometry
+is copied into `robotic_grounding/data/track3/submission_meshes/episode_XXXXXX/`.
+A failed reconstruction/preparation/policy is recorded individually; it cannot
+be replaced with zeros, a public sample, another episode, or a reference pose.
+A GPU guard event halts GPU-dependent work for inspection rather than repeatedly
+retrying the allocation. A complete pack is marked `PACKED_FOR_REVIEW`.
+This queue does not upload to Kaggle or accept rules automatically. Track 3
+competition entry/organizer registration remain separate outstanding checks.
