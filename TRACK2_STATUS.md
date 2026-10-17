@@ -3,6 +3,31 @@
 This document records the Track 2 campaign on the execution laptop. Track 1
 artifacts and its prepared v10 submission are separate and remain preserved.
 
+## Current execution snapshot
+
+As of **2026-10-17 01:04 UTC** (October 16 evening in Toronto), the first full
+Tier 1 policy is running for **Episode 16**, targeting **349,999,104 environment
+steps** with 1,024 parallel worlds. Its final unassisted evaluation is queued
+in the same launcher. The other 29 episodes are being retargeted sequentially.
+This is one full policy training job plus one preparation job, not 30 concurrent
+training jobs. A submission is not ready yet.
+
+The producing setup commit is
+`996cb7d327992c4122255f84a971147f62bcd780`, pushed to branch
+`v2d-track1-blackwell` (the existing branch is also being used for Track 2 work).
+
+Monitor the live files:
+
+```bash
+tail -n 15 robotic_grounding/incident_reports/track2_baseline/episode_000016_full_pipeline.log
+tail -n 10 robotic_grounding/incident_reports/track2_baseline/retarget_batch.log
+nvidia-smi
+```
+
+The machine and Docker must remain running for these local jobs to progress.
+`execution.json` under the report directory records a timestamped snapshot;
+the log and generated checkpoint/result files determine the latest state.
+
 ## Objective and initial scope
 
 The user requested starting the Track 2 challenge. Begin with a real Tier 1

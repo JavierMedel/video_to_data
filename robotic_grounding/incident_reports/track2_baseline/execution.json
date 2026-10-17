@@ -1,0 +1,74 @@
+{
+  "observed_utc": "2026-10-17T01:04:32.199331+00:00",
+  "state": "FULL_TRAINING_STARTED",
+  "track": "track_2_tier1",
+  "episode_index": 16,
+  "target_environment_steps": 349999104,
+  "world_count": 1024,
+  "replay_capacity": 1000000,
+  "replay_batch_size": 1024,
+  "producing_commit": "996cb7d327992c4122255f84a971147f62bcd780",
+  "launcher_sha256": "577bb524454cc8cd16df6eaf77cb3dd0db37f85b24d14327f25a76245441dd47",
+  "command": "bash robotic_grounding/scripts/run_track2_tier1_pilot.sh train-and-evaluate",
+  "log": "/home/alien51/video_to_data/robotic_grounding/incident_reports/track2_baseline/episode_000016_full_pipeline.log",
+  "checkpoint_directory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016",
+  "evaluation_directory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results",
+  "completed_retarget_reports": 3,
+  "additional_manually_validated_retarget_episodes": [
+    16
+  ],
+  "retarget_batch_running": true,
+  "active_containers": [
+    {
+      "Command": "\"python scripts/trai\u2026\"",
+      "CreatedAt": "2026-10-16 21:04:02 -0400 EDT",
+      "HealthStatus": "none",
+      "ID": "44f97982e4a1",
+      "Image": "flash_chord:track2-baseline",
+      "Labels": "desktop.docker.io/binds/0/Source=/home/alien51/video_to_data/robotic_grounding/flash_chord,desktop.docker.io/binds/0/SourceKind=wsl2DistroFile,desktop.docker.io/binds/0/Target=/workspace,desktop.docker.io/binds/1/Source=/home/alien51/video_to_data/robotic_grounding,desktop.docker.io/binds/1/SourceKind=wsl2DistroFile,desktop.docker.io/binds/1/Target=/repo,desktop.docker.io/binds/2/Source=/home/alien51/video_to_data/robotic_grounding/data/track2/runtime_cache,desktop.docker.io/binds/2/SourceKind=wsl2DistroFile,desktop.docker.io/binds/2/Target=/cache,desktop.docker.io/ports.scheme=v2,desktop.docker.io/wsl-distro=Ubuntu,maintainer=NVIDIA CORPORATION <cudatools@nvidia.com>,org.opencontainers.image.ref.name=ubuntu,org.opencontainers.image.version=24.04",
+      "LocalVolumes": "0",
+      "Mounts": "/run/desktop/m\u2026,/run/desktop/m\u2026,/run/desktop/m\u2026",
+      "Names": "condescending_hermann",
+      "Networks": "bridge",
+      "Platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "Ports": "",
+      "RunningFor": "30 seconds ago",
+      "Size": "201MB (virtual 14.3GB)",
+      "State": "running",
+      "Status": "Up 29 seconds"
+    },
+    {
+      "Command": "\"python scripts/reta\u2026\"",
+      "CreatedAt": "2026-10-16 21:03:42 -0400 EDT",
+      "HealthStatus": "none",
+      "ID": "abdbe4731cf1",
+      "Image": "v2d_track2_retarget:baseline",
+      "Labels": "com.nvidia.volumes.needed=nvidia_driver,desktop.docker.io/binds/0/Source=/home/alien51/video_to_data/robotic_grounding,desktop.docker.io/binds/0/SourceKind=wsl2DistroFile,desktop.docker.io/binds/0/Target=/repo,desktop.docker.io/ports.scheme=v2,desktop.docker.io/wsl-distro=Ubuntu,maintainer=NVIDIA CORPORATION <cudatools@nvidia.com>,org.opencontainers.image.ref.name=ubuntu,org.opencontainers.image.version=22.04",
+      "LocalVolumes": "0",
+      "Mounts": "/run/desktop/m\u2026",
+      "Names": "cool_merkle",
+      "Networks": "bridge",
+      "Platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "Ports": "",
+      "RunningFor": "50 seconds ago",
+      "Size": "454MB (virtual 38.8GB)",
+      "State": "running",
+      "Status": "Up 49 seconds"
+    }
+  ],
+  "submission_ready": false,
+  "uploaded": false,
+  "registration_user_confirmed": true,
+  "registration_api_still_unjoined": true,
+  "notes": [
+    "Snapshot only; read current logs and reports for progress.",
+    "Full-budget policy evaluation runs automatically after training.",
+    "Do not edit the launcher while Bash is executing it."
+  ]
+}
