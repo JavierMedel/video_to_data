@@ -432,3 +432,17 @@ world. No factory calibration rotation is applied. Metric scale remains tied
 to unverified monocular depth, and gravity/support alignment, visual tracking
 review, composing camera/object/hand transforms, retargeting and learned-policy
 training remain. Completion of this queue alone does not make a submission.
+
+### Camera queue startup update
+
+The CUDA 12.8 build compiled all three extension packages, then initially
+failed its final import smoke because upstream imports matplotlib. Adding
+matplotlib after the compiled layers preserved the build cache. The corrected
+image completed its import smoke and exported successfully; see
+`incident_reports/track3_baseline/droid_build_matplotlib.log`.
+The camera queue restarted successfully with Episode 38 active. Consult its
+live execution JSON for subsequent completion/failure; startup is not evidence
+that all twenty camera trajectories finished.
+DROID checkpoint SHA-256:
+`46476ef64cde45a97504910d6f3de2eef7b398ec1c6e4e668815c29076024526`.
+All 25 CPU checks passed after the dependency fix.

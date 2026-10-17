@@ -19,4 +19,5 @@ COPY modules/v2d_common /workspace/v2d_common
 COPY modules/v2d_droid_slam/lib /workspace/v2d_droid_slam/lib
 RUN pip install --no-deps -e /workspace/v2d_common -e /workspace/v2d_droid_slam/lib
 ENV PYTHONPATH=/opt/droid-slam:/opt/droid-slam/droid_slam
+RUN pip install --no-cache-dir matplotlib
 RUN python -c "import torch, torch_scatter, lietorch, droid_backends; from droid import Droid; assert torch.__version__.startswith('2.8.0'); print('Blackwell DROID imports OK')"
