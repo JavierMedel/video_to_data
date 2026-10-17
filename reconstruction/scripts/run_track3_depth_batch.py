@@ -5,6 +5,7 @@ Uses the pilot's raw-RGB baseline; camera calibration/metric validation remain
 separate stages. Each episode has independent hash-verified resume evidence.
 """
 from datetime import datetime, timezone
+import argparse
 import fcntl
 import json
 from pathlib import Path
@@ -16,6 +17,7 @@ from run_track3_object_pilot import cpath, run_stage, save, telemetry
 from run_track3_hand_pilot import command
 
 NAME = 'v2d-track3-depth-stage'
+MEMORY_FRACTION = .65
 
 
 def guard(stop, path):
@@ -35,7 +37,35 @@ def guard(stop, path):
         return
 
 
+def reuse_with_budget_change(record_path, cmd, outputs, inputs):
+    """Preserve original evidence when only the allocator limit/queue code changed."""
+    if not record_path.exists():
+        return False
+    old = json.loads(record_path.read_text())
+    if old.get('state') != 'COMPLETE':
+        return False
+    normalize = lambda command: [x for x in command if not x.startswith('V2D_TORCH_MEMORY_FRACTION=')]
+    if normalize(old['command']) != normalize(cmd):
+        return False
+    image = cmd[cmd.index('-m') - 1]
+    image_id = subprocess.check_output(['docker', 'image', 'inspect', image, '--format', '{{.Id}}'], text=True).strip()
+    if image_id != old['image_id'] or old['runner_sha256'] != sha256(ROOT / 'scripts/run_track3_object_pilot.py'):
+        return False
+    for path in inputs:
+        if path == Path(__file__):
+            continue  # Explicit opt-in permits this queue's resource/resume edit only.
+        if old['input_sha256'].get(str(path.relative_to(ROOT))) != sha256(path):
+            return False
+    actual = {str(p.relative_to(ROOT)): sha256(p) for output in outputs
+              for p in output.rglob('*') if p.is_file()}
+    return bool(actual) and actual == old.get('output_sha256')
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--resume-budget-change', action='store_true',
+                        help='Hash-verify completed episodes across this allocator-only update; retain original provenance')
+    args = parser.parse_args()
     report = ROOT / 'incident_reports/track3_baseline/depth_batch'
     report.mkdir(parents=True, exist_ok=True)
     batch_lock = (report / 'batch.lock').open('w')
@@ -46,7 +76,7 @@ def main():
     state = {'state': 'QUEUED_FOR_GPU', 'track': 'track_3', 'episode_count': len(episodes),
              'completed_episode_indices': [], 'existing_completed_pilot_episode': 38,
              'dataset_revision': inventory['dataset_revision'], 'batch_size': 4,
-             'pytorch_memory_fraction': .55, 'gpu_memory_guard_mib': 19000,
+             'pytorch_memory_fraction': MEMORY_FRACTION, 'preserved_episode_indices': [], 'gpu_memory_guard_mib': 19000,
              'container_ram_limit_gib': 16, 'policy_trained': False, 'submission_ready': False, 'uploaded': False}
     save(report / 'execution.json', state)
     print('QUEUED: remaining 19 depth episodes, shortest first; one GPU container at a time', flush=True)
@@ -72,15 +102,21 @@ def main():
                            '--intrinsics_folder', cpath(intrinsics), '--weights_path', '/repo/data/weights/moge',
                            '--batch_size', '4'])
             cmd[cmd.index('--name') + 1] = NAME
+            cmd = [f'V2D_TORCH_MEMORY_FRACTION={MEMORY_FRACTION}' if x.startswith('V2D_TORCH_MEMORY_FRACTION=') else x for x in cmd]
             stop = threading.Event()
             threads = [threading.Thread(target=telemetry, args=(stop, report / 'gpu.csv'), daemon=True),
                        threading.Thread(target=guard, args=(stop, report / 'memory_guard.json'), daemon=True)]
             for thread in threads: thread.start()
             try:
-                run_stage(f'episode_{index:06d}', cmd, [depth, intrinsics],
-                          [Path(__file__), ROOT / 'scripts/run_track3_hand_pilot.py',
-                           ROOT / 'scripts/track3_gpu_python.py', inventory_path, video,
-                           ROOT / 'data/weights/moge/model.pt', ROOT / 'modules/v2d_moge/lib/video_to_depth.py'], report)
+                stage_inputs = [Path(__file__), ROOT / 'scripts/run_track3_hand_pilot.py',
+                                ROOT / 'scripts/track3_gpu_python.py', inventory_path, video,
+                                ROOT / 'data/weights/moge/model.pt', ROOT / 'modules/v2d_moge/lib/video_to_depth.py']
+                record_path = report / f'episode_{index:06d}.json'
+                if args.resume_budget_change and reuse_with_budget_change(record_path, cmd, [depth, intrinsics], stage_inputs):
+                    state['preserved_episode_indices'].append(index)
+                    print('PRESERVED_WITH_ORIGINAL_PROVENANCE', index, flush=True)
+                else:
+                    run_stage(f'episode_{index:06d}', cmd, [depth, intrinsics], stage_inputs, report)
                 expected = {f'{i:06d}' for i in range(episode['frames'])}
                 if {p.stem for p in depth.glob('*.png')} != expected or {p.stem for p in intrinsics.glob('*.json')} != expected:
                     raise ValueError(f'Incomplete source-frame coverage for episode {index}')

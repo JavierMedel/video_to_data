@@ -92,3 +92,29 @@ def test_gap_fill_retains_empty_track_without_inventing_hand_motion(tmp_path):
     assert not list((output / '2').glob('*.json'))
     assert json.loads((output / '3/000000.json').read_text())['interpolated'] is False
     assert (output / 'handedness.json').exists()
+
+
+def test_budget_resume_preserves_evidence_and_rejects_changed_data(tmp_path, monkeypatch):
+    monkeypatch.setattr(depth_batch, 'ROOT', tmp_path)
+    scripts = tmp_path / 'scripts'; scripts.mkdir()
+    runner = scripts / 'run_track3_object_pilot.py'; runner.write_text('runner')
+    source = tmp_path / 'model'; source.write_text('weights')
+    output = tmp_path / 'depth'; output.mkdir()
+    frame = output / '000000.png'; frame.write_bytes(b'depth')
+    old_cmd = ['docker', 'run', '-e', 'V2D_TORCH_MEMORY_FRACTION=0.55', 'image', '-m', 'producer']
+    new_cmd = [x.replace('=0.55', '=0.65') for x in old_cmd]
+    record = tmp_path / 'stage.json'
+    record.write_text(json.dumps({'state': 'COMPLETE', 'command': old_cmd,
+        'image_id': 'image-id', 'runner_sha256': depth_batch.sha256(runner),
+        'input_sha256': {'model': depth_batch.sha256(source)},
+        'output_sha256': {'depth/000000.png': depth_batch.sha256(frame)}}))
+    original = record.read_bytes()
+    monkeypatch.setattr(depth_batch.subprocess, 'check_output', lambda *a, **k: 'image-id')
+    reuse = lambda: depth_batch.reuse_with_budget_change(record, new_cmd, [output], [source])
+    assert reuse()
+    assert record.read_bytes() == original
+    source.write_text('different weights')
+    assert not reuse()
+    source.write_text('weights')
+    frame.write_bytes(b'corrupted')
+    assert not reuse()

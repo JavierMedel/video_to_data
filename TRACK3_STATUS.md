@@ -97,7 +97,8 @@ They share the pilot GPU lock. The HaMeR runner automatically waits for verified
 weights and the completed mask/association pipeline before starting.
 
 The remaining-depth runner shares that GPU lock, releasing it between episodes.
-It uses batch size four, the same allocation/watchdog/RAM limits and a named
+It uses batch size four, a 65% PyTorch allocator budget (increased from 55% on
+2026-10-17), the same 19,000 MiB total GPU watchdog/RAM limits and a named
 `v2d-track3-depth-stage` container. Each episode records source-video and model
 hashes, image identity, commands, output hashes and exact frame coverage. Its
 completed outputs are under `reconstruction/data/track3/episodes/episode_XXXXXX/`;
@@ -374,3 +375,13 @@ compute/storage estimates tied to this laptop, and explicit prerequisites.
 Do not claim access to this laptop's local artifacts from the planning laptop,
 invent held-out scores, or label reconstructed reference motion as a learned
 policy rollout. The user will bring your Markdown back to this execution agent.
+
+The depth worker was restarted to apply the 65% allocator cap. This cap is an
+upper bound, not a reservation or a guarantee of faster inference. Native CUDA
+allocations remain additional. Hand and FoundationPose limits remain at 55%.
+For this resource-only transition, `run_track3_depth_batch.py --resume-budget-change`
+checks completed output hashes, all model/video/module/helper input hashes,
+Docker image identity, stage runner identity and the full command apart from the
+allocator environment setting. It retains original per-episode producing reports
+and lists preserved episodes separately in `execution.json`. Only this queue
+script's hash may differ; do not use this option after computational changes.
