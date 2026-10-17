@@ -5,12 +5,15 @@ artifacts and its prepared v10 submission are separate and remain preserved.
 
 ## Current execution snapshot
 
-As of **2026-10-17 01:04 UTC** (October 16 evening in Toronto), the first full
-Tier 1 policy is running for **Episode 16**, targeting **349,999,104 environment
-steps** with 1,024 parallel worlds. Its final unassisted evaluation is queued
-in the same launcher. The other 29 episodes are being retargeted sequentially.
-This is one full policy training job plus one preparation job, not 30 concurrent
-training jobs. A submission is not ready yet.
+As of **2026-10-17 17:03 UTC**, the first full Tier 1 policy training and its
+unassisted evaluation have completed for **Episode 16** at **349,999,104
+environment steps** with 1,024 parallel worlds. Retargeting is complete for all
+30 episodes (Episode 16's validated pilot plus the other 29 sequential runs).
+Only Episode 16 has a trained policy and policy evaluation. Its task success
+rates are zero and its mean per-point error is **63.17 cm**, so it is a pipeline
+baseline, not a submission-quality result. The other 29 episodes have retargeted
+motion data only. No submission package has been uploaded; a submission is not
+ready.
 
 The producing setup commit is
 `996cb7d327992c4122255f84a971147f62bcd780`, pushed to branch

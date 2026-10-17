@@ -1,6 +1,6 @@
 {
-  "observed_utc": "2026-10-17T01:04:32.199331+00:00",
-  "state": "FULL_TRAINING_STARTED",
+  "observed_utc": "2026-10-17T17:03:47+00:00",
+  "state": "FULL_TRAINING_AND_EVALUATION_COMPLETE",
   "track": "track_2_tier1",
   "episode_index": 16,
   "target_environment_steps": 349999104,
@@ -13,62 +13,35 @@
   "log": "/home/alien51/video_to_data/robotic_grounding/incident_reports/track2_baseline/episode_000016_full_pipeline.log",
   "checkpoint_directory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016",
   "evaluation_directory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results",
-  "completed_retarget_reports": 3,
+  "completed_retarget_reports": 29,
   "additional_manually_validated_retarget_episodes": [
     16
   ],
-  "retarget_batch_running": true,
-  "active_containers": [
-    {
-      "Command": "\"python scripts/trai\u2026\"",
-      "CreatedAt": "2026-10-16 21:04:02 -0400 EDT",
-      "HealthStatus": "none",
-      "ID": "44f97982e4a1",
-      "Image": "flash_chord:track2-baseline",
-      "Labels": "desktop.docker.io/binds/0/Source=/home/alien51/video_to_data/robotic_grounding/flash_chord,desktop.docker.io/binds/0/SourceKind=wsl2DistroFile,desktop.docker.io/binds/0/Target=/workspace,desktop.docker.io/binds/1/Source=/home/alien51/video_to_data/robotic_grounding,desktop.docker.io/binds/1/SourceKind=wsl2DistroFile,desktop.docker.io/binds/1/Target=/repo,desktop.docker.io/binds/2/Source=/home/alien51/video_to_data/robotic_grounding/data/track2/runtime_cache,desktop.docker.io/binds/2/SourceKind=wsl2DistroFile,desktop.docker.io/binds/2/Target=/cache,desktop.docker.io/ports.scheme=v2,desktop.docker.io/wsl-distro=Ubuntu,maintainer=NVIDIA CORPORATION <cudatools@nvidia.com>,org.opencontainers.image.ref.name=ubuntu,org.opencontainers.image.version=24.04",
-      "LocalVolumes": "0",
-      "Mounts": "/run/desktop/m\u2026,/run/desktop/m\u2026,/run/desktop/m\u2026",
-      "Names": "condescending_hermann",
-      "Networks": "bridge",
-      "Platform": {
-        "architecture": "amd64",
-        "os": "linux"
-      },
-      "Ports": "",
-      "RunningFor": "30 seconds ago",
-      "Size": "201MB (virtual 14.3GB)",
-      "State": "running",
-      "Status": "Up 29 seconds"
-    },
-    {
-      "Command": "\"python scripts/reta\u2026\"",
-      "CreatedAt": "2026-10-16 21:03:42 -0400 EDT",
-      "HealthStatus": "none",
-      "ID": "abdbe4731cf1",
-      "Image": "v2d_track2_retarget:baseline",
-      "Labels": "com.nvidia.volumes.needed=nvidia_driver,desktop.docker.io/binds/0/Source=/home/alien51/video_to_data/robotic_grounding,desktop.docker.io/binds/0/SourceKind=wsl2DistroFile,desktop.docker.io/binds/0/Target=/repo,desktop.docker.io/ports.scheme=v2,desktop.docker.io/wsl-distro=Ubuntu,maintainer=NVIDIA CORPORATION <cudatools@nvidia.com>,org.opencontainers.image.ref.name=ubuntu,org.opencontainers.image.version=22.04",
-      "LocalVolumes": "0",
-      "Mounts": "/run/desktop/m\u2026",
-      "Names": "cool_merkle",
-      "Networks": "bridge",
-      "Platform": {
-        "architecture": "amd64",
-        "os": "linux"
-      },
-      "Ports": "",
-      "RunningFor": "50 seconds ago",
-      "Size": "454MB (virtual 38.8GB)",
-      "State": "running",
-      "Status": "Up 49 seconds"
-    }
-  ],
+  "retarget_batch_running": false,
+  "active_containers": [],
   "submission_ready": false,
   "uploaded": false,
   "registration_user_confirmed": true,
   "registration_api_still_unjoined": true,
   "notes": [
-    "Snapshot only; read current logs and reports for progress.",
-    "Full-budget policy evaluation runs automatically after training.",
-    "Do not edit the launcher while Bash is executing it."
-  ]
+    "Episode 16 full-budget training and unassisted evaluation completed; see episode_000016_full_pipeline.log and data/track2/tier1/results/episode_000016.json.",
+    "All 30 Tier 1 episodes have verified retarget outputs; only Episode 16 has a trained policy and evaluation.",
+    "Episode 16 task success rates are zero and mean per-point error is 63.17 cm; this is a pipeline baseline, not a submission-quality result.",
+    "Registration was user-confirmed for Kaggle account iorideepp, but the earlier Kaggle API check still reported all four competitions unjoined; recheck before upload."
+  ],
+  "completed_environment_steps": 349999104,
+  "retargeted_episode_count": 30,
+  "policy_evaluation": {
+    "episodes_evaluated": 1,
+    "episode_index": 16,
+    "mean_per_point_error_cm": 63.167489823811174,
+    "add_auc": 0.2557651991614256,
+    "object_position_error_m": 0.6302100580894283,
+    "object_orientation_error_deg": 82.69764721528064,
+    "chord_success_rate": 0.0,
+    "maniptrans_success_rate": 0.0,
+    "non_finite_worlds": 0,
+    "result": "poor; not submission quality"
+  },
+  "other_episodes_policy_trained": false
 }
