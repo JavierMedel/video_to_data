@@ -101,8 +101,9 @@ def test_budget_resume_preserves_evidence_and_rejects_changed_data(tmp_path, mon
     source = tmp_path / 'model'; source.write_text('weights')
     output = tmp_path / 'depth'; output.mkdir()
     frame = output / '000000.png'; frame.write_bytes(b'depth')
-    old_cmd = ['docker', 'run', '-e', 'V2D_TORCH_MEMORY_FRACTION=0.55', 'image', '-m', 'producer']
-    new_cmd = [x.replace('=0.55', '=0.65') for x in old_cmd]
+    old_cmd = ['docker', 'run', '-e', 'V2D_TORCH_MEMORY_FRACTION=0.55', 'image', '-m', 'producer', '--batch_size', '4']
+    new_cmd = [x.replace('=0.55', '=0.70') for x in old_cmd]
+    new_cmd[-1] = '8'
     record = tmp_path / 'stage.json'
     record.write_text(json.dumps({'state': 'COMPLETE', 'command': old_cmd,
         'image_id': 'image-id', 'runner_sha256': depth_batch.sha256(runner),
@@ -113,6 +114,7 @@ def test_budget_resume_preserves_evidence_and_rejects_changed_data(tmp_path, mon
     reuse = lambda: depth_batch.reuse_with_budget_change(record, new_cmd, [output], [source])
     assert reuse()
     assert record.read_bytes() == original
+    assert not depth_batch.reuse_with_budget_change(record, new_cmd + ['--changed-inference'], [output], [source])
     source.write_text('different weights')
     assert not reuse()
     source.write_text('weights')

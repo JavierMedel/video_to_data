@@ -17,7 +17,8 @@ from run_track3_object_pilot import cpath, run_stage, save, telemetry
 from run_track3_hand_pilot import command
 
 NAME = 'v2d-track3-depth-stage'
-MEMORY_FRACTION = .65
+MEMORY_FRACTION = .70
+BATCH_SIZE = 8
 
 
 def guard(stop, path):
@@ -38,13 +39,29 @@ def guard(stop, path):
 
 
 def reuse_with_budget_change(record_path, cmd, outputs, inputs):
-    """Preserve original evidence when only the allocator limit/queue code changed."""
+    """Preserve original evidence when only resource settings/queue code changed."""
     if not record_path.exists():
         return False
     old = json.loads(record_path.read_text())
     if old.get('state') != 'COMPLETE':
         return False
-    normalize = lambda command: [x for x in command if not x.startswith('V2D_TORCH_MEMORY_FRACTION=')]
+    def normalize(command):
+        normalized = []
+        skip_batch_value = False
+        for item in command:
+            if skip_batch_value:
+                if not item.isdigit() or int(item) < 1:
+                    raise ValueError('Invalid batch size in resource-resume command')
+                skip_batch_value = False
+                continue
+            if item == '--batch_size':
+                skip_batch_value = True
+                normalized.append(item)
+            elif not item.startswith('V2D_TORCH_MEMORY_FRACTION='):
+                normalized.append(item)
+        if skip_batch_value:
+            raise ValueError('Missing batch size in resource-resume command')
+        return normalized
     if normalize(old['command']) != normalize(cmd):
         return False
     image = cmd[cmd.index('-m') - 1]
@@ -64,7 +81,7 @@ def reuse_with_budget_change(record_path, cmd, outputs, inputs):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--resume-budget-change', action='store_true',
-                        help='Hash-verify completed episodes across this allocator-only update; retain original provenance')
+                        help='Hash-verify completed episodes across this resource-only update; retain original provenance')
     args = parser.parse_args()
     report = ROOT / 'incident_reports/track3_baseline/depth_batch'
     report.mkdir(parents=True, exist_ok=True)
@@ -75,7 +92,7 @@ def main():
     episodes = sorted((e for e in inventory['episodes'] if e['episode_index'] != 38), key=lambda e: e['frames'])
     state = {'state': 'QUEUED_FOR_GPU', 'track': 'track_3', 'episode_count': len(episodes),
              'completed_episode_indices': [], 'existing_completed_pilot_episode': 38,
-             'dataset_revision': inventory['dataset_revision'], 'batch_size': 4,
+             'dataset_revision': inventory['dataset_revision'], 'batch_size': BATCH_SIZE,
              'pytorch_memory_fraction': MEMORY_FRACTION, 'preserved_episode_indices': [], 'gpu_memory_guard_mib': 19000,
              'container_ram_limit_gib': 16, 'policy_trained': False, 'submission_ready': False, 'uploaded': False}
     save(report / 'execution.json', state)
@@ -100,7 +117,7 @@ def main():
             cmd = command('v2d_cari4d:blackwell', 'v2d.moge.lib.video_to_depth',
                           ['--video_path', cpath(video), '--depth_folder', cpath(depth),
                            '--intrinsics_folder', cpath(intrinsics), '--weights_path', '/repo/data/weights/moge',
-                           '--batch_size', '4'])
+                           '--batch_size', str(BATCH_SIZE)])
             cmd[cmd.index('--name') + 1] = NAME
             cmd = [f'V2D_TORCH_MEMORY_FRACTION={MEMORY_FRACTION}' if x.startswith('V2D_TORCH_MEMORY_FRACTION=') else x for x in cmd]
             stop = threading.Event()
