@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-10-17T17:44:54.535680+00:00",
+  "state": "RECOVERED_TRACKING_COMPLETE_DOWNLOAD_RESUMED",
+  "root_cause_assessment": "GPU memory pressure is supported by telemetry and WSL allocation failure; definitive hardware/driver cause unproven.",
+  "windows_events": [
+    41,
+    6008
+  ],
+  "previous_gpu_memory_mib": 24001,
+  "gpu_total_mib": 24463,
+  "wsl_error": "dxgkio_make_resident Ioctl failed: -12",
+  "completed_outputs_hash_reverified": {
+    "detection": 1,
+    "masks": 263,
+    "depth_and_intrinsics": 526,
+    "mesh": 3,
+    "raw_hands": 263
+  },
+  "restart": {
+    "tracking_resolution": [
+      1014,
+      760
+    ],
+    "source_frames_preserved": 263,
+    "pytorch_memory_fraction": 0.55,
+    "watchdog_gpu_threshold_mib": 19000,
+    "container_ram_limit_gib": 20,
+    "container_ram_and_swap_limit_gib": 22,
+    "cpus": 8,
+    "peak_sampled_gpu_memory_mib": 18464,
+    "peak_sampled_gpu_util_percent": 100,
+    "elapsed_seconds": 140.3,
+    "tracking_exit_code": 0,
+    "tracking_state": "CAMERA_OBJECT_TRACKING_COMPLETE"
+  },
+  "download": "Resumed HaMeR from byte 2839994368 with verified HTTP range; see hamer_provisioning.json for current progress.",
+  "policy_trained": false,
+  "uploaded": false
+}

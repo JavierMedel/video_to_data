@@ -1,0 +1,50 @@
+{
+  "state": "CAMERA_OBJECT_TRACKING_COMPLETE",
+  "episode_index": 38,
+  "tracking_resolution": [
+    1014,
+    760
+  ],
+  "torch_memory_fraction": 0.55,
+  "gpu_memory_guard_mib": 19000,
+  "container_memory_limit_gib": 20,
+  "pose_frame": "OpenCV camera_T_metric_body; camera motion not removed",
+  "policy_trained": false,
+  "submission_ready": false,
+  "uploaded": false,
+  "frames": 263,
+  "translation_min_m": [
+    -0.007143150549381971,
+    -0.22512821853160858,
+    0.5532745718955994
+  ],
+  "translation_max_m": [
+    0.4136194884777069,
+    0.1570867896080017,
+    1.1183650493621826
+  ],
+  "nonpositive_camera_depth_count": 0,
+  "pose_json_quaternion_order": "wxyz; convert explicitly to xyzw for eventual policy export",
+  "body_transform_ledger": {
+    "source_glb_sha256": "d52d46360096e3f386e0389e5a7fd754fdf89ce5e0fcec2c294ca573d6690045",
+    "source_transform_sha256": "bc12a9e74d1d4a6d14ace93b2b2ccdbfd412760ca00b6b9eccce56af5818407a",
+    "source_scene_nodes_baked": true,
+    "uniform_scale_applied": 0.2725491523742676,
+    "sam3d_initial_rotation_baked": false,
+    "sam3d_initial_translation_baked": false,
+    "body_frame": "Original GLB scene frame with scene nodes baked and scale applied once; FoundationPose estimates camera_T_body for this mesh.",
+    "extents_m": [
+      0.2511428096454722,
+      0.064429718217621,
+      0.2727026451031094
+    ],
+    "metric_mesh_sha256": "07c548f47b4a04be0081a35d1e152bc22583eac7b3a76609ada98a841859f189",
+    "metric_scale_independently_verified": false
+  },
+  "limitations": [
+    "No held-out pose score; silhouette/temporal review still required.",
+    "Raw upright video was not lens-rectified.",
+    "Remove camera motion and validate metric scale before policy training."
+  ],
+  "observed_utc": "2026-10-17T17:42:32.189247+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-10-17T17:44:54.539314+00:00",
+  "foundation_pose_model_license": {
+    "name": "NVIDIA Open Model License",
+    "model": "nvidia/tao/foundationpose deployable_v1.0",
+    "user_explicitly_accepted_in_this_session": true,
+    "terms_url": "https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/foundationpose"
+  },
+  "foundation_pose_files_sha256": {
+    "data/weights/foundation_pose/nvidia_tensorrt/deployable_v1.0/score_net.onnx": "bb7208919557560ecb0e10a30612821f0025a2578190b17677bdf3653514a48d",
+    "data/weights/foundation_pose/nvidia_tensorrt/deployable_v1.0/refiner_net.onnx": "4a4445d2506b1bfc0a8d62fa80f8780a7e37bb0df13bb09aa5dd04a03bf0c954",
+    "data/weights/foundation_pose/nvidia_tensorrt/deployable_v1.0/manifest.json": "c7296e93bf9ab2fa9717f6581a89413604d71c94805d111890b304ea97568d0e",
+    "data/weights/foundation_pose/nvidia_tensorrt/deployable_v1.0/score_deployable_v1.0_bb7208919557_trt_10_9_0_34_sm_120_fp32.engine": "6bd469e6e631ee870f8e49fbab52cd9deec2e7bda860a6b0926832b9e2bdc3a8",
+    "data/weights/foundation_pose/nvidia_tensorrt/deployable_v1.0/refine_deployable_v1.0_4a4445d2506b_trt_10_9_0_34_sm_120_fp32.engine": "3d8a5ded77b98aa204ba73cb087fabc7a26092f3d6725b501cb66591a395aee8"
+  },
+  "sam3d_hub_metadata": {
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_encoder.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n6485623145535f42c8afa4cbb68ab9953e54e2f0c1cb1eaf95dcb41051e10181\n1791344180.179506\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_encoder.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\ndcc47810ac568b11fe6e4821ea1c8d6b960dfbda3e5f68e94c19f44b3bf9e83b\n1791344160.826438\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_generator.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n91529bde8e7daa12d09618a66c319e3a5a6398db6b23b958cedcb1c3f28faabb\n1791344314.396385\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_mesh.pt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n93333fcd57a3e36ded0b3bca6969e05ce2b35142029dadab514f41df46d2f985\n1791344166.2849371\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_generator.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n859964b5e87666122a7137f6dc9934444d6182ca\n1791344029.8736472\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_encoder.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n2a882b6ecbc1ba38853303eef3b79f8151303361\n1791344161.2044985\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_gs.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n10683b1bd592e1db70eb7070a3365b536ad0ba9e\n1791344029.5430512\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_decoder.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n7982f7ff6cdb4bebcad49404ba03476fa69f4c6b\n1791344030.086222\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_generator.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n225f40479e4cff4f39d6fa14c55be3abad1475bf55b61af3bec1e19ed2f6c146\n1791344519.256201\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_encoder.safetensors.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\ne69de29bb2d1d6434b8b29ae775ad8c2e48c5391\n1791344161.065578\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_mesh.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n74735a4b9ba1fbd76b8d1a56f27b6ebe63aeafc9\n1791344029.6871865\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_decoder.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n6dac1cd7b7fda5a38e0614fadae441f1794f80e39ea2981f1ac8aff0a7e99340\n1791344160.8234117\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_gs.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\nf8077c36a06eaf890dd93cda1937411f793dea1eb80b3dd9329f2038ba84a111\n1791344169.5294735\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_encoder.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n595fe5c60af4398e7b5ebbcec7b954364b51ae56\n1791344029.6894724\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/pipeline.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n0703a2eb4045418f1d6e38053712105d03f90d88\n1791344029.4969456\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_gs_4.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n731a0eceaa47945b52aa27f650d695b2aea9cc70945751e5609e5cb5b49f0186\n1791344166.965248\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/ss_generator.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n35df0ea780c4c6f6eaf490c1a828ad054d4f9f0b\n1791344161.5388687\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_mesh.ckpt.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\n85907b37b67d8ce5b099a96629bdcfbd873eb407dee6b3aa9a75deb15038db33\n1791344164.6677656\n",
+    "data/weights/sam3d/hf-download/.cache/huggingface/download/checkpoints/slat_decoder_gs_4.yaml.metadata": "2e73555018d2741ccd486e56c24fac41155a1dc6\nef89609e6f0cf5a12398a5d5f000687bf6693916\n1791344029.5011256\n"
+  },
+  "sam3d_metadata_note": "Publisher revision/etag records from the existing shared model cache; payloads were not rehashed in this recovery to avoid extra disk pressure.",
+  "container_images": {
+    "v2d_cari4d:blackwell": "sha256:e392b3ae8df2519986bbe69d6f33c611bdbe680748ade48339bd772c7d0183f9",
+    "v2d_sam2:blackwell": "sha256:fcdae55f1aeff439ce08050b166d74f44ef6eab3e34fa3188caadea645e28117",
+    "v2d_sam3d:blackwell": "sha256:7f5f881100a2e5f5899aa34d52b56aa3db0d90c6bf1c588bb86a89f99de44948",
+    "v2d_grounding_dino:blackwell": "sha256:c8879261f4ba5546e3761e2d1237859cacd9071200892926fdb1f809d0cb2ff1",
+    "v2d_track3_hands:blackwell": "sha256:acf25e5ecf41d7f4b20fbde84b60a278c5cfb242a88bc0fa50505be52161238d",
+    "v2d_track3_foundation_pose:blackwell": "sha256:4d1069810bd33744510c5736a1e58661120f132ebf4c08433ad89b646d718acc"
+  },
+  "kaggle_preflight": {
+    "authenticated": true,
+    "account": "iorideepp",
+    "track3_competitions_unjoined": 6,
+    "organizer_track3_registration_confirmed": false,
+    "log": "preflight.log"
+  },
+  "policy_trained": false,
+  "submission_ready": false,
+  "uploaded": false
+}

@@ -1,0 +1,20 @@
+{
+  "state": "OBJECT_RECONSTRUCTION_COMPLETE",
+  "episode_index": 38,
+  "object": "mini_dust_pan",
+  "depth_batch": 4,
+  "overlap_depth_masks": true,
+  "policy_trained": false,
+  "submission_ready": false,
+  "uploaded": false,
+  "frames": 263,
+  "mesh_sha256": "d52d46360096e3f386e0389e5a7fd754fdf89ce5e0fcec2c294ca573d6690045",
+  "mesh_vertices": 134622,
+  "mesh_faces": 269204,
+  "scale_and_body_frame": "SAM3D transform saved; validate/bake consistently with future tracking",
+  "limitations": [
+    "Raw upright RGB; distortion not rectified in this first pilot.",
+    "Camera/world motion, object 6D tracking, hand reconstruction and policy learning remain."
+  ],
+  "observed_utc": "2026-10-17T17:18:16.078673+00:00"
+}

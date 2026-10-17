@@ -1,0 +1,26 @@
+# FoundationPose's original TensorRT 10.7 cannot build for RTX 5090 / sm_120.
+# Retain the existing PyTorch 2.8 / CUDA 12.8 geometry stack, and match both
+# trtexec and the Python bindings to TensorRT 10.9 (CUDA 12.8).
+ARG BASE_IMAGE=v2d_cari4d:blackwell
+FROM ${BASE_IMAGE}
+ARG TRT_DEB_VERSION=10.9.0.34-1+cuda12.8
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    libnvinfer-bin=${TRT_DEB_VERSION} \
+    libnvinfer10=${TRT_DEB_VERSION} \
+    libnvinfer-lean10=${TRT_DEB_VERSION} \
+    libnvinfer-plugin10=${TRT_DEB_VERSION} \
+    libnvinfer-vc-plugin10=${TRT_DEB_VERSION} \
+    libnvinfer-dispatch10=${TRT_DEB_VERSION} \
+    libnvonnxparsers10=${TRT_DEB_VERSION} && rm -rf /var/lib/apt/lists/*
+# apt already supplies matching native libraries. Avoid the pip libs bootstrap
+# downloading another multi-GB copy, and remove its older 10.7 libraries so
+# Python and trtexec both resolve the same system 10.9 runtime.
+RUN pip uninstall -y tensorrt-cu12 tensorrt-cu12-bindings tensorrt-cu12-libs && \
+    pip install --no-cache-dir --no-deps \
+      tensorrt-cu12==10.9.0.34 tensorrt-cu12-bindings==10.9.0.34
+COPY modules/v2d_foundation_pose/lib /workspace/v2d_foundation_pose/lib
+# CARI4D has a separate top-level `learning` package. Exclude its PYTHONPATH
+# entry so FoundationPose's own namespace resolves to its datasets/predictors.
+ENV PYTHONPATH=/workspace/v2d_foundation_pose/lib/FoundationPose
+RUN python -c "import torch, tensorrt; assert torch.__version__.startswith('2.8.0'); assert tensorrt.__version__.startswith('10.9.'); print('TensorRT', tensorrt.__version__)"
+WORKDIR /app

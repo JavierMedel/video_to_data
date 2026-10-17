@@ -1,0 +1,921 @@
+{
+  "observed_utc": "2026-10-17T17:11:25.115822+00:00",
+  "state": "INPUTS_VERIFIED",
+  "track": "track_3",
+  "dataset": "nvidia/video_to_data_challenge",
+  "dataset_revision": "5f68335f3acc802033d1e80728c1633197521de8",
+  "sample_sha256": "6bf31ea536a907803f5701a6c2896921a4623173336e14939942ecf49db183e7",
+  "roster_sha256": "be92ef6db25aa60cefcdfb44f0acfdc6fbdfa26bb249f6890e1963c659b79272",
+  "episode_count": 20,
+  "object_instance_count": 36,
+  "scored_frames": 5181,
+  "required_submission_rows": 9120,
+  "development_episode_indices": [
+    0,
+    2,
+    11,
+    12,
+    13,
+    18,
+    21,
+    22,
+    23,
+    24,
+    26,
+    27,
+    31,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "downloaded_files": 169,
+  "downloaded_bytes": 1469035134,
+  "pilot_episode": 38,
+  "episodes": [
+    {
+      "episode_index": 1,
+      "objects_in_scored_order": [
+        "white_pot",
+        "white_pot_lid"
+      ],
+      "frames": 335,
+      "required_rows": 670,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000001.mp4",
+          "sha256": "88c2b59924c65ba60b8457b565d03d0458a46484a711bbb2583ec3ceaa4406ae",
+          "frames": 335,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000001.mp4",
+          "sha256": "1047256c4fcad8a9b719f9cd75c2898e542bf9ab14c3b102ed441a435fac4e4f",
+          "frames": 335,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000001.mp4",
+          "sha256": "0d641d96f8df7ccd51c6af8852e96cd49fd4c00b55e045807e0482f1dc8d927e",
+          "frames": 335,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 3,
+      "objects_in_scored_order": [
+        "white_pot",
+        "wooden_spoon"
+      ],
+      "frames": 313,
+      "required_rows": 626,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000003.mp4",
+          "sha256": "0b0c6fc26a93fbe8a01a77c22d2a88b3acc562bb01beb2c7b795d4a69c7276e1",
+          "frames": 313,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000003.mp4",
+          "sha256": "9298417bbe78cc3cd398a09137ff38208c06c0a1c936bacf938ced66589578b7",
+          "frames": 313,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000003.mp4",
+          "sha256": "880aea79f75e3ded2945c73859e22b801ce343bbcfb97a25ffcc79489cc1a023",
+          "frames": 313,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 5,
+      "objects_in_scored_order": [
+        "white_pot",
+        "wooden_spoon"
+      ],
+      "frames": 288,
+      "required_rows": 576,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000005.mp4",
+          "sha256": "c2b0fae7458637e7d76b606d52c068b987a19b8cb8a4bed954d1fde9f87bbf8b",
+          "frames": 288,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000005.mp4",
+          "sha256": "2670eb353821127959a512e610791125c4616703b175e104252d2891109abcb8",
+          "frames": 288,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000005.mp4",
+          "sha256": "5dac3c21d7cc6bb79cc1b14e63d76b2cd6df4372d3f75bcb7cbfa96354dd8e2d",
+          "frames": 288,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 6,
+      "objects_in_scored_order": [
+        "white_pot",
+        "wooden_spoon"
+      ],
+      "frames": 243,
+      "required_rows": 486,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000006.mp4",
+          "sha256": "d40b0a8197aa03f671348faafc791cc19a297f2449c61a01882bc798327efa0a",
+          "frames": 243,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000006.mp4",
+          "sha256": "4f11d1b97f23a44e36bdcd419e8b880801ca589395415c9ba873b2858c4f8814",
+          "frames": 243,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000006.mp4",
+          "sha256": "928036fc620b2f06791e53e97e3bebf40bb43c732b712500f7abd71b429965b8",
+          "frames": 243,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 8,
+      "objects_in_scored_order": [
+        "beige_cup",
+        "white_pot"
+      ],
+      "frames": 219,
+      "required_rows": 438,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000008.mp4",
+          "sha256": "7de7900f452cbdcdadc3ccb15c38b2d6353ed539c702ab179e9dc89b91d7399a",
+          "frames": 219,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000008.mp4",
+          "sha256": "af0db5afe8b057260791b0706a9ac43e8b71108bad1a08f26bed424d45479697",
+          "frames": 219,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000008.mp4",
+          "sha256": "aeacbbb8e0566a15e1344b0993e0f28e49070207666397b49392dc3488a5245f",
+          "frames": 219,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 10,
+      "objects_in_scored_order": [
+        "blue_cup",
+        "beige_cup"
+      ],
+      "frames": 161,
+      "required_rows": 322,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000010.mp4",
+          "sha256": "babc1428bdbf54dfda4bafe859df109e3bdc3278de19634cfcd6053c4fa15c40",
+          "frames": 161,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000010.mp4",
+          "sha256": "2d28e2a9b7beabd89fc57a60e27794b0287ef004c8bd947dc5eafabc40735978",
+          "frames": 161,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000010.mp4",
+          "sha256": "bf7489b44d48dc3ea33b0c88a888b846b96ffb0a30b0db2c7167c0a2a8e817ba",
+          "frames": 161,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 14,
+      "objects_in_scored_order": [
+        "blue_cup",
+        "plastic_dish_rack"
+      ],
+      "frames": 158,
+      "required_rows": 316,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000014.mp4",
+          "sha256": "ae005a010cf61fbe71e0e71dca1a4ee1c34a40f9536626fc8d95426e1f649195",
+          "frames": 158,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000014.mp4",
+          "sha256": "c23582366a8bf384403488c0df44cb9c20a68996347b1b31dcb2a46c4c747cdd",
+          "frames": 158,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000014.mp4",
+          "sha256": "29336a691be0bdb402cb16299eadf821f6ede4e536be9b0a5cc031f7111dc523",
+          "frames": 158,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 15,
+      "objects_in_scored_order": [
+        "plastic_dish_rack",
+        "wooden_spoon"
+      ],
+      "frames": 166,
+      "required_rows": 332,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000015.mp4",
+          "sha256": "613432b991fd51f9bca00fef3960e6d52480a0d21a1742d5c55f1cc34e191df9",
+          "frames": 166,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000015.mp4",
+          "sha256": "a82dd0ae28687469de39e7bdae5ab7546fc8ddec1932cb712577d719448dcd0c",
+          "frames": 166,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000015.mp4",
+          "sha256": "85c7798f84672200ea6743a744b086b4e59975df15a476f091f3a9f6aecbe759",
+          "frames": 166,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 16,
+      "objects_in_scored_order": [
+        "plastic_dish_rack",
+        "wooden_spoon"
+      ],
+      "frames": 173,
+      "required_rows": 346,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000016.mp4",
+          "sha256": "04fdcd63651092b5f5273ddffe62f41827a12a866695870ecbadd9bcc6e573d0",
+          "frames": 173,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000016.mp4",
+          "sha256": "82164eff996c1e665911b6b2b67f1e26b0596ef5cdb5d613c4a12ec7ed566584",
+          "frames": 173,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000016.mp4",
+          "sha256": "3e0e0c84a07de79eb5de2d181b02d03b78d44c546be02796bc04b7a32120448f",
+          "frames": 173,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 19,
+      "objects_in_scored_order": [
+        "mini_sweeper",
+        "mini_dust_pan"
+      ],
+      "frames": 235,
+      "required_rows": 470,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000019.mp4",
+          "sha256": "43eee0a55256592595b6a5dc20958b9fc4aafdc04865ba31a78c88f1540de425",
+          "frames": 235,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000019.mp4",
+          "sha256": "42852f7763399b602eba69499e2059c7402e8c9142bea8b460e7b786ec8bfa03",
+          "frames": 235,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000019.mp4",
+          "sha256": "97fcf7431e46b3ef9522f15857cd10c68d7c47dc16770f240dade70f81933e3c",
+          "frames": 235,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 20,
+      "objects_in_scored_order": [
+        "blue_cup",
+        "water_pitcher"
+      ],
+      "frames": 202,
+      "required_rows": 404,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000020.mp4",
+          "sha256": "48ed17cd35187777a95e773b558e9bb3372c43930e1e9c759be8459a41915116",
+          "frames": 202,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000020.mp4",
+          "sha256": "3a9e42d83ebef246a2e34dc633275412bfba7a150c7f24a6efd80d708a15d6fa",
+          "frames": 202,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000020.mp4",
+          "sha256": "848685c4f3d2891371ca8d145d4eace4aaa639330cd13762617ed502cde00369",
+          "frames": 202,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 25,
+      "objects_in_scored_order": [
+        "wooden_piece_1",
+        "wooden_piece_2"
+      ],
+      "frames": 356,
+      "required_rows": 712,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000025.mp4",
+          "sha256": "e5945e6258963e1a96864ddda9ec43548f0bd3233208cf7780facd384c6cb249",
+          "frames": 356,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000025.mp4",
+          "sha256": "47ba19f1ab285dc524c55f75c6de95ab027062cc34b75d8eb70c2e1ecd5f7d95",
+          "frames": 356,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000025.mp4",
+          "sha256": "452f626bcbe579af590415c502ba99588bd4abf5088ceacfc7bef1fc4a95ce67",
+          "frames": 356,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 28,
+      "objects_in_scored_order": [
+        "plastic_dish_rack",
+        "white_pot"
+      ],
+      "frames": 220,
+      "required_rows": 440,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000028.mp4",
+          "sha256": "0d572057fae96d4bbda723987aad5e86111b1c8c07953b5f5df6b4ec1767343f",
+          "frames": 220,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000028.mp4",
+          "sha256": "15b9bab21a60da546b2f491821bcf795b6ab41564313a7b0b1260cf9475ed766",
+          "frames": 220,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000028.mp4",
+          "sha256": "cdc406e1447e87bf82034d632b3062fe630c4ff1af85899be4984fbac1c07977",
+          "frames": 220,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 30,
+      "objects_in_scored_order": [
+        "mini_sweeper",
+        "plastic_dish_rack"
+      ],
+      "frames": 263,
+      "required_rows": 526,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000030.mp4",
+          "sha256": "dd1a14be4f6be07656bec533b5f9561edc07ddbbc0b94e9d5e79b653f25576c3",
+          "frames": 263,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000030.mp4",
+          "sha256": "6308640a440881b1618d8172df2b5639b00f058d445ae3dd6370540aaa0b19bb",
+          "frames": 263,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000030.mp4",
+          "sha256": "6f7cd5cc62ccb93930e072a8521893d810949d33ef7f8a9c1f63d9e3baa27d2a",
+          "frames": 263,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 32,
+      "objects_in_scored_order": [
+        "blue_cup",
+        "wooden_spoon"
+      ],
+      "frames": 259,
+      "required_rows": 518,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000032.mp4",
+          "sha256": "dad802a215d11bca6a524f0b9c2ada132b625ce5983e101d391c78d9aa0c4b8a",
+          "frames": 259,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000032.mp4",
+          "sha256": "3450c156bff19085bb78655f252163f99d20267c3ad6f8ddd8a66edc6c5c1da3",
+          "frames": 259,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000032.mp4",
+          "sha256": "3b2ad4aeacc756eb324a9842be1a0b014dc03bdaf654211fdaf871f8b3e86e8c",
+          "frames": 259,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 33,
+      "objects_in_scored_order": [
+        "blue_cup",
+        "wooden_spoon"
+      ],
+      "frames": 348,
+      "required_rows": 696,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000033.mp4",
+          "sha256": "c33dfd0b7109171be3b3535429aecf5d84abaa83766e5a815f066fb4a65dd8af",
+          "frames": 348,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000033.mp4",
+          "sha256": "7565274c4845c565a59e6af6c88ecbb7c24839256bcddd8f3989a729038f8821",
+          "frames": 348,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000033.mp4",
+          "sha256": "50f865242b9499dbad1457685277394e9a276f496d6d55f5e661c876485ff03a",
+          "frames": 348,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 35,
+      "objects_in_scored_order": [
+        "wooden_spoon"
+      ],
+      "frames": 421,
+      "required_rows": 421,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000035.mp4",
+          "sha256": "45f6b3f4e2cfca99fe47489f23535e7baf0621afc13a850c5a5aad24c3b4c70a",
+          "frames": 421,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000035.mp4",
+          "sha256": "df075aed1a63d2aded3d27f65b0e3bda4252e289836cdf12291ce2cf0f4b65b7",
+          "frames": 421,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000035.mp4",
+          "sha256": "41fde5245a2b537aaecf888f711917cc5ef39ba150a9b3049b639d9e3287fbcd",
+          "frames": 421,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 36,
+      "objects_in_scored_order": [
+        "wooden_spoon"
+      ],
+      "frames": 407,
+      "required_rows": 407,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000036.mp4",
+          "sha256": "d40dbdc9faa8eac4b52a799d008f30e688a1ea9204ec7a0d0ac19945b4562e41",
+          "frames": 407,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000036.mp4",
+          "sha256": "11dc63f99a146c2c1dfc1430e985f72cf45a2cc54e3a11f426d6db15713fd983",
+          "frames": 407,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000036.mp4",
+          "sha256": "beb018c3e74cee506f2e279fe9a35a327a5a30e0e9a8180303bc0e408c7e47b2",
+          "frames": 407,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 37,
+      "objects_in_scored_order": [
+        "wooden_spoon"
+      ],
+      "frames": 151,
+      "required_rows": 151,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000037.mp4",
+          "sha256": "8a656d12cdedd0026c828869e6b50253ba1c11e618750e4ad118c5bda48459cd",
+          "frames": 151,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000037.mp4",
+          "sha256": "02ca2a2a1919a17ca6dd7cad7e2d794848ea24eba86a0ebf7b34d3d8d0dbd5f8",
+          "frames": 151,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000037.mp4",
+          "sha256": "8c6a6a12fa07d17e83b2e5e029980a156a86ad9b266e374d1885c032c89994b9",
+          "frames": 151,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    },
+    {
+      "episode_index": 38,
+      "objects_in_scored_order": [
+        "mini_dust_pan"
+      ],
+      "frames": 263,
+      "required_rows": 263,
+      "videos": {
+        "ego_cam_a": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000038.mp4",
+          "sha256": "1d9ac176b1b6161be7cc01d457caf66bd5417e6f86cb02f656a430b3f96ce145",
+          "frames": 263,
+          "fps": 20.0,
+          "resolution": [
+            2028,
+            1520
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_b": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_b/episode_000038.mp4",
+          "sha256": "2ab56ff7c77e824032d2f87f511899b2a82f124b99142c896311f3908c00f977",
+          "frames": 263,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        },
+        "ego_cam_c": {
+          "path": "data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_c/episode_000038.mp4",
+          "sha256": "435d0ec8b35881631193bf2fa4d3f0e2de78a96a636c80eba100873fd3378cb1",
+          "frames": 263,
+          "fps": 20.0,
+          "resolution": [
+            1280,
+            800
+          ],
+          "decode_check": "first and last frame; full sequential decoding not asserted"
+        }
+      }
+    }
+  ],
+  "input_policy": "Reconstruct evaluation objects from released ego video; public scans are development assets, never submission meshes.",
+  "coordinate_policy": "Metres, continuous shared world for all objects; rollout quaternion xyzw; mesh body axes and poses must agree.",
+  "camera_policy": "Videos already upright; no additional 180 degree video rotation. Factory calibration has rotation metadata; verify its pixel convention before applying it.",
+  "submission_ready": false,
+  "uploaded": false
+}

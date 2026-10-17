@@ -1,0 +1,51 @@
+{
+  "state": "COMPLETE",
+  "started_utc": "2026-10-17T17:13:40.231288+00:00",
+  "signature": "a2b87f26bbe36ad81e7ae5f429f0aed05c8337bc12c21fcb605712edd4b59cf2",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--gpus",
+    "all",
+    "--user",
+    "1000:1000",
+    "--entrypoint",
+    "python",
+    "-e",
+    "HOME=/tmp",
+    "-e",
+    "PYTHONUNBUFFERED=1",
+    "-e",
+    "OMP_NUM_THREADS=4",
+    "-e",
+    "OPENBLAS_NUM_THREADS=4",
+    "-v",
+    "/home/alien51/video_to_data/reconstruction:/repo",
+    "-v",
+    "/home/alien51/video_to_data/reconstruction/modules/v2d_grounding_dino/lib:/workspace/v2d_grounding_dino/lib:ro",
+    "v2d_grounding_dino:blackwell",
+    "-m",
+    "v2d.grounding_dino.lib.image_to_object_bboxes",
+    "--image_path",
+    "/repo/data/track3/pilot/episode_000038/reference.png",
+    "--output_path",
+    "/repo/data/track3/pilot/episode_000038/detections.json",
+    "--prompt",
+    "yellow dustpan.",
+    "--model_dir",
+    "/repo/data/weights/grounding_dino"
+  ],
+  "image_id": "sha256:c8879261f4ba5546e3761e2d1237859cacd9071200892926fdb1f809d0cb2ff1",
+  "input_sha256": {
+    "data/track3/pilot/episode_000038/reference.png": "6ad8ae0c1cd2b03caea50087c0fcf5d6d59f8507f5d8862e57cd60c1e2e45bc5",
+    "data/weights/grounding_dino/groundingdino_swint_ogc.pth": "3b3ca2563c77c69f651d7bd133e97139c186df06231157a64c507099c52bc799",
+    "modules/v2d_grounding_dino/lib/image_to_object_bboxes.py": "c3e61d153a1d835b7d90844a5b24aa520b80e693c69160838136062f4cd2a86e"
+  },
+  "runner_sha256": "ae76e6673f6698e0569617d2782f3ca01ed31acd2bd31b2590e9416faab871ac",
+  "exit_code": 0,
+  "elapsed_seconds": 21.43601055900001,
+  "output_sha256": {
+    "data/track3/pilot/episode_000038/detections.json": "8d7525d705f3561a10b296835538f778228e99296adfcdc1a4c66cf695c4a2cf"
+  }
+}
