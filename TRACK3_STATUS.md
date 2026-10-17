@@ -393,5 +393,6 @@ queue now stops its own container at total GPU usage >=21,000 MiB, leaving
 3,463 MiB below the reported 24,463 MiB GPU capacity. This is a stop threshold,
 not a memory reservation; polling can overshoot it. Batch size remains eight
 and the PyTorch allocator cap remains 70%. Hand/FoundationPose guards and the
-historical crash-recovery settings remain 19,000 MiB. The queue is restarted
-at an episode boundary so completed results retain their original provenance.
+historical crash-recovery settings remain 19,000 MiB. The queue restart preserves completed results with their original provenance;
+the episode active at restart is rerun. Episodes 32 and 30 completed before
+rollout, bringing the preserved non-pilot depth total to twelve.
