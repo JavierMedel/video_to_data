@@ -1,0 +1,25 @@
+{
+  "state": "COMPLETE",
+  "episode_index": 38,
+  "policy_trained": false,
+  "submission_ready": false,
+  "uploaded": false,
+  "pytorch_memory_fraction": 0.55,
+  "gpu_memory_guard_mib": 19000,
+  "checkpoint_sha256": "e5cc06f294d88a92dee24e603480aab04de532b49f0e08200804ee7d90e16f53",
+  "tracks": {
+    "2": {
+      "frames": 263,
+      "interpolated": 0
+    },
+    "3": {
+      "frames": 263,
+      "interpolated": 0
+    }
+  },
+  "overlay": "data/track3/pilot/episode_000038/hamer_depth_aligned_overlay.mp4",
+  "limitations": [
+    "Camera-frame estimates; world alignment, contact validation and policy training remain."
+  ],
+  "observed_utc": "2026-10-17T18:00:03.728958+00:00"
+}

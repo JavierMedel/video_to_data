@@ -1,0 +1,26 @@
+{
+  "state": "COMPLETE",
+  "episode_index": 38,
+  "hand_source": "wilor",
+  "pytorch_memory_fraction": 0.55,
+  "gpu_memory_guard_mib": 19000,
+  "container_memory_limit_gib": 16,
+  "policy_trained": false,
+  "uploaded": false,
+  "tracks": {
+    "2": {
+      "frames": 263,
+      "interpolated": 0
+    },
+    "3": {
+      "frames": 248,
+      "interpolated": 0
+    }
+  },
+  "overlay": "data/track3/pilot/episode_000038/wilor_depth_aligned_overlay.mp4",
+  "limitations": [
+    "Camera-frame hand estimates; world/gravity alignment and metric validation remain.",
+    "HaMeR refinement is a later stage after its checkpoint download."
+  ],
+  "observed_utc": "2026-10-17T17:56:55.894608+00:00"
+}

@@ -1,5 +1,6 @@
 """CPU checks for the Track 3 pilot's expensive-stage resume contract."""
 import json
+import importlib.util
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -7,6 +8,8 @@ import pytest
 
 import run_track3_object_pilot as pilot
 import run_track3_pose_pilot as tracking
+import run_track3_hand_pilot as hands
+import run_track3_depth_batch as depth_batch
 
 
 def test_resume_rejects_modified_inputs_and_outputs(tmp_path, monkeypatch):
@@ -48,7 +51,10 @@ def test_failed_stage_is_not_reused(tmp_path, monkeypatch):
 
 
 @pytest.mark.parametrize('memory,should_stop', [(18000, False), (19001, True)])
-def test_memory_guard_stops_only_the_tracking_container(tmp_path, monkeypatch, memory, should_stop):
+@pytest.mark.parametrize('module,target', [(tracking, 'v2d-track3-pilot-tracking'),
+                                          (hands, 'v2d-track3-hand-stage'),
+                                          (depth_batch, 'v2d-track3-depth-stage')])
+def test_memory_guard_stops_only_its_container(tmp_path, monkeypatch, memory, should_stop, module, target):
     calls = []
 
     class Stop:
@@ -61,9 +67,28 @@ def test_memory_guard_stops_only_the_tracking_container(tmp_path, monkeypatch, m
         calls.append(command)
         return SimpleNamespace(returncode=0, stdout=str(memory))
 
-    monkeypatch.setattr(tracking.subprocess, 'run', run)
+    monkeypatch.setattr(module.subprocess, 'run', run)
     report = tmp_path / 'guard.json'
-    tracking.memory_watchdog(Stop(), report)
+    watchdog = tracking.memory_watchdog if module is tracking else module.guard
+    watchdog(Stop(), report)
     kills = [c for c in calls if c[:2] == ['docker', 'kill']]
-    assert kills == ([['docker', 'kill', 'v2d-track3-pilot-tracking']] if should_stop else [])
+    assert kills == ([['docker', 'kill', target]] if should_stop else [])
     assert report.exists() == should_stop
+
+
+def test_gap_fill_retains_empty_track_without_inventing_hand_motion(tmp_path):
+    source = Path(__file__).resolve().parents[1] / 'modules/v2d_wilor/lib/tracks_interpolate.py'
+    spec = importlib.util.spec_from_file_location('track3_interpolation', source)
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    aligned, masks, output = tmp_path / 'aligned', tmp_path / 'masks', tmp_path / 'output'
+    (aligned / '2').mkdir(parents=True); (aligned / '3').mkdir()
+    masks.mkdir()
+    record = {'track_id': 3, 'frame_idx': 0, 'is_right': True,
+              'mano': {'betas': [0] * 10, 'global_orient': [0] * 3, 'hand_pose': [0] * 45},
+              'camera': {'cam_t': [.1, .1, 1], 'intrinsics': {'fx': 100, 'fy': 100, 'cx': 50, 'cy': 50}},
+              'image_size': [100, 100], 'diagnostics': {}}
+    (aligned / '3/000000.json').write_text(json.dumps(record))
+    module.tracks_interpolate(str(aligned), str(masks), str(output), max_gap_frames=15, extrapolate=False)
+    assert not list((output / '2').glob('*.json'))
+    assert json.loads((output / '3/000000.json').read_text())['interpolated'] is False
+    assert (output / 'handedness.json').exists()

@@ -60,11 +60,57 @@ and the ends of the logs before resuming; this document is a snapshot.
   This is reconstructed reference motion; camera/world alignment and tracking
   quality review still precede learned-policy training. Evidence:
   `episode_000038/tracking.json`.
-- HaMeR's 6,037,554,929-byte upstream demo archive is being provisioned
-  separately. After the crash its partial transfer resumed from byte
-  2,839,994,368. Check `hamer_provisioning.json` and `hamer_resume.log` for the
-  live state; no complete HaMeR checkpoint is claimed until extraction succeeds.
+- HaMeR's 6,037,554,929-byte upstream archive completed its resumed transfer,
+  full gzip validation and safe extraction. The checkpoint SHA-256 is
+  `e5cc06f294d88a92dee24e603480aab04de532b49f0e08200804ee7d90e16f53`.
+  Evidence: `hamer_provisioning.json`.
+- The bounded hand continuation completed silhouette-seeded SAM2 masks,
+  association, depth alignment and diagnostic overlays. The final HaMeR pass
+  has **263 real frames for each hand**, with no gap interpolation needed.
+  Evidence: `episode_000038/hamer_pipeline.json`.
+- A depth-preparation batch is running for the **other 19 scored episodes**,
+  shortest clips first, one GPU container at a time. It uses the same raw RGB
+  and MoGe baseline as the pilot. This prepares depth/intrinsics and does not
+  imply complete reconstructions or policies for those episodes. See
+  `depth_batch/execution.json` and `depth_batch.log` for live progress.
 - No Track 3 policy has been trained. No submission or leaderboard score exists.
+
+## GPU continuation after recovery
+
+Hand masks use rendered WiLoR MANO silhouettes as seed prompts. The initial
+box-prompt trial selected a floor seam for the left hand; that attempt is
+preserved under the pilot's `attempts/bbox_seed_*` directory. The accepted
+silhouette prompts and masks were visually checked against both source hands.
+Final WiLoR association yielded 263 left and 248 right real frames. Its missing
+right-hand interval exceeded the configured gap bracket, so those records
+were preserved as missing. HaMeR then predicted and aligned all 263 frames for
+each hand from the propagated masks. No reference object poses were substituted.
+
+The empty-track branch of the native interpolation utility previously emitted
+a four-field summary where the summary printer required five fields. This is
+corrected and covered by a test that keeps an empty hand track empty while
+preserving the other hand's real record.
+
+Both hand runners use a 55% PyTorch VRAM allocation budget, a 19,000 MiB total
+GPU watchdog, 16 GiB container RAM, 18 GiB combined RAM/swap and six CPUs.
+They share the pilot GPU lock. The HaMeR runner automatically waits for verified
+weights and the completed mask/association pipeline before starting.
+
+The remaining-depth runner shares that GPU lock, releasing it between episodes.
+It uses batch size four, the same allocation/watchdog/RAM limits and a named
+`v2d-track3-depth-stage` container. Each episode records source-video and model
+hashes, image identity, commands, output hashes and exact frame coverage. Its
+completed outputs are under `reconstruction/data/track3/episodes/episode_XXXXXX/`;
+Episode 38's original pilot outputs remain in their existing directory.
+The first batch job reached 100% GPU utilization using roughly 7.6k MiB VRAM.
+Keep checking its timestamped report rather than assuming the queued 19 are
+complete. A failure stops the queue and records the error.
+
+Diagnostic hand MP4s currently use the renderer's native 30 fps default, with
+all source frame indices preserved. Their playback cadence is not the motion
+sampling rate: the original source MP4s are 20 fps. Use the source timing when
+preparing simulation data. World/camera alignment, scale/contact validation,
+retargeting and learned policy training remain after these reference estimates.
 
 ## October 17 crash and verified recovery
 
@@ -234,6 +280,9 @@ reconstruction/.venv/bin/python reconstruction/scripts/run_track3_object_pilot.p
 reconstruction/.venv/bin/python reconstruction/scripts/run_track3_object_pilot.py --stage reconstruct --depth-batch 4
 reconstruction/.venv/bin/python reconstruction/scripts/run_track3_pose_pilot.py
 reconstruction/.venv/bin/python reconstruction/scripts/resume_track3_hamer_weights.py
+reconstruction/.venv/bin/python reconstruction/scripts/run_track3_hand_pilot.py
+reconstruction/.venv/bin/python reconstruction/scripts/run_track3_hamer_pilot.py
+reconstruction/.venv/bin/python reconstruction/scripts/run_track3_depth_batch.py
 reconstruction/.venv/bin/python -m pytest -q reconstruction/scripts/test_track3_campaign.py
 ```
 
@@ -253,9 +302,9 @@ and model downloads can temporarily lower utilization.
 
 Each expensive stage records its command, container image ID, code/input
 hashes, output hashes and elapsed time. A previously completed stage is reused
-only when those hashes still match. Two CPU tests verify reuse rejects changed
-inputs/outputs and failed stages; two additional cases verify the GPU guard
-stops only the intended container when the threshold is crossed. A nonblocking host file lock prevents two
+only when those hashes still match. Nine CPU test cases cover changed inputs
+and outputs, failed stages, each runner's guard target and threshold, and the
+empty-hand interpolation case. A nonblocking host file lock prevents two
 copies of this pilot from writing its outputs simultaneously.
 
 Build the dedicated images from `reconstruction/`:
@@ -273,6 +322,7 @@ Monitor from repository root:
 tail -n 12 reconstruction/incident_reports/track3_baseline/pilot.log
 tail -n 12 reconstruction/incident_reports/track3_baseline/foundation_pose_build.log
 tail -n 5 reconstruction/incident_reports/track3_baseline/hamer_weights.log
+tail -n 10 reconstruction/incident_reports/track3_baseline/depth_batch.log
 docker ps
 nvidia-smi
 ```
@@ -287,9 +337,9 @@ The license acceptance applies to these models and persists for later runs.
 1. Review the pilot masks and reconstructed surface against several RGB views.
    Confirm real object identity, holes/thickness and metric scale. Keep the
    original SAM3D transform and a transform ledger for the eventual body mesh.
-2. Preserve the validated FoundationPose image/engines and tracking resource
-   limits. Complete HaMeR checkpoint provisioning, then test HaMeR prediction
-   and all required MANO layouts with hashes. Import success alone is insufficient.
+2. Preserve the validated FoundationPose image/engines, HaMeR checkpoint and
+   resource limits. Review the completed aligned-hand overlays and source
+   frame mapping before accepting the estimates for simulation.
 3. Estimate camera motion and gravity/support geometry, then express hands and
    objects in one stable metric world. Compare monocular estimates with the
    released stereo pair where calibration is verified. Do not train on poses

@@ -1,0 +1,12 @@
+{
+  "state": "COMPLETE",
+  "url": "https://www.cs.utexas.edu/~pavlakos/hamer/data/hamer_demo_data.tar.gz",
+  "resumed_from_bytes": 2839994368,
+  "observed_utc": "2026-10-17T17:56:46.845661+00:00",
+  "expected_total_bytes": 6037554929,
+  "etag": "\"167ddc6f1-60c69e4dd5f93\"",
+  "downloaded_bytes": 6037554929,
+  "archive_sha256": "ccfb70abd672b64c3ea90891c808d4499cc36a37dd6cf86c561a665113aef11e",
+  "checkpoint_sha256": "e5cc06f294d88a92dee24e603480aab04de532b49f0e08200804ee7d90e16f53",
+  "checkpoint": "data/weights/hamer/_DATA/hamer_ckpts/checkpoints/hamer.ckpt"
+}
