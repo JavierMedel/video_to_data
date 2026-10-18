@@ -173,7 +173,7 @@ def reconstruct_object(episode, name, slot, work, video, report, selected):
            '--camera_intrinsics_path', cpath(work / 'intrinsics_stable.json'), '--mesh_path', cpath(metric),
            '--poses_dir', cpath(poses), '--weights_dir', '/repo/data/weights/foundation_pose',
            '--backend', 'nvidia_tensorrt', '--reference_frame', str(reference), '--reregister_iou_thresh', '0.3',
-           '--target_width', '1014', '--target_height', '760'], [poses],
+           '--target_width', '760', '--target_height', '570'], [poses],
           [video, metric, work / 'intrinsics_stable.json', *sorted(mask_dir.glob('*.png')),
            *sorted((work / 'depth').glob('*.png'))], report, fraction=.55)
     validate_poses(poses, count)
@@ -263,6 +263,8 @@ def main():
     inventory = json.loads((ROOT / 'incident_reports/track3_baseline/inputs.json').read_text())
     episodes = sorted(inventory['episodes'], key=lambda e: (e['episode_index'] != 38, e['frames']))
     if args.episodes: episodes = [e for e in episodes if e['episode_index'] in args.episodes]
+    previous_path = reports / 'execution.json'
+    previously_complete = set(json.loads(previous_path.read_text()).get('completed_episode_indices', [])) if previous_path.exists() else set()
     state = {'state': 'RUNNING', 'completed_episode_indices': [], 'failed_episodes': {}, 'policy_trained': False,
              'submission_ready': False, 'uploaded': False, 'gpu_memory_guard_mib': LIMIT}
     for episode in episodes:
@@ -273,6 +275,22 @@ def main():
         try:
             video = ROOT / episode['videos']['ego_cam_a']['path']
             if sha256(video) != episode['videos']['ego_cam_a']['sha256']: raise ValueError('Changed source video')
+            if index in previously_complete:
+                manifest = json.loads((work / 'reconstruction_manifest.json').read_text())
+                if manifest['frames'] != episode['frames'] or len(manifest['bundles']) != len(episode['objects_in_scored_order']):
+                    raise ValueError('Completed episode manifest no longer matches inventory')
+                for bundle in manifest['bundles']:
+                    bundle_path = ROOT / bundle
+                    with np.load(bundle_path / 'result.npz', allow_pickle=False) as data:
+                        for key in ('camera_to_world_transform', 'object_to_world_transform'):
+                            if len(data[key]) != episode['frames'] or not np.isfinite(data[key]).all():
+                                raise ValueError('Completed bundle has invalid transforms')
+                        if not data['object_is_valid'].all(): raise ValueError('Completed bundle has invalid object frames')
+                    if not (bundle_path / 'mesh.obj').is_file(): raise ValueError('Completed bundle mesh missing')
+                state['completed_episode_indices'].append(index)
+                save(reports / 'execution.json', state)
+                print('REUSED_COMPLETE_EPISODE', index, flush=True)
+                continue
             decode(video, work / 'frames', episode['frames'])
             validate_poses(work / 'camera_poses_slam', episode['frames'])
             stabilize_intrinsics(str(work / 'intrinsics'), str(work / 'intrinsics_stable.json'))

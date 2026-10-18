@@ -573,3 +573,28 @@ A GPU guard event halts GPU-dependent work for inspection rather than repeatedly
 retrying the allocation. A complete pack is marked `PACKED_FOR_REVIEW`.
 This queue does not upload to Kaggle or accept rules automatically. Track 3
 competition entry/organizer registration remain separate outstanding checks.
+
+### Pose-registration recovery after the unattended run
+
+The first campaign stopped at Episode 14's FoundationPose registration: the
+total-memory watchdog observed 22,435 MiB, above the 21,000 MiB limit. Episode
+37 completed reconstruction, but regenerating its mesh/bundle during earlier
+runner changes invalidated its previous CPU-preparation receipt. The controller
+correctly rejected that stale reference; it did not train on mismatched assets.
+
+Pending FoundationPose jobs now use 760 x 570 processing images and a 45%
+PyTorch allocator cap. TensorRT/native allocations remain additional; the total
+watchdog stays at 21,000 MiB. Source frame indices, camera trajectories, and
+submission frame counts remain unchanged. This resolution trades image detail
+for lower registration memory and must be assessed against tracking quality.
+
+Restart now reuses previously completed episodes after checking the original
+video hash, manifest frame/object counts, finite camera/object transforms,
+object validity, and mesh existence. This avoids regenerating a finished mesh
+solely because orchestration code changed. Episode 37's stale prepared outputs
+and receipt were moved, preserving relative paths, under
+`reconstruction/incident_reports/track3_baseline/recovery_pose_resolution_760/`;
+CPU preparation is regenerated from the current reconstruction. Its source
+bundles remain intact. The live execution JSON files are authoritative for
+whether this recovery completed; this note is not a claim of final training,
+evaluation, packing, or submission success.
