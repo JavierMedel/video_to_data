@@ -11,6 +11,7 @@ description = "HaMeR per-frame MANO regression driven by SAM2 hand masks"
 requires-python = ">=3.10"
 dependencies = [
     "numpy",
+    "scipy",
     "Pillow",
     "opencv-python",
     "v2d-common",

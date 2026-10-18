@@ -642,3 +642,55 @@ Failed CPU preparations for episodes 6, 8, 10, 14, 15, 16, 19, 20, 28, 30 and
 32 were archived under `contact_schema_recovery_20261018T033953Z/` in the local
 Track 3 report tree, then the controller was restarted to rebuild them.
 Reconstructed bundles and the running reconstruction process were preserved.
+
+### Measured HaMeR batching improvement
+
+Hand regression now batches up to 32 independent crops per model call.
+`masks_to_hands --batch_size` remains configurable; output track IDs, source
+frame IDs, per-hand flipping, crop metadata, and per-frame JSON layout are
+preserved. A final partial batch is flushed, absent/small masks remain absent,
+and existing frame outputs remain resumable. Completed episode bundles are
+not regenerated for this tuning change.
+
+Actual GPU benchmarks use the same Episode 14 images and SAM2 hand masks,
+both hands, and two passes at each batch size. Timings include CPU crop
+preparation and JSON writes, but exclude model loading. On 64 crops (32 per
+hand), median times were:
+
+| Batch | Median seconds | Crops/second |
+|---|---:|---:|
+| 1 | 4.427 | 14.46 |
+| 8 | 3.458 | 18.51 |
+| 16 | 3.415 | 18.74 |
+| 32 | 3.366 | 19.02 |
+
+Batch 32 delivered 1.315x throughput, or about 24% lower elapsed time, on this
+sample. Gains above batch 8 are small and may be within run-to-run variation;
+two passes on one episode are not a broad performance or quality evaluation.
+The measured complete benchmark peaked at 6,480 MiB sampled total GPU memory;
+the 21,000 MiB total watchdog and 70% PyTorch budget stay active. Allocated
+memory is not a target, and utilization still varies during model startup,
+file decoding, CPU alignment, and sequential pose tracking. This benchmark
+does not establish a 31.5% speedup for the full episode or full campaign.
+
+The first batching attempt failed consistency gates. Production therefore
+uses strict FP32 settings (TF32 disabled) and a stable SciPy rotation log map
+that projects minor network matrix roundoff onto SO(3). The previous direct
+trace/sin(theta) conversion amplified float32 errors near 180 degrees. Three
+new tests cover frame/hand mapping, partial batches, resume, empty input, and
+near-pi roundoff. The passing real benchmark keeps identical frame/hand/crop
+metadata, checks both hands' shape and rotations, and limits camera drift to
+1 mm and rotation drift to 0.1 degrees. Observed maximum drift was about
+0.000017 m and 0.00035 degrees. These gates check numerical consistency with
+single-crop inference; they do not measure held-out reconstruction accuracy.
+
+The updated `v2d_track3_hands:blackwell` image contains the batched helper and
+driver; the regular hands Blackwell Dockerfile also copies these sources on
+full rebuild. Live containers keep their already loaded implementation; newly
+started hand containers use the updated image/default. Detailed timings,
+image/command/source-hash provenance, and sampled peak memory are recorded in
+`reconstruction/incident_reports/track3_baseline/hamer_batch_large/benchmark_summary.json`.
+Raw output comparisons and the failed initial benchmark remain in the local
+ignored data/report trees. The reusable benchmark entry point is
+`v2d.hamer.lib.benchmark_hamer`; always use a fresh output directory and the
+shared GPU lock/guard when rerunning it during a campaign.

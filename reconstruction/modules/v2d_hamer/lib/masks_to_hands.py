@@ -51,7 +51,7 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
-from v2d.hamer.lib._hamer import get_model, run_hamer, rotmat_to_axis_angle
+from v2d.hamer.lib._hamer import get_model, run_hamer_batch, rotmat_to_axis_angle
 
 
 def _mask_centroid_and_size(mask: np.ndarray) -> tuple[float, float, float, int]:
@@ -67,6 +67,34 @@ def _mask_centroid_and_size(mask: np.ndarray) -> tuple[float, float, float, int]
     return cx, cy, side, int(xs.size)
 
 
+def _write_prediction(meta, out):
+    oid, is_right, frame_idx, W, H, cx, cy, size, out_path = meta
+    half = float(size) * 0.5
+    record = {
+        "track_id":   oid,
+        "is_right":   is_right,
+        "frame_idx":  frame_idx,
+        "image_size": [int(W), int(H)],
+        "bbox": {
+            "x0": float(cx - half),
+            "y0": float(cy - half),
+            "x1": float(cx + half),
+            "y1": float(cy + half),
+        },
+        "mano": {
+            "betas":         out["betas"].tolist(),
+            "global_orient": rotmat_to_axis_angle(out["global_orient"]).reshape(-1).tolist(),
+            "hand_pose":     rotmat_to_axis_angle(out["hand_pose"]).reshape(-1).tolist(),
+        },
+        "camera": {
+            "cam_t":        out["pred_cam_t_full"].tolist(),
+            "focal_length": out["scaled_focal_length"],
+        },
+    }
+    with open(out_path, "w") as f:
+        json.dump(record, f, indent=2)
+
+
 def masks_to_hands(
     frames_dir: str,
     masks_dir: str,
@@ -75,7 +103,10 @@ def masks_to_hands(
     weights_dir: str,
     bbox_expansion: float = 1.7,
     mask_min_pixels: int = 256,
+    batch_size: int = 32,
 ) -> None:
+    if batch_size < 1:
+        raise ValueError("batch_size must be positive")
     with open(tracks_path) as f:
         tracks = json.load(f)["tracks"]
     hand_tracks = [t for t in tracks if t.get("role", "hand") == "hand"]
@@ -96,6 +127,19 @@ def masks_to_hands(
         print(f"\nTrack {oid} ({side}): {len(mask_files)} mask frames")
 
         n_written = n_skipped = 0
+        pending = []
+
+        def flush_pending():
+            nonlocal n_written
+            if not pending:
+                return
+            crops, metadata = zip(*pending)
+            outputs = run_hamer_batch(model, cfg, crops)
+            for meta, out in zip(metadata, outputs, strict=True):
+                _write_prediction(meta, out)
+            n_written += len(pending)
+            pending.clear()
+
         for mask_path in tqdm(mask_files, desc=f"  track {oid}", ncols=80, unit="frame"):
             frame_idx = int(os.path.splitext(os.path.basename(mask_path))[0])
             frame_path = os.path.join(frames_dir, f"{frame_idx:06d}.png")
@@ -123,34 +167,13 @@ def masks_to_hands(
             cx = float(np.clip(cx, 0.0, W - 1))
             cy = float(np.clip(cy, 0.0, H - 1))
 
-            out = run_hamer(model, cfg, image, cx, cy, size, is_right=is_right)
+            pending.append(((image, cx, cy, size, is_right),
+                            (oid, is_right, frame_idx, W, H, cx, cy, size, out_path)))
+            if len(pending) >= batch_size:
+                flush_pending()
 
-            half = float(size) * 0.5
-            record = {
-                "track_id":   oid,
-                "is_right":   is_right,
-                "frame_idx":  frame_idx,
-                "image_size": [int(W), int(H)],
-                "bbox": {
-                    "x0": float(cx - half),
-                    "y0": float(cy - half),
-                    "x1": float(cx + half),
-                    "y1": float(cy + half),
-                },
-                "mano": {
-                    "betas":         out["betas"].tolist(),
-                    "global_orient": rotmat_to_axis_angle(out["global_orient"]).reshape(-1).tolist(),
-                    "hand_pose":     rotmat_to_axis_angle(out["hand_pose"]).reshape(-1).tolist(),
-                },
-                "camera": {
-                    "cam_t":        out["pred_cam_t_full"].tolist(),
-                    "focal_length": out["scaled_focal_length"],
-                },
-            }
-            with open(out_path, "w") as f:
-                json.dump(record, f, indent=2)
-            n_written += 1
 
+        flush_pending()
         print(f"  track {oid}: wrote {n_written}, skipped {n_skipped} (mask too small)")
 
 
@@ -166,6 +189,7 @@ def main() -> None:
                         help="Dir containing _DATA/hamer_ckpts/.")
     parser.add_argument("--bbox_expansion", type=float, default=1.7)
     parser.add_argument("--mask_min_pixels", type=int, default=256)
+    parser.add_argument("--batch_size", type=int, default=32)
     args = parser.parse_args()
     masks_to_hands(
         frames_dir       = args.frames_dir,
@@ -175,6 +199,7 @@ def main() -> None:
         weights_dir      = args.weights_dir,
         bbox_expansion   = args.bbox_expansion,
         mask_min_pixels  = args.mask_min_pixels,
+        batch_size       = args.batch_size,
     )
 
 
