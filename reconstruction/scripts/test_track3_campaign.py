@@ -180,3 +180,98 @@ def test_reconstruction_detection_does_not_assign_same_box_to_two_objects():
     assert choose_detection([primary, other], [primary]) == other
     with pytest.raises(ValueError, match='distinct confident'):
         choose_detection([primary], [primary])
+
+
+def test_today_curriculum_preserves_all_stages_and_full_budget_schedule():
+    import run_track3_full_campaign as full
+    native = full.REPO / 'robotic_grounding/flash_chord/src/flash_chord/configs/curriculum/tracking_250m_mixed_reset.yaml'
+    thresholds = next(line.split(':', 1)[1].strip() for line in native.read_text().splitlines() if line.startswith('thresholds:'))
+    assert json.loads(thresholds) == full.BASE_THRESHOLDS
+    assert full.scaled_thresholds(full.FULL_STEPS) == full.BASE_THRESHOLDS
+    compressed = full.scaled_thresholds(5000192)
+    assert len(compressed) == len(full.BASE_THRESHOLDS)
+    assert compressed[-1] == 5000192
+    assert all(value % 512 == 0 for value in compressed)
+    assert all(b > a for a, b in zip([0] + compressed[:-1], compressed))
+    with pytest.raises(ValueError):
+        full.scaled_thresholds(5000000)
+
+
+def test_today_reuses_longer_policy_with_truthful_steps_and_cached_evaluation(tmp_path, monkeypatch):
+    import pandas as pd
+    import run_track3_full_campaign as full
+    data, reports = tmp_path / 'data', tmp_path / 'reports'
+    monkeypatch.setattr(full, 'DATA', data)
+    monkeypatch.setattr(full, 'REPORT', reports)
+    monkeypatch.setattr(full, 'PROFILE', 'today')
+    monkeypatch.setattr(full, 'TOTAL_STEPS', 5000192)
+    monkeypatch.setattr(full, 'POLICY_SUBDIR', 'policies_today')
+    monkeypatch.setattr(full, 'RESULTS_SUBDIR', 'results_today')
+    monkeypatch.setattr(full, 'cpath', str)
+    folder = data / 'policies/episode_000038'; folder.mkdir(parents=True)
+    checkpoint = folder / 'policy_60002304.safetensors'; checkpoint.write_bytes(b'policy')
+    reference = data / 'reference.parquet'; reference.write_bytes(b'reference')
+    report = reports / 'episode_000038'; report.mkdir(parents=True)
+    calls = []
+
+    def run(command, log):
+        calls.append(command)
+        assert 'scripts.evaluate_policy' in command
+        assert f'evaluation.checkpoint={checkpoint}' in command
+        result = data / 'results_today'; result.mkdir(exist_ok=True)
+        (result / 'episode_000038.parquet').write_bytes(b'achieved')
+        (result / 'episode_000038.json').write_text('{}')
+
+    frame = pd.DataFrame({'reference_frame': [0, 1], 'object_body_id': [0, 0], 'environment_valid': [True, True]})
+    monkeypatch.setattr(full, 'run', run)
+    monkeypatch.setattr(full.pq, 'ParquetFile', lambda _: SimpleNamespace(read=lambda: SimpleNamespace(to_pandas=lambda: frame)))
+    episode = {'episode_index': 38, 'frames': 2, 'objects_in_scored_order': ['dustpan']}
+    full.train_and_evaluate(episode, reference)
+    receipt = json.loads((report / 'policy.json').read_text())
+    assert receipt['trained_environment_steps'] == 60002304
+    assert receipt['requested_training_steps'] == 5000192
+    assert receipt['full_budget_policy'] is False
+    full.train_and_evaluate(episode, reference)
+    assert len(calls) == 1
+    reference.write_bytes(b'changed reference')
+    full.train_and_evaluate(episode, reference)
+    assert len(calls) == 2
+
+
+def test_upload_dry_run_failure_never_sends_submission(tmp_path, monkeypatch):
+    import run_track3_full_campaign as full
+    monkeypatch.setattr(full, 'REPORT', tmp_path)
+    packet = tmp_path / 'packet.parquet'; packet.write_bytes(b'packet')
+    calls, updates = [], []
+    def run(command, log):
+        calls.append(command)
+        raise RuntimeError('Entry check failed')
+    monkeypatch.setattr(full, 'run', run)
+    full.upload_packed(packet, lambda **kw: updates.append(kw))
+    assert len(calls) == 1 and '--dry-run' in calls[0]
+    assert updates[-1]['state'] == 'PACKED_UPLOAD_BLOCKED'
+    assert not (tmp_path / 'kaggle_receipt.json').exists()
+
+
+def test_upload_always_validates_first_and_existing_receipt_only_polls(tmp_path, monkeypatch):
+    import run_track3_full_campaign as full
+    monkeypatch.setattr(full, 'REPORT', tmp_path)
+    packet = tmp_path / 'packet.parquet'; packet.write_bytes(b'packet')
+    calls, updates = [], []
+    receipt = tmp_path / 'kaggle_receipt.json'
+    def run(command, log):
+        calls.append(command)
+        if '--dry-run' not in command:
+            receipt.write_text(json.dumps({'submissions': {
+                str(i): {'ref': i + 1, 'state': 'COMPLETE', 'public_score': '0'} for i in range(6)}}))
+    monkeypatch.setattr(full, 'run', run)
+    full.upload_packed(packet, lambda **kw: updates.append(kw))
+    assert '--dry-run' in calls[0] and '--wait' in calls[1]
+    assert updates[-1]['state'] == 'SCORED'
+    calls.clear()
+    full.upload_packed(packet, lambda **kw: updates.append(kw))
+    assert len(calls) == 1 and '--poll-receipt' in calls[0]
+    packet.write_bytes(b'different packet')
+    calls.clear()
+    full.upload_packed(packet, lambda **kw: updates.append(kw))
+    assert not calls and updates[-1]['state'] == 'UPLOAD_REQUIRES_REVIEW'

@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-10-18T14:18:07.502464+00:00",
+  "state": "OBSERVED_TRAINING_PROGRESS",
+  "profile": "today",
+  "gpu_memory_guard_mib": 21000,
+  "native_heartbeat": {
+    "run_id": "f3061fd307d349ce8e9243bf4c4e6864",
+    "unix_time": 1792333086.4568727,
+    "environment_steps": 714240,
+    "source": "CUDA_device_memory_info",
+    "memory_used_mib": 11294.4375,
+    "memory_total_mib": 24435.4375
+  },
+  "training_steps_per_episode": 5000192,
+  "original_full_budget_steps": 250003456,
+  "episode_38_verified_rollout_frames": 263,
+  "reconstruction_episodes_complete": 20,
+  "prepared_episodes": 20,
+  "test_results": {
+    "campaign_and_guard": 44,
+    "native_progress_and_heartbeat": 6
+  },
+  "source_sha256": {
+    "reconstruction/scripts/run_track3_policy_stage.py": "40371efb4564727763bec3b0e1e76651d76aeb26ffb1c810150a06fb0b78cf31",
+    "reconstruction/scripts/run_track3_full_campaign.py": "94afb946a92f49c6e30ce1c139be3ecc0acebbd9db7550656c40e20a3536d63e",
+    "robotic_grounding/flash_chord/src/flash_chord/training/progress.py": "b4bd375497d3cc5bf799b9ce6793cf4cb94f483af56e4a50d56ba9b7f126a109",
+    "robotic_grounding/flash_chord/src/flash_chord/training/gpu_heartbeat.py": "e2262f51ad996d00dcf0ff17a8d3987f5bb41166e9c3cd6197403778745325f9"
+  },
+  "submission_ready": false,
+  "uploaded": false,
+  "kaggle_entry_check": "six Track 3 competitions unjoined at latest preflight"
+}

@@ -9,7 +9,42 @@ simulation, policy training, evaluation and submission happen on this laptop.
 Every future plan should distinguish observed artifacts from proposed work and
 state which local files and validations its implementation will require.
 
-## Scope and actual progress
+## Latest execution snapshot — October 18
+
+- All **20/20 episodes are reconstructed and CPU-prepared**. The roster remains
+  36 object instances and 9,120 required pose rows.
+- The user requested a submission today. The active command is
+  `reconstruction/.venv/bin/python reconstruction/scripts/run_track3_full_campaign.py --profile today --upload`.
+  Its authoritative status is `reconstruction/incident_reports/track3_baseline/today_campaign/execution.json`,
+  not the stopped `full_campaign/execution.json` from the longer-budget run.
+- This baseline targets **5,000,192 steps per new episode**, with all native
+  curriculum phases compressed into that budget. The original full target is
+  250,003,456 steps. Do not describe the baseline as completed full-budget training.
+- Episode 38 has a verified, genuine 263-frame unassisted rollout from its
+  existing 60,002,304-step policy. Its local success rate is zero. Episode 37 is
+  the first new short-budget training job; read its live log for actual progress.
+- Both Linux and Windows external `nvidia-smi` queries blocked under load while
+  fresh training still advanced to 150K steps. Loss of NVML telemetry did not
+  establish stalled CUDA execution. The trainer now publishes device-wide CUDA
+  total/free memory every two seconds; the guard accepts only fresh, valid
+  samples matching its unique run ID. Windows-native `nvidia-smi.exe` remains
+  a fallback. The 21,000 MiB limit and sustained-monitor-loss stop remain active.
+  Read `today_campaign/episode_XXXXXX/training/gpu_heartbeat.json` for live
+  environment steps and memory; `gpu.csv` has `N/A` utilization/power for this
+  CUDA memory source, not fabricated percentages. Verify under-load progress
+  before claiming this replacement monitor is stable.
+- Kaggle's fresh entry check still reports all six Track 3 competitions unjoined
+  for `iorideepp`. Upload requires the user's browser acceptance; credentials
+  are authenticated. A packed file must pass the official dry-run before upload.
+- Producing code, benchmark evidence, native checkpoints, and all earlier stop
+  reports remain separate. Do not restart reconstruction or run the 250M full
+  campaign alongside today's queue; the shared GPU lock serializes whole policy
+  jobs and a full-budget run would block the deadline baseline.
+
+The sections below retain historical setup and recovery evidence. Prefer the
+latest section and timestamped execution JSON when older progress counts differ.
+
+## Initial scope and historical progress
 
 Track 3 was started at the user's request on October 17, 2026. The user also
 requested using the available GPU capacity. This campaign is independent of
@@ -694,3 +729,154 @@ Raw output comparisons and the failed initial benchmark remain in the local
 ignored data/report trees. The reusable benchmark entry point is
 `v2d.hamer.lib.benchmark_hamer`; always use a fresh output directory and the
 shared GPU lock/guard when rerunning it during a campaign.
+
+### All reconstruction complete; training monitor interruption and recovery
+
+The reconstruction campaign completed all 20 scored episodes at
+2026-10-18T06:08:55Z with no failed episodes. CPU preparation also completed all
+20. These are references, not final achieved-policy submissions. Episode 38's
+full training run reached approximately 60 million of 250,003,456 steps; the
+saved native learner checkpoint is `state_60002304.safetensors`, alongside
+the matching policy checkpoint. Training was around 6,379 environment steps/s
+near the last logged progress, so the remaining full-budget policy workload
+extends well beyond a few hours.
+
+The campaign stopped at 2026-10-18T08:52:01Z because the safety monitor's
+`nvidia-smi` query exceeded its five-second timeout. Its last normal readings
+were about 10,296 MiB and 99% GPU use, below the 21,000 MiB watchdog limit.
+The stop report establishes loss of telemetry, not a measured VRAM overflow.
+The guard previously treated one failed query as fatal. The checkpoint file's
+header/data extent was checked and its metadata confirms 60,002,304 steps,
+936,728 optimizer updates, and curriculum stage 3. Replay is not included in
+that checkpoint, so a resume restores learner progress but rebuilds replay.
+
+An initial recovery attempt restored the checkpoint and compiled the learner,
+but queries again blocked in WSL driver calls (`dxgvmb_send_sync_msg` and
+`dxgkio_create_device`). Docker briefly reported the workload PID as a zombie
+and could not immediately kill it. Host orchestration was stopped, the stuck
+container eventually cleared, and GPU queries became responsive again. This
+is evidence of a driver/runtime stall; its underlying cause is not established.
+That resume also logged a failed 4 GiB allocation request before restoration
+completed; do not treat that warning alone as the cause of the original stop.
+
+The policy watchdog now uses one combined safety/telemetry query per second,
+instead of two independent polling threads. Each query has a five-second
+timeout. One or two consecutive query failures are recorded as warnings; a
+valid sample resets the failure count. Three consecutive failures still halt
+the job, and a confirmed reading at or above 21,000 MiB still halts immediately.
+Non-finite, negative, malformed, and failed readings are never accepted as safe.
+Timeout cleanup sends SIGKILL without waiting for a query process that may be
+stuck in uninterruptible driver sleep. Docker policy containers now use `--init`
+to improve signal forwarding and child reaping. Neither change cures a GPU
+driver fault or justifies running indefinitely without monitoring.
+
+Seven watchdog tests cover transient recovery, sustained monitoring loss,
+failure-counter reset, memory-limit stops, invalid samples, and avoiding an
+unbounded wait during timeout cleanup. A small CUDA matrix-multiplication
+health check succeeded (`CudaDevice(0)`, result 1024.0), followed by a successful
+GPU telemetry probe. The full controller was then relaunched with explicit
+`training.resume=true` and the 60,002,304-step checkpoint. Read the live training
+log/execution JSON before claiming subsequent progress or successful recovery.
+The earlier stop and first resume evidence are archived under
+`reconstruction/incident_reports/track3_baseline/monitor_timeout_recovery_20261018T134153Z/`.
+No full-budget policy evaluation, completed submission pack, or upload is
+established by this recovery note.
+
+### October 18 submission-today baseline
+
+The user subsequently requested resumption and completion of a submission on
+October 18, Toronto time. The previous 250M-step-per-sequence recipe is not a
+same-day workload for all 20 policies at the measured speed. A separate
+`--profile today` campaign therefore targets 5,000,192 steps per remaining
+episode, rounded to 512 worlds. This is a deadline baseline, not completion of
+the original 250M budgets and not a promise of strong leaderboard scores.
+
+Every one of the 11 native curriculum stages is retained. Its cumulative
+thresholds are scaled and rounded to whole 512-world collections, preserving
+their order and the final zero-assistance phases. New short-run checkpoints
+are saved about every million steps. The first episode can reuse its existing
+60,002,304-step policy; its recorded step count remains truthful. Its actual
+unassisted rollout already contains all 263 frames, no invalid worlds, and a
+zero local success rate. This result is a baseline candidate, not an official
+held-out score or evidence that the model is good enough for a strong entry.
+
+All 20 full CPU-preparation receipts are reused only when source bundle and
+canonical reference hashes still match. New policies are under
+`robotic_grounding/data/track3/policies_today/`, rollouts under `results_today/`,
+and the packed file under `submission_today/track3_submission.parquet`.
+The original `policies/` and full campaign artifacts are preserved. Live
+progress is `reconstruction/incident_reports/track3_baseline/today_campaign/execution.json`.
+
+Docker Desktop was restarted through its installed per-user Windows CLI after
+the repeated WSL driver stalls. The existing policy then completed a real
+one-world evaluation. A fresh short-budget policy job for Episode 37 was
+launched; consult its live log before claiming it progressed successfully.
+The 4 GiB allocator warning also appeared in the original run that completed
+60M steps, so it alone is not evidence of a newly fatal memory overflow.
+
+The runner can now be invoked with `--profile today --upload`. After every
+episode has a real, valid rollout, it uses the official packer with all 36
+meshes and writes an episode/checkpoint map. Upload uses the official
+`submit/v2d_submit.py` tool: dry-run validation and entry/quota checks happen
+before any upload, all six metric receipts are retained, and subsequent runs
+poll the existing IDs rather than resubmitting. A different packet with an
+existing receipt stops for review. Failed/ambiguous uploads also stop for
+inspection instead of consuming more quota blindly. Missing policies/frames
+or invalid worlds still prevent packing. The short profile does not substitute
+reference poses for achieved trajectories.
+
+Current account preflight still reports `iorideepp` unjoined on all six Track 3
+competitions. Browser rules acceptance and organizer registration were requested
+from the user; the agent must not accept those on the user's behalf. The entry
+check must succeed before upload. The producing repository was verified public
+through the GitHub repository API, and code commits must be pushed before the
+packet identifies them. The official kit submission skill is
+`reconstruction/v2d_submission_kit/v2d_submission_kit/skills/v2d-submit/SKILL.md`.
+Its Track 3 workflow includes mesh warning review, a complete combined Parquet,
+all-six-competition entry checks, dry-run validation, and exact receipt polling.
+
+Campaign and watchdog tests cover the scaled full/short curricula, truthful
+longer-checkpoint reuse, hash-based evaluation cache invalidation, failed dry-run
+upload prevention, and duplicate-upload prevention. The observed checkpoint
+and GPU-rate estimates suggest roughly 5–10 hours for the remaining short
+baseline work plus evaluation/packing, subject to the unresolved driver stability
+and per-episode physics cost. This estimate is not a guarantee of completion
+today. Neither `profile=today` nor successful local packing proves Kaggle has
+received or scored the file; inspect the upload receipt and execution state.
+
+### CUDA memory heartbeat instead of blocked NVML queries
+
+The fresh short training job advanced to 150,016 steps while external queries
+timed out. Repeating with the Windows-native executable showed the same
+symptom. This narrowed the observed fault to the external monitoring path;
+earlier descriptions of a wholly stalled training process were not established
+by those query waits. The guard stopped both attempts and their sub-million-step
+work had not yet reached the first checkpoint. All 20 prepared references and
+the original 60M-step checkpoint remain intact.
+
+An optional `flash_chord.training.gpu_heartbeat` hook now runs from the native
+training progress reporter. It reads Warp's CUDA device `total_memory` and
+`free_memory` properties (the driver's device-wide OS memory information), not
+just JAX allocator bytes, and atomically publishes memory and completed steps
+every two seconds. It does not change actions, losses, rewards, reference data,
+or curriculum. Without the heartbeat environment variables the hook is disabled
+and never initializes CUDA. A real-device probe returned 1,348.4375 MiB used
+and 24,435.4375 MiB CUDA-visible total before the model loaded.
+
+Each policy container gets a unique heartbeat ID and a report file path through
+environment variables. The host guard rejects a mismatched ID, samples older
+than six seconds, future-dated samples, malformed data, non-finite values, and
+impossible used/total ranges. Fresh valid samples still trigger an immediate
+stop at or above 21,000 MiB. Missing/stale heartbeat data invokes the bounded
+external fallback; if it times out but a fresh native sample has arrived, the
+guard uses that real sample. Sustained loss of both paths still stops the job.
+GPU utilization and power are intentionally unavailable for the CUDA-only
+heartbeat and are recorded as `N/A`; memory allocation is not GPU utilization.
+
+The combined suite passed 44 host campaign/guard tests and six native
+progress/heartbeat tests. These include native-memory cap enforcement without
+external queries, stale/run-ID rejection, atomic rate-limited writing, and safe
+handling of a failed CUDA memory sample. The today controller was relaunched
+after archiving prior monitor stop records. Live under-load progress remains
+the evidence needed to establish successful recovery; no full submission is
+implied merely by this code change.
