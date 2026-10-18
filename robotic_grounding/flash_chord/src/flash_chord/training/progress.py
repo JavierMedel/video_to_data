@@ -8,7 +8,7 @@ from __future__ import annotations
 import time
 from pathlib import Path
 from typing import Protocol
-from flash_chord.training.gpu_heartbeat import maybe_write_gpu_heartbeat
+from flash_chord.training.gpu_heartbeat import maybe_write_gpu_heartbeat, start_gpu_heartbeat
 
 
 class TrainingProgress(Protocol):
@@ -40,6 +40,7 @@ class ConsoleTrainingProgress:
         """Print the initial state and initialize throughput/ETA timing."""
         self._validate_steps(completed_environment_steps)
         maybe_write_gpu_heartbeat(completed_environment_steps)
+        start_gpu_heartbeat()
         self._start_environment_steps = completed_environment_steps
         self._last_environment_steps = completed_environment_steps
         self._next_percent = min(100, completed_environment_steps * 100 // self.total_environment_steps + 1)

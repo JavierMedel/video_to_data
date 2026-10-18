@@ -41,3 +41,21 @@ def test_disabled_heartbeat_never_queries_cuda(monkeypatch):
         raise AssertionError('Disabled progress telemetry must not initialize CUDA')
     monkeypatch.setattr(heartbeat, '_query_memory', fail)
     heartbeat.maybe_write_gpu_heartbeat(1)
+
+
+def test_background_sampler_starts_only_when_enabled(monkeypatch):
+    workers = []
+    class Worker:
+        def __init__(self, **kwargs):
+            workers.append(kwargs)
+        def start(self):
+            pass
+    monkeypatch.setattr(heartbeat, '_worker', None)
+    monkeypatch.setattr(heartbeat.threading, 'Thread', Worker)
+    monkeypatch.delenv('V2D_GPU_HEARTBEAT_PATH', raising=False)
+    heartbeat.start_gpu_heartbeat()
+    assert not workers
+    monkeypatch.setenv('V2D_GPU_HEARTBEAT_PATH', '/tmp/heartbeat.json')
+    heartbeat.start_gpu_heartbeat()
+    heartbeat.start_gpu_heartbeat()
+    assert len(workers) == 1 and workers[0]['daemon']

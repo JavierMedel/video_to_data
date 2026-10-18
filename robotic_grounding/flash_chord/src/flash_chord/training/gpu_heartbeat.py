@@ -7,8 +7,25 @@ import math
 import os
 from pathlib import Path
 import time
+import threading
 
 _last_write = float('-inf')
+_steps = 0
+_lock = threading.RLock()
+_worker = None
+
+
+def start_gpu_heartbeat() -> None:
+    """Keep sampling real CUDA memory during checkpoint I/O and finalization."""
+    global _worker
+    if not os.environ.get('V2D_GPU_HEARTBEAT_PATH') or _worker is not None:
+        return
+    def sample_forever():
+        while True:
+            time.sleep(2)
+            maybe_write_gpu_heartbeat(_steps)
+    _worker = threading.Thread(target=sample_forever, name='cuda-memory-heartbeat', daemon=True)
+    _worker.start()
 
 
 def _query_memory():
@@ -19,6 +36,15 @@ def _query_memory():
 
 
 def maybe_write_gpu_heartbeat(environment_steps: int) -> None:
+    global _steps
+    if not os.environ.get('V2D_GPU_HEARTBEAT_PATH'):
+        return
+    with _lock:
+        _steps = max(_steps, environment_steps)
+        _write_gpu_heartbeat(_steps)
+
+
+def _write_gpu_heartbeat(environment_steps: int) -> None:
     global _last_write
     target = os.environ.get('V2D_GPU_HEARTBEAT_PATH')
     if not target or time.monotonic() - _last_write < 2:
