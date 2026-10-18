@@ -69,6 +69,18 @@ def _model_inputs(pose_data) -> tuple[torch.Tensor, torch.Tensor]:
     return input1.contiguous(), input2.contiguous()
 
 
+def _crop_inputs_in_chunks(make_crop, poses, **kwargs):
+    """Bound rasterizer/crop workspace without dropping or reordering poses."""
+    first, second = [], []
+    for start in range(0, len(poses), REFINER_MAX_BATCH):
+        data = make_crop(INPUT_SIZE, poses[start:start + REFINER_MAX_BATCH], **kwargs)
+        input1, input2 = _model_inputs(data)
+        first.append(input1)
+        second.append(input2)
+        del data
+    return torch.cat(first, dim=0), torch.cat(second, dim=0)
+
+
 def _run_refiner_chunks(
     runner: TensorRTModule,
     input1: torch.Tensor,
@@ -122,13 +134,13 @@ class TensorRTPoseRefinePredictor:
         xyz_tensor = torch.as_tensor(xyz_map, device="cuda", dtype=torch.float32)
 
         for _ in range(iteration):
-            pose_data = make_refine_crop_data(
-                self.cfg.input_resize,
+            input1, input2 = _crop_inputs_in_chunks(
+                make_refine_crop_data,
                 poses,
-                mesh,
-                torch.as_tensor(rgb, device="cuda", dtype=torch.float32),
-                depth_tensor,
-                K,
+                mesh=mesh,
+                rgb=torch.as_tensor(rgb, device="cuda", dtype=torch.float32),
+                depth=depth_tensor,
+                K=K,
                 crop_ratio=self.cfg.crop_ratio,
                 xyz_map=xyz_tensor,
                 normal_map=None,
@@ -138,7 +150,6 @@ class TensorRTPoseRefinePredictor:
                 dataset=self.dataset,
                 mesh_diameter=mesh_diameter,
             )
-            input1, input2 = _model_inputs(pose_data)
             outputs = _run_refiner_chunks(self.runner, input1, input2)
             # The commercial checkpoint predicts translation in units of
             # half the mesh diameter. This is the normalize_xyz branch of
@@ -147,7 +158,7 @@ class TensorRTPoseRefinePredictor:
             rot_delta = torch.tanh(outputs["rot"].float()) * self.cfg.rot_normalizer
             rot_matrix_delta = so3_exp_map(rot_delta).permute(0, 2, 1)
             poses = egocentric_delta_pose_to_pose(
-                pose_data.poseA,
+                poses,
                 trans_delta=trans_delta,
                 rot_mat_delta=rot_matrix_delta,
             ).reshape(len(ob_in_cams), 4, 4)
@@ -190,13 +201,12 @@ class TensorRTScorePredictor:
             )
         if mesh_tensors is None:
             mesh_tensors = make_mesh_tensors(mesh)
-        pose_data = make_score_crop_data(
-            self.cfg.input_resize,
-            torch.as_tensor(ob_in_cams, device="cuda", dtype=torch.float32),
-            mesh,
-            torch.as_tensor(rgb, device="cuda", dtype=torch.float32),
-            torch.as_tensor(depth, device="cuda", dtype=torch.float32),
-            K,
+        poses = torch.as_tensor(ob_in_cams, device="cuda", dtype=torch.float32)
+        crop_kwargs = dict(
+            mesh=mesh,
+            rgb=torch.as_tensor(rgb, device="cuda", dtype=torch.float32),
+            depth=torch.as_tensor(depth, device="cuda", dtype=torch.float32),
+            K=K,
             crop_ratio=self.cfg.crop_ratio,
             normal_map=None,
             mesh_diameter=mesh_diameter,
@@ -205,7 +215,11 @@ class TensorRTScorePredictor:
             dataset=self.dataset,
             cfg=self.cfg,
         )
-        input1, input2 = _model_inputs(pose_data)
+        if get_vis:
+            pose_data = make_score_crop_data(self.cfg.input_resize, poses, **crop_kwargs)
+            input1, input2 = _model_inputs(pose_data)
+        else:
+            input1, input2 = _crop_inputs_in_chunks(make_score_crop_data, poses, **crop_kwargs)
         scores = self.runner(input1, input2)["score_logit"].float().reshape(-1)
         # Preserve the offset used by NVLabs ScorePredictor. It does not affect
         # ranking or particle softmax weights, but keeps diagnostics comparable.

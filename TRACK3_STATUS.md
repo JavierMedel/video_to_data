@@ -598,3 +598,23 @@ CPU preparation is regenerated from the current reconstruction. Its source
 bundles remain intact. The live execution JSON files are authoritative for
 whether this recovery completed; this note is not a claim of final training,
 evaluation, packing, or submission success.
+
+Reducing the image alone was insufficient: the next Episode 14 attempt still
+hit 21,876 MiB. The registration renderer constructed crops for all 252 pose
+hypotheses before TensorRT's existing inference batching. `trt_predictors.py`
+now also constructs render/crop inputs in groups of at most 42, preserving all
+hypotheses and their original order. Refiner inference retains its 42-pose
+limit; scorer inputs are concatenated before the single global scorer call so
+cross-candidate scoring is preserved. The optional debug scorer visualization
+continues to use the original full-crop path; normal campaign tracking disables
+that visualization.
+
+The local FoundationPose image was refreshed with the changed predictor file,
+retaining its compiled extensions. The regular Blackwell Dockerfile also copies
+this source file on a full rebuild. All 10 predictor tests passed inside the
+updated image, including 1/43/252-pose crop ordering and batch bounds. The actual
+Episode 14 retry passed registration and reached source frame 22/158 with about
+4,612 MiB observed GPU usage. That observation establishes progress past the
+previous failure, not completion or tracking accuracy. Earlier watchdog reports
+are archived under the recovery directory. Check live execution JSON for the
+latest campaign result.

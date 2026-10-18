@@ -14,8 +14,28 @@ from v2d.foundation_pose.lib.trt_predictors import (
     REFINER_MAX_BATCH,
     SCORER_MAX_BATCH,
     _model_inputs,
+    _crop_inputs_in_chunks,
     _run_refiner_chunks,
 )
+
+
+@pytest.mark.parametrize('batch', [1, 43, 252])
+def test_crop_workspace_is_bounded_and_keeps_every_hypothesis(batch):
+    seen = []
+    poses = torch.arange(batch, dtype=torch.float32)
+
+    def crop(render_size, chunk):
+        seen.append(len(chunk))
+        values = chunk[:, None, None, None].expand(-1, 3, 2, 2)
+        return SimpleNamespace(rgbAs=values, xyz_mapAs=values + 1000,
+                               rgbBs=values + 2000, xyz_mapBs=values + 3000)
+
+    first, second = _crop_inputs_in_chunks(crop, poses)
+    assert max(seen) <= REFINER_MAX_BATCH
+    assert sum(seen) == batch
+    assert torch.equal(first[:, 0, 0, 0], poses)
+    assert torch.equal(first[:, 3, 0, 0], poses + 1000)
+    assert torch.equal(second[:, 0, 0, 0], poses + 2000)
 
 
 @pytest.mark.parametrize("batch", [1, 20, 42, 43, 252])
