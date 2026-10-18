@@ -12,6 +12,7 @@ pytest.importorskip("nvdiffrast")
 
 from v2d.foundation_pose.lib.trt_predictors import (
     REFINER_MAX_BATCH,
+    CROP_MAX_BATCH,
     SCORER_MAX_BATCH,
     _model_inputs,
     _crop_inputs_in_chunks,
@@ -19,7 +20,7 @@ from v2d.foundation_pose.lib.trt_predictors import (
 )
 
 
-@pytest.mark.parametrize('batch', [1, 43, 252])
+@pytest.mark.parametrize('batch', [1, 43, 85, 252])
 def test_crop_workspace_is_bounded_and_keeps_every_hypothesis(batch):
     seen = []
     poses = torch.arange(batch, dtype=torch.float32)
@@ -31,7 +32,7 @@ def test_crop_workspace_is_bounded_and_keeps_every_hypothesis(batch):
                                rgbBs=values + 2000, xyz_mapBs=values + 3000)
 
     first, second = _crop_inputs_in_chunks(crop, poses)
-    assert max(seen) <= REFINER_MAX_BATCH
+    assert max(seen) <= CROP_MAX_BATCH
     assert sum(seen) == batch
     assert torch.equal(first[:, 0, 0, 0], poses)
     assert torch.equal(first[:, 3, 0, 0], poses + 1000)

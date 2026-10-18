@@ -548,8 +548,9 @@ loader's object motions equal this transform applied to the raw bundle for
 every source frame, and that both objects' hand tracks agree in one world.
 
 Object bodies are concatenated in scored slot order. Per-body mesh/URDF/radius
-metadata stays separate; active contact IDs are remapped to slot+1, and contact
-slots from both objects are retained. One merged episode is retargeted and
+metadata stays separate; active contact IDs are remapped to slot+1. The native
+16 hand-link contact slots select the nearest active object per link, retaining
+its corresponding hand/object positions and normals. One merged episode is retargeted and
 trained, so two-object scenes are not replaced by independent single-object
 policy rollouts. Each instance gets a unique mesh filename; public development
 scans and other episodes' reconstructed meshes are never substituted.
@@ -618,3 +619,26 @@ Episode 14 retry passed registration and reached source frame 22/158 with about
 previous failure, not completion or tracking accuracy. Earlier watchdog reports
 are archived under the recovery directory. Check live execution JSON for the
 latest campaign result.
+
+### Higher crop throughput and two-object preparation repair
+
+Crop preparation now uses batches up to 84 poses; TensorRT refiner inference
+still uses its engine limit of 42. All 252 registration hypotheses remain in
+order and the scorer sees them together. The GPU watchdog remains 21,000 MiB;
+larger crop batches trade additional workspace for fewer renderer launches.
+Eleven predictor tests pass, including crop batch boundary 85. This change
+applies to newly started FoundationPose containers; it does not increase the
+batch of a pose job already running. Higher batch capacity is not evidence of
+a measured wall-clock speedup or continuous GPU saturation.
+
+While tuning GPU use, CPU preparation was found to fail on the two-object
+episodes: concatenating two sets of 16 contacts violated ManoSharpa's fixed
+16-link Arrow schema. The merge now chooses the nearest active body contact
+per frame/link, gathers matching hand/object contact coordinates and normals,
+and preserves zero IDs for inactive contacts. Both object trajectories and
+meshes remain separate, and fingertip distances use the nearest object. Safe
+body names are also merged in scored order. The 27 campaign tests pass.
+Failed CPU preparations for episodes 6, 8, 10, 14, 15, 16, 19, 20, 28, 30 and
+32 were archived under `contact_schema_recovery_20261018T033953Z/` in the local
+Track 3 report tree, then the controller was restarted to rebuild them.
+Reconstructed bundles and the running reconstruction process were preserved.

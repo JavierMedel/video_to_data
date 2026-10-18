@@ -32,6 +32,7 @@ from v2d.foundation_pose.lib.trt_inference import TensorRTModule
 
 INPUT_SIZE = (160, 160)
 REFINER_MAX_BATCH = 42
+CROP_MAX_BATCH = 84
 SCORER_MAX_BATCH = 252
 
 
@@ -72,8 +73,8 @@ def _model_inputs(pose_data) -> tuple[torch.Tensor, torch.Tensor]:
 def _crop_inputs_in_chunks(make_crop, poses, **kwargs):
     """Bound rasterizer/crop workspace without dropping or reordering poses."""
     first, second = [], []
-    for start in range(0, len(poses), REFINER_MAX_BATCH):
-        data = make_crop(INPUT_SIZE, poses[start:start + REFINER_MAX_BATCH], **kwargs)
+    for start in range(0, len(poses), CROP_MAX_BATCH):
+        data = make_crop(INPUT_SIZE, poses[start:start + CROP_MAX_BATCH], **kwargs)
         input1, input2 = _model_inputs(data)
         first.append(input1)
         second.append(input2)

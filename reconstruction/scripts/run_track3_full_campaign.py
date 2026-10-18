@@ -90,14 +90,25 @@ def merge_rows(rows, episode):
                 raise ValueError('Object bundles do not share one hand/world reference')
     for key in ('object_body_position', 'object_body_wxyz'):
         base[key] = np.concatenate([np.asarray(r[key]) for r in rows], axis=1).tolist()
-    for key in ('object_body_names', 'object_mesh_paths', 'object_urdf_paths', 'object_mesh_radius'):
+    for key in ('object_body_names', 'object_mesh_paths', 'object_urdf_paths', 'object_mesh_radius', 'safe_object_body_names'):
+        if key not in base: continue
         base[key] = [x for r in rows for x in r[key]]
     for side in ('left', 'right'):
         prefix = f'mano_{side}_object_contact_'
-        for suffix in ('positions', 'normals'):
-            base[prefix + suffix] = np.concatenate([np.asarray(r[prefix + suffix]) for r in rows], axis=1).tolist()
-        base[prefix + 'part_ids'] = np.concatenate([
-            np.where(np.asarray(r[prefix + 'part_ids']) > 0, i + 1, 0) for i, r in enumerate(rows)], axis=1).tolist()
+        # Native ManoSharpa has one contact per MANO link (16), regardless
+        # of object count. Select the nearest active body contact per link.
+        active = np.stack([np.asarray(r[prefix + 'part_ids']) > 0 for r in rows])
+        distances = np.stack([np.sum((np.asarray(r[prefix + 'positions']) -
+            np.asarray(r[f'mano_{side}_link_contact_positions'])) ** 2, axis=-1) for r in rows])
+        choice = np.argmin(np.where(active, distances, np.inf), axis=0)
+        valid = active.any(axis=0)
+        for kind in ('object', 'link'):
+            for suffix in ('positions', 'normals'):
+                key = f'mano_{side}_{kind}_contact_{suffix}'
+                values = np.stack([np.asarray(r[key]) for r in rows])
+                selected = np.take_along_axis(values, choice[None, ..., None], axis=0)[0]
+                base[key] = np.where(valid[..., None], selected, 0).tolist()
+        base[prefix + 'part_ids'] = np.where(valid, choice + 1, 0).tolist()
         base[f'mano_{side}_tips_distance'] = np.min([np.asarray(r[f'mano_{side}_tips_distance']) for r in rows], axis=0).tolist()
     base.update(sequence_id=f'episode_{episode["episode_index"]:06d}', robot_name='sharpa_wave',
                 object_name=f'episode_{episode["episode_index"]:06d}',

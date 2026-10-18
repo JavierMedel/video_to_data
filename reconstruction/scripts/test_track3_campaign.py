@@ -152,14 +152,22 @@ def test_multi_object_merge_preserves_shared_world_and_contact_body_ids():
         row[f'mano_{side}_joints'] = [[[0., 0., 1.]], [[0., 0., 1.]]]
         row[f'mano_{side}_object_contact_positions'] = [[[0., 0., 1.]], [[0., 0., 1.]]]
         row[f'mano_{side}_object_contact_normals'] = [[[0., 0., 1.]], [[0., 0., 1.]]]
+        row[f'mano_{side}_link_contact_positions'] = [[[0., 0., .9]], [[0., 0., .9]]]
+        row[f'mano_{side}_link_contact_normals'] = [[[0., 0., -1.]], [[0., 0., -1.]]]
         row[f'mano_{side}_object_contact_part_ids'] = [[1], [0]]
         row[f'mano_{side}_tips_distance'] = [[.1], [.2]]
     second = copy.deepcopy(row)
     second.update(object_body_names=['second'], object_mesh_paths=['second.obj'], object_urdf_paths=['second.urdf'])
     second['object_body_position'] = [[[.25, 0., 1.]], [[.25, 0., 1.]]]
+    for side in ('left', 'right'):
+        second[f'mano_{side}_object_contact_positions'] = [[[0., 0., .91]], [[0., 0., .91]]]
+        second[f'mano_{side}_object_contact_part_ids'] = [[1], [0]]
     out = full.merge_rows([row, second], {'episode_index': 10, 'frames': 2})
     assert out['object_body_position'][0] == [[0., 0., 1.], [.25, 0., 1.]]
-    assert out['mano_left_object_contact_part_ids'] == [[1, 2], [0, 0]]
+    assert out['mano_left_object_contact_part_ids'] == [[2], [0]]
+    assert out['mano_left_object_contact_positions'][0] == [[0., 0., .91]]
+    assert out['mano_left_link_contact_positions'][0] == [[0., 0., .9]]
+    assert out['mano_left_object_contact_positions'][1] == [[0., 0., 0.]]
     second['mano_left_joints'][0][0][0] = .1
     with pytest.raises(ValueError, match='one hand/world'):
         full.merge_rows([row, second], {'episode_index': 10, 'frames': 2})
