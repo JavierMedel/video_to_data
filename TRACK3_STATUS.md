@@ -880,3 +880,22 @@ handling of a failed CUDA memory sample. The today controller was relaunched
 after archiving prior monitor stop records. Live under-load progress remains
 the evidence needed to establish successful recovery; no full submission is
 implied merely by this code change.
+
+## October 18 evening recovery (01:10 UTC October 19)
+
+The today baseline completed real rollouts for episodes 38, 37, 14, and 10.
+Episode 15 stopped after loss of both CUDA-heartbeat and external monitoring;
+its last recorded memory was 11,046 MiB, not a recorded 21,000 MiB breach.
+Saved checkpoints remain available. No Track 3 packet has been uploaded.
+Kaggle entry was verified for all six competitions after the participant
+accepted their rules. Docker Desktop was subsequently found stopped, was
+started again, and a real Warp GPU memory probe succeeded on the RTX 5090.
+
+The campaign now retries monitoring-only exceptions up to three times per
+episode, requiring a responsive Docker daemon and no surviving policy container.
+It archives the original guard report and resumes the latest checkpoint through
+the existing native resume path. Actual memory-cap stops and other failures
+remain stopping conditions. This is bounded recovery, not a confirmed fix for
+the WSL driver/monitoring problem. The campaign/guard suite passed 46 tests.
+The live execution JSON is authoritative for progress, and an all-six-metric
+scored Kaggle receipt is required before claiming submission completion.

@@ -318,6 +318,32 @@ def train_and_evaluate(episode, reference):
          'learned_policy': True, 'official_held_out_score': False})
 
 
+def train_with_monitor_recovery(episode, reference):
+    """Retry monitoring-only interruptions, never memory-cap/physics failures."""
+    report = REPORT / f'episode_{episode["episode_index"]:06d}'
+    for attempt in range(4):
+        try:
+            return train_and_evaluate(episode, reference)
+        except Exception:
+            guards = list(report.glob('*/memory_guard.json'))
+            if attempt == 3 or not guards:
+                raise
+            if any(not json.loads(p.read_text()).get('reason', '').startswith('GPU monitor unavailable') for p in guards):
+                raise
+            # Require Docker to be responsive and the previous container gone.
+            running = subprocess.check_output(['docker', 'ps', '--filter',
+                'name=^/v2d-track3-policy-stage$', '--format', '{{.Names}}'], text=True, timeout=15)
+            if running.strip():
+                raise RuntimeError('Previous GPU container still exists; automatic recovery stopped')
+            stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+            for guard in guards:
+                archive = guard.parent / 'previous_attempts' / stamp
+                archive.mkdir(parents=True, exist_ok=True)
+                guard.rename(archive / guard.name)
+            print(f'MONITOR_RECOVERY {episode["episode_index"]} retry {attempt + 1}/3; resuming saved checkpoint', flush=True)
+            time.sleep(10)
+
+
 def main():
     global REPORT, TOTAL_STEPS, PROFILE, POLICY_SUBDIR, RESULTS_SUBDIR, SUBMISSION_SUBDIR
     parser = argparse.ArgumentParser(description=__doc__)
@@ -364,7 +390,7 @@ def main():
         if index not in prepared: continue
         update(state='TRAINING_AND_EVALUATING', active_episode_index=index)
         try:
-            train_and_evaluate(episode, prepared[index]); state['evaluated'].append(index)
+            train_with_monitor_recovery(episode, prepared[index]); state['evaluated'].append(index)
         except Exception as exc:
             state['failed'][str(index)] = f'policy: {exc}'
             print('POLICY_FAILED', index, str(exc), flush=True)

@@ -275,3 +275,28 @@ def test_upload_always_validates_first_and_existing_receipt_only_polls(tmp_path,
     calls.clear()
     full.upload_packed(packet, lambda **kw: updates.append(kw))
     assert not calls and updates[-1]['state'] == 'UPLOAD_REQUIRES_REVIEW'
+
+@pytest.mark.parametrize('reason,retries', [('GPU monitor unavailable after 3 consecutive failures', 1), ('Total GPU memory 22000 MiB >= 21000', 0)])
+def test_monitor_recovery_preserves_memory_guard(tmp_path, monkeypatch, reason, retries):
+    import run_track3_full_campaign as full
+    monkeypatch.setattr(full, 'REPORT', tmp_path)
+    monkeypatch.setattr(full.time, 'sleep', lambda _: None)
+    monkeypatch.setattr(full.subprocess, 'check_output', lambda *a, **kw: '')
+    calls = []
+    def train(*args):
+        calls.append(1)
+        if len(calls) > 1:
+            return 'complete'
+        guard = tmp_path / 'episode_000015/training/memory_guard.json'
+        guard.parent.mkdir(parents=True)
+        guard.write_text(json.dumps({'reason': reason}))
+        raise RuntimeError('guard stopped')
+    monkeypatch.setattr(full, 'train_and_evaluate', train)
+    if retries:
+        assert full.train_with_monitor_recovery({'episode_index': 15}, None) == 'complete'
+        assert len(calls) == 2
+        assert list(tmp_path.glob('*/training/previous_attempts/*/memory_guard.json'))
+    else:
+        with pytest.raises(RuntimeError, match='guard stopped'):
+            full.train_with_monitor_recovery({'episode_index': 15}, None)
+        assert len(calls) == 1
