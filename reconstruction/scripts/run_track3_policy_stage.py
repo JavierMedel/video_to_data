@@ -126,6 +126,14 @@ def main():
     parser.add_argument('arguments', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     args.report.mkdir(parents=True, exist_ok=True)
+    pause = ROOT / 'incident_reports/track3_baseline/pause_after_episode.json'
+    while args.module == 'scripts.train_flash_sac' and pause.exists():
+        request = json.loads(pause.read_text())
+        if args.report.parent.name == f"episode_{int(request['episode_index']):06d}":
+            break
+        save(args.report / 'paused.json', {'state': 'PAUSED_BEFORE_TRAINING', 'reason': 'User requested laptop shutdown after current episode'})
+        print('Paused before next training job for requested laptop shutdown', flush=True)
+        time.sleep(5)
     args.arguments = tune_training_arguments(args.module, args.arguments, args.report)
     monorepo = ROOT.parent
     cache = monorepo / 'robotic_grounding/data/track3/runtime_cache'; cache.mkdir(parents=True, exist_ok=True)

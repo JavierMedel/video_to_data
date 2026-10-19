@@ -913,3 +913,17 @@ experiment, not evidence of higher utilization or faster execution; inspect
 fresh heartbeat memory, training steps/s, and guard outcomes after the next
 job starts. No claim that all VRAM is occupied is justified. The host tests
 passed 48 cases, including new-job concurrency and resume/evaluation preservation.
+
+## Requested pause for laptop shutdown
+
+The participant requested notification after the current episode completes so
+that the laptop can be turned off. At the request, 12 episodes had completed
+evaluation and episode 30 was training. The policy wrapper now honors
+`reconstruction/incident_reports/track3_baseline/pause_after_episode.json`:
+training retries for that episode and evaluation may finish, but new training
+for a different episode waits before taking the GPU lock or launching Docker.
+A local watcher will stop the campaign after episode 30's evaluated receipt is
+saved and record `PAUSED_BY_USER`. Check execution.json and Docker before
+claiming shutdown is safe. Resume only after the participant requests it:
+remove the pause request file, then launch the existing today controller with
+`--profile today --upload`; it reuses verified policies and rollouts.
