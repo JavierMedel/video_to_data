@@ -110,3 +110,18 @@ def test_fresh_native_memory_is_guarded_without_external_query(tmp_path, monkeyp
     monkeypatch.setattr(policy.subprocess, 'run', lambda command, **kw: commands.append(command))
     policy.guard(Stop(), tmp_path, 'current')
     assert commands == ([['docker', 'kill', policy.NAME]] if kills else [])
+
+
+def test_new_training_doubles_worlds_and_pins_resume(tmp_path):
+    args = ['scene.world_count=512', 'training.total_environment_steps=5000192']
+    tuned = policy.tune_training_arguments('scripts.train_flash_sac', args, tmp_path)
+    assert 'scene.world_count=1024' in tuned
+    resumed = policy.tune_training_arguments('scripts.train_flash_sac', args + ['training.resume=true'], tmp_path)
+    assert 'scene.world_count=1024' in resumed
+    assert json.loads((tmp_path / 'gpu_training_profile.json').read_text())['memory_cap_mib'] == 21000
+
+
+def test_existing_checkpoint_keeps_worlds_and_evaluation_is_unchanged(tmp_path):
+    args = ['scene.world_count=512', 'training.resume=true']
+    assert policy.tune_training_arguments('scripts.train_flash_sac', args, tmp_path) == args
+    assert policy.tune_training_arguments('scripts.evaluate_policy', ['evaluation.world_count=1'], tmp_path) == ['evaluation.world_count=1']

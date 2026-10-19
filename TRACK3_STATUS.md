@@ -899,3 +899,17 @@ remain stopping conditions. This is bounded recovery, not a confirmed fix for
 the WSL driver/monitoring problem. The campaign/guard suite passed 46 tests.
 The live execution JSON is authoritative for progress, and an all-six-metric
 scored Kaggle receipt is required before claiming submission completion.
+
+## GPU concurrency increase requested October 18 evening
+
+New policy jobs now use 1,024 parallel simulation worlds instead of 512.
+The policy-stage wrapper records `gpu_training_profile.json` in the stage
+report and preserves that world count on subsequent resumes. Pre-existing
+checkpoints without this receipt retain their original explicit world count;
+evaluation remains one world. The running episode 15 process was not interrupted.
+Its successor will pick up the wrapper change when launched by the controller.
+The 21,000 MiB device-wide cap remains active. This setting is a throughput
+experiment, not evidence of higher utilization or faster execution; inspect
+fresh heartbeat memory, training steps/s, and guard outcomes after the next
+job starts. No claim that all VRAM is occupied is justified. The host tests
+passed 48 cases, including new-job concurrency and resume/evaluation preservation.

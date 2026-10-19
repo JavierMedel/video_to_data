@@ -100,6 +100,25 @@ def guard(stop, report, run_id=None):
         return
 
 
+def tune_training_arguments(module, arguments, report):
+    """Double new-job simulation concurrency; pin it for checkpoint resumes."""
+    if module != 'scripts.train_flash_sac':
+        return arguments
+    profile = report / 'gpu_training_profile.json'
+    if profile.exists():
+        worlds = int(json.loads(profile.read_text())['world_count'])
+    elif 'training.resume=true' in arguments:
+        # Existing checkpoints were collected with 512 worlds.
+        worlds = int(next(a.split('=', 1)[1] for a in arguments if a.startswith('scene.world_count=')))
+    else:
+        worlds = 1024
+    if worlds not in (512, 1024):
+        raise ValueError('Unexpected saved Track 3 world count')
+    save(profile, {'world_count': worlds, 'memory_cap_mib': 21000,
+                   'note': 'Concurrency tuning; measure throughput and memory before claiming improvement'})
+    return [f'scene.world_count={worlds}' if a.startswith('scene.world_count=') else a for a in arguments]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--report', type=Path, required=True)
@@ -107,6 +126,7 @@ def main():
     parser.add_argument('arguments', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     args.report.mkdir(parents=True, exist_ok=True)
+    args.arguments = tune_training_arguments(args.module, args.arguments, args.report)
     monorepo = ROOT.parent
     cache = monorepo / 'robotic_grounding/data/track3/runtime_cache'; cache.mkdir(parents=True, exist_ok=True)
     lock = (ROOT / 'data/track3/pilot/episode_000038/pilot.lock').open('a')
