@@ -1,6 +1,9 @@
 # Cross-track improvement implementation
 
-Implementation of `V2D_CROSS_TRACK_IMPROVEMENT_PLAN.md`, October 20, 2026.
+Implementation of the [original cross-track proposal](https://github.com/JavierMedel/video_to_data/blob/cff4d10d3267cdaf1b2f6a6c98be1500bdeb304e/V2D_CROSS_TRACK_IMPROVEMENT_PLAN.md), October 20, 2026.
+The superseded proposal was removed from the current tree; Git history preserves it.
+Current planning documents: [next execution plan](V2D_NEXT_EXECUTION_AND_VALIDATION_PLAN.md)
+and its [review and required corrections](V2D_NEXT_EXECUTION_AND_VALIDATION_PLAN_REVIEW.md).
 This change adds implementation and tests. It does not execute the plan's training
 schedule, download datasets, create a new reconstruction candidate, or upload a
 submission. Existing submitted packets and checkpoint directories are preserved.

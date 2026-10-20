@@ -1,5 +1,12 @@
 # V2D cross-track implementation handoff to the next planning model
 
+**Current document status:** the next planning round has arrived. Use
+[the execution plan](V2D_NEXT_EXECUTION_AND_VALIDATION_PLAN.md) together with
+[its review](V2D_NEXT_EXECUTION_AND_VALIDATION_PLAN_REVIEW.md); corrections remain
+necessary before execution. The older root-level improvement plans were removed
+from the current tree and remain available in Git history. The sections below
+retain the implementation handoff snapshot.
+
 **Prepared:** October 20, 2026, America/Toronto.
 
 **Repository:** https://github.com/JavierMedel/video_to_data
@@ -42,7 +49,7 @@ At completion of this implementation, there were no remaining baseline GPU jobs.
 
 ### Important Git state
 
-At the initial drafting snapshot, the new implementation was local and uncommitted. The base commit above is the earlier `docs: refresh cross-track challenge status` commit and does not contain it. **Publication update:** the user has now requested committing and pushing the implementation, this handoff, the runbook and `V2D_CROSS_TRACK_IMPROVEMENT_PLAN.md` together on `v2d-track1-blackwell`. Use the publication commit containing this file, rather than the base commit, for source review. On the execution checkout, `git log -1 --format=%H -- V2D_CROSS_TRACK_IMPLEMENTATION_HANDOFF.md` identifies that commit; compare the remote branch before claiming publication is complete.
+At the initial drafting snapshot, the new implementation was local and uncommitted. The base commit above is the earlier `docs: refresh cross-track challenge status` commit and does not contain it. **Publication update:** the implementation, this handoff, the runbook and original proposal were committed and pushed together in `cff4d10d3267cdaf1b2f6a6c98be1500bdeb304e` on `v2d-track1-blackwell`. Use that publication commit, rather than the base commit, for the original source review. Later documentation cleanup removes the superseded proposal from the current tree without removing its history.
 
 New files include `CROSS_TRACK_IMPLEMENTATION.md`, `reconstruction/scripts/cross_track/`, the cross-track CLI, metric harness and tests. Existing campaign and native training files are modified. Other historical generated files are also untracked; do not stage the entire checkout indiscriminately.
 
@@ -458,7 +465,7 @@ If additional information is required, describe a local inspection or extraction
 The user can provide these to the planning model if code-level review is needed. Large generated datasets are not necessary for an initial source audit.
 
 - This document: `V2D_CROSS_TRACK_IMPLEMENTATION_HANDOFF.md`.
-- Original proposal: `V2D_CROSS_TRACK_IMPROVEMENT_PLAN.md`.
+- Original proposal: [historical cross-track plan](https://github.com/JavierMedel/video_to_data/blob/cff4d10d3267cdaf1b2f6a6c98be1500bdeb304e/V2D_CROSS_TRACK_IMPROVEMENT_PLAN.md).
 - Implementation runbook: `CROSS_TRACK_IMPLEMENTATION.md`.
 - Historical context: `CHALLENGE_STATUS_AND_LLM_HANDOFF.md`, `TRACK2_STATUS.md`, `TRACK3_STATUS.md`.
 - New source: `reconstruction/scripts/cross_track/`, `run_cross_track_improvement.py`, `track1_metric_harness.py`.
