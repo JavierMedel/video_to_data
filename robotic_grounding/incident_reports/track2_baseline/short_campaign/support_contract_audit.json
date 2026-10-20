@@ -1,0 +1,156 @@
+{
+  "files": 30,
+  "declared_empty_count": 16,
+  "supports": [
+    {
+      "file": "2026-03-12_15-06-36_spray_bottle_left_desk_ground_02_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-03-18_19-36-56_g1_box_rotate_01_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-03-20_11-59-57_cyan_water_bottle_rotate_01_support.usda",
+      "collision_shapes": 2,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-04-24_11-40-52_baseball_bat_rotate_05_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-04-24_13-56-58_light_blue_book_pick_place_09_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-04-25_17-20-04_black_platform_turn_05_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-04-29_11-53-57_tall_bar_stool_pull_08_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-01_11-15-05_woven_basket_ground_desk_10_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-05-01_11-36-40_white_desk_lower_to_ground_10_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-01_17-04-55_traffic_cone_ground_table_02_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-05-06_10-00-19_blue_trash_can_drag_sideways_08_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-18_17-06-21_vacuum_left_lean_02_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-05-19_10-19-48_cane_swing_05_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-19_11-27-07_squeegee_sweep_away_from_you_03__support.usda",
+      "collision_shapes": 2,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-05-22_16-52-36_step_ladder_drag_03_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-28_14-44-09_round_table_flip_08_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-05-29_15-20-43_iron_round_table_02_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-05-29_15-43-20_watering_can_pour_right_02_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-06-01_11-26-44_monitor_rotate_05_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-06-02_10-04-42_blue_easter_basket_place_10_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-06-03_15-08-03_toy_stroller_back_forth_ground_04_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-06-04_14-16-23_tall_bar_stool_tip_up_04_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-06-05_15-08-08_skinny_wood_chair_push_10_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-06-05_16-05-08_skateboard_rotate_ground_10_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-06-05_18-27-40_rolling_luggage_left_foot_push_06_support.usda",
+      "collision_shapes": 0,
+      "declared_empty": true
+    },
+    {
+      "file": "2026-06-08_16-57-34_rice_cooker_clockwise_04_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    },
+    {
+      "file": "2026-06-09_10-19-09_snack_box_desk_through_06_support.usda",
+      "collision_shapes": 1,
+      "declared_empty": false
+    }
+  ]
+}

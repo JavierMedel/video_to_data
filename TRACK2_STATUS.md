@@ -317,8 +317,8 @@ JSON-quotes the task path, with a regression test. The complete host suite passe
 **55 tests**, including preserved Track 3 upload behavior and four-metric Track 2
 receipt completion. The first new episode subsequently completed training,
 checkpointing, unassisted evaluation, exact-frame validation, and semantic-name
-export. Code was pushed before launch; current producing implementation commit
-is `d6801a1220d8ddf80b0fa79c41a60e0a8e54a121`.
+export. Code was pushed before launch; the first new episode used implementation commit
+ `d6801a1220d8ddf80b0fa79c41a60e0a8e54a121`.
 
 A clearly marked pilot-only diagnostic CSV under `short_campaign/diagnostics`
 was used to test frame conversion. It is **incomplete and must never be uploaded**.
@@ -338,3 +338,21 @@ API comparison showed `user_has_entered=true` for Track 3 AUC and `false` for
 Track 2 Tier 1 AUC. The participant was asked what their Track 2 rules page shows
 (Join Competition versus Submit Prediction). Continue training independently
 and recheck entry rather than automatically accepting rules or bypassing checks.
+
+## Released ground-only support stages
+
+After Episode 17 passed, Episode 29 stopped before training because its released
+support USDA contains only an empty default Xform named `support_surfaces`.
+A USD-runtime audit found **16/30** Tier 1 support files intentionally have this
+structure. The support loader now optionally returns no support binding for
+that exact structure, and the scene builder permits it only when ground
+collision is enabled. It does not disable ground contact, modify released
+support files, ignore unsupported geometry, or permit ground-free empty scenes.
+The default loader behavior still rejects empty files. Missing files, unknown
+roots and unsupported child geometry remain errors.
+
+Eight focused native support/builder tests passed (eight unrelated data tests
+deselected). Evidence: `short_campaign/support_contract_audit.json`. The queue
+must be restarted after this runtime fix; Episode 17 is retained via its verified
+cached receipt. Older error traces remain in the append-only logs. Use the
+execution JSON and newest stage log entries to determine current state.

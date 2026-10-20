@@ -458,7 +458,7 @@ def build_scene(
     )
     object_shapes = ShapeSpan(object_shape_start, len(copy.shape_body))
     support_shape_start = len(copy.shape_body)
-    support = add_support_surfaces(copy, support_usda) if support_usda is not None else None
+    support = add_support_surfaces(copy, support_usda, allow_empty=collision.ground) if support_usda is not None else None
     support_shapes = ShapeSpan(support_shape_start, len(copy.shape_body))
     if support is not None and support.shapes != support_shapes:
         raise ValueError(f"support loader bound {support.shapes} but appended scene span {support_shapes}")

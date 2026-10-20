@@ -48,10 +48,11 @@ class SupportBinding:
             raise ValueError("support must own at least one shape")
 
 
-def add_support_surfaces(builder: newton.ModelBuilder, support_usda_path) -> SupportBinding:
+def add_support_surfaces(builder: newton.ModelBuilder, support_usda_path, *, allow_empty: bool = False) -> SupportBinding | None:
     """Add the support USDA's prims as kinematic collision shapes on one static body.
 
-    Returns the exact component topology. An explicitly requested missing/invalid file fails.
+    Returns the component topology. With ground collision active, callers may allow
+    a declared empty support_surfaces Xform. Other missing/invalid files fail.
     """
     path = Path(support_usda_path)
     if not path.is_file():
@@ -91,6 +92,11 @@ def add_support_surfaces(builder: newton.ModelBuilder, support_usda_path) -> Sup
             raise ValueError(f"support shape {prim.GetPath()} must have positive finite dimensions")
         shapes.append((type_name, prim.GetName(), position, dimensions))
     if not shapes:
+        root = stage.GetDefaultPrim()
+        if (allow_empty and root and root.GetName() == 'support_surfaces'
+                and root.GetTypeName() == 'Xform' and len(list(stage.Traverse())) == 1
+                and not root.GetChildren()):
+            return None
         raise ValueError(f"support surface contains no Cylinder or Cube collision shapes: {path}")
 
     body_start = builder.body_count

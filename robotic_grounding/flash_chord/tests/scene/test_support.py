@@ -101,3 +101,30 @@ def test_build_scene_includes_support():
     assert scene.support_shape_count == 2
     assert scene.support is not None
     assert scene.support.shapes == scene.collision_layout.support
+
+
+@pytest.mark.parametrize('allow_empty', [False, True])
+def test_declared_empty_support_requires_explicit_ground_context(tmp_path, allow_empty):
+    import newton
+    from flash_chord.scene.support import add_support_surfaces
+    path = tmp_path / 'released_empty.usda'
+    path.write_text('#usda 1.0\n(defaultPrim = "support_surfaces")\ndef Xform "support_surfaces" {}\n')
+    builder = newton.ModelBuilder()
+    if allow_empty:
+        assert add_support_surfaces(builder, path, allow_empty=True) is None
+    else:
+        with pytest.raises(ValueError, match='contains no Cylinder or Cube'):
+            add_support_surfaces(builder, path)
+    assert builder.body_count == 0 and builder.shape_count == 0
+
+
+@pytest.mark.parametrize('content', [
+    '#usda 1.0\n(defaultPrim = "World")\ndef Xform "World" {}\n',
+    '#usda 1.0\n(defaultPrim = "support_surfaces")\ndef Xform "support_surfaces" {\n def Mesh "unhandled" {}\n}\n',
+])
+def test_allow_empty_never_drops_unknown_support_geometry(tmp_path, content):
+    import newton
+    from flash_chord.scene.support import add_support_surfaces
+    path = tmp_path / 'invalid.usda'; path.write_text(content)
+    with pytest.raises(ValueError, match='contains no Cylinder or Cube'):
+        add_support_surfaces(newton.ModelBuilder(), path, allow_empty=True)
