@@ -100,7 +100,7 @@ def train_evaluate(episode):
     checkpoints += [p for p in (DATA / 'baseline' / stem).glob('policy_*.safetensors') if int(p.stem.split('_')[-1]) >= STEPS]
     checkpoints.sort(key=lambda p: int(p.stem.split('_')[-1]))
     if not checkpoints or int(checkpoints[-1].stem.split('_')[-1]) < STEPS:
-        arguments = ['experiment=g1_recon_body_flash_sac', f'task.parquet={cpath(reference)}', 'scene.world_count=1024',
+        arguments = ['experiment=g1_recon_body_flash_sac', f'task.parquet={json.dumps(cpath(reference))}', 'scene.world_count=1024',
                      'training.replay.capacity=1000000', 'training.replay.minimum_size=102400', 'training.replay.batch_size=1024',
                      f'training.total_environment_steps={STEPS}', 'training.checkpoint.save_interval_environment_steps=1000448',
                      'curriculum.thresholds=' + json.dumps(scaled_thresholds(STEPS), separators=(',', ':')),

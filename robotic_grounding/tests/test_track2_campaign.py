@@ -57,3 +57,17 @@ def test_four_metric_receipt_is_complete_for_track2(tmp_path, monkeypatch):
     assert len(calls) == 2 and updates[-1]['state'] == 'SCORED'
     assert updates[-1]['uploaded'] is True
     assert 'G1+Dex3' in calls[-1][calls[-1].index('-m') + 1]
+
+
+def test_training_quotes_hydra_reference_paths_with_equals(tmp_path, monkeypatch):
+    monkeypatch.setattr(campaign, 'DATA', tmp_path / 'data')
+    monkeypatch.setattr(campaign, 'REPORT', tmp_path / 'reports')
+    monkeypatch.setattr(campaign, 'verify_input', lambda _: (tmp_path / 'reference.parquet', {'object': 'cone'}))
+    monkeypatch.setattr(campaign, 'cpath', lambda _: '/repo/sequence_id=recording/data.parquet')
+    def capture(command, log):
+        override = next(v for v in command if v.startswith('task.parquet='))
+        assert json.loads(override.split('=', 1)[1]) == '/repo/sequence_id=recording/data.parquet'
+        raise RuntimeError('Captured before GPU execution')
+    monkeypatch.setattr(campaign, 'run', capture)
+    with pytest.raises(RuntimeError, match='Captured before GPU'):
+        campaign.train_evaluate({'episode_index': 17})
