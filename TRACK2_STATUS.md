@@ -19,8 +19,8 @@ G1 + Dex3 / SONIC. It is not ready for upload:
   `short_campaign/first_short_episode_verified.json`. It took about four minutes
   of reported training-loop time including learner compilation, plus initialization
   and evaluation. Native CUDA memory readings were about 9,306 MiB under training.
-- At this snapshot **2/30 episodes have evaluated policies**, and Episode 29 is
-  the next active training job. The remaining 28 episodes require training and
+- At this snapshot **3/30 episodes have evaluated policies** (16, 17, 29), and
+  Episode 6 is the next active training job. The remaining 27 episodes require training and
   evaluation; read `short_campaign/execution.json` for current progress.
 - The remaining episodes need their own policies and evaluated rollouts.
   Do not reuse Episode 16's policy or submit reference poses for missing episodes.
@@ -356,3 +356,16 @@ deselected). Evidence: `short_campaign/support_contract_audit.json`. The queue
 must be restarted after this runtime fix; Episode 17 is retained via its verified
 cached receipt. Older error traces remain in the append-only logs. Use the
 execution JSON and newest stage log entries to determine current state.
+
+
+The ground-only correction subsequently passed an actual complete episode:
+Episode 29 trained 5,000,192 steps, saved its final checkpoint, evaluated all
+467 source frames in one valid world, and exported the same achieved poses.
+The saved policy's `user.resolved_config_json` confirms `collision.ground=true`,
+`robot_object_collision=true`, `robot_support_collision=true`, and `scene.support=true`.
+Evidence: `short_campaign/ground_only_episode_verified.json`. The controller then
+advanced to Episode 6 automatically. At this snapshot the queue has 3/30 evaluated
+policies; remaining training/evaluation will take several hours. The laptop and
+Docker must stay running. No Track 2 upload has occurred, and the official entry
+check still needs confirmation. There is no fresh receipt to poll until packing
+and the official dry-run have passed.

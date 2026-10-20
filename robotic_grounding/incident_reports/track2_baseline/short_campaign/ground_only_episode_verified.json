@@ -1,0 +1,23 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "2d233e25bbb4f9a282cf2d6b5297b1ed825a1e495bfb803031b57ab32b638a91",
+  "reference_sha256": "9cbda412802946aec4b2e72157c16cd63c18637e21286defb5ba4b88557082b1",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000029/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-05_18-27-40_rolling_luggage_left_foot_push_06/robot_name=g1/data.parquet",
+  "trajectory_sha256": "ffc03428e40c33ef812bd64da4ac2e060da5c0582d1a49be7279bc7bf172e8cc",
+  "metrics_sha256": "9bd9b11bf901a8e17fba9c6c2da677a2e43e0a257bb976486be7fe082ec8ec77",
+  "export_sha256": "7d13ade86521011bdec03e260414da8d01914aa90aa8900caa36d2395691526e",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "rolling_luggage",
+  "rows": 467,
+  "raw_poses_preserved": true,
+  "verified_utc": "2026-10-20T01:42:20.621766+00:00",
+  "declared_empty_support": true,
+  "resolved_ground_collision": true,
+  "resolved_robot_object_collision": true,
+  "resolved_robot_support_collision": true,
+  "resolved_scene_support": true,
+  "scope": "Completed ground-only short-budget episode; overall campaign still incomplete"
+}
