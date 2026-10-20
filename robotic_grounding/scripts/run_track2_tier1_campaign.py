@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Train genuine per-sequence Tier 1 policies, evaluate, pack and optionally submit.
+"""Train per-sequence Track 2 policies, evaluate, pack and optionally submit.
 
 Raw evaluator evidence stays immutable. One 350M pilot may be reused; remaining
 policies use the explicitly selected budget with all native curriculum phases.
@@ -115,6 +115,9 @@ def train_evaluate(episode):
 
 
 def _train_evaluate(episode):
+    started = time.monotonic()
+    training_seconds = evaluation_seconds = 0.0
+    training_performed = evaluation_performed = legacy_evaluation_copied = False
     i = episode['episode_index']; stem = f'episode_{i:06d}'; report = REPORT / stem
     reference, manifest = verify_input(episode)
     output = DATA / POLICY_SUBDIR / stem; output.mkdir(parents=True, exist_ok=True)
@@ -130,7 +133,10 @@ def _train_evaluate(episode):
                      'reset.seed=42', 'logging.mode=disabled', f'output_dir={cpath(output)}']
         states = sorted(output.glob('state_*.safetensors'), key=lambda p: int(p.stem.split('_')[-1]))
         if states: arguments += ['training.resume=true', f'training.checkpoint_path={cpath(states[-1])}']
+        stage_started = time.monotonic()
         run(native(report / 'training', 'scripts.train_flash_sac', arguments), report / 'training.log')
+        training_seconds = time.monotonic() - stage_started
+        training_performed = True
         checkpoints = sorted(output.glob('policy_*.safetensors'), key=lambda p: int(p.stem.split('_')[-1]))
     checkpoint = checkpoints[-1]
     results = DATA / RESULTS_SUBDIR; results.mkdir(parents=True, exist_ok=True)
@@ -140,14 +146,18 @@ def _train_evaluate(episode):
     reuse = cached.get('state') == 'EVALUATED' and all(cached.get(k) == v for k, v in hashes.items())
     reuse = reuse and trajectory.exists() and metrics.exists() and cached.get('trajectory_sha256') == sha(trajectory) and cached.get('metrics_sha256') == sha(metrics)
     if not reuse:
+        stage_started = time.monotonic()
         pilot_trajectory, pilot_metrics = DATA / 'results' / trajectory.name, DATA / 'results' / metrics.name
         if TIER == 1 and LEGACY_OUTPUTS and i == 16 and pilot_trajectory.exists() and pilot_metrics.exists() and json.loads(pilot_metrics.read_text()).get('checkpoint_sha256') == sha(checkpoint):
             # Preserve the full-budget pilot's genuine native rollout and its actual hashes.
             shutil.copyfile(pilot_trajectory, trajectory); shutil.copyfile(pilot_metrics, metrics)
+            legacy_evaluation_copied = True
         else:
             run(native(report / 'evaluation', 'scripts.evaluate_policy', [f'evaluation.checkpoint={cpath(checkpoint)}',
                 'evaluation.world_count=1', 'evaluation.reset_mode=explicit', f'evaluation.metrics_output={cpath(metrics)}',
                 f'evaluation.object_trajectories_output={cpath(trajectory)}', 'logging.mode=disabled']), report / 'evaluation.log')
+            evaluation_performed = True
+        evaluation_seconds = time.monotonic() - stage_started
     table = pq.ParquetFile(trajectory).read(); validate_rollout(table, episode)
     metadata = table.schema.metadata or {}
     if metadata.get(b'flash_chord.checkpoint_sha256', b'').decode() != sha(checkpoint):
@@ -169,7 +179,12 @@ def _train_evaluate(episode):
               'full_budget_policy': int(checkpoint.stem.split('_')[-1]) >= FULL_STEPS, 'object_name': object_name,
               'rows': len(table), 'raw_poses_preserved': True}
     save(receipt, record)
-    return record
+    # Invocation timing stays out of the reusable receipt. A later full run must
+    # not replace the pilot's measured training time with a cache-hit duration.
+    return {**record, 'execution': {'elapsed_seconds': time.monotonic() - started,
+            'training_seconds': training_seconds, 'evaluation_seconds': evaluation_seconds,
+            'training_performed': training_performed, 'evaluation_performed': evaluation_performed,
+            'evaluation_reused': reuse, 'legacy_evaluation_copied': legacy_evaluation_copied}}
 
 
 def recoverable_train(episode):
@@ -202,7 +217,13 @@ def main():
     parser.add_argument('--parent-packet', type=Path)
     parser.add_argument('--rules', type=Path)
     parser.add_argument('--snapshots', type=Path)
+    parser.add_argument('--episodes', type=int, nargs='+',
+                        help='Pilot subset: reuse full-campaign outputs, but never pack or upload')
     args = parser.parse_args(); STEPS = args.training_steps; scaled_thresholds(STEPS)
+    if args.episodes is not None:
+        if args.upload: raise ValueError('A pilot subset cannot upload')
+        if len(set(args.episodes)) != len(args.episodes) or not set(args.episodes) <= set(range(30)):
+            raise ValueError('Pilot episodes must be unique indices in 0..29')
     if not args.version.replace('_', '').replace('-', '').isalnum():
         raise ValueError('Version must be one simple directory name')
     TIER = args.tier
@@ -210,38 +231,76 @@ def main():
     DATA.relative_to(ROOT)
     legacy = TIER == 1 and args.version == 'short' and args.data_root is None
     LEGACY_OUTPUTS = legacy
-    if not legacy:
+    if legacy:
+        if args.episodes is not None:
+            raise ValueError('Pilot subsets require a new version; preserve the scored Tier 1 baseline')
+        REPORT = ROOT / 'incident_reports/track2_baseline/short_campaign'
+        POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR = 'policies_short', 'results_short', 'results_short_submission'
+    else:
         if args.inventory is None: raise ValueError('New tier/version requires a verified inventory')
         REPORT = ROOT / f'incident_reports/track2_tier{TIER}/{args.version}_campaign'
         POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR = f'policies_{args.version}', f'results_{args.version}', f'results_{args.version}_submission'
         if args.upload and (args.rules is None or args.snapshots is None):
             raise ValueError('New uploads require documented weekly rules and fresh snapshots')
-    REPORT.mkdir(parents=True, exist_ok=True)
-    lock = (REPORT / 'campaign.lock').open('a'); fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    if args.episodes is not None:
+        from cross_track.ownership import check_output
+        check_output(REPORT)
+        for i in args.episodes:
+            check_output(DATA / POLICY_SUBDIR / f'episode_{i:06d}')
     inventory_path = args.inventory or ROOT / 'incident_reports/track2_baseline/submission_readiness_20261019.json'
     inventory = json.loads(inventory_path.read_text())
     if inventory.get('tier', 1) != TIER: raise ValueError('Inventory tier mismatch')
+    episodes = sorted(inventory['episodes'], key=lambda e: (e['episode_index'] != 16, e['frames']))
+    if len(episodes) != 30 or {e['episode_index'] for e in episodes} != set(range(30)):
+        raise ValueError('Incomplete scored roster: require exactly 30 unique episodes')
+    REPORT.mkdir(parents=True, exist_ok=True)
+    lock = (REPORT / 'campaign.lock').open('a'); fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     signature = {'tier': TIER, 'version': args.version, 'inventory_sha256': sha(inventory_path), 'training_steps': STEPS,
                  'parent_packet_sha256': sha(args.parent_packet) if args.parent_packet else None}
     contract = REPORT / 'campaign_inputs.json'
     if contract.exists() and json.loads(contract.read_text()) != signature:
         raise ValueError('Campaign inputs changed; choose a new version')
     save(contract, signature)
-    episodes = sorted(inventory['episodes'], key=lambda e: (e['episode_index'] != 16, e['frames']))
-    if {e['episode_index'] for e in episodes} != set(range(30)): raise ValueError('Incomplete scored roster')
     state = {'state': 'TRAINING_AND_EVALUATING', 'track': f'track_2_tier{TIER}', 'evaluated': [], 'failed': {}, 'inputs': signature,
              'training_steps_per_new_episode': STEPS, 'full_budget_steps': FULL_STEPS, 'submission_ready': False, 'uploaded': False}
+    pilot_path, pilot_results = None, []
+    started_utc = datetime.now(timezone.utc)
+    started = time.monotonic()
+    if args.episodes is not None:
+        episodes = [e for e in episodes if e['episode_index'] in args.episodes]
+        pilot_path = REPORT / 'pilot_reports' / (started_utc.strftime('%Y%m%dT%H%M%S%fZ') + '.json')
+        pilot_path.parent.mkdir(parents=True, exist_ok=True)
+        # Reserve a distinct report for each invocation; full runs never write it.
+        with pilot_path.open('x') as output: output.write('{}\n')
+        state.update(pilot_episodes=sorted(args.episodes), pilot_report_path=str(pilot_path))
     def update(**fields):
         state.update(**fields, observed_utc=datetime.now(timezone.utc).isoformat()); save(REPORT / 'execution.json', state)
+        if pilot_path is not None:
+            save(pilot_path, {**state, 'started_utc': started_utc.isoformat(),
+                 'elapsed_seconds': time.monotonic() - started, 'campaign_code_sha256': sha(Path(__file__)),
+                 'timing_scope': 'Host wall time, including native startup/compile; not GPU-active time or steady-state throughput',
+                 'episode_results': pilot_results})
     update()
     for episode in episodes:
         i = episode['episode_index']; update(active_episode_index=i)
-        print(f'START episode {i}; {len(state["evaluated"])}/30 evaluated', flush=True)
+        print(f'START episode {i}; {len(state["evaluated"])}/{len(episodes)} evaluated', flush=True)
+        episode_started = time.monotonic()
         try:
-            recoverable_train(episode); state['evaluated'].append(i); update()
-            print(f'EVALUATED episode {i}; {len(state["evaluated"])}/30 complete', flush=True)
+            record = recoverable_train(episode)
+            if pilot_path is not None:
+                metrics = DATA / RESULTS_SUBDIR / f'episode_{i:06d}.json'
+                if sha(metrics) != record['metrics_sha256']:
+                    raise ValueError('Pilot metrics changed after evaluation')
+                pilot_results.append({'episode_index': i, 'frames': episode['frames'],
+                    'elapsed_seconds': time.monotonic() - episode_started,
+                    'evaluation': record, 'metrics_path': str(metrics), 'metrics': json.loads(metrics.read_text())})
+            state['evaluated'].append(i); update()
+            print(f'EVALUATED episode {i}; {len(state["evaluated"])}/{len(episodes)} complete', flush=True)
         except Exception as exc:
             state['failed'][str(i)] = str(exc); update(state='STOPPED_FOR_REVIEW'); raise
+    if args.episodes is not None:
+        update(state='PILOT_EVALUATED_FOR_REVIEW', active_episode_index=None)
+        return
     common.REPORT = REPORT; common.PROFILE = 'short'; common.TOTAL_STEPS = STEPS
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
     packet = DATA / f'submission_{args.version}/track2_tier{TIER}.csv'; packet.parent.mkdir(parents=True, exist_ok=True)

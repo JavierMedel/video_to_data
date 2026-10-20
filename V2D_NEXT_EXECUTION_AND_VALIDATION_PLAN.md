@@ -792,7 +792,7 @@ Run from `/home/alien51/video_to_data`. Labels: **[INSPECT]** is read-only, **[M
       --output robotic_grounding/incident_reports/track2_tier2/inventory_v1.json
     ```
     The inventory writes packer frame references to `robotic_grounding/data/track2/tier2/v1/frame_references/`. G5 must pass before step 11.
-11. **[TRAIN] Tier 2 single-episode pilot.** Write `spec_tier2_pilot.json` following the runbook's typed example:
+11. **[TRAIN] Tier 2 single-episode pilot.** *Superseded by [readiness review R2](#planning-side-readiness-review-october-20-2026): prefer running the pilot through the campaign with `--episodes`.* Otherwise, write `spec_tier2_pilot.json` following the [runbook's typed example](https://github.com/JavierMedel/video_to_data/blob/0cb3e05a8a63fd30f6ce84d53f40c44ba9033832/CROSS_TRACK_IMPLEMENTATION.md) (removed from the current tree):
     - `"track": "track_2_tier2"`
     - `"target_steps": 5000192`
     - `"arm": "fresh"`
@@ -1100,3 +1100,228 @@ Observed UTC: `2026-10-20T19:50:53.330300+00:00`. The scores below are our lates
 6. **Tier 3 and rules:** genuine video reconstructions and a permitted released-world anchor remain unresolved. Weekly-window interpretations and warm-start source quotes remain unset. Local work is allowed to progress; uploads stay gated.
 
 The rules template is `reconstruction/data/cross_track/rules/rules_v1.json` and intentionally has `weekly_window: unresolved`. It grants no upload permission. No new challenge training, policy evaluation, submission upload or GPU job was left running by this implementation turn.
+
+---
+
+## Planning-side readiness review (October 20, 2026)
+
+This is a desk review of commit `ec23955` from the planning laptop. Nothing was executed, and none of the local datasets or checkpoints were inspected. Each item is labelled [FACT] (read in committed code or reports) or [PROPOSAL].
+
+**Verdict:** ready to *start* the Tier 2 path: native retarget, the per-episode gate, then one pilot. It is **not** ready for a full training campaign or any upload. `implementation_validation.json` reports `IMPLEMENTATION_VALIDATED_REQUIRES_GPU_PILOTS`, and every pending item in it needs the GPU or the user.
+
+### R1. Episode 16 default is not a defect [FACT]
+
+The `retarget_track2_tier1.py` docstring says the default `--episodes` skips 16 only to "preserve the validated episode-16 pilot" for Tier 1. That episode was retargeted separately. For Tier 2, still pass all 30 explicitly (step 10). The earlier open question "why was 16 excluded" is closed.
+
+### R2. Run the Tier 2 pilot through the campaign, not through `jobs` [PROPOSAL]
+
+[FACT] In `run_track2_tier1_campaign.py` with `--tier 2 --version v1`:
+
+- outputs go to `<data-root>/policies_v1/episode_XXXXXX`, i.e. `robotic_grounding/data/track2/tier2/v1/policies_v1/...`;
+- the `own_output` job identity includes `overrides = {campaign_sha256, thresholds}`.
+
+The step 11 pilot instead writes to `robotic_grounding/data/track2/tier2/policies_v1/...` with a `jobs`-runner identity.
+
+Consequences:
+- The ownership guard correctly prevents the campaign from adopting the pilot's checkpoint, so about 0.5 GPU-h is repeated.
+- The pilot also does not prove the exact campaign configuration (curriculum thresholds, evaluation, export and rollout validation).
+- The campaign has no subset option, so today the only way to pilot is through `jobs`.
+
+[PROPOSAL] Add `--episodes I [I ...]` to the campaign:
+
+- Validate before taking the lock: indices must be unique and within 0–29, and `--upload` is rejected.
+- Filter the sorted roster to the requested indices and record `pilot_episodes` in `execution.json`.
+- After those episodes are evaluated, set `state = PILOT_EVALUATED_FOR_REVIEW` and return. Never pack or upload.
+- Do **not** add the subset to the `campaign_inputs.json` signature. The later full run must keep the same contract, so `own_output` re-enters the pilot directory with an identical `.run_identity.json`. `_train_evaluate` then reuses the checkpoint (≥ `STEPS`) and the hash-matched evaluation receipt.
+- Edit the campaign script before the pilot. `campaign_sha256` is part of the identity, so any later edit makes a new run identity.
+- Test in `robotic_grounding/tests/test_track2_campaign.py`:
+  - a subset trains only the selected indices and never calls the packer;
+  - out-of-range, duplicate and `--upload` combinations raise `ValueError`.
+
+The pilot command becomes:
+
+```bash
+reconstruction/.venv/bin/python robotic_grounding/scripts/run_track2_tier1_campaign.py \
+  --tier 2 --version v1 --data-root robotic_grounding/data/track2/tier2/v1 \
+  --inventory robotic_grounding/incident_reports/track2_tier2/inventory_v1.json \
+  --episodes <median-length index>
+```
+
+Choose a median-length episode from `inventory_v1.json`. The campaign's own ordering puts episode 16 first and then the shortest episodes, which under-forecasts cohort time. After review, rerun the same command without `--episodes` for the remaining 29.
+
+### R3. Gate ordering conflict is still open [FACT]
+
+[FACT] Both `tier-inventory` and the campaign require all 30 episodes to retarget and verify before any training. This conflicts with the correction "use an episode-level gate for the pilot". With the current code, a single retarget failure blocks the pilot.
+
+[PROPOSAL] Accept this for Tier 2, because retargeting is much cheaper than training. If an episode fails G5, fix or re-retarget it before the pilot rather than weakening the inventory check.
+
+### R4. Upload blocker owned by the user [FACT]
+
+`rules_v1.json` has `weekly_window: unresolved`. New uploads also require `--rules` and `--snapshots`.
+
+The user must record the submission-quota wording from the competition rules page, with a quote, URL and capture date. Until then, packets can be built and reviewed but not uploaded.
+
+### R5. Time budget [ESTIMATE]
+
+The freeze is 2026-11-04 22:00 UTC, about 15 days away. Approximate Tier 2 cost, all on the one 24 GB GPU:
+
+| Item | Cost |
+| --- | --- |
+| Retarget | unmeasured |
+| Pilot | ~0.5 GPU-h |
+| 29 remaining episodes | ~15 GPU-h |
+| Evaluations | unmeasured |
+
+Tier 1 checkpoint re-selection (150 missing evaluations) competes for the same GPU. Run its determinism pilot first and size the rest from measured throughput.
+
+### R6. Recommended order on the execution laptop
+
+1. Apply and test the R7 patch (the R2 change). Commit before any GPU run.
+2. Retarget Tier 2 (all 30), run `tier-inventory`, and check G5.
+3. Run the Tier 2 pilot with `--episodes`. Record throughput and the four metrics.
+4. Run the Tier 1 determinism pilot (`checkpoint-determinism --execute`).
+5. If the pilot passes review, run the full Tier 2 campaign. Meanwhile the user resolves R4.
+6. Pack Tier 2, review the packet SHA, and upload only after R4 and explicit user approval.
+
+### R7. Exact patch for R2 (apply on the execution laptop)
+
+This patch was written on the planning laptop and has **not been run or tested**. The planning laptop can only pull, so the change is delivered here rather than committed.
+
+Apply it in one commit before any Tier 2 GPU run, then run the test command below. Line context refers to `ec23955`.
+
+**`robotic_grounding/scripts/run_track2_tier1_campaign.py`, in `main()`:**
+
+(a) Replace the line `args = parser.parse_args(); STEPS = args.training_steps; scaled_thresholds(STEPS)` with:
+
+```python
+    parser.add_argument('--episodes', type=int, nargs='+',
+                        help='Pilot subset: same job identity and outputs as the full campaign, but never packs or uploads')
+    args = parser.parse_args(); STEPS = args.training_steps; scaled_thresholds(STEPS)
+    if args.episodes is not None:
+        if args.upload: raise ValueError('A pilot subset cannot upload')
+        if len(set(args.episodes)) != len(args.episodes) or not set(args.episodes) <= set(range(30)):
+            raise ValueError('Pilot episodes must be unique indices in 0..29')
+```
+
+(b) Immediately after `def update(**fields): ...`, replace the line `update()` (the one directly before `for episode in episodes:`) with:
+
+```python
+    if args.episodes is not None:
+        episodes = [e for e in episodes if e['episode_index'] in args.episodes]
+        state.update(pilot_episodes=sorted(args.episodes))
+    update()
+```
+
+(c) After the training loop, directly before `common.REPORT = REPORT; ...`, insert:
+
+```python
+    if args.episodes is not None:
+        update(state='PILOT_EVALUATED_FOR_REVIEW', active_episode_index=None)
+        return
+```
+
+Do not add `episodes` to `signature`. The full run must keep the same `campaign_inputs.json`, so that it reuses the pilot's checkpoint and evaluation receipt.
+
+**`robotic_grounding/tests/test_track2_campaign.py`, append:**
+
+```python
+def test_pilot_subset_runs_only_selected_episodes_and_never_packs(tmp_path, monkeypatch):
+    for name in ('STEPS', 'TIER', 'DATA', 'REPORT', 'POLICY_SUBDIR', 'RESULTS_SUBDIR', 'EXPORT_SUBDIR', 'LEGACY_OUTPUTS'):
+        monkeypatch.setattr(campaign, name, getattr(campaign, name))
+    monkeypatch.setattr(campaign, 'ROOT', tmp_path)
+    inventory = tmp_path / 'inventory.json'
+    inventory.write_text(json.dumps({'tier': 2, 'episodes': [{'episode_index': i, 'frames': 100 + i} for i in range(30)]}))
+    trained = []
+    monkeypatch.setattr(campaign, 'recoverable_train', lambda e: trained.append(e['episode_index']))
+    monkeypatch.setattr(campaign, 'run', lambda *a: pytest.fail('A pilot subset must not pack'))
+    base = ['run_track2_tier1_campaign.py', '--tier', '2', '--version', 'v1', '--data-root', str(tmp_path / 'data'),
+            '--inventory', str(inventory)]
+    monkeypatch.setattr(sys, 'argv', [*base, '--episodes', '7', '3'])
+    campaign.main()
+    assert sorted(trained) == [3, 7]
+    state = json.loads((tmp_path / 'incident_reports/track2_tier2/v1_campaign/execution.json').read_text())
+    assert state['state'] == 'PILOT_EVALUATED_FOR_REVIEW' and state['submission_ready'] is False
+    for extra in (['--episodes', '30'], ['--episodes', '1', '1'], ['--episodes', '1', '--upload']):
+        monkeypatch.setattr(sys, 'argv', [*base, *extra])
+        with pytest.raises(ValueError): campaign.main()
+```
+
+**Validate** (CPU only):
+
+```bash
+reconstruction/.venv/bin/python -m pytest -q robotic_grounding/tests/test_track2_campaign.py
+```
+
+Then rerun the full host suite listed under "Validation actually performed".
+
+Expected new state values in `execution.json` are `PILOT_EVALUATED_FOR_REVIEW`, with `pilot_episodes` and `submission_ready: false`.
+
+
+---
+
+## Execution-laptop implementation of R2/R7 (October 20, 2026)
+
+**Status: IMPLEMENTED_AND_CPU_VALIDATED; native Tier 2 retarget and GPU pilot still pending.**
+
+This section supersedes the untested R7 patch and test example above. The planning-side review is retained as history. Implementation is based on `ec23955e9b5e457943ffef1070e4a69159f22afa`. The changes are committed before any new GPU run, as R6 requires. No new native training, evaluation, retarget, packet packing or upload was run during this implementation. Test actors and packets are temporary synthetic fixtures; they are not challenge artifacts or score evidence.
+
+### Implemented behavior
+
+`robotic_grounding/scripts/run_track2_tier1_campaign.py` now accepts `--episodes I [I ...]`:
+
+- Unique integer indices in 0..29 are required. A pilot combined with `--upload` raises `ValueError` before report creation, locking or job launch.
+- Pilot mode requires a version separate from the historical Tier 1 `short` baseline. Explicit data-root aliases onto protected policy directories and campaigns with submission receipts are rejected before locking. Existing output ownership and identity checks still apply to every selected episode.
+- The inventory must contain exactly 30 unique indices covering 0..29, even for a one-episode pilot. Missing episodes, extra duplicate rows and a duplicate replacing another episode are rejected before creating a campaign report. No episode-level shortcut was introduced; R3's complete-inventory gate remains in force.
+- Only the selected episodes execute, in the campaign's existing order (episode 16 first when selected, then frame count). Progress uses the actual subset size.
+- `execution.json` includes sorted `pilot_episodes` and `pilot_report_path`. Successful pilots end at `PILOT_EVALUATED_FOR_REVIEW`, with `submission_ready: false` and `uploaded: false`. The function returns before the packer, checkpoint-map packaging or upload path.
+- The subset is absent from `campaign_inputs.json` and the per-policy ownership identity. Running the same campaign without `--episodes` re-enters the same owned policy directories and reuses sufficiently trained actors and hash-matched evaluation receipts. Keep the version, data root, inventory contents, training budget, parent packet and producer code unchanged between pilot and full run. Changing code or identity inputs requires a new version; do not remove ownership markers to force adoption.
+
+### Persistent pilot evidence
+
+Each pilot invocation reserves its own report:
+
+```text
+robotic_grounding/incident_reports/track2_tier2/v1_campaign/
+  execution.json
+  campaign_inputs.json
+  pilot_reports/<UTC timestamp with microseconds>.json
+  episode_XXXXXX/policy.json
+```
+
+The pilot report is updated during its own invocation and retained afterward. Repeated pilots create separate reports; a later full run replaces `execution.json` but never overwrites earlier pilot reports.
+
+The report includes requested/evaluated episode indices, state and failures, campaign-code SHA-256, the campaign input signature, UTC start/last observation, total and per-episode elapsed seconds, frame counts, checkpoint/reference/trajectory/metrics/export hashes, the exact parsed native metrics and their source path. Metrics are checked against the evaluated receipt hash before capture. Native training/evaluation stage durations and cache-use flags are recorded separately from reusable policy receipts. A failed pilot leaves a `STOPPED_FOR_REVIEW` report with the failure reason and previously completed results.
+
+Timing is **host wall time including native startup/compilation**, not measured GPU-active time or steady-state throughput. No GPU utilization, compile-only time, replay memory, steady-state steps/s, real pilot metrics or cohort ETA has been measured by this change. Those measurements remain part of the actual pilot review. A cached pilot correctly records zero native stage duration for that invocation while the original pilot report retains its measured duration.
+
+### Validation performed on this laptop
+
+| Check | Result |
+| --- | --- |
+| Full host suite listed in the earlier validation section | **126 passed** |
+| Track 2 campaign coverage within that suite | **18 passed** |
+| Campaign CLI help/import, including `--episodes` | Passed |
+| Python compilation of changed campaign and tests | Passed |
+| Diff whitespace check | Passed |
+
+The pilot-to-full regression exercises the real campaign, output ownership, checkpoint discovery, provenance validation, export and evaluation-receipt reuse. Only external native training/evaluation and packing commands are mocked. Episodes 3 and 7 run in the pilot, packing is not called, then the full campaign completes all 30. Each episode trains and evaluates exactly once across both invocations; the pilot actor bytes, ownership markers, raw evaluation files, campaign contract and original pilot report remain unchanged. Separate tests cover repeated cached pilots, invalid indices/duplicates/upload, the protected scored baseline, protected aliases, submitted campaigns, incomplete/duplicate inventories and failed-pilot reporting.
+
+The earlier 113 host tests and 3 Torch CPU tests describe the previous implementation snapshot. The updated 126-test host suite includes 13 additional campaign cases. The Torch implementation did not change and its tests were not rerun in this turn. Machine-readable incremental results and source hashes are recorded in `reconstruction/incident_reports/cross_track_validation_plan/implementation_validation.json` under `campaign_native_pilot_implementation`.
+
+### Next execution on this laptop
+
+1. Retarget all 30 Tier 2 episodes with the existing step 10 command, explicitly including 16, then create `robotic_grounding/incident_reports/track2_tier2/inventory_v1.json` and review G5. Neither retarget nor that inventory has been produced by this implementation.
+2. Choose a median-length episode from the verified inventory. Run the campaign pilot (replace `MEDIAN_EPISODE_INDEX` with that integer):
+
+   ```bash
+   reconstruction/.venv/bin/python robotic_grounding/scripts/run_track2_tier1_campaign.py \
+     --tier 2 --version v1 --data-root robotic_grounding/data/track2/tier2/v1 \
+     --inventory robotic_grounding/incident_reports/track2_tier2/inventory_v1.json \
+     --episodes MEDIAN_EPISODE_INDEX
+   ```
+
+3. Review the saved pilot metrics, rollout coverage/contact evidence, native logs, timing and actual GPU memory/throughput before forecasting the other 29 episodes. Run the Tier 1 determinism pilot before allocating the missing-rollout cohort. Retain the existing single-heavy-job GPU lock and memory guard; this code change does not raise GPU limits.
+4. Only after pilot review, rerun the identical Tier 2 command without `--episodes` to complete the campaign and build a packet for review. Do not edit producer code between these runs.
+5. Upload remains separate: unresolved weekly-window rules, fresh snapshots and explicit approval of the actual packet SHA are still required. This implementation claims no new submission or leaderboard gain.
+
+For the planning-side LLM: use this final execution section and the committed source/tests as implemented behavior. R7 is a historical proposal, not another patch to apply. Return future recommendations in an updated version of this same Markdown file for execution on this laptop; the planning laptop has no challenge runtime. Some remaining evidence/surrogate preparation can run on CPU, so the earlier readiness sentence saying every pending item requires GPU or user input should not be treated as an execution constraint.

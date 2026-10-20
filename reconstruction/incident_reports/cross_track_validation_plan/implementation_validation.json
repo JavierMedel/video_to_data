@@ -421,5 +421,35 @@
     "reconstruction/scripts/test_cross_track_validation_plan.py": "5350109a97a7a767490f4fa160e716eed5ffc40351ccad312d5c2c749dd772f6",
     "robotic_grounding/scripts/retarget_track2_tier1.py": "347c0eda4bf76372a0f89d4868777f5c028af77c40efd950a6f96bbdde8c09b3",
     "robotic_grounding/scripts/run_track2_tier1_campaign.py": "64f0303fef7ce844e1b4a9ce38468d5d4622607256813add02a7d8eca4de8f66"
+  },
+  "campaign_native_pilot_implementation": {
+    "state": "IMPLEMENTED_AND_CPU_VALIDATED_REQUIRES_NATIVE_TIER2_RETARGET_AND_PILOT",
+    "observed_utc": "2026-10-20T20:33:29.447324+00:00",
+    "git_base_commit": "ec23955e9b5e457943ffef1070e4a69159f22afa",
+    "source_sha256": {
+      "robotic_grounding/scripts/run_track2_tier1_campaign.py": "b553e7040c33d808e387a54066fa193bf5b762095e24eef6d2642b0adca90799",
+      "robotic_grounding/tests/test_track2_campaign.py": "1e36f07dfec77d84a635d363f31c153395ff9daf42f3dc812446955aff2324d5"
+    },
+    "verification": {
+      "host_tests_passed": 126,
+      "track2_campaign_tests_passed": 18,
+      "python_compilation_passed": true,
+      "campaign_help_passed": true
+    },
+    "pilot_to_full_reuse_verified": true,
+    "pilot_reports_preserved_across_full_run": true,
+    "baseline_and_submission_output_guards_verified": true,
+    "native_commands_mocked_in_regression": true,
+    "native_gpu_jobs_run": false,
+    "packet_created": false,
+    "uploaded": false,
+    "timing_scope": "Pilot reports record host wall time including startup/compile, not GPU-active time or steady-state throughput",
+    "pending": [
+      "All-30 Tier 2 native retarget and verified inventory",
+      "Median-episode campaign pilot and metrics/throughput review",
+      "Tier 1 determinism pilot",
+      "Full Tier 2 campaign after pilot review",
+      "Documented weekly rules and explicit packet approval before upload"
+    ]
   }
 }
