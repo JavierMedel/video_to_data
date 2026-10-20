@@ -1,0 +1,23 @@
+{
+  "episode_index": 12,
+  "observed_utc": "2026-10-20T02:20:56.609074+00:00",
+  "reason": "Physics constraint buffer overflow; guard stopped job",
+  "max_requested_njmax": 1119,
+  "prior_njmax": 1024,
+  "new_njmax": 4096,
+  "prior_nconmax": 512,
+  "new_nconmax": 1024,
+  "existing_evaluated_episodes": [
+    16,
+    17,
+    29,
+    6,
+    20,
+    27,
+    26,
+    21
+  ],
+  "completed_rollouts_preserved": true,
+  "memory_guard_mib": 21000,
+  "tests_passed": 55
+}

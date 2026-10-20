@@ -381,3 +381,22 @@ are evaluated, Episode 27 is active, and there is no Track 2 upload receipt yet.
 The running controller already has `--upload` and will validate and submit after
 all 30 episodes are complete. Older notes about unjoined competitions describe
 the earlier checks and must not be treated as current account state.
+
+## Constraint-capacity recovery — Episode 12
+
+The queue completed 8/30 rollouts, then stopped Episode 12 during its initial
+training collection: MuJoCo-Warp requested up to 1,119 constraints while the
+native G1 preset reserved 1,024. The physics guard correctly stopped the job;
+Episode 12 had not produced a policy checkpoint. No incomplete physics rollout
+was included in the submission outputs.
+
+Remaining training jobs now explicitly use `sim.njmax=4096` and
+`sim.nconmax=1024`, retaining 1,024 worlds and the 21,000 MiB total-device guard.
+This increases buffer capacity rather than discarding contacts or reducing
+collision fidelity. Existing completed policies/results remain unchanged.
+All 55 host tests passed, including the new capacity override assertion.
+Evidence: `short_campaign/physics_buffer_recovery.json`; the original stop
+receipts are archived under Episode 12's `training/previous_attempts` directory.
+The restarted controller also prints start/completion milestones to its main log.
+The all-four-competition entry check is already confirmed; no further rule
+acceptance is required. Read the execution JSON for progress after this recovery.

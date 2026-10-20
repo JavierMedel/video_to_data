@@ -65,6 +65,7 @@ def test_training_quotes_hydra_reference_paths_with_equals(tmp_path, monkeypatch
     monkeypatch.setattr(campaign, 'verify_input', lambda _: (tmp_path / 'reference.parquet', {'object': 'cone'}))
     monkeypatch.setattr(campaign, 'cpath', lambda _: '/repo/sequence_id=recording/data.parquet')
     def capture(command, log):
+        assert 'sim.njmax=4096' in command and 'sim.nconmax=1024' in command
         override = next(v for v in command if v.startswith('task.parquet='))
         assert json.loads(override.split('=', 1)[1]) == '/repo/sequence_id=recording/data.parquet'
         raise RuntimeError('Captured before GPU execution')
