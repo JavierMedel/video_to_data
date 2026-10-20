@@ -1,6 +1,6 @@
 # V2D Challenge: complete submission status and cross-machine LLM handoff
 
-**Status snapshot: 2026-10-16.** Live authenticated Kaggle retrieval: `2026-10-16T21:04:17.392752+00:00`. Repository/experiment state reviewed at base commit `0b966629` on branch `v2d-track1-blackwell`. This file is a committed, portable context packet for planning the next improvement round. Values describe this snapshot, not future standings.
+**Current cross-track snapshot: 2026-10-20 (Toronto).** Branch `v2d-track1-blackwell` is synchronized with `origin`. The detailed Track 1 leaderboard retrieval in this document is from `2026-10-16T21:04:17.392752+00:00`; it is historical and must be refreshed before comparing current ranks. Track 2 and Track 3 submission scores below are from completed Kaggle receipts on 2026-10-20. This is a portable context packet for a planning LLM on another laptop; that laptop produces a Markdown improvement plan only. The user brings the plan back here for review, implementation, GPU runs, evaluation, packaging and any authorized submission.
 
 ## Contents
 
@@ -29,15 +29,13 @@ The planning laptop need not have the dataset, model weights, CUDA, Docker, Kagg
 
 ### 1.1 Current outcome in one place
 
-- Eight Track 1 candidate versions have been uploaded to all five metric competitions: **40 accepted, completed metric submissions**. The authenticated history currently lists eight submissions in each of the five competitions.
-- Latest version: **v8, contact-constrained translation smoothing**. Complete package: **30 episodes, 740,780 rows**, all five scores COMPLETE. No scoring job remains pending for v8.
-- V8 versus v6: **CD-O 23.48489 → 23.48324 cm**, **ACC-O 0.81013 → 0.71908 cm**, **PEN 0.00325 → 0.00322 cm**; human metrics unchanged. Main gain: **11.24% lower object acceleration error**. Spatial improvement is only **0.00165 cm, about 0.007%**.
-- V8 improves or equals v6 on all five reported metrics and is the natural latest complete-package starting point. Preserve v6 as the immutable experiment control and v7 as a useful failed spatial/positive temporal comparison. Existing campaign scripts hardcode v6; passing a new campaign name alone does not rebase them onto v8.
-- The official CARI4D leaderboard entry, spelled **`CARI4D Basline`**, still has better object distance: **23.16246 cm**. V8 is **0.32078 cm** worse, **1.385% above** that reference. Reaching it requires **1.366% reduction from v8**.
-- The current best team on CD-O scores **17.91571 cm**. Matching it requires approximately **23.71% reduction from v8**. Beating CARI4D is a useful milestone, not equivalent to winning the live challenge.
-- Our **best historical human distance** is **14.99887 cm from v2**, better than v8's 15.43955. Our **best historical PEN** is **0.00213 cm from v1**, better than v8's 0.00322. No claim is made that v8 dominates every older version.
-- The Kaggle leaderboard displays the team's best scores separately per metric. Its row therefore mixes versions; it is **not the score vector of one reconstruction package**. Do not propose a mixed package by copying displayed scores: predictions, alignment and interaction must be revalidated.
-- Only Track 1 has verified local challenge submissions in this work. This checkout has Track 2/3 toolkit support, but no local Track 2/3 dataset directories or completed submission artifacts were found in the inspected challenge workspace. This is a local inventory statement, not an audit of all possible external work by this user.
+- **Track 1 — Reconstruction:** latest complete package remains **v8**, contact-constrained translation smoothing, with 30 episodes and 740,780 rows, submitted to five metrics. Its package scores are CD-H 15.43955 cm, CD-O 23.48324 cm, ACC-H 1.15894 cm, ACC-O 0.71908 cm, PEN 0.00322 cm. V8 improved ACC-O by 11.24% over v6 while changing CD-O by only 0.007%. The best-per-metric Kaggle row can mix candidate versions; it is not one package's score vector. The detailed standings below are dated October 16 and must be refreshed before use in a new plan.
+- **Track 2 — Robotic grounding, Tier 1:** complete 30-episode short-budget baseline, submitted and scored on all four leaderboards. Episode 16 reused its verified 349,999,104-step policy; the other 29 episodes used independent 5,000,192-step policies. Scores: **AUC 0.24466** (ID 57444008), **SP-SR 0.10000** (ID 57444011), **MP-SR 0.03333** (ID 57444013), **MPPE 53.84820 cm** (ID 57444015). Official packet: 22,989 rows; SHA-256 `73f60d4a35996c7f9d6763fc28a637fec542248f538c98b4929af33bdc372a23`. Full evidence and producing code commit are in `TRACK2_STATUS.md`; the exact receipt is local at `robotic_grounding/incident_reports/track2_baseline/short_campaign/kaggle_receipt.json`. Track 2 Tiers 2 and 3 have not been submitted.
+- **Track 3 — Egocentric:** complete 20-episode short-budget baseline, submitted and scored on all six leaderboards. Episode 38 reused its verified 60,002,304-step policy; the other 19 episodes used independent 5,000,192-step policies. Scores: **AUC 0.16307** (ID 57416110), **SP-SR 0.05000** (ID 57416113), **MP-SR 0.00000** (ID 57416115), **RPE 22.28685 cm** (ID 57416118), **MPPE 20.82175 cm** (ID 57416120), **CD-O 0.57037 cm** (ID 57416123). Details are in `TRACK3_STATUS.md`; the receipt is `reconstruction/incident_reports/track3_baseline/today_campaign/kaggle_receipt.json` when this execution checkout is present.
+- Correct Track 3 leaderboard URLs (the slugs do not include `tier1`): [AUC](https://www.kaggle.com/competitions/v2d-challenge-track3-auc/leaderboard), [SP-SR](https://www.kaggle.com/competitions/v2d-challenge-track3-sp-sr/leaderboard), [MP-SR](https://www.kaggle.com/competitions/v2d-challenge-track3-mp-sr/leaderboard), [RPE](https://www.kaggle.com/competitions/v2d-challenge-track3-rpe/leaderboard), [MPPE](https://www.kaggle.com/competitions/v2d-challenge-track3-mppe/leaderboard), and [CD-O](https://www.kaggle.com/competitions/v2d-challenge-track3-cd-o/leaderboard). Track 2 and Track 3 scores belong to separate leaderboards; do not compare metric values across tracks.
+- These are **short-budget baselines**, not full-budget Track 2/3 training. Public scores reveal sizable policy-performance gaps, particularly on SP-SR and MP-SR. Complete coverage and valid files show submission completeness, not strong manipulation success. Track 3 reported zero local reference-tracking success; that diagnostic is not the same metric as official object-only SP-SR.
+- The execution machine is `/home/alien51/video_to_data` under WSL2 with Docker and an NVIDIA RTX 5090 Laptop GPU (24,463 MiB visible VRAM). The other laptop is only for reading this Markdown and writing a proposed improvement-plan Markdown file. It does not have this machine's datasets, weights, caches, Docker setup, GPU or Kaggle runtime. Run experiments and submissions on this execution machine.
+- Preserve all submitted packages, receipts and producing commit links as baselines. Before proposing improvements, fetch fresh authenticated leaderboard results, compare them with these submissions and current leaders, account for per-track submission limits, and label ideas as hypotheses until they are tested here.
 
 ## 2. Challenge scope, primary references, and freshness
 
@@ -49,13 +47,13 @@ The website says dashboard refresh can lag Kaggle. In this inspection, fetching 
 
 | Area | What it evaluates | Local status and scope of this handoff |
 |---|---|---|
-| Track 1: Reconstruction | Third-person monocular video to metric 4D human-object reconstruction; CD-H, CD-O, ACC-H, ACC-O, PEN | Active work; 30 episodes; 8 fully scored versions; full history below |
-| Track 2: Robotic grounding, Tier 1 | Policy evaluation using supplied clean multiview trajectories | Toolkit/config present; no completed local run/submission established here |
-| Track 2, Tier 2 | Policy evaluation from synthetically corrupted trajectories | Same inventory limitation |
-| Track 2, Tier 3 | Policy evaluation from reconstructed trajectories | Same inventory limitation; Track 1 outputs may eventually support this, but no transfer result has been demonstrated |
-| Track 3: Egocentric | Egocentric reconstruction and policy transfer, plus separate object-mesh CD-O competition | Toolkit and broader repo modules exist; no completed challenge submission established here |
+| Track 1: Reconstruction | Third-person monocular video to metric 4D human-object reconstruction; CD-H, CD-O, ACC-H, ACC-O, PEN | v1–v8 submitted; v8 latest complete package; details and dated standings below |
+| Track 2, Tier 1 | Policy evaluation using supplied clean multiview trajectories | Complete and scored on AUC, SP-SR, MP-SR, MPPE; short-budget baseline |
+| Track 2, Tier 2 | Policy evaluation from synthetically corrupted trajectories | Not submitted; requires its own allowed noisy inputs and per-tier evaluation |
+| Track 2, Tier 3 | Policy evaluation from reconstructed trajectories | Not submitted; requires its own allowed reconstructed inputs and per-tier evaluation |
+| Track 3: Egocentric | Egocentric reconstruction and policy transfer, plus separate object-mesh CD-O competition | Complete and scored on five pose metrics plus CD-O; short-budget baseline |
 
-Track 2 configured metrics: AUC, SP-SR, MP-SR (higher is better) and MPPE (lower is better). Track 3 additionally includes RPE and a separate object-reconstruction leaderboard. These details are context from local `config/tracks.json`, not evidence of local scores. The proposed next plan should focus on Track 1 unless the user explicitly expands scope.
+Track 2 metrics are AUC, SP-SR and MP-SR (higher is better) and MPPE (lower is better). Track 3 adds RPE and the separate object-shape metric CD-O (both lower is better). A new plan may compare opportunities across submitted tracks, but should recommend a specific track and measurable experiment order rather than assume Track 1 remains the only priority.
 
 ## 3. Official Track 1 submission history
 
