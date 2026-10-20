@@ -3,74 +3,89 @@
 This document records the Track 2 campaign on the execution laptop. Track 1
 artifacts and its prepared v10 submission are separate and remain preserved.
 
-## Current execution snapshot — October 19, 2026 Toronto
+## Current execution snapshot — October 20, 2026 Toronto
 
-The participant requested a Track 2 submission after the completed Track 3 round.
-The existing Track 2 campaign is **Tier 1**, using clean multi-view input and
-G1 + Dex3 / SONIC. It is not ready for upload:
+The Track 2 **Tier 1** short-budget baseline is complete and scored on all four
+Kaggle leaderboards. It uses clean multi-view input and G1 + Dex3 / SONIC. This
+is a finished baseline submission, not a claim that the new policies received the
+native 350M-step budget.
 
-- All **30/30** retargeted inputs exist and their hashes were reverified against
-  the existing per-episode receipts (Episode 16 uses its separate pilot receipt).
-- Episode 16's existing **349,999,104-step** full-budget policy and genuine
-  rollout were verified and reused. Its local task success rates remain zero.
-- The first new short-budget job, **Episode 17**, completed **5,000,192 steps**
-  and a valid **440-row** one-world rollout. Its checkpoint, original reference,
-  raw trajectory, metrics, and name-only submission export hashes are recorded in
-  `short_campaign/first_short_episode_verified.json`. It took about four minutes
-  of reported training-loop time including learner compilation, plus initialization
-  and evaluation. Native CUDA memory readings were about 9,306 MiB under training.
-- At this snapshot **5/30 episodes have evaluated policies** (16, 17, 29, 6, 20),
-  and Episode 27 is active. The remaining 25 episodes require training and
-  evaluation; read `short_campaign/execution.json` for current progress.
-- The remaining episodes need their own policies and evaluated rollouts.
-  Do not reuse Episode 16's policy or submit reference poses for missing episodes.
-- The latest official entry check confirms **all four Tier 1 competitions entered**
-  for `iorideepp`. The account/rules blocker is cleared. Evidence is recorded in
-  `short_campaign/entry_check.json`; older unjoined checks below are historical.
-- The participant selected **5,000,192 steps per remaining episode**, matching
-  the short-budget Track 3 approach. The controller reuses Episode 16's genuine
-  full-budget rollout and trains 29 independent policies. Native nine-stage
-  curriculum thresholds are compressed proportionally, retaining zero-assistance
-  phases. Simulation timing, SONIC/G1 embodiment, and physical support are preserved.
-- Run `reconstruction/.venv/bin/python robotic_grounding/scripts/run_track2_tier1_campaign.py --upload`.
-  The new authoritative state is
+- **30/30 episodes** have genuine policy rollouts, verified source-frame coverage,
+  finite pose values, checkpoint provenance and submission exports. Episode 16's
+  existing **349,999,104-step** policy and rollout were reused; each other episode
+  has an independent **5,000,192-step** policy. The final ordered episode list,
+  state and timestamps are in
   `robotic_grounding/incident_reports/track2_baseline/short_campaign/execution.json`.
-  It has its own campaign lock, policy/results/export directories and receipt;
-  training shares the existing Track 2/3 GPU lock and 21,000 MiB guard.
-- New jobs use 1,024 simulation worlds, replay capacity 1M, batch 1,024, and
-  minimum replay 102,400. They save checkpoints about every 1M steps. Monitoring-only
-  interruptions may resume up to three times per episode; actual memory-cap,
-  physics-buffer and invalid-rollout failures stop for review. Never label these
-  short policies as native 350M-step training.
-- Raw rollout files remain in `results_short`; submission exports in
-  `results_short_submission` change only the body-name label from native `object`
-  to the verified source-manifest object name. All pose arrays are preserved.
-  Exact one-world/source-frame coverage, finite poses and checkpoint hashes are checked.
-- The controller packs only after all 30 evaluated rollouts are verified. The
-  official packer converts back to the released frame, checks coverage/provenance,
-  computes clean-reference local scores, and cross-checks evaluator metrics.
-  Upload then requires the official dry-run and all four entered competitions.
-  Four accepted metric IDs are polled from a hash-linked exclusive receipt;
-  existing/ambiguous receipts are not blindly reuploaded.
-- After the participant completed the remaining MPPE entry, the official API
-  confirmed all four competitions entered. The controller remains authorized to
-  upload after all 30 rollouts pass packing and the official dry-run.
-- No Track 2 submission has been uploaded. The valid 20-episode Track 3 submission
-  and its six scored receipts remain separate and must not be reused as Track 2 data.
+- Official packet:
+  `robotic_grounding/data/track2/tier1/submission_short/track2_tier1.csv`
+  (22,989 rows; 11,838,359 bytes). Its SHA-256 is
+  `73f60d4a35996c7f9d6763fc28a637fec542248f538c98b4929af33bdc372a23`.
+  The official packer confirmed 30 episodes and distinct per-episode checkpoints,
+  converted trajectories to the released frame, and computed local scores from
+  the packed trajectories.
+- Kaggle returned **COMPLETE** for all four metric submissions:
+
+  | Metric | Public score | Submission ID |
+  | --- | ---: | ---: |
+  | AUC | 0.24466 | 57444008 |
+  | SP-SR | 0.10000 | 57444011 |
+  | MP-SR | 0.03333 | 57444013 |
+  | MPPE (cm) | 53.84820 | 57444015 |
+
+- The exact returned states, slugs, messages and IDs are in
+  `robotic_grounding/incident_reports/track2_baseline/short_campaign/kaggle_receipt.json`.
+  `execution.json` records `state: SCORED`, `submission_ready: true`, and
+  `uploaded: true`. The upload manifest binds that receipt to the packet hash.
+- The official dry run passed for 30 episodes and reported five submissions left
+  today on each of the four Tier 1 leaderboards. The uploader then accepted the
+  packet for all metrics and polled their exact returned IDs; no duplicate upload
+  was made. All four results were COMPLETE by 11:34 Toronto time on October 20.
+- Packer trajectory-derived local values were AUC 0.2447, SP-SR 0.1000,
+  MP-SR 0.0333 and MPPE 53.8482 cm, matching the rounded public scores. It emitted
+  a warning that several per-episode AUC values in evaluator JSON differed slightly
+  from recomputation on the stored trajectory. The official packer explicitly
+  scores the trajectory; its trajectory-derived values are the submission-relevant
+  local comparison. Preserve this warning for later analysis rather than silently
+  treating the evaluator JSON as identical evidence.
+- Campaign command used:
+  `reconstruction/.venv/bin/python robotic_grounding/scripts/run_track2_tier1_campaign.py --training-steps 5000192 --upload`.
+  The Docker campaign and host controller have exited after scoring. No Track 2
+  training container remains active. The per-episode native logs, checkpoint
+  receipts and rollout audits are under
+  `robotic_grounding/incident_reports/track2_baseline/short_campaign/episode_*/`;
+  policy checkpoints and raw/export Parquets remain locally under
+  `robotic_grounding/data/track2/tier1/` and are not committed because they are
+  large generated data.
+- The packet records producing Git commit
+  `fa969859b4e9156321ceee6fc1723ea49ce4f1d1` (the campaign's JAX compilation
+  cache change). Submission-specific policy checkpoints, results, CSV, receipt,
+  and execution state are machine-local evidence. Keep the packet hash and receipt
+  together when auditing this submission.
+- All four Tier 1 rules were accepted for Kaggle account `iorideepp`; the earlier
+  account-entry blocker is cleared. The valid Track 3 submission remains separate.
 
 Fresh evidence:
 
 - `robotic_grounding/incident_reports/track2_baseline/submission_readiness_20261019.json`
 - `robotic_grounding/incident_reports/track2_baseline/entry_check_20261019.json`
-- Historical pilot state: `robotic_grounding/incident_reports/track2_baseline/execution.json`
+- `robotic_grounding/incident_reports/track2_baseline/short_campaign/execution.json`
+- `robotic_grounding/incident_reports/track2_baseline/short_campaign/kaggle_receipt.json`
+- `robotic_grounding/incident_reports/track2_baseline/short_campaign/upload_manifest.json`
+- `robotic_grounding/incident_reports/track2_baseline/short_campaign/packing.log`
+- `robotic_grounding/incident_reports/track2_baseline/short_campaign/upload_dry_run.log`
+- `robotic_grounding/incident_reports/track2_baseline/short_campaign/upload.log`
 - Native pilot metrics: `robotic_grounding/data/track2/tier1/results/episode_000016.json`
 
-The original setup/producing commit was
-`996cb7d327992c4122255f84a971147f62bcd780`. Future training/export changes require
-an updated pushed producing commit, exact checkpoint/evaluator provenance,
-complete 30-episode coverage, packer cross-checks against the clean Tier 1 reference,
-and the official dry-run before sending one CSV to all four Tier 1 metrics.
-Choose a fresh exclusive Kaggle receipt and poll its exact IDs after upload.
+For a future improvement submission, first compare this baseline against the
+leaderboard and its per-episode evidence. Preserve these outputs and receipt as an
+immutable baseline. Train and run future work on this execution laptop, which has
+the dataset, Docker runtime and NVIDIA RTX 5090 Laptop GPU; another laptop used to
+write an improvement-plan Markdown file does not have the challenge runtime or data
+and should only propose changes, not attempt training, packing or submission.
+Review any new plan here, implement it on this machine, and generate a fresh packet
+and exclusive receipt only after its complete results validate. The five-submissions-
+per-week limit applies independently per track and tier; verify the current rule
+before planning another submission.
 
 ## Objective and initial scope
 
