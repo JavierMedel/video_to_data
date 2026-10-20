@@ -1325,3 +1325,33 @@ The earlier 113 host tests and 3 Torch CPU tests describe the previous implement
 5. Upload remains separate: unresolved weekly-window rules, fresh snapshots and explicit approval of the actual packet SHA are still required. This implementation claims no new submission or leaderboard gain.
 
 For the planning-side LLM: use this final execution section and the committed source/tests as implemented behavior. R7 is a historical proposal, not another patch to apply. Return future recommendations in an updated version of this same Markdown file for execution on this laptop; the planning laptop has no challenge runtime. Some remaining evidence/surrogate preparation can run on CPU, so the earlier readiness sentence saying every pending item requires GPU or user input should not be treated as an execution constraint.
+
+
+---
+
+## Live Tier 2 launch and user GPU-limit override (October 20, 2026)
+
+The user authorized starting all-30 native retarget, complete-inventory validation and one 5,000,192-step campaign pilot. The user then explicitly requested: **"please remove the GPU limit"**. This instruction supersedes earlier requirements in this document to retain the 21,000 MiB VRAM cutoff for the active Tier 2 queue and its upcoming native policy stages.
+
+### Current execution
+
+A detached host controller is running from `robotic_grounding/data/track2/tier2/v1/execution_control/run_retarget_and_pilot.py`. It survives the chat turn; the laptop, WSL and Docker must remain running. Its live status is `robotic_grounding/incident_reports/track2_tier2/execution_v1/pipeline.json`; controller output is `execution_v1/controller.log`. Treat these live files as authoritative for later progress, rather than the snapshot here.
+
+The controller verifies source hashes, stages exact supplied support USDA bytes at the native resolver's `assets/human_motion_data/whole_body/reconstructed_stage/` location, holds the shared GPU lock through serial retarget, checks each episode's feasibility, then runs the complete inventory gate. If all 30 pass, it chooses the nearest episode to the median frame count and invokes the implemented campaign pilot. It stops at `PILOT_EVALUATED_FOR_REVIEW`. Failure stops the queue with a saved error; it does not proceed into training with a failed gate. There is no full remaining-policy campaign, packing or upload in this controller.
+
+Episode 0 completed 778 frames in 60.16 seconds and passed motion, joint-limit, root-pose and support/visibility-lineage checks. This remains a kinematic/source-provenance result; physical contact awaits the policy pilot. Reconfiguring the controller interrupted the first Episode 1 attempt before any final motion output was written. Its failed logs were preserved; the queue restarted, verified and reused Episode 0, and reran Episode 1. No verified episode was overwritten.
+
+### GPU resource configuration
+
+- Active retarget controller: `gpu_cap_mib: null`; samples are logged in `execution_v1/retarget_gpu.csv`, without stopping at a VRAM threshold.
+- `run_track3_policy_stage.py`, shared by the Track 2 and Track 3 native policy campaigns: no VRAM watchdog cutoff by default. The optional explicit `--gpu-memory-limit-mib` remains available, but the Tier 2 pilot does not pass it. Receipts/profiles record `null` when uncapped.
+- Native JAX containers explicitly set `XLA_PYTHON_CLIENT_MEM_FRACTION=1.0` and keep `XLA_PYTHON_CLIENT_PREALLOCATE=false`. They can grow allocations to the full device budget without reserving it up front. Both image configurations were inspected; neither supplies an additional GPU allocation fraction.
+- GPU memory telemetry, invalid/stale sample checks, sustained monitoring-loss handling, exclusive GPU scheduling and physics error checks remain active. CPU and host RAM container settings are separate from GPU VRAM allocation.
+
+This changes allocation permission, not the numerical policy budget or 1,024-world training configuration. Retarget has CPU inverse-kinematics work and need not show high GPU utilization throughout. Actual memory use is sampled, not forced to fill the device.
+
+### Validation of the override
+
+The full host suite passed **135 tests**, including uncapped external samples and native heartbeats up to 24,400 MiB, continued telemetry, optional explicit-limit behavior, sustained monitor-loss handling and actual launcher command/receipt assertions for full-memory JAX allocation. External GPU commands are mocked in launcher unit tests. No extra training job was launched for those tests. The native retarget queue remains the only active heavy workload.
+
+The machine-readable launch snapshot and source hashes are appended under `tier2_launch_and_gpu_override` in `reconstruction/incident_reports/cross_track_validation_plan/implementation_validation.json`. Native pilot ownership captures the changed policy-stage producer code before any new actor is trained; keep that code unchanged between pilot and full campaign.

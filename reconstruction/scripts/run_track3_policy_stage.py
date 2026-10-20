@@ -61,7 +61,7 @@ def read_gpu_sample():
     return memory, line
 
 
-def guard(stop, report, run_id=None):
+def guard(stop, report, run_id=None, cap_mib=None):
     consecutive_failures = 0
     last_memory = None
     def event(kind, **fields):
@@ -85,8 +85,8 @@ def guard(stop, report, run_id=None):
                 event('MONITOR_RECOVERED', prior_failures=consecutive_failures, memory_mib=memory)
             consecutive_failures = 0
             last_memory = memory
-            if memory < 21000: continue
-            reason = f'Total GPU memory {memory} MiB >= 21000'
+            if cap_mib is None or memory < cap_mib: continue
+            reason = f'Total GPU memory {memory} MiB >= {cap_mib}'
         except (subprocess.SubprocessError, OSError, ValueError, IndexError, csv.Error) as exc:
             consecutive_failures += 1
             event('MONITOR_FAILURE', consecutive_failures=consecutive_failures,
@@ -100,7 +100,7 @@ def guard(stop, report, run_id=None):
         return
 
 
-def tune_training_arguments(module, arguments, report):
+def tune_training_arguments(module, arguments, report, cap_mib=None):
     """Double new-job simulation concurrency; pin it for checkpoint resumes."""
     if module != 'scripts.train_flash_sac':
         return arguments
@@ -114,7 +114,7 @@ def tune_training_arguments(module, arguments, report):
         worlds = 1024
     if worlds not in (512, 1024):
         raise ValueError('Unexpected saved Track 3 world count')
-    save(profile, {'world_count': worlds, 'memory_cap_mib': 21000,
+    save(profile, {'world_count': worlds, 'memory_cap_mib': cap_mib,
                    'note': 'Concurrency tuning; measure throughput and memory before claiming improvement'})
     return [f'scene.world_count={worlds}' if a.startswith('scene.world_count=') else a for a in arguments]
 
@@ -124,9 +124,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--track', choices=['track_3', 'track_2_tier1', 'track_2_tier2', 'track_2_tier3'], default='track_3')
+    parser.add_argument('--gpu-memory-limit-mib', type=int,
+                        help='Optional VRAM watchdog cutoff; default uses all available device memory')
     parser.add_argument('module')
     parser.add_argument('arguments', nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    if args.gpu_memory_limit_mib is not None and args.gpu_memory_limit_mib <= 0:
+        parser.error('--gpu-memory-limit-mib must be positive')
     NAME = 'v2d-track2-policy-stage' if args.track.startswith('track_2_') else 'v2d-track3-policy-stage'
     args.report.mkdir(parents=True, exist_ok=True)
     pause = ROOT / 'incident_reports/track3_baseline/pause_after_episode.json'
@@ -137,7 +141,7 @@ def main():
         save(args.report / 'paused.json', {'state': 'PAUSED_BEFORE_TRAINING', 'reason': 'User requested laptop shutdown after current episode'})
         print('Paused before next training job for requested laptop shutdown', flush=True)
         time.sleep(5)
-    args.arguments = tune_training_arguments(args.module, args.arguments, args.report)
+    args.arguments = tune_training_arguments(args.module, args.arguments, args.report, args.gpu_memory_limit_mib)
     monorepo = ROOT.parent
     mount_root = monorepo if args.track == 'track_3' else monorepo / 'robotic_grounding'
     cache = monorepo / ('robotic_grounding/data/track3/runtime_cache' if args.track == 'track_3' else 'robotic_grounding/data/track2/runtime_cache'); cache.mkdir(parents=True, exist_ok=True)
@@ -153,6 +157,7 @@ def main():
                '--memory', '20g', '--memory-swap', '22g', '--cpus', '8', '--user', '1000:1000',
                '-e', 'HOME=/tmp', '-e', 'LOGNAME=alien51', '-e', 'OMP_NUM_THREADS=8',
                '-e', 'PYTHONUNBUFFERED=1', '-e', 'XLA_PYTHON_CLIENT_PREALLOCATE=false',
+               '-e', 'XLA_PYTHON_CLIENT_MEM_FRACTION=1.0',
                '-e', 'XDG_CACHE_HOME=/cache', '-e', 'JAX_COMPILATION_CACHE_DIR=/cache/jax', '-e', 'MUJOCO_GL=egl', '-e', 'PYOPENGL_PLATFORM=egl',
                '-e', 'PYTHONPATH=/workspace:/workspace/src',
                *heartbeat_env,
@@ -161,10 +166,11 @@ def main():
                '--entrypoint', 'python', 'flash_chord:track2-baseline',
                '-m', args.module, *args.arguments]
     save(args.report / 'command.json', {'state': 'RUNNING', 'command': command, 'gpu_monitor_executable': GPU_SMI,
+                                        'gpu_memory_limit_mib': args.gpu_memory_limit_mib,
                                         'gpu_heartbeat_id': run_id,
                                         'submission_ready': False})
     stop = threading.Event()
-    threads = [threading.Thread(target=guard, args=(stop, args.report, run_id), daemon=True)]
+    threads = [threading.Thread(target=guard, args=(stop, args.report, run_id, args.gpu_memory_limit_mib), daemon=True)]
     for thread in threads: thread.start()
     try:
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,

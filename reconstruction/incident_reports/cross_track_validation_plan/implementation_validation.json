@@ -451,5 +451,29 @@
       "Full Tier 2 campaign after pilot review",
       "Documented weekly rules and explicit packet approval before upload"
     ]
+  },
+  "tier2_launch_and_gpu_override": {
+    "observed_utc": "2026-10-20T20:41:22.450342+00:00",
+    "state_at_capture": "RETARGETING",
+    "completed_retargets_at_capture": [
+      0,
+      1
+    ],
+    "active_episode_at_capture": 2,
+    "live_status_path": "robotic_grounding/incident_reports/track2_tier2/execution_v1/pipeline.json",
+    "controller_path": "robotic_grounding/data/track2/tier2/v1/execution_control/run_retarget_and_pilot.py",
+    "controller_sha256": "ad47a1f675cf3703a95083a1359e8109a93488fda9f55dda9ab76e22c62f96cb",
+    "gpu_cap_mib": null,
+    "native_jax_memory_fraction": 1.0,
+    "native_jax_preallocate": false,
+    "shared_gpu_lock_retained": true,
+    "telemetry_and_monitor_failure_checks_retained": true,
+    "host_tests_passed": 135,
+    "source_sha256": {
+      "reconstruction/scripts/run_track3_policy_stage.py": "d14517cf88a5586bda71b80586db5fdd80a3204e9edde2784c300d12789323b7",
+      "reconstruction/scripts/test_track3_policy_guard.py": "c2744397fd7dced4857ce03c4254f31b41076c6bf2bec9d4e5cdfae665dd088c"
+    },
+    "scope": "Serial all-30 Tier 2 retarget, complete inventory, then one median-episode 5000192-step pilot; stop for review",
+    "uploaded": false
   }
 }
