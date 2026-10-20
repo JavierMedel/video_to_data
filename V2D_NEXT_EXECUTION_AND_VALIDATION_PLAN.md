@@ -1,6 +1,6 @@
 # V2D Next Execution and Validation Plan
 
-**Review status:** corrections are required before execution. The [required execution corrections](#required-execution-corrections) are included in this document and take precedence over conflicting statements in the proposal below. No implementation or pipeline execution is implied by this consolidation.
+**Current status:** the corrected core tooling has been implemented and validated on this laptop. Read the [implementation and validation status](#implementation-and-validation-status-october-20-2026) first. It takes precedence over the historical proposal and review below. GPU experiments and submission gates remain pending; implementation does not establish a score gain.
 
 - **Branch:** `v2d-track1-blackwell`
 - **Audited commit:** `cff4d10` ("Implement cross-track improvement tooling and planning handoff")
@@ -992,3 +992,111 @@ The pinned [Tier 2 README](https://huggingface.co/datasets/nvidia/video_to_data_
 6. Run the surrogate study before changing the default lambda policy or scaling Track 1 fitting.
 
 Do not launch the full multi-track schedule directly from the current proposal. Correct these contracts and gates first; then expand only from measured passing pilots.
+
+---
+
+## Implementation and validation status (October 20, 2026)
+
+This section records execution-laptop work after the review. The proposal and review above are retained as history. The user asked to implement the plan; new challenge training and uploads were not launched. No new submission packet or leaderboard improvement is claimed.
+
+### Implemented code
+
+- Output ownership in `cross_track/ownership.py`, the typed job runner, and new Track 2/3 campaign paths. Foreign or unclaimed checkpoint directories, overlapping outputs, protected baseline/submission paths, changed arms/budgets/code and competing controllers are rejected. Explicit learner resume uses a new directory and keeps the original task. Native override paths and step budgets must match the declared job. Historical baseline recovery paths remain separate.
+- Track 3 development jobs now have a version guard and require hash-bound released public/evaluation metadata with disjoint episode membership. A caller's `split: development` label alone is insufficient.
+- Kaggle paging retains response-level continuation tokens from the installed SDK, supports older numbered clients, rejects duplicate/repeated pages, and fails closed when a token client has discarded completeness metadata. Both calendar and rolling quota modes require a source quote, URL and capture date. The rules file remains unresolved.
+- Host review of full-repository Docker receipts now resolves the `/repo` namespace without losing parent hashes; ambiguous parent mappings are rejected.
+- MHR participant export in `cross_track/mhr_asset.py` maps the actual 889-by-249 transform to its effective 204 input columns, reconstructs flattened skin weights, and records participant proxy roles. Three-decoder real-frame parity and gradient checks are implemented. Human fitting now requires a passing real parity report.
+- Track 1 evidence export in `cross_track/track1_evidence.py` reads actual masks/calibration, decodes full supplied hand vertices and normals in meters, records source FPS, supports optional observed 2D keypoints and uses consistent parent/candidate visible-mask IoU. A single static `edex` calibration record is supported; it is not mistaken for a one-frame clip. Historical GPU-screen reproduction is a separate optional check, not equated with CPU IoU.
+- PEN constraints accumulate through bounded updates and final repair. Infeasible conservative cuts reject the lambda; the code makes no global convergence claim. Serialized artifacts are rechecked, including their own acceleration.
+- Weighted gap-aware GCV uses an exact blocked trace calculation. `surrogate-study` separates tuning and held-out source episodes, tests white/correlated/random-walk/zero-noise controls and binds a passing cap to source hashes and FPS. **GCV remains opt-in until the real study passes.** `max_passing` remains a diagnostic control and is rejected by the new submission assembly promotion gate.
+- `checkpoint-select --episodes ...` creates a nonpackable subset diagnostic. `checkpoint-determinism` runs two independent native evaluations only with `--execute`. Full missing-rollout selection requires a passing hash-bound determinism report.
+- Tier 2 noise diagnostics and complete-cohort pooling use only Tier 2 inputs. Observed rest/stance/contact conditioning requires source-bound verified labels and an explicit correction budget. Static-camera calibration has a held-out reprojection gate and exports the existing FoundationPose intrinsics schema; it still requires silhouette/depth/mask review before image refinement.
+- Native retarget validation now explicitly checks named URDF joint limits, root poses, support-stage provenance and visibility lineage. It does not equate those checks with successful physical contact; native pilots are still required.
+
+All new tools use `reconstruction/scripts/run_cross_track_improvement.py`. There are now 22 help/importable entry points, including `mhr-inventory`, `mhr-export`, `mhr-parity`, `track1-evidence`, `surrogate-study`, `tier2-noise`, `condition-tier`, `tier2-camera`, and `checkpoint-determinism` in addition to the original tools.
+
+### Validation actually performed
+
+| Check | Result |
+| --- | --- |
+| Host suite, including new provenance/numerical/paging/calibration tests | 113 passed |
+| Torch CPU decoder/export/gradient suite | 3 passed |
+| CLI help/import checks | All 22 passed |
+| Python compilation and diff whitespace check | Passed |
+| Real three-decoder parity | 100 distinct frames across 10 v8 episodes passed |
+| Maximum real vertex Euclidean difference | 3.3315700211950505e-7 m |
+| Maximum real joint Euclidean difference | 1.8760890914248167e-7 m |
+| Real Track 1 evidence adapter smoke | Episode 6, frames 90/91/92, CPU export passed |
+| Smoke parent visible-mask IoU mean | 0.7269491137539772; a baseline diagnostic, not a score gain |
+| Saved learner resume builder | Validated against a real existing native checkpoint without running it; retained 1,024 worlds |
+| Authenticated leaderboard/history snapshot | All 23 competitions completed, read-only |
+
+The decoder asset is `reconstruction/data/cross_track/mhr_asset_v1/mhr_body_asset.npz`, SHA-256 `e50e54c54aae904e7fea42b8d5821e7bbce4b77cc85fd5f38e6da6996d145d23`. Its real parity report is `reconstruction/data/cross_track/mhr_parity_v3/decoder_parity.json`. Source TorchScript SHA-256: `352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc`.
+
+The three-frame evidence smoke is under `reconstruction/data/cross_track/evidence_smoke_v1/`. It deliberately lacks complete scored coverage and cannot be promoted as a complete episode candidate. No historical GPU-raster equality test or real human refit was run. Participant role coverage remains a proxy for the undisclosed host roles.
+
+Tests can be rerun with:
+
+```bash
+reconstruction/.venv/bin/python -m pytest -q \
+  reconstruction/scripts/test_cross_track_validation_plan.py \
+  reconstruction/scripts/test_cross_track_improvement.py \
+  reconstruction/scripts/test_track3_campaign.py \
+  robotic_grounding/tests/test_track2_campaign.py \
+  robotic_grounding/tests/test_track2_sources.py \
+  robotic_grounding/tests/test_track2_retarget_verification.py \
+  reconstruction/scripts/test_track3_policy_guard.py
+```
+
+Torch tests use the existing `v2d_cari4d:blackwell` image on CPU, with `/repo/reconstruction/scripts` on `PYTHONPATH`; the host environment still has no Torch. No GPU stress test is implied by these CPU checks.
+
+### Real data prepared and inventoried
+
+The complete pinned Tier 2 release was downloaded to `reconstruction/data/v2d_challenge/track_2/tier_2_synthetic_noise/` at revision `5f68335f3acc802033d1e80728c1633197521de8`. Its prepared own-tier sources are at `robotic_grounding/data/track2/tier2/v1/source_episodes/`: **30 episodes, 22,990 frames, including Episode 16**. No Tier 2 native retargeting or training has run.
+
+The real Tier 2 noise report covers all 30 episodes under `reconstruction/incident_reports/cross_track_validation_plan/tier2_noise_v1/`. Position-increment classifications were 29 `mixed` and one `random_walk`; zero `white` and zero `unclear`. These are observational hypotheses confounded by true motion. No verified resting/contact/FK evidence was supplied, so the report does not prove drift or justify a correction automatically.
+
+Tier 1 checkpoint inventory is `reconstruction/incident_reports/cross_track_validation_plan/tier1_candidates.json`: **180 distinct saved actors, 30 matching existing rollouts, 150 missing evaluations**. Evaluating all of them is not assumed cheap; measure the repeatability/throughput pilot first.
+
+The machine-readable implementation summary is `reconstruction/incident_reports/cross_track_validation_plan/implementation_validation.json`. It records source hashes, tests, decoder parity, actual preparation counts, snapshot scores and remaining gates. Large generated assets, datasets and checkpoints remain local.
+
+### Current read-only leaderboard snapshot
+
+Observed UTC: `2026-10-20T19:50:53.330300+00:00`. The scores below are our latest submitted packet per board, not a mixture of our best historic versions. Leaders and targets are a timestamped API snapshot, not a combined official rank. The full local histories and targets for ranks 1/3/5/10 are under `reconstruction/incident_reports/cross_track_validation_plan/snapshots_20261020_v1/`.
+
+| Competition | Our latest score | Leader score |
+| --- | ---: | ---: |
+| track1-cd-h | 15.43955 | 13.07853 |
+| track1-cd-o | 23.48324 | 17.10165 |
+| track1-acc-h | 1.15894 | 0.13641 |
+| track1-acc-o | 0.71908 | 0.06876 |
+| track1-pen | 0.00322 | 0.0 |
+| track2-tier1-auc | 0.24466 | 0.96908 |
+| track2-tier1-sp-sr | 0.10000 | 0.86666 |
+| track2-tier1-mp-sr | 0.03333 | 0.83333 |
+| track2-tier1-mppe | 53.84820 | 7.44319 |
+| track2-tier2-auc | No submission | 0.51796 |
+| track2-tier2-sp-sr | No submission | 0.73333 |
+| track2-tier2-mp-sr | No submission | 0.6 |
+| track2-tier2-mppe | No submission | 13.70456 |
+| track2-tier3-auc | No submission | 0.266 |
+| track2-tier3-sp-sr | No submission | 0.26666 |
+| track2-tier3-mp-sr | No submission | 0.03333 |
+| track2-tier3-mppe | No submission | 46.649 |
+| track3-auc | 0.16307 | 0.82309 |
+| track3-sp-sr | 0.05000 | 0.85 |
+| track3-mp-sr | 0.00000 | 0.7 |
+| track3-rpe | 22.28685 | 3.05138 |
+| track3-mppe | 20.82175 | 2.62042 |
+| track3-cd-o | 0.57037 | 0.06523 |
+
+### Remaining execution gates and next work
+
+1. **Native GPU pilots:** run the deterministic Tier 1 repeatability pilot, then only the justified missing-rollout selection work. Track 2 evaluation reports must live under `robotic_grounding/`, inside its native mount; the earlier proposal's `reconstruction/data/cross_track/...` evaluation output is unsuitable for GPU evaluation.
+2. **Tier 2 retarget/policy pilot:** sources exist, but native retargeting, an episode-level feasibility gate and one measured 5M training/evaluation pilot still precede expansion. All 30 episodes must validate before final packing. Do not use Tier 1-derived scores to decide Tier 2 continuation.
+3. **Track 1 real candidate:** obtain full scored masks/camera/hand evidence and observed 2D keypoints where a human changes. Run the episode-held-out surrogate study before promoting a GCV-capped candidate. No passing lambda cap or v11 packet exists yet.
+4. **Optional Tier 2 image refinement:** real source-bound SOMA-FK/keypoint/visibility/rest/contact observations, calibrated silhouette agreement and consistent metric depth/masks are still needed. No FoundationPose refinement campaign or replacement source has been produced. Use existing reconstruction backends after those gates; a synthetic camera test is not a real calibrated episode.
+5. **Track 3 development:** construct the genuine matched public-development references/collision assets and released split metadata. No new O/M/R/A or reward-profile pilot has run. `object-focused` is the implemented Sharpa profile; there is no separate new G1 angular objective.
+6. **Tier 3 and rules:** genuine video reconstructions and a permitted released-world anchor remain unresolved. Weekly-window interpretations and warm-start source quotes remain unset. Local work is allowed to progress; uploads stay gated.
+
+The rules template is `reconstruction/data/cross_track/rules/rules_v1.json` and intentionally has `weekly_window: unresolved`. It grants no upload permission. No new challenge training, policy evaluation, submission upload or GPU job was left running by this implementation turn.

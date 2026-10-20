@@ -150,12 +150,15 @@ def curriculum(config_path, steps, worlds=1024):
 def training_job(track, episode, reference, output, steps, arm='fresh', checkpoint=None, rules=None, reward_profile='baseline'):
     """Build native commands without running them. Resume retains the old curriculum."""
     robot = track.startswith('track_2')
+    if type(steps) is not int: raise ValueError('Training steps must be an integer')
     if track not in ('track_3', 'track_2_tier1', 'track_2_tier2', 'track_2_tier3'):
         raise ValueError('Unknown policy track')
     mount = REPO/'robotic_grounding' if robot else REPO
     def container(path): return '/repo/'+str(Path(path).resolve().relative_to(mount))
     if arm not in ('fresh', 'resume', 'warm-start'): raise ValueError('Unknown training arm')
     reference, output = Path(reference), Path(output)
+    from .ownership import check_output
+    check_output(output)
     if checkpoint and output.resolve() == Path(checkpoint).resolve().parent:
         raise ValueError('New arms must preserve parent checkpoint directory')
     config_root = REPO/'robotic_grounding/flash_chord/src/flash_chord/configs'
@@ -175,11 +178,18 @@ def training_job(track, episode, reference, output, steps, arm='fresh', checkpoi
             raise ValueError('Parent checkpoint cannot establish same-tier lineage')
         if arm == 'resume':
             if saved.get('checkpoint_kind') != 'training_state': raise ValueError('Resume requires native learner state')
+            saved_reference = Path(config['task']['parquet'])
+            if not saved_reference.is_relative_to('/repo'):
+                raise ValueError('Resume cannot establish the original native reference')
+            saved_reference = mount/saved_reference.relative_to('/repo')
+            if sha(saved_reference) != sha(reference):
+                raise ValueError('Learner resume must preserve its original task; use actor warm start for a different task')
             thresholds = config['curriculum']['thresholds']
             if int(saved['environment_steps']) >= steps: raise ValueError('Resume budget must exceed saved steps')
             extra = ['training.resume=true', f'training.checkpoint_path={json.dumps(container(checkpoint))}']
         else:
-            if not rules or not load(rules).get('same_tier_cross_episode_warm_start_allowed'):
+            decision = load(rules) if rules else {}
+            if not decision.get('same_tier_cross_episode_warm_start_allowed') or not decision.get('same_tier_cross_episode_warm_start_source_quote'):
                 raise ValueError('Warm start requires an explicit recorded rule decision')
             if saved.get('checkpoint_kind') != 'policy': raise ValueError('Warm start requires an actor-only policy')
             extra = [f'training.initial_policy_path={json.dumps(container(checkpoint))}']
@@ -202,10 +212,13 @@ def training_job(track, episode, reference, output, steps, arm='fresh', checkpoi
     if arm == 'resume':
         # Saved world-shaped exploration state must retain its original world count.
         overrides = [f'scene.world_count={config["scene"]["world_count"]}' if v.startswith('scene.world_count=') else v for v in overrides]
-    return {'track': track, 'episode_index': episode, 'arm': arm, 'reference': str(reference.resolve()), 'output_dir': str(output.resolve()),
+    job = {'track': track, 'episode_index': episode, 'arm': arm, 'reference': str(reference.resolve()), 'output_dir': str(output.resolve()),
             'reference_sha256': sha(reference), 'parent_checkpoint': str(checkpoint) if checkpoint else None,
             'parent_checkpoint_sha256': sha(checkpoint) if checkpoint else None, 'target_steps': steps,
             'curriculum_thresholds': thresholds, 'reward_profile': reward_profile, 'overrides': overrides}
+    from .ownership import identity
+    job['run_identity'] = identity(job)
+    return job
 
 
 def evaluate(checkpoint, track, report):
@@ -229,14 +242,53 @@ def evaluate(checkpoint, track, report):
     return trajectory
 
 
+def determinism(checkpoint, track, report, execute=False):
+    """Two separate native evaluation directories, never a best-of-seeds search."""
+    report = Path(report)
+    mount = REPO/'robotic_grounding' if track.startswith('track_2') else REPO
+    if not report.resolve().is_relative_to(mount): raise ValueError('Determinism reports must be inside the native track mount')
+    new_run(report, [checkpoint, REPO/'robotic_grounding/flash_chord/scripts/evaluate_policy.py',
+                     REPO/'reconstruction/scripts/run_track3_policy_stage.py'], {'track': track, 'method': 'independent_native_repeats_v1'})
+    if not execute:
+        complete(report, 'DETERMINISM_PLANNED_NOT_EXECUTED'); return
+    paths = [evaluate(checkpoint, track, report/f'repeat_{i}') for i in range(2)]
+    a, b = [read_rollout(path, checkpoint) for path in paths]
+    same_grid = np.array_equal(a[0], b[0]) and np.array_equal(a[1], b[1]) and a[2] == b[2]
+    maximum = max(float(np.max(np.abs(a[i]-b[i]))) for i in (3, 4)) if same_grid else None
+    passed = same_grid and maximum <= 1e-9
+    result = {'passed': passed, 'checkpoint_sha256': sha(checkpoint), 'same_frame_body_grid': same_grid,
+              'maximum_pose_component_difference': maximum, 'trajectory_sha256': [sha(p) for p in paths],
+              'scope': 'Two independent deterministic native rollouts; not stochastic seed selection'}
+    complete(report, 'DETERMINISM_PASSED' if passed else 'DETERMINISM_FAILED', **result)
+    save(report/'determinism.json', load(report/'execution.json'))
+    if not passed: raise ValueError('Native evaluation repeatability failed; selection remains disabled')
+    return result
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--candidates', type=Path, required=True, help='JSON list: episode_index, checkpoint, optional trajectory')
     p.add_argument('--reference-root', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--run-evaluations', action='store_true')
+    p.add_argument('--episodes', type=int, nargs='+', help='Diagnostic subset only; never produces a packable selection')
+    p.add_argument('--determinism-report', type=Path)
     a = p.parse_args(); candidates = load(a.candidates)
-    new_run(a.output, [a.candidates], {'reference_root': str(a.reference_root.resolve()), 'track': 'track_2_tier1'})
+    if a.run_evaluations and not a.output.resolve().is_relative_to(REPO/'robotic_grounding'):
+        raise ValueError('Track 2 evaluation reports must be under robotic_grounding, inside its native mount')
+    if a.run_evaluations and a.episodes is None:
+        certificate = load(a.determinism_report) if a.determinism_report else {}
+        if (certificate.get('state') != 'DETERMINISM_PASSED' or not certificate.get('passed')
+                or certificate.get('configuration', {}).get('track') != 'track_2_tier1'):
+            raise ValueError('Full native selection requires a passing determinism report')
+        for path, digest in {**certificate['inputs_sha256'], **certificate['implementation_sha256']}.items():
+            if sha(path) != digest: raise ValueError('Determinism evidence changed; rerun the repeatability pilot')
+    if a.episodes is not None:
+        if not set(a.episodes) <= set(range(30)) or len(set(a.episodes)) != len(a.episodes):
+            raise ValueError('Require unique scored episode indices')
+        candidates = [r for r in candidates if r['episode_index'] in a.episodes]
+        if set(r['episode_index'] for r in candidates) != set(a.episodes): raise ValueError('Missing pilot episodes')
+    new_run(a.output, [a.candidates, *([a.determinism_report] if a.determinism_report else [])], {'reference_root': str(a.reference_root.resolve()), 'track': 'track_2_tier1', 'episodes': a.episodes})
     rows = []
     for item in candidates:
         trajectory = item.get('trajectory')
@@ -250,6 +302,9 @@ def main():
                    curriculum_stage=metadata.get('curriculum_stage'))
         rows.append(row)
     save(a.output/'diagnostics.json', rows)
+    if a.episodes is not None:
+        complete(a.output, 'LOCAL_SUBSET_DIAGNOSTIC', evaluated=len(rows), packable=False)
+        return
     selection = select(rows); save(a.output/'selection.json', selection)
     complete(a.output, 'LOCAL_SELECTION_COMPLETE_NOT_UPLOADED', selected_episodes=len(selection['episodes']))
 
@@ -283,6 +338,14 @@ def inventory_main():
     p.add_argument('--policy-roots', type=Path, nargs='+', required=True); p.add_argument('--output', type=Path, required=True)
     p.add_argument('--existing-results', type=Path)
     a = p.parse_args(); checkpoint_inventory(a.policy_roots, a.output, a.existing_results)
+
+
+def determinism_main():
+    p = argparse.ArgumentParser(description='Independent native repeatability pilot; explicit GPU execution only')
+    p.add_argument('--checkpoint', type=Path, required=True); p.add_argument('--report', type=Path, required=True)
+    p.add_argument('--track', choices=['track_2_tier1', 'track_2_tier2', 'track_2_tier3', 'track_3'], required=True)
+    p.add_argument('--execute', action='store_true')
+    a = p.parse_args(); determinism(a.checkpoint, a.track, a.report, a.execute)
 
 
 def choose_arm(records):

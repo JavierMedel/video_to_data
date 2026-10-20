@@ -163,9 +163,11 @@ def test_weekly_gate_counts_pending_and_fails_when_boundary_is_unknown():
     history = {'slug': 'board', 'observed_utc': now.isoformat(), 'history_complete': True,
                'submissions': [{'date': (now-timedelta(hours=i)).isoformat(), 'state': 'PENDING'} for i in range(5)]}
     with pytest.raises(ValueError, match='unresolved'): quota(history, {}, now)
-    with pytest.raises(ValueError, match='limit'): quota(history, {'weekly_window': 'rolling_7_days'}, now)
+    rules = {'weekly_window': 'rolling_7_days', 'weekly_window_source_quote': 'Fixture rule text',
+             'weekly_window_source_url': 'https://example.org/rules', 'rules_captured_utc': now.isoformat()}
+    with pytest.raises(ValueError, match='limit'): quota(history, rules, now)
     history['submissions'].pop()
-    assert quota(history, {'weekly_window': 'rolling_7_days'}, now)['used'] == 4
+    assert quota(history, rules, now)['used'] == 4
 
 
 def test_read_only_snapshot_uses_all_23_configured_slugs(tmp_path):

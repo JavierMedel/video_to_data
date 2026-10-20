@@ -1,0 +1,225 @@
+{
+  "passed": true,
+  "maximum_vertex_error_m": 3.3315700211950505e-07,
+  "maximum_joint_error_m": 1.8760890914248167e-07,
+  "frames": 100,
+  "episodes": 10,
+  "samples": [
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000000.npz",
+      "sha256": "687b4726ab4dc54d80386f8b0dabce0b817221aa7965c010a814934d24022b0e",
+      "frames": [
+        478,
+        0,
+        87,
+        175,
+        263,
+        350,
+        438,
+        526,
+        613,
+        701
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000001.npz",
+      "sha256": "4c9909124ea7498f0755ca9088e7d3524d1784076068f1e529681c0cf7bbce48",
+      "frames": [
+        364,
+        0,
+        74,
+        148,
+        222,
+        296,
+        370,
+        444,
+        518,
+        592
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000002.npz",
+      "sha256": "297b2af37ed1aa29dfedafcd290dd7d7f2aedaeb5e7994de5f61ea3084f4d73f",
+      "frames": [
+        193,
+        0,
+        96,
+        192,
+        288,
+        384,
+        480,
+        576,
+        672,
+        768
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000003.npz",
+      "sha256": "6dc75885bc4a3455fa506fa777710579fd047467458f2884bd63052934fac2a1",
+      "frames": [
+        536,
+        0,
+        65,
+        131,
+        197,
+        262,
+        328,
+        394,
+        459,
+        525
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000004.npz",
+      "sha256": "333c32e399f7ea2e02a698436c308c97a30dbb49193161f5c9186964ed17f3f7",
+      "frames": [
+        661,
+        0,
+        82,
+        165,
+        248,
+        331,
+        414,
+        497,
+        580,
+        663
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000005.npz",
+      "sha256": "c77255c678863af69ac0246d7b1788ed157671a1c0fb3747a5e8e135e8581a58",
+      "frames": [
+        114,
+        0,
+        74,
+        148,
+        222,
+        296,
+        370,
+        444,
+        518,
+        592
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000006.npz",
+      "sha256": "9dbf5bb81ccfce1c7ac840c2bd85acad6a047fde1edfa0fb0cafecafef36b783",
+      "frames": [
+        423,
+        0,
+        90,
+        181,
+        271,
+        362,
+        452,
+        543,
+        633,
+        724
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000007.npz",
+      "sha256": "d04aa53e899734c40d2304c4714fdb7d546b3c889389ba77a3781178600ce87c",
+      "frames": [
+        63,
+        0,
+        86,
+        172,
+        258,
+        344,
+        431,
+        517,
+        603,
+        689
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000008.npz",
+      "sha256": "003f72967dfc30f4647d6cc62686d1bbca782b4c429ec058d710d22bc8e53ffd",
+      "frames": [
+        175,
+        0,
+        70,
+        140,
+        211,
+        281,
+        351,
+        422,
+        492,
+        562
+      ]
+    },
+    {
+      "bundle": "/repo/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000009.npz",
+      "sha256": "57b0b9925e4c417111315a52f7a29543986d38fa777d31041c8370cdb78b211d",
+      "frames": [
+        109,
+        0,
+        46,
+        92,
+        138,
+        184,
+        230,
+        276,
+        322,
+        368
+      ]
+    }
+  ],
+  "gradient_maxima": [
+    0.3029542341609955,
+    0.20295291775809812,
+    0.22433697913178233,
+    0.5370721729477252,
+    0.46541154310148375,
+    0.35732979261394626,
+    0.20104688104229979,
+    0.20596808694528912,
+    0.36168241200220896,
+    0.23618285222737737,
+    0.30307482205286185,
+    0.293071726856875,
+    0.21890650045027973,
+    0.23149775392908245,
+    0.24340838282238786,
+    0.20029137932530758,
+    0.17811273958433022,
+    0.1299960277205841,
+    0.12553813325730526,
+    0.19900297895464134,
+    0.1889665941969336,
+    0.16871637189297858,
+    0.2391453884601407,
+    0.35326240880907217,
+    0.18128643390960456,
+    0.3188768481637087,
+    0.2625599159118043,
+    0.19733968082985712,
+    0.1231406875766783,
+    0.1299035949565725,
+    0.2028578804099492,
+    0.14576523421366286,
+    0.15854367602634128,
+    0.2217469337771168,
+    0.1506743187208889,
+    0.22091003400698334,
+    0.40516096758106246,
+    0.24377250235059714,
+    0.31040165948917725,
+    0.2771327827032704,
+    0.19400016876940684,
+    0.1980172886682157,
+    0.17982674581030994,
+    0.2204847300681471,
+    0.21010411855460237,
+    0.43747951712924776,
+    0.2790740859527403,
+    0.29391744641362694,
+    0.18669554633740784,
+    0.22400450239492584
+  ],
+  "asset_sha256": "e50e54c54aae904e7fea42b8d5821e7bbce4b77cc85fd5f38e6da6996d145d23",
+  "model_path": "/repo/reconstruction/data/weights/track1_submission_mhr/mhr_model.pt",
+  "model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+  "scope": "Three-decoder parity; roles remain participant proxies"
+}

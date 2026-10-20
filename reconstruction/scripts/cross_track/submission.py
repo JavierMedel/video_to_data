@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import math
 import sys
+import inspect
 from .common import KIT, load, save, utc, sha, checked_command
 
 
@@ -33,6 +34,63 @@ def timestamp(value):
     return parsed.replace(tzinfo=timezone.utc) if parsed.tzinfo is None else parsed.astimezone(timezone.utc)
 
 
+def paged_rows(api, slug, *, leaderboard=False):
+    """Keep response tokens on Kaggle 2.x; support older numbered clients too."""
+    sdk = callable(getattr(api, 'build_kaggle_client', None))
+    method = api.competition_leaderboard_view if leaderboard else api.competition_submissions
+    parameters = inspect.signature(method).parameters
+    numbered = not sdk and 'page_number' in parameters
+    token, seen_tokens, seen_rows, rows = '', set(), set(), []
+    for page in range(1, 1001):
+        if sdk:
+            from kagglesdk.competitions.types.competition_api_service import ApiGetLeaderboardRequest, ApiListSubmissionsRequest
+            from kagglesdk.competitions.types.competition_enums import SubmissionGroup, SubmissionSortBy
+            request = (ApiGetLeaderboardRequest if leaderboard else ApiListSubmissionsRequest)()
+            request.competition_name = slug
+            request.page_size = 100
+            request.page_token = token
+            if not leaderboard:
+                request.group = SubmissionGroup.SUBMISSION_GROUP_ALL
+                request.sort_by = SubmissionSortBy.SUBMISSION_SORT_BY_DATE
+            with api.build_kaggle_client() as client:
+                endpoint = client.competitions.competition_api_client
+                response = endpoint.get_leaderboard(request) if leaderboard else endpoint.list_submissions(request)
+            raw_batch = response.submissions
+            next_token = response.next_page_token or ''
+        else:
+            kwargs = {'page_size': 100} if 'page_size' in parameters else {}
+            if numbered: kwargs['page_number'] = page
+            elif 'page_token' in parameters: kwargs['page_token'] = token
+            response = serializable(method(slug, **kwargs))
+            if isinstance(response, dict):
+                raw_batch = response.get('submissions', response.get('leaderboard'))
+                next_token = response.get('next_page_token', response.get('nextPageToken', '')) or ''
+            elif isinstance(response, list):
+                if not numbered and not leaderboard:
+                    raise ValueError('Token history client discarded response metadata; use a response-bearing adapter')
+                raw_batch, next_token = response, ''
+            else: raise ValueError('Unexpected Kaggle response')
+        batch = serializable(raw_batch)
+        if not isinstance(batch, list) or any(not isinstance(row, dict) for row in batch):
+            raise ValueError('Unexpected Kaggle rows')
+        for row in batch:
+            # Repeated attempts/pages must never be silently counted as complete.
+            key = str(field(row, 'ref', 'id', 'submissionId')) if not leaderboard else None
+            key = key if key not in (None, 'None') else __import__('json').dumps(row, sort_keys=True)
+            if key in seen_rows: raise ValueError('Duplicate Kaggle row across pages')
+            seen_rows.add(key); rows.append(row)
+        if numbered:
+            if len(batch) < 100: return rows
+        elif next_token:
+            if next_token in seen_tokens or not batch: raise ValueError('Repeated/empty Kaggle continuation page')
+            seen_tokens.add(next_token); token = next_token
+        else:
+            if not sdk and isinstance(response, list) and len(batch) >= 100:
+                raise ValueError('Leaderboard continuation metadata unavailable')
+            return rows
+    raise ValueError('Kaggle pagination truncated; cannot establish completeness')
+
+
 def snapshot(output, api=None):
     if api is None:
         from kaggle.api.kaggle_api_extended import KaggleApi
@@ -41,14 +99,8 @@ def snapshot(output, api=None):
     if output.exists() and any(output.iterdir()): raise ValueError('Use a fresh dated snapshot directory')
     summary = {'observed_utc': utc(), 'competitions': {}}
     for track, key, slug, higher in competitions():
-        leaderboard = serializable(api.competition_leaderboard_view(slug, page_size=100))
-        submissions = []
-        for page in range(1, 101):
-            batch = serializable(api.competition_submissions(slug, page_number=page, page_size=100))
-            if not isinstance(batch, list): raise ValueError('Unexpected Kaggle submission history response')
-            submissions.extend(batch)
-            if len(batch) < 100: break
-        else: raise ValueError('Submission pagination truncated; cannot establish quota')
+        leaderboard = paged_rows(api, slug, leaderboard=True)
+        submissions = paged_rows(api, slug)
         score = lambda row: float(field(row, 'public_score', 'publicScore', 'score'))
         scored = [s for s in submissions if field(s, 'public_score', 'publicScore') not in (None, '')]
         board = leaderboard if isinstance(leaderboard, list) else leaderboard.get('submissions', leaderboard.get('leaderboard', []))
@@ -74,6 +126,10 @@ def quota(history, rules, now=None):
     if not timedelta(0) <= now-observed <= timedelta(hours=24): raise ValueError('Snapshot is stale or from the future')
     if not rules.get('same_package_all_metrics', True): raise ValueError('This workflow requires a coherent package')
     mode = rules.get('weekly_window', 'unresolved')
+    if mode in ('rolling_7_days', 'calendar'):
+        if not all(rules.get(k) for k in ('weekly_window_source_quote', 'weekly_window_source_url', 'rules_captured_utc')):
+            raise ValueError('Weekly boundary requires an official source quote, URL and capture date')
+        if timestamp(rules['rules_captured_utc']) > now: raise ValueError('Rules capture date is in the future')
     if mode == 'rolling_7_days':
         start = now-timedelta(days=7)
     elif mode == 'calendar':
@@ -85,7 +141,7 @@ def quota(history, rules, now=None):
         raise ValueError('Weekly window remains unresolved; local implementation can proceed, upload cannot')
     attempts = [r for r in history['submissions'] if start <= timestamp(field(r, 'date', 'submitted_at', 'submissionDate')) <= now]
     unlimited_start = rules.get('unlimited_start_utc')
-    unlimited = (bool(rules.get('unlimited_source_quote')) and unlimited_start is not None
+    unlimited = (bool(rules.get('unlimited_source_quote')) and bool(rules.get('unlimited_source_url')) and unlimited_start is not None
                  and timestamp(unlimited_start) <= now < timestamp(rules['freeze_utc']))
     if not unlimited and len(attempts) >= 5: raise ValueError('Weekly limit reached for '+history['slug'])
     if now >= timestamp(rules.get('freeze_utc', '2026-11-04T22:00:00+00:00')):
@@ -132,7 +188,10 @@ def main():
     for name in ('packet', 'rules', 'snapshots', 'report'): upload.add_argument('--'+name, type=Path, required=True)
     upload.add_argument('--track', required=True); upload.add_argument('--execute', action='store_true')
     a = p.parse_args()
-    result = snapshot(a.output) if a.action == 'snapshot' else submit(a.packet, a.track, a.rules, a.snapshots, a.report, a.execute)
+    if a.action == 'snapshot':
+        result = snapshot(a.output)
+        result = {'observed_utc': result['observed_utc'], 'competition_count': len(result['competitions']), 'output': str(a.output)}
+    else: result = submit(a.packet, a.track, a.rules, a.snapshots, a.report, a.execute)
     print(__import__('json').dumps(result, indent=2))
 
 

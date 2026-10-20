@@ -12,9 +12,25 @@ REPO = Path(__file__).resolve().parents[3]
 KIT = REPO / 'reconstruction/v2d_submission_kit/v2d_submission_kit'
 
 
+def artifact_path(path):
+    """Rebase full-repository Docker receipts when reviewing them on the host."""
+    path = Path(path)
+    if not path.exists() and path.is_absolute() and path.is_relative_to('/repo') and REPO != Path('/repo'):
+        return REPO/path.relative_to('/repo')
+    return path
+
+
 def sha(path):
-    with Path(path).open('rb') as stream:
+    with artifact_path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def input_digest(record, path):
+    expected = artifact_path(path).resolve()
+    matches = [digest for source, digest in record['inputs_sha256'].items()
+               if artifact_path(source).resolve() == expected]
+    if len(matches) != 1: raise ValueError('Review lacks one unambiguous parent input')
+    return matches[0]
 
 
 def save(path, data):
@@ -47,14 +63,23 @@ def metric(track, name):
     return module
 
 
+def implementation_paths():
+    paths = sorted(Path(__file__).parent.glob('*.py'))
+    paths += [Path(__file__).parents[1]/name for name in ('run_cross_track_improvement.py', 'track1_metric_harness.py', 'run_track3_policy_stage.py')]
+    native = REPO/'robotic_grounding/flash_chord'
+    paths += [native/name for name in ('scripts/evaluate_policy.py', 'src/flash_chord/training/flash_sac/runner.py',
+                                      'src/flash_chord/training/flash_sac/config.py',
+                                      'src/flash_chord/configs/training/reference_flash_sac.yaml')]
+    return paths
+
+
 def new_run(output, inputs, configuration):
     """An existing version may resume only with identical inputs/configuration."""
     output = Path(output).resolve()
     paths = {str(Path(p).resolve()): sha(p) for p in inputs}
     if any(output == Path(p) or output in Path(p).parents for p in paths):
         raise ValueError('Output must not contain an immutable input')
-    implementation = sorted(Path(__file__).parent.glob('*.py'))
-    implementation += [Path(__file__).parents[1]/name for name in ('run_cross_track_improvement.py', 'track1_metric_harness.py')]
+    implementation = implementation_paths()
     signature = {'inputs_sha256': paths, 'configuration': configuration,
                  'implementation_sha256': {str(p.resolve()): sha(p) for p in implementation}}
     manifest = output / 'execution.json'

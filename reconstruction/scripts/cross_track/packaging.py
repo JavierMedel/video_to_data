@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 import numpy as np
-from .common import REPO, KIT, new_run, load, sha, save, checked_command, complete
+from .common import REPO, KIT, new_run, load, sha, save, checked_command, complete, input_digest
 
 
 def assemble_track1(parent, parent_packet, reviews, scored_path, output, *, minimum_promoted=25, commit=None):
@@ -23,6 +23,8 @@ def assemble_track1(parent, parent_packet, reviews, scored_path, output, *, mini
             candidate = Path(decision['object']); record = load(candidate/'execution.json')
             if record['state'] != 'CANDIDATE_REQUIRES_PACKED_VALIDATION': raise ValueError('Object candidate lacks a completed review')
             if record.get('evaluated_frames') != scored[str(episode)]: raise ValueError('Object evidence does not cover every scored frame')
+            if record.get('lambda_policy') != 'gcv_capped' or record.get('lambda_cap') is None:
+                raise ValueError('Promotion requires a held-out-calibrated lambda policy; max_passing is a diagnostic control')
             if not record.get('serialized_evidence_review', {}).get('passed'): raise ValueError('Serialized object candidate lacks passing evidence')
             lam = record.get('selected_lambda')
             if lam is None or not any(r.get('lambda') == lam and r.get('passed') for r in record['reviews']):
@@ -32,9 +34,9 @@ def assemble_track1(parent, parent_packet, reviews, scored_path, output, *, mini
             for path, digest in {**record['inputs_sha256'], **record['implementation_sha256']}.items():
                 if sha(path) != digest: raise ValueError('Review input changed')
             expected_source = (Path(decision['human']) if decision.get('human') else parent) / (stem+'.npz')
-            if record['inputs_sha256'].get(str(expected_source.resolve())) != sha(expected_source):
+            if input_digest(record, expected_source) != sha(expected_source):
                 raise ValueError('Object fit does not descend from the selected parent/human')
-            if record['inputs_sha256'].get(str((parent/(stem+'_object.glb')).resolve())) != sha(parent/(stem+'_object.glb')):
+            if input_digest(record, parent/(stem+'_object.glb')) != sha(parent/(stem+'_object.glb')):
                 raise ValueError('Object fit used an unreviewed parent mesh')
             before = dict(np.load(parent/(stem+'.npz'), allow_pickle=False))
             after = dict(np.load(candidate/(stem+'.npz'), allow_pickle=False))
@@ -52,7 +54,7 @@ def assemble_track1(parent, parent_packet, reviews, scored_path, output, *, mini
                 if human_review['state'] != 'READY_FOR_COUPLED_OBJECT_REVIEW' or not human_review.get('passed'):
                     raise ValueError('Human change lacks geometry/reprojection gates')
                 if human_review.get('evaluated_frames') != scored[str(episode)]: raise ValueError('Human evidence frame grid differs')
-                if human_review['inputs_sha256'].get(str((parent/(stem+'.npz')).resolve())) != sha(parent/(stem+'.npz')):
+                if input_digest(human_review, parent/(stem+'.npz')) != sha(parent/(stem+'.npz')):
                     raise ValueError('Human fit does not descend from this parent')
                 if sha(human/(stem+'.npz')) != human_review['npz_sha256']:
                     raise ValueError('Human candidate changed after review')

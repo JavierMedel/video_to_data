@@ -45,3 +45,35 @@ def test_differentiable_correctives_and_fk_match_finite_difference():
         va, ja = model(a, shape); vb, jb = model(b, shape)
         finite = ((va.square().sum()+ja.square().sum())-(vb.square().sum()+jb.square().sum()))/(2*eps)
     assert float(params.grad[0, index]) == pytest.approx(float(finite), rel=2e-4, abs=1e-8)
+
+
+def test_scripted_export_handles_zero_padded_transform_and_flattened_skin(tmp_path):
+    from cross_track.mhr_asset import extract
+    from types import SimpleNamespace
+    a = asset(); nv = len(a['base_shape'])
+    names = {'joint_parents': 'character_torch.skeleton.joint_parents',
+             'joint_offsets': 'character_torch.skeleton.joint_translation_offsets',
+             'joint_prerotations': 'character_torch.skeleton.joint_prerotations',
+             'inverse_bind_pose': 'character_torch.linear_blend_skinning.inverse_bind_pose',
+             'base_shape': 'character_torch.blend_shape.base_shape', 'shape_vectors': 'character_torch.blend_shape.shape_vectors',
+             'corr_w1_idx': 'pose_correctives_model.pose_dirs_predictor.0.sparse_indices',
+             'corr_w1_val': 'pose_correctives_model.pose_dirs_predictor.0.sparse_weight'}
+    tensors = {name: torch.tensor(a[key]) for key, name in names.items()}
+    transform = np.c_[a['parameter_transform'], np.ones((889, 45))*99]
+    tensors['character_torch.parameter_transform.parameter_transform'] = torch.tensor(transform)
+    tensors['character_torch.mesh.faces'] = torch.tensor([[0, 1, 2]])
+    vertex, joint = np.nonzero(a['skin_dense'])
+    for key, value in [('vert_indices_flattened', vertex), ('skin_indices_flattened', joint), ('skin_weights_flattened', a['skin_dense'][vertex, joint])]:
+        tensors['character_torch.linear_blend_skinning.'+key] = torch.tensor(value)
+    w2 = sparse.csr_matrix((a['corr_w2_data'], a['corr_w2_indices'], a['corr_w2_indptr']), shape=a['corr_w2_shape'])
+    tensors['pose_correctives_model.pose_dirs_predictor.2.weight'] = torch.tensor(w2.toarray())
+    source = SimpleNamespace(named_buffers=lambda: tensors.items(), named_parameters=lambda: [])
+    spec = tmp_path/'hands.npz'; np.savez_compressed(spec, vertex_indices=np.array([[0, 1], [2, 3]]))
+    actual, _ = extract(source, spec)
+    assert actual['parameter_transform'].shape == (889, 204)
+    op = metric('track_1', 'ACC-O')
+    params = np.random.default_rng(42).normal(0, .01, (2, 204)); shape = np.zeros(45)
+    before, after = op._MHRBody(a)(params, shape), op._MHRBody(actual)(params, shape)
+    for first, second in zip(before, after): assert np.allclose(first, second, atol=1e-12)
+    tensors['character_torch.linear_blend_skinning.skin_weights_flattened'] *= .9
+    with pytest.raises(ValueError, match='normalization'): extract(source, spec)

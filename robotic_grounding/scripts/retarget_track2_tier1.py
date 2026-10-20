@@ -45,6 +45,42 @@ def verify_motion(parquet: Path, source: Path) -> dict:
         "released_to_retarget_world": transform.tolist()}
 
 
+def verify_feasibility(parquet: Path, source: Path, urdf: Path | None = None) -> dict:
+    """Explicit kinematic/support checks; not a claim of contact convergence."""
+    import xml.etree.ElementTree as ET
+    urdf = urdf or Path(__file__).resolve().parents[1] / 'source/robotic_grounding/robotic_grounding/assets/urdfs/g1/main_with_hand.urdf'
+    row = pq.ParquetFile(parquet).read().to_pylist()[0]
+    names = row.get('robot_joint_names', [])
+    joints = np.asarray(row['robot_joint_positions'], float)
+    if joints.ndim != 2 or len(names) != joints.shape[1] or len(set(names)) != len(names):
+        raise ValueError('Missing or duplicate retarget joint names')
+    limits = {}
+    for joint in ET.parse(urdf).getroot().findall('joint'):
+        limit = joint.find('limit')
+        if limit is not None and 'lower' in limit.attrib and 'upper' in limit.attrib:
+            limits[joint.attrib['name']] = (float(limit.attrib['lower']), float(limit.attrib['upper']))
+    if not set(names) <= set(limits): raise ValueError('Retarget joints lack audited URDF limits')
+    low, high = np.asarray([limits[name] for name in names]).T
+    if not np.isfinite(joints).all() or np.any(joints < low-1e-5) or np.any(joints > high+1e-5):
+        raise ValueError('Retarget joint limits violated')
+    root = np.asarray(row['robot_root_position'], float)
+    quat = np.asarray(row['robot_root_wxyz'], float)
+    if (root.shape != (len(joints), 3) or quat.shape != (len(joints), 4)
+            or not np.isfinite(root).all() or not np.isfinite(quat).all()
+            or not np.allclose(np.linalg.norm(quat, axis=1), 1., atol=1e-5, rtol=0)):
+        raise ValueError('Invalid native root poses')
+    manifest = json.loads((source/'source_manifest.json').read_text())
+    stage = parquet.parents[3]/'reconstructed_stage'/f'{source.name}_support.usda'
+    if not stage.is_file() or sha256(stage) != sha256(source/'support.usda'):
+        raise ValueError('Native support stage missing or differs from its own tier input')
+    invalid = manifest.get('interpolated_object_frames', [])
+    if len(set(invalid)) != len(invalid) or any(not 0 <= v < len(joints) for v in invalid):
+        raise ValueError('Invalid source visibility lineage')
+    return {'joint_limits_checked': len(names), 'urdf_sha256': sha256(urdf), 'support_stage_sha256': sha256(stage),
+            'visible_frames': len(joints)-len(invalid), 'contact_feasibility': 'REQUIRES_NATIVE_PILOT',
+            'scope': 'Kinematic limits and support provenance; not physical contact validation'}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--episodes", nargs="+", type=int, default=[i for i in range(30) if i != 16])

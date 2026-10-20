@@ -1,0 +1,425 @@
+{
+  "state": "IMPLEMENTATION_VALIDATED_REQUIRES_GPU_PILOTS",
+  "scope": "Code implementation, CPU tests, real decoder/evidence checks, own-tier source preparation and read-only snapshots; no new challenge training or upload",
+  "git_base_commit": "7cc53e582e5110613026f95c6fc6256d47e8e681",
+  "code_snapshot_sha256": {
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/__init__.py": "1e65c80998cf8fe3b6366e9600857d5882179b514858344455d1629686dae82f",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/common.py": "81df0dfd477a9064144efd165c915ce08c8e95310c0163e6ff89a8c52c4f0603",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/diagnostics.py": "63089aae45ae2c0bbb9573953ccd0b373654759cb5e45570a8d362c4421b4182",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/gpu.py": "be7d0412d8d113ed4b744478c4abcc58c04b3949158c5c621dd55bbcd47740da",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/human.py": "8ae44630ccf4f37d20db7648cb2050b8a2dfccc49d1060b6b2b7390e033615ce",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/image.py": "2c6a8966fd65e5d071adcdd5176da798fc260c714a60c4fd8bb3265bfac76cae",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/jobs.py": "b876f65da003f3237061b66aa48b84385e679d6ad654222777b3a59fb998191b",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/mhr_asset.py": "be0b10f37948f52ef8ba7d1ec0aaa66778fe29e5b186e12d74f5a113abcd20f1",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/mhr_torch.py": "84846b7193dbd9fc3878df4730d32a64a7ff628b62cb9c55c4db468d0a48fab3",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/ownership.py": "862149768fe4fece592e34ca48339e0e5de721a663b3bdd1ef1e60e5e8d00360",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/packaging.py": "5c8cca9caf026b2c3ad8a72bd516d3a5b643c6dd53104a980ae6d72edc4a7995",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/policy.py": "8a4b11cdc989022a90f7185d272db8ca4b0c7c8d22907a72d181e6ef6adb8831",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/submission.py": "d7a18c028e623fdf2a093b2bb10867c704e5a78b64c1372dbe878c706b163404",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/surrogate.py": "a04430f33b0286272ec6a42dc61d66d8e05314c81b7936a288428a9cf9618aec",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/temporal.py": "28b4f3405c61d31eb52737fbef8abd1e0c42d013abeffe7fb2352ea1e3b8ddf5",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/tier2_camera.py": "1689847f4777210a4208361e9cafa887a5c164eaaf8231d9d914c560d30f1786",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/tier2_noise.py": "78cc02953b227ef29c0daace6db63b86315558324741f864ee22a17abf8e6252",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/tier_inputs.py": "18950c5b1b60433cc2f8fea141c0c9597ca14f65f6c61e0800c5ff0fa3e97751",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/track1.py": "e5ba4f9a39a4a48d615a3f79e4e6d85d4f855bf71fd46b2440ae09f9e9fc9e28",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/track1_evidence.py": "14374fe1d4d761ee4eab1441a91f9141296ae9582c72b02485b74d3f58a31454",
+    "/home/alien51/video_to_data/reconstruction/scripts/cross_track/track3.py": "cf354fec1a9485561bd56fa3011ae02a4b8129600139db084b450bee17ce04b6",
+    "/home/alien51/video_to_data/reconstruction/scripts/run_cross_track_improvement.py": "3d83cab8e0ed8af8de66449b940a2d0010eda271c8f93698960a47f3d0e1664d",
+    "/home/alien51/video_to_data/reconstruction/scripts/track1_metric_harness.py": "223348a2fb91912a6a46d4c65d0df914ff9596b12826a69a9e7c8f49d2665789",
+    "/home/alien51/video_to_data/reconstruction/scripts/run_track3_policy_stage.py": "6189375ccaaca570f5f29d9c1ecbae25866e2e133600202c4da2a51cea3d1086",
+    "/home/alien51/video_to_data/robotic_grounding/flash_chord/scripts/evaluate_policy.py": "160d24f5fbeb70ccd569ca4192056f1892b2a9f2999066db9d8279461648fdf1",
+    "/home/alien51/video_to_data/robotic_grounding/flash_chord/src/flash_chord/training/flash_sac/runner.py": "a971e0f2ecab3971adba4775120a5da46d7d00ef353c70358a2d0e90fa8ef6fe",
+    "/home/alien51/video_to_data/robotic_grounding/flash_chord/src/flash_chord/training/flash_sac/config.py": "9454ca6d553a61f50238be5ad79352b0102b9b46c1ed11c42965fb82da8fad29",
+    "/home/alien51/video_to_data/robotic_grounding/flash_chord/src/flash_chord/configs/training/reference_flash_sac.yaml": "26641732cdcc7caf13bf4a05efc3e2ea36fdb5d4eb4c111207211ee3a357feb6"
+  },
+  "verification": {
+    "host_tests_passed": 113,
+    "torch_cpu_tests_passed": 3,
+    "cli_help_entrypoints": 22,
+    "python_compilation_passed": true,
+    "git_diff_check_passed": true
+  },
+  "mhr_parity": {
+    "passed": true,
+    "maximum_vertex_error_m": 3.3315700211950505e-07,
+    "maximum_joint_error_m": 1.8760890914248167e-07,
+    "frames": 100,
+    "episodes": 10,
+    "asset_sha256": "e50e54c54aae904e7fea42b8d5821e7bbce4b77cc85fd5f38e6da6996d145d23",
+    "model_path": "/repo/reconstruction/data/weights/track1_submission_mhr/mhr_model.pt",
+    "model_sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc",
+    "scope": "Three-decoder parity; roles remain participant proxies"
+  },
+  "mhr_parity_report_sha256": "d2052b49e1fc0985d1d989dd7fa095af435603697f9ba723f5d1150b0dd9dbc5",
+  "evidence_smoke": {
+    "episode": 6,
+    "frames": [
+      90,
+      91,
+      92
+    ],
+    "evidence_sha256": "201cc1eb6411f6b57a91f7320d18cb5fff5de4f75608f68b42ef93428c7a0693",
+    "mean_visible_iou": 0.7269491137539772,
+    "scope": "Three-frame CPU adapter check only; not complete scored coverage or a promoted candidate"
+  },
+  "checkpoint_inventory": {
+    "actors": 180,
+    "matching_rollouts": 30,
+    "missing_evaluations": 150
+  },
+  "new_tier2_sources": {
+    "episodes": 30,
+    "frames": 22990,
+    "episode16_included": true,
+    "dataset_revision": "5f68335f3acc802033d1e80728c1633197521de8",
+    "retargeted": false,
+    "trained": false
+  },
+  "noise_diagnostics": {
+    "episodes": 30,
+    "position_classification_counts": {
+      "white": 0,
+      "random_walk": 1,
+      "mixed": 29,
+      "unclear": 0
+    },
+    "rest_evidence_available": false,
+    "scope": "Pooled observational noise hypotheses; motion and drift are not identifiable from spectra alone"
+  },
+  "leaderboard_observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "competitions": {
+    "v2d-challenge-track1-cd-h": {
+      "track": "track_1",
+      "metric": "cd_h_cm",
+      "own_latest_score": "15.43955",
+      "own_latest_id": 57237204,
+      "own_best_score": "14.99887",
+      "targets": {
+        "1": 13.07853,
+        "3": 13.83859,
+        "5": 14.08084,
+        "10": 14.85738
+      }
+    },
+    "v2d-challenge-track1-cd-o": {
+      "track": "track_1",
+      "metric": "cd_o_cm",
+      "own_latest_score": "23.48324",
+      "own_latest_id": 57237207,
+      "own_best_score": "23.48324",
+      "targets": {
+        "1": 17.10165,
+        "3": 18.36928,
+        "5": 18.73858,
+        "10": 22.96998
+      }
+    },
+    "v2d-challenge-track1-acc-h": {
+      "track": "track_1",
+      "metric": "acc_h_cm",
+      "own_latest_score": "1.15894",
+      "own_latest_id": 57237209,
+      "own_best_score": "1.15894",
+      "targets": {
+        "1": 0.13641,
+        "3": 0.13724,
+        "5": 0.13807,
+        "10": 0.14019
+      }
+    },
+    "v2d-challenge-track1-acc-o": {
+      "track": "track_1",
+      "metric": "acc_o_cm",
+      "own_latest_score": "0.71908",
+      "own_latest_id": 57237210,
+      "own_best_score": "0.71908",
+      "targets": {
+        "1": 0.06876,
+        "3": 0.07075,
+        "5": 0.07131,
+        "10": 0.07439
+      }
+    },
+    "v2d-challenge-track1-pen": {
+      "track": "track_1",
+      "metric": "interpenetration_cm",
+      "own_latest_score": "0.00322",
+      "own_latest_id": 57237212,
+      "own_best_score": "0.00213",
+      "targets": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 2e-05
+      }
+    },
+    "v2d-challenge-track2-tier1-auc": {
+      "track": "track_2_tier1",
+      "metric": "add_auc",
+      "own_latest_score": "0.24466",
+      "own_latest_id": 57444008,
+      "own_best_score": "0.24466",
+      "targets": {
+        "1": 0.96908,
+        "3": 0.5953,
+        "5": 0.51038,
+        "10": 0.30445
+      }
+    },
+    "v2d-challenge-track2-tier1-sp-sr": {
+      "track": "track_2_tier1",
+      "metric": "spider_sr",
+      "own_latest_score": "0.10000",
+      "own_latest_id": 57444011,
+      "own_best_score": "0.10000",
+      "targets": {
+        "1": 0.86666,
+        "3": 0.8,
+        "5": 0.53333,
+        "10": 0.1
+      }
+    },
+    "v2d-challenge-track2-tier1-mp-sr": {
+      "track": "track_2_tier1",
+      "metric": "maniptrans_sr",
+      "own_latest_score": "0.03333",
+      "own_latest_id": 57444013,
+      "own_best_score": "0.03333",
+      "targets": {
+        "1": 0.83333,
+        "3": 0.43333,
+        "5": 0.2,
+        "10": 0.03333
+      }
+    },
+    "v2d-challenge-track2-tier1-mppe": {
+      "track": "track_2_tier1",
+      "metric": "mppe_cm",
+      "own_latest_score": "53.84820",
+      "own_latest_id": 57444015,
+      "own_best_score": "53.84820",
+      "targets": {
+        "1": 7.44319,
+        "3": 12.65831,
+        "5": 17.73644,
+        "10": 49.12326
+      }
+    },
+    "v2d-challenge-track2-tier2-auc": {
+      "track": "track_2_tier2",
+      "metric": "add_auc",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 0.51796,
+        "3": 0.44253,
+        "5": 0.37374,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier2-sp-sr": {
+      "track": "track_2_tier2",
+      "metric": "spider_sr",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 0.73333,
+        "3": 0.56666,
+        "5": 0.46666,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier2-mp-sr": {
+      "track": "track_2_tier2",
+      "metric": "maniptrans_sr",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 0.6,
+        "3": 0.4,
+        "5": 0.06666,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier2-mppe": {
+      "track": "track_2_tier2",
+      "metric": "mppe_cm",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 13.70456,
+        "3": 18.56074,
+        "5": 20.52402,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-auc": {
+      "track": "track_2_tier3",
+      "metric": "add_auc",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 0.266,
+        "3": 0.10649,
+        "5": 0.04961,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-sp-sr": {
+      "track": "track_2_tier3",
+      "metric": "spider_sr",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 0.26666,
+        "3": 0.13333,
+        "5": 0.0,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-mp-sr": {
+      "track": "track_2_tier3",
+      "metric": "maniptrans_sr",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 0.03333,
+        "3": 0.0,
+        "5": 0.0,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-mppe": {
+      "track": "track_2_tier3",
+      "metric": "mppe_cm",
+      "own_latest_score": null,
+      "own_latest_id": null,
+      "own_best_score": null,
+      "targets": {
+        "1": 46.649,
+        "3": 54.98984,
+        "5": 66.51482,
+        "10": null
+      }
+    },
+    "v2d-challenge-track3-auc": {
+      "track": "track_3",
+      "metric": "add_auc",
+      "own_latest_score": "0.16307",
+      "own_latest_id": 57416110,
+      "own_best_score": "0.16307",
+      "targets": {
+        "1": 0.82309,
+        "3": 0.65746,
+        "5": 0.63037,
+        "10": 0.34951
+      }
+    },
+    "v2d-challenge-track3-sp-sr": {
+      "track": "track_3",
+      "metric": "spider_sr",
+      "own_latest_score": "0.05000",
+      "own_latest_id": 57416113,
+      "own_best_score": "0.05000",
+      "targets": {
+        "1": 0.85,
+        "3": 0.7,
+        "5": 0.65,
+        "10": 0.35
+      }
+    },
+    "v2d-challenge-track3-mp-sr": {
+      "track": "track_3",
+      "metric": "maniptrans_sr",
+      "own_latest_score": "0.00000",
+      "own_latest_id": 57416115,
+      "own_best_score": "0.00000",
+      "targets": {
+        "1": 0.7,
+        "3": 0.4,
+        "5": 0.35,
+        "10": 0.0
+      }
+    },
+    "v2d-challenge-track3-rpe": {
+      "track": "track_3",
+      "metric": "rpe_cm",
+      "own_latest_score": "22.28685",
+      "own_latest_id": 57416118,
+      "own_best_score": "22.28685",
+      "targets": {
+        "1": 3.05138,
+        "3": 6.11429,
+        "5": 6.49702,
+        "10": 12.09079
+      }
+    },
+    "v2d-challenge-track3-mppe": {
+      "track": "track_3",
+      "metric": "mppe_cm",
+      "own_latest_score": "20.82175",
+      "own_latest_id": 57416120,
+      "own_best_score": "20.82175",
+      "targets": {
+        "1": 2.62042,
+        "3": 5.51073,
+        "5": 6.63026,
+        "10": 10.44602
+      }
+    },
+    "v2d-challenge-track3-cd-o": {
+      "track": "track_3_mesh",
+      "metric": "cd_o_cm",
+      "own_latest_score": "0.57037",
+      "own_latest_id": 57416123,
+      "own_best_score": "0.57037",
+      "targets": {
+        "1": 0.06523,
+        "3": 0.1094,
+        "5": 0.17257,
+        "10": 0.37329
+      }
+    }
+  },
+  "pending": [
+    "GPU deterministic checkpoint pilot and missing rollouts",
+    "Tier 2 native retarget and single-episode pilot",
+    "Full Track 1 observed evidence and keypoints",
+    "Held-out surrogate lambda study",
+    "Verified Tier 2 rest/contact/FK observations and real camera validation",
+    "Track 3 public-development arm preparation and pilots",
+    "Documented quota/warm-start rules"
+  ],
+  "changed_sources_sha256": {
+    "reconstruction/scripts/cross_track/common.py": "81df0dfd477a9064144efd165c915ce08c8e95310c0163e6ff89a8c52c4f0603",
+    "reconstruction/scripts/cross_track/human.py": "8ae44630ccf4f37d20db7648cb2050b8a2dfccc49d1060b6b2b7390e033615ce",
+    "reconstruction/scripts/cross_track/jobs.py": "b876f65da003f3237061b66aa48b84385e679d6ad654222777b3a59fb998191b",
+    "reconstruction/scripts/cross_track/mhr_asset.py": "be0b10f37948f52ef8ba7d1ec0aaa66778fe29e5b186e12d74f5a113abcd20f1",
+    "reconstruction/scripts/cross_track/ownership.py": "862149768fe4fece592e34ca48339e0e5de721a663b3bdd1ef1e60e5e8d00360",
+    "reconstruction/scripts/cross_track/packaging.py": "5c8cca9caf026b2c3ad8a72bd516d3a5b643c6dd53104a980ae6d72edc4a7995",
+    "reconstruction/scripts/cross_track/policy.py": "8a4b11cdc989022a90f7185d272db8ca4b0c7c8d22907a72d181e6ef6adb8831",
+    "reconstruction/scripts/cross_track/submission.py": "d7a18c028e623fdf2a093b2bb10867c704e5a78b64c1372dbe878c706b163404",
+    "reconstruction/scripts/cross_track/surrogate.py": "a04430f33b0286272ec6a42dc61d66d8e05314c81b7936a288428a9cf9618aec",
+    "reconstruction/scripts/cross_track/temporal.py": "28b4f3405c61d31eb52737fbef8abd1e0c42d013abeffe7fb2352ea1e3b8ddf5",
+    "reconstruction/scripts/cross_track/tier2_camera.py": "1689847f4777210a4208361e9cafa887a5c164eaaf8231d9d914c560d30f1786",
+    "reconstruction/scripts/cross_track/tier2_noise.py": "78cc02953b227ef29c0daace6db63b86315558324741f864ee22a17abf8e6252",
+    "reconstruction/scripts/cross_track/tier_inputs.py": "18950c5b1b60433cc2f8fea141c0c9597ca14f65f6c61e0800c5ff0fa3e97751",
+    "reconstruction/scripts/cross_track/track1.py": "e5ba4f9a39a4a48d615a3f79e4e6d85d4f855bf71fd46b2440ae09f9e9fc9e28",
+    "reconstruction/scripts/cross_track/track1_evidence.py": "14374fe1d4d761ee4eab1441a91f9141296ae9582c72b02485b74d3f58a31454",
+    "reconstruction/scripts/cross_track/track3.py": "cf354fec1a9485561bd56fa3011ae02a4b8129600139db084b450bee17ce04b6",
+    "reconstruction/scripts/run_cross_track_improvement.py": "3d83cab8e0ed8af8de66449b940a2d0010eda271c8f93698960a47f3d0e1664d",
+    "reconstruction/scripts/run_track3_full_campaign.py": "0482f5ce52792425a45cde410175eeed87c6cdb664eab1b4189b3f3e232aaa30",
+    "reconstruction/scripts/test_cross_track_improvement.py": "ef3340fcd1c67950ebd03d19b113833558b01d11d198357162f7a0759892a05e",
+    "reconstruction/scripts/test_cross_track_mhr_torch.py": "79afcb66017911c9b6279c8c70bf6300970343d8fc9aa896d255ec13f7b0a555",
+    "reconstruction/scripts/test_cross_track_validation_plan.py": "5350109a97a7a767490f4fa160e716eed5ffc40351ccad312d5c2c749dd772f6",
+    "robotic_grounding/scripts/retarget_track2_tier1.py": "347c0eda4bf76372a0f89d4868777f5c028af77c40efd950a6f96bbdde8c09b3",
+    "robotic_grounding/scripts/run_track2_tier1_campaign.py": "64f0303fef7ce844e1b4a9ce38468d5d4622607256813add02a7d8eca4de8f66"
+  }
+}

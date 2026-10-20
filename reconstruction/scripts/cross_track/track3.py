@@ -152,9 +152,25 @@ def bottleneck(rows):
 
 def dev_jobs(manifest, output):
     from .policy import training_job
+    from .common import new_run
     data = load(manifest)
     if data.get('split') != 'development' or len(data['episodes']) != 4:
         raise ValueError('Choose exactly four publicly released development episodes')
+    # A caller-supplied split label is not proof of released split membership.
+    import json
+    metadata_inputs = []
+    split_ids = {}
+    for key, folder in [('development_metadata', 'public'), ('evaluation_metadata', 'evaluation')]:
+        if key not in data: raise ValueError('Dev jobs require hash-bound released split metadata')
+        entry = data[key]; path = Path(entry['path']).resolve()
+        release = REPO/f'reconstruction/data/v2d_challenge/track_3/{folder}'
+        if not path.is_relative_to(release.resolve()) or sha(path) != entry['sha256']:
+            raise ValueError('Development/evaluation metadata provenance mismatch')
+        split_ids[folder] = {json.loads(line)['episode_index'] for line in path.read_text().splitlines() if line.strip()}
+        metadata_inputs.append(path)
+    chosen = [row['episode_index'] for row in data['episodes']]
+    if len(set(chosen)) != 4 or not set(chosen) <= split_ids['public'] or set(chosen) & split_ids['evaluation']:
+        raise ValueError('Dev episode IDs overlap evaluation or lack public membership')
     jobs = []
     for episode in data['episodes']:
         for arm in 'OMRA':
@@ -165,6 +181,9 @@ def dev_jobs(manifest, output):
             target = Path(output)/f'episode_{episode["episode_index"]:06d}'/arm/'policy'
             jobs.append({**training_job('track_3', episode['episode_index'], reference, target, 10000384),
                          'dev_arm': arm, 'split': 'development'})
+    from .ownership import validate_outputs
+    validate_outputs(jobs)
+    new_run(output, [manifest, *metadata_inputs], {'manifest_sha256': sha(manifest)})
     save(Path(output)/'jobs.json', jobs)
     return jobs
 

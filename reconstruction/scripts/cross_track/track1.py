@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import trimesh
 from .common import load, save, sha, new_run, complete, metric
-from .temporal import smooth, acceleration, qp
+from .temporal import smooth, acceleration, qp, gcv_lambda
 from scipy import sparse
 from .image import silhouette, iou
 from track1_metric_harness import recenter, verify_recenter
@@ -67,14 +67,16 @@ def contact_targets(hands, translations, frames, active):
     return target, weight
 
 
-def object_candidate(bundle_path, mesh_path, evidence_path, output, lambdas=(3, 10, 30, 100, 300)):
+def object_candidate(bundle_path, mesh_path, evidence_path, output, lambdas=(3, 10, 30, 100, 300), *, lambda_policy='max_passing', lambda_cap=None):
     """Evidence contains full scored-frame masks, cameras, hand points AND normals.
 
     Coordinates must be the prediction world in metres. Every evidence artifact
     is hash-bound to its parent pair. Missing evidence cannot pass a candidate.
     """
-    configuration = {'lambdas': list(lambdas), 'method': 'recenter_huber_contact_pen_v1'}
-    previous = new_run(output, [bundle_path, mesh_path, evidence_path, Path(__file__), Path(__file__).with_name('temporal.py')], configuration)
+    if lambda_policy not in ('max_passing', 'gcv_capped'): raise ValueError('Unknown lambda policy')
+    if lambda_policy == 'gcv_capped' and lambda_cap is None: raise ValueError('GCV policy requires held-out surrogate evidence')
+    configuration = {'lambdas': list(lambdas), 'method': 'recenter_huber_contact_pen_v2', 'lambda_policy': lambda_policy}
+    previous = new_run(output, [bundle_path, mesh_path, evidence_path, *([lambda_cap] if lambda_cap else [])], configuration)
     if previous['state'] == 'CANDIDATE_REQUIRES_PACKED_VALIDATION':
         if (sha(Path(output)/Path(bundle_path).name) != previous['npz_sha256']
                 or sha(Path(output)/Path(mesh_path).name) != previous['mesh_sha256']):
@@ -94,6 +96,10 @@ def object_candidate(bundle_path, mesh_path, evidence_path, output, lambdas=(3, 
     neutrality = verify_recenter(v, f, r, t, scale)
     v, baseline, _ = recenter(v, f, r, t, scale)
     masks, hands, normals = e['masks'], e['hand_points'], e['hand_normals']
+    human_masks = e.get('human_masks')
+    if human_masks is None: human_masks = np.zeros_like(masks)
+    if masks.ndim != 3 or masks.dtype.kind != 'b' or human_masks.shape != masks.shape or human_masks.dtype.kind != 'b':
+        raise ValueError('Require matched boolean object/human evidence masks')
     if masks.shape[0] != len(frames) or hands.shape != normals.shape or hands.shape[0] != len(frames) or hands.shape[-1] != 3:
         raise ValueError('Incomplete per-scored-frame evidence')
     if not np.isfinite(hands).all() or not np.allclose(np.linalg.norm(normals, axis=-1), 1, atol=1e-3):
@@ -103,19 +109,37 @@ def object_candidate(bundle_path, mesh_path, evidence_path, output, lambdas=(3, 
     def images(translation):
         return np.asarray([iou(silhouette(v, f, r[frame], translation[frame], scale,
                    e['intrinsics'][j] if e['intrinsics'].ndim == 3 else e['intrinsics'],
-                   e['world_to_camera'][j], masks[j].shape), masks[j]) for j, frame in enumerate(frames)])
+                   e['world_to_camera'][j], masks[j].shape) & ~human_masks[j],
+                   masks[j] & ~human_masks[j]) for j, frame in enumerate(frames)])
     base_iou = images(baseline)
     _, _, base_gap, nearest_contact = penetration_constraints(v, f, r, baseline, scale, hands, frames, return_contacts=True)
     target, cw = contact_targets(nearest_contact[:, None], baseline, frames, base_gap <= .02)
     weights = np.ones(len(t)); weights[frames] = np.maximum(.05, base_iou)
+    gcv = None
+    if lambda_policy == 'gcv_capped':
+        cap = load(lambda_cap)
+        if cap.get('state') != 'HELD_OUT_SURROGATE_PASSED' or not cap.get('held_out_passed'):
+            raise ValueError('Surrogate lambda cap lacks a passing held-out review')
+        if 'fps' not in e or not np.isclose(float(e['fps']), cap['target_fps']):
+            raise ValueError('Surrogate and evidence frame rates differ')
+        for path, digest in cap['inputs_sha256'].items():
+            if sha(path) != digest: raise ValueError('Surrogate evidence changed')
+        gcv = gcv_lambda(baseline, frames, lambdas, weights)
+        lambdas = [lam for lam in lambdas if lam <= min(2*gcv['lambda'], cap['lambda_cap'])]
+        if not lambdas: raise ValueError('No lambda qualifies under the held-out cap')
     selected, selected_lambda, reviews = baseline.copy(), None, []
     for lam in sorted(set(lambdas)):
         candidate = smooth(baseline, frames, lam, weights, target, cw)
         try:
-            for _ in range(5):
+            active = {}
+            for _ in range(10):
                 constraints, depths, gap = penetration_constraints(v, f, r, candidate, scale, hands, frames)
+                for frame, normal, bound in constraints:
+                    active[(frame, tuple(np.round(normal, 6)), round(bound, 7))] = (frame, normal, bound)
                 if not np.any(depths > 0): break
-                candidate = smooth(baseline, frames, lam, weights, target, cw, constraints)
+                # Historical cuts are conservative local choices. Infeasibility
+                # rejects this lambda; no convergence/global-feasibility claim.
+                candidate = smooth(baseline, frames, lam, weights, target, cw, list(active.values()))
             _, depths, gap = penetration_constraints(v, f, r, candidate, scale, hands, frames)
             if np.any(depths > 0):
                 # Minimal per-frame rigid correction, followed by a re-fit with
@@ -128,7 +152,7 @@ def object_candidate(bundle_path, mesh_path, evidence_path, output, lambdas=(3, 
                     moved = qp(sparse.eye(3), candidate[frame], matrix, np.full(len(relevant), -np.inf), np.array([b for _, b in relevant]))
                     for axis in np.eye(3):
                         fixed.extend([(frame, axis, float(axis@moved)), (frame, -axis, float(-axis@moved))])
-                candidate = smooth(baseline, frames, lam, weights, target, cw, fixed)
+                candidate = smooth(baseline, frames, lam, weights, target, cw, list(active.values())+fixed)
                 _, depths, gap = penetration_constraints(v, f, r, candidate, scale, hands, frames)
             review = gate(baseline, candidate, frames, base_iou, images(candidate), base_gap, gap, depths)
             review['checks']['acceleration_nonincrease'] = acceleration(candidate, frames) <= acceleration(baseline, frames)+1e-10
@@ -150,9 +174,15 @@ def object_candidate(bundle_path, mesh_path, evidence_path, output, lambdas=(3, 
     _, serialized_depth, serialized_gap = penetration_constraints(v, f, r, result['object_translation'], scale, hands, frames)
     stored_review = gate(baseline, result['object_translation'], frames, base_iou, images(result['object_translation']),
                         base_gap, serialized_gap, serialized_depth)
+    stored_review['checks']['acceleration_nonincrease'] = acceleration(result['object_translation'], frames) <= acceleration(baseline, frames)+1e-10
+    stored_review['passed'] = all(stored_review['checks'].values())
     if selected_lambda is not None and not stored_review['passed']:
         raise ValueError('Serialized candidate failed its evidence gates; preserve for review')
-    review = {'selected_lambda': selected_lambda, 'reviews': reviews, 'serialized_evidence_review': stored_review,
+    removed = acceleration(baseline-selected, frames)
+    review = {'selected_lambda': selected_lambda, 'lambda_policy': lambda_policy, 'gcv': gcv,
+              'lambda_cap': load(lambda_cap)['lambda_cap'] if lambda_cap else None,
+              'removed_acc_fraction': removed/max(acceleration(baseline, frames), 1e-12),
+              'reviews': reviews, 'serialized_evidence_review': stored_review,
               'neutrality_before_serialization': neutrality,
               'parent_acceleration_cm': acceleration(t, frames), 'recentered_acceleration_cm': acceleration(baseline, frames),
               'candidate_acceleration_cm': acceleration(selected, frames), 'anchor_frame': int(frames[0]),
@@ -168,7 +198,9 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     for key in ('bundle', 'mesh', 'evidence', 'output'): p.add_argument('--'+key, type=Path, required=True)
     p.add_argument('--lambdas', type=float, nargs='+', default=[3, 10, 30, 100, 300])
-    a = p.parse_args(); object_candidate(a.bundle, a.mesh, a.evidence, a.output, a.lambdas)
+    p.add_argument('--lambda-policy', choices=['max_passing', 'gcv_capped'], default='max_passing', help='GCV remains opt-in until held-out validation')
+    p.add_argument('--lambda-cap', type=Path)
+    a = p.parse_args(); object_candidate(a.bundle, a.mesh, a.evidence, a.output, a.lambdas, lambda_policy=a.lambda_policy, lambda_cap=a.lambda_cap)
 
 
 if __name__ == '__main__': main()

@@ -115,8 +115,11 @@ def main():
     p.add_argument('--arm', choices=['root', 'refit'], default='root')
     p.add_argument('--lambda', dest='lam', type=float, default=30.)
     p.add_argument('--device', default='cpu')
+    p.add_argument('--decoder-parity', type=Path, required=True, help='Passing real three-decoder report on >=100 frames/10 episodes')
     a = p.parse_args()
-    previous = new_run(a.output, [a.bundle, a.body_asset, a.evidence], {'arm': a.arm, 'lambda': a.lam})
+    from .mhr_asset import verify_report
+    verify_report(a.decoder_parity, a.body_asset)
+    previous = new_run(a.output, [a.bundle, a.body_asset, a.evidence, a.decoder_parity], {'arm': a.arm, 'lambda': a.lam})
     if previous['state'] in ('READY_FOR_COUPLED_OBJECT_REVIEW', 'REJECTED'):
         if sha(a.output/a.bundle.name) != previous['npz_sha256']:
             raise ValueError('Completed human candidate changed; preserve for review')

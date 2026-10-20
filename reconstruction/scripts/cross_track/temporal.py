@@ -152,3 +152,49 @@ def smooth_rotations(rotations, frames, lam, *, max_nfev=100):
         out[run] = Rotation.from_rotvec(delta).as_matrix() @ base
     out[frames[0]] = rotations[frames[0]]
     return out
+
+
+def gcv_lambda(values, frames, lambdas, weights=None):
+    """Weighted linear prediction GCV; NOT a hidden-reference ACC estimator.
+
+    Exact effective degrees of freedom, a fixed first scored anchor, and pooled
+    independent scored stretches. Trace solves are blocked to bound memory.
+    Contact constraints and Huber reweighting are deliberately not approximated.
+    """
+    values = np.asarray(values, float)
+    if values.ndim != 2 or not np.isfinite(values).all(): raise ValueError('Require finite T by D values')
+    weights = np.ones(len(values)) if weights is None else np.asarray(weights, float)
+    if weights.shape != (len(values),) or not np.isfinite(weights).all() or np.any(weights <= 0):
+        raise ValueError('Invalid GCV weights')
+    runs = stretches(frames, len(values)); scores = []
+    for lam in sorted(set(lambdas)):
+        if not np.isfinite(lam) or lam <= 0: raise ValueError('GCV requires positive finite lambdas')
+        rss, trace, observations = 0., 0., 0
+        for run in runs:
+            n = len(run)
+            if n < 3: continue
+            d = sparse.diags([np.ones(n-2), -2*np.ones(n-2), np.ones(n-2)], [0, 1, 2], shape=(n-2, n), format='csc')
+            h = (sparse.diags(weights[run])+lam*(d.T@d)).tocsc()
+            pin = int(run[0] == frames[0])
+            factor = splu(h[pin:, pin:])
+            rhs = weights[run, None]*values[run]
+            rhs = rhs[pin:]-h[pin:, :pin]@values[run[:pin]]
+            fitted = np.vstack([values[run[:pin]], factor.solve(rhs)])
+            diagonal = np.zeros(n-pin)
+            for start in range(0, n-pin, 32):
+                ids = np.arange(start, min(start+32, n-pin))
+                unit = np.zeros((n-pin, len(ids))); unit[ids, np.arange(len(ids))] = 1.
+                inverse_columns = factor.solve(unit)
+                diagonal[ids] = inverse_columns[ids, np.arange(len(ids))]
+            df = pin+float(diagonal@weights[run[pin:]])
+            rss += float(np.sum(weights[run, None]*(fitted-values[run])**2))
+            trace += df*values.shape[1]; observations += n*values.shape[1]
+        if not observations: raise ValueError('GCV needs a scored stretch of at least three frames')
+        denominator = observations-trace
+        score = observations*rss/denominator**2 if denominator > 1e-9 else float('inf')
+        if not np.isfinite(score): raise ValueError('GCV has no residual degrees of freedom')
+        scores.append({'lambda': float(lam), 'gcv': score, 'weighted_rss': rss,
+                       'effective_df': trace, 'observations': observations})
+    if not scores: raise ValueError('Empty GCV lambda grid')
+    return {'lambda': min(scores, key=lambda row: (row['gcv'], row['lambda']))['lambda'],
+            'scores': scores, 'scope': 'Linear weighted prediction residual; constrained ACC benefit needs held-out evidence'}

@@ -32,6 +32,7 @@ REPORT = ROOT / 'incident_reports/track2_baseline/short_campaign'
 FULL_STEPS = 349999104
 STEPS = 5000192
 TIER = 1
+LEGACY_OUTPUTS = True
 POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR = 'policies_short', 'results_short', 'results_short_submission'
 
 
@@ -102,11 +103,23 @@ def validate_rollout(table, episode):
 
 
 def train_evaluate(episode):
+    if not LEGACY_OUTPUTS:
+        from cross_track.ownership import own_output
+        reference, _ = verify_input(episode)
+        output = DATA / POLICY_SUBDIR / f'episode_{episode["episode_index"]:06d}'
+        job = {'track': f'track_2_tier{TIER}', 'episode_index': episode['episode_index'], 'arm': 'fresh',
+               'reference_sha256': sha(reference), 'output_dir': str(output.resolve()), 'target_steps': STEPS,
+               'reward_profile': 'baseline', 'overrides': {'campaign_sha256': sha(Path(__file__)), 'thresholds': scaled_thresholds(STEPS)}}
+        with own_output(job): return _train_evaluate(episode)
+    return _train_evaluate(episode)
+
+
+def _train_evaluate(episode):
     i = episode['episode_index']; stem = f'episode_{i:06d}'; report = REPORT / stem
     reference, manifest = verify_input(episode)
     output = DATA / POLICY_SUBDIR / stem; output.mkdir(parents=True, exist_ok=True)
     checkpoints = sorted(output.glob('policy_*.safetensors'), key=lambda p: int(p.stem.split('_')[-1]))
-    if TIER == 1:
+    if TIER == 1 and LEGACY_OUTPUTS:
         checkpoints += [p for p in (DATA / 'baseline' / stem).glob('policy_*.safetensors') if int(p.stem.split('_')[-1]) >= STEPS]
     checkpoints.sort(key=lambda p: int(p.stem.split('_')[-1]))
     if not checkpoints or int(checkpoints[-1].stem.split('_')[-1]) < STEPS:
@@ -128,7 +141,7 @@ def train_evaluate(episode):
     reuse = reuse and trajectory.exists() and metrics.exists() and cached.get('trajectory_sha256') == sha(trajectory) and cached.get('metrics_sha256') == sha(metrics)
     if not reuse:
         pilot_trajectory, pilot_metrics = DATA / 'results' / trajectory.name, DATA / 'results' / metrics.name
-        if TIER == 1 and i == 16 and pilot_trajectory.exists() and pilot_metrics.exists() and json.loads(pilot_metrics.read_text()).get('checkpoint_sha256') == sha(checkpoint):
+        if TIER == 1 and LEGACY_OUTPUTS and i == 16 and pilot_trajectory.exists() and pilot_metrics.exists() and json.loads(pilot_metrics.read_text()).get('checkpoint_sha256') == sha(checkpoint):
             # Preserve the full-budget pilot's genuine native rollout and its actual hashes.
             shutil.copyfile(pilot_trajectory, trajectory); shutil.copyfile(pilot_metrics, metrics)
         else:
@@ -178,7 +191,7 @@ def recoverable_train(episode):
 
 
 def main():
-    global STEPS, TIER, DATA, REPORT, POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR
+    global STEPS, TIER, DATA, REPORT, POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR, LEGACY_OUTPUTS
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--training-steps', type=int, default=5000192)
     parser.add_argument('--upload', action='store_true')
@@ -196,6 +209,7 @@ def main():
     DATA = (args.data_root or ROOT / f'data/track2/tier{TIER}').resolve()
     DATA.relative_to(ROOT)
     legacy = TIER == 1 and args.version == 'short' and args.data_root is None
+    LEGACY_OUTPUTS = legacy
     if not legacy:
         if args.inventory is None: raise ValueError('New tier/version requires a verified inventory')
         REPORT = ROOT / f'incident_reports/track2_tier{TIER}/{args.version}_campaign'

@@ -47,7 +47,7 @@ def condition_positions(values, lam, *, noise_limit=True):
     return candidate, scale
 
 
-def condition_source(source, output, lam=10.):
+def condition_source(source, output, lam=10., *, method='jitter', evidence=None, max_correction=None):
     """New source directory; source files and lineage are never overwritten."""
     import shutil
     source, output = Path(source), Path(output)
@@ -55,10 +55,26 @@ def condition_source(source, output, lam=10.):
     if manifest.get('tier') not in (2, 3): raise ValueError('Conditioning is only for explicitly tier-owned inputs')
     for name, digest in manifest['output_sha256'].items():
         if sha(source/name) != digest: raise ValueError('Source hash mismatch')
-    new_run(output, [source/'source_manifest.json', *[source/p for p in manifest['output_sha256']]], {'lambda': lam})
+    if method not in ('jitter', 'constraints_v1'): raise ValueError('Unknown conditioning method')
+    if method == 'constraints_v1' and (manifest.get('tier') != 2 or not evidence or max_correction is None):
+        raise ValueError('Observed conditioning requires Tier 2 evidence and an explicit correction budget')
+    new_run(output, [source/'source_manifest.json', *[source/p for p in manifest['output_sha256']], *([evidence] if evidence else [])],
+            {'lambda': lam, 'method': method, 'max_correction_m': max_correction})
     for name in manifest['output_sha256']:
         target = output/name; target.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(source/name, target)
     b = dict(np.load(source/'soma_params.npz', allow_pickle=False))
+    if method == 'constraints_v1':
+        from .tier2_noise import verified_evidence, constrained_motion
+        objects = np.load(source/'poses.npy', allow_pickle=False)
+        observed = verified_evidence(evidence, source, len(objects))
+        result, b['transl'], review = constrained_motion(objects, b['transl'], observed, lam, max_correction)
+        np.savez_compressed(output/'soma_params.npz', **b); np.save(output/'poses.npy', result)
+        record = {**manifest, 'conditioned_from_sha256': sha(source/'source_manifest.json'),
+                  'conditioning': {'method': method, 'lambda': lam, 'evidence_sha256': sha(evidence), **review},
+                  'output_sha256': {name: sha(output/name) for name in manifest['output_sha256']}}
+        save(output/'source_manifest.json', record)
+        complete(output, 'CONDITIONED_REQUIRES_RETARGET_VALIDATION', **review)
+        return record
     b['transl'], noise = condition_positions(b['transl'], lam)
     frames = np.arange(len(b['poses']))
     for joint in range(b['poses'].shape[1]):
@@ -110,7 +126,7 @@ if __name__ == '__main__': main()
 def inventory(data, tier, output):
     """Hash every source/retarget pair; never infer Tier 3 from a clean-tier copy."""
     sys.path.insert(0, str(REPO/'robotic_grounding/scripts'))
-    from retarget_track2_tier1 import verify_motion
+    from retarget_track2_tier1 import verify_motion, verify_feasibility
     data = Path(data).resolve(); rows = []
     for path in sorted((data/'source_episodes').glob('*/source_manifest.json')):
         source = path.parent; manifest = load(path)
@@ -120,6 +136,7 @@ def inventory(data, tier, output):
             if sha(source/name) != digest: raise ValueError('Source output digest mismatch')
         target = data/f'assets/human_motion_data/whole_body/challenge_tier{tier}/sequence_id={source.name}/robot_name=g1/data.parquet'
         verified = verify_motion(target, source)
+        verified.update(verify_feasibility(target, source))
         raw = np.load(source/'poses.npy', allow_pickle=False)
         frame_reference = data/'frame_references'/f'episode_{manifest["episode_index"]:06d}.npz'
         frame_reference.parent.mkdir(parents=True, exist_ok=True)
@@ -146,3 +163,12 @@ def inventory_main():
     p.add_argument('--data-root', type=Path, required=True); p.add_argument('--tier', type=int, choices=(1, 2, 3), required=True)
     p.add_argument('--output', type=Path, required=True)
     a = p.parse_args(); inventory(a.data_root, a.tier, a.output)
+
+
+def condition_main():
+    p = argparse.ArgumentParser(description='New tier-owned conditioned sources; never overwrites the input')
+    p.add_argument('--source', type=Path, required=True); p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--lambda', dest='lam', type=float, default=10.)
+    p.add_argument('--method', choices=['jitter', 'constraints_v1'], default='jitter')
+    p.add_argument('--evidence', type=Path); p.add_argument('--max-correction', type=float)
+    a = p.parse_args(); condition_source(a.source, a.output, a.lam, method=a.method, evidence=a.evidence, max_correction=a.max_correction)

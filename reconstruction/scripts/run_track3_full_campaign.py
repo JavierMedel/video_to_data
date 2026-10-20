@@ -291,6 +291,18 @@ def upload_packed(packed, update, track='track_3'):
 
 
 def train_and_evaluate(episode, reference):
+    if PROFILE == 'improvement':
+        from cross_track.ownership import own_output
+        output = DATA / POLICY_SUBDIR / f'episode_{episode["episode_index"]:06d}'
+        job = {'track': 'track_3', 'episode_index': episode['episode_index'], 'arm': 'fresh',
+               'reference_sha256': sha256(reference), 'output_dir': str(output.resolve()), 'target_steps': TOTAL_STEPS,
+               'reward_profile': 'baseline', 'overrides': {'campaign_sha256': sha256(Path(__file__)),
+                                                          'thresholds': scaled_thresholds(TOTAL_STEPS)}}
+        with own_output(job): return _train_and_evaluate(episode, reference)
+    return _train_and_evaluate(episode, reference)
+
+
+def _train_and_evaluate(episode, reference):
     index = episode['episode_index']; report = REPORT / f'episode_{index:06d}'
     output = DATA / f'{POLICY_SUBDIR}/episode_{index:06d}'
     output.mkdir(parents=True, exist_ok=True)
