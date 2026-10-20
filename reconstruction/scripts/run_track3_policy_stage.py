@@ -153,7 +153,7 @@ def main():
                '--memory', '20g', '--memory-swap', '22g', '--cpus', '8', '--user', '1000:1000',
                '-e', 'HOME=/tmp', '-e', 'LOGNAME=alien51', '-e', 'OMP_NUM_THREADS=8',
                '-e', 'PYTHONUNBUFFERED=1', '-e', 'XLA_PYTHON_CLIENT_PREALLOCATE=false',
-               '-e', 'XDG_CACHE_HOME=/cache', '-e', 'MUJOCO_GL=egl', '-e', 'PYOPENGL_PLATFORM=egl',
+               '-e', 'XDG_CACHE_HOME=/cache', '-e', 'JAX_COMPILATION_CACHE_DIR=/cache/jax', '-e', 'MUJOCO_GL=egl', '-e', 'PYOPENGL_PLATFORM=egl',
                '-e', 'PYTHONPATH=/workspace:/workspace/src',
                *heartbeat_env,
                '-v', f'{mount_root}:/repo', '-v', f'{monorepo}/robotic_grounding/flash_chord:/workspace',

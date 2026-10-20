@@ -400,3 +400,14 @@ receipts are archived under Episode 12's `training/previous_attempts` directory.
 The restarted controller also prints start/completion milestones to its main log.
 The all-four-competition entry check is already confirmed; no further rule
 acceptance is required. Read the execution JSON for progress after this recovery.
+
+### Persistent compilation cache
+
+During the resumed queue, the installed JAX runtime reported compilation caching
+enabled but no cache directory configured. Future policy-stage containers now
+set `JAX_COMPILATION_CACHE_DIR=/cache/jax` inside the existing persistent runtime
+cache mount. A native configuration probe accepted the path. This permits reuse
+of matching compiled code; actual cache hits and timing must be measured before
+claiming speed gains. It does not increase the training budget. The current
+in-flight container keeps its existing configuration; subsequent stages pick up
+the new wrapper setting. All 55 host tests passed after the change.
