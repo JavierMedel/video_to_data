@@ -35,6 +35,7 @@ PROFILE = 'full'
 POLICY_SUBDIR = 'policies'
 RESULTS_SUBDIR = 'results'
 SUBMISSION_SUBDIR = 'submission'
+SUPPORT_EVIDENCE = None
 BASE_THRESHOLDS = [19660800, 34406400, 49152000, 63897600, 78643200, 93388800,
                    108134400, 122880000, 137625600, 200007680, FULL_STEPS]
 
@@ -77,13 +78,32 @@ def matrices(position, quaternion):
     return result
 
 
-def shared_alignment(bundles, output):
+def shared_alignment(bundles, output, support_evidence=None):
     vertices = []
     for bundle in bundles:
         with np.load(bundle / 'result.npz', allow_pickle=False) as raw:
             transform = raw['object_to_world_transform'][0]
         mesh = trimesh.load(bundle / 'mesh.obj', force='scene').to_geometry()
         vertices.append(mesh.vertices @ transform[:3, :3].T + transform[:3, 3])
+    if support_evidence is not None:
+        from cross_track.track3 import support_plane
+        if not support_evidence.get('development_gate_passed'):
+            raise ValueError('Support-plane method needs its development validation gate')
+        points = Path(support_evidence['points_npz'])
+        if sha256(points) != support_evidence['points_sha256']:
+            raise ValueError('Support-plane observations changed')
+        with np.load(points, allow_pickle=False) as raw:
+            if str(raw['coordinate_frame'].item()) != 'reconstruction_world_meters':
+                raise ValueError('Support points do not share the reconstructed scene frame')
+            plane = support_plane(raw['points'], up=raw['up'])
+        rotation = trimesh.geometry.align_vectors(plane['normal'], [0, 0, 1])[:3, :3]
+        world = np.eye(4); world[:3, :3] = rotation
+        world[:2, 3] = -(vertices[0] @ rotation.T)[:, :2].mean(axis=0)
+        world[2, 3] = plane['offset']
+        save(output, {'world_alignment': world.tolist(), 'method': 'observed support plane; shared scene transform',
+                      'plane_fit': plane, 'points_sha256': support_evidence['points_sha256'],
+                      'gravity_independently_verified': False, 'shared_by_all_objects': True})
+        return world
     centered = vertices[0] - vertices[0].mean(axis=0)
     _, axes = np.linalg.eigh(centered.T @ centered)
     extents = np.ptp(centered @ axes, axis=0)
@@ -145,6 +165,11 @@ def prepare(episode):
     target = DATA / f'references/episode_{index:06d}.parquet'
     receipt = report / 'preparation.json'
     source_hashes = {str(b.relative_to(ROOT)): {'npz': sha256(b / 'result.npz'), 'mesh': sha256(b / 'mesh.obj')} for b in bundles}
+    support = SUPPORT_EVIDENCE.get(str(index)) if SUPPORT_EVIDENCE else None
+    if support:
+        if sha256(Path(support['points_npz'])) != support['points_sha256']:
+            raise ValueError('Support-plane observations changed before cached preparation could be reused')
+        source_hashes['support_evidence'] = support
     if PROFILE == 'today' and not receipt.exists() and target.exists():
         original = ROOT / f'incident_reports/track3_baseline/full_campaign/episode_{index:06d}/preparation.json'
         if original.exists():
@@ -167,7 +192,7 @@ def prepare(episode):
         save(report / 'world_alignment.json', {'world_alignment': world.tolist(), 'method': 'recovered verified native pilot rigid alignment'})
     else:
         alignment_path = report / 'world_alignment.json'
-        world = shared_alignment(bundles, alignment_path)
+        world = shared_alignment(bundles, alignment_path, support_evidence=support)
         rows = []
         for slot, bundle in enumerate(bundles):
             sequence = f'episode_{index:06d}_object_{slot:02d}'
@@ -285,7 +310,7 @@ def train_and_evaluate(episode, reference):
                      'training.replay.minimum_size=51200', 'training.replay.batch_size=1024',
                      f'training.total_environment_steps={TOTAL_STEPS}', 'logging.mode=disabled',
                      f'output_dir={cpath(output)}', 'reset.seed=42']
-        if PROFILE == 'today':
+        if PROFILE in ('today', 'improvement'):
             overrides += ['curriculum.thresholds=' + json.dumps(scaled_thresholds(TOTAL_STEPS), separators=(',', ':')),
                           'training.checkpoint.save_interval_environment_steps=1000448']
         states = sorted(output.glob('state_*.safetensors'), key=lambda p: int(p.stem.split('_')[-1]))
@@ -391,13 +416,37 @@ def train_with_monitor_recovery(episode, reference):
 
 
 def main():
-    global REPORT, TOTAL_STEPS, PROFILE, POLICY_SUBDIR, RESULTS_SUBDIR, SUBMISSION_SUBDIR
+    global REPORT, DATA, TOTAL_STEPS, PROFILE, POLICY_SUBDIR, RESULTS_SUBDIR, SUBMISSION_SUBDIR, SUPPORT_EVIDENCE
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile', choices=('full', 'today'), default='full')
+    parser.add_argument('--profile', choices=('full', 'today', 'improvement'), default='full')
+    parser.add_argument('--version')
+    parser.add_argument('--parent-packet', type=Path)
+    parser.add_argument('--support-evidence', type=Path)
+    parser.add_argument('--rules', type=Path)
+    parser.add_argument('--snapshots', type=Path)
     parser.add_argument('--training-steps', type=int)
     parser.add_argument('--upload', action='store_true', help='Validate and upload all six metrics after a complete pack')
     args = parser.parse_args()
     PROFILE = args.profile
+    if args.support_evidence is not None and PROFILE != 'improvement':
+        raise ValueError('Support-plane changes require a versioned improvement profile')
+    if PROFILE == 'improvement':
+        if not args.version or not args.version.replace('_', '').replace('-', '').isalnum():
+            raise ValueError('An improvement needs a new simple version name')
+        if args.training_steps is None or args.parent_packet is None:
+            raise ValueError('An improvement needs an explicit budget and immutable parent packet')
+        if args.upload and (args.rules is None or args.snapshots is None):
+            raise ValueError('New uploads need documented weekly rules and fresh snapshots')
+        DATA = DATA / args.version
+        REPORT = ROOT / 'incident_reports/track3_improvement' / args.version
+        REPORT.mkdir(parents=True, exist_ok=True)
+        contract = {'parent_packet_sha256': sha256(args.parent_packet), 'steps': args.training_steps,
+                    'support_evidence_sha256': sha256(args.support_evidence) if args.support_evidence else None}
+        previous = REPORT / 'campaign_inputs.json'
+        if previous.exists() and json.loads(previous.read_text()) != contract:
+            raise ValueError('Improvement inputs changed; use a new version')
+        save(previous, contract)
+        SUPPORT_EVIDENCE = json.loads(args.support_evidence.read_text()) if args.support_evidence else None
     if PROFILE == 'today':
         REPORT = ROOT / 'incident_reports/track3_baseline/today_campaign'
         POLICY_SUBDIR, RESULTS_SUBDIR, SUBMISSION_SUBDIR = 'policies_today', 'results_today', 'submission_today'
@@ -458,7 +507,14 @@ def main():
             str(e['episode_index']): json.loads((REPORT / f'episode_{e["episode_index"]:06d}/policy.json').read_text())['checkpoint_path']
             for e in episodes})
         if args.upload:
-            upload_packed(packed, update)
+            if PROFILE == 'improvement':
+                from cross_track.submission import submit
+                result = submit(packed, 'track_3', args.rules, args.snapshots, REPORT, execute=True)
+                entries = result.get('submissions', {})
+                update(state='SCORED' if len(entries) == 6 and all(v.get('state') == 'COMPLETE' for v in entries.values()) else 'SUBMITTED_REQUIRES_REVIEW',
+                       uploaded=any(v.get('ref') for v in entries.values()), kaggle_results=entries)
+            else:
+                upload_packed(packed, update)
     else:
         update(state='INCOMPLETE', active_episode_index=None, missing_episode_indices=sorted(expected_ids - set(state['evaluated'])))
 

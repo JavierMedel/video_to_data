@@ -306,6 +306,7 @@ class TrainingConfig:
     device: str = "cuda:0"
     resume: bool = False
     checkpoint_path: str | None = None
+    initial_policy_path: str | None = None
     wandb_entity: str = "nvidia-isaac"
     wandb_project: str = "v2d-flash-chord"
     experiment_name: str = "sharpa"
@@ -336,6 +337,8 @@ class TrainingConfig:
             raise ValueError(f"compute_dtype must be 'float16', 'bfloat16', or 'float32', got {self.compute_dtype!r}")
         if self.resume and self.checkpoint_path is None:
             raise ValueError("resume requires checkpoint_path")
+        if self.resume and self.initial_policy_path is not None:
+            raise ValueError("Choose learner resume or actor warm start, not both")
         if self.replay.capacity < self.world_count:
             raise ValueError(
                 f"replay capacity {self.replay.capacity} must hold at least one {self.world_count}-world collection"

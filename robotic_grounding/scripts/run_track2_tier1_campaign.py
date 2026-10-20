@@ -31,6 +31,8 @@ DATA = ROOT / 'data/track2/tier1'
 REPORT = ROOT / 'incident_reports/track2_baseline/short_campaign'
 FULL_STEPS = 349999104
 STEPS = 5000192
+TIER = 1
+POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR = 'policies_short', 'results_short', 'results_short_submission'
 
 
 def sha(path):
@@ -62,7 +64,7 @@ def run(command, log):
 
 
 def native(stage, module, arguments):
-    return [PYTHON, str(REPO / 'reconstruction/scripts/run_track3_policy_stage.py'), '--track', 'track_2_tier1', '--report', str(stage), module, *arguments]
+    return [PYTHON, str(REPO / 'reconstruction/scripts/run_track3_policy_stage.py'), '--track', f'track_2_tier{TIER}', '--report', str(stage), module, *arguments]
 
 
 def cpath(path):
@@ -75,6 +77,13 @@ def verify_input(episode):
         raise ValueError(f'Retargeted reference changed for episode {i}')
     source = DATA / 'source_episodes' / episode['sequence_id']
     manifest = json.loads((source / 'source_manifest.json').read_text())
+    if manifest.get('tier', 1) != TIER:
+        raise ValueError('Source manifest belongs to another Track 2 tier')
+    if 'source_manifest_sha256' in episode and sha(source / 'source_manifest.json') != episode['source_manifest_sha256']:
+        raise ValueError('Inventory source lineage changed')
+    if TIER != 1:
+        if sha(episode['frame_reference']) != episode['frame_reference_sha256']:
+            raise ValueError('Inventory packer frame reference changed')
     for filename, digest in manifest['output_sha256'].items():
         if sha(source / filename) != digest:
             raise ValueError(f'Source artifact changed: {source / filename}')
@@ -95,9 +104,10 @@ def validate_rollout(table, episode):
 def train_evaluate(episode):
     i = episode['episode_index']; stem = f'episode_{i:06d}'; report = REPORT / stem
     reference, manifest = verify_input(episode)
-    output = DATA / 'policies_short' / stem; output.mkdir(parents=True, exist_ok=True)
+    output = DATA / POLICY_SUBDIR / stem; output.mkdir(parents=True, exist_ok=True)
     checkpoints = sorted(output.glob('policy_*.safetensors'), key=lambda p: int(p.stem.split('_')[-1]))
-    checkpoints += [p for p in (DATA / 'baseline' / stem).glob('policy_*.safetensors') if int(p.stem.split('_')[-1]) >= STEPS]
+    if TIER == 1:
+        checkpoints += [p for p in (DATA / 'baseline' / stem).glob('policy_*.safetensors') if int(p.stem.split('_')[-1]) >= STEPS]
     checkpoints.sort(key=lambda p: int(p.stem.split('_')[-1]))
     if not checkpoints or int(checkpoints[-1].stem.split('_')[-1]) < STEPS:
         arguments = ['experiment=g1_recon_body_flash_sac', f'task.parquet={json.dumps(cpath(reference))}', 'scene.world_count=1024', 'sim.njmax=4096', 'sim.nconmax=1024',
@@ -110,7 +120,7 @@ def train_evaluate(episode):
         run(native(report / 'training', 'scripts.train_flash_sac', arguments), report / 'training.log')
         checkpoints = sorted(output.glob('policy_*.safetensors'), key=lambda p: int(p.stem.split('_')[-1]))
     checkpoint = checkpoints[-1]
-    results = DATA / 'results_short'; results.mkdir(parents=True, exist_ok=True)
+    results = DATA / RESULTS_SUBDIR; results.mkdir(parents=True, exist_ok=True)
     trajectory, metrics = results / (stem + '.parquet'), results / (stem + '.json')
     receipt = report / 'policy.json'; hashes = {'checkpoint_sha256': sha(checkpoint), 'reference_sha256': sha(reference)}
     cached = json.loads(receipt.read_text()) if receipt.exists() else {}
@@ -118,7 +128,7 @@ def train_evaluate(episode):
     reuse = reuse and trajectory.exists() and metrics.exists() and cached.get('trajectory_sha256') == sha(trajectory) and cached.get('metrics_sha256') == sha(metrics)
     if not reuse:
         pilot_trajectory, pilot_metrics = DATA / 'results' / trajectory.name, DATA / 'results' / metrics.name
-        if i == 16 and pilot_trajectory.exists() and pilot_metrics.exists() and json.loads(pilot_metrics.read_text()).get('checkpoint_sha256') == sha(checkpoint):
+        if TIER == 1 and i == 16 and pilot_trajectory.exists() and pilot_metrics.exists() and json.loads(pilot_metrics.read_text()).get('checkpoint_sha256') == sha(checkpoint):
             # Preserve the full-budget pilot's genuine native rollout and its actual hashes.
             shutil.copyfile(pilot_trajectory, trajectory); shutil.copyfile(pilot_metrics, metrics)
         else:
@@ -138,7 +148,7 @@ def train_evaluate(episode):
     for name in table.column_names:
         if name != 'object_body_name' and not table[name].equals(staged[name]):
             raise ValueError(f'Export changed rollout values: {name}')
-    export = DATA / 'results_short_submission'; export.mkdir(parents=True, exist_ok=True)
+    export = DATA / EXPORT_SUBDIR; export.mkdir(parents=True, exist_ok=True)
     pq.write_table(staged, export / trajectory.name); shutil.copyfile(metrics, export / metrics.name)
     record = {'state': 'EVALUATED', **hashes, 'checkpoint_path': str(checkpoint), 'reference_path': str(reference),
               'trajectory_sha256': sha(trajectory), 'metrics_sha256': sha(metrics), 'export_sha256': sha(export / trajectory.name),
@@ -168,17 +178,44 @@ def recoverable_train(episode):
 
 
 def main():
-    global STEPS
+    global STEPS, TIER, DATA, REPORT, POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--training-steps', type=int, default=5000192)
     parser.add_argument('--upload', action='store_true')
+    parser.add_argument('--tier', type=int, choices=(1, 2, 3), default=1)
+    parser.add_argument('--version', default='short')
+    parser.add_argument('--data-root', type=Path)
+    parser.add_argument('--inventory', type=Path)
+    parser.add_argument('--parent-packet', type=Path)
+    parser.add_argument('--rules', type=Path)
+    parser.add_argument('--snapshots', type=Path)
     args = parser.parse_args(); STEPS = args.training_steps; scaled_thresholds(STEPS)
+    if not args.version.replace('_', '').replace('-', '').isalnum():
+        raise ValueError('Version must be one simple directory name')
+    TIER = args.tier
+    DATA = (args.data_root or ROOT / f'data/track2/tier{TIER}').resolve()
+    DATA.relative_to(ROOT)
+    legacy = TIER == 1 and args.version == 'short' and args.data_root is None
+    if not legacy:
+        if args.inventory is None: raise ValueError('New tier/version requires a verified inventory')
+        REPORT = ROOT / f'incident_reports/track2_tier{TIER}/{args.version}_campaign'
+        POLICY_SUBDIR, RESULTS_SUBDIR, EXPORT_SUBDIR = f'policies_{args.version}', f'results_{args.version}', f'results_{args.version}_submission'
+        if args.upload and (args.rules is None or args.snapshots is None):
+            raise ValueError('New uploads require documented weekly rules and fresh snapshots')
     REPORT.mkdir(parents=True, exist_ok=True)
     lock = (REPORT / 'campaign.lock').open('a'); fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    inventory = json.loads((ROOT / 'incident_reports/track2_baseline/submission_readiness_20261019.json').read_text())
+    inventory_path = args.inventory or ROOT / 'incident_reports/track2_baseline/submission_readiness_20261019.json'
+    inventory = json.loads(inventory_path.read_text())
+    if inventory.get('tier', 1) != TIER: raise ValueError('Inventory tier mismatch')
+    signature = {'tier': TIER, 'version': args.version, 'inventory_sha256': sha(inventory_path), 'training_steps': STEPS,
+                 'parent_packet_sha256': sha(args.parent_packet) if args.parent_packet else None}
+    contract = REPORT / 'campaign_inputs.json'
+    if contract.exists() and json.loads(contract.read_text()) != signature:
+        raise ValueError('Campaign inputs changed; choose a new version')
+    save(contract, signature)
     episodes = sorted(inventory['episodes'], key=lambda e: (e['episode_index'] != 16, e['frames']))
     if {e['episode_index'] for e in episodes} != set(range(30)): raise ValueError('Incomplete scored roster')
-    state = {'state': 'TRAINING_AND_EVALUATING', 'track': 'track_2_tier1', 'evaluated': [], 'failed': {},
+    state = {'state': 'TRAINING_AND_EVALUATING', 'track': f'track_2_tier{TIER}', 'evaluated': [], 'failed': {}, 'inputs': signature,
              'training_steps_per_new_episode': STEPS, 'full_budget_steps': FULL_STEPS, 'submission_ready': False, 'uploaded': False}
     def update(**fields):
         state.update(**fields, observed_utc=datetime.now(timezone.utc).isoformat()); save(REPORT / 'execution.json', state)
@@ -193,13 +230,22 @@ def main():
             state['failed'][str(i)] = str(exc); update(state='STOPPED_FOR_REVIEW'); raise
     common.REPORT = REPORT; common.PROFILE = 'short'; common.TOTAL_STEPS = STEPS
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
-    packet = DATA / 'submission_short/track2_tier1.csv'; packet.parent.mkdir(parents=True, exist_ok=True)
+    packet = DATA / f'submission_{args.version}/track2_tier{TIER}.csv'; packet.parent.mkdir(parents=True, exist_ok=True)
     save(packet.parent / 'episode_checkpoints.json', {str(i): json.loads((REPORT / f'episode_{i:06d}/policy.json').read_text())['checkpoint_path'] for i in state['evaluated']})
-    run([PYTHON, str(common.KIT / 'tools/pack_submission.py'), '--track', 'track_2_tier1', '--results', str(DATA / 'results_short_submission'),
+    frame_args = [] if TIER == 1 else ['--frame-references', str(DATA / 'frame_references')]
+    run([PYTHON, str(common.KIT / 'tools/pack_submission.py'), '--track', f'track_2_tier{TIER}', '--results', str(DATA / EXPORT_SUBDIR), *frame_args,
          '--dataset-root', str(REPO / 'reconstruction/data/v2d_challenge'), '--eval-script', str(ROOT / 'flash_chord/scripts/evaluate_policy.py'),
          '--code-commit', f'https://github.com/JavierMedel/video_to_data/commit/{commit}', '-o', str(packet)], REPORT / 'packing.log')
     update(state='PACKED_FOR_REVIEW', active_episode_index=None, submission_ready=True, submission_path=str(packet))
-    if args.upload: common.upload_packed(packet, update, track='track_2_tier1')
+    if args.upload:
+        if legacy:
+            common.upload_packed(packet, update, track='track_2_tier1')
+        else:
+            from cross_track.submission import submit
+            receipt = submit(packet, f'track_2_tier{TIER}', args.rules, args.snapshots, REPORT, execute=True)
+            entries = receipt.get('submissions', {})
+            update(state='SCORED' if len(entries) == 4 and all(r.get('state') == 'COMPLETE' for r in entries.values()) else 'SUBMITTED_REQUIRES_REVIEW',
+                   uploaded=any(r.get('ref') for r in entries.values()), kaggle_receipt=str(REPORT / 'kaggle_receipt.json'))
 
 
 if __name__ == '__main__':

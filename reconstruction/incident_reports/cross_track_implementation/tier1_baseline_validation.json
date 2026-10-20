@@ -1,0 +1,24 @@
+{
+  "state": "CPU_BASELINE_VALIDATION_PASSED",
+  "scope": "read-only scoring of existing 30 baseline rollouts; no new pipeline execution",
+  "computed": {
+    "add_auc": 0.24466419212519452,
+    "spider_sr": 0.1,
+    "maniptrans_sr": 0.03333333333333333,
+    "mppe_cm": 53.848209455446096
+  },
+  "receipt_display": {
+    "add_auc": 0.24466,
+    "spider_sr": 0.1,
+    "maniptrans_sr": 0.03333,
+    "mppe_cm": 53.8482
+  },
+  "absolute_difference": {
+    "add_auc": 4.192125194535379e-06,
+    "spider_sr": 0.0,
+    "maniptrans_sr": 3.333333333334354e-06,
+    "mppe_cm": 9.455446097206277e-06
+  },
+  "comparison_tolerance": 0.0001,
+  "submitted_csv_sha256": "73f60d4a35996c7f9d6763fc28a637fec542248f538c98b4929af33bdc372a23"
+}

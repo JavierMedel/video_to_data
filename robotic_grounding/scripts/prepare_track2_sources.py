@@ -71,7 +71,11 @@ def poses_to_matrices(poses: np.ndarray) -> np.ndarray:
     return matrix
 
 
-def prepare(dataset: Path, output: Path, episodes: list[int]) -> list[dict]:
+def prepare(dataset: Path, output: Path, episodes: list[int], *, tier: int = 1) -> list[dict]:
+    if tier not in (1, 2, 3):
+        raise ValueError('Unknown Track 2 tier')
+    if dataset.resolve() == output.resolve() or output.resolve() in dataset.resolve().parents:
+        raise ValueError('Keep source data and prepared output separate')
     info = json.loads((dataset / "meta/info.json").read_text())
     names = info["features"]["observation.human.pose"]["names"]
     joints = [name.removesuffix(".rx") for name in names[::3]]
@@ -86,10 +90,16 @@ def prepare(dataset: Path, output: Path, episodes: list[int]) -> list[dict]:
         source = dataset / f"data/chunk-000/episode_{episode:06d}.parquet"
         inputs = [source, dataset / meta["mesh"], dataset / meta["ground_plane"],
                   dataset / meta["support_surface"], dataset / "meta/info.json"]
+        if tier == 3:
+            inputs.append(dataset / 'reconstruction_manifest.json')
+        if any(not path.resolve().is_relative_to(dataset.resolve()) for path in inputs):
+            raise ValueError('Source artifact escapes its declared dataset root')
         hashes = {str(path.resolve()): sha256(path) for path in inputs}
         destination = output / meta["sequence_id"]
         if destination.exists():
             previous = json.loads((destination / "source_manifest.json").read_text())
+            if previous.get('tier', 1) != tier:
+                raise ValueError('Existing source manifest belongs to another tier')
             if previous["input_sha256"] != hashes or any(
                 sha256(destination / name) != digest for name, digest in previous["output_sha256"].items()
             ):
@@ -124,7 +134,8 @@ def prepare(dataset: Path, output: Path, episodes: list[int]) -> list[dict]:
         shutil.copy2(inputs[1], destination / "reconstructed_mesh/output_aligned.glb")
         shutil.copy2(inputs[2], destination / "ground_plane.json")
         shutil.copy2(inputs[3], destination / "support.usda")
-        record = {"episode_index": episode, "sequence_id": meta["sequence_id"],
+        record = {"episode_index": episode, "sequence_id": meta["sequence_id"], "tier": tier,
+            "input_source": "reconstruction" if tier == 3 else "released_tier_input",
             "object": meta["object"], "frames": len(table), "fps": info["fps"],
             "coordinate_frame": "released_track2_opencv_world", "input_sha256": hashes,
             "interpolated_object_frames": np.flatnonzero(~visible).tolist(),

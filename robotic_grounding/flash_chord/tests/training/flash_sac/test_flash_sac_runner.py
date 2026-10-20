@@ -598,3 +598,32 @@ def test_runner_resumes_compact_state_and_validates_saved_schemas(tmp_path):
             resumed_config,
             checkpoint_metadata=_checkpoint_metadata(friction=0.0),
         )
+
+
+def test_actor_warm_start_resets_steps_and_validates_policy_schema(tmp_path, monkeypatch):
+    """Cross-episode transfer copies the actor, never learner counters or critics."""
+    jax, jnp = _dependencies()
+    from flash_chord.training.flash_sac import runner
+    metadata = _checkpoint_metadata()
+    config = replace(_config(), device='cpu', total_environment_steps=4)
+    first = runner.run_training(_Env(jnp), config, checkpoint_dir=tmp_path/'parent', checkpoint_metadata=metadata)
+    parent = tmp_path/'parent/policy_4.safetensors'
+    progress = _Progress()
+    original_compile = runner._compile_executables
+    def inspect_initial_actor(executables, learner, **kwargs):
+        assert int(learner.environment_steps) == 0
+        assert int(learner.global_update_step) == 0
+        for actual, expected in zip(jax.tree.leaves(learner.actor.params), jax.tree.leaves(first.actor.params), strict=True):
+            np.testing.assert_array_equal(np.asarray(actual), np.asarray(expected))
+        return original_compile(executables, learner, **kwargs)
+    monkeypatch.setattr(runner, '_compile_executables', inspect_initial_actor)
+    fresh = runner.run_training(_Env(jnp), replace(config, initial_policy_path=str(parent)),
+                                progress=progress, checkpoint_metadata=metadata)
+    assert progress.started == [0]
+    assert int(fresh.environment_steps) == 4
+    assert int(fresh.global_update_step) == int(first.global_update_step)
+    with pytest.raises(ValueError, match='saved=.*raw.*current=.*normalized'):
+        runner.run_training(_Env(jnp), replace(config, initial_policy_path=str(parent)),
+                            checkpoint_metadata=_checkpoint_metadata(input_mode='normalized'))
+    with pytest.raises(ValueError, match='Choose learner resume'):
+        replace(config, resume=True, checkpoint_path=str(parent), initial_policy_path=str(parent))

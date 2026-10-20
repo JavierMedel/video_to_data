@@ -10,6 +10,7 @@ compute_dtype: float16
 device: cuda:0
 resume: false
 checkpoint_path: null
+initial_policy_path: null
 wandb_entity: ${logging.entity}
 wandb_project: ${logging.project}
 experiment_name: ${logging.experiment}

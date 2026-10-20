@@ -28,6 +28,8 @@ from flash_chord.training.checkpoint_metadata import (
 from flash_chord.training.environment import WarpRLEnv
 from flash_chord.training.flash_sac.checkpoint import (
     CheckpointPaths,
+    actor_inference_state,
+    load_actor_checkpoint,
     restore_learner_checkpoint,
     save_learner_checkpoint,
 )
@@ -429,7 +431,7 @@ def _run_training(
     if not env.objective_term_names:
         raise ValueError("FlashSAC requires named raw objective-term diagnostics")
     checkpoint_schemas = None
-    if config.resume or checkpoint_dir is not None:
+    if config.resume or config.initial_policy_path is not None or checkpoint_dir is not None:
         checkpoint_schemas = _required_checkpoint_schemas(checkpoint_metadata)
 
     fallback = _fallback_stage(env) if config.curriculum is None else None
@@ -462,6 +464,15 @@ def _run_training(
         critic_context_names=context_names,
         device=jax_device,
     )
+    if config.initial_policy_path is not None:
+        if checkpoint_schemas is None:
+            raise AssertionError("warm-start schema validation was not initialized")
+        saved_metadata = read_checkpoint_metadata(config.initial_policy_path)
+        validate_policy_schema(checkpoint_policy_schema(saved_metadata), checkpoint_schemas[0])
+        actor, _ = load_actor_checkpoint(config.initial_policy_path, actor_inference_state(learner))
+        # Only inference weights and batch statistics transfer. Critic, optimizers,
+        # replay, counters, RNG, exploration and reward normalization stay fresh.
+        learner = learner.replace(actor=learner.actor.replace(params=actor.params, batch_stats=actor.batch_stats))
     if config.resume:
         if checkpoint_schemas is None:
             raise AssertionError("resume schema validation was not initialized")

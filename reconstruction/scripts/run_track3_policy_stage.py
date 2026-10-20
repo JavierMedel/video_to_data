@@ -123,11 +123,11 @@ def main():
     global NAME
     parser = argparse.ArgumentParser()
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--track', choices=['track_3', 'track_2_tier1'], default='track_3')
+    parser.add_argument('--track', choices=['track_3', 'track_2_tier1', 'track_2_tier2', 'track_2_tier3'], default='track_3')
     parser.add_argument('module')
     parser.add_argument('arguments', nargs=argparse.REMAINDER)
     args = parser.parse_args()
-    NAME = 'v2d-track2-policy-stage' if args.track == 'track_2_tier1' else 'v2d-track3-policy-stage'
+    NAME = 'v2d-track2-policy-stage' if args.track.startswith('track_2_') else 'v2d-track3-policy-stage'
     args.report.mkdir(parents=True, exist_ok=True)
     pause = ROOT / 'incident_reports/track3_baseline/pause_after_episode.json'
     while args.track == 'track_3' and args.module == 'scripts.train_flash_sac' and pause.exists():

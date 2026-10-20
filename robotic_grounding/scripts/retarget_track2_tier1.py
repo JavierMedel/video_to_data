@@ -49,10 +49,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--episodes", nargs="+", type=int, default=[i for i in range(30) if i != 16])
     parser.add_argument("--image", default="v2d_track2_retarget:baseline")
+    parser.add_argument("--tier", type=int, choices=(1, 2, 3), default=1)
+    parser.add_argument("--data-root", type=Path)
+    parser.add_argument("--reports", type=Path)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
-    data = root / "data/track2/tier1"
-    reports = root / "incident_reports/track2_baseline/retarget"
+    data = (args.data_root or root / f"data/track2/tier{args.tier}").resolve()
+    data.relative_to(root)
+    reports = args.reports or root / ("incident_reports/track2_baseline/retarget" if args.tier == 1 else f"incident_reports/track2_tier{args.tier}/retarget")
     reports.mkdir(parents=True, exist_ok=True)
     lock = (data / "retarget.lock").open("w")
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -74,10 +78,12 @@ def main() -> None:
     for episode in args.episodes:
         source = manifests[episode]
         manifest = json.loads((source / "source_manifest.json").read_text())
+        if manifest.get('tier', 1) != args.tier:
+            raise ValueError('Source manifest belongs to another Track 2 tier')
         for name, digest in manifest["output_sha256"].items():
             if sha256(source / name) != digest:
                 raise ValueError(f"changed source artifact: {source / name}")
-        target = data / f"assets/human_motion_data/whole_body/challenge_tier1/sequence_id={source.name}/robot_name=g1/data.parquet"
+        target = data / f"assets/human_motion_data/whole_body/challenge_tier{args.tier}/sequence_id={source.name}/robot_name=g1/data.parquet"
         report_path = reports / f"episode_{episode:06d}.json"
         inputs = {"source_manifest_sha256": sha256(source / "source_manifest.json"),
                   "image_id": image_id, "code_sha256": code_sha, "asset_sha256": asset_sha}
@@ -93,7 +99,7 @@ def main() -> None:
             "-e", "OMP_NUM_THREADS=4", "-v", f"{root}:/repo", args.image,
             "scripts/retarget/soma_to_g1.py", f"/repo/{source.relative_to(root)}", "--save",
             "--soma-data-root", "/repo/data/track2/soma_assets", "--motion-root",
-            "/repo/data/track2/tier1/assets/human_motion_data", "--soma-subdir", "challenge_tier1"]
+            f"/repo/{data.relative_to(root)}/assets/human_motion_data", "--soma-subdir", f"challenge_tier{args.tier}"]
         started = time.time()
         log_path = reports / f"episode_{episode:06d}_attempt_{time.time_ns()}.log"
         with log_path.open("x") as log:
