@@ -1,0 +1,62 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "96e628d3122845420e3db96cfbc74f3cfa85a2eaced30d572a5898442f785f15",
+  "reference_sha256": "bc89c92f0f07a02821179499045de69b4be7324e39da6a6a1f22bfd9952ad442",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000017/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-01_17-04-55_traffic_cone_ground_table_02/robot_name=g1/data.parquet",
+  "trajectory_sha256": "7924aff19abc420d46362602b05985e87cac7e5adfa41543be0eff7bbc57ff8c",
+  "metrics_sha256": "5b65ca3d8b23b618952149d79595a25b512bfb4bc4339e76701ae8d21d47b12e",
+  "export_sha256": "6ac7ca329907f80fe6b4395b8bc3c0e56c9f9f619ef58a81c0c6685b7f8614da",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "traffic_cone",
+  "rows": 440,
+  "raw_poses_preserved": true,
+  "verified_utc": "2026-10-20T01:32:32.974094+00:00",
+  "local_metrics": {
+    "add_auc": 0.2846590909090909,
+    "add_auc_per_body": [
+      0.2846590909090909
+    ],
+    "add_std_m": 0.6727402321667154,
+    "add_std_per_body_m": [
+      0.6727402321667154
+    ],
+    "chord_sr": 0.0,
+    "gated_causes": [
+      "wrist",
+      "object"
+    ],
+    "maniptrans_sr": 0.0,
+    "mean_add_m": 0.9309124825506538,
+    "mean_per_point_error_cm": 92.07479876240534,
+    "mppe_cm": 92.07479876240534,
+    "object_body_names": [
+      "object"
+    ],
+    "object_orientation_error_deg": 103.11736670550262,
+    "object_orientation_error_per_body_rad": [
+      1.7997375649973986
+    ],
+    "object_orientation_error_rad": 1.7997375649973986,
+    "object_orientation_error_std_deg": 0.0,
+    "object_orientation_error_std_rad": 0.0,
+    "object_position_error_m": 0.919421881825611,
+    "object_position_error_per_body_m": [
+      0.919421881825611
+    ],
+    "object_position_error_std_m": 0.0,
+    "position_mean_centered": false,
+    "relative_position_error_cm": 0.0,
+    "spider_position_error_centered_m": 0.6813675901426507,
+    "spider_sr_uncentered": 0.0,
+    "step_count": 440,
+    "termination_cause_fraction": {
+      "object": 1.0,
+      "wrist": 1.0
+    },
+    "world_count": 1
+  },
+  "scope": "First new short-budget episode; campaign incomplete, not a submission receipt"
+}

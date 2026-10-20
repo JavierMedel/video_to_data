@@ -11,9 +11,18 @@ G1 + Dex3 / SONIC. It is not ready for upload:
 
 - All **30/30** retargeted inputs exist and their hashes were reverified against
   the existing per-episode receipts (Episode 16 uses its separate pilot receipt).
-- Only **Episode 16** has a trained policy and an evaluated rollout. Its native
-  full budget was **349,999,104 steps**; its local task success rates are zero.
-- The other **29 episodes need their own policies and evaluated rollouts**.
+- Episode 16's existing **349,999,104-step** full-budget policy and genuine
+  rollout were verified and reused. Its local task success rates remain zero.
+- The first new short-budget job, **Episode 17**, completed **5,000,192 steps**
+  and a valid **440-row** one-world rollout. Its checkpoint, original reference,
+  raw trajectory, metrics, and name-only submission export hashes are recorded in
+  `short_campaign/first_short_episode_verified.json`. It took about four minutes
+  of reported training-loop time including learner compilation, plus initialization
+  and evaluation. Native CUDA memory readings were about 9,306 MiB under training.
+- At this snapshot **2/30 episodes have evaluated policies**, and Episode 29 is
+  the next active training job. The remaining 28 episodes require training and
+  evaluation; read `short_campaign/execution.json` for current progress.
+- The remaining episodes need their own policies and evaluated rollouts.
   Do not reuse Episode 16's policy or submit reference poses for missing episodes.
 - A fresh official entry check still reports all four Tier 1 competitions unjoined
   for `iorideepp`, despite the earlier user confirmation. The participant must
@@ -299,3 +308,33 @@ Before any submission:
 This document describes the initial setup. Consult the latest execution report
 under `robotic_grounding/incident_reports/track2_baseline/` for training and
 evaluation outcomes before resuming work.
+
+## First short-budget pipeline validation
+
+The initial Episode 17 launch stopped before training because an unquoted
+`sequence_id=...` path was parsed as Hydra override syntax. The launcher now
+JSON-quotes the task path, with a regression test. The complete host suite passed
+**55 tests**, including preserved Track 3 upload behavior and four-metric Track 2
+receipt completion. The first new episode subsequently completed training,
+checkpointing, unassisted evaluation, exact-frame validation, and semantic-name
+export. Code was pushed before launch; current producing implementation commit
+is `d6801a1220d8ddf80b0fa79c41a60e0a8e54a121`.
+
+A clearly marked pilot-only diagnostic CSV under `short_campaign/diagnostics`
+was used to test frame conversion. It is **incomplete and must never be uploaded**.
+The real campaign pack always uses the default official 30-episode configuration.
+The pilot's maximum rigid-frame fit residual was 1.03e-7 m and 8.94e-8 radians.
+Official local recomputation: AUC 0.255503, SP-SR 0, MP-SR 0, MPPE 63.1675 cm.
+Its AUC differed from the native evaluator's 0.255765 by about 0.000262; the other
+three metrics agreed. Both computations refer to the same hash-verified raw
+trajectory. Preserve the discrepancy and the diagnostic log; do not silently
+suppress cross-check warnings or claim local agreement beyond this evidence.
+
+The current queue is designed to keep running without chat interaction. The
+laptop and Docker must remain on. It will pack only verified complete coverage
+and upload only after the official dry-run passes. Entry remains an external
+blocker: after the participant's renewed confirmation, a direct authenticated
+API comparison showed `user_has_entered=true` for Track 3 AUC and `false` for
+Track 2 Tier 1 AUC. The participant was asked what their Track 2 rules page shows
+(Join Competition versus Submit Prediction). Continue training independently
+and recheck entry rather than automatically accepting rules or bypassing checks.
