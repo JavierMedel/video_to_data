@@ -1,0 +1,666 @@
+{
+  "observed_utc": "2026-10-20T01:14:03.178868+00:00",
+  "source": "Authenticated Kaggle competition_leaderboard_view API; public leaderboard order",
+  "metrics": {
+    "add_auc": {
+      "slug": "v2d-challenge-track3-auc",
+      "url": "https://www.kaggle.com/competitions/v2d-challenge-track3-auc/leaderboard",
+      "rows": [
+        {
+          "display_order": 1,
+          "team_name": "SoySauceChicken",
+          "team_id": 17041586,
+          "score": "0.82309"
+        },
+        {
+          "display_order": 2,
+          "team_name": "Zihao Guo",
+          "team_id": 17079700,
+          "score": "0.73912"
+        },
+        {
+          "display_order": 3,
+          "team_name": "SRL",
+          "team_id": 16990298,
+          "score": "0.63943"
+        },
+        {
+          "display_order": 4,
+          "team_name": "Zimo Li",
+          "team_id": 17083560,
+          "score": "0.63037"
+        },
+        {
+          "display_order": 5,
+          "team_name": "Kiarash_Ghasemzadeh8",
+          "team_id": 17129964,
+          "score": "0.52917"
+        },
+        {
+          "display_order": 6,
+          "team_name": "Open4D",
+          "team_id": 17064459,
+          "score": "0.41458"
+        },
+        {
+          "display_order": 7,
+          "team_name": "EIG",
+          "team_id": 17129873,
+          "score": "0.39667"
+        },
+        {
+          "display_order": 8,
+          "team_name": "Xueyi Wang (FF)",
+          "team_id": 17075205,
+          "score": "0.36129"
+        },
+        {
+          "display_order": 9,
+          "team_name": "Rian Borah",
+          "team_id": 17139079,
+          "score": "0.34891"
+        },
+        {
+          "display_order": 10,
+          "team_name": "Panav Raaj",
+          "team_id": 17021328,
+          "score": "0.34142"
+        },
+        {
+          "display_order": 11,
+          "team_name": "NVSimranPatil",
+          "team_id": 17132010,
+          "score": "0.34103"
+        },
+        {
+          "display_order": 12,
+          "team_name": "Sambhav",
+          "team_id": 17102281,
+          "score": "0.29862"
+        },
+        {
+          "display_order": 13,
+          "team_name": "venkitprasadreddy",
+          "team_id": 17066657,
+          "score": "0.29709"
+        },
+        {
+          "display_order": 14,
+          "team_name": "Gravity Aligned",
+          "team_id": 17136569,
+          "score": "0.29518"
+        },
+        {
+          "display_order": 15,
+          "team_name": "shearforce",
+          "team_id": 17088967,
+          "score": "0.22282"
+        },
+        {
+          "display_order": 16,
+          "team_name": "Tony",
+          "team_id": 17130854,
+          "score": "0.21596"
+        },
+        {
+          "display_order": 17,
+          "team_name": "Javier Medel, MSc.",
+          "team_id": 17147830,
+          "score": "0.16307"
+        }
+      ]
+    },
+    "spider_sr": {
+      "slug": "v2d-challenge-track3-sp-sr",
+      "url": "https://www.kaggle.com/competitions/v2d-challenge-track3-sp-sr/leaderboard",
+      "rows": [
+        {
+          "display_order": 1,
+          "team_name": "Zihao Guo",
+          "team_id": 17079702,
+          "score": "0.85000"
+        },
+        {
+          "display_order": 2,
+          "team_name": "SoySauceChicken",
+          "team_id": 17041587,
+          "score": "0.85000"
+        },
+        {
+          "display_order": 3,
+          "team_name": "Zimo Li",
+          "team_id": 17083563,
+          "score": "0.70000"
+        },
+        {
+          "display_order": 4,
+          "team_name": "SRL",
+          "team_id": 16990294,
+          "score": "0.70000"
+        },
+        {
+          "display_order": 5,
+          "team_name": "NVSimranPatil",
+          "team_id": 17132011,
+          "score": "0.50000"
+        },
+        {
+          "display_order": 6,
+          "team_name": "Open4D",
+          "team_id": 17064462,
+          "score": "0.45000"
+        },
+        {
+          "display_order": 7,
+          "team_name": "Kiarash_Ghasemzadeh8",
+          "team_id": 17129969,
+          "score": "0.40000"
+        },
+        {
+          "display_order": 8,
+          "team_name": "Rian Borah",
+          "team_id": 17139080,
+          "score": "0.40000"
+        },
+        {
+          "display_order": 9,
+          "team_name": "EIG",
+          "team_id": 17130103,
+          "score": "0.35000"
+        },
+        {
+          "display_order": 10,
+          "team_name": "Sambhav",
+          "team_id": 17102284,
+          "score": "0.30000"
+        },
+        {
+          "display_order": 11,
+          "team_name": "Gravity Aligned",
+          "team_id": 17136571,
+          "score": "0.25000"
+        },
+        {
+          "display_order": 12,
+          "team_name": "Xueyi Wang (FF)",
+          "team_id": 17075207,
+          "score": "0.20000"
+        },
+        {
+          "display_order": 13,
+          "team_name": "Panav Raaj",
+          "team_id": 17021327,
+          "score": "0.20000"
+        },
+        {
+          "display_order": 14,
+          "team_name": "venkitprasadreddy",
+          "team_id": 17066659,
+          "score": "0.10000"
+        },
+        {
+          "display_order": 15,
+          "team_name": "Tony",
+          "team_id": 17130857,
+          "score": "0.10000"
+        },
+        {
+          "display_order": 16,
+          "team_name": "Javier Medel, MSc.",
+          "team_id": 17147833,
+          "score": "0.05000"
+        },
+        {
+          "display_order": 17,
+          "team_name": "erenyr",
+          "team_id": 17088986,
+          "score": "0.00000"
+        }
+      ]
+    },
+    "maniptrans_sr": {
+      "slug": "v2d-challenge-track3-mp-sr",
+      "url": "https://www.kaggle.com/competitions/v2d-challenge-track3-mp-sr/leaderboard",
+      "rows": [
+        {
+          "display_order": 1,
+          "team_name": "SoySauceChicken",
+          "team_id": 17041588,
+          "score": "0.70000"
+        },
+        {
+          "display_order": 2,
+          "team_name": "Zihao Guo",
+          "team_id": 17079703,
+          "score": "0.55000"
+        },
+        {
+          "display_order": 3,
+          "team_name": "Zimo Li",
+          "team_id": 17083571,
+          "score": "0.35000"
+        },
+        {
+          "display_order": 4,
+          "team_name": "SRL",
+          "team_id": 16990300,
+          "score": "0.35000"
+        },
+        {
+          "display_order": 5,
+          "team_name": "Kiarash_Ghasemzadeh8",
+          "team_id": 17129971,
+          "score": "0.15000"
+        },
+        {
+          "display_order": 6,
+          "team_name": "Open4D",
+          "team_id": 17064627,
+          "score": "0.10000"
+        },
+        {
+          "display_order": 7,
+          "team_name": "Rian Borah",
+          "team_id": 17139081,
+          "score": "0.05000"
+        },
+        {
+          "display_order": 8,
+          "team_name": "NVSimranPatil",
+          "team_id": 17132013,
+          "score": "0.05000"
+        },
+        {
+          "display_order": 9,
+          "team_name": "Panav Raaj",
+          "team_id": 17021335,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 10,
+          "team_name": "Xueyi Wang (FF)",
+          "team_id": 17075209,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 11,
+          "team_name": "venkitprasadreddy",
+          "team_id": 17066660,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 12,
+          "team_name": "Sambhav",
+          "team_id": 17102313,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 13,
+          "team_name": "shearforce",
+          "team_id": 17088989,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 14,
+          "team_name": "EIG",
+          "team_id": 17130098,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 15,
+          "team_name": "Gravity Aligned",
+          "team_id": 17136626,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 16,
+          "team_name": "Tony",
+          "team_id": 17130859,
+          "score": "0.00000"
+        },
+        {
+          "display_order": 17,
+          "team_name": "Javier Medel, MSc.",
+          "team_id": 17147836,
+          "score": "0.00000"
+        }
+      ]
+    },
+    "rpe_cm": {
+      "slug": "v2d-challenge-track3-rpe",
+      "url": "https://www.kaggle.com/competitions/v2d-challenge-track3-rpe/leaderboard",
+      "rows": [
+        {
+          "display_order": 1,
+          "team_name": "Zeraol",
+          "team_id": 17156083,
+          "score": "3.05138"
+        },
+        {
+          "display_order": 2,
+          "team_name": "SoySauceChicken",
+          "team_id": 17041589,
+          "score": "3.85312"
+        },
+        {
+          "display_order": 3,
+          "team_name": "Zimo Li",
+          "team_id": 17083569,
+          "score": "6.11429"
+        },
+        {
+          "display_order": 4,
+          "team_name": "Zihao Guo",
+          "team_id": 17079707,
+          "score": "6.49702"
+        },
+        {
+          "display_order": 5,
+          "team_name": "SRL",
+          "team_id": 16990301,
+          "score": "6.64769"
+        },
+        {
+          "display_order": 6,
+          "team_name": "Kiarash_Ghasemzadeh8",
+          "team_id": 17129972,
+          "score": "8.50084"
+        },
+        {
+          "display_order": 7,
+          "team_name": "EIG",
+          "team_id": 17130102,
+          "score": "9.64742"
+        },
+        {
+          "display_order": 8,
+          "team_name": "Rian Borah",
+          "team_id": 17139085,
+          "score": "11.29717"
+        },
+        {
+          "display_order": 9,
+          "team_name": "Panav Raaj",
+          "team_id": 17021333,
+          "score": "12.61755"
+        },
+        {
+          "display_order": 10,
+          "team_name": "Open4D",
+          "team_id": 17064797,
+          "score": "12.66256"
+        },
+        {
+          "display_order": 11,
+          "team_name": "Xueyi Wang (FF)",
+          "team_id": 17075211,
+          "score": "12.99181"
+        },
+        {
+          "display_order": 12,
+          "team_name": "NVSimranPatil",
+          "team_id": 17132015,
+          "score": "13.28252"
+        },
+        {
+          "display_order": 13,
+          "team_name": "Sambhav",
+          "team_id": 17102286,
+          "score": "14.34820"
+        },
+        {
+          "display_order": 14,
+          "team_name": "shearforce",
+          "team_id": 17088991,
+          "score": "16.99643"
+        },
+        {
+          "display_order": 15,
+          "team_name": "Tony",
+          "team_id": 17130860,
+          "score": "18.27604"
+        },
+        {
+          "display_order": 16,
+          "team_name": "Gravity Aligned",
+          "team_id": 17136574,
+          "score": "19.77687"
+        },
+        {
+          "display_order": 17,
+          "team_name": "Javier Medel, MSc.",
+          "team_id": 17147838,
+          "score": "22.28685"
+        },
+        {
+          "display_order": 18,
+          "team_name": "venkitprasadreddy",
+          "team_id": 17066661,
+          "score": "24.17036"
+        }
+      ]
+    },
+    "mppe_cm": {
+      "slug": "v2d-challenge-track3-mppe",
+      "url": "https://www.kaggle.com/competitions/v2d-challenge-track3-mppe/leaderboard",
+      "rows": [
+        {
+          "display_order": 1,
+          "team_name": "SoySauceChicken",
+          "team_id": 17041590,
+          "score": "2.62042"
+        },
+        {
+          "display_order": 2,
+          "team_name": "Zihao Guo",
+          "team_id": 17079708,
+          "score": "4.62396"
+        },
+        {
+          "display_order": 3,
+          "team_name": "SRL",
+          "team_id": 16990302,
+          "score": "5.64558"
+        },
+        {
+          "display_order": 4,
+          "team_name": "Zimo Li",
+          "team_id": 17083568,
+          "score": "5.69432"
+        },
+        {
+          "display_order": 5,
+          "team_name": "Kiarash_Ghasemzadeh8",
+          "team_id": 17129973,
+          "score": "6.84287"
+        },
+        {
+          "display_order": 6,
+          "team_name": "Rian Borah",
+          "team_id": 17139086,
+          "score": "10.23335"
+        },
+        {
+          "display_order": 7,
+          "team_name": "NVSimranPatil",
+          "team_id": 17132018,
+          "score": "10.30089"
+        },
+        {
+          "display_order": 8,
+          "team_name": "Open4D",
+          "team_id": 17064799,
+          "score": "10.44602"
+        },
+        {
+          "display_order": 9,
+          "team_name": "EIG",
+          "team_id": 17130100,
+          "score": "10.60769"
+        },
+        {
+          "display_order": 10,
+          "team_name": "Xueyi Wang (FF)",
+          "team_id": 17075210,
+          "score": "10.78069"
+        },
+        {
+          "display_order": 11,
+          "team_name": "Panav Raaj",
+          "team_id": 17021318,
+          "score": "11.37357"
+        },
+        {
+          "display_order": 12,
+          "team_name": "Sambhav",
+          "team_id": 17102315,
+          "score": "12.68397"
+        },
+        {
+          "display_order": 13,
+          "team_name": "Gravity Aligned",
+          "team_id": 17136576,
+          "score": "14.86842"
+        },
+        {
+          "display_order": 14,
+          "team_name": "shearforce",
+          "team_id": 17088995,
+          "score": "15.24090"
+        },
+        {
+          "display_order": 15,
+          "team_name": "Tony",
+          "team_id": 17130863,
+          "score": "16.86116"
+        },
+        {
+          "display_order": 16,
+          "team_name": "venkata prasad setty",
+          "team_id": 17066662,
+          "score": "16.89249"
+        },
+        {
+          "display_order": 17,
+          "team_name": "Javier Medel, MSc.",
+          "team_id": 17147839,
+          "score": "20.82175"
+        }
+      ]
+    },
+    "cd_o_cm": {
+      "slug": "v2d-challenge-track3-cd-o",
+      "url": "https://www.kaggle.com/competitions/v2d-challenge-track3-cd-o/leaderboard",
+      "rows": [
+        {
+          "display_order": 1,
+          "team_name": "SoySauceChicken",
+          "team_id": 17046370,
+          "score": "0.06523"
+        },
+        {
+          "display_order": 2,
+          "team_name": "Kiarash_Ghasemzadeh8",
+          "team_id": 17129977,
+          "score": "0.08813"
+        },
+        {
+          "display_order": 3,
+          "team_name": "NVSimranPatil",
+          "team_id": 17132021,
+          "score": "0.10940"
+        },
+        {
+          "display_order": 4,
+          "team_name": "Panav Raaj",
+          "team_id": 17021314,
+          "score": "0.11218"
+        },
+        {
+          "display_order": 5,
+          "team_name": "Open4D",
+          "team_id": 17064800,
+          "score": "0.21921"
+        },
+        {
+          "display_order": 6,
+          "team_name": "SRL",
+          "team_id": 16990303,
+          "score": "0.28088"
+        },
+        {
+          "display_order": 7,
+          "team_name": "Zihao Guo",
+          "team_id": 17079709,
+          "score": "0.31688"
+        },
+        {
+          "display_order": 8,
+          "team_name": "Rian Borah",
+          "team_id": 17139087,
+          "score": "0.32017"
+        },
+        {
+          "display_order": 9,
+          "team_name": "Zimo Li",
+          "team_id": 17083567,
+          "score": "0.40456"
+        },
+        {
+          "display_order": 10,
+          "team_name": "Sambhav",
+          "team_id": 17102314,
+          "score": "0.40686"
+        },
+        {
+          "display_order": 11,
+          "team_name": "Tony",
+          "team_id": 17130865,
+          "score": "0.43550"
+        },
+        {
+          "display_order": 12,
+          "team_name": "VihaanAgarwal",
+          "team_id": 17156980,
+          "score": "0.43725"
+        },
+        {
+          "display_order": 13,
+          "team_name": "EIG",
+          "team_id": 17130105,
+          "score": "0.44299"
+        },
+        {
+          "display_order": 14,
+          "team_name": "Gravity Aligned",
+          "team_id": 17136578,
+          "score": "0.47262"
+        },
+        {
+          "display_order": 15,
+          "team_name": "Xueyi Wang (FF)",
+          "team_id": 17075212,
+          "score": "0.48273"
+        },
+        {
+          "display_order": 16,
+          "team_name": "shearforce",
+          "team_id": 17088992,
+          "score": "0.52087"
+        },
+        {
+          "display_order": 17,
+          "team_name": "Javier Medel, MSc.",
+          "team_id": 17147841,
+          "score": "0.57037"
+        },
+        {
+          "display_order": 18,
+          "team_name": "venkitprasadreddy",
+          "team_id": 17066663,
+          "score": "0.64287"
+        }
+      ]
+    }
+  }
+}

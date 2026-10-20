@@ -1,0 +1,258 @@
+{
+  "objects": 36,
+  "warnings": [],
+  "meshes": [
+    {
+      "episode_index": 1,
+      "object": "white_pot",
+      "vertices": 289972,
+      "faces": 579860,
+      "area": 0.3414443985535527
+    },
+    {
+      "episode_index": 1,
+      "object": "white_pot_lid",
+      "vertices": 166460,
+      "faces": 332908,
+      "area": 0.2958106193734339
+    },
+    {
+      "episode_index": 3,
+      "object": "white_pot",
+      "vertices": 135202,
+      "faces": 270376,
+      "area": 0.24059647013163854
+    },
+    {
+      "episode_index": 3,
+      "object": "wooden_spoon",
+      "vertices": 31614,
+      "faces": 63204,
+      "area": 0.0472066762304397
+    },
+    {
+      "episode_index": 5,
+      "object": "white_pot",
+      "vertices": 139274,
+      "faces": 278516,
+      "area": 0.23936949635879975
+    },
+    {
+      "episode_index": 5,
+      "object": "wooden_spoon",
+      "vertices": 31046,
+      "faces": 62080,
+      "area": 0.08322552031313579
+    },
+    {
+      "episode_index": 6,
+      "object": "white_pot",
+      "vertices": 136256,
+      "faces": 272472,
+      "area": 0.25514709787098055
+    },
+    {
+      "episode_index": 6,
+      "object": "wooden_spoon",
+      "vertices": 42726,
+      "faces": 85420,
+      "area": 0.06726885815975497
+    },
+    {
+      "episode_index": 8,
+      "object": "beige_cup",
+      "vertices": 333242,
+      "faces": 666440,
+      "area": 0.10173073182853251
+    },
+    {
+      "episode_index": 8,
+      "object": "white_pot",
+      "vertices": 113114,
+      "faces": 226224,
+      "area": 0.23583675449725777
+    },
+    {
+      "episode_index": 10,
+      "object": "blue_cup",
+      "vertices": 367038,
+      "faces": 734032,
+      "area": 0.12961793754376713
+    },
+    {
+      "episode_index": 10,
+      "object": "beige_cup",
+      "vertices": 348122,
+      "faces": 696224,
+      "area": 0.0933802121148962
+    },
+    {
+      "episode_index": 14,
+      "object": "blue_cup",
+      "vertices": 341838,
+      "faces": 683624,
+      "area": 0.13632003862529768
+    },
+    {
+      "episode_index": 14,
+      "object": "plastic_dish_rack",
+      "vertices": 166092,
+      "faces": 332112,
+      "area": 0.988498308824896
+    },
+    {
+      "episode_index": 15,
+      "object": "plastic_dish_rack",
+      "vertices": 317722,
+      "faces": 635328,
+      "area": 2.0722571370099425
+    },
+    {
+      "episode_index": 15,
+      "object": "wooden_spoon",
+      "vertices": 31546,
+      "faces": 63056,
+      "area": 0.043974719355787104
+    },
+    {
+      "episode_index": 16,
+      "object": "plastic_dish_rack",
+      "vertices": 131228,
+      "faces": 262404,
+      "area": 0.9625953917979281
+    },
+    {
+      "episode_index": 16,
+      "object": "wooden_spoon",
+      "vertices": 31410,
+      "faces": 62796,
+      "area": 0.034653470726546606
+    },
+    {
+      "episode_index": 19,
+      "object": "mini_sweeper",
+      "vertices": 157140,
+      "faces": 314264,
+      "area": 0.05804827493115423
+    },
+    {
+      "episode_index": 19,
+      "object": "mini_dust_pan",
+      "vertices": 121588,
+      "faces": 243148,
+      "area": 0.09549783347413712
+    },
+    {
+      "episode_index": 20,
+      "object": "blue_cup",
+      "vertices": 358154,
+      "faces": 716216,
+      "area": 0.1128075518588589
+    },
+    {
+      "episode_index": 20,
+      "object": "water_pitcher",
+      "vertices": 122990,
+      "faces": 245944,
+      "area": 0.3687106738086295
+    },
+    {
+      "episode_index": 25,
+      "object": "wooden_piece_1",
+      "vertices": 240250,
+      "faces": 480484,
+      "area": 1.5074303018504907
+    },
+    {
+      "episode_index": 25,
+      "object": "wooden_piece_2",
+      "vertices": 160094,
+      "faces": 320184,
+      "area": 0.16528214588279921
+    },
+    {
+      "episode_index": 28,
+      "object": "plastic_dish_rack",
+      "vertices": 149446,
+      "faces": 298808,
+      "area": 0.8565075999784899
+    },
+    {
+      "episode_index": 28,
+      "object": "white_pot",
+      "vertices": 141812,
+      "faces": 283600,
+      "area": 0.21871947847849718
+    },
+    {
+      "episode_index": 30,
+      "object": "mini_sweeper",
+      "vertices": 113394,
+      "faces": 226800,
+      "area": 0.04049783964333534
+    },
+    {
+      "episode_index": 30,
+      "object": "plastic_dish_rack",
+      "vertices": 196200,
+      "faces": 392308,
+      "area": 1.5062488571171146
+    },
+    {
+      "episode_index": 32,
+      "object": "blue_cup",
+      "vertices": 355340,
+      "faces": 710660,
+      "area": 0.11418704779529704
+    },
+    {
+      "episode_index": 32,
+      "object": "wooden_spoon",
+      "vertices": 29590,
+      "faces": 59156,
+      "area": 0.04733380516730547
+    },
+    {
+      "episode_index": 33,
+      "object": "blue_cup",
+      "vertices": 304564,
+      "faces": 609076,
+      "area": 0.1841660283508813
+    },
+    {
+      "episode_index": 33,
+      "object": "wooden_spoon",
+      "vertices": 33154,
+      "faces": 66272,
+      "area": 0.04796303631082713
+    },
+    {
+      "episode_index": 35,
+      "object": "wooden_spoon",
+      "vertices": 37696,
+      "faces": 75360,
+      "area": 0.08849324997833614
+    },
+    {
+      "episode_index": 36,
+      "object": "wooden_spoon",
+      "vertices": 30032,
+      "faces": 60040,
+      "area": 0.06045720238976354
+    },
+    {
+      "episode_index": 37,
+      "object": "wooden_spoon",
+      "vertices": 33552,
+      "faces": 67088,
+      "area": 0.09087602260231237
+    },
+    {
+      "episode_index": 38,
+      "object": "mini_dust_pan",
+      "vertices": 134622,
+      "faces": 269204,
+      "area": 0.11293113959188078
+    }
+  ]
+}

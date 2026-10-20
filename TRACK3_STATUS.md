@@ -9,40 +9,105 @@ simulation, policy training, evaluation and submission happen on this laptop.
 Every future plan should distinguish observed artifacts from proposed work and
 state which local files and validations its implementation will require.
 
-## Latest execution snapshot — October 18
+## Latest execution snapshot — October 19, 2026 (Toronto)
 
-- All **20/20 episodes are reconstructed and CPU-prepared**. The roster remains
-  36 object instances and 9,120 required pose rows.
-- The user requested a submission today. The active command is
-  `reconstruction/.venv/bin/python reconstruction/scripts/run_track3_full_campaign.py --profile today --upload`.
-  Its authoritative status is `reconstruction/incident_reports/track3_baseline/today_campaign/execution.json`,
-  not the stopped `full_campaign/execution.json` from the longer-budget run.
-- This baseline targets **5,000,192 steps per new episode**, with all native
-  curriculum phases compressed into that budget. The original full target is
-  250,003,456 steps. Do not describe the baseline as completed full-budget training.
-- Episode 38 has a verified, genuine 263-frame unassisted rollout from its
-  existing 60,002,304-step policy. Its local success rate is zero. Episode 37 is
-  the first new short-budget training job; read its live log for actual progress.
-- Both Linux and Windows external `nvidia-smi` queries blocked under load while
-  fresh training still advanced to 150K steps. Loss of NVML telemetry did not
-  establish stalled CUDA execution. The trainer now publishes device-wide CUDA
-  total/free memory every two seconds; the guard accepts only fresh, valid
-  samples matching its unique run ID. Windows-native `nvidia-smi.exe` remains
-  a fallback. The 21,000 MiB limit and sustained-monitor-loss stop remain active.
-  Read `today_campaign/episode_XXXXXX/training/gpu_heartbeat.json` for live
-  environment steps and memory; `gpu.csv` has `N/A` utilization/power for this
-  CUDA memory source, not fabricated percentages. Verify under-load progress
-  before claiming this replacement monitor is stable.
-- Kaggle's fresh entry check still reports all six Track 3 competitions unjoined
-  for `iorideepp`. Upload requires the user's browser acceptance; credentials
-  are authenticated. A packed file must pass the official dry-run before upload.
-- Producing code, benchmark evidence, native checkpoints, and all earlier stop
-  reports remain separate. Do not restart reconstruction or run the 250M full
-  campaign alongside today's queue; the shared GPU lock serializes whole policy
-  jobs and a full-budget run would block the deadline baseline.
+- All **20/20 episodes are reconstructed, CPU-prepared, trained, and evaluated**.
+  The completed baseline contains 36 object instances and **9,120 required pose rows**
+  from 5,181 source frames, one evaluation world. All worlds are valid and raw
+  trajectory hashes match the saved evaluation receipts.
+- All six Kaggle competition entries for `iorideepp` are confirmed. The combined
+  packet passed the official dry-run and all six uploads were accepted on October
+  20 at approximately 01:09 UTC (October 19 evening Toronto). Read the receipt for
+  current scores. **All six are COMPLETE**, and the controller finished with state
+  `SCORED`, `uploaded=true`, no failed episodes, and no remaining GPU jobs.
+- This is the **short-budget baseline**, targeting **5,000,192 steps per new episode**.
+  Episode 38 reused its genuine **60,002,304-step** policy. The original full target
+  is 250,003,456 steps per episode and has not been completed. Do not call this
+  full-budget training or claim strong policy performance: all 20 local reference
+  tracking success rates are zero. Local diagnostics are against reconstructed
+  references; official scores use confidential trajectories and scans.
+- Producing code: `https://github.com/JavierMedel/video_to_data/commit/4f25220b0172f830567b908dd52003d5ec516111`.
+  It includes a checked export mapping from internal body labels to scored object
+  names by the recorded body ID. Raw evaluator outputs are retained in
+  `robotic_grounding/data/track3/results_today`; submission exports are in
+  `robotic_grounding/data/track3/results_today_submission`. Every other column,
+  including achieved poses, remains exactly equal in Arrow. The mapping receipt
+  records both raw and exported hashes. The initial pack rejection consumed no quota.
+- Submission: `robotic_grounding/data/track3/submission_today/track3_submission.parquet`
+  (3,567,453 bytes). The official uploader extracted `track3_submission.cd-o.parquet`.
+  All 36 original meshes passed finite/positive-area checks without advisories;
+  the successful packer run reported no mesh advisories either.
+- The October 19 resume completed the seven remaining episodes without monitoring
+  recovery retries. New jobs used 1,024 simulation worlds, with recorded device-wide
+  memory around 12,616–12,958 MiB (12.3–12.7 GiB) and the 21,000 MiB cap retained. The heartbeat does
+  not measure GPU utilization; utilization/power are `N/A` for that source.
+  Repeated JAX 4 GiB allocation messages were followed by successful compilation,
+  training, checkpointing and evaluation. Episode 1 also emitted EPA horizon=24
+  warnings; valid finite rollouts do not prove collision convergence or physical fidelity.
+- Relevant host campaign/guard/export tests: **50 passed**. Native progress/heartbeat
+  tests previously passed **7 tests**, and a real GPU heartbeat check passed.
 
-The sections below retain historical setup and recovery evidence. Prefer the
-latest section and timestamped execution JSON when older progress counts differ.
+Authoritative records (relative to this execution checkout):
+
+- `reconstruction/incident_reports/track3_baseline/today_campaign/execution.json`
+- `reconstruction/incident_reports/track3_baseline/today_campaign/kaggle_receipt.json`
+- `reconstruction/incident_reports/track3_baseline/today_campaign/upload_manifest.json`
+- `reconstruction/incident_reports/track3_baseline/today_campaign/completed_rollout_audit.json`
+- `reconstruction/incident_reports/track3_baseline/today_campaign/submission_name_mapping.json`
+- `reconstruction/incident_reports/track3_baseline/today_campaign/mesh_preflight.json`
+- Per-episode `policy.json`, native logs, and native checkpoints under the existing
+  `today_campaign`, `policies_today`, and `results_today` directories.
+
+**Recovery:** do not re-run uploads. Resume read-only polling of the receipt's exact
+IDs with the official uploader's `--poll-receipt` option. Repacking after changing
+HEAD can change the packet hash; the upload manifest intentionally blocks treating
+such a packet as the already-submitted one. Preserve the uploaded bytes and receipt.
+The old shutdown pause request was archived under `today_campaign/pause_history`.
+No new GPU job is needed to obtain Kaggle scores.
+
+### First complete Track 3 submission: official scores and leaderboard comparison
+
+Scored on October 19, 2026 Toronto evening (October 20 UTC). Each row is
+Kaggle `COMPLETE`. Public leaderboard snapshot time: `2026-10-20T01:14:03.178868+00:00`.
+The display position is the returned API row order, not a claim about official
+tie handling or the combined challenge ranking. Different competitions have
+different team IDs; do not use one metric’s team ID to identify another metric.
+
+| Metric | Direction | Our score | Best public score | Our display position | Submission ID |
+|---|---|---:|---:|---:|---:|
+| [AUC](https://www.kaggle.com/competitions/v2d-challenge-track3-auc/leaderboard) | Higher | 0.16307 | 0.82309 | 17/17 | 57416110 |
+| [SP-SR](https://www.kaggle.com/competitions/v2d-challenge-track3-sp-sr/leaderboard) | Higher | 0.05000 | 0.85000 | 16/17 | 57416113 |
+| [MP-SR](https://www.kaggle.com/competitions/v2d-challenge-track3-mp-sr/leaderboard) | Higher | 0.00000 | 0.70000 | 17/17 | 57416115 |
+| [RPE (cm)](https://www.kaggle.com/competitions/v2d-challenge-track3-rpe/leaderboard) | Lower | 22.28685 | 3.05138 | 17/18 | 57416118 |
+| [MPPE (cm)](https://www.kaggle.com/competitions/v2d-challenge-track3-mppe/leaderboard) | Lower | 20.82175 | 2.62042 | 17/17 | 57416120 |
+| [CD-O (cm)](https://www.kaggle.com/competitions/v2d-challenge-track3-cd-o/leaderboard) | Lower | 0.57037 | 0.06523 | 17/18 | 57416123 |
+
+This is a functioning submission baseline with substantial gaps to current leaders.
+SP-SR 0.05 means 5% episode success under that metric; MP-SR is zero. Do not
+interpret successful file validation or `environment_valid=true` as successful
+manipulation. The native local reference-tracking success is a different criterion
+from the official object-only, symmetry-aware SP-SR; those local zeros do not
+contradict the official 5% score.
+
+Packet SHA-256: `19c1de67171660febec90b943f9826da599f6a69125f5869e391d2e4fe8913f8`.
+Each metric used one upload in this round; the name-validation failure occurred
+before any upload. Polling consumed no upload quota. Do not upload these files again.
+
+The next planning LLM should propose an executable Markdown improvement plan,
+not run the challenge on the other laptop. Prioritize small measured ablations:
+reference quality/metric scale/shared frame alignment, contact and retargeting,
+unassisted policy behavior, then training-budget changes. These are hypotheses;
+the current scores do not isolate their causes. Require native local diagnostics
+and exact coverage/provenance checks, preserve this scored baseline, and keep
+Track 1/2 data and policies separate. Reconstruction and policy changes should
+be assessed independently before an expensive all-episode rerun or another upload.
+
+The comparison is only a timestamped public leaderboard snapshot. The combined
+[challenge leaderboard](https://nvidia-isaac.github.io/video_to_data/v2d_challenge/#leaderboard)
+can lag Kaggle; it was not used to claim a combined rank.
+
+The sections below retain historical setup and recovery evidence. Prefer this
+latest snapshot and timestamped execution JSON when older counts or entry status differ.
 
 ## Initial scope and historical progress
 

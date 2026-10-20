@@ -1,0 +1,198 @@
+{
+  "episode_000038": {
+    "raw_sha256": "22109d1ce975780fbe0052482619a8b09c225cdb44190dcafd0e43ff5f8cc987",
+    "export_sha256": "d53b7bff2bbaeebff7b28ee33ab5ae2beb42b00cb36a26faebd3347216eb58b4",
+    "object_names_in_body_id_order": [
+      "mini_dust_pan"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000037": {
+    "raw_sha256": "9b94717438b80ced7dddc47baaf588075eb3f0380065dec55a8995d703bd35bc",
+    "export_sha256": "303df7ed2fd21a6164008723b882e093fd035380038bcd56643311dc6b009093",
+    "object_names_in_body_id_order": [
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000014": {
+    "raw_sha256": "c33c71d7a04295197e419d91e9e5864fc680b2889a2d8b01f434be0852f243a2",
+    "export_sha256": "edbb2ffb7069a34c1d24f36d2b5239978fb92fd617d77568d8cdf760e902eee6",
+    "object_names_in_body_id_order": [
+      "blue_cup",
+      "plastic_dish_rack"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000010": {
+    "raw_sha256": "6b6800172478363b61c16cc203b4e60ebced4c38d4f0238e34cb20ba0c9ff70b",
+    "export_sha256": "c013e911440eab5b912c093981ee3399e884854ae6421c3cba7c2e05c2a45a99",
+    "object_names_in_body_id_order": [
+      "blue_cup",
+      "beige_cup"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000015": {
+    "raw_sha256": "66dd645bf862a3bfeb4e44661622bdc4f043370c5b9113b7ac71f1fd33a8c8d1",
+    "export_sha256": "6c9d4544d981382f1bfc045b5e2f0f1da62efc1a79456c3a1351b3e31da2a942",
+    "object_names_in_body_id_order": [
+      "plastic_dish_rack",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000016": {
+    "raw_sha256": "d368e433a3454fad5ce392ab92b479527fd2cdbcbeaa053ad204e95c926b96ae",
+    "export_sha256": "53de2d9536c8119a8a55a5f1cd5fccfac60e6e8cd437503378f96121afec5c83",
+    "object_names_in_body_id_order": [
+      "plastic_dish_rack",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000020": {
+    "raw_sha256": "7d19aa183355c8fb4a85bf8e1bf08347371caba2da809113d05adbfdd543279e",
+    "export_sha256": "cadfaf7a1d7a7ab2e2e9509977147f365d222e6a7c251be9b7b4db37fdd13eec",
+    "object_names_in_body_id_order": [
+      "blue_cup",
+      "water_pitcher"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000008": {
+    "raw_sha256": "1ee37ac9088e90b3df02cdf52bfdc866b5fe9f1da2ccfc2f26dd5e2044f5a5dd",
+    "export_sha256": "ed5416d4d14090c51b488cd33d03217e12f7509715d6a68978029f1417c95fb9",
+    "object_names_in_body_id_order": [
+      "beige_cup",
+      "white_pot"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000028": {
+    "raw_sha256": "8796f13a2a04006a6e8bff29ea6d23133b47f5dd61a449460edc947d12b67b0e",
+    "export_sha256": "b5dff9057eba7d7b265e12a7127b332ffff22d6ba747f6a647a379d75bad6edf",
+    "object_names_in_body_id_order": [
+      "plastic_dish_rack",
+      "white_pot"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000019": {
+    "raw_sha256": "469676095f8ceaa033758b1384742dc9903bffdbc8466bb401f49720e7d66cdf",
+    "export_sha256": "786da39e2228ca9425383ff81fe5826272525a681bb8398cac6bb61a6f3351ba",
+    "object_names_in_body_id_order": [
+      "mini_sweeper",
+      "mini_dust_pan"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000006": {
+    "raw_sha256": "806a39c639cfa4ad9bdcc44844f4fc4d3776d75cb0d8dbdae7fcf902ad8e8e86",
+    "export_sha256": "1e602b8ceff774a9a8d09008953b970f8b59693237ca17404b3ee5276b10b22c",
+    "object_names_in_body_id_order": [
+      "white_pot",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000032": {
+    "raw_sha256": "ced0b40b20d5c4ca3db18d3471d9679356f90cc3cd8cd1750502b7fcd754653c",
+    "export_sha256": "16831197c0c72c4e11cdbda11ce22a9242c0145efdda9a07e98fc1a3a116d29c",
+    "object_names_in_body_id_order": [
+      "blue_cup",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000030": {
+    "raw_sha256": "d6925dae5f98d775aa70823d4dbc03b5d7a671260b6eaed51c0314b41b40ab6e",
+    "export_sha256": "bca4d1c06f317bbe4e28a7e01f73ce1191c62395190517396d80439284d0b356",
+    "object_names_in_body_id_order": [
+      "mini_sweeper",
+      "plastic_dish_rack"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000005": {
+    "raw_sha256": "69fd85ac3c0e7409a038af5ad37e05ea7dc46a5e7f323796442df45ad1ba9ac0",
+    "export_sha256": "f84d131cdd3b0fe763535dc9585d533030f6682db9082fea17f0d369ede1fe53",
+    "object_names_in_body_id_order": [
+      "white_pot",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000003": {
+    "raw_sha256": "d2d6e3ec76a065001efff647622e5e0198639416d600cf3133635db5850da1c0",
+    "export_sha256": "cad30007cd78857acda90308c6cf1ecabfe011ed34921e198853457df0da31ed",
+    "object_names_in_body_id_order": [
+      "white_pot",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000001": {
+    "raw_sha256": "741b65ca5de2a71f769dee3e644d1d2dd830b1a0eba49b465f53f130ac3717ef",
+    "export_sha256": "d4363a33fcad9676505b7f450d6a2a119b34b71bb4769c584a9ba1e94877faa0",
+    "object_names_in_body_id_order": [
+      "white_pot",
+      "white_pot_lid"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000033": {
+    "raw_sha256": "e4669d48b68ad9aa05f206f2f29227300720cb0130e014e380548d747891627d",
+    "export_sha256": "df355dc8218865a38e28a77ebc2dcf900427d6b9fa5786ea262326c874fd2017",
+    "object_names_in_body_id_order": [
+      "blue_cup",
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000025": {
+    "raw_sha256": "f8493c72fc7de06d1f3b3c5da75136ef0ec63dff1e36a4b6d24b3954ab8301bc",
+    "export_sha256": "750d65051669e93c4d87a58d5f5d58abda70811c63d252a0bd44fe947b8ede8c",
+    "object_names_in_body_id_order": [
+      "wooden_piece_1",
+      "wooden_piece_2"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000036": {
+    "raw_sha256": "11732ac347ed76bba3e45b593466f70a04ecc92a9829262c1fb7be93f718b902",
+    "export_sha256": "e2a574d1f076f84313405415d61f01e6953c25128776680c2116be120cb897f7",
+    "object_names_in_body_id_order": [
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  },
+  "episode_000035": {
+    "raw_sha256": "d53c3b14da4e81be484b252c07f65c27ab84526f33bf595a1b0903563a6d0ab7",
+    "export_sha256": "74010fe4c7d252136f37b346f3ed466b4cde8e2977ef6823f882231631790d7a",
+    "object_names_in_body_id_order": [
+      "wooden_spoon"
+    ],
+    "changed_column": "object_body_name",
+    "pose_values_unchanged": true
+  }
+}
