@@ -19,14 +19,14 @@ G1 + Dex3 / SONIC. It is not ready for upload:
   `short_campaign/first_short_episode_verified.json`. It took about four minutes
   of reported training-loop time including learner compilation, plus initialization
   and evaluation. Native CUDA memory readings were about 9,306 MiB under training.
-- At this snapshot **3/30 episodes have evaluated policies** (16, 17, 29), and
-  Episode 6 is the next active training job. The remaining 27 episodes require training and
+- At this snapshot **5/30 episodes have evaluated policies** (16, 17, 29, 6, 20),
+  and Episode 27 is active. The remaining 25 episodes require training and
   evaluation; read `short_campaign/execution.json` for current progress.
 - The remaining episodes need their own policies and evaluated rollouts.
   Do not reuse Episode 16's policy or submit reference poses for missing episodes.
-- A fresh official entry check still reports all four Tier 1 competitions unjoined
-  for `iorideepp`, despite the earlier user confirmation. The participant must
-  complete their browser rule acceptance; never accept legal terms for them.
+- The latest official entry check confirms **all four Tier 1 competitions entered**
+  for `iorideepp`. The account/rules blocker is cleared. Evidence is recorded in
+  `short_campaign/entry_check.json`; older unjoined checks below are historical.
 - The participant selected **5,000,192 steps per remaining episode**, matching
   the short-budget Track 3 approach. The controller reuses Episode 16's genuine
   full-budget rollout and trains 29 independent policies. Native nine-stage
@@ -52,8 +52,9 @@ G1 + Dex3 / SONIC. It is not ready for upload:
   Upload then requires the official dry-run and all four entered competitions.
   Four accepted metric IDs are polled from a hash-linked exclusive receipt;
   existing/ambiguous receipts are not blindly reuploaded.
-- The user confirmed accepting all four rules again, but the fresh API still
-  reports all four unjoined. Training continues independently; recheck before upload.
+- After the participant completed the remaining MPPE entry, the official API
+  confirmed all four competitions entered. The controller remains authorized to
+  upload after all 30 rollouts pass packing and the official dry-run.
 - No Track 2 submission has been uploaded. The valid 20-episode Track 3 submission
   and its six scored receipts remain separate and must not be reused as Track 2 data.
 
@@ -369,3 +370,14 @@ policies; remaining training/evaluation will take several hours. The laptop and
 Docker must stay running. No Track 2 upload has occurred, and the official entry
 check still needs confirmation. There is no fresh receipt to poll until packing
 and the official dry-run have passed.
+
+
+## Account entry resolved
+
+On 2026-10-20T01:57:45.472715+00:00, the official `--check-entry` returned exit code zero and
+confirmed all four Track 2 Tier 1 competitions entered. No more browser rule
+acceptance is currently required. Training is still incomplete: 5/30 rollouts
+are evaluated, Episode 27 is active, and there is no Track 2 upload receipt yet.
+The running controller already has `--upload` and will validate and submit after
+all 30 episodes are complete. Older notes about unjoined competitions describe
+the earlier checks and must not be treated as current account state.

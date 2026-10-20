@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-10-20T01:57:45.472715+00:00",
+  "track": "track_2_tier1",
+  "all_entered": true,
+  "entered": [
+    "add_auc",
+    "spider_sr",
+    "maniptrans_sr",
+    "mppe_cm"
+  ],
+  "not_entered": [],
+  "source": "Official v2d_submit.py --check-entry; exit code 0"
+}
