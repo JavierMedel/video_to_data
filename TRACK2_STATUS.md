@@ -3,33 +3,40 @@
 This document records the Track 2 campaign on the execution laptop. Track 1
 artifacts and its prepared v10 submission are separate and remain preserved.
 
-## Current execution snapshot
+## Current execution snapshot — October 19, 2026 Toronto
 
-As of **2026-10-17 17:03 UTC**, the first full Tier 1 policy training and its
-unassisted evaluation have completed for **Episode 16** at **349,999,104
-environment steps** with 1,024 parallel worlds. Retargeting is complete for all
-30 episodes (Episode 16's validated pilot plus the other 29 sequential runs).
-Only Episode 16 has a trained policy and policy evaluation. Its task success
-rates are zero and its mean per-point error is **63.17 cm**, so it is a pipeline
-baseline, not a submission-quality result. The other 29 episodes have retargeted
-motion data only. No submission package has been uploaded; a submission is not
-ready.
+The participant requested a Track 2 submission after the completed Track 3 round.
+The existing Track 2 campaign is **Tier 1**, using clean multi-view input and
+G1 + Dex3 / SONIC. It is not ready for upload:
 
-The producing setup commit is
-`996cb7d327992c4122255f84a971147f62bcd780`, pushed to branch
-`v2d-track1-blackwell` (the existing branch is also being used for Track 2 work).
+- All **30/30** retargeted inputs exist and their hashes were reverified against
+  the existing per-episode receipts (Episode 16 uses its separate pilot receipt).
+- Only **Episode 16** has a trained policy and an evaluated rollout. Its native
+  full budget was **349,999,104 steps**; its local task success rates are zero.
+- The other **29 episodes need their own policies and evaluated rollouts**.
+  Do not reuse Episode 16's policy or submit reference poses for missing episodes.
+- A fresh official entry check still reports all four Tier 1 competitions unjoined
+  for `iorideepp`, despite the earlier user confirmation. The participant must
+  complete their browser rule acceptance; never accept legal terms for them.
+- An asynchronous budget choice is pending: 5M steps per remaining episode for
+  a short baseline, or approximately 350M per episode for the full native budget.
+  New Track 2 training has not been started while this material choice is pending.
+- No Track 2 submission has been uploaded. The valid 20-episode Track 3 submission
+  and its six scored receipts remain separate and must not be reused as Track 2 data.
 
-Monitor the live files:
+Fresh evidence:
 
-```bash
-tail -n 15 robotic_grounding/incident_reports/track2_baseline/episode_000016_full_pipeline.log
-tail -n 10 robotic_grounding/incident_reports/track2_baseline/retarget_batch.log
-nvidia-smi
-```
+- `robotic_grounding/incident_reports/track2_baseline/submission_readiness_20261019.json`
+- `robotic_grounding/incident_reports/track2_baseline/entry_check_20261019.json`
+- Historical pilot state: `robotic_grounding/incident_reports/track2_baseline/execution.json`
+- Native pilot metrics: `robotic_grounding/data/track2/tier1/results/episode_000016.json`
 
-The machine and Docker must remain running for these local jobs to progress.
-`execution.json` under the report directory records a timestamped snapshot;
-the log and generated checkpoint/result files determine the latest state.
+The original setup/producing commit was
+`996cb7d327992c4122255f84a971147f62bcd780`. Future training/export changes require
+an updated pushed producing commit, exact checkpoint/evaluator provenance,
+complete 30-episode coverage, packer cross-checks against the clean Tier 1 reference,
+and the official dry-run before sending one CSV to all four Tier 1 metrics.
+Choose a fresh exclusive Kaggle receipt and poll its exact IDs after upload.
 
 ## Objective and initial scope
 

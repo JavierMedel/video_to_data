@@ -1,0 +1,344 @@
+{
+  "track": "track_2_tier1",
+  "retargeted_episodes": 30,
+  "trained_episodes": [
+    16
+  ],
+  "evaluated_episodes": [
+    16
+  ],
+  "missing_policy_episodes": [
+    5,
+    25,
+    4,
+    11,
+    12,
+    3,
+    21,
+    27,
+    10,
+    17,
+    18,
+    15,
+    1,
+    19,
+    28,
+    22,
+    14,
+    7,
+    24,
+    6,
+    2,
+    23,
+    0,
+    9,
+    8,
+    26,
+    29,
+    20,
+    13
+  ],
+  "submission_ready": false,
+  "episodes": [
+    {
+      "episode_index": 16,
+      "sequence_id": "2026-03-12_15-06-36_spray_bottle_left_desk_ground_02",
+      "frames": 477,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-12_15-06-36_spray_bottle_left_desk_ground_02/robot_name=g1/data.parquet",
+      "reference_sha256": "1e297bca97786d88f9f4178c04273c06f6f190ab90e6c45d9965659aa8c5fb63",
+      "retarget_hash_verified": true,
+      "latest_policy": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_349999104.safetensors",
+      "evaluated": true
+    },
+    {
+      "episode_index": 5,
+      "sequence_id": "2026-03-18_19-36-56_g1_box_rotate_01",
+      "frames": 1003,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-18_19-36-56_g1_box_rotate_01/robot_name=g1/data.parquet",
+      "reference_sha256": "958af3be31d30f4740fe9ea22ef0780df2a15c5868885fe4afafc2ef393267a5",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 25,
+      "sequence_id": "2026-03-20_11-59-57_cyan_water_bottle_rotate_01",
+      "frames": 859,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-20_11-59-57_cyan_water_bottle_rotate_01/robot_name=g1/data.parquet",
+      "reference_sha256": "0f27add047c34c6d89fab2b6756b17bdc812c22ba344ad4cc71089e8ac51065d",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 4,
+      "sequence_id": "2026-04-24_11-40-52_baseball_bat_rotate_05",
+      "frames": 803,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-04-24_11-40-52_baseball_bat_rotate_05/robot_name=g1/data.parquet",
+      "reference_sha256": "30d3d867816fcd88dac127ca19d1f4390043f3883d0c17efbd8fdcb16a1fc584",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 11,
+      "sequence_id": "2026-04-24_13-56-58_light_blue_book_pick_place_09",
+      "frames": 901,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-04-24_13-56-58_light_blue_book_pick_place_09/robot_name=g1/data.parquet",
+      "reference_sha256": "eba409728a16a430f66392477305381ca5cd7ff36d907071ac6e64ae000f09cd",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 12,
+      "sequence_id": "2026-04-25_17-20-04_black_platform_turn_05",
+      "frames": 700,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-04-25_17-20-04_black_platform_turn_05/robot_name=g1/data.parquet",
+      "reference_sha256": "9cdf0b2fbd807a53e8e78556a8ee8a5b23e5a78b618a9a76aaa695b980f1da6a",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 3,
+      "sequence_id": "2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05",
+      "frames": 781,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05/robot_name=g1/data.parquet",
+      "reference_sha256": "3d5293355c1bb7ae3082b4eda7a5f691a2e114ee0c92b437f51d14c074f9989d",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 21,
+      "sequence_id": "2026-04-29_11-53-57_tall_bar_stool_pull_08",
+      "frames": 678,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-04-29_11-53-57_tall_bar_stool_pull_08/robot_name=g1/data.parquet",
+      "reference_sha256": "0ff7f71df6c4c66b1ee653211f4c7cce28392d2547c6fb2596d50a18c548bfb5",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 27,
+      "sequence_id": "2026-05-01_11-15-05_woven_basket_ground_desk_10",
+      "frames": 565,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-01_11-15-05_woven_basket_ground_desk_10/robot_name=g1/data.parquet",
+      "reference_sha256": "f071ee02489f84e09c33c76273ca8ef6a9603df79578081a62b79c1266c6793f",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 10,
+      "sequence_id": "2026-05-01_11-36-40_white_desk_lower_to_ground_10",
+      "frames": 794,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-01_11-36-40_white_desk_lower_to_ground_10/robot_name=g1/data.parquet",
+      "reference_sha256": "7b931e5a5b612d61addd8e0634b798421ff214b6cecf81aa3debb9cf22a65ba2",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 17,
+      "sequence_id": "2026-05-01_17-04-55_traffic_cone_ground_table_02",
+      "frames": 440,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-01_17-04-55_traffic_cone_ground_table_02/robot_name=g1/data.parquet",
+      "reference_sha256": "bc89c92f0f07a02821179499045de69b4be7324e39da6a6a1f22bfd9952ad442",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 18,
+      "sequence_id": "2026-05-06_10-00-19_blue_trash_can_drag_sideways_08",
+      "frames": 858,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-06_10-00-19_blue_trash_can_drag_sideways_08/robot_name=g1/data.parquet",
+      "reference_sha256": "0ee4c8486c5c4346c1a39f5a660fd8e84f340e09f0fe736b4a3f747bcf2ce439",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 15,
+      "sequence_id": "2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08",
+      "frames": 715,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08/robot_name=g1/data.parquet",
+      "reference_sha256": "b2d4ea3ff987f0d862608d839afce1dc65a43ee88c40d5f0e211ca5c7eed1f05",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 1,
+      "sequence_id": "2026-05-18_17-06-21_vacuum_left_lean_02",
+      "frames": 747,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-18_17-06-21_vacuum_left_lean_02/robot_name=g1/data.parquet",
+      "reference_sha256": "3484ddcbc9ffcbc7a8d8a070e2cf680685401e6bdc1b86bdf578e4aa175a5e72",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 19,
+      "sequence_id": "2026-05-19_10-19-48_cane_swing_05",
+      "frames": 886,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-19_10-19-48_cane_swing_05/robot_name=g1/data.parquet",
+      "reference_sha256": "3bdd21471a09b4698cb82fe044d76c087c2208967f728b6feecc38a88c0088c4",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 28,
+      "sequence_id": "2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_",
+      "frames": 988,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_/robot_name=g1/data.parquet",
+      "reference_sha256": "792ad5b40144f1c4d0ec894f0eca798d5445141421c55d14377046fad0b39922",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 22,
+      "sequence_id": "2026-05-22_16-52-36_step_ladder_drag_03",
+      "frames": 719,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-22_16-52-36_step_ladder_drag_03/robot_name=g1/data.parquet",
+      "reference_sha256": "446a2ae16370b7fc64c43a60612827af373610493ab90d0c2c36e5d7ec0c6c47",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 14,
+      "sequence_id": "2026-05-28_14-44-09_round_table_flip_08",
+      "frames": 993,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-28_14-44-09_round_table_flip_08/robot_name=g1/data.parquet",
+      "reference_sha256": "d0382266ee178da95e2c22968dac8ecbf73ed6b28394de88f83594e56bda045f",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 7,
+      "sequence_id": "2026-05-29_15-20-43_iron_round_table_02",
+      "frames": 896,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-29_15-20-43_iron_round_table_02/robot_name=g1/data.parquet",
+      "reference_sha256": "e992e5c59108a35d4638c9eb421c0ff5e0552dd2c5588ec9f3722306b496b371",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 24,
+      "sequence_id": "2026-05-29_15-43-20_watering_can_pour_right_02",
+      "frames": 748,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-29_15-43-20_watering_can_pour_right_02/robot_name=g1/data.parquet",
+      "reference_sha256": "889bb1875e07520861b72f724423ec1b74cde83d1bae90f5b25b8ad712f7a9a9",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 6,
+      "sequence_id": "2026-06-01_11-26-44_monitor_rotate_05",
+      "frames": 546,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-01_11-26-44_monitor_rotate_05/robot_name=g1/data.parquet",
+      "reference_sha256": "1cda544a129250b67554414f00175e13b9259ce8541a53d175d6b06d09788100",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 2,
+      "sequence_id": "2026-06-02_10-04-42_blue_easter_basket_place_10",
+      "frames": 980,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-02_10-04-42_blue_easter_basket_place_10/robot_name=g1/data.parquet",
+      "reference_sha256": "5dc8314a95197404b85626fa37c4caf9f74e5d0c4219b8e2cfe2a501f4f06422",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 23,
+      "sequence_id": "2026-06-03_15-08-03_toy_stroller_back_forth_ground_04",
+      "frames": 946,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-03_15-08-03_toy_stroller_back_forth_ground_04/robot_name=g1/data.parquet",
+      "reference_sha256": "c799bd39537d2a4ed27cf71552b2b5066004bd125c5ee077e872391156048d10",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 0,
+      "sequence_id": "2026-06-04_14-16-23_tall_bar_stool_tip_up_04",
+      "frames": 778,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-04_14-16-23_tall_bar_stool_tip_up_04/robot_name=g1/data.parquet",
+      "reference_sha256": "ba755918846b46ffc0b3350a21f3095e2e6c566b9d150e8bab84209c99ceb49f",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 9,
+      "sequence_id": "2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03",
+      "frames": 870,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03/robot_name=g1/data.parquet",
+      "reference_sha256": "3f4a0942c178c6202dc7bcc5f5146d2b1c5c38dd382cdbcdbb7f09a3100a3048",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 8,
+      "sequence_id": "2026-06-05_15-08-08_skinny_wood_chair_push_10",
+      "frames": 708,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-05_15-08-08_skinny_wood_chair_push_10/robot_name=g1/data.parquet",
+      "reference_sha256": "fcd821bc7e56b7c683e514d570a232a49e9b42f6c969dbae938a13e9c2f79c0d",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 26,
+      "sequence_id": "2026-06-05_16-05-08_skateboard_rotate_ground_10",
+      "frames": 669,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-05_16-05-08_skateboard_rotate_ground_10/robot_name=g1/data.parquet",
+      "reference_sha256": "ef99e316f296201b991e101369c33fe53a1fb7770bcc04957c7df788f2ad84a8",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 29,
+      "sequence_id": "2026-06-05_18-27-40_rolling_luggage_left_foot_push_06",
+      "frames": 467,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-05_18-27-40_rolling_luggage_left_foot_push_06/robot_name=g1/data.parquet",
+      "reference_sha256": "9cbda412802946aec4b2e72157c16cd63c18637e21286defb5ba4b88557082b1",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 20,
+      "sequence_id": "2026-06-08_16-57-34_rice_cooker_clockwise_04",
+      "frames": 553,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-08_16-57-34_rice_cooker_clockwise_04/robot_name=g1/data.parquet",
+      "reference_sha256": "783ad567ca2f30d50caf54e8a75669fe32e5f736b0eafadf4eb182ed65ed361b",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    },
+    {
+      "episode_index": 13,
+      "sequence_id": "2026-06-09_10-19-09_snack_box_desk_through_06",
+      "frames": 922,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-09_10-19-09_snack_box_desk_through_06/robot_name=g1/data.parquet",
+      "reference_sha256": "0dc16317351ab30e6f1ecc2f6a74fe50c11eaeeb370bf77c825fa9c1d486b72d",
+      "retarget_hash_verified": true,
+      "latest_policy": null,
+      "evaluated": false
+    }
+  ]
+}

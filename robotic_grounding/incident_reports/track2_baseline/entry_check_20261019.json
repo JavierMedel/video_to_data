@@ -1,0 +1,13 @@
+{
+  "track": "track_2_tier1",
+  "observed_utc": "2026-10-20T01:18:20.511296+00:00",
+  "all_entered": false,
+  "rules_urls": [
+    "https://www.kaggle.com/c/v2d-challenge-track2-tier1-auc/rules",
+    "https://www.kaggle.com/c/v2d-challenge-track2-tier1-sp-sr/rules",
+    "https://www.kaggle.com/c/v2d-challenge-track2-tier1-mp-sr/rules",
+    "https://www.kaggle.com/c/v2d-challenge-track2-tier1-mppe/rules"
+  ],
+  "source": "official v2d_submit.py --check-entry",
+  "output": "\nYou have not accepted the rules for:\n\n  https://www.kaggle.com/c/v2d-challenge-track2-tier1-auc/rules\n  https://www.kaggle.com/c/v2d-challenge-track2-tier1-sp-sr/rules\n  https://www.kaggle.com/c/v2d-challenge-track2-tier1-mp-sr/rules\n  https://www.kaggle.com/c/v2d-challenge-track2-tier1-mppe/rules\n\nOpen each one and click accept, then re-run. Kaggle has no API for this, so it is the\nmanual acceptance step. It is required once per competition.\n"
+}
