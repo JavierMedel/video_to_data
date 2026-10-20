@@ -18,9 +18,33 @@ G1 + Dex3 / SONIC. It is not ready for upload:
 - A fresh official entry check still reports all four Tier 1 competitions unjoined
   for `iorideepp`, despite the earlier user confirmation. The participant must
   complete their browser rule acceptance; never accept legal terms for them.
-- An asynchronous budget choice is pending: 5M steps per remaining episode for
-  a short baseline, or approximately 350M per episode for the full native budget.
-  New Track 2 training has not been started while this material choice is pending.
+- The participant selected **5,000,192 steps per remaining episode**, matching
+  the short-budget Track 3 approach. The controller reuses Episode 16's genuine
+  full-budget rollout and trains 29 independent policies. Native nine-stage
+  curriculum thresholds are compressed proportionally, retaining zero-assistance
+  phases. Simulation timing, SONIC/G1 embodiment, and physical support are preserved.
+- Run `reconstruction/.venv/bin/python robotic_grounding/scripts/run_track2_tier1_campaign.py --upload`.
+  The new authoritative state is
+  `robotic_grounding/incident_reports/track2_baseline/short_campaign/execution.json`.
+  It has its own campaign lock, policy/results/export directories and receipt;
+  training shares the existing Track 2/3 GPU lock and 21,000 MiB guard.
+- New jobs use 1,024 simulation worlds, replay capacity 1M, batch 1,024, and
+  minimum replay 102,400. They save checkpoints about every 1M steps. Monitoring-only
+  interruptions may resume up to three times per episode; actual memory-cap,
+  physics-buffer and invalid-rollout failures stop for review. Never label these
+  short policies as native 350M-step training.
+- Raw rollout files remain in `results_short`; submission exports in
+  `results_short_submission` change only the body-name label from native `object`
+  to the verified source-manifest object name. All pose arrays are preserved.
+  Exact one-world/source-frame coverage, finite poses and checkpoint hashes are checked.
+- The controller packs only after all 30 evaluated rollouts are verified. The
+  official packer converts back to the released frame, checks coverage/provenance,
+  computes clean-reference local scores, and cross-checks evaluator metrics.
+  Upload then requires the official dry-run and all four entered competitions.
+  Four accepted metric IDs are polled from a hash-linked exclusive receipt;
+  existing/ambiguous receipts are not blindly reuploaded.
+- The user confirmed accepting all four rules again, but the fresh API still
+  reports all four unjoined. Training continues independently; recheck before upload.
 - No Track 2 submission has been uploaded. The valid 20-episode Track 3 submission
   and its six scored receipts remain separate and must not be reused as Track 2 data.
 

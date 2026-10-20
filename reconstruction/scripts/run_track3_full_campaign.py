@@ -218,8 +218,10 @@ def policy_command(report, module, overrides):
     return [PYTHON, str(ROOT / 'scripts/run_track3_policy_stage.py'), '--report', str(report), module, *overrides]
 
 
-def upload_packed(packed, update):
+def upload_packed(packed, update, track='track_3'):
     """Validate before upload; recover scores from exact IDs without reuploading."""
+    expected_metrics = 4 if track.startswith('track_2') else 6
+    robot = 'G1+Dex3' if track.startswith('track_2') else 'Sharpa'
     uploader = KIT / 'submit/v2d_submit.py'
     receipt, manifest = REPORT / 'kaggle_receipt.json', REPORT / 'upload_manifest.json'
     digest = sha256(packed)
@@ -227,10 +229,11 @@ def upload_packed(packed, update):
         if not manifest.exists() or json.loads(manifest.read_text()).get('packet_sha256') != digest:
             update(state='UPLOAD_REQUIRES_REVIEW', upload_error='Existing receipt belongs to a different or unverified packet')
             return
-        command = [PYTHON, str(uploader), '--track', 'track_3', '--poll-receipt', str(receipt)]
+        command = [PYTHON, str(uploader), '--track', track, '--poll-receipt', str(receipt)]
     else:
-        message = f'Track 3 {PROFILE} baseline: per-sequence Sharpa policies, target {TOTAL_STEPS} steps, reconstructed meshes, unassisted rollouts'
-        base = [PYTHON, str(uploader), str(packed), '--track', 'track_3', '-m', message]
+        geometry = ', reconstructed meshes' if track == 'track_3' else ''
+        message = f'{track} {PROFILE} baseline: per-sequence {robot} policies, target {TOTAL_STEPS} steps{geometry}, unassisted rollouts'
+        base = [PYTHON, str(uploader), str(packed), '--track', track, '-m', message]
         try:
             run(base + ['--dry-run'], REPORT / 'upload_dry_run.log')
         except Exception as exc:
@@ -248,17 +251,17 @@ def upload_packed(packed, update):
             return
         entries = json.loads(receipt.read_text()).get('submissions', {})
         accepted = any(value.get('ref') for value in entries.values())
-        if len(entries) == 6 and all(value.get('state') == 'COMPLETE' for value in entries.values()):
+        if len(entries) == expected_metrics and all(value.get('state') == 'COMPLETE' for value in entries.values()):
             update(state='SCORED', uploaded=True, kaggle_receipt=str(receipt),
                    kaggle_results=entries, upload_error=None)
             return
-        terminal_failure = len(entries) != 6 or any(not value.get('ref') or value.get('state') in
+        terminal_failure = len(entries) != expected_metrics or any(not value.get('ref') or value.get('state') in
             ('ERROR', 'UPLOAD_FAILED', 'UPLOAD_UNKNOWN', 'UNREADABLE') for value in entries.values())
         if terminal_failure:
             update(state='SUBMISSION_REQUIRES_REVIEW', uploaded=accepted, kaggle_receipt=str(receipt), kaggle_results=entries)
             return
         update(state='SUBMITTED_PROCESSING', uploaded=accepted, kaggle_receipt=str(receipt), kaggle_results=entries)
-        command = [PYTHON, str(uploader), '--track', 'track_3', '--poll-receipt', str(receipt)]
+        command = [PYTHON, str(uploader), '--track', track, '--poll-receipt', str(receipt)]
         time.sleep(20)
 
 

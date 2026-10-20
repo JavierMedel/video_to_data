@@ -120,14 +120,17 @@ def tune_training_arguments(module, arguments, report):
 
 
 def main():
+    global NAME
     parser = argparse.ArgumentParser()
     parser.add_argument('--report', type=Path, required=True)
+    parser.add_argument('--track', choices=['track_3', 'track_2_tier1'], default='track_3')
     parser.add_argument('module')
     parser.add_argument('arguments', nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    NAME = 'v2d-track2-policy-stage' if args.track == 'track_2_tier1' else 'v2d-track3-policy-stage'
     args.report.mkdir(parents=True, exist_ok=True)
     pause = ROOT / 'incident_reports/track3_baseline/pause_after_episode.json'
-    while args.module == 'scripts.train_flash_sac' and pause.exists():
+    while args.track == 'track_3' and args.module == 'scripts.train_flash_sac' and pause.exists():
         request = json.loads(pause.read_text())
         if args.report.parent.name == f"episode_{int(request['episode_index']):06d}":
             break
@@ -136,14 +139,15 @@ def main():
         time.sleep(5)
     args.arguments = tune_training_arguments(args.module, args.arguments, args.report)
     monorepo = ROOT.parent
-    cache = monorepo / 'robotic_grounding/data/track3/runtime_cache'; cache.mkdir(parents=True, exist_ok=True)
+    mount_root = monorepo if args.track == 'track_3' else monorepo / 'robotic_grounding'
+    cache = monorepo / ('robotic_grounding/data/track3/runtime_cache' if args.track == 'track_3' else 'robotic_grounding/data/track2/runtime_cache'); cache.mkdir(parents=True, exist_ok=True)
     lock = (ROOT / 'data/track3/pilot/episode_000038/pilot.lock').open('a')
-    print('Waiting for shared Track 3 GPU lock', flush=True)
+    print('Waiting for shared Track 2/3 GPU lock', flush=True)
     fcntl.flock(lock, fcntl.LOCK_EX)
     run_id = uuid.uuid4().hex if args.module == 'scripts.train_flash_sac' else None
     heartbeat_env = []
     if run_id:
-        heartbeat_path = '/repo/' + str((args.report.resolve() / 'gpu_heartbeat.json').relative_to(monorepo))
+        heartbeat_path = '/repo/' + str((args.report.resolve() / 'gpu_heartbeat.json').relative_to(mount_root))
         heartbeat_env = ['-e', f'V2D_GPU_HEARTBEAT_PATH={heartbeat_path}', '-e', f'V2D_GPU_HEARTBEAT_ID={run_id}']
     command = ['docker', 'run', '--rm', '--init', '--name', NAME, '--gpus', 'all',
                '--memory', '20g', '--memory-swap', '22g', '--cpus', '8', '--user', '1000:1000',
@@ -152,7 +156,7 @@ def main():
                '-e', 'XDG_CACHE_HOME=/cache', '-e', 'MUJOCO_GL=egl', '-e', 'PYOPENGL_PLATFORM=egl',
                '-e', 'PYTHONPATH=/workspace:/workspace/src',
                *heartbeat_env,
-               '-v', f'{monorepo}:/repo', '-v', f'{monorepo}/robotic_grounding/flash_chord:/workspace',
+               '-v', f'{mount_root}:/repo', '-v', f'{monorepo}/robotic_grounding/flash_chord:/workspace',
                '-v', f'{cache}:/cache', '-w', '/workspace',
                '--entrypoint', 'python', 'flash_chord:track2-baseline',
                '-m', args.module, *args.arguments]
