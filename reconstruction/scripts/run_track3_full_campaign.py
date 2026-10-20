@@ -11,6 +11,7 @@ import argparse
 import fcntl
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -318,6 +319,48 @@ def train_and_evaluate(episode, reference):
          'learned_policy': True, 'official_held_out_score': False})
 
 
+def submission_rollout_names(table, episode):
+    """Map recorded body IDs to scored names without changing any pose values."""
+    index = episode['episode_index']
+    roster = episode['objects_in_scored_order']
+    slots = table['object_body_id'].to_pylist()
+    labels = table['object_body_name'].to_pylist()
+    canonical = []
+    for slot, label in zip(slots, labels, strict=True):
+        if slot is None or not 0 <= slot < len(roster):
+            raise ValueError('Invalid rollout body ID for scored roster')
+        expected = roster[slot]
+        if label not in (expected, f'episode_{index:06d}_object_{slot:02d}'):
+            raise ValueError(f'Unexpected rollout body name {label!r} in slot {slot}')
+        canonical.append(expected)
+    column = table.schema.get_field_index('object_body_name')
+    values = pa.array(canonical).dictionary_encode().cast(table.schema.field(column).type)
+    return table.set_column(column, table.schema.field(column), values)
+
+
+def stage_submission_rollouts(episodes):
+    """Keep raw evaluator evidence; export only verified semantic body labels."""
+    source = DATA / RESULTS_SUBDIR
+    target = DATA / (RESULTS_SUBDIR + '_submission'); target.mkdir(parents=True, exist_ok=True)
+    manifest = {}
+    for episode in episodes:
+        stem = f'episode_{episode["episode_index"]:06d}'
+        raw = source / (stem + '.parquet')
+        original = pq.ParquetFile(raw).read()
+        mapped = submission_rollout_names(original, episode)
+        for name in original.column_names:
+            if name != 'object_body_name' and not original[name].equals(mapped[name]):
+                raise ValueError(f'Export changed rollout values: {name}')
+        destination = target / raw.name
+        pq.write_table(mapped, destination)
+        shutil.copyfile(source / (stem + '.json'), target / (stem + '.json'))
+        manifest[stem] = {'raw_sha256': sha256(raw), 'export_sha256': sha256(destination),
+                          'object_names_in_body_id_order': episode['objects_in_scored_order'],
+                          'changed_column': 'object_body_name', 'pose_values_unchanged': True}
+    save(REPORT / 'submission_name_mapping.json', manifest)
+    return target
+
+
 def train_with_monitor_recovery(episode, reference):
     """Retry monitoring-only interruptions, never memory-cap/physics failures."""
     report = REPORT / f'episode_{episode["episode_index"]:06d}'
@@ -400,9 +443,10 @@ def main():
     expected_ids = {e['episode_index'] for e in episodes}
     if set(state['evaluated']) == expected_ids:
         kit = KIT
+        submission_results = stage_submission_rollouts(episodes)
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
         packed = DATA / f'{SUBMISSION_SUBDIR}/track3_submission.parquet'; packed.parent.mkdir(parents=True, exist_ok=True)
-        run([PYTHON, str(kit / 'tools/pack_submission.py'), '--track', 'track_3', '--results', str(DATA / RESULTS_SUBDIR),
+        run([PYTHON, str(kit / 'tools/pack_submission.py'), '--track', 'track_3', '--results', str(submission_results),
              '--meshes', str(DATA / 'submission_meshes'), '--out', str(packed),
              '--eval-script', str(REPO / 'robotic_grounding/flash_chord/scripts/evaluate_policy.py'),
              '--code-commit', f'https://github.com/JavierMedel/video_to_data/commit/{commit}'], REPORT / 'packing.log')

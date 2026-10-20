@@ -300,3 +300,23 @@ def test_monitor_recovery_preserves_memory_guard(tmp_path, monkeypatch, reason, 
         with pytest.raises(RuntimeError, match='guard stopped'):
             full.train_with_monitor_recovery({'episode_index': 15}, None)
         assert len(calls) == 1
+
+
+def test_submission_names_follow_recorded_body_ids_without_pose_edits():
+    import run_track3_full_campaign as full
+    import pyarrow as pa
+    table = pa.table({'object_body_id': [1, 0], 'object_body_name': pa.array(['episode_000003_object_01', 'episode_000003_object_00']).dictionary_encode(), 'achieved_position_x': pa.array([0.123, -0.456], type=pa.float32())})
+    episode = {'episode_index': 3, 'objects_in_scored_order': ['white_pot', 'wooden_spoon']}
+    mapped = full.submission_rollout_names(table, episode)
+    assert mapped['object_body_name'].to_pylist() == ['wooden_spoon', 'white_pot']
+    assert mapped['achieved_position_x'].equals(table['achieved_position_x'])
+    assert table['object_body_name'].to_pylist()[0] == 'episode_000003_object_01'
+    assert full.submission_rollout_names(mapped, episode).equals(mapped)
+
+
+def test_submission_names_reject_wrong_body_assignment():
+    import run_track3_full_campaign as full
+    import pyarrow as pa
+    table = pa.table({'object_body_id': [0], 'object_body_name': pa.array(['episode_000003_object_01']).dictionary_encode()})
+    with pytest.raises(ValueError, match='Unexpected rollout body name'):
+        full.submission_rollout_names(table, {'episode_index': 3, 'objects_in_scored_order': ['white_pot', 'wooden_spoon']})
