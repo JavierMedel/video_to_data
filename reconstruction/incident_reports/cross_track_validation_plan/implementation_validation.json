@@ -475,5 +475,19 @@
     },
     "scope": "Serial all-30 Tier 2 retarget, complete inventory, then one median-episode 5000192-step pilot; stop for review",
     "uploaded": false
+  },
+  "execution_20261022": {
+    "state": "NEXT_TIER2_SUBMISSION_SCORED",
+    "report": "reconstruction/incident_reports/cross_track_validation_plan/execution_20261022.json",
+    "scores": {
+      "add_auc": 0.2233,
+      "spider_sr": 0.03333,
+      "maniptrans_sr": 0.0,
+      "mppe_cm": 61.22802
+    },
+    "packet_sha256": "6c727471ec1538d89271c6450850978aa5f1c913f28c5c5396d50082ceaf6958",
+    "tier1_selection": "BLOCKED_G7_REPEATABILITY_FAILED_KEEP_PARENT",
+    "track1_v11": "SURROGATE_REJECTED_KEEP_V8",
+    "uploaded": true
   }
 }

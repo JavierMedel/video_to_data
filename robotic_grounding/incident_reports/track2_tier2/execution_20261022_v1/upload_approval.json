@@ -1,0 +1,37 @@
+{
+  "state": "APPROVED_EXACT_PACKET_READY_FOR_UPLOAD",
+  "track": "track_2_tier2",
+  "packet_sha256": "6c727471ec1538d89271c6450850978aa5f1c913f28c5c5396d50082ceaf6958",
+  "user_approval_quote": "Approve upload of this packet",
+  "approved_utc_recorded": "2026-10-22T23:49:42.123717+00:00",
+  "official_dry_run_passed": true,
+  "source_integrity_audit": "packet_validation.json",
+  "quota_checks": {
+    "v2d-challenge-track2-tier2-mp-sr": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false,
+      "additional_rolling_7_day_attempts": 0
+    },
+    "v2d-challenge-track2-tier2-sp-sr": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false,
+      "additional_rolling_7_day_attempts": 0
+    },
+    "v2d-challenge-track2-tier2-auc": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false,
+      "additional_rolling_7_day_attempts": 0
+    },
+    "v2d-challenge-track2-tier2-mppe": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false,
+      "additional_rolling_7_day_attempts": 0
+    }
+  },
+  "source_rules": "rules_20261022_user_confirmed.json",
+  "snapshot": "reconstruction/incident_reports/cross_track_validation_plan/snapshots_20261022_preupload_v1"
+}

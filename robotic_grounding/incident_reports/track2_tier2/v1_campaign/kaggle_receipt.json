@@ -1,0 +1,43 @@
+{
+  "track": "track_2_tier2",
+  "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/submission_v1/track2_tier2.csv",
+  "message": "Versioned cross-track improvement; see producing commit in packet",
+  "submissions": {
+    "add_auc": {
+      "slug": "v2d-challenge-track2-tier2-auc",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/submission_v1/track2_tier2.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 2: synthetically corrupted input) - AUC",
+      "ref": 57541232,
+      "public_score": "0.22330",
+      "error": ""
+    },
+    "spider_sr": {
+      "slug": "v2d-challenge-track2-tier2-sp-sr",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/submission_v1/track2_tier2.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 2: synthetically corrupted input) - SP-SR",
+      "ref": 57541233,
+      "public_score": "0.03333",
+      "error": ""
+    },
+    "maniptrans_sr": {
+      "slug": "v2d-challenge-track2-tier2-mp-sr",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/submission_v1/track2_tier2.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 2: synthetically corrupted input) - MP-SR",
+      "ref": 57541235,
+      "public_score": "0.00000",
+      "error": ""
+    },
+    "mppe_cm": {
+      "slug": "v2d-challenge-track2-tier2-mppe",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/submission_v1/track2_tier2.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 2: synthetically corrupted input) - MPPE (cm)",
+      "ref": 57541237,
+      "public_score": "61.22802",
+      "error": ""
+    }
+  }
+}

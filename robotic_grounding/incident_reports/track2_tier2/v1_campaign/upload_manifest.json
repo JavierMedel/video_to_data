@@ -1,0 +1,28 @@
+{
+  "packet_sha256": "6c727471ec1538d89271c6450850978aa5f1c913f28c5c5396d50082ceaf6958",
+  "rules_sha256": "91b0db2c2199be07d123a771180dca4bf674b4d71fe8a1396231ab0a0c68443b",
+  "track": "track_2_tier2",
+  "checks": {
+    "v2d-challenge-track2-tier2-auc": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false
+    },
+    "v2d-challenge-track2-tier2-sp-sr": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false
+    },
+    "v2d-challenge-track2-tier2-mp-sr": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false
+    },
+    "v2d-challenge-track2-tier2-mppe": {
+      "used": 0,
+      "start_utc": "2026-10-19T00:00:00+00:00",
+      "unlimited": false
+    }
+  },
+  "started_utc": "2026-10-22T23:49:56.067022+00:00"
+}

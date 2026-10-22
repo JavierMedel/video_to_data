@@ -1,0 +1,78 @@
+{
+  "state": "NEXT_TIER2_SUBMISSION_SCORED",
+  "tests": {
+    "host_suite_passed": 135
+  },
+  "producing_commit": "c7a3d37eec4e95f70eaa5402a28f71401e0a948e",
+  "tier2": {
+    "observed_utc": "2026-10-22T23:51:32.711825+00:00",
+    "campaign": "robotic_grounding/incident_reports/track2_tier2/v1_campaign/execution.json",
+    "plan": "V2D_NEXT_EXECUTION_AND_VALIDATION_PLAN.md",
+    "track1": "SURROGATE_REJECTED_KEEP_BASELINE",
+    "tier1": "CHECKPOINT_SELECTION_DISABLED_KEEP_SCORED_PARENT",
+    "tier2": "ALL_30_TRAINED_EVALUATED_PACKED_SUBMITTED_SCORED",
+    "rules": "USER_CONFIRMED_MONDAY_RESET; official boundary unresolved; additionally check rolling seven days",
+    "tier3": "FIRST_FRAME_ALIGNMENT_PERMISSION_VERIFIED; own reconstruction and MHR-to-SOMA adapter absent",
+    "track3": "NO_NEW_DEVELOPMENT_REFERENCES; no promotion justified",
+    "uploaded": true,
+    "state": "NEXT_TIER2_SUBMISSION_SCORED",
+    "packet_sha256": "6c727471ec1538d89271c6450850978aa5f1c913f28c5c5396d50082ceaf6958",
+    "scores": {
+      "add_auc": 0.2233,
+      "spider_sr": 0.03333,
+      "maniptrans_sr": 0.0,
+      "mppe_cm": 61.22802
+    },
+    "submission_ids": {
+      "add_auc": 57541232,
+      "spider_sr": 57541233,
+      "maniptrans_sr": 57541235,
+      "mppe_cm": 57541237
+    },
+    "receipt": "/home/alien51/video_to_data/robotic_grounding/incident_reports/track2_tier2/v1_campaign/kaggle_receipt.json"
+  },
+  "tier1_repeatability": {
+    "state": "CHECKPOINT_SELECTION_DISABLED_KEEP_SCORED_PARENT",
+    "first_differing_frame": 85,
+    "first_frame_pose_difference": 0.0,
+    "maximum_pose_component_difference": 0.817834734916687,
+    "official_precision_diagnostics": [
+      {
+        "add_auc": 0.45878856041131105,
+        "spider_sr": 1.0,
+        "maniptrans_sr": 0.0,
+        "mppe_cm": 5.074681833780041
+      },
+      {
+        "add_auc": 0.4535668380462725,
+        "spider_sr": 0.0,
+        "maniptrans_sr": 0.0,
+        "mppe_cm": 10.479717736547464
+      }
+    ],
+    "source_read": "Native harness forces reset seed 42 and deterministic actor inference; no producer changed. This experiment does not establish the cause of the divergence.",
+    "scope": "Independent repeated native evaluation, not a best-of-repeats selection",
+    "action": "Do not launch 150 missing checkpoint evaluations; retain scored Tier 1 packet"
+  },
+  "track1_surrogate": {
+    "inputs_sha256": {
+      "/home/alien51/video_to_data/reconstruction/data/cross_track/surrogate_20261022_v1/manifest.json": "b2d4b770ecd9d8e673d2ce2f52f2b3ddd98dfc3e5929e666f558cdcc3f623054",
+      "/home/alien51/video_to_data/reconstruction/data/cross_track/surrogate_20261022_v1/public_episode_000000.npz": "c0dbb3cabd575a84e02032e4893ade0b4bfcdf780da25172604a4d9711dac878",
+      "/home/alien51/video_to_data/reconstruction/data/cross_track/surrogate_20261022_v1/public_episode_000002.npz": "f67034b7495440ff3ea12aa5bfbf959754f122e47c14c9ef5f577ac7e68a1f8d",
+      "/home/alien51/video_to_data/reconstruction/data/cross_track/surrogate_20261022_v1/public_episode_000011.npz": "b780c46a5dd1919faa1505343b9aac2be7308952db1058f78d3fd6a7cea89ac9",
+      "/home/alien51/video_to_data/reconstruction/data/cross_track/surrogate_20261022_v1/public_episode_000012.npz": "e016ed9b06c984ce32d164465a86903b543b91fb95e84fc62c00c966d162f299",
+      "/home/alien51/video_to_data/reconstruction/data/v2d_challenge/track_1/contact_smoothing_v8/submission_episodes/episode_000006.npz": "9dbf5bb81ccfce1c7ac840c2bd85acad6a047fde1edfa0fb0cafecafef36b783"
+    },
+    "state": "SURROGATE_REJECTED_KEEP_BASELINE",
+    "lambda_cap": null,
+    "held_out_passed": false,
+    "estimated_noise_sigma_m": 0.001492851989084418,
+    "held_out_median_oracle_ratio": null,
+    "held_out_regression_fraction": null
+  },
+  "remaining_optional_paths": [
+    "Tier2 constraint refinement requires source-bound rest/contact observations",
+    "Track3 method pilots require matched public-development reconstruction/reference arms",
+    "Tier3 first-frame alignment now permitted, but genuine reconstruction and validated MHR-to-SOMA adapter remain absent"
+  ]
+}

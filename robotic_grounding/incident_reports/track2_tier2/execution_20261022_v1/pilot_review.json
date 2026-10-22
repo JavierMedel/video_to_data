@@ -1,0 +1,25 @@
+{
+  "state": "PILOT_REVIEW_PASSED_EXPAND_COHORT",
+  "pilot_report": "robotic_grounding/incident_reports/track2_tier2/v1_campaign/pilot_reports/20261020T212043471189Z.json",
+  "integrity": {
+    "all_30_retargets_verified": true,
+    "training_steps": 5000192,
+    "full_frame_coverage": 778,
+    "non_finite_worlds": [],
+    "native_training_exit_code": 0,
+    "native_evaluation_exit_code": 0,
+    "gpu_cap_mib": null,
+    "training_peak_mib": 12814.4375
+  },
+  "tests": "135 passed",
+  "producing_commit": "c7a3d37eec4e95f70eaa5402a28f71401e0a948e",
+  "remote_verified": true,
+  "selection": "Final checkpoints only; no Tier 1 trajectory metrics consulted for Tier 2 continuation",
+  "tracking_result": "No pilot task success. Native metrics are noisy-input proxies, not host scores.",
+  "warnings": "Native inertia validation corrected 2 bodies per world; no numerical/capacity errors observed",
+  "timing_seconds": {
+    "training": 350.0861381100003,
+    "evaluation": 44.77770481799962
+  },
+  "uploaded": false
+}

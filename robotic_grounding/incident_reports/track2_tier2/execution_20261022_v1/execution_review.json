@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-22T23:51:32.711825+00:00",
+  "campaign": "robotic_grounding/incident_reports/track2_tier2/v1_campaign/execution.json",
+  "plan": "V2D_NEXT_EXECUTION_AND_VALIDATION_PLAN.md",
+  "track1": "SURROGATE_REJECTED_KEEP_BASELINE",
+  "tier1": "CHECKPOINT_SELECTION_DISABLED_KEEP_SCORED_PARENT",
+  "tier2": "ALL_30_TRAINED_EVALUATED_PACKED_SUBMITTED_SCORED",
+  "rules": "USER_CONFIRMED_MONDAY_RESET; official boundary unresolved; additionally check rolling seven days",
+  "tier3": "FIRST_FRAME_ALIGNMENT_PERMISSION_VERIFIED; own reconstruction and MHR-to-SOMA adapter absent",
+  "track3": "NO_NEW_DEVELOPMENT_REFERENCES; no promotion justified",
+  "uploaded": true,
+  "state": "NEXT_TIER2_SUBMISSION_SCORED",
+  "packet_sha256": "6c727471ec1538d89271c6450850978aa5f1c913f28c5c5396d50082ceaf6958",
+  "scores": {
+    "add_auc": 0.2233,
+    "spider_sr": 0.03333,
+    "maniptrans_sr": 0.0,
+    "mppe_cm": 61.22802
+  },
+  "submission_ids": {
+    "add_auc": 57541232,
+    "spider_sr": 57541233,
+    "maniptrans_sr": 57541235,
+    "mppe_cm": 57541237
+  },
+  "receipt": "/home/alien51/video_to_data/robotic_grounding/incident_reports/track2_tier2/v1_campaign/kaggle_receipt.json"
+}
