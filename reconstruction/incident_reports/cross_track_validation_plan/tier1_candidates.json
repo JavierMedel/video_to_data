@@ -1,0 +1,752 @@
+[
+  {
+    "episode_index": 0,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000000/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 0,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000000/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 0,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000000/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 0,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000000/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 0,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000000/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000000.parquet"
+  },
+  {
+    "episode_index": 1,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000001/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 1,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000001/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 1,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000001/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 1,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000001/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 1,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000001/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000001.parquet"
+  },
+  {
+    "episode_index": 2,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000002/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 2,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000002/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 2,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000002/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 2,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000002/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 2,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000002/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000002.parquet"
+  },
+  {
+    "episode_index": 3,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000003/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 3,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000003/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 3,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000003/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 3,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000003/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 3,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000003/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000003.parquet"
+  },
+  {
+    "episode_index": 4,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000004/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 4,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000004/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 4,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000004/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 4,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000004/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 4,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000004/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000004.parquet"
+  },
+  {
+    "episode_index": 5,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000005/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 5,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000005/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 5,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000005/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 5,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000005/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 5,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000005/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000005.parquet"
+  },
+  {
+    "episode_index": 6,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000006/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 6,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000006/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 6,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000006/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 6,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000006/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 6,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000006/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000006.parquet"
+  },
+  {
+    "episode_index": 7,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000007/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 7,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000007/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 7,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000007/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 7,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000007/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 7,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000007/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000007.parquet"
+  },
+  {
+    "episode_index": 8,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000008/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 8,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000008/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 8,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000008/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 8,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000008/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 8,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000008/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000008.parquet"
+  },
+  {
+    "episode_index": 9,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000009/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 9,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000009/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 9,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000009/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 9,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000009/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 9,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000009/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000009.parquet"
+  },
+  {
+    "episode_index": 10,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000010/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 10,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000010/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 10,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000010/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 10,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000010/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 10,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000010/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000010.parquet"
+  },
+  {
+    "episode_index": 11,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000011/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 11,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000011/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 11,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000011/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 11,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000011/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 11,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000011/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000011.parquet"
+  },
+  {
+    "episode_index": 12,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000012/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 12,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000012/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 12,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000012/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 12,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000012/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 12,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000012/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000012.parquet"
+  },
+  {
+    "episode_index": 13,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000013/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 13,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000013/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 13,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000013/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 13,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000013/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 13,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000013/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000013.parquet"
+  },
+  {
+    "episode_index": 14,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000014/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 14,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000014/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 14,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000014/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 14,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000014/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 14,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000014/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000014.parquet"
+  },
+  {
+    "episode_index": 15,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000015/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 15,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000015/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 15,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000015/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 15,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000015/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 15,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000015/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000015.parquet"
+  },
+  {
+    "episode_index": 17,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000017/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 17,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000017/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 17,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000017/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 17,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000017/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 17,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000017/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000017.parquet"
+  },
+  {
+    "episode_index": 18,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000018/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 18,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000018/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 18,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000018/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 18,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000018/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 18,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000018/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000018.parquet"
+  },
+  {
+    "episode_index": 19,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000019/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 19,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000019/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 19,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000019/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 19,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000019/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 19,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000019/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000019.parquet"
+  },
+  {
+    "episode_index": 20,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000020/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 20,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000020/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 20,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000020/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 20,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000020/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 20,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000020/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000020.parquet"
+  },
+  {
+    "episode_index": 21,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000021/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 21,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000021/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 21,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000021/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 21,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000021/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 21,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000021/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000021.parquet"
+  },
+  {
+    "episode_index": 22,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000022/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 22,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000022/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 22,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000022/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 22,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000022/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 22,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000022/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000022.parquet"
+  },
+  {
+    "episode_index": 23,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000023/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 23,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000023/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 23,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000023/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 23,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000023/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 23,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000023/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000023.parquet"
+  },
+  {
+    "episode_index": 24,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000024/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 24,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000024/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 24,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000024/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 24,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000024/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 24,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000024/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000024.parquet"
+  },
+  {
+    "episode_index": 25,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000025/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 25,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000025/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 25,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000025/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 25,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000025/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 25,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000025/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000025.parquet"
+  },
+  {
+    "episode_index": 26,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000026/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 26,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000026/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 26,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000026/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 26,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000026/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 26,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000026/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000026.parquet"
+  },
+  {
+    "episode_index": 27,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000027/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 27,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000027/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 27,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000027/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 27,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000027/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 27,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000027/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000027.parquet"
+  },
+  {
+    "episode_index": 28,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000028/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 28,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000028/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 28,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000028/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 28,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000028/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 28,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000028/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000028.parquet"
+  },
+  {
+    "episode_index": 29,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000029/policy_1000448.safetensors"
+  },
+  {
+    "episode_index": 29,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000029/policy_2000896.safetensors"
+  },
+  {
+    "episode_index": 29,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000029/policy_3001344.safetensors"
+  },
+  {
+    "episode_index": 29,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000029/policy_4001792.safetensors"
+  },
+  {
+    "episode_index": 29,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000029/policy_5000192.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000029.parquet"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_10000384.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_100003840.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_110004224.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_120004608.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_130004992.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_140005376.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_150005760.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_160006144.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_170006528.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_180006912.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_190007296.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_20000768.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_200007680.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_210008064.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_220008448.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_230008832.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_240009216.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_250009600.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_260009984.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_270010368.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_280010752.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_290011136.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_30001152.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_300011520.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_310011904.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_320012288.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_330012672.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_340013056.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_349999104.safetensors",
+    "trajectory": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/results_short/episode_000016.parquet"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_40001536.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_50001920.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_60002304.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_70002688.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_80003072.safetensors"
+  },
+  {
+    "episode_index": 16,
+    "checkpoint": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_90003456.safetensors"
+  }
+]

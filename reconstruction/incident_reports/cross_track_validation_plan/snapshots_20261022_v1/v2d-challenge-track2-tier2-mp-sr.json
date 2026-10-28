@@ -1,0 +1,91 @@
+{
+  "observed_utc": "2026-10-22T20:26:26.947475+00:00",
+  "track": "track_2_tier2",
+  "metric": "maniptrans_sr",
+  "slug": "v2d-challenge-track2-tier2-mp-sr",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 17040995,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-18T19:52:00.346Z",
+      "score": "0.60000"
+    },
+    {
+      "teamId": 17018094,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-14T22:47:12.896Z",
+      "score": "0.53333"
+    },
+    {
+      "teamId": 17136109,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T04:48:14.233Z",
+      "score": "0.40000"
+    },
+    {
+      "teamId": 17170094,
+      "teamName": "DAP",
+      "submissionDate": "2026-10-21T13:29:08.570Z",
+      "score": "0.33333"
+    },
+    {
+      "teamId": 17165758,
+      "teamName": "nima arki",
+      "submissionDate": "2026-10-21T23:41:44.520Z",
+      "score": "0.30000"
+    },
+    {
+      "teamId": 17073094,
+      "teamName": "wte09fl",
+      "submissionDate": "2026-10-22T16:30:08.893Z",
+      "score": "0.30000"
+    },
+    {
+      "teamId": 16994360,
+      "teamName": "CHORD Baseline",
+      "submissionDate": "2026-09-30T23:36:07.603Z",
+      "score": "0.06666"
+    },
+    {
+      "teamId": 17128880,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:33:42.190Z",
+      "score": "0.06666"
+    },
+    {
+      "teamId": 17100149,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-19T00:43:09.453Z",
+      "score": "0.03333"
+    },
+    {
+      "teamId": 17163420,
+      "teamName": "Rohit Pardeshi",
+      "submissionDate": "2026-10-22T03:39:07.333Z",
+      "score": "0.03333"
+    },
+    {
+      "teamId": 17126402,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-15T16:05:36.260Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17092571,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-22T01:46:55.890Z",
+      "score": "0.00000"
+    }
+  ],
+  "submissions": [],
+  "history_complete": true,
+  "own_best": null,
+  "own_latest": null,
+  "targets": {
+    "1": 0.6,
+    "3": 0.4,
+    "5": 0.3,
+    "10": 0.03333
+  }
+}

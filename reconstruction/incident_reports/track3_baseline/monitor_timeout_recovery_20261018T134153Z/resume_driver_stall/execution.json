@@ -1,0 +1,34 @@
+{
+  "state": "STOPPED_BY_GPU_DRIVER",
+  "prepared": [
+    38,
+    37,
+    14,
+    10,
+    15,
+    16,
+    20,
+    8,
+    28,
+    19,
+    6,
+    32,
+    30,
+    5,
+    3,
+    1,
+    33,
+    25,
+    36,
+    35
+  ],
+  "evaluated": [],
+  "failed": {
+    "38": "Resume halted: WSL GPU queries blocked in dxgvmb_send_sync_msg; Docker reports container PID zombie. Checkpoint state_60002304 retained."
+  },
+  "submission_ready": false,
+  "uploaded": false,
+  "training_steps_per_episode": 250003456,
+  "active_episode_index": 38,
+  "observed_utc": "2026-10-18T13:46:17.268955+00:00"
+}

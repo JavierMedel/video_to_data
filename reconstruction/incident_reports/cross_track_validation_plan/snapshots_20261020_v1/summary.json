@@ -1,0 +1,641 @@
+{
+  "observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "competitions": {
+    "v2d-challenge-track1-cd-h": {
+      "track": "track_1",
+      "metric": "cd_h_cm",
+      "own_best": {
+        "ref": 57118072,
+        "totalBytes": 15781211,
+        "date": "2026-10-12T20:22:21.330Z",
+        "description": "Corrected masks and quality-gated reconstruction pilot: episodes 6, 18, 28",
+        "fileName": "track1_improvement_pilot_v1.parquet",
+        "publicScore": "14.99887",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57118072/57118072.raw"
+      },
+      "own_latest": {
+        "ref": 57237204,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:24.277Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "15.43955",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237204/57237204.raw"
+      },
+      "targets": {
+        "1": 13.07853,
+        "3": 13.83859,
+        "5": 14.08084,
+        "10": 14.85738
+      }
+    },
+    "v2d-challenge-track1-cd-o": {
+      "track": "track_1",
+      "metric": "cd_o_cm",
+      "own_best": {
+        "ref": 57237207,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:27.253Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "23.48324",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237207/57237207.raw"
+      },
+      "own_latest": {
+        "ref": 57237207,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:27.253Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "23.48324",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237207/57237207.raw"
+      },
+      "targets": {
+        "1": 17.10165,
+        "3": 18.36928,
+        "5": 18.73858,
+        "10": 22.96998
+      }
+    },
+    "v2d-challenge-track1-acc-h": {
+      "track": "track_1",
+      "metric": "acc_h_cm",
+      "own_best": {
+        "ref": 57237209,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:30.577Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "1.15894",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237209/57237209.raw"
+      },
+      "own_latest": {
+        "ref": 57237209,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:30.577Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "1.15894",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237209/57237209.raw"
+      },
+      "targets": {
+        "1": 0.13641,
+        "3": 0.13724,
+        "5": 0.13807,
+        "10": 0.14019
+      }
+    },
+    "v2d-challenge-track1-acc-o": {
+      "track": "track_1",
+      "metric": "acc_o_cm",
+      "own_best": {
+        "ref": 57237210,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:34.033Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "0.71908",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237210/57237210.raw"
+      },
+      "own_latest": {
+        "ref": 57237210,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:34.033Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "0.71908",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237210/57237210.raw"
+      },
+      "targets": {
+        "1": 0.06876,
+        "3": 0.07075,
+        "5": 0.07131,
+        "10": 0.07439
+      }
+    },
+    "v2d-challenge-track1-pen": {
+      "track": "track_1",
+      "metric": "interpenetration_cm",
+      "own_best": {
+        "ref": 57084325,
+        "totalBytes": 15743857,
+        "date": "2026-10-11T19:52:42.050Z",
+        "description": "First CARI4D Blackwell reconstruction",
+        "fileName": "track1_first.parquet",
+        "publicScore": "0.00213",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57084325/57084325.raw"
+      },
+      "own_latest": {
+        "ref": 57237212,
+        "totalBytes": 15708476,
+        "date": "2026-10-15T16:21:37.753Z",
+        "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+        "fileName": "track1_contact_smoothing_v8.parquet",
+        "publicScore": "0.00322",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57237212/57237212.raw"
+      },
+      "targets": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 2e-05
+      }
+    },
+    "v2d-challenge-track2-tier1-auc": {
+      "track": "track_2_tier1",
+      "metric": "add_auc",
+      "own_best": {
+        "ref": 57444008,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:07.050Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "0.24466",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444008/57444008.raw"
+      },
+      "own_latest": {
+        "ref": 57444008,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:07.050Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "0.24466",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444008/57444008.raw"
+      },
+      "targets": {
+        "1": 0.96908,
+        "3": 0.5953,
+        "5": 0.51038,
+        "10": 0.30445
+      }
+    },
+    "v2d-challenge-track2-tier1-sp-sr": {
+      "track": "track_2_tier1",
+      "metric": "spider_sr",
+      "own_best": {
+        "ref": 57444011,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:09.210Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "0.10000",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444011/57444011.raw"
+      },
+      "own_latest": {
+        "ref": 57444011,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:09.210Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "0.10000",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444011/57444011.raw"
+      },
+      "targets": {
+        "1": 0.86666,
+        "3": 0.8,
+        "5": 0.53333,
+        "10": 0.1
+      }
+    },
+    "v2d-challenge-track2-tier1-mp-sr": {
+      "track": "track_2_tier1",
+      "metric": "maniptrans_sr",
+      "own_best": {
+        "ref": 57444013,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:11.627Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "0.03333",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444013/57444013.raw"
+      },
+      "own_latest": {
+        "ref": 57444013,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:11.627Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "0.03333",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444013/57444013.raw"
+      },
+      "targets": {
+        "1": 0.83333,
+        "3": 0.43333,
+        "5": 0.2,
+        "10": 0.03333
+      }
+    },
+    "v2d-challenge-track2-tier1-mppe": {
+      "track": "track_2_tier1",
+      "metric": "mppe_cm",
+      "own_best": {
+        "ref": 57444015,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:13.877Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "53.84820",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444015/57444015.raw"
+      },
+      "own_latest": {
+        "ref": 57444015,
+        "totalBytes": 11838359,
+        "date": "2026-10-20T15:32:13.877Z",
+        "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+        "fileName": "track2_tier1.csv",
+        "publicScore": "53.84820",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57444015/57444015.raw"
+      },
+      "targets": {
+        "1": 7.44319,
+        "3": 12.65831,
+        "5": 17.73644,
+        "10": 49.12326
+      }
+    },
+    "v2d-challenge-track2-tier2-auc": {
+      "track": "track_2_tier2",
+      "metric": "add_auc",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 0.51796,
+        "3": 0.44253,
+        "5": 0.37374,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier2-sp-sr": {
+      "track": "track_2_tier2",
+      "metric": "spider_sr",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 0.73333,
+        "3": 0.56666,
+        "5": 0.46666,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier2-mp-sr": {
+      "track": "track_2_tier2",
+      "metric": "maniptrans_sr",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 0.6,
+        "3": 0.4,
+        "5": 0.06666,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier2-mppe": {
+      "track": "track_2_tier2",
+      "metric": "mppe_cm",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 13.70456,
+        "3": 18.56074,
+        "5": 20.52402,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-auc": {
+      "track": "track_2_tier3",
+      "metric": "add_auc",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 0.266,
+        "3": 0.10649,
+        "5": 0.04961,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-sp-sr": {
+      "track": "track_2_tier3",
+      "metric": "spider_sr",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 0.26666,
+        "3": 0.13333,
+        "5": 0.0,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-mp-sr": {
+      "track": "track_2_tier3",
+      "metric": "maniptrans_sr",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 0.03333,
+        "3": 0.0,
+        "5": 0.0,
+        "10": null
+      }
+    },
+    "v2d-challenge-track2-tier3-mppe": {
+      "track": "track_2_tier3",
+      "metric": "mppe_cm",
+      "own_best": null,
+      "own_latest": null,
+      "targets": {
+        "1": 46.649,
+        "3": 54.98984,
+        "5": 66.51482,
+        "10": null
+      }
+    },
+    "v2d-challenge-track3-auc": {
+      "track": "track_3",
+      "metric": "add_auc",
+      "own_best": {
+        "ref": 57416110,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:46.090Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "0.16307",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416110/57416110.raw"
+      },
+      "own_latest": {
+        "ref": 57416110,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:46.090Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "0.16307",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416110/57416110.raw"
+      },
+      "targets": {
+        "1": 0.82309,
+        "3": 0.65746,
+        "5": 0.63037,
+        "10": 0.34951
+      }
+    },
+    "v2d-challenge-track3-sp-sr": {
+      "track": "track_3",
+      "metric": "spider_sr",
+      "own_best": {
+        "ref": 57416113,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:48.210Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "0.05000",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416113/57416113.raw"
+      },
+      "own_latest": {
+        "ref": 57416113,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:48.210Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "0.05000",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416113/57416113.raw"
+      },
+      "targets": {
+        "1": 0.85,
+        "3": 0.7,
+        "5": 0.65,
+        "10": 0.35
+      }
+    },
+    "v2d-challenge-track3-mp-sr": {
+      "track": "track_3",
+      "metric": "maniptrans_sr",
+      "own_best": {
+        "ref": 57416115,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:50.320Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "0.00000",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416115/57416115.raw"
+      },
+      "own_latest": {
+        "ref": 57416115,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:50.320Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "0.00000",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416115/57416115.raw"
+      },
+      "targets": {
+        "1": 0.7,
+        "3": 0.4,
+        "5": 0.35,
+        "10": 0.0
+      }
+    },
+    "v2d-challenge-track3-rpe": {
+      "track": "track_3",
+      "metric": "rpe_cm",
+      "own_best": {
+        "ref": 57416118,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:52.517Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "22.28685",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416118/57416118.raw"
+      },
+      "own_latest": {
+        "ref": 57416118,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:52.517Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "22.28685",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416118/57416118.raw"
+      },
+      "targets": {
+        "1": 3.05138,
+        "3": 6.11429,
+        "5": 6.49702,
+        "10": 12.09079
+      }
+    },
+    "v2d-challenge-track3-mppe": {
+      "track": "track_3",
+      "metric": "mppe_cm",
+      "own_best": {
+        "ref": 57416120,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:54.693Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "20.82175",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416120/57416120.raw"
+      },
+      "own_latest": {
+        "ref": 57416120,
+        "totalBytes": 3567453,
+        "date": "2026-10-20T01:08:54.693Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.parquet",
+        "publicScore": "20.82175",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416120/57416120.raw"
+      },
+      "targets": {
+        "1": 2.62042,
+        "3": 5.51073,
+        "5": 6.63026,
+        "10": 10.44602
+      }
+    },
+    "v2d-challenge-track3-cd-o": {
+      "track": "track_3_mesh",
+      "metric": "cd_o_cm",
+      "own_best": {
+        "ref": 57416123,
+        "totalBytes": 4668158,
+        "date": "2026-10-20T01:08:56.987Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.cd-o.parquet",
+        "publicScore": "0.57037",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416123/57416123.raw"
+      },
+      "own_latest": {
+        "ref": 57416123,
+        "totalBytes": 4668158,
+        "date": "2026-10-20T01:08:56.987Z",
+        "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+        "fileName": "track3_submission.cd-o.parquet",
+        "publicScore": "0.57037",
+        "status": "COMPLETE",
+        "submittedBy": "iorideepp",
+        "submittedByRef": "iorideepp",
+        "teamName": "Javier Medel, MSc.",
+        "url": "/submissions/57416123/57416123.raw"
+      },
+      "targets": {
+        "1": 0.06523,
+        "3": 0.1094,
+        "5": 0.17257,
+        "10": 0.37329
+      }
+    }
+  }
+}

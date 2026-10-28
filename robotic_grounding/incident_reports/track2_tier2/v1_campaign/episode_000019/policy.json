@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "f7a528914dabbc8a2b9b327fe4ce6e010ebc4d27f76eeb13516b106f3ea96600",
+  "reference_sha256": "82e928e9e734635262cf7a2f790ad165194c7d13ccb1c6e05887b9921d68cb03",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000019/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-19_10-19-48_cane_swing_05/robot_name=g1/data.parquet",
+  "trajectory_sha256": "6053095da999db29264e5078f0ece5e2aaafb7955f48a98084f01883a701b269",
+  "metrics_sha256": "6b5fb6be1c523ef766b1402bf007fc7acbaf7ede66f5ceb969b61a0dacfb9e90",
+  "export_sha256": "8c778a174d5749661393bce10c01665cbec9cf55c61777a200bf429e7435e9e2",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "cane",
+  "rows": 886,
+  "raw_poses_preserved": true
+}

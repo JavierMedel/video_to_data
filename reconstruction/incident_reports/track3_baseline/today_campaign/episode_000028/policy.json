@@ -1,0 +1,15 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "a19874506f569052cf4047c9ac3fb1b923a9e7ba60907bf7b068fbbc47d04657",
+  "reference_sha256": "35905b92225f56a05ace5b05af50943133b5244cb71dad05aa119a5bb64a1b51",
+  "trajectory_sha256": "8796f13a2a04006a6e8bff29ea6d23133b47f5dd61a449460edc947d12b67b0e",
+  "metrics_sha256": "fdc4cb4064a8b170504b5db857f533e08513ecec2a81c0633603011804bfe925",
+  "trained_environment_steps": 5000192,
+  "profile": "today",
+  "requested_training_steps": 5000192,
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track3/policies_today/episode_000028/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track3/references/episode_000028.parquet",
+  "full_budget_policy": false,
+  "learned_policy": true,
+  "official_held_out_score": false
+}

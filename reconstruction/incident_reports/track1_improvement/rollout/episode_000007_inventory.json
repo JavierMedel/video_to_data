@@ -1,0 +1,115 @@
+{
+  "episode": 7,
+  "object": "iron",
+  "frames": 777,
+  "files": {
+    "video": {
+      "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000007.mp4",
+      "available": true,
+      "bytes": 22640651
+    },
+    "depth": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/aligned.h5",
+      "available": true,
+      "bytes": 818539012
+    },
+    "init": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/mhr_init/episode_000007.pkl",
+      "available": true,
+      "bytes": 3467886
+    },
+    "intrinsics": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/intrinsics.pkl",
+      "available": true,
+      "bytes": 82769
+    }
+  },
+  "mask_samples": [
+    {
+      "frame": 0,
+      "pixels": 3276,
+      "bbox": [
+        755,
+        833,
+        803,
+        928
+      ]
+    },
+    {
+      "frame": 90,
+      "pixels": 2970,
+      "bbox": [
+        755,
+        837,
+        799,
+        927
+      ]
+    },
+    {
+      "frame": 155,
+      "pixels": 3113,
+      "bbox": [
+        755,
+        837,
+        801,
+        928
+      ]
+    },
+    {
+      "frame": 310,
+      "pixels": 3067,
+      "bbox": [
+        811,
+        538,
+        854,
+        631
+      ]
+    },
+    {
+      "frame": 388,
+      "pixels": 0,
+      "bbox": null
+    },
+    {
+      "frame": 466,
+      "pixels": 1465,
+      "bbox": [
+        736,
+        495,
+        780,
+        538
+      ]
+    },
+    {
+      "frame": 621,
+      "pixels": 1827,
+      "bbox": [
+        690,
+        626,
+        725,
+        692
+      ]
+    },
+    {
+      "frame": 686,
+      "pixels": 3794,
+      "bbox": [
+        749,
+        858,
+        801,
+        957
+      ]
+    },
+    {
+      "frame": 776,
+      "pixels": 3717,
+      "bbox": [
+        749,
+        857,
+        800,
+        957
+      ]
+    }
+  ],
+  "visual_review": "PENDING"
+}

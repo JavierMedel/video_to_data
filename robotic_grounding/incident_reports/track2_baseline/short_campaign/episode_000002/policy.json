@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "891242ab96a6f1eaa1e75a8a264fb515e4901756e5ce9723dca581280b0f5c16",
+  "reference_sha256": "5dc8314a95197404b85626fa37c4caf9f74e5d0c4219b8e2cfe2a501f4f06422",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000002/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-02_10-04-42_blue_easter_basket_place_10/robot_name=g1/data.parquet",
+  "trajectory_sha256": "2199ccce6861b9a2b109ec76844e230ce0de439dc0e769ac01efe922874f3dd5",
+  "metrics_sha256": "79b2b0d30e0f6ac7407614387fbbbc50d593c185e2c1c587ddc8d020fb49359c",
+  "export_sha256": "48afc76649bd2ed81930921edf09994f07256b4a8aae15df20dc232d96490352",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "blue_easter_basket",
+  "rows": 980,
+  "raw_poses_preserved": true
+}

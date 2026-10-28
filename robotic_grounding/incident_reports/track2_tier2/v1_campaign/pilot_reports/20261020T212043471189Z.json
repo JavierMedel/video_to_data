@@ -1,0 +1,133 @@
+{
+  "state": "PILOT_EVALUATED_FOR_REVIEW",
+  "track": "track_2_tier2",
+  "evaluated": [
+    0
+  ],
+  "failed": {},
+  "inputs": {
+    "tier": 2,
+    "version": "v1",
+    "inventory_sha256": "6b1d51237c47aa6ac6aa8f58c954e19a1f1569bf105cc67ae3ef1508337c96d3",
+    "training_steps": 5000192,
+    "parent_packet_sha256": null
+  },
+  "training_steps_per_new_episode": 5000192,
+  "full_budget_steps": 349999104,
+  "submission_ready": false,
+  "uploaded": false,
+  "pilot_episodes": [
+    0
+  ],
+  "pilot_report_path": "/home/alien51/video_to_data/robotic_grounding/incident_reports/track2_tier2/v1_campaign/pilot_reports/20261020T212043471189Z.json",
+  "observed_utc": "2026-10-20T21:27:18.387720+00:00",
+  "active_episode_index": null,
+  "started_utc": "2026-10-20T21:20:43.471189+00:00",
+  "elapsed_seconds": 394.9339575800004,
+  "campaign_code_sha256": "b553e7040c33d808e387a54066fa193bf5b762095e24eef6d2642b0adca90799",
+  "timing_scope": "Host wall time, including native startup/compile; not GPU-active time or steady-state throughput",
+  "episode_results": [
+    {
+      "episode_index": 0,
+      "frames": 778,
+      "elapsed_seconds": 394.9321257599986,
+      "evaluation": {
+        "state": "EVALUATED",
+        "checkpoint_sha256": "9dca501ec1ccd0dc5cc1fa9d289c6d0bf177934d43e224bb0d51ed0c488bd017",
+        "reference_sha256": "4a9afc155df24d9deed73800e57b9dc59ba533dcf5dbfc926348d39d6d4399a1",
+        "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000000/policy_5000192.safetensors",
+        "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-04_14-16-23_tall_bar_stool_tip_up_04/robot_name=g1/data.parquet",
+        "trajectory_sha256": "e701d30443b081eb7d19ddbbcd537b6334c40497bcedff06b42f90298bb0c767",
+        "metrics_sha256": "f0747ee26786c15781d68fde4ffa1fb69b8df44bb645ba539c1b076cc870bd75",
+        "export_sha256": "396866575530a174f73aa6a5d105c4a5ad62f79a76efed9772666486324610dc",
+        "trained_environment_steps": 5000192,
+        "requested_training_steps": 5000192,
+        "full_budget_policy": false,
+        "object_name": "tall_bar_stool",
+        "rows": 778,
+        "raw_poses_preserved": true,
+        "execution": {
+          "elapsed_seconds": 394.89575613499983,
+          "training_seconds": 350.0861381100003,
+          "evaluation_seconds": 44.77770481799962,
+          "training_performed": true,
+          "evaluation_performed": true,
+          "evaluation_reused": false,
+          "legacy_evaluation_copied": false
+        }
+      },
+      "metrics_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/results_v1/episode_000000.json",
+      "metrics": {
+        "checkpoint": "/repo/data/track2/tier2/v1/policies_v1/episode_000000/policy_5000192.safetensors",
+        "checkpoint_sha256": "9dca501ec1ccd0dc5cc1fa9d289c6d0bf177934d43e224bb0d51ed0c488bd017",
+        "environment_steps": 5000192,
+        "metrics": {
+          "add_auc": 0.1889460154241645,
+          "add_auc_per_body": [
+            0.1889460154241645
+          ],
+          "add_std_m": 0.35655487592238705,
+          "add_std_per_body_m": [
+            0.35655487592238705
+          ],
+          "chord_sr": 0.0,
+          "gated_causes": [
+            "wrist",
+            "object"
+          ],
+          "maniptrans_sr": 0.0,
+          "mean_add_m": 0.45109020536180944,
+          "mean_per_point_error_cm": 39.50937773270302,
+          "mppe_cm": 39.509377732703015,
+          "object_body_names": [
+            "object"
+          ],
+          "object_orientation_error_deg": 78.89264595057702,
+          "object_orientation_error_per_body_rad": [
+            1.3769364274477407
+          ],
+          "object_orientation_error_rad": 1.3769364274477407,
+          "object_orientation_error_std_deg": 0.0,
+          "object_orientation_error_std_rad": 0.0,
+          "object_position_error_m": 0.39305151816463874,
+          "object_position_error_per_body_m": [
+            0.39305151816463874
+          ],
+          "object_position_error_std_m": 0.0,
+          "position_mean_centered": false,
+          "relative_position_error_cm": 0.0,
+          "spider_position_error_centered_m": 0.34952434261451315,
+          "spider_sr_uncentered": 0.0,
+          "step_count": 778,
+          "termination_cause_fraction": {
+            "object": 1.0,
+            "wrist": 1.0
+          },
+          "world_count": 1
+        },
+        "motion_end_frame": -1,
+        "motion_start_frame": 0,
+        "non_finite_worlds": [],
+        "object_orientation_threshold_rad": 1.5,
+        "object_position_threshold_m": 0.1,
+        "parquet": "/repo/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-04_14-16-23_tall_bar_stool_tip_up_04/robot_name=g1/data.parquet",
+        "reference_tracking": {
+          "failure_cause_fraction": {
+            "object": 1.0,
+            "palm": 1.0,
+            "pelvis": 1.0
+          },
+          "reference_end_fraction": 1.0,
+          "success_rate": 0.0
+        },
+        "reset_mode": "explicit",
+        "settling_steps": 0,
+        "sim_control_fps": 50.0,
+        "sim_physics_fps": 200.0,
+        "start_frame": 0,
+        "step_count": 778,
+        "world_count": 1
+      }
+    }
+  ]
+}

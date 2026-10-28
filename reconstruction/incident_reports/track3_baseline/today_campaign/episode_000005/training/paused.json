@@ -1,0 +1,4 @@
+{
+  "state": "PAUSED_BEFORE_TRAINING",
+  "reason": "User requested laptop shutdown after current episode"
+}

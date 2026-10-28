@@ -1,0 +1,5 @@
+{
+  "world_count": 1024,
+  "memory_cap_mib": null,
+  "note": "Concurrency tuning; measure throughput and memory before claiming improvement"
+}

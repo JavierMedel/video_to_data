@@ -1,0 +1,167 @@
+{
+  "observed_utc": "2026-10-20T01:59:15.734560+00:00",
+  "configured_account": "iorideepp",
+  "competitions": [
+    {
+      "track": "track_1",
+      "metric": "cd_h_cm",
+      "slug": "v2d-challenge-track1-cd-h",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track1-cd-h/rules"
+    },
+    {
+      "track": "track_1",
+      "metric": "cd_o_cm",
+      "slug": "v2d-challenge-track1-cd-o",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track1-cd-o/rules"
+    },
+    {
+      "track": "track_1",
+      "metric": "acc_h_cm",
+      "slug": "v2d-challenge-track1-acc-h",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track1-acc-h/rules"
+    },
+    {
+      "track": "track_1",
+      "metric": "acc_o_cm",
+      "slug": "v2d-challenge-track1-acc-o",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track1-acc-o/rules"
+    },
+    {
+      "track": "track_1",
+      "metric": "interpenetration_cm",
+      "slug": "v2d-challenge-track1-pen",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track1-pen/rules"
+    },
+    {
+      "track": "track_2_tier1",
+      "metric": "add_auc",
+      "slug": "v2d-challenge-track2-tier1-auc",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier1-auc/rules"
+    },
+    {
+      "track": "track_2_tier1",
+      "metric": "spider_sr",
+      "slug": "v2d-challenge-track2-tier1-sp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier1-sp-sr/rules"
+    },
+    {
+      "track": "track_2_tier1",
+      "metric": "maniptrans_sr",
+      "slug": "v2d-challenge-track2-tier1-mp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier1-mp-sr/rules"
+    },
+    {
+      "track": "track_2_tier1",
+      "metric": "mppe_cm",
+      "slug": "v2d-challenge-track2-tier1-mppe",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier1-mppe/rules"
+    },
+    {
+      "track": "track_2_tier2",
+      "metric": "add_auc",
+      "slug": "v2d-challenge-track2-tier2-auc",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier2-auc/rules"
+    },
+    {
+      "track": "track_2_tier2",
+      "metric": "spider_sr",
+      "slug": "v2d-challenge-track2-tier2-sp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier2-sp-sr/rules"
+    },
+    {
+      "track": "track_2_tier2",
+      "metric": "maniptrans_sr",
+      "slug": "v2d-challenge-track2-tier2-mp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier2-mp-sr/rules"
+    },
+    {
+      "track": "track_2_tier2",
+      "metric": "mppe_cm",
+      "slug": "v2d-challenge-track2-tier2-mppe",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier2-mppe/rules"
+    },
+    {
+      "track": "track_2_tier3",
+      "metric": "add_auc",
+      "slug": "v2d-challenge-track2-tier3-auc",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier3-auc/rules"
+    },
+    {
+      "track": "track_2_tier3",
+      "metric": "spider_sr",
+      "slug": "v2d-challenge-track2-tier3-sp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier3-sp-sr/rules"
+    },
+    {
+      "track": "track_2_tier3",
+      "metric": "maniptrans_sr",
+      "slug": "v2d-challenge-track2-tier3-mp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier3-mp-sr/rules"
+    },
+    {
+      "track": "track_2_tier3",
+      "metric": "mppe_cm",
+      "slug": "v2d-challenge-track2-tier3-mppe",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track2-tier3-mppe/rules"
+    },
+    {
+      "track": "track_3",
+      "metric": "add_auc",
+      "slug": "v2d-challenge-track3-auc",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track3-auc/rules"
+    },
+    {
+      "track": "track_3",
+      "metric": "spider_sr",
+      "slug": "v2d-challenge-track3-sp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track3-sp-sr/rules"
+    },
+    {
+      "track": "track_3",
+      "metric": "maniptrans_sr",
+      "slug": "v2d-challenge-track3-mp-sr",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track3-mp-sr/rules"
+    },
+    {
+      "track": "track_3",
+      "metric": "rpe_cm",
+      "slug": "v2d-challenge-track3-rpe",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track3-rpe/rules"
+    },
+    {
+      "track": "track_3",
+      "metric": "mppe_cm",
+      "slug": "v2d-challenge-track3-mppe",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track3-mppe/rules"
+    },
+    {
+      "track": "track_3_mesh",
+      "metric": "cd_o_cm",
+      "slug": "v2d-challenge-track3-cd-o",
+      "entered": true,
+      "rules_url": "https://www.kaggle.com/c/v2d-challenge-track3-cd-o/rules"
+    }
+  ]
+}

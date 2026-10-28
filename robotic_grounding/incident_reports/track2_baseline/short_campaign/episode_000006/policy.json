@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "c951a3847915efe8e0bf818b210572b3fc73bf55d51795bb1fecb6e52b990825",
+  "reference_sha256": "1cda544a129250b67554414f00175e13b9259ce8541a53d175d6b06d09788100",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000006/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-01_11-26-44_monitor_rotate_05/robot_name=g1/data.parquet",
+  "trajectory_sha256": "8f5966796f44092e4a47ff935b4a76fb28071f86532eb6c0a4d94119b59af9a3",
+  "metrics_sha256": "4110587a789219840515231e720cbeef45a235927a198ba6b99cca27a8d9d89a",
+  "export_sha256": "0ff3825ebe248f4643cbcc077899dfb7cd061da48ac40c165bd8eb865e1e1432",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "monitor",
+  "rows": 546,
+  "raw_poses_preserved": true
+}

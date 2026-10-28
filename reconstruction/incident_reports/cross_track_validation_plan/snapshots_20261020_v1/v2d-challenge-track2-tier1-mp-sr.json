@@ -1,0 +1,135 @@
+{
+  "observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "track": "track_2_tier1",
+  "metric": "maniptrans_sr",
+  "slug": "v2d-challenge-track2-tier1-mp-sr",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 16982577,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-19T05:50:34.613Z",
+      "score": "0.83333"
+    },
+    {
+      "teamId": 17015030,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-18T16:54:56.443Z",
+      "score": "0.70000"
+    },
+    {
+      "teamId": 17130417,
+      "teamName": "DAP",
+      "submissionDate": "2026-10-20T08:01:08.903Z",
+      "score": "0.43333"
+    },
+    {
+      "teamId": 17073093,
+      "teamName": "wte09fl",
+      "submissionDate": "2026-10-19T19:23:07.510Z",
+      "score": "0.23333"
+    },
+    {
+      "teamId": 16994366,
+      "teamName": "CHORD Baseline",
+      "submissionDate": "2026-09-30T23:35:54.380Z",
+      "score": "0.20000"
+    },
+    {
+      "teamId": 17083341,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-14T17:29:40.703Z",
+      "score": "0.20000"
+    },
+    {
+      "teamId": 17128870,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T16:27:26.510Z",
+      "score": "0.16666"
+    },
+    {
+      "teamId": 17106872,
+      "teamName": "Null Walker",
+      "submissionDate": "2026-10-18T02:09:12.483Z",
+      "score": "0.13333"
+    },
+    {
+      "teamId": 17099379,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-16T01:30:32.766Z",
+      "score": "0.10000"
+    },
+    {
+      "teamId": 17157538,
+      "teamName": "Javier Medel, MSc.",
+      "submissionDate": "2026-10-20T15:32:11.626Z",
+      "score": "0.03333"
+    },
+    {
+      "teamId": 17107675,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-14T17:08:47.703Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17131322,
+      "teamName": "Vincent_WANG_541",
+      "submissionDate": "2026-10-16T09:51:27.616Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17092557,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-18T19:55:03.063Z",
+      "score": "0.00000"
+    }
+  ],
+  "submissions": [
+    {
+      "ref": 57444013,
+      "totalBytes": 11838359,
+      "date": "2026-10-20T15:32:11.627Z",
+      "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+      "fileName": "track2_tier1.csv",
+      "publicScore": "0.03333",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57444013/57444013.raw"
+    }
+  ],
+  "history_complete": true,
+  "own_best": {
+    "ref": 57444013,
+    "totalBytes": 11838359,
+    "date": "2026-10-20T15:32:11.627Z",
+    "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+    "fileName": "track2_tier1.csv",
+    "publicScore": "0.03333",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57444013/57444013.raw"
+  },
+  "own_latest": {
+    "ref": 57444013,
+    "totalBytes": 11838359,
+    "date": "2026-10-20T15:32:11.627Z",
+    "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+    "fileName": "track2_tier1.csv",
+    "publicScore": "0.03333",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57444013/57444013.raw"
+  },
+  "targets": {
+    "1": 0.83333,
+    "3": 0.43333,
+    "5": 0.2,
+    "10": 0.03333
+  }
+}

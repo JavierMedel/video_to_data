@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "0319fbac74b3e01f445055b59f605707f0157cb5110a9a60ad382ee08ebf09a9",
+  "reference_sha256": "0f27add047c34c6d89fab2b6756b17bdc812c22ba344ad4cc71089e8ac51065d",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000025/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-20_11-59-57_cyan_water_bottle_rotate_01/robot_name=g1/data.parquet",
+  "trajectory_sha256": "f3f915bc478efeb0b4a30e50efe008494f4b0e3ce2ac610204283c19460e52e6",
+  "metrics_sha256": "4cf258baba202f420cffcdf4a18b05b0e820e2b4e4880b85b0c4c1a1a1aed03a",
+  "export_sha256": "c7cf81108a38f94fb9ef8774565b9bc933396e3d53c37e0410c8c18be9f53a56",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "cyan_water_bottle",
+  "rows": 859,
+  "raw_poses_preserved": true
+}

@@ -1,0 +1,61 @@
+{
+  "observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "track": "track_2_tier3",
+  "metric": "spider_sr",
+  "slug": "v2d-challenge-track2-tier3-sp-sr",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 17126979,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-18T16:47:07.263Z",
+      "score": "0.26666"
+    },
+    {
+      "teamId": 17128887,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:38:36.473Z",
+      "score": "0.16666"
+    },
+    {
+      "teamId": 17041000,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-20T00:40:25.870Z",
+      "score": "0.13333"
+    },
+    {
+      "teamId": 17149712,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-20T17:40:58.376Z",
+      "score": "0.03333"
+    },
+    {
+      "teamId": 16994349,
+      "teamName": "CHORD Baseline (CARI4D Reconstruction)",
+      "submissionDate": "2026-09-30T23:36:16.266Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17092583,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-18T20:01:11.703Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17136115,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T22:13:34.903Z",
+      "score": "0.00000"
+    }
+  ],
+  "submissions": [],
+  "history_complete": true,
+  "own_best": null,
+  "own_latest": null,
+  "targets": {
+    "1": 0.26666,
+    "3": 0.13333,
+    "5": 0.0,
+    "10": null
+  }
+}

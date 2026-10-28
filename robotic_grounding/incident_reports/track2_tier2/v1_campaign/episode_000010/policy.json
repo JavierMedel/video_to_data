@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "3ea012b7ee6c99a3c4c0c3907c2c9a0ca4fbd1e089eecdcbf8d5559f489ec38d",
+  "reference_sha256": "26c51ee2acac2bb2ecee8cc219cef48d024f27a8b866d0fc7de1f93d4a804df9",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000010/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-01_11-36-40_white_desk_lower_to_ground_10/robot_name=g1/data.parquet",
+  "trajectory_sha256": "4444076a6f828af637970d0ca13d2b581e19ecd158cf768b789b57782eb632e8",
+  "metrics_sha256": "dbf76896acf53c18438d29464676221b0b31952a29f35f69b4fa2a570a937053",
+  "export_sha256": "c9228e43312251322689a3bbc25687a10de5dbb53ad290e17dc0c6f7a4c08be1",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "white_desk",
+  "rows": 794,
+  "raw_poses_preserved": true
+}

@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "3b45a200acc389c4983eb90902ce6804df4d0d56dc4c68315826b9e1ab9f335e",
+  "reference_sha256": "46ab78eeac9a0123c055ce1bb1784e38eaa8b6a8778bba815530b7d1f0a469bd",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000018/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-06_10-00-19_blue_trash_can_drag_sideways_08/robot_name=g1/data.parquet",
+  "trajectory_sha256": "16781a4adce80224850ac415aa8250309e7f1f6c499f539f96aaa71b3dcc0235",
+  "metrics_sha256": "2c373c5ea6af374a19d2f6b1e5ac22aa1c67b92630aa077d6515c632274bb3c5",
+  "export_sha256": "199657f78564999c33d1631b113dbb8cbb425adef11df7be17cd9a79751ad91a",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "blue_trash_can",
+  "rows": 858,
+  "raw_poses_preserved": true
+}

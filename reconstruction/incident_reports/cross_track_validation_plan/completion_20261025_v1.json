@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-10-25T14:48:56.703531+00:00",
+  "state": "LATEST_VALIDATED_RESULTS_ALREADY_SUBMITTED_AND_SCORED",
+  "track": "track_2_tier2",
+  "live_snapshot": "reconstruction/incident_reports/cross_track_validation_plan/snapshots_20261025_completion_v1",
+  "packet": "robotic_grounding/data/track2/tier2/v1/submission_v1/track2_tier2.csv",
+  "packet_sha256": "6c727471ec1538d89271c6450850978aa5f1c913f28c5c5396d50082ceaf6958",
+  "episode_count": 30,
+  "rows": 22989,
+  "full_packet_and_policy_lineage_audit_rerun": "PASSED",
+  "packet_validation": "robotic_grounding/incident_reports/track2_tier2/execution_20261022_v1/packet_validation.json",
+  "verified_live_submissions": {
+    "add_auc": {
+      "submission_id": 57541232,
+      "status": "COMPLETE",
+      "score": "0.22330"
+    },
+    "spider_sr": {
+      "submission_id": 57541233,
+      "status": "COMPLETE",
+      "score": "0.03333"
+    },
+    "maniptrans_sr": {
+      "submission_id": 57541235,
+      "status": "COMPLETE",
+      "score": "0.00000"
+    },
+    "mppe_cm": {
+      "submission_id": 57541237,
+      "status": "COMPLETE",
+      "score": "61.22802"
+    }
+  },
+  "competition_count": 23,
+  "latest_submissions_complete": 19,
+  "latest_submissions_pending_or_failed": [],
+  "unsubmitted_boards": [
+    "v2d-challenge-track2-tier3-auc",
+    "v2d-challenge-track2-tier3-sp-sr",
+    "v2d-challenge-track2-tier3-mp-sr",
+    "v2d-challenge-track2-tier3-mppe"
+  ],
+  "new_upload_performed": false,
+  "remaining_tier3_work": "Genuine video reconstruction and validated MHR-to-SOMA adapter required; no Tier 3 packet available."
+}

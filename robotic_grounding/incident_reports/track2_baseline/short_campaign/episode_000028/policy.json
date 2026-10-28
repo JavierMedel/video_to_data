@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "ca7f8d9a390aaebe0a256fdf2fc665d03ca6d0abf997e46a674af5b521f3f3ef",
+  "reference_sha256": "792ad5b40144f1c4d0ec894f0eca798d5445141421c55d14377046fad0b39922",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000028/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_/robot_name=g1/data.parquet",
+  "trajectory_sha256": "0eeeb58b3165534da048049983785bc1af2c30b649fcd5f9fec1e3da4100fc41",
+  "metrics_sha256": "d3691e5414543005dd487ade9f9f71c3b0ef42c35408bee03dd414ae2f0d9bc3",
+  "export_sha256": "503a22f4e2289b9607e8fc4276b1a522f85cdd1a1304897da724afe6338f53fb",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "squeegee",
+  "rows": 988,
+  "raw_poses_preserved": true
+}

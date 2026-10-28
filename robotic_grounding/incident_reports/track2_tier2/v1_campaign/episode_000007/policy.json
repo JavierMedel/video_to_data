@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "207c1924141b147e602fb2df88d1b3a202a59ea85053d62e3bb30144661f83f0",
+  "reference_sha256": "68bb2e561e3663ed1ed68e1ae56304a6a79d79e56d2c8840e6084a5ae3c971a3",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000007/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-29_15-20-43_iron_round_table_02/robot_name=g1/data.parquet",
+  "trajectory_sha256": "1e8c9bafb0305117bbf00e46a1e36f409a76d0076460ec57080ce6c562bd75ce",
+  "metrics_sha256": "aad5742eb6738fcc552992d8ac6b03c40ae62f86dd29cad8ce3e4a980fe2841c",
+  "export_sha256": "d79c276a68efd21e664891de3e3a90c9560822876ed72142880f43e5d9035aae",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "iron",
+  "rows": 896,
+  "raw_poses_preserved": true
+}

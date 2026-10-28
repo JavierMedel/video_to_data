@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "b24c2ee39375bf2d9eee02e767c52cc09be8aa80ea132d53f71cd7175971c54d",
+  "reference_sha256": "6e5be5806e4cf464fc70cbc81f077e67d9df4f8b1d49298892ac646e7f21c222",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000029/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-05_18-27-40_rolling_luggage_left_foot_push_06/robot_name=g1/data.parquet",
+  "trajectory_sha256": "d85b1a9b61c320f6c20485882d8defd20de2e7699ed1fd6e2a4631f9171ed5be",
+  "metrics_sha256": "289fc2123f5e263ee78a189cfa50a08aab3bcce9f23f2abbe49fec2e6ff76924",
+  "export_sha256": "7487adbb7dd8521a49ffce3888a93fdd3d9d9e1b059e9734e7f5b078bdd3f32c",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "rolling_luggage",
+  "rows": 467,
+  "raw_poses_preserved": true
+}

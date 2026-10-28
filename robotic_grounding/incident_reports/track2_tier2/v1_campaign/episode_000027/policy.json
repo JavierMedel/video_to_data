@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "1e977273b29a59673a81064dde1bb6856e8b23bdf499b088d7bdb251b0a82d0e",
+  "reference_sha256": "8a495caa49761b3b476a6bf13a0549fb4ea96e5f20702b814096a2848c4ef5f0",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000027/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-01_11-15-05_woven_basket_ground_desk_10/robot_name=g1/data.parquet",
+  "trajectory_sha256": "a55fc0ded3dd1369574577aa75075ba2b9ccdab3ed7829fad93a2673ef0d4e6e",
+  "metrics_sha256": "c99e7d0839759798e0a387e05139ffee75ba3686f53de21c41aadf77fd51af88",
+  "export_sha256": "3e20ee6f8b730811f705f010ccef96fe7a52ac6f3d90a13cedecb6d9c45d981a",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "woven_basket",
+  "rows": 565,
+  "raw_poses_preserved": true
+}

@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "d1b043371100bb15410b661bbe6471674491ce0db9e947c081af6fbfe0f44dc0",
+  "reference_sha256": "3f4a0942c178c6202dc7bcc5f5146d2b1c5c38dd382cdbcdbb7f09a3100a3048",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000009/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03/robot_name=g1/data.parquet",
+  "trajectory_sha256": "157ca3aaa9bfdfe5aeab0a8a19be5ac836037929acc1fac6abc086f5ab32c4d5",
+  "metrics_sha256": "2b00aefba89f96d86762e5fdc8e701816707b7015d56a1b0c4d37d4e6e1905a7",
+  "export_sha256": "17530834a1b4a5f6239ee7eb56aeb069aea3f8ebfc0984a97ccce0fb6c2ca40e",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "big_red_bowl",
+  "rows": 870,
+  "raw_poses_preserved": true
+}

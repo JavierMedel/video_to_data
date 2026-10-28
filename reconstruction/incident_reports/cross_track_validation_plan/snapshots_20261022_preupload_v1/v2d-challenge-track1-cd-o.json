@@ -1,0 +1,394 @@
+{
+  "observed_utc": "2026-10-22T23:49:22.543213+00:00",
+  "track": "track_1",
+  "metric": "cd_o_cm",
+  "slug": "v2d-challenge-track1-cd-o",
+  "higher_is_better": false,
+  "leaderboard": [
+    {
+      "teamId": 17089829,
+      "teamName": "EviisKitson",
+      "submissionDate": "2026-10-22T23:21:45.680Z",
+      "score": "17.07108"
+    },
+    {
+      "teamId": 17095246,
+      "teamName": "xpz666",
+      "submissionDate": "2026-10-22T17:57:55.160Z",
+      "score": "17.25432"
+    },
+    {
+      "teamId": 17045562,
+      "teamName": "RobotPI Lab",
+      "submissionDate": "2026-10-21T17:11:40.706Z",
+      "score": "18.36928"
+    },
+    {
+      "teamId": 17106003,
+      "teamName": "Lodestar",
+      "submissionDate": "2026-10-20T23:04:00.540Z",
+      "score": "18.37744"
+    },
+    {
+      "teamId": 17125124,
+      "teamName": "Swithinraj ",
+      "submissionDate": "2026-10-22T16:13:44.650Z",
+      "score": "18.39830"
+    },
+    {
+      "teamId": 17148218,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-22T18:47:46.590Z",
+      "score": "18.85010"
+    },
+    {
+      "teamId": 17136238,
+      "teamName": "BarcelonaHoneyCod",
+      "submissionDate": "2026-10-21T08:28:20.810Z",
+      "score": "19.66181"
+    },
+    {
+      "teamId": 17093249,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-22T16:27:27.676Z",
+      "score": "20.21381"
+    },
+    {
+      "teamId": 17057700,
+      "teamName": "SNU CVLAB",
+      "submissionDate": "2026-10-20T08:21:18.600Z",
+      "score": "22.14062"
+    },
+    {
+      "teamId": 16982462,
+      "teamName": "Lattice Studios",
+      "submissionDate": "2026-10-22T22:13:11.000Z",
+      "score": "22.43759"
+    },
+    {
+      "teamId": 17130217,
+      "teamName": "sv1105",
+      "submissionDate": "2026-10-20T04:32:23.466Z",
+      "score": "22.96998"
+    },
+    {
+      "teamId": 17016548,
+      "teamName": "CARI4D Basline",
+      "submissionDate": "2026-10-01T20:49:43.770Z",
+      "score": "23.16246"
+    },
+    {
+      "teamId": 17079230,
+      "teamName": "Javier Medel, MSc.",
+      "submissionDate": "2026-10-15T16:21:27.253Z",
+      "score": "23.48324"
+    },
+    {
+      "teamId": 17022943,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-21T21:33:07.926Z",
+      "score": "23.91194"
+    },
+    {
+      "teamId": 17143871,
+      "teamName": "longbot",
+      "submissionDate": "2026-10-22T06:14:24.266Z",
+      "score": "24.22002"
+    },
+    {
+      "teamId": 17079477,
+      "teamName": "Mochii",
+      "submissionDate": "2026-10-22T04:41:59.443Z",
+      "score": "24.32395"
+    },
+    {
+      "teamId": 17164804,
+      "teamName": "sean2413",
+      "submissionDate": "2026-10-20T20:10:23.906Z",
+      "score": "24.33904"
+    },
+    {
+      "teamId": 17149969,
+      "teamName": "namul2hand",
+      "submissionDate": "2026-10-21T06:32:35.230Z",
+      "score": "24.46844"
+    },
+    {
+      "teamId": 17153227,
+      "teamName": "avinsingh",
+      "submissionDate": "2026-10-22T15:22:03.436Z",
+      "score": "24.92238"
+    },
+    {
+      "teamId": 17101884,
+      "teamName": "QY Lin",
+      "submissionDate": "2026-10-19T00:42:03.830Z",
+      "score": "25.35290"
+    },
+    {
+      "teamId": 17147367,
+      "teamName": "Ankita Bajaj",
+      "submissionDate": "2026-10-22T10:51:04.336Z",
+      "score": "26.24369"
+    },
+    {
+      "teamId": 17028323,
+      "teamName": "ByeByeHelloHaHaHa",
+      "submissionDate": "2026-10-22T06:32:37.963Z",
+      "score": "28.63230"
+    },
+    {
+      "teamId": 17128800,
+      "teamName": "Null Walker",
+      "submissionDate": "2026-10-21T14:29:21.800Z",
+      "score": "28.90820"
+    },
+    {
+      "teamId": 17093540,
+      "teamName": "AI_CENTER",
+      "submissionDate": "2026-10-22T01:49:39.760Z",
+      "score": "30.95621"
+    },
+    {
+      "teamId": 17158095,
+      "teamName": "Pragun Sharma",
+      "submissionDate": "2026-10-22T07:12:04.726Z",
+      "score": "34.72253"
+    },
+    {
+      "teamId": 17086771,
+      "teamName": "Chivatam",
+      "submissionDate": "2026-10-22T03:48:48.496Z",
+      "score": "38.43505"
+    },
+    {
+      "teamId": 17084985,
+      "teamName": "Marcell",
+      "submissionDate": "2026-10-22T22:16:16.856Z",
+      "score": "39.08162"
+    },
+    {
+      "teamId": 17156186,
+      "teamName": "fw095",
+      "submissionDate": "2026-10-20T17:07:01.490Z",
+      "score": "39.09142"
+    },
+    {
+      "teamId": 17130553,
+      "teamName": "Tony",
+      "submissionDate": "2026-10-20T04:09:09.916Z",
+      "score": "39.12813"
+    },
+    {
+      "teamId": 17174885,
+      "teamName": "qingqian lang",
+      "submissionDate": "2026-10-22T14:03:43.866Z",
+      "score": "45.88251"
+    },
+    {
+      "teamId": 17067864,
+      "teamName": "xiaopai7788",
+      "submissionDate": "2026-10-19T16:02:50.796Z",
+      "score": "49.19655"
+    },
+    {
+      "teamId": 17136145,
+      "teamName": "MostlyKIGuess",
+      "submissionDate": "2026-10-17T17:01:06.913Z",
+      "score": "55.95892"
+    },
+    {
+      "teamId": 17162365,
+      "teamName": "DAInamite",
+      "submissionDate": "2026-10-20T13:18:27.630Z",
+      "score": "57.87167"
+    },
+    {
+      "teamId": 17022489,
+      "teamName": "World Reward",
+      "submissionDate": "2026-10-19T12:05:58.903Z",
+      "score": "68.03361"
+    },
+    {
+      "teamId": 17172241,
+      "teamName": "solidSF.com",
+      "submissionDate": "2026-10-22T03:33:58.440Z",
+      "score": "72.43683"
+    },
+    {
+      "teamId": 17107934,
+      "teamName": "Punya Malaiya",
+      "submissionDate": "2026-10-19T11:36:32.990Z",
+      "score": "78.69475"
+    },
+    {
+      "teamId": 17097457,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-15T09:17:00.593Z",
+      "score": "84.22687"
+    },
+    {
+      "teamId": 17092481,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-22T13:47:07.760Z",
+      "score": "95.76267"
+    },
+    {
+      "teamId": 17051744,
+      "teamName": "um",
+      "submissionDate": "2026-10-08T14:25:18.250Z",
+      "score": "105.26281"
+    },
+    {
+      "teamId": 17153498,
+      "teamName": "NVSimranPatil",
+      "submissionDate": "2026-10-22T14:51:39.503Z",
+      "score": "108.79711"
+    },
+    {
+      "teamId": 17131102,
+      "teamName": "Furqan Zaheer",
+      "submissionDate": "2026-10-16T09:37:53.320Z",
+      "score": "169.91766"
+    }
+  ],
+  "submissions": [
+    {
+      "ref": 57237207,
+      "totalBytes": 15708476,
+      "date": "2026-10-15T16:21:27.253Z",
+      "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+      "fileName": "track1_contact_smoothing_v8.parquet",
+      "publicScore": "23.48324",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57237207/57237207.raw"
+    },
+    {
+      "ref": 57215489,
+      "totalBytes": 15707940,
+      "date": "2026-10-15T03:58:38.597Z",
+      "description": "v7 all-episode depth and geometry sweep: validated Episode 7 object refinement; fixed v6 humans and retained controls",
+      "fileName": "track1_cdo_v7.parquet",
+      "publicScore": "23.61430",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57215489/57215489.raw"
+    },
+    {
+      "ref": 57201706,
+      "totalBytes": 15707998,
+      "date": "2026-10-15T01:38:20.597Z",
+      "description": "v6 Episode 1 hoop geometry with temporal hand-clear depth correction; v5 humans and other episodes unchanged",
+      "fileName": "track1_cdo_v6.parquet",
+      "publicScore": "23.48489",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57201706/57201706.raw"
+    },
+    {
+      "ref": 57197588,
+      "totalBytes": 15757311,
+      "date": "2026-10-14T23:19:43.887Z",
+      "description": "Track 1 v5: temporal poses with hand-inside-object and contact-preserving validation",
+      "fileName": "track1_cdo_v5.parquet",
+      "publicScore": "28.14623",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57197588/57197588.raw"
+    },
+    {
+      "ref": 57196176,
+      "totalBytes": 15757529,
+      "date": "2026-10-14T21:56:30.793Z",
+      "description": "Track 1 v4: temporal object poses, hoop continuity, held-out depth and signed-contact checks",
+      "fileName": "track1_cdo_v4.parquet",
+      "publicScore": "28.45924",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57196176/57196176.raw"
+    },
+    {
+      "ref": 57188875,
+      "totalBytes": 15762580,
+      "date": "2026-10-14T16:30:06.407Z",
+      "description": "Track 1 rollout v3: 23 reviewed improvements, corrected masks and metric meshes, gated tracking and refinement",
+      "fileName": "track1_improvement_rollout_v1.parquet",
+      "publicScore": "34.15571",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57188875/57188875.raw"
+    },
+    {
+      "ref": 57118073,
+      "totalBytes": 15781211,
+      "date": "2026-10-12T20:22:24.240Z",
+      "description": "Corrected masks and quality-gated reconstruction pilot: episodes 6, 18, 28",
+      "fileName": "track1_improvement_pilot_v1.parquet",
+      "publicScore": "75.48250",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57118073/57118073.raw"
+    },
+    {
+      "ref": 57084320,
+      "totalBytes": 15743857,
+      "date": "2026-10-11T19:52:32.437Z",
+      "description": "First CARI4D Blackwell reconstruction",
+      "fileName": "track1_first.parquet",
+      "publicScore": "152.72099",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57084320/57084320.raw"
+    }
+  ],
+  "history_complete": true,
+  "own_best": {
+    "ref": 57237207,
+    "totalBytes": 15708476,
+    "date": "2026-10-15T16:21:27.253Z",
+    "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+    "fileName": "track1_contact_smoothing_v8.parquet",
+    "publicScore": "23.48324",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57237207/57237207.raw"
+  },
+  "own_latest": {
+    "ref": 57237207,
+    "totalBytes": 15708476,
+    "date": "2026-10-15T16:21:27.253Z",
+    "description": "v8 contact-constrained translations, all 30 reviewed, 12 selected against v6",
+    "fileName": "track1_contact_smoothing_v8.parquet",
+    "publicScore": "23.48324",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57237207/57237207.raw"
+  },
+  "targets": {
+    "1": 17.07108,
+    "3": 18.36928,
+    "5": 18.3983,
+    "10": 22.43759
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "a4f2a9c572ce246ae97b946135c3f4ba4c6019a11bf300c60a74092c3606d74b",
+  "reference_sha256": "6bb1a559f630d812fde28c969a99e545aa6715f19df70b98fb92553f7cda29f7",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000017/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-01_17-04-55_traffic_cone_ground_table_02/robot_name=g1/data.parquet",
+  "trajectory_sha256": "8e64d9c212e494abb4a50d2e3fab91f770344ae8d4648304ce354edfa44ffe40",
+  "metrics_sha256": "a5fcaf2e7818bc44f1e82077e6529275bbd5dd5e3c7d1852a26e6b3d368251f1",
+  "export_sha256": "22a7a350e6a84d2146ccc3859707a2f4ef0a132937b83be6d8230a9e0ec6ad80",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "traffic_cone",
+  "rows": 440,
+  "raw_poses_preserved": true
+}

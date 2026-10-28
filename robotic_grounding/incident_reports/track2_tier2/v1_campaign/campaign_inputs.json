@@ -1,0 +1,7 @@
+{
+  "tier": 2,
+  "version": "v1",
+  "inventory_sha256": "6b1d51237c47aa6ac6aa8f58c954e19a1f1569bf105cc67ae3ef1508337c96d3",
+  "training_steps": 5000192,
+  "parent_packet_sha256": null
+}

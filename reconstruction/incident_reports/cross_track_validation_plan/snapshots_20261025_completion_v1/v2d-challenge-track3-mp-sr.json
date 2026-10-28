@@ -1,0 +1,219 @@
+{
+  "observed_utc": "2026-10-25T14:47:59.327857+00:00",
+  "track": "track_3",
+  "metric": "maniptrans_sr",
+  "slug": "v2d-challenge-track3-mp-sr",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 17175739,
+      "teamName": "richchentw",
+      "submissionDate": "2026-10-24T14:21:21.133Z",
+      "score": "1.00000"
+    },
+    {
+      "teamId": 17079703,
+      "teamName": "Zihao Guo",
+      "submissionDate": "2026-10-24T14:27:00.773Z",
+      "score": "0.85000"
+    },
+    {
+      "teamId": 17041588,
+      "teamName": "SoySauceChicken",
+      "submissionDate": "2026-10-23T01:46:18.026Z",
+      "score": "0.80000"
+    },
+    {
+      "teamId": 17176194,
+      "teamName": "DDD",
+      "submissionDate": "2026-10-23T05:16:29.826Z",
+      "score": "0.55000"
+    },
+    {
+      "teamId": 16990300,
+      "teamName": "SRL",
+      "submissionDate": "2026-10-23T23:54:05.030Z",
+      "score": "0.55000"
+    },
+    {
+      "teamId": 17155532,
+      "teamName": "Alcor Z",
+      "submissionDate": "2026-10-20T12:01:53.460Z",
+      "score": "0.40000"
+    },
+    {
+      "teamId": 17196773,
+      "teamName": "Ahmet Ercan Batirel",
+      "submissionDate": "2026-10-25T00:58:50.880Z",
+      "score": "0.40000"
+    },
+    {
+      "teamId": 17083571,
+      "teamName": "Zimo Li",
+      "submissionDate": "2026-10-18T17:59:21.696Z",
+      "score": "0.35000"
+    },
+    {
+      "teamId": 17102313,
+      "teamName": "Sambhav",
+      "submissionDate": "2026-10-22T17:31:41.863Z",
+      "score": "0.35000"
+    },
+    {
+      "teamId": 17136626,
+      "teamName": "Gravity Aligned",
+      "submissionDate": "2026-10-22T03:56:03.453Z",
+      "score": "0.15000"
+    },
+    {
+      "teamId": 17064627,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-23T00:34:23.936Z",
+      "score": "0.10000"
+    },
+    {
+      "teamId": 17066660,
+      "teamName": "venkitprasadreddy",
+      "submissionDate": "2026-10-23T07:33:52.160Z",
+      "score": "0.10000"
+    },
+    {
+      "teamId": 17130098,
+      "teamName": "EIG",
+      "submissionDate": "2026-10-24T12:56:14.866Z",
+      "score": "0.10000"
+    },
+    {
+      "teamId": 17139081,
+      "teamName": "Rian Borah",
+      "submissionDate": "2026-10-17T11:49:07.853Z",
+      "score": "0.05000"
+    },
+    {
+      "teamId": 17165890,
+      "teamName": "SNU Robotics Lab 1",
+      "submissionDate": "2026-10-21T01:52:37.603Z",
+      "score": "0.05000"
+    },
+    {
+      "teamId": 17132013,
+      "teamName": "NVSimranPatil",
+      "submissionDate": "2026-10-25T11:31:44.220Z",
+      "score": "0.05000"
+    },
+    {
+      "teamId": 17021335,
+      "teamName": "Panav Raaj",
+      "submissionDate": "2026-10-18T06:31:26.473Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17075209,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-22T16:23:55.083Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17088989,
+      "teamName": "shearforce",
+      "submissionDate": "2026-10-15T05:59:21.593Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17130859,
+      "teamName": "Tony",
+      "submissionDate": "2026-10-25T07:02:45.406Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17147836,
+      "teamName": "Javier Medel, MSc.",
+      "submissionDate": "2026-10-20T01:08:50.320Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17156976,
+      "teamName": "VihaanAgarwal",
+      "submissionDate": "2026-10-20T03:16:48.473Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17160798,
+      "teamName": "groundedcat04-1",
+      "submissionDate": "2026-10-21T09:42:38.360Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17163446,
+      "teamName": "Chivatam",
+      "submissionDate": "2026-10-25T04:12:33.006Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17158436,
+      "teamName": "ASAP_Team",
+      "submissionDate": "2026-10-24T09:49:01.710Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17167930,
+      "teamName": "namul2s",
+      "submissionDate": "2026-10-23T13:22:14.496Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17198451,
+      "teamName": "Rohith Iruku",
+      "submissionDate": "2026-10-25T05:16:10.113Z",
+      "score": "0.00000"
+    }
+  ],
+  "submissions": [
+    {
+      "ref": 57416115,
+      "totalBytes": 3567453,
+      "date": "2026-10-20T01:08:50.320Z",
+      "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+      "fileName": "track3_submission.parquet",
+      "publicScore": "0.00000",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57416115/57416115.raw"
+    }
+  ],
+  "history_complete": true,
+  "own_best": {
+    "ref": 57416115,
+    "totalBytes": 3567453,
+    "date": "2026-10-20T01:08:50.320Z",
+    "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+    "fileName": "track3_submission.parquet",
+    "publicScore": "0.00000",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57416115/57416115.raw"
+  },
+  "own_latest": {
+    "ref": 57416115,
+    "totalBytes": 3567453,
+    "date": "2026-10-20T01:08:50.320Z",
+    "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+    "fileName": "track3_submission.parquet",
+    "publicScore": "0.00000",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57416115/57416115.raw"
+  },
+  "targets": {
+    "1": 1.0,
+    "3": 0.8,
+    "5": 0.55,
+    "10": 0.15
+  }
+}

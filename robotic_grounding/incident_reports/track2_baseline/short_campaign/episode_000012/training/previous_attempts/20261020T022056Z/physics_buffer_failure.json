@@ -1,0 +1,4 @@
+{
+  "state": "FAILED",
+  "reason": "nefc overflow - please increase njmax to 1081"
+}

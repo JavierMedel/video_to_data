@@ -1,0 +1,73 @@
+{
+  "observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "track": "track_2_tier2",
+  "metric": "add_auc",
+  "slug": "v2d-challenge-track2-tier2-auc",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 17040992,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-18T19:51:55.596Z",
+      "score": "0.51796"
+    },
+    {
+      "teamId": 17028901,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-14T22:47:04.166Z",
+      "score": "0.51379"
+    },
+    {
+      "teamId": 17136104,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T04:48:09.076Z",
+      "score": "0.44253"
+    },
+    {
+      "teamId": 17073088,
+      "teamName": "wte09fl",
+      "submissionDate": "2026-10-19T19:23:55.900Z",
+      "score": "0.38405"
+    },
+    {
+      "teamId": 16994356,
+      "teamName": "CHORD Baseline",
+      "submissionDate": "2026-09-30T23:36:01.736Z",
+      "score": "0.37374"
+    },
+    {
+      "teamId": 17128892,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:26:29.966Z",
+      "score": "0.34684"
+    },
+    {
+      "teamId": 17100142,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-19T00:43:03.713Z",
+      "score": "0.28319"
+    },
+    {
+      "teamId": 17092564,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-18T19:56:57.826Z",
+      "score": "0.26600"
+    },
+    {
+      "teamId": 17126382,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-15T16:00:51.906Z",
+      "score": "0.19193"
+    }
+  ],
+  "submissions": [],
+  "history_complete": true,
+  "own_best": null,
+  "own_latest": null,
+  "targets": {
+    "1": 0.51796,
+    "3": 0.44253,
+    "5": 0.37374,
+    "10": null
+  }
+}

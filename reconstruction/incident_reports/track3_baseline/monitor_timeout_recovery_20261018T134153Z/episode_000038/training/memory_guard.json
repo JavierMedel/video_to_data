@@ -1,0 +1,4 @@
+{
+  "state": "STOPPED_BY_GPU_GUARD",
+  "reason": "GPU monitor unavailable: Command '['nvidia-smi', '--query-gpu=memory.used', '--format=csv,noheader,nounits']' timed out after 5 seconds"
+}

@@ -1,0 +1,61 @@
+    def __init__(
+        self,
+        rot_mode: str = "axisang",
+        side: str = "right",
+        center_idx: Optional[int] = None,
+        mano_assets_root: str = "assets/mano",
+        use_pca: bool = False,
+        flat_hand_mean: bool = True,  # Only used in pca mode
+        ncomps: int = 15,  # Only used in pca mode
+        **kargs,
+    ):
+        super().__init__()
+        self.center_idx = center_idx
+        self.rot_mode = rot_mode
+        self.side = side
+        self.use_pca = use_pca
+        self.mano_assets_root = mano_assets_root
+        self.flat_hand_mean = flat_hand_mean
+        self.ncomps = ncomps if use_pca else -1
+
+        if rot_mode == "axisang":
+            self.rot_dim = 3
+        elif rot_mode == "quat":
+            self.rot_dim = 4
+            if use_pca == True or flat_hand_mean == False:
+                warnings.warn("Quat mode doesn't support PCA pose or non flat_hand_mean !")
+        else:
+            raise NotImplementedError(f"Unrecognized rotation mode, expect [pca|axisang|quat], got {rot_mode}")
+
+        # load model according to side flag
+        mano_assets_path = os.path.join(mano_assets_root, "models", f"MANO_{side.upper()}.pkl")  # eg.  MANO_RIGHT.pkl
+        assert os.path.isfile(
+            mano_assets_path), f"Can not find MANO assets {mano_assets_path}, please follow steps in README.md"
+
+        # parse and register stuff
+        smpl_data = ready_arguments(mano_assets_path)
+        self.register_buffer("th_betas", torch.Tensor(np.array(smpl_data["betas"].r)).unsqueeze(0))
+        self.register_buffer("th_shapedirs", torch.Tensor(np.array(smpl_data["shapedirs"].r)))
+        self.register_buffer("th_posedirs", torch.Tensor(np.array(smpl_data["posedirs"].r)))
+        self.register_buffer("th_v_template", torch.Tensor(np.array(smpl_data["v_template"].r)).unsqueeze(0))
+        self.register_buffer("th_J_regressor", torch.Tensor(np.array(smpl_data["J_regressor"].toarray())))
+        self.register_buffer("th_weights", torch.Tensor(np.array(smpl_data["weights"].r)))
+        self.register_buffer("th_faces", torch.Tensor(np.array(smpl_data["f"]).astype(np.int32)).long())
+
+        kintree_table = smpl_data["kintree_table"]
+        self.kintree_parents = list(kintree_table[0].tolist())
+        hands_components = smpl_data["hands_components"]
+
+        if rot_mode == "axisang":
+            hands_mean = np.zeros(hands_components.shape[1]) if flat_hand_mean else smpl_data["hands_mean"]
+            hands_mean = hands_mean.copy()
+            hands_mean = torch.Tensor(hands_mean).unsqueeze(0)
+            self.register_buffer("th_hands_mean", hands_mean)
+
+        if rot_mode == "axisang" and use_pca == True:
+            selected_components = hands_components[:ncomps]
+            selected_components = torch.Tensor(selected_components)
+            self.register_buffer("th_selected_comps", selected_components)
+
+        # End
+

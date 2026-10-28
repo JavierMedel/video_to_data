@@ -1,0 +1,3217 @@
+[
+  {
+    "episode": 7,
+    "object": "iron",
+    "frames": 777,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000007.mp4",
+        "available": true,
+        "bytes": 22640651
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 818539012
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/mhr_init/episode_000007.pkl",
+        "available": true,
+        "bytes": 3467886
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000007/episode_000007/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 82769
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 3276,
+        "bbox": [
+          755,
+          833,
+          803,
+          928
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 2970,
+        "bbox": [
+          755,
+          837,
+          799,
+          927
+        ]
+      },
+      {
+        "frame": 155,
+        "pixels": 3113,
+        "bbox": [
+          755,
+          837,
+          801,
+          928
+        ]
+      },
+      {
+        "frame": 310,
+        "pixels": 3067,
+        "bbox": [
+          811,
+          538,
+          854,
+          631
+        ]
+      },
+      {
+        "frame": 388,
+        "pixels": 0,
+        "bbox": null
+      },
+      {
+        "frame": 466,
+        "pixels": 1465,
+        "bbox": [
+          736,
+          495,
+          780,
+          538
+        ]
+      },
+      {
+        "frame": 621,
+        "pixels": 1827,
+        "bbox": [
+          690,
+          626,
+          725,
+          692
+        ]
+      },
+      {
+        "frame": 686,
+        "pixels": 3794,
+        "bbox": [
+          749,
+          858,
+          801,
+          957
+        ]
+      },
+      {
+        "frame": 776,
+        "pixels": 3717,
+        "bbox": [
+          749,
+          857,
+          800,
+          957
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 8,
+    "object": "iron",
+    "frames": 634,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000008.mp4",
+        "available": true,
+        "bytes": 18223522
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 747009176
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/mhr_init/episode_000008.pkl",
+        "available": true,
+        "bytes": 2829963
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000008/episode_000008/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 67611
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 17489,
+        "bbox": [
+          1304,
+          497,
+          1535,
+          910
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 18090,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 127,
+        "pixels": 18021,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 253,
+        "pixels": 18003,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 316,
+        "pixels": 17461,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 380,
+        "pixels": 17472,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 506,
+        "pixels": 18074,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 543,
+        "pixels": 18044,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      },
+      {
+        "frame": 633,
+        "pixels": 18028,
+        "bbox": [
+          1304,
+          498,
+          1535,
+          911
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 19,
+    "object": "paint_roller",
+    "frames": 443,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000019.mp4",
+        "available": true,
+        "bytes": 14346970
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 473891580
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/mhr_init/episode_000019.pkl",
+        "available": true,
+        "bytes": 1977903
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000019/episode_000019/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 47356
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 1135,
+        "bbox": [
+          739,
+          647,
+          802,
+          666
+        ]
+      },
+      {
+        "frame": 88,
+        "pixels": 1115,
+        "bbox": [
+          740,
+          647,
+          803,
+          666
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 1055,
+        "bbox": [
+          743,
+          647,
+          803,
+          666
+        ]
+      },
+      {
+        "frame": 177,
+        "pixels": 845,
+        "bbox": [
+          733,
+          656,
+          801,
+          678
+        ]
+      },
+      {
+        "frame": 231,
+        "pixels": 819,
+        "bbox": [
+          738,
+          651,
+          778,
+          681
+        ]
+      },
+      {
+        "frame": 265,
+        "pixels": 658,
+        "bbox": [
+          752,
+          653,
+          783,
+          682
+        ]
+      },
+      {
+        "frame": 354,
+        "pixels": 1422,
+        "bbox": [
+          694,
+          651,
+          770,
+          673
+        ]
+      },
+      {
+        "frame": 372,
+        "pixels": 1388,
+        "bbox": [
+          696,
+          651,
+          771,
+          674
+        ]
+      },
+      {
+        "frame": 442,
+        "pixels": 1537,
+        "bbox": [
+          686,
+          651,
+          772,
+          675
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 20,
+    "object": "paint_roller",
+    "frames": 549,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000020.mp4",
+        "available": true,
+        "bytes": 18003843
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 592802804
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/mhr_init/episode_000020.pkl",
+        "available": true,
+        "bytes": 2450769
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000020/episode_000020/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 58592
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 1434,
+        "bbox": [
+          727,
+          672,
+          790,
+          702
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 1392,
+        "bbox": [
+          727,
+          673,
+          789,
+          702
+        ]
+      },
+      {
+        "frame": 110,
+        "pixels": 1411,
+        "bbox": [
+          727,
+          673,
+          789,
+          702
+        ]
+      },
+      {
+        "frame": 219,
+        "pixels": 1603,
+        "bbox": [
+          725,
+          673,
+          795,
+          699
+        ]
+      },
+      {
+        "frame": 277,
+        "pixels": 908,
+        "bbox": [
+          716,
+          667,
+          756,
+          698
+        ]
+      },
+      {
+        "frame": 329,
+        "pixels": 313,
+        "bbox": [
+          844,
+          685,
+          857,
+          714
+        ]
+      },
+      {
+        "frame": 438,
+        "pixels": 1255,
+        "bbox": [
+          674,
+          666,
+          733,
+          693
+        ]
+      },
+      {
+        "frame": 483,
+        "pixels": 1394,
+        "bbox": [
+          736,
+          675,
+          798,
+          706
+        ]
+      },
+      {
+        "frame": 548,
+        "pixels": 1370,
+        "bbox": [
+          736,
+          675,
+          797,
+          706
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 27,
+    "object": "white_laptop_cart",
+    "frames": 440,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000027.mp4",
+        "available": true,
+        "bytes": 14761642
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 533801776
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/mhr_init/episode_000027.pkl",
+        "available": true,
+        "bytes": 1964520
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000027/episode_000027/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 47038
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 14641,
+        "bbox": [
+          651,
+          736,
+          812,
+          1034
+        ]
+      },
+      {
+        "frame": 84,
+        "pixels": 14355,
+        "bbox": [
+          652,
+          736,
+          812,
+          1033
+        ]
+      },
+      {
+        "frame": 88,
+        "pixels": 14983,
+        "bbox": [
+          652,
+          735,
+          813,
+          1034
+        ]
+      },
+      {
+        "frame": 176,
+        "pixels": 15710,
+        "bbox": [
+          596,
+          651,
+          868,
+          937
+        ]
+      },
+      {
+        "frame": 205,
+        "pixels": 18978,
+        "bbox": [
+          642,
+          747,
+          891,
+          993
+        ]
+      },
+      {
+        "frame": 263,
+        "pixels": 20708,
+        "bbox": [
+          670,
+          833,
+          916,
+          1068
+        ]
+      },
+      {
+        "frame": 326,
+        "pixels": 21614,
+        "bbox": [
+          663,
+          834,
+          915,
+          1070
+        ]
+      },
+      {
+        "frame": 351,
+        "pixels": 22689,
+        "bbox": [
+          658,
+          833,
+          916,
+          1071
+        ]
+      },
+      {
+        "frame": 439,
+        "pixels": 22108,
+        "bbox": [
+          658,
+          834,
+          915,
+          1070
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 29,
+    "object": "white_laptop_cart",
+    "frames": 419,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000029.mp4",
+        "available": true,
+        "bytes": 13630018
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 440487652
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/mhr_init/episode_000029.pkl",
+        "available": true,
+        "bytes": 1870839
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000029/episode_000029/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 44812
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 10883,
+        "bbox": [
+          735,
+          658,
+          893,
+          916
+        ]
+      },
+      {
+        "frame": 38,
+        "pixels": 10591,
+        "bbox": [
+          735,
+          658,
+          892,
+          916
+        ]
+      },
+      {
+        "frame": 84,
+        "pixels": 8994,
+        "bbox": [
+          732,
+          658,
+          849,
+          913
+        ]
+      },
+      {
+        "frame": 167,
+        "pixels": 7719,
+        "bbox": [
+          647,
+          645,
+          764,
+          870
+        ]
+      },
+      {
+        "frame": 171,
+        "pixels": 7964,
+        "bbox": [
+          646,
+          645,
+          764,
+          870
+        ]
+      },
+      {
+        "frame": 251,
+        "pixels": 11840,
+        "bbox": [
+          470,
+          664,
+          616,
+          923
+        ]
+      },
+      {
+        "frame": 304,
+        "pixels": 11222,
+        "bbox": [
+          470,
+          664,
+          614,
+          923
+        ]
+      },
+      {
+        "frame": 334,
+        "pixels": 13316,
+        "bbox": [
+          470,
+          664,
+          632,
+          923
+        ]
+      },
+      {
+        "frame": 418,
+        "pixels": 13535,
+        "bbox": [
+          469,
+          664,
+          641,
+          923
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 0,
+    "object": "hula_hoop",
+    "frames": 790,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000000.mp4",
+        "available": true,
+        "bytes": 21716125
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 809621584
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/mhr_init/episode_000000.pkl",
+        "available": true,
+        "bytes": 3525879
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000000/episode_000000/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 84147
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 3645,
+        "bbox": [
+          632,
+          776,
+          813,
+          843
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 3324,
+        "bbox": [
+          632,
+          777,
+          812,
+          843
+        ]
+      },
+      {
+        "frame": 158,
+        "pixels": 3063,
+        "bbox": [
+          632,
+          777,
+          812,
+          843
+        ]
+      },
+      {
+        "frame": 232,
+        "pixels": 2733,
+        "bbox": [
+          631,
+          778,
+          812,
+          843
+        ]
+      },
+      {
+        "frame": 316,
+        "pixels": 2391,
+        "bbox": [
+          631,
+          784,
+          812,
+          843
+        ]
+      },
+      {
+        "frame": 473,
+        "pixels": 2399,
+        "bbox": [
+          656,
+          485,
+          830,
+          561
+        ]
+      },
+      {
+        "frame": 631,
+        "pixels": 2821,
+        "bbox": [
+          753,
+          724,
+          933,
+          784
+        ]
+      },
+      {
+        "frame": 699,
+        "pixels": 3680,
+        "bbox": [
+          740,
+          797,
+          928,
+          873
+        ]
+      },
+      {
+        "frame": 789,
+        "pixels": 3795,
+        "bbox": [
+          739,
+          797,
+          928,
+          873
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 1,
+    "object": "hula_hoop",
+    "frames": 668,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000001.mp4",
+        "available": true,
+        "bytes": 18324428
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 703979440
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/mhr_init/episode_000001.pkl",
+        "available": true,
+        "bytes": 2981657
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 71215
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 5604,
+        "bbox": [
+          594,
+          852,
+          818,
+          972
+        ]
+      },
+      {
+        "frame": 133,
+        "pixels": 4358,
+        "bbox": [
+          583,
+          723,
+          711,
+          918
+        ]
+      },
+      {
+        "frame": 151,
+        "pixels": 4852,
+        "bbox": [
+          544,
+          574,
+          723,
+          759
+        ]
+      },
+      {
+        "frame": 267,
+        "pixels": 2949,
+        "bbox": [
+          640,
+          569,
+          754,
+          767
+        ]
+      },
+      {
+        "frame": 355,
+        "pixels": 3727,
+        "bbox": [
+          676,
+          533,
+          872,
+          731
+        ]
+      },
+      {
+        "frame": 400,
+        "pixels": 4145,
+        "bbox": [
+          664,
+          522,
+          833,
+          708
+        ]
+      },
+      {
+        "frame": 461,
+        "pixels": 4668,
+        "bbox": [
+          707,
+          584,
+          883,
+          785
+        ]
+      },
+      {
+        "frame": 534,
+        "pixels": 6124,
+        "bbox": [
+          463,
+          792,
+          700,
+          1005
+        ]
+      },
+      {
+        "frame": 667,
+        "pixels": 7203,
+        "bbox": [
+          458,
+          888,
+          724,
+          1027
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 2,
+    "object": "hula_hoop",
+    "frames": 866,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000002.mp4",
+        "available": true,
+        "bytes": 28822754
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 905968840
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/mhr_init/episode_000002.pkl",
+        "available": true,
+        "bytes": 3864915
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000002/episode_000002/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 92203
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 6264,
+        "bbox": [
+          601,
+          869,
+          848,
+          991
+        ]
+      },
+      {
+        "frame": 173,
+        "pixels": 5888,
+        "bbox": [
+          601,
+          869,
+          847,
+          990
+        ]
+      },
+      {
+        "frame": 236,
+        "pixels": 5623,
+        "bbox": [
+          604,
+          603,
+          849,
+          786
+        ]
+      },
+      {
+        "frame": 346,
+        "pixels": 3662,
+        "bbox": [
+          618,
+          529,
+          821,
+          711
+        ]
+      },
+      {
+        "frame": 519,
+        "pixels": 7273,
+        "bbox": [
+          577,
+          428,
+          836,
+          681
+        ]
+      },
+      {
+        "frame": 692,
+        "pixels": 1847,
+        "bbox": [
+          566,
+          802,
+          694,
+          882
+        ]
+      },
+      {
+        "frame": 745,
+        "pixels": 2579,
+        "bbox": [
+          565,
+          805,
+          702,
+          893
+        ]
+      },
+      {
+        "frame": 786,
+        "pixels": 3763,
+        "bbox": [
+          566,
+          805,
+          745,
+          893
+        ]
+      },
+      {
+        "frame": 865,
+        "pixels": 4178,
+        "bbox": [
+          566,
+          805,
+          757,
+          893
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 3,
+    "object": "big_red_bowl",
+    "frames": 592,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000003.mp4",
+        "available": true,
+        "bytes": 16656000
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 638341160
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/mhr_init/episode_000003.pkl",
+        "available": true,
+        "bytes": 2642601
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000003/episode_000003/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 63150
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 3953,
+        "bbox": [
+          770,
+          647,
+          861,
+          701
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 3906,
+        "bbox": [
+          771,
+          647,
+          860,
+          701
+        ]
+      },
+      {
+        "frame": 118,
+        "pixels": 3926,
+        "bbox": [
+          770,
+          647,
+          860,
+          701
+        ]
+      },
+      {
+        "frame": 236,
+        "pixels": 4459,
+        "bbox": [
+          721,
+          641,
+          818,
+          707
+        ]
+      },
+      {
+        "frame": 294,
+        "pixels": 6455,
+        "bbox": [
+          749,
+          611,
+          837,
+          703
+        ]
+      },
+      {
+        "frame": 355,
+        "pixels": 5831,
+        "bbox": [
+          755,
+          610,
+          848,
+          698
+        ]
+      },
+      {
+        "frame": 473,
+        "pixels": 4525,
+        "bbox": [
+          760,
+          655,
+          853,
+          713
+        ]
+      },
+      {
+        "frame": 501,
+        "pixels": 4385,
+        "bbox": [
+          760,
+          655,
+          854,
+          713
+        ]
+      },
+      {
+        "frame": 591,
+        "pixels": 4357,
+        "bbox": [
+          759,
+          655,
+          853,
+          712
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 4,
+    "object": "big_red_bowl",
+    "frames": 747,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000004.mp4",
+        "available": true,
+        "bytes": 21247810
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 920774612
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/mhr_init/episode_000004.pkl",
+        "available": true,
+        "bytes": 3334056
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000004/episode_000004/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 79589
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 2951,
+        "bbox": [
+          660,
+          603,
+          738,
+          649
+        ]
+      },
+      {
+        "frame": 125,
+        "pixels": 2885,
+        "bbox": [
+          658,
+          604,
+          737,
+          649
+        ]
+      },
+      {
+        "frame": 149,
+        "pixels": 2897,
+        "bbox": [
+          667,
+          607,
+          746,
+          652
+        ]
+      },
+      {
+        "frame": 298,
+        "pixels": 853,
+        "bbox": [
+          645,
+          608,
+          678,
+          650
+        ]
+      },
+      {
+        "frame": 390,
+        "pixels": 2337,
+        "bbox": [
+          685,
+          600,
+          749,
+          645
+        ]
+      },
+      {
+        "frame": 448,
+        "pixels": 1896,
+        "bbox": [
+          687,
+          599,
+          750,
+          645
+        ]
+      },
+      {
+        "frame": 597,
+        "pixels": 3082,
+        "bbox": [
+          686,
+          607,
+          767,
+          655
+        ]
+      },
+      {
+        "frame": 649,
+        "pixels": 3246,
+        "bbox": [
+          619,
+          609,
+          701,
+          658
+        ]
+      },
+      {
+        "frame": 746,
+        "pixels": 3251,
+        "bbox": [
+          619,
+          609,
+          701,
+          658
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 5,
+    "object": "big_red_bowl",
+    "frames": 668,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000005.mp4",
+        "available": true,
+        "bytes": 18477663
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 835253352
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/mhr_init/episode_000005.pkl",
+        "available": true,
+        "bytes": 2981637
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_submission/episode_000005/episode_000005/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 71215
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 4196,
+        "bbox": [
+          625,
+          828,
+          707,
+          892
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 4195,
+        "bbox": [
+          625,
+          828,
+          708,
+          892
+        ]
+      },
+      {
+        "frame": 133,
+        "pixels": 4368,
+        "bbox": [
+          596,
+          791,
+          678,
+          858
+        ]
+      },
+      {
+        "frame": 267,
+        "pixels": 4851,
+        "bbox": [
+          626,
+          523,
+          709,
+          595
+        ]
+      },
+      {
+        "frame": 347,
+        "pixels": 5315,
+        "bbox": [
+          695,
+          479,
+          780,
+          560
+        ]
+      },
+      {
+        "frame": 400,
+        "pixels": 4591,
+        "bbox": [
+          780,
+          496,
+          863,
+          577
+        ]
+      },
+      {
+        "frame": 534,
+        "pixels": 5468,
+        "bbox": [
+          769,
+          732,
+          870,
+          803
+        ]
+      },
+      {
+        "frame": 577,
+        "pixels": 5286,
+        "bbox": [
+          761,
+          740,
+          862,
+          807
+        ]
+      },
+      {
+        "frame": 667,
+        "pixels": 5204,
+        "bbox": [
+          762,
+          740,
+          863,
+          806
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 9,
+    "object": "white_desk",
+    "frames": 415,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000009.mp4",
+        "available": true,
+        "bytes": 11564665
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 522742908
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/mhr_init/episode_000009.pkl",
+        "available": true,
+        "bytes": 1852995
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000009/episode_000009/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 44388
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 6026,
+        "bbox": [
+          795,
+          542,
+          1127,
+          696
+        ]
+      },
+      {
+        "frame": 83,
+        "pixels": 10073,
+        "bbox": [
+          796,
+          546,
+          1129,
+          696
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 10123,
+        "bbox": [
+          796,
+          546,
+          1129,
+          696
+        ]
+      },
+      {
+        "frame": 166,
+        "pixels": 10000,
+        "bbox": [
+          795,
+          546,
+          1137,
+          696
+        ]
+      },
+      {
+        "frame": 248,
+        "pixels": 10344,
+        "bbox": [
+          796,
+          546,
+          1143,
+          696
+        ]
+      },
+      {
+        "frame": 252,
+        "pixels": 10317,
+        "bbox": [
+          796,
+          546,
+          1143,
+          696
+        ]
+      },
+      {
+        "frame": 331,
+        "pixels": 10334,
+        "bbox": [
+          796,
+          546,
+          1143,
+          696
+        ]
+      },
+      {
+        "frame": 414,
+        "pixels": 10058,
+        "bbox": [
+          796,
+          546,
+          1135,
+          696
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 10,
+    "object": "white_desk",
+    "frames": 577,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000010.mp4",
+        "available": true,
+        "bytes": 14926552
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 617694668
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/mhr_init/episode_000010.pkl",
+        "available": true,
+        "bytes": 2575677
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000010/episode_000010/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 61560
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 24289,
+        "bbox": [
+          659,
+          623,
+          972,
+          943
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 23573,
+        "bbox": [
+          658,
+          623,
+          973,
+          943
+        ]
+      },
+      {
+        "frame": 115,
+        "pixels": 23447,
+        "bbox": [
+          658,
+          624,
+          972,
+          943
+        ]
+      },
+      {
+        "frame": 230,
+        "pixels": 23717,
+        "bbox": [
+          658,
+          623,
+          972,
+          943
+        ]
+      },
+      {
+        "frame": 298,
+        "pixels": 23749,
+        "bbox": [
+          658,
+          623,
+          972,
+          943
+        ]
+      },
+      {
+        "frame": 346,
+        "pixels": 24445,
+        "bbox": [
+          658,
+          623,
+          973,
+          943
+        ]
+      },
+      {
+        "frame": 461,
+        "pixels": 31495,
+        "bbox": [
+          422,
+          646,
+          787,
+          1037
+        ]
+      },
+      {
+        "frame": 507,
+        "pixels": 31981,
+        "bbox": [
+          423,
+          646,
+          789,
+          1037
+        ]
+      },
+      {
+        "frame": 576,
+        "pixels": 31351,
+        "bbox": [
+          423,
+          646,
+          788,
+          1037
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 11,
+    "object": "white_desk",
+    "frames": 877,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000011.mp4",
+        "available": true,
+        "bytes": 30120808
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 969744220
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/mhr_init/episode_000011.pkl",
+        "available": true,
+        "bytes": 3913986
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 93369
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 21601,
+        "bbox": [
+          603,
+          623,
+          910,
+          928
+        ]
+      },
+      {
+        "frame": 175,
+        "pixels": 21156,
+        "bbox": [
+          621,
+          623,
+          911,
+          929
+        ]
+      },
+      {
+        "frame": 350,
+        "pixels": 22050,
+        "bbox": [
+          607,
+          622,
+          911,
+          929
+        ]
+      },
+      {
+        "frame": 401,
+        "pixels": 22094,
+        "bbox": [
+          603,
+          622,
+          911,
+          929
+        ]
+      },
+      {
+        "frame": 526,
+        "pixels": 21496,
+        "bbox": [
+          602,
+          623,
+          909,
+          929
+        ]
+      },
+      {
+        "frame": 701,
+        "pixels": 21713,
+        "bbox": [
+          608,
+          624,
+          911,
+          929
+        ]
+      },
+      {
+        "frame": 802,
+        "pixels": 87515,
+        "bbox": [
+          685,
+          753,
+          1110,
+          1111
+        ]
+      },
+      {
+        "frame": 876,
+        "pixels": 89268,
+        "bbox": [
+          685,
+          728,
+          1111,
+          1112
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 12,
+    "object": "black_pan",
+    "frames": 405,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000012.mp4",
+        "available": true,
+        "bytes": 12982814
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 504869620
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/mhr_init/episode_000012.pkl",
+        "available": true,
+        "bytes": 1808385
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 43328
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 1583,
+        "bbox": [
+          615,
+          708,
+          681,
+          736
+        ]
+      },
+      {
+        "frame": 69,
+        "pixels": 1537,
+        "bbox": [
+          615,
+          709,
+          681,
+          736
+        ]
+      },
+      {
+        "frame": 81,
+        "pixels": 1534,
+        "bbox": [
+          615,
+          709,
+          681,
+          736
+        ]
+      },
+      {
+        "frame": 162,
+        "pixels": 1017,
+        "bbox": [
+          661,
+          593,
+          714,
+          617
+        ]
+      },
+      {
+        "frame": 202,
+        "pixels": 1467,
+        "bbox": [
+          655,
+          547,
+          706,
+          583
+        ]
+      },
+      {
+        "frame": 242,
+        "pixels": 1240,
+        "bbox": [
+          631,
+          542,
+          679,
+          579
+        ]
+      },
+      {
+        "frame": 323,
+        "pixels": 1620,
+        "bbox": [
+          641,
+          691,
+          704,
+          723
+        ]
+      },
+      {
+        "frame": 365,
+        "pixels": 1514,
+        "bbox": [
+          640,
+          706,
+          703,
+          734
+        ]
+      },
+      {
+        "frame": 404,
+        "pixels": 1517,
+        "bbox": [
+          640,
+          706,
+          703,
+          734
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 13,
+    "object": "black_pan",
+    "frames": 425,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000013.mp4",
+        "available": true,
+        "bytes": 13619019
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 456290644
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/mhr_init/episode_000013.pkl",
+        "available": true,
+        "bytes": 1897605
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000013/episode_000013/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 45448
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 1246,
+        "bbox": [
+          660,
+          640,
+          729,
+          673
+        ]
+      },
+      {
+        "frame": 75,
+        "pixels": 1142,
+        "bbox": [
+          659,
+          643,
+          719,
+          673
+        ]
+      },
+      {
+        "frame": 85,
+        "pixels": 1124,
+        "bbox": [
+          659,
+          650,
+          715,
+          673
+        ]
+      },
+      {
+        "frame": 146,
+        "pixels": 801,
+        "bbox": [
+          720,
+          583,
+          776,
+          602
+        ]
+      },
+      {
+        "frame": 170,
+        "pixels": 627,
+        "bbox": [
+          762,
+          568,
+          810,
+          583
+        ]
+      },
+      {
+        "frame": 254,
+        "pixels": 1258,
+        "bbox": [
+          870,
+          530,
+          927,
+          561
+        ]
+      },
+      {
+        "frame": 339,
+        "pixels": 1120,
+        "bbox": [
+          654,
+          645,
+          711,
+          668
+        ]
+      },
+      {
+        "frame": 370,
+        "pixels": 1197,
+        "bbox": [
+          657,
+          651,
+          712,
+          676
+        ]
+      },
+      {
+        "frame": 424,
+        "pixels": 1332,
+        "bbox": [
+          657,
+          641,
+          725,
+          676
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 14,
+    "object": "black_pan",
+    "frames": 442,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000014.mp4",
+        "available": true,
+        "bytes": 14565467
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 539233464
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/mhr_init/episode_000014.pkl",
+        "available": true,
+        "bytes": 1973442
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000014/episode_000014/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 47250
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 1484,
+        "bbox": [
+          663,
+          700,
+          726,
+          727
+        ]
+      },
+      {
+        "frame": 88,
+        "pixels": 1490,
+        "bbox": [
+          663,
+          700,
+          726,
+          727
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 1486,
+        "bbox": [
+          663,
+          700,
+          726,
+          727
+        ]
+      },
+      {
+        "frame": 176,
+        "pixels": 904,
+        "bbox": [
+          700,
+          606,
+          756,
+          624
+        ]
+      },
+      {
+        "frame": 265,
+        "pixels": 782,
+        "bbox": [
+          751,
+          582,
+          805,
+          600
+        ]
+      },
+      {
+        "frame": 339,
+        "pixels": 1015,
+        "bbox": [
+          730,
+          611,
+          786,
+          633
+        ]
+      },
+      {
+        "frame": 353,
+        "pixels": 900,
+        "bbox": [
+          679,
+          642,
+          737,
+          664
+        ]
+      },
+      {
+        "frame": 387,
+        "pixels": 1509,
+        "bbox": [
+          659,
+          698,
+          720,
+          726
+        ]
+      },
+      {
+        "frame": 441,
+        "pixels": 1430,
+        "bbox": [
+          659,
+          699,
+          720,
+          726
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 15,
+    "object": "foam_grass_block",
+    "frames": 501,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000015.mp4",
+        "available": true,
+        "bytes": 17030518
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 622516436
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/mhr_init/episode_000015.pkl",
+        "available": false,
+        "bytes": 0
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/episode_000015_test/2026-09-10_16-14-06_foam_grass_block_rotate_02/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 53504
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 4079,
+        "bbox": [
+          689,
+          665,
+          753,
+          733
+        ]
+      },
+      {
+        "frame": 81,
+        "pixels": 4165,
+        "bbox": [
+          689,
+          665,
+          753,
+          733
+        ]
+      },
+      {
+        "frame": 100,
+        "pixels": 4041,
+        "bbox": [
+          687,
+          666,
+          752,
+          733
+        ]
+      },
+      {
+        "frame": 200,
+        "pixels": 3938,
+        "bbox": [
+          655,
+          500,
+          725,
+          575
+        ]
+      },
+      {
+        "frame": 259,
+        "pixels": 4680,
+        "bbox": [
+          648,
+          498,
+          723,
+          580
+        ]
+      },
+      {
+        "frame": 300,
+        "pixels": 4302,
+        "bbox": [
+          656,
+          504,
+          723,
+          580
+        ]
+      },
+      {
+        "frame": 400,
+        "pixels": 4343,
+        "bbox": [
+          590,
+          641,
+          663,
+          709
+        ]
+      },
+      {
+        "frame": 436,
+        "pixels": 4581,
+        "bbox": [
+          580,
+          660,
+          655,
+          726
+        ]
+      },
+      {
+        "frame": 500,
+        "pixels": 4623,
+        "bbox": [
+          580,
+          660,
+          656,
+          726
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 16,
+    "object": "foam_grass_block",
+    "frames": 360,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000016.mp4",
+        "available": true,
+        "bytes": 11744057
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/episode_000016/cari4d_aligned_depth.h5",
+        "available": true,
+        "bytes": 498878952
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/episode_000016/cari4d_sam3d_body.pt",
+        "available": true,
+        "bytes": 1608954
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/episode_000016/moge/intrinsics.pkl",
+        "available": false,
+        "bytes": 0
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 5285,
+        "bbox": [
+          662,
+          651,
+          744,
+          721
+        ]
+      },
+      {
+        "frame": 50,
+        "pixels": 5316,
+        "bbox": [
+          661,
+          650,
+          744,
+          722
+        ]
+      },
+      {
+        "frame": 72,
+        "pixels": 5065,
+        "bbox": [
+          671,
+          628,
+          751,
+          699
+        ]
+      },
+      {
+        "frame": 144,
+        "pixels": 5093,
+        "bbox": [
+          671,
+          585,
+          750,
+          668
+        ]
+      },
+      {
+        "frame": 170,
+        "pixels": 5119,
+        "bbox": [
+          673,
+          583,
+          750,
+          660
+        ]
+      },
+      {
+        "frame": 215,
+        "pixels": 4893,
+        "bbox": [
+          677,
+          569,
+          750,
+          657
+        ]
+      },
+      {
+        "frame": 287,
+        "pixels": 5343,
+        "bbox": [
+          657,
+          648,
+          738,
+          722
+        ]
+      },
+      {
+        "frame": 289,
+        "pixels": 5216,
+        "bbox": [
+          658,
+          649,
+          737,
+          721
+        ]
+      },
+      {
+        "frame": 359,
+        "pixels": 5181,
+        "bbox": [
+          658,
+          650,
+          737,
+          721
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 17,
+    "object": "foam_grass_block",
+    "frames": 419,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000017.mp4",
+        "available": true,
+        "bytes": 13432528
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 447473124
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/mhr_init/episode_000017.pkl",
+        "available": true,
+        "bytes": 1870839
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000017/episode_000017/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 44812
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 4889,
+        "bbox": [
+          689,
+          614,
+          768,
+          683
+        ]
+      },
+      {
+        "frame": 75,
+        "pixels": 4933,
+        "bbox": [
+          690,
+          614,
+          768,
+          683
+        ]
+      },
+      {
+        "frame": 84,
+        "pixels": 4901,
+        "bbox": [
+          690,
+          615,
+          768,
+          683
+        ]
+      },
+      {
+        "frame": 167,
+        "pixels": 4459,
+        "bbox": [
+          696,
+          527,
+          772,
+          593
+        ]
+      },
+      {
+        "frame": 213,
+        "pixels": 3390,
+        "bbox": [
+          768,
+          529,
+          836,
+          585
+        ]
+      },
+      {
+        "frame": 251,
+        "pixels": 3962,
+        "bbox": [
+          918,
+          522,
+          992,
+          578
+        ]
+      },
+      {
+        "frame": 334,
+        "pixels": 4061,
+        "bbox": [
+          971,
+          808,
+          1045,
+          887
+        ]
+      },
+      {
+        "frame": 351,
+        "pixels": 4921,
+        "bbox": [
+          969,
+          812,
+          1044,
+          890
+        ]
+      },
+      {
+        "frame": 418,
+        "pixels": 4979,
+        "bbox": [
+          969,
+          812,
+          1045,
+          890
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 21,
+    "object": "pink_foam_roll",
+    "frames": 563,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000021.mp4",
+        "available": true,
+        "bytes": 18861975
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 587122356
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/mhr_init/episode_000021.pkl",
+        "available": true,
+        "bytes": 2513223
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000021/episode_000021/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 60076
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 4045,
+        "bbox": [
+          623,
+          811,
+          754,
+          877
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 3998,
+        "bbox": [
+          623,
+          811,
+          753,
+          878
+        ]
+      },
+      {
+        "frame": 112,
+        "pixels": 3702,
+        "bbox": [
+          622,
+          815,
+          738,
+          878
+        ]
+      },
+      {
+        "frame": 225,
+        "pixels": 5109,
+        "bbox": [
+          614,
+          711,
+          645,
+          884
+        ]
+      },
+      {
+        "frame": 263,
+        "pixels": 5806,
+        "bbox": [
+          606,
+          731,
+          641,
+          919
+        ]
+      },
+      {
+        "frame": 337,
+        "pixels": 7014,
+        "bbox": [
+          812,
+          761,
+          866,
+          964
+        ]
+      },
+      {
+        "frame": 436,
+        "pixels": 9754,
+        "bbox": [
+          677,
+          945,
+          896,
+          1016
+        ]
+      },
+      {
+        "frame": 450,
+        "pixels": 10185,
+        "bbox": [
+          668,
+          962,
+          893,
+          1017
+        ]
+      },
+      {
+        "frame": 562,
+        "pixels": 10297,
+        "bbox": [
+          667,
+          964,
+          893,
+          1017
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 22,
+    "object": "pink_foam_roll",
+    "frames": 533,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000022.mp4",
+        "available": true,
+        "bytes": 18346879
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 677905044
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/mhr_init/episode_000022.pkl",
+        "available": true,
+        "bytes": 2379393
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000022/episode_000022/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 56896
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 6540,
+        "bbox": [
+          593,
+          536,
+          631,
+          730
+        ]
+      },
+      {
+        "frame": 18,
+        "pixels": 6525,
+        "bbox": [
+          592,
+          536,
+          630,
+          731
+        ]
+      },
+      {
+        "frame": 106,
+        "pixels": 5363,
+        "bbox": [
+          580,
+          679,
+          738,
+          728
+        ]
+      },
+      {
+        "frame": 213,
+        "pixels": 5202,
+        "bbox": [
+          580,
+          679,
+          738,
+          727
+        ]
+      },
+      {
+        "frame": 244,
+        "pixels": 5331,
+        "bbox": [
+          592,
+          676,
+          749,
+          725
+        ]
+      },
+      {
+        "frame": 319,
+        "pixels": 4710,
+        "bbox": [
+          510,
+          694,
+          678,
+          748
+        ]
+      },
+      {
+        "frame": 426,
+        "pixels": 5365,
+        "bbox": [
+          531,
+          689,
+          698,
+          740
+        ]
+      },
+      {
+        "frame": 469,
+        "pixels": 5890,
+        "bbox": [
+          537,
+          688,
+          704,
+          738
+        ]
+      },
+      {
+        "frame": 532,
+        "pixels": 5957,
+        "bbox": [
+          536,
+          687,
+          704,
+          739
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 23,
+    "object": "pink_foam_roll",
+    "frames": 552,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000023.mp4",
+        "available": true,
+        "bytes": 18480186
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 672820384
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/mhr_init/episode_000023.pkl",
+        "available": true,
+        "bytes": 2464152
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000023/episode_000023/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 58910
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 7276,
+        "bbox": [
+          595,
+          924,
+          782,
+          982
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 7126,
+        "bbox": [
+          595,
+          924,
+          781,
+          982
+        ]
+      },
+      {
+        "frame": 110,
+        "pixels": 7031,
+        "bbox": [
+          595,
+          924,
+          779,
+          981
+        ]
+      },
+      {
+        "frame": 220,
+        "pixels": 6253,
+        "bbox": [
+          711,
+          793,
+          749,
+          981
+        ]
+      },
+      {
+        "frame": 289,
+        "pixels": 6105,
+        "bbox": [
+          728,
+          766,
+          764,
+          951
+        ]
+      },
+      {
+        "frame": 331,
+        "pixels": 6240,
+        "bbox": [
+          736,
+          759,
+          770,
+          955
+        ]
+      },
+      {
+        "frame": 441,
+        "pixels": 6893,
+        "bbox": [
+          682,
+          785,
+          804,
+          969
+        ]
+      },
+      {
+        "frame": 488,
+        "pixels": 6664,
+        "bbox": [
+          611,
+          907,
+          781,
+          983
+        ]
+      },
+      {
+        "frame": 551,
+        "pixels": 6752,
+        "bbox": [
+          611,
+          905,
+          781,
+          983
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 24,
+    "object": "short_wood_stool",
+    "frames": 420,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000024.mp4",
+        "available": true,
+        "bytes": 13954465
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 533311696
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/mhr_init/episode_000024.pkl",
+        "available": true,
+        "bytes": 1875300
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000024/episode_000024/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 44918
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 16436,
+        "bbox": [
+          706,
+          810,
+          851,
+          1038
+        ]
+      },
+      {
+        "frame": 61,
+        "pixels": 16260,
+        "bbox": [
+          710,
+          811,
+          851,
+          1038
+        ]
+      },
+      {
+        "frame": 84,
+        "pixels": 16303,
+        "bbox": [
+          707,
+          811,
+          851,
+          1038
+        ]
+      },
+      {
+        "frame": 168,
+        "pixels": 9878,
+        "bbox": [
+          706,
+          842,
+          830,
+          1039
+        ]
+      },
+      {
+        "frame": 181,
+        "pixels": 10221,
+        "bbox": [
+          706,
+          841,
+          832,
+          1038
+        ]
+      },
+      {
+        "frame": 251,
+        "pixels": 12498,
+        "bbox": [
+          706,
+          826,
+          851,
+          1038
+        ]
+      },
+      {
+        "frame": 302,
+        "pixels": 16131,
+        "bbox": [
+          710,
+          811,
+          851,
+          1038
+        ]
+      },
+      {
+        "frame": 335,
+        "pixels": 16067,
+        "bbox": [
+          710,
+          811,
+          851,
+          1038
+        ]
+      },
+      {
+        "frame": 419,
+        "pixels": 16028,
+        "bbox": [
+          710,
+          811,
+          851,
+          1038
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 25,
+    "object": "short_wood_stool",
+    "frames": 365,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000025.mp4",
+        "available": true,
+        "bytes": 12900883
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 461503220
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/mhr_init/episode_000025.pkl",
+        "available": true,
+        "bytes": 1629945
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000025/episode_000025/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 39088
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 13996,
+        "bbox": [
+          530,
+          827,
+          640,
+          1042
+        ]
+      },
+      {
+        "frame": 73,
+        "pixels": 13751,
+        "bbox": [
+          531,
+          828,
+          640,
+          1042
+        ]
+      },
+      {
+        "frame": 90,
+        "pixels": 13608,
+        "bbox": [
+          531,
+          828,
+          640,
+          1041
+        ]
+      },
+      {
+        "frame": 146,
+        "pixels": 10363,
+        "bbox": [
+          528,
+          688,
+          644,
+          863
+        ]
+      },
+      {
+        "frame": 199,
+        "pixels": 18080,
+        "bbox": [
+          554,
+          738,
+          772,
+          936
+        ]
+      },
+      {
+        "frame": 218,
+        "pixels": 15026,
+        "bbox": [
+          533,
+          727,
+          704,
+          887
+        ]
+      },
+      {
+        "frame": 291,
+        "pixels": 18360,
+        "bbox": [
+          723,
+          865,
+          865,
+          1137
+        ]
+      },
+      {
+        "frame": 308,
+        "pixels": 18137,
+        "bbox": [
+          722,
+          872,
+          861,
+          1149
+        ]
+      },
+      {
+        "frame": 364,
+        "pixels": 20421,
+        "bbox": [
+          723,
+          871,
+          861,
+          1148
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  },
+  {
+    "episode": 26,
+    "object": "short_wood_stool",
+    "frames": 399,
+    "files": {
+      "video": {
+        "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000026.mp4",
+        "available": true,
+        "bytes": 13430270
+      },
+      "depth": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/aligned.h5",
+        "available": true,
+        "bytes": 468815428
+      },
+      "init": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/mhr_init/episode_000026.pkl",
+        "available": true,
+        "bytes": 1781619
+      },
+      "intrinsics": {
+        "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000026/episode_000026/depth/moge2/intrinsics.pkl",
+        "available": true,
+        "bytes": 42692
+      }
+    },
+    "mask_samples": [
+      {
+        "frame": 0,
+        "pixels": 13024,
+        "bbox": [
+          580,
+          799,
+          718,
+          989
+        ]
+      },
+      {
+        "frame": 80,
+        "pixels": 8351,
+        "bbox": [
+          580,
+          811,
+          670,
+          989
+        ]
+      },
+      {
+        "frame": 85,
+        "pixels": 4768,
+        "bbox": [
+          580,
+          809,
+          639,
+          967
+        ]
+      },
+      {
+        "frame": 159,
+        "pixels": 12566,
+        "bbox": [
+          580,
+          803,
+          718,
+          989
+        ]
+      },
+      {
+        "frame": 225,
+        "pixels": 11358,
+        "bbox": [
+          581,
+          811,
+          717,
+          989
+        ]
+      },
+      {
+        "frame": 239,
+        "pixels": 12040,
+        "bbox": [
+          581,
+          810,
+          717,
+          989
+        ]
+      },
+      {
+        "frame": 318,
+        "pixels": 11089,
+        "bbox": [
+          580,
+          818,
+          716,
+          989
+        ]
+      },
+      {
+        "frame": 365,
+        "pixels": 12944,
+        "bbox": [
+          580,
+          800,
+          718,
+          989
+        ]
+      },
+      {
+        "frame": 398,
+        "pixels": 13008,
+        "bbox": [
+          581,
+          800,
+          717,
+          989
+        ]
+      }
+    ],
+    "visual_review": "PENDING"
+  }
+]

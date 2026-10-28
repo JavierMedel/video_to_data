@@ -1,0 +1,43 @@
+{
+  "track": "track_2_tier1",
+  "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/submission_short/track2_tier1.csv",
+  "message": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+  "submissions": {
+    "add_auc": {
+      "slug": "v2d-challenge-track2-tier1-auc",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/submission_short/track2_tier1.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 1: multi-view input) - AUC",
+      "ref": 57444008,
+      "public_score": "0.24466",
+      "error": ""
+    },
+    "spider_sr": {
+      "slug": "v2d-challenge-track2-tier1-sp-sr",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/submission_short/track2_tier1.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 1: multi-view input) - SP-SR",
+      "ref": 57444011,
+      "public_score": "0.10000",
+      "error": ""
+    },
+    "maniptrans_sr": {
+      "slug": "v2d-challenge-track2-tier1-mp-sr",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/submission_short/track2_tier1.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 1: multi-view input) - MP-SR",
+      "ref": 57444013,
+      "public_score": "0.03333",
+      "error": ""
+    },
+    "mppe_cm": {
+      "slug": "v2d-challenge-track2-tier1-mppe",
+      "state": "COMPLETE",
+      "file": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/submission_short/track2_tier1.csv",
+      "message": "Successfully submitted to Track 2 - Robotic Grounding (Tier 1: multi-view input) - MPPE (cm)",
+      "ref": 57444015,
+      "public_score": "53.84820",
+      "error": ""
+    }
+  }
+}

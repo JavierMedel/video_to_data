@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "f193cb68a7d9c11db855bc41b8fb3ca4a7507fb1f2f2d85b99cfffe0d73005b2",
+  "reference_sha256": "1e297bca97786d88f9f4178c04273c06f6f190ab90e6c45d9965659aa8c5fb63",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/baseline/episode_000016/policy_349999104.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-03-12_15-06-36_spray_bottle_left_desk_ground_02/robot_name=g1/data.parquet",
+  "trajectory_sha256": "c3a1821540d7cd17c09a80881552752c7a493fea68b0d96e0fbfd158c09503ef",
+  "metrics_sha256": "c50fa6eb1a75aa99befdf8ffce100ebb846dd1ad84a74c8246e15bd8c4984ac3",
+  "export_sha256": "062890fd306f284a49f51b109bcfa4f607b4a1b73b5545ab8913778b2f3fa5d8",
+  "trained_environment_steps": 349999104,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": true,
+  "object_name": "spray_bottle",
+  "rows": 477,
+  "raw_poses_preserved": true
+}

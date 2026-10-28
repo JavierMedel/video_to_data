@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "4f21433f7acecb3aca38c64804668a26bf1a7f979aa80d6c8e50b967f0271500",
+  "reference_sha256": "98c19cf07e638fa9a5e9d85abd2ad9ae50be8e5de775dcc5c65bdc0d37c5904d",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000001/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-18_17-06-21_vacuum_left_lean_02/robot_name=g1/data.parquet",
+  "trajectory_sha256": "b4711f8583bc815b7231dcc92ddf1e6a2a231b6037e5766f12ec319ae9c30671",
+  "metrics_sha256": "fc999e12f2f500b5fea2ece52b8a12d46a7524a62eb8eb45f54cec0663646108",
+  "export_sha256": "0cf7bddf84a432de0d9cbdb50c8ebfcbb64f729bb26283a734885a89c012948b",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "vacuum",
+  "rows": 747,
+  "raw_poses_preserved": true
+}

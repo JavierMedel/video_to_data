@@ -1,0 +1,34 @@
+{
+  "state": "STOPPED_BY_GPU_GUARD",
+  "prepared": [
+    38,
+    37,
+    14,
+    10,
+    15,
+    16,
+    20,
+    8,
+    28,
+    19,
+    6,
+    32,
+    30,
+    5,
+    3,
+    1,
+    33,
+    25,
+    36,
+    35
+  ],
+  "evaluated": [],
+  "failed": {
+    "38": "policy: Exit 137: /home/alien51/video_to_data/reconstruction/incident_reports/track3_baseline/full_campaign/episode_000038/training.log"
+  },
+  "submission_ready": false,
+  "uploaded": false,
+  "training_steps_per_episode": 250003456,
+  "active_episode_index": 38,
+  "observed_utc": "2026-10-18T13:50:18.518757+00:00"
+}

@@ -1,0 +1,8 @@
+{
+  "joint_limits_checked": 43,
+  "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+  "support_stage_sha256": "20f71ba53ba3b302ba44ad22b2cc0e8abdf21c59bff79d01316922634751422c",
+  "visible_frames": 900,
+  "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+  "scope": "Kinematic limits and support provenance; not physical contact validation"
+}

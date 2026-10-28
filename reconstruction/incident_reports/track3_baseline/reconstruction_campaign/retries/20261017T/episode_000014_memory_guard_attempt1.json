@@ -1,0 +1,4 @@
+{
+  "state": "STOPPED_BY_GPU_GUARD",
+  "reason": "Total GPU memory 22160.0 MiB >= 21000"
+}

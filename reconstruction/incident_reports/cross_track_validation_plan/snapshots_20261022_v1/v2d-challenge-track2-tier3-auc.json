@@ -1,0 +1,61 @@
+{
+  "observed_utc": "2026-10-22T20:26:26.947475+00:00",
+  "track": "track_2_tier3",
+  "metric": "add_auc",
+  "slug": "v2d-challenge-track2-tier3-auc",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 17040998,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-21T04:49:12.366Z",
+      "score": "0.15606"
+    },
+    {
+      "teamId": 17126972,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-18T16:47:04.733Z",
+      "score": "0.10649"
+    },
+    {
+      "teamId": 17128881,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:37:20.363Z",
+      "score": "0.09026"
+    },
+    {
+      "teamId": 17149708,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-21T18:34:55.316Z",
+      "score": "0.05042"
+    },
+    {
+      "teamId": 16994352,
+      "teamName": "CHORD Baseline (CARI4D Reconstruction)",
+      "submissionDate": "2026-09-30T23:36:13.670Z",
+      "score": "0.00226"
+    },
+    {
+      "teamId": 17136114,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T22:13:32.886Z",
+      "score": "0.00000"
+    },
+    {
+      "teamId": 17179174,
+      "teamName": "NVSimranPatil",
+      "submissionDate": "2026-10-22T17:44:04.816Z",
+      "score": "0.00000"
+    }
+  ],
+  "submissions": [],
+  "history_complete": true,
+  "own_best": null,
+  "own_latest": null,
+  "targets": {
+    "1": 0.15606,
+    "3": 0.09026,
+    "5": 0.00226,
+    "10": null
+  }
+}

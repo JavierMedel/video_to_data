@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "47b7e08bad624bafe70657180acbbc904a46c82a39744feaf72d0a89b3e884e8",
+  "reference_sha256": "889bb1875e07520861b72f724423ec1b74cde83d1bae90f5b25b8ad712f7a9a9",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000024/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-29_15-43-20_watering_can_pour_right_02/robot_name=g1/data.parquet",
+  "trajectory_sha256": "107d1db474b84b4bd6341a0ef8a88a3ddc3d3692dbce93a7869cbe01128f89c6",
+  "metrics_sha256": "df1289a59fd27b0075a8f01598ceab68d2440097593132dbf4bc96d96f25a398",
+  "export_sha256": "b0e178ccff9e4dde8b14cd5273c08fa5377fe3e462d43f5815e4178acf523239",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "watering_can",
+  "rows": 748,
+  "raw_poses_preserved": true
+}

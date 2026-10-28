@@ -1,0 +1,4 @@
+{
+  "episode_index": 30,
+  "reason": "User requested shutdown after current episode completes training and evaluation"
+}

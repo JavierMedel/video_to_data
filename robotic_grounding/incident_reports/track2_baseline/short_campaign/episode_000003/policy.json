@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "ab9cb8170b56f4506d80afe8668d163b5f19994bf22ff5bba5bb873c30115549",
+  "reference_sha256": "3d5293355c1bb7ae3082b4eda7a5f691a2e114ee0c92b437f51d14c074f9989d",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000003/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05/robot_name=g1/data.parquet",
+  "trajectory_sha256": "4f6ae5ebef860a4be3b1e013b5687f9c779ba258a0d8b7e2563b3e3eb4127b3b",
+  "metrics_sha256": "7f8357021d72e16b0ce45b5bd8ecaa8a8cfa6c004c18d74448400e93adb5cfb6",
+  "export_sha256": "ac70d3dc98419c307ae85a977ea600cd5c5f902cae39bf6fd36972ab284c6ab1",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "contigo_coffee_mug",
+  "rows": 781,
+  "raw_poses_preserved": true
+}

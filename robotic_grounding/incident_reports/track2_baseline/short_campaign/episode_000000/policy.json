@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "42f0295646875ac5626c28e3594f9e04cdc9a20675cbcf7a445fa877614fc916",
+  "reference_sha256": "ba755918846b46ffc0b3350a21f3095e2e6c566b9d150e8bab84209c99ceb49f",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000000/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-06-04_14-16-23_tall_bar_stool_tip_up_04/robot_name=g1/data.parquet",
+  "trajectory_sha256": "68d54b4d60e638e6841be41d4b5b795102926d4cf84858d690e865d7ab1fe672",
+  "metrics_sha256": "143477afe138f53d852f2e3fbe311a86b6271f677b44393ea256aba173b00444",
+  "export_sha256": "fd884b92d0a5f56054153472a98d2eef83fcd5e65402a8216f120cd0c4513550",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "tall_bar_stool",
+  "rows": 778,
+  "raw_poses_preserved": true
+}

@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "8c125b9cb228dbdd5505ac43a982021a5ed572a1fb4ad0bf31a69028272590b7",
+  "reference_sha256": "9575c49026d9e354c647c5ea6d1c415b600160fbe07daf198011151ff41124b2",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000026/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-05_16-05-08_skateboard_rotate_ground_10/robot_name=g1/data.parquet",
+  "trajectory_sha256": "2d059c197268c77b4ceadf44bcc0a32d1e44a93fa3afc0471cc2589517bc79f5",
+  "metrics_sha256": "a2aee7bf095fcbb276499c6064d7a3bdb557581db3556015bac8cb947873ca9d",
+  "export_sha256": "79aef171f4aa3db57a803f736f2588c53b23b370c03acc03d5fd1f96c1bc2392",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "skateboard",
+  "rows": 669,
+  "raw_poses_preserved": true
+}

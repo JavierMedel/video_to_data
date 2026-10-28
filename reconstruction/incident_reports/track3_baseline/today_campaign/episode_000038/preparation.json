@@ -1,0 +1,43 @@
+{
+  "state": "PREPARED",
+  "source_hashes": {
+    "data/track3/bundles/episode_000038_object_00/outputs/result": {
+      "npz": "6cc2edf79cd9f652b92357892fb50a33adc7d2fffd5b4758e088cebd0dd4b073",
+      "mesh": "0aed532f4a7e32024988fcae71913695b7163f089fae6523ff09013a6a9139df"
+    }
+  },
+  "reference_sha256": "0f5e2526e96a912e51f3d63c880ef33b8b2eeeac7a80efafb63996bca02aa1da",
+  "frames": 263,
+  "objects": [
+    "mini_dust_pan"
+  ],
+  "fps": 20,
+  "world_alignment": [
+    [
+      0.9687973214334586,
+      -0.23396264643457876,
+      0.08181184937249976,
+      -0.07490654327434035
+    ],
+    [
+      -0.2339626257743081,
+      -0.7542905455552816,
+      0.6134388024227265,
+      -0.4884801957603753
+    ],
+    [
+      -0.08181185023796997,
+      -0.6134387540261657,
+      -0.7854932349365255,
+      0.8920811063732115
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "gravity_independently_verified": false,
+  "reused_from": "incident_reports/track3_baseline/full_campaign/episode_000038/preparation.json"
+}

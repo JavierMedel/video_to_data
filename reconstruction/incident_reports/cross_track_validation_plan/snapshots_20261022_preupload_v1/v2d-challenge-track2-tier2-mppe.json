@@ -1,0 +1,97 @@
+{
+  "observed_utc": "2026-10-22T23:49:22.543213+00:00",
+  "track": "track_2_tier2",
+  "metric": "mppe_cm",
+  "slug": "v2d-challenge-track2-tier2-mppe",
+  "higher_is_better": false,
+  "leaderboard": [
+    {
+      "teamId": 17165759,
+      "teamName": "nima arki",
+      "submissionDate": "2026-10-21T23:41:46.696Z",
+      "score": "10.84276"
+    },
+    {
+      "teamId": 17040996,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-18T19:52:02.646Z",
+      "score": "13.70456"
+    },
+    {
+      "teamId": 17018091,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-14T22:47:16.666Z",
+      "score": "15.32195"
+    },
+    {
+      "teamId": 17073097,
+      "teamName": "wte09fl",
+      "submissionDate": "2026-10-22T16:30:15.170Z",
+      "score": "18.28548"
+    },
+    {
+      "teamId": 17136110,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T04:48:16.220Z",
+      "score": "19.35874"
+    },
+    {
+      "teamId": 16994362,
+      "teamName": "CHORD Baseline",
+      "submissionDate": "2026-09-30T23:36:10.586Z",
+      "score": "20.52402"
+    },
+    {
+      "teamId": 17128872,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:34:20.170Z",
+      "score": "21.78656"
+    },
+    {
+      "teamId": 17170096,
+      "teamName": "DAP",
+      "submissionDate": "2026-10-21T13:31:28.913Z",
+      "score": "25.69486"
+    },
+    {
+      "teamId": 17178545,
+      "teamName": "Chivatam",
+      "submissionDate": "2026-10-22T23:41:35.643Z",
+      "score": "30.59272"
+    },
+    {
+      "teamId": 17100150,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-19T00:43:11.993Z",
+      "score": "43.81341"
+    },
+    {
+      "teamId": 17163423,
+      "teamName": "Rohit Pardeshi",
+      "submissionDate": "2026-10-22T03:39:09.460Z",
+      "score": "49.14697"
+    },
+    {
+      "teamId": 17092577,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-22T01:47:22.760Z",
+      "score": "64.20474"
+    },
+    {
+      "teamId": 17126391,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-15T16:02:23.193Z",
+      "score": "65.49672"
+    }
+  ],
+  "submissions": [],
+  "history_complete": true,
+  "own_best": null,
+  "own_latest": null,
+  "targets": {
+    "1": 10.84276,
+    "3": 15.32195,
+    "5": 19.35874,
+    "10": 43.81341
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "ab6171b9c20882ffd6338a7f961a3c4bd7fa1a7f2f04c166ecafb1de17c555b8",
+  "reference_sha256": "5641890771c08c22ae504433a6e7cdee5e5ebcfaf281fa0aa91f84c361225a57",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000004/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-04-24_11-40-52_baseball_bat_rotate_05/robot_name=g1/data.parquet",
+  "trajectory_sha256": "8ca2a8a2b6ee474c03b893f293dee675e4e52fc48458499f25fb1ef81088c229",
+  "metrics_sha256": "8f60611d86b1d0502dd80f61ffd8ce4d72eefc5292e38b301964e627e5c884c7",
+  "export_sha256": "1945a7a045f205bd5c1a23742f14513d47445572a1a61f15545ffd20bdf88905",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "baseball_bat",
+  "rows": 803,
+  "raw_poses_preserved": true
+}

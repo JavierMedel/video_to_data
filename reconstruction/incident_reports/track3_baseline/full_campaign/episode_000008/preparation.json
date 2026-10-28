@@ -1,0 +1,47 @@
+{
+  "state": "PREPARED",
+  "source_hashes": {
+    "data/track3/bundles/episode_000008_object_00/outputs/result": {
+      "npz": "8d52a2484ac01d76032fad1e05b3038ea7d315e40d0d0158b1a478e2a09761a9",
+      "mesh": "afddd6801cc65ff6535a3811607da4771d24d9df5f6dd1edc597adcd1915914e"
+    },
+    "data/track3/bundles/episode_000008_object_01/outputs/result": {
+      "npz": "a0901e31733bf2f543821a3a21f75286d9a872966057428436fccaa65dff9d2a",
+      "mesh": "2e535f777aa2ecba471cec45a56c093caa0e02efa1cb4b43a5d871779ab01c3a"
+    }
+  },
+  "reference_sha256": "ba8e9778a8c51f487083eb8cf5c4f3cd2a0a07a7899dc2ba4d1a260957b2df11",
+  "frames": 219,
+  "objects": [
+    "beige_cup",
+    "white_pot"
+  ],
+  "fps": 20,
+  "world_alignment": [
+    [
+      -0.18101718603265024,
+      0.05511089259210875,
+      0.9819346046853232,
+      -0.644844233556971
+    ],
+    [
+      0.5522170161793457,
+      0.8318768878624296,
+      0.05511089259210875,
+      -0.19043146203747058
+    ],
+    [
+      -0.8138114925477526,
+      0.5522170161793457,
+      -0.18101718603265024,
+      0.35973789197953787
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "gravity_independently_verified": false
+}

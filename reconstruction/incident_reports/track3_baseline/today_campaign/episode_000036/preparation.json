@@ -1,0 +1,43 @@
+{
+  "state": "PREPARED",
+  "source_hashes": {
+    "data/track3/bundles/episode_000036_object_00/outputs/result": {
+      "npz": "424690019a9130849a995c17522e4e5290b4768ea4c978b98610c5e37bcc854a",
+      "mesh": "d9d4f3ffdb8c413fcce7c3164a01eafbed4b321e69a54641eea8e77593a94392"
+    }
+  },
+  "reference_sha256": "9ec05727d23c084fc2f938d9278ac7e350fdd85a1b60c230a731aa28c3336802",
+  "frames": 407,
+  "objects": [
+    "wooden_spoon"
+  ],
+  "fps": 20,
+  "world_alignment": [
+    [
+      -0.02356637053630972,
+      -0.017213942946684612,
+      0.999574062462594,
+      -1.1154784850541846
+    ],
+    [
+      -0.9524170148115425,
+      0.3043115345590738,
+      -0.017213942946684612,
+      0.07430013275832711
+    ],
+    [
+      -0.30388559702166784,
+      -0.9524170148115425,
+      -0.02356637053630972,
+      0.20993057646942648
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "gravity_independently_verified": false,
+  "reused_from": "incident_reports/track3_baseline/full_campaign/episode_000036/preparation.json"
+}

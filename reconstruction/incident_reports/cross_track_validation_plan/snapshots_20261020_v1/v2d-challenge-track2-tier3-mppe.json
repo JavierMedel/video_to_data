@@ -1,0 +1,61 @@
+{
+  "observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "track": "track_2_tier3",
+  "metric": "mppe_cm",
+  "slug": "v2d-challenge-track2-tier3-mppe",
+  "higher_is_better": false,
+  "leaderboard": [
+    {
+      "teamId": 17041004,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-20T00:40:30.630Z",
+      "score": "46.64900"
+    },
+    {
+      "teamId": 17092590,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-18T20:01:59.130Z",
+      "score": "49.13657"
+    },
+    {
+      "teamId": 17126986,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-18T16:47:11.746Z",
+      "score": "54.98984"
+    },
+    {
+      "teamId": 17128885,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:39:44.953Z",
+      "score": "62.29063"
+    },
+    {
+      "teamId": 17136118,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T22:13:39.210Z",
+      "score": "66.51482"
+    },
+    {
+      "teamId": 16994345,
+      "teamName": "CHORD Baseline (CARI4D Reconstruction)",
+      "submissionDate": "2026-09-30T23:36:21.900Z",
+      "score": "70.17205"
+    },
+    {
+      "teamId": 17149717,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-20T17:41:04.366Z",
+      "score": "72.80583"
+    }
+  ],
+  "submissions": [],
+  "history_complete": true,
+  "own_best": null,
+  "own_latest": null,
+  "targets": {
+    "1": 46.649,
+    "3": 54.98984,
+    "5": 66.51482,
+    "10": null
+  }
+}

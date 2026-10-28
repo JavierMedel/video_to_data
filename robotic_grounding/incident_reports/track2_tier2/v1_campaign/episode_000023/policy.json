@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "960026eef4150b26fa0b5b365118e88561f077ef957eb78191e67216d7724744",
+  "reference_sha256": "373abef8631b32f30c3d0ae6c704824ae83cc1266b21c09e41ca3b3e11900ad1",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000023/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-03_15-08-03_toy_stroller_back_forth_ground_04/robot_name=g1/data.parquet",
+  "trajectory_sha256": "0a19e4885fe8ce1c58d85ca2602dc2d320305c3f5ae9eda0bd01d1ed3047cc65",
+  "metrics_sha256": "f7afb16bdbfb58cd4e26f286431e7912243903a194cf7ffbe598cf008f478d6a",
+  "export_sha256": "de0e6366f17b60f6291dec66344820773ba2a51c0b73c9f7bf029cadbb52d00e",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "toy_stroller",
+  "rows": 946,
+  "raw_poses_preserved": true
+}

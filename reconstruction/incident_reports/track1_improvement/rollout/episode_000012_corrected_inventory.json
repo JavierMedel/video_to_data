@@ -1,0 +1,120 @@
+{
+  "episode": 12,
+  "object": "black_pan",
+  "frames": 405,
+  "files": {
+    "video": {
+      "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000012.mp4",
+      "available": true,
+      "bytes": 12982814
+    },
+    "depth": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/aligned.h5",
+      "available": true,
+      "bytes": 504869620
+    },
+    "init": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/mhr_init/episode_000012.pkl",
+      "available": true,
+      "bytes": 1808385
+    },
+    "intrinsics": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000012/episode_000012/depth/moge2/intrinsics.pkl",
+      "available": true,
+      "bytes": 43328
+    }
+  },
+  "mask_samples": [
+    {
+      "frame": 0,
+      "pixels": 1766,
+      "bbox": [
+        567,
+        709,
+        680,
+        735
+      ]
+    },
+    {
+      "frame": 69,
+      "pixels": 1806,
+      "bbox": [
+        568,
+        709,
+        681,
+        735
+      ]
+    },
+    {
+      "frame": 81,
+      "pixels": 1785,
+      "bbox": [
+        569,
+        709,
+        681,
+        735
+      ]
+    },
+    {
+      "frame": 162,
+      "pixels": 1014,
+      "bbox": [
+        661,
+        593,
+        714,
+        617
+      ]
+    },
+    {
+      "frame": 202,
+      "pixels": 1410,
+      "bbox": [
+        655,
+        548,
+        705,
+        582
+      ]
+    },
+    {
+      "frame": 242,
+      "pixels": 1243,
+      "bbox": [
+        631,
+        542,
+        679,
+        579
+      ]
+    },
+    {
+      "frame": 323,
+      "pixels": 1611,
+      "bbox": [
+        641,
+        691,
+        704,
+        722
+      ]
+    },
+    {
+      "frame": 365,
+      "pixels": 1498,
+      "bbox": [
+        640,
+        706,
+        703,
+        734
+      ]
+    },
+    {
+      "frame": 404,
+      "pixels": 1462,
+      "bbox": [
+        640,
+        706,
+        703,
+        734
+      ]
+    }
+  ],
+  "visual_review": "PENDING"
+}

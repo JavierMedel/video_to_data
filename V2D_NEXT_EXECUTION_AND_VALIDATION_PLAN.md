@@ -2,6 +2,8 @@
 
 **Current status:** October 22 Tier 2 training, validation, submission and scoring are complete on all four boards: **AUC 0.22330, SP-SR 0.03333, MP-SR 0.00000, MPPE 61.22802 cm**. Read the [execution record](#execution-resumed-october-22-2026) first. Tier 1 checkpoint selection failed repeatability; Track 1 surrogate calibration rejected promotion. Their existing submissions are retained.
 
+**Reverified October 25:** a fresh authenticated 23-board snapshot confirms the same four Tier 2 IDs remain the latest submissions and are all `COMPLETE`. The full packet and all 30 policy lineages passed the integrity audit again; the packet SHA is unchanged. All 19 populated boards have completed latest submissions. The four Tier 3 boards remain empty and require the reconstruction and adapter work described below. No duplicate upload was made. Verification: `reconstruction/incident_reports/cross_track_validation_plan/completion_20261025_v1.json`; live snapshot: `snapshots_20261025_completion_v1/` beside it.
+
 - **Branch:** `v2d-track1-blackwell`
 - **Audited commit:** `cff4d10` ("Implement cross-track improvement tooling and planning handoff")
 - **Audience:** the execution assistant on `/home/alien51/video_to_data` (WSL2, RTX 5090 Laptop, 24,463 MiB, 21,000 MiB guard)

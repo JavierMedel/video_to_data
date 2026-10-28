@@ -1,0 +1,42 @@
+{
+  "state": "PREPARED",
+  "source_hashes": {
+    "data/track3/bundles/episode_000037_object_00/outputs/result": {
+      "npz": "c58336d8f2de10598fc30b6c29f39bacbf60eaad5bd9beebdc924396127ba147",
+      "mesh": "5210219994cdd5713a937000814cafc118dfd0449f4e1d122af48d6f921f6600"
+    }
+  },
+  "reference_sha256": "b6eae1589a0674dd26e0aea3531dc2ce2ec316f425052612024a7b28cc5fd0da",
+  "frames": 151,
+  "objects": [
+    "wooden_spoon"
+  ],
+  "fps": 20,
+  "world_alignment": [
+    [
+      -0.09074887907573544,
+      -0.08348716657907616,
+      0.9923681443713795,
+      -1.0427007273667528
+    ],
+    [
+      -0.9927293115776415,
+      0.0867087478353793,
+      -0.08348716657907615,
+      0.13809344017676628
+    ],
+    [
+      -0.07907689220675884,
+      -0.9927293115776415,
+      -0.09074887907573544,
+      0.3547363668470936
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "gravity_independently_verified": false
+}

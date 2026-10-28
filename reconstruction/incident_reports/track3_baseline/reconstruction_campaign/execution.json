@@ -1,0 +1,32 @@
+{
+  "state": "COMPLETE",
+  "completed_episode_indices": [
+    38,
+    37,
+    14,
+    10,
+    15,
+    16,
+    20,
+    8,
+    28,
+    19,
+    6,
+    32,
+    30,
+    5,
+    3,
+    1,
+    33,
+    25,
+    36,
+    35
+  ],
+  "failed_episodes": {},
+  "policy_trained": false,
+  "submission_ready": false,
+  "uploaded": false,
+  "gpu_memory_guard_mib": 21000,
+  "active_episode_index": null,
+  "observed_utc": "2026-10-18T06:08:55.433159+00:00"
+}

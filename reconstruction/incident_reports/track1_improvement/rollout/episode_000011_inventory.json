@@ -1,0 +1,110 @@
+{
+  "episode": 11,
+  "object": "white_desk",
+  "frames": 877,
+  "files": {
+    "video": {
+      "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000011.mp4",
+      "available": true,
+      "bytes": 30120808
+    },
+    "depth": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/aligned.h5",
+      "available": true,
+      "bytes": 969744220
+    },
+    "init": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/mhr_init/episode_000011.pkl",
+      "available": true,
+      "bytes": 3913986
+    },
+    "intrinsics": {
+      "path": "/repo/data/v2d_challenge/track_1/cari4d_runs/track1_resume/episode_000011/episode_000011/depth/moge2/intrinsics.pkl",
+      "available": true,
+      "bytes": 93369
+    }
+  },
+  "mask_samples": [
+    {
+      "frame": 0,
+      "pixels": 21601,
+      "bbox": [
+        603,
+        623,
+        910,
+        928
+      ]
+    },
+    {
+      "frame": 175,
+      "pixels": 21156,
+      "bbox": [
+        621,
+        623,
+        911,
+        929
+      ]
+    },
+    {
+      "frame": 350,
+      "pixels": 22050,
+      "bbox": [
+        607,
+        622,
+        911,
+        929
+      ]
+    },
+    {
+      "frame": 401,
+      "pixels": 22094,
+      "bbox": [
+        603,
+        622,
+        911,
+        929
+      ]
+    },
+    {
+      "frame": 526,
+      "pixels": 21496,
+      "bbox": [
+        602,
+        623,
+        909,
+        929
+      ]
+    },
+    {
+      "frame": 701,
+      "pixels": 21713,
+      "bbox": [
+        608,
+        624,
+        911,
+        929
+      ]
+    },
+    {
+      "frame": 802,
+      "pixels": 87515,
+      "bbox": [
+        685,
+        753,
+        1110,
+        1111
+      ]
+    },
+    {
+      "frame": 876,
+      "pixels": 89268,
+      "bbox": [
+        685,
+        728,
+        1111,
+        1112
+      ]
+    }
+  ],
+  "visual_review": "PENDING"
+}

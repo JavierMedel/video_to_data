@@ -1,0 +1,165 @@
+{
+  "observed_utc": "2026-10-22T20:26:26.947475+00:00",
+  "track": "track_2_tier1",
+  "metric": "add_auc",
+  "slug": "v2d-challenge-track2-tier1-auc",
+  "higher_is_better": true,
+  "leaderboard": [
+    {
+      "teamId": 17163217,
+      "teamName": "Chivatam",
+      "submissionDate": "2026-10-22T10:10:19.730Z",
+      "score": "0.83047"
+    },
+    {
+      "teamId": 17172182,
+      "teamName": "MBZUAI-RCL Group",
+      "submissionDate": "2026-10-21T19:17:24.376Z",
+      "score": "0.82959"
+    },
+    {
+      "teamId": 17130415,
+      "teamName": "DAP",
+      "submissionDate": "2026-10-21T01:00:35.586Z",
+      "score": "0.73467"
+    },
+    {
+      "teamId": 17164606,
+      "teamName": "nima arki",
+      "submissionDate": "2026-10-21T23:40:34.273Z",
+      "score": "0.72140"
+    },
+    {
+      "teamId": 16982570,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-19T05:50:27.930Z",
+      "score": "0.59530"
+    },
+    {
+      "teamId": 17014806,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-18T16:54:50.943Z",
+      "score": "0.58258"
+    },
+    {
+      "teamId": 16994370,
+      "teamName": "CHORD Baseline",
+      "submissionDate": "2026-09-30T23:35:44.560Z",
+      "score": "0.51038"
+    },
+    {
+      "teamId": 17073087,
+      "teamName": "wte09fl",
+      "submissionDate": "2026-10-22T16:28:54.550Z",
+      "score": "0.49949"
+    },
+    {
+      "teamId": 17128874,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T16:23:06.053Z",
+      "score": "0.38403"
+    },
+    {
+      "teamId": 17089835,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-14T17:29:36.350Z",
+      "score": "0.37866"
+    },
+    {
+      "teamId": 17099371,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-16T01:30:27.240Z",
+      "score": "0.31255"
+    },
+    {
+      "teamId": 17106868,
+      "teamName": "Null Walker",
+      "submissionDate": "2026-10-18T02:08:56.946Z",
+      "score": "0.30445"
+    },
+    {
+      "teamId": 17163407,
+      "teamName": "Rohit Pardeshi",
+      "submissionDate": "2026-10-21T10:19:57.356Z",
+      "score": "0.29010"
+    },
+    {
+      "teamId": 17157527,
+      "teamName": "Javier Medel, MSc.",
+      "submissionDate": "2026-10-20T15:32:07.050Z",
+      "score": "0.24466"
+    },
+    {
+      "teamId": 17179894,
+      "teamName": "longbot",
+      "submissionDate": "2026-10-22T19:02:21.553Z",
+      "score": "0.22302"
+    },
+    {
+      "teamId": 17092553,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-22T02:17:01.203Z",
+      "score": "0.20048"
+    },
+    {
+      "teamId": 17107609,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-14T16:59:52.330Z",
+      "score": "0.19620"
+    },
+    {
+      "teamId": 17165673,
+      "teamName": "Izus_systems",
+      "submissionDate": "2026-10-21T01:06:05.176Z",
+      "score": "0.17520"
+    }
+  ],
+  "submissions": [
+    {
+      "ref": 57444008,
+      "totalBytes": 11838359,
+      "date": "2026-10-20T15:32:07.050Z",
+      "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+      "fileName": "track2_tier1.csv",
+      "publicScore": "0.24466",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57444008/57444008.raw"
+    }
+  ],
+  "history_complete": true,
+  "own_best": {
+    "ref": 57444008,
+    "totalBytes": 11838359,
+    "date": "2026-10-20T15:32:07.050Z",
+    "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+    "fileName": "track2_tier1.csv",
+    "publicScore": "0.24466",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57444008/57444008.raw"
+  },
+  "own_latest": {
+    "ref": 57444008,
+    "totalBytes": 11838359,
+    "date": "2026-10-20T15:32:07.050Z",
+    "description": "track_2_tier1 short baseline: per-sequence G1+Dex3 policies, target 5000192 steps, unassisted rollouts",
+    "fileName": "track2_tier1.csv",
+    "publicScore": "0.24466",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57444008/57444008.raw"
+  },
+  "targets": {
+    "1": 0.83047,
+    "3": 0.73467,
+    "5": 0.5953,
+    "10": 0.37866
+  }
+}

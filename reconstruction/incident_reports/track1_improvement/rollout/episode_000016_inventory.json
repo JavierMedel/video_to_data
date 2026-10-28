@@ -1,0 +1,120 @@
+{
+  "episode": 16,
+  "object": "foam_grass_block",
+  "frames": 360,
+  "files": {
+    "video": {
+      "path": "/repo/data/v2d_challenge/track_1/videos/chunk-000/observation.images.exo_camera/episode_000016.mp4",
+      "available": true,
+      "bytes": 11744057
+    },
+    "depth": {
+      "path": "/repo/data/v2d_challenge/track_1/episode_000016/cari4d_aligned_depth.h5",
+      "available": true,
+      "bytes": 498878952
+    },
+    "init": {
+      "path": "/repo/data/v2d_challenge/track_1/episode_000016/cari4d_sam3d_body.pt",
+      "available": true,
+      "bytes": 1608954
+    },
+    "intrinsics": {
+      "path": "/repo/data/v2d_challenge/track_1/episode_000016/moge/intrinsics.pkl",
+      "available": false,
+      "bytes": 0
+    }
+  },
+  "mask_samples": [
+    {
+      "frame": 0,
+      "pixels": 5285,
+      "bbox": [
+        662,
+        651,
+        744,
+        721
+      ]
+    },
+    {
+      "frame": 50,
+      "pixels": 5316,
+      "bbox": [
+        661,
+        650,
+        744,
+        722
+      ]
+    },
+    {
+      "frame": 72,
+      "pixels": 5065,
+      "bbox": [
+        671,
+        628,
+        751,
+        699
+      ]
+    },
+    {
+      "frame": 144,
+      "pixels": 5093,
+      "bbox": [
+        671,
+        585,
+        750,
+        668
+      ]
+    },
+    {
+      "frame": 170,
+      "pixels": 5119,
+      "bbox": [
+        673,
+        583,
+        750,
+        660
+      ]
+    },
+    {
+      "frame": 215,
+      "pixels": 4893,
+      "bbox": [
+        677,
+        569,
+        750,
+        657
+      ]
+    },
+    {
+      "frame": 287,
+      "pixels": 5343,
+      "bbox": [
+        657,
+        648,
+        738,
+        722
+      ]
+    },
+    {
+      "frame": 289,
+      "pixels": 5216,
+      "bbox": [
+        658,
+        649,
+        737,
+        721
+      ]
+    },
+    {
+      "frame": 359,
+      "pixels": 5181,
+      "bbox": [
+        658,
+        650,
+        737,
+        721
+      ]
+    }
+  ],
+  "visual_review": "PENDING"
+}

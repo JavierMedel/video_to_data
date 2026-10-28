@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "70871087584edee70683851bae5eed33ae53d9c719f802665c2260ec96c8fc58",
+  "reference_sha256": "b2d4ea3ff987f0d862608d839afce1dc65a43ee88c40d5f0e211ca5c7eed1f05",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000015/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08/robot_name=g1/data.parquet",
+  "trajectory_sha256": "89aaf72f3816f3a3794808f9412ce796938ddbe089c4a30f30f22360c46ac141",
+  "metrics_sha256": "3c67533e31e45d51af94b1155004cd25361474d19e6f3950655f78a4ad90397a",
+  "export_sha256": "8f3409a46f8678d4cc86ee4d28661efedace0a28594a64dd5fa62647353be60d",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "wet_floor_sign",
+  "rows": 715,
+  "raw_poses_preserved": true
+}

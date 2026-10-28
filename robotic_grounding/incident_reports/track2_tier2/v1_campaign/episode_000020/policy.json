@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "aded897e8053efbb6af61aa6eb8130b850258ecfabb801b3dd293df0d5d8026e",
+  "reference_sha256": "c879f92c10cc1838fd8d82694c35843be1330c4aa04f9706d7a3023a290a5e5b",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000020/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-08_16-57-34_rice_cooker_clockwise_04/robot_name=g1/data.parquet",
+  "trajectory_sha256": "09a395923596e31e3164fe989c1afb56e8c78dd8760d35e3988a059bc96c6dc6",
+  "metrics_sha256": "e3b5bbee411a6e52f823eaba843716c8d61e3d28b77f3083cf690422b351ca5d",
+  "export_sha256": "e23808bcba4cbcc22ecb4d0add2401406c4344008c8476fd6bf413420d41fffc",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "rice_cooker",
+  "rows": 553,
+  "raw_poses_preserved": true
+}

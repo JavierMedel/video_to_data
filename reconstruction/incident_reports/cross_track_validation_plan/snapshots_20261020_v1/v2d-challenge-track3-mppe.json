@@ -1,0 +1,177 @@
+{
+  "observed_utc": "2026-10-20T19:50:53.330300+00:00",
+  "track": "track_3",
+  "metric": "mppe_cm",
+  "slug": "v2d-challenge-track3-mppe",
+  "higher_is_better": false,
+  "leaderboard": [
+    {
+      "teamId": 17041590,
+      "teamName": "SoySauceChicken",
+      "submissionDate": "2026-10-19T18:40:56.466Z",
+      "score": "2.62042"
+    },
+    {
+      "teamId": 17079708,
+      "teamName": "Zihao Guo",
+      "submissionDate": "2026-10-18T10:05:56.643Z",
+      "score": "4.62396"
+    },
+    {
+      "teamId": 16990302,
+      "teamName": "SRL",
+      "submissionDate": "2026-10-20T08:39:32.153Z",
+      "score": "5.51073"
+    },
+    {
+      "teamId": 17083568,
+      "teamName": "Zimo Li",
+      "submissionDate": "2026-10-18T17:59:42.373Z",
+      "score": "5.69432"
+    },
+    {
+      "teamId": 17155533,
+      "teamName": "Alcor Z",
+      "submissionDate": "2026-10-20T12:01:57.213Z",
+      "score": "6.63026"
+    },
+    {
+      "teamId": 17129973,
+      "teamName": "Kiarash_Ghasemzadeh8",
+      "submissionDate": "2026-10-16T05:45:28.386Z",
+      "score": "6.84287"
+    },
+    {
+      "teamId": 17130100,
+      "teamName": "EIG",
+      "submissionDate": "2026-10-20T04:41:36.050Z",
+      "score": "9.52676"
+    },
+    {
+      "teamId": 17139086,
+      "teamName": "Rian Borah",
+      "submissionDate": "2026-10-17T11:49:11.440Z",
+      "score": "10.23335"
+    },
+    {
+      "teamId": 17132018,
+      "teamName": "NVSimranPatil",
+      "submissionDate": "2026-10-20T18:52:20.216Z",
+      "score": "10.30089"
+    },
+    {
+      "teamId": 17064799,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-20T16:12:35.910Z",
+      "score": "10.44602"
+    },
+    {
+      "teamId": 17075210,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-20T17:27:06.596Z",
+      "score": "10.78069"
+    },
+    {
+      "teamId": 17102315,
+      "teamName": "Sambhav",
+      "submissionDate": "2026-10-20T14:28:07.840Z",
+      "score": "10.79197"
+    },
+    {
+      "teamId": 17021318,
+      "teamName": "Panav Raaj",
+      "submissionDate": "2026-10-18T06:31:37.673Z",
+      "score": "11.37357"
+    },
+    {
+      "teamId": 17158439,
+      "teamName": "ASAP_Team",
+      "submissionDate": "2026-10-20T05:22:48.710Z",
+      "score": "13.75046"
+    },
+    {
+      "teamId": 17136576,
+      "teamName": "Gravity Aligned",
+      "submissionDate": "2026-10-17T04:15:19.236Z",
+      "score": "14.86842"
+    },
+    {
+      "teamId": 17088995,
+      "teamName": "shearforce",
+      "submissionDate": "2026-10-15T05:59:41.236Z",
+      "score": "15.24090"
+    },
+    {
+      "teamId": 17130863,
+      "teamName": "Tony",
+      "submissionDate": "2026-10-18T20:54:00.956Z",
+      "score": "16.86116"
+    },
+    {
+      "teamId": 17066662,
+      "teamName": "venkata prasad setty",
+      "submissionDate": "2026-10-13T12:33:40.960Z",
+      "score": "16.89249"
+    },
+    {
+      "teamId": 17147839,
+      "teamName": "Javier Medel, MSc.",
+      "submissionDate": "2026-10-20T01:08:54.693Z",
+      "score": "20.82175"
+    },
+    {
+      "teamId": 17156978,
+      "teamName": "VihaanAgarwal",
+      "submissionDate": "2026-10-20T03:16:53.826Z",
+      "score": "970.03392"
+    }
+  ],
+  "submissions": [
+    {
+      "ref": 57416120,
+      "totalBytes": 3567453,
+      "date": "2026-10-20T01:08:54.693Z",
+      "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+      "fileName": "track3_submission.parquet",
+      "publicScore": "20.82175",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57416120/57416120.raw"
+    }
+  ],
+  "history_complete": true,
+  "own_best": {
+    "ref": 57416120,
+    "totalBytes": 3567453,
+    "date": "2026-10-20T01:08:54.693Z",
+    "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+    "fileName": "track3_submission.parquet",
+    "publicScore": "20.82175",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57416120/57416120.raw"
+  },
+  "own_latest": {
+    "ref": 57416120,
+    "totalBytes": 3567453,
+    "date": "2026-10-20T01:08:54.693Z",
+    "description": "Track 3 today baseline: per-sequence Sharpa policies, target 5000192 steps, reconstructed meshes, unassisted rollouts",
+    "fileName": "track3_submission.parquet",
+    "publicScore": "20.82175",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57416120/57416120.raw"
+  },
+  "targets": {
+    "1": 2.62042,
+    "3": 5.51073,
+    "5": 6.63026,
+    "10": 10.44602
+  }
+}

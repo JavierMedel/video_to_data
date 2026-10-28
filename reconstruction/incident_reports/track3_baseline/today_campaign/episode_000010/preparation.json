@@ -1,0 +1,48 @@
+{
+  "state": "PREPARED",
+  "source_hashes": {
+    "data/track3/bundles/episode_000010_object_00/outputs/result": {
+      "npz": "65ca981fe90bcc629f32cbe3ea4f25d8e82a8354b71afb0791407c9333e2b7a5",
+      "mesh": "e2e8d95a7d26ba94d82602059ffe06bcef92a1fcda9d0002b8fd1aa359555c19"
+    },
+    "data/track3/bundles/episode_000010_object_01/outputs/result": {
+      "npz": "8c04773e925627c0aa5c850a67da6d596198e51cebf988827729e10af13b3559",
+      "mesh": "4ca53ae3bfbd7878784d9b2bd41b5232338478dfde476691ba260bc8d0371731"
+    }
+  },
+  "reference_sha256": "680f6a42d94803890303f8ccd014a50062543b612dd1b9f195b1a8411c4cc97f",
+  "frames": 161,
+  "objects": [
+    "blue_cup",
+    "beige_cup"
+  ],
+  "fps": 20,
+  "world_alignment": [
+    [
+      -0.1700527052913039,
+      0.0026574412968738957,
+      -0.9854313854494704,
+      0.5903503791034184
+    ],
+    [
+      0.031019084218259305,
+      0.9995152597234392,
+      -0.0026574412968738952,
+      -0.2557860810470971
+    ],
+    [
+      0.9849466451729096,
+      -0.031019084218259305,
+      -0.1700527052913039,
+      0.22933896289960354
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "gravity_independently_verified": false,
+  "reused_from": "incident_reports/track3_baseline/full_campaign/episode_000010/preparation.json"
+}

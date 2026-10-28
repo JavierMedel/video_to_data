@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "dda5818465baede2ad9ff8ef9041a1ec9c734ca136b58aaf8d6939b8cbdb084a",
+  "reference_sha256": "fe29189aee132ef91fa7c53c5f3e1d25d285dbce981d989ca7ed57b877e13f5a",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/policies_v1/episode_000013/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-09_10-19-09_snack_box_desk_through_06/robot_name=g1/data.parquet",
+  "trajectory_sha256": "19845ab0c4eaa9189e5c8478a0a593c7b31354de4362ddeecab5e543bf92ebe9",
+  "metrics_sha256": "b4808476ffe8c93dc6cd77891e10d884013d122fb8a9218c45cc134cb67264c1",
+  "export_sha256": "99b24f19bb22a107d57016e311f772c5dca7fcbd0362dd384dd4144d7b630913",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "snack_box",
+  "rows": 922,
+  "raw_poses_preserved": true
+}

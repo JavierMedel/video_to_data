@@ -1,0 +1,147 @@
+{
+  "observed_utc": "2026-10-25T14:47:59.327857+00:00",
+  "track": "track_2_tier2",
+  "metric": "mppe_cm",
+  "slug": "v2d-challenge-track2-tier2-mppe",
+  "higher_is_better": false,
+  "leaderboard": [
+    {
+      "teamId": 17153488,
+      "teamName": "NVSimranPatil",
+      "submissionDate": "2026-10-25T11:29:31.763Z",
+      "score": "2.76526"
+    },
+    {
+      "teamId": 17165759,
+      "teamName": "nima arki",
+      "submissionDate": "2026-10-23T18:33:13.920Z",
+      "score": "10.84276"
+    },
+    {
+      "teamId": 17040996,
+      "teamName": "Xueyi Wang (FF)",
+      "submissionDate": "2026-10-25T08:04:30.930Z",
+      "score": "13.17325"
+    },
+    {
+      "teamId": 17018091,
+      "teamName": "maniphys.ai",
+      "submissionDate": "2026-10-14T22:47:16.666Z",
+      "score": "15.32195"
+    },
+    {
+      "teamId": 17073097,
+      "teamName": "wte09fl",
+      "submissionDate": "2026-10-22T16:30:15.170Z",
+      "score": "18.28548"
+    },
+    {
+      "teamId": 17136110,
+      "teamName": "domoarigato",
+      "submissionDate": "2026-10-18T04:48:16.220Z",
+      "score": "19.35874"
+    },
+    {
+      "teamId": 16994362,
+      "teamName": "CHORD Baseline",
+      "submissionDate": "2026-09-30T23:36:10.586Z",
+      "score": "20.52402"
+    },
+    {
+      "teamId": 17128872,
+      "teamName": "Team OPS",
+      "submissionDate": "2026-10-20T17:34:20.170Z",
+      "score": "21.78656"
+    },
+    {
+      "teamId": 17170096,
+      "teamName": "DAP",
+      "submissionDate": "2026-10-21T13:31:28.913Z",
+      "score": "25.69486"
+    },
+    {
+      "teamId": 17178545,
+      "teamName": "Chivatam",
+      "submissionDate": "2026-10-23T00:47:48.763Z",
+      "score": "29.26549"
+    },
+    {
+      "teamId": 17100150,
+      "teamName": "Open4D",
+      "submissionDate": "2026-10-23T13:22:22.386Z",
+      "score": "43.44247"
+    },
+    {
+      "teamId": 17163423,
+      "teamName": "Rohit Pardeshi",
+      "submissionDate": "2026-10-22T03:39:09.460Z",
+      "score": "49.14697"
+    },
+    {
+      "teamId": 17157542,
+      "teamName": "Javier Medel, MSc.",
+      "submissionDate": "2026-10-22T23:50:05.810Z",
+      "score": "61.22802"
+    },
+    {
+      "teamId": 17092577,
+      "teamName": "Kelly To the H",
+      "submissionDate": "2026-10-22T01:47:22.760Z",
+      "score": "64.20474"
+    },
+    {
+      "teamId": 17126391,
+      "teamName": "TheTensorGeek",
+      "submissionDate": "2026-10-15T16:02:23.193Z",
+      "score": "65.49672"
+    }
+  ],
+  "submissions": [
+    {
+      "ref": 57541237,
+      "totalBytes": 11835825,
+      "date": "2026-10-22T23:50:05.810Z",
+      "description": "Versioned cross-track improvement; see producing commit in packet",
+      "fileName": "track2_tier2.csv",
+      "publicScore": "61.22802",
+      "status": "COMPLETE",
+      "submittedBy": "iorideepp",
+      "submittedByRef": "iorideepp",
+      "teamName": "Javier Medel, MSc.",
+      "url": "/submissions/57541237/57541237.raw"
+    }
+  ],
+  "history_complete": true,
+  "own_best": {
+    "ref": 57541237,
+    "totalBytes": 11835825,
+    "date": "2026-10-22T23:50:05.810Z",
+    "description": "Versioned cross-track improvement; see producing commit in packet",
+    "fileName": "track2_tier2.csv",
+    "publicScore": "61.22802",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57541237/57541237.raw"
+  },
+  "own_latest": {
+    "ref": 57541237,
+    "totalBytes": 11835825,
+    "date": "2026-10-22T23:50:05.810Z",
+    "description": "Versioned cross-track improvement; see producing commit in packet",
+    "fileName": "track2_tier2.csv",
+    "publicScore": "61.22802",
+    "status": "COMPLETE",
+    "submittedBy": "iorideepp",
+    "submittedByRef": "iorideepp",
+    "teamName": "Javier Medel, MSc.",
+    "url": "/submissions/57541237/57541237.raw"
+  },
+  "targets": {
+    "1": 2.76526,
+    "3": 13.17325,
+    "5": 18.28548,
+    "10": 29.26549
+  }
+}

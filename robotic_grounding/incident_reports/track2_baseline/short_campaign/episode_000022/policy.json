@@ -1,0 +1,16 @@
+{
+  "state": "EVALUATED",
+  "checkpoint_sha256": "440af73f978798af59fb076177da808b741f00480d16c445162caa2fdf5e95e2",
+  "reference_sha256": "446a2ae16370b7fc64c43a60612827af373610493ab90d0c2c36e5d7ec0c6c47",
+  "checkpoint_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/policies_short/episode_000022/policy_5000192.safetensors",
+  "reference_path": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier1/assets/human_motion_data/whole_body/challenge_tier1/sequence_id=2026-05-22_16-52-36_step_ladder_drag_03/robot_name=g1/data.parquet",
+  "trajectory_sha256": "92c5fcaac8f2667ace2592c55d2e293ca1a7c05e3793b80b02c96555ff2498a5",
+  "metrics_sha256": "f802cfc46c4cae53ca7ac1a17218454cea563eab4bf022dbd19aea1ea3f57870",
+  "export_sha256": "656b5c540d8bb4438908011cf6846725df69dffa644d2acdd6b0e1e06c9adc09",
+  "trained_environment_steps": 5000192,
+  "requested_training_steps": 5000192,
+  "full_budget_policy": false,
+  "object_name": "step_ladder",
+  "rows": 719,
+  "raw_poses_preserved": true
+}

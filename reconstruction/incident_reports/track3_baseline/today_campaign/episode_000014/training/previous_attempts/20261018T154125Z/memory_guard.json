@@ -1,0 +1,4 @@
+{
+  "state": "STOPPED_BY_GPU_GUARD",
+  "reason": "GPU monitor unavailable after 3 consecutive failures: Command '['/mnt/c/Windows/System32/nvidia-smi.exe', '--query-gpu=timestamp,utilization.gpu,memory.used,memory.total,power.draw', '--format=csv,noheader,nounits']' timed out after 5 seconds"
+}

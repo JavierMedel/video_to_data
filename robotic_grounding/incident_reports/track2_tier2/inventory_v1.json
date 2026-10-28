@@ -1,0 +1,1506 @@
+{
+  "state": "RETARGET_INVENTORY_VERIFIED",
+  "tier": 2,
+  "episodes": [
+    {
+      "episode_index": 16,
+      "sequence_id": "2026-03-12_15-06-36_spray_bottle_left_desk_ground_02",
+      "frames": 477,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-03-12_15-06-36_spray_bottle_left_desk_ground_02/robot_name=g1/data.parquet",
+      "reference_sha256": "d6fecbce69e26dde641ba449e17544e7f03406f9b59db10c4e3c56dfedb072ae",
+      "source_manifest_sha256": "ecdbbe2e082d3cb827e2b52b4140deb5749f45bc43cf5497973954248bfdc5bd",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000016.npz",
+      "frame_reference_sha256": "443772840849780dee24a13baeb315da87ac8b7722dbc6b0de8de003dac63ee1",
+      "tier": 2,
+      "verification": {
+        "frames": 477,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.0884448183523123e-07,
+        "object_rotation_se3_max_frobenius_error": 1.1059007438897356e-07,
+        "released_to_retarget_world": [
+          [
+            0.9767763946796425,
+            -0.006323701945735978,
+            -0.21416789112829424,
+            -0.13975141335764263
+          ],
+          [
+            0.21346555183278984,
+            -0.0573420337621152,
+            0.9752662966312057,
+            -2.3471441650979457
+          ],
+          [
+            -0.018448115821457146,
+            -0.9983345641405618,
+            -0.05466045247628457,
+            1.3852025019866525
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "6af119ca0c8ab9d17031b600fe2ba98b1bc823ceeac979d3efa2ad98973184d1",
+        "visible_frames": 477,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 5,
+      "sequence_id": "2026-03-18_19-36-56_g1_box_rotate_01",
+      "frames": 1003,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-03-18_19-36-56_g1_box_rotate_01/robot_name=g1/data.parquet",
+      "reference_sha256": "73c0d2373a76bfb3dc730493f39b4c6c44b032a30115d71e776b93485ca53a40",
+      "source_manifest_sha256": "9e38e600a3bcb3cc898415bbf5b8c8be3663af567aedb6695f5e9b513be3b2f8",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000005.npz",
+      "frame_reference_sha256": "f74d3608940230f49a3139c55ccfb0f8c826ac0c3372620c0a6b2356d2205363",
+      "tier": 2,
+      "verification": {
+        "frames": 1003,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 7.682204898532168e-08,
+        "object_rotation_se3_max_frobenius_error": 1.1553089611418271e-07,
+        "released_to_retarget_world": [
+          [
+            0.9993832611302121,
+            -0.020148180611814226,
+            0.028760184122764522,
+            -0.6616256314845097
+          ],
+          [
+            -0.029801499974900846,
+            -0.053445715543955594,
+            0.9981259570260863,
+            -3.548750621659372
+          ],
+          [
+            -0.018573313435884392,
+            -0.9983674705778567,
+            -0.054013199497753336,
+            1.3887567511893866
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 1003,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 25,
+      "sequence_id": "2026-03-20_11-59-57_cyan_water_bottle_rotate_01",
+      "frames": 859,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-03-20_11-59-57_cyan_water_bottle_rotate_01/robot_name=g1/data.parquet",
+      "reference_sha256": "8cf0476851b808364d3a559ae52b96f719747586808a6069f144525fcbdeaa09",
+      "source_manifest_sha256": "bd8fb723380f9730a7fea31cb01d2b7144a1bd0fe1e357e29c7a88066647bb4a",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000025.npz",
+      "frame_reference_sha256": "a10dcb684bbed9b59684c89b363f825914d41049fc5819ce9c0392ae093d1c57",
+      "tier": 2,
+      "verification": {
+        "frames": 859,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.0372985050626154e-07,
+        "object_rotation_se3_max_frobenius_error": 1.2826653457839989e-07,
+        "released_to_retarget_world": [
+          [
+            0.5317991182398466,
+            0.03709475378566765,
+            -0.8460577268017246,
+            1.855926876148195
+          ],
+          [
+            0.8466672644423887,
+            -0.04517591616924283,
+            0.5302015465084112,
+            -0.9683156624163067
+          ],
+          [
+            -0.01855373711582521,
+            -0.9982900960341387,
+            -0.05543142609735539,
+            1.3873292700230646
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "cc6cbdf1db8ea5896ee82bb731a0ab96cb6e605a2d3f8e28e7e123c1cb2e2fb4",
+        "visible_frames": 859,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 4,
+      "sequence_id": "2026-04-24_11-40-52_baseball_bat_rotate_05",
+      "frames": 803,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-04-24_11-40-52_baseball_bat_rotate_05/robot_name=g1/data.parquet",
+      "reference_sha256": "5641890771c08c22ae504433a6e7cdee5e5ebcfaf281fa0aa91f84c361225a57",
+      "source_manifest_sha256": "ebed1700bb08ebe00d6d70fc398d2b3204a76940a995b0d7d561535f55234101",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000004.npz",
+      "frame_reference_sha256": "dd7bec301d981b13eb98d6f3e4f25493fa1acbc3363f1501cfc5a85873730605",
+      "tier": 2,
+      "verification": {
+        "frames": 803,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.2189490073497086e-07,
+        "object_rotation_se3_max_frobenius_error": 1.4226081463103395e-07,
+        "released_to_retarget_world": [
+          [
+            -0.9676685104163542,
+            0.0035948628879488636,
+            0.25219978372197627,
+            -1.7147464751023647
+          ],
+          [
+            -0.25157550871970563,
+            0.05797658430403299,
+            -0.9660996217186193,
+            2.9261798660494636
+          ],
+          [
+            -0.01809467769859332,
+            -0.998311470751115,
+            -0.05519773551269866,
+            1.3934415398814266
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 803,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 11,
+      "sequence_id": "2026-04-24_13-56-58_light_blue_book_pick_place_09",
+      "frames": 901,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-04-24_13-56-58_light_blue_book_pick_place_09/robot_name=g1/data.parquet",
+      "reference_sha256": "1eb081e2b558b48dfa6db8bdec4d705b27525c45a2c499bb1186cf359a49d9cd",
+      "source_manifest_sha256": "db08230c3a21db045b2cb5fd17da6860e795b664c3e4ce828d79eba2fa0ec250",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000011.npz",
+      "frame_reference_sha256": "b909881acc55e518b000922a3c8fa7569aa1ea80f54e25e990baf244b50bd3ab",
+      "tier": 2,
+      "verification": {
+        "frames": 901,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 7.976581711974363e-08,
+        "object_rotation_se3_max_frobenius_error": 1.4952311118702666e-07,
+        "released_to_retarget_world": [
+          [
+            -0.530602493278557,
+            -0.037068327308616804,
+            0.8468098566013037,
+            -3.4294209014623105
+          ],
+          [
+            -0.8474119924143205,
+            0.04537191658041038,
+            -0.5289936713215116,
+            1.8894018065485065
+          ],
+          [
+            -0.018812475620450863,
+            -0.9982821887103672,
+            -0.05548659716245358,
+            1.3896661409266589
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "20f71ba53ba3b302ba44ad22b2cc0e8abdf21c59bff79d01316922634751422c",
+        "visible_frames": 900,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 12,
+      "sequence_id": "2026-04-25_17-20-04_black_platform_turn_05",
+      "frames": 700,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-04-25_17-20-04_black_platform_turn_05/robot_name=g1/data.parquet",
+      "reference_sha256": "5f17f2a0e46a74388113ecda946458e4328429c92e9a1c73e1bc7acb0bfed28d",
+      "source_manifest_sha256": "787f917f14f641166b541563287c95f53a0f9571b759db4b24e87d7ebaeef6c9",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000012.npz",
+      "frame_reference_sha256": "b6807e3446e824c56d5070c7f6d337b7077a938c8a61fd0a4a4ffe64d1062414",
+      "tier": 2,
+      "verification": {
+        "frames": 700,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 5.319739357309277e-08,
+        "object_rotation_se3_max_frobenius_error": 1.79300940332957e-07,
+        "released_to_retarget_world": [
+          [
+            0.25533670756076193,
+            -0.0596083678493746,
+            0.9650129575577537,
+            -2.8813224170452174
+          ],
+          [
+            -0.9666715363245885,
+            0.0035546620985914346,
+            0.2559951273700822,
+            -0.20833484375917732
+          ],
+          [
+            -0.018689746704803546,
+            -0.9982155112297635,
+            -0.05671407681001074,
+            1.401431740862377
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 700,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 3,
+      "sequence_id": "2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05",
+      "frames": 781,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-04-27_11-50-10_contigo_coffee_mug_handle_table_05/robot_name=g1/data.parquet",
+      "reference_sha256": "418d2515da5cedf1b26ae998ea6f29fbf1a5f5214d657137f87a2e9cbc1eef6b",
+      "source_manifest_sha256": "3e4a5fd68f7211d405242d492c1767eda95626920a997a087054ef36ba613c11",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000003.npz",
+      "frame_reference_sha256": "4d15696ba2649a4763726a106fa76ce3dbf4aa11d8e62d571be80df8dfd00e4c",
+      "tier": 2,
+      "verification": {
+        "frames": 781,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.0452053767095906e-07,
+        "object_rotation_se3_max_frobenius_error": 1.0757053808400012e-07,
+        "released_to_retarget_world": [
+          [
+            -0.24871876750232963,
+            -0.04978138534269197,
+            0.9672956054720213,
+            -3.743868350499057
+          ],
+          [
+            -0.9683877994682581,
+            0.03245373015015449,
+            -0.24732938612378078,
+            0.9113670421808349
+          ],
+          [
+            -0.01907995107821982,
+            -0.9982327229021816,
+            -0.0562795379702904,
+            1.3903544391416884
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "11b4daee99ee0c47a63200b748a26905c93f20c93753febc553273612b270d22",
+        "visible_frames": 781,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 21,
+      "sequence_id": "2026-04-29_11-53-57_tall_bar_stool_pull_08",
+      "frames": 678,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-04-29_11-53-57_tall_bar_stool_pull_08/robot_name=g1/data.parquet",
+      "reference_sha256": "98e40abfe8789d1e4a4d3a7f71e6380a194287a12dd1db7d44d57721d43be035",
+      "source_manifest_sha256": "e036a395f487875a21d6902ef3e5e64e004a05663636ccd64db9eab203d317b9",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000021.npz",
+      "frame_reference_sha256": "ee019e3bde67940708d54aaff37a3a92c18c030542172cd38524667cd513e1a0",
+      "tier": 2,
+      "verification": {
+        "frames": 678,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 9.928943134777258e-08,
+        "object_rotation_se3_max_frobenius_error": 1.3934093565066935e-07,
+        "released_to_retarget_world": [
+          [
+            -0.9994149148120375,
+            0.01620255159379427,
+            0.03012151013973616,
+            -0.9447654267569415
+          ],
+          [
+            -0.02916430522334888,
+            0.05638132342361984,
+            -0.9979832612172613,
+            2.9956100281865035
+          ],
+          [
+            -0.017868165884812246,
+            -0.9982778289087921,
+            -0.05587579938632881,
+            1.398781533675976
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 678,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 27,
+      "sequence_id": "2026-05-01_11-15-05_woven_basket_ground_desk_10",
+      "frames": 565,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-01_11-15-05_woven_basket_ground_desk_10/robot_name=g1/data.parquet",
+      "reference_sha256": "8a495caa49761b3b476a6bf13a0549fb4ea96e5f20702b814096a2848c4ef5f0",
+      "source_manifest_sha256": "45b1c1a5c5964f70eed1a4595c7bf661f8f4c08bf48fa040ca4cebccb5ffa26e",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000027.npz",
+      "frame_reference_sha256": "61e168dffe7e32919dc6ec4f964496161197735ab90ea7234ccd5049a9c6d1be",
+      "tier": 2,
+      "verification": {
+        "frames": 565,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.4116267652925463e-07,
+        "object_rotation_se3_max_frobenius_error": 1.8859490828388911e-07,
+        "released_to_retarget_world": [
+          [
+            -0.4479392889342127,
+            0.06008068069832531,
+            -0.8920429951722828,
+            2.6348691807971094
+          ],
+          [
+            0.8938669148324581,
+            0.009147540637690398,
+            -0.44823906686966136,
+            0.6158640944591542
+          ],
+          [
+            -0.018770508704206032,
+            -0.9981516088786849,
+            -0.05780167554558988,
+            1.3961221069108447
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "506e23bcdd184a0064a2403793ae95feaf86e53e97b0357d249225dd12ae0618",
+        "visible_frames": 565,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 10,
+      "sequence_id": "2026-05-01_11-36-40_white_desk_lower_to_ground_10",
+      "frames": 794,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-01_11-36-40_white_desk_lower_to_ground_10/robot_name=g1/data.parquet",
+      "reference_sha256": "26c51ee2acac2bb2ecee8cc219cef48d024f27a8b866d0fc7de1f93d4a804df9",
+      "source_manifest_sha256": "2010f488dd0fb7f0b654957e1704dcd79f2696c9cef1e891fa0c3949d6f19a12",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000010.npz",
+      "frame_reference_sha256": "5e76cd953e0230b2b01ab14558699d816c17543095ee92277c029716bf6a8be1",
+      "tier": 2,
+      "verification": {
+        "frames": 794,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 9.148994535829163e-08,
+        "object_rotation_se3_max_frobenius_error": 1.627854192038504e-07,
+        "released_to_retarget_world": [
+          [
+            -0.807550152200836,
+            0.04839338713830188,
+            -0.5878102004573325,
+            1.0393995523658113
+          ],
+          [
+            0.5894962561951089,
+            0.03430241107621651,
+            -0.8070424453065088,
+            2.4990164036126292
+          ],
+          [
+            -0.018892210361879276,
+            -0.9982391620626996,
+            -0.0562286378280839,
+            1.4000926554187543
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 794,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 17,
+      "sequence_id": "2026-05-01_17-04-55_traffic_cone_ground_table_02",
+      "frames": 440,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-01_17-04-55_traffic_cone_ground_table_02/robot_name=g1/data.parquet",
+      "reference_sha256": "6bb1a559f630d812fde28c969a99e545aa6715f19df70b98fb92553f7cda29f7",
+      "source_manifest_sha256": "e1666ec55c8d0eccd5102a57c6db9e7d78d0a0bb4396a779c9a21b4894ef389b",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000017.npz",
+      "frame_reference_sha256": "d240707712cfd44d6ac793d70f878d3ef56850822089b996b1fa8237a7e1ac53",
+      "tier": 2,
+      "verification": {
+        "frames": 440,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.247082950797952e-07,
+        "object_rotation_se3_max_frobenius_error": 8.440604491444706e-08,
+        "released_to_retarget_world": [
+          [
+            -0.5759851597523563,
+            -0.03500697398592185,
+            0.8167102347328591,
+            -2.734980261892428
+          ],
+          [
+            -0.8172351680277047,
+            0.048097560517047194,
+            -0.574293744360008,
+            1.978731663204046
+          ],
+          [
+            -0.019177483770867063,
+            -0.9982290000018325,
+            -0.0563124113456364,
+            1.399468590099933
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "56084f9551eb7c705cfc24d97d46037694ed186f986ac5cdc9bcdcabad8d1161",
+        "visible_frames": 440,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 18,
+      "sequence_id": "2026-05-06_10-00-19_blue_trash_can_drag_sideways_08",
+      "frames": 858,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-06_10-00-19_blue_trash_can_drag_sideways_08/robot_name=g1/data.parquet",
+      "reference_sha256": "46ab78eeac9a0123c055ce1bb1784e38eaa8b6a8778bba815530b7d1f0a469bd",
+      "source_manifest_sha256": "b33440a7b78e541f8969373d6ee1eaeec13ea04b28f96ef17bc5b1d91134195e",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000018.npz",
+      "frame_reference_sha256": "fc622b0379f813fb58bc9a36d12f55b51b1fb921c92d8a0d33747f269dbb2794",
+      "tier": 2,
+      "verification": {
+        "frames": 858,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 8.451529823556063e-08,
+        "object_rotation_se3_max_frobenius_error": 1.7835769572939327e-07,
+        "released_to_retarget_world": [
+          [
+            0.8586061500395584,
+            -0.04401658221460306,
+            0.5107426158099518,
+            -2.0455131047567656
+          ],
+          [
+            -0.5123000372495351,
+            -0.03761999954110954,
+            0.8579821719993089,
+            -2.8131777702268166
+          ],
+          [
+            -0.018551305840075784,
+            -0.9983222306072685,
+            -0.05485045967862046,
+            1.3916502720534938
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 858,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 15,
+      "sequence_id": "2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08",
+      "frames": 715,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-06_11-06-15_wet_floor_sign_pick_place_ground_08/robot_name=g1/data.parquet",
+      "reference_sha256": "5d6e64df743557dac11fcce7b78cd20e2177a7b97bf1f8e0c85d0ba825dedeb5",
+      "source_manifest_sha256": "abf74664a0fb3d9bfec726805be5bee1673d135ee019577f45e974d944ab04bb",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000015.npz",
+      "frame_reference_sha256": "9e17da7e1474a87f3c3e73711dcd9ffa3e872ef55b51d5a3a5fc0899ce387d3d",
+      "tier": 2,
+      "verification": {
+        "frames": 715,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.4492882118068163e-07,
+        "object_rotation_se3_max_frobenius_error": 1.6733027993162198e-07,
+        "released_to_retarget_world": [
+          [
+            -0.27874022732265885,
+            0.055937289867470735,
+            -0.9587360978258801,
+            2.3479021652024996
+          ],
+          [
+            0.9602071386599209,
+            -0.0019551579346108617,
+            -0.279281986930735,
+            1.0554869741287414
+          ],
+          [
+            -0.01749675794656986,
+            -0.9984323697475623,
+            -0.05316640388088959,
+            1.3840047859336615
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 715,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 1,
+      "sequence_id": "2026-05-18_17-06-21_vacuum_left_lean_02",
+      "frames": 747,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-18_17-06-21_vacuum_left_lean_02/robot_name=g1/data.parquet",
+      "reference_sha256": "98c19cf07e638fa9a5e9d85abd2ad9ae50be8e5de775dcc5c65bdc0d37c5904d",
+      "source_manifest_sha256": "e004314e85a42905359b1a13394fb85cb8db2162f59d379bf9e77afee5ee7d12",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000001.npz",
+      "frame_reference_sha256": "d0ee072b160f30bfd05af9ca0b8685917a36b51de96026a93673f5fe9ca7af0b",
+      "tier": 2,
+      "verification": {
+        "frames": 747,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 8.944890612799074e-08,
+        "object_rotation_se3_max_frobenius_error": 1.7807408107593855e-07,
+        "released_to_retarget_world": [
+          [
+            0.9984704716622056,
+            -0.01704307878623118,
+            -0.052595158371651636,
+            -0.5223122748798926
+          ],
+          [
+            0.051602929751571054,
+            -0.05419675652737864,
+            0.9971959933849345,
+            -3.111730530224398
+          ],
+          [
+            -0.019845776873360848,
+            -0.9983848181174422,
+            -0.053234388255097125,
+            1.3883955759184683
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "db234e4fdc148e1eb42a3229673373f819dbdd367e2a5c0acff750e86405f0a4",
+        "visible_frames": 747,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 19,
+      "sequence_id": "2026-05-19_10-19-48_cane_swing_05",
+      "frames": 886,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-19_10-19-48_cane_swing_05/robot_name=g1/data.parquet",
+      "reference_sha256": "82e928e9e734635262cf7a2f790ad165194c7d13ccb1c6e05887b9921d68cb03",
+      "source_manifest_sha256": "73d2a10da65331233dd635219202ef92421603beedcc22cf858cab6a79389b40",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000019.npz",
+      "frame_reference_sha256": "8a2db2002b7fe2345619ac6310c4a6b3d1305be25f3b64534ca1be2137d3a468",
+      "tier": 2,
+      "verification": {
+        "frames": 886,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 9.017367199369038e-08,
+        "object_rotation_se3_max_frobenius_error": 1.0237134175404263e-07,
+        "released_to_retarget_world": [
+          [
+            -0.976295467466286,
+            0.007802778299872512,
+            0.21630135657362218,
+            -0.8962839753877796
+          ],
+          [
+            -0.2155367326702949,
+            0.056259217454410856,
+            -0.9748737442978097,
+            3.5528289780792393
+          ],
+          [
+            -0.019775668752281893,
+            -0.9983857055778695,
+            -0.05324383366343623,
+            1.384135410257927
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 886,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 28,
+      "sequence_id": "2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_",
+      "frames": 988,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-19_11-27-07_squeegee_sweep_away_from_you_03_/robot_name=g1/data.parquet",
+      "reference_sha256": "d77cff08744032c18f32a24e8cf9d2454585537f856bc8dadaf28ac4c8534abc",
+      "source_manifest_sha256": "d1eab80c949812f4664b9851c13e2f11d50eb35e48e5840fa7d03a9bc38104ef",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000028.npz",
+      "frame_reference_sha256": "401cf960f4a6e027a6077d58a0c82f4227bbffb9a78d51eec5cb40f2d59b1116",
+      "tier": 2,
+      "verification": {
+        "frames": 988,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.1278589167141393e-07,
+        "object_rotation_se3_max_frobenius_error": 1.581351208962359e-07,
+        "released_to_retarget_world": [
+          [
+            -0.9996264511908891,
+            0.017531427385279522,
+            0.020966810280617375,
+            0.8572213270953775
+          ],
+          [
+            -0.020003682826300263,
+            0.053416343789581086,
+            -0.9983719481683858,
+            2.367784454888545
+          ],
+          [
+            -0.018622855658934574,
+            -0.9984184209388306,
+            -0.05304569706506377,
+            1.3859173410430716
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "6bb833e83154505d6548a83c3f06501bc58903c052e2c3d5b152383233513bd6",
+        "visible_frames": 988,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 22,
+      "sequence_id": "2026-05-22_16-52-36_step_ladder_drag_03",
+      "frames": 719,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-22_16-52-36_step_ladder_drag_03/robot_name=g1/data.parquet",
+      "reference_sha256": "768a0ca709eab9e6f51dad27b440b650e9ecde8385934fe787959ad83d53babb",
+      "source_manifest_sha256": "94e285462e257b480df96a93e1256438bf30c7cd4f8c8cbb43396e1248791a3d",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000022.npz",
+      "frame_reference_sha256": "21e4c9334ad3ce05c8c148b4935e0e4aa27cf1d20ea1450bcbef4d3b8dd2c7fb",
+      "tier": 2,
+      "verification": {
+        "frames": 719,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.0824068046408627e-07,
+        "object_rotation_se3_max_frobenius_error": 1.2674568613467142e-07,
+        "released_to_retarget_world": [
+          [
+            -0.9968869582467742,
+            0.013402111548355515,
+            0.07769669158683726,
+            -0.523188619274342
+          ],
+          [
+            -0.07689427870513264,
+            0.052538200846583755,
+            -0.9956540600802177,
+            3.5666435968683206
+          ],
+          [
+            -0.017425911164472382,
+            -0.998528978476764,
+            -0.05134410153307247,
+            1.3827205473331263
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 719,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 14,
+      "sequence_id": "2026-05-28_14-44-09_round_table_flip_08",
+      "frames": 993,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-28_14-44-09_round_table_flip_08/robot_name=g1/data.parquet",
+      "reference_sha256": "5f4411918c6c7785da4df7e461da63f27855c7b058d64cc34d255bf161217107",
+      "source_manifest_sha256": "d15ca779f6e942d8b5b9240475954d33f7a3ee9fffa394a4a1e9a244556f1e2f",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000014.npz",
+      "frame_reference_sha256": "b1cfe6ebf61773743960f10fa4c20c6c252aaf13b0c2776de6077c2301995d1e",
+      "tier": 2,
+      "verification": {
+        "frames": 993,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 9.905803571321689e-08,
+        "object_rotation_se3_max_frobenius_error": 1.2697213948300228e-07,
+        "released_to_retarget_world": [
+          [
+            -0.7428674809206343,
+            0.05556806724990468,
+            -0.6671282453117553,
+            1.2838505438789167
+          ],
+          [
+            0.6690778651409829,
+            0.028923480721569167,
+            -0.7426292767197735,
+            2.096029527951841
+          ],
+          [
+            -0.021970802648423618,
+            -0.9980358822031697,
+            -0.058665677068665406,
+            1.3934625268728573
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 993,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 7,
+      "sequence_id": "2026-05-29_15-20-43_iron_round_table_02",
+      "frames": 896,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-29_15-20-43_iron_round_table_02/robot_name=g1/data.parquet",
+      "reference_sha256": "68bb2e561e3663ed1ed68e1ae56304a6a79d79e56d2c8840e6084a5ae3c971a3",
+      "source_manifest_sha256": "ce4ac2e37f04af41e6a476a690b97b5ceab1300ef8c13ef55c130541afdc2a07",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000007.npz",
+      "frame_reference_sha256": "b8c4942ce598956541740d0653ff0e02c6db0c89d4997524fc5175f7024a4028",
+      "tier": 2,
+      "verification": {
+        "frames": 896,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 6.685801785735002e-08,
+        "object_rotation_se3_max_frobenius_error": 1.4269437703864663e-07,
+        "released_to_retarget_world": [
+          [
+            -0.6619272463355445,
+            0.055472890907212184,
+            -0.7475125944979387,
+            1.5047679272765375
+          ],
+          [
+            0.7493072073994392,
+            0.02266104824062955,
+            -0.6618347118668597,
+            2.1746846351642315
+          ],
+          [
+            -0.019774465805600546,
+            -0.998203003034469,
+            -0.05656620223305386,
+            1.388938857529216
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4db58f51b22190a7f0d6d3de01fd1f71056b2c4eaf45d96cb4db01b3af07038a",
+        "visible_frames": 896,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 24,
+      "sequence_id": "2026-05-29_15-43-20_watering_can_pour_right_02",
+      "frames": 748,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-05-29_15-43-20_watering_can_pour_right_02/robot_name=g1/data.parquet",
+      "reference_sha256": "2f50a998ca0683368c8c0a17fd79def850ac70bf2dd81dadaae86fc14f9a59f5",
+      "source_manifest_sha256": "b1178882abec390dca620f7fd8fbfa59e79ff2dc596a24fec851dc6f29fdb2ca",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000024.npz",
+      "frame_reference_sha256": "78467e40d03bb0764232b6f7caf4b43c316441d89143496f626e6981200073ee",
+      "tier": 2,
+      "verification": {
+        "frames": 748,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 3.143439888575186e-08,
+        "object_rotation_se3_max_frobenius_error": 2.2384695000483678e-07,
+        "released_to_retarget_world": [
+          [
+            -0.6871641864937014,
+            -0.02878393467248571,
+            0.7259317226194343,
+            -2.4610629604041865
+          ],
+          [
+            -0.7262714924819255,
+            0.052394026300519946,
+            -0.6854083346561352,
+            2.4036142782217174
+          ],
+          [
+            -0.018305737038585092,
+            -0.9982115763267777,
+            -0.056908249654014885,
+            1.3918173249807495
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 748,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 6,
+      "sequence_id": "2026-06-01_11-26-44_monitor_rotate_05",
+      "frames": 546,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-01_11-26-44_monitor_rotate_05/robot_name=g1/data.parquet",
+      "reference_sha256": "ed2791b555fba2c84ea7d08f7f5d6869b823b3acbbb1c1b858e47c4f2b8cbf93",
+      "source_manifest_sha256": "b04af28e000cdb1aa57196457a786ea3f2d97a93690e2d5d95877259279618ac",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000006.npz",
+      "frame_reference_sha256": "f11de0e66433f6c2143dcac4fb50397a645cb1a0dc13e44512642a224f3de708",
+      "tier": 2,
+      "verification": {
+        "frames": 546,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 8.448956889770495e-08,
+        "object_rotation_se3_max_frobenius_error": 1.6563981130140066e-07,
+        "released_to_retarget_world": [
+          [
+            -0.7707461841296233,
+            -0.020844744095493993,
+            0.6368012376662112,
+            -2.3557375652410597
+          ],
+          [
+            -0.6368445605387243,
+            0.05575575455427643,
+            -0.7689735376112251,
+            2.451254634743552
+          ],
+          [
+            -0.019476276899463768,
+            -0.998226824162563,
+            -0.056248396959013396,
+            1.3872902659990654
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "fcf2d81a9f93d8e8649dffb6c9dbc2df0de9c2d2eccbc8d230294750c8677580",
+        "visible_frames": 546,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 2,
+      "sequence_id": "2026-06-02_10-04-42_blue_easter_basket_place_10",
+      "frames": 980,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-02_10-04-42_blue_easter_basket_place_10/robot_name=g1/data.parquet",
+      "reference_sha256": "5518860d2fdc9dfd5c6863f1eb8ce5c3a6d98df1e518fd32b044b0aad71626b3",
+      "source_manifest_sha256": "5312b97b13f689b5be9b0d73065eee2e73ee3b62e3f88db58fe90bbfcc653d89",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000002.npz",
+      "frame_reference_sha256": "0ff2dbd8e463e8d4c00a8f760c45ff9df538da990e400c8d6cc1c6dddfc86591",
+      "tier": 2,
+      "verification": {
+        "frames": 980,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 8.944536526036318e-08,
+        "object_rotation_se3_max_frobenius_error": 1.584465328152633e-07,
+        "released_to_retarget_world": [
+          [
+            -0.6864009843831083,
+            0.05477222333203113,
+            -0.7251577015995667,
+            1.7773405807975675
+          ],
+          [
+            0.7269717979707376,
+            0.0254583533602593,
+            -0.6861952179951252,
+            1.918606900896132
+          ],
+          [
+            -0.01912311672016557,
+            -0.9981742712550002,
+            -0.05729250048179646,
+            1.3920362725317081
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "1557cc70737264b04aadb12d15ca3255a19d99e746d22bad7ba71ef01e1f107d",
+        "visible_frames": 980,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 23,
+      "sequence_id": "2026-06-03_15-08-03_toy_stroller_back_forth_ground_04",
+      "frames": 946,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-03_15-08-03_toy_stroller_back_forth_ground_04/robot_name=g1/data.parquet",
+      "reference_sha256": "373abef8631b32f30c3d0ae6c704824ae83cc1266b21c09e41ca3b3e11900ad1",
+      "source_manifest_sha256": "d7f9769c444cc53ced2220e8ee234011a7f443c8ec7a3ddf39625fe43197058d",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000023.npz",
+      "frame_reference_sha256": "769917a58b8d6bcd85f549c16e6a6853b5d57aaf1d188c2842c32f73376a8dca",
+      "tier": 2,
+      "verification": {
+        "frames": 946,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 8.927914715792803e-08,
+        "object_rotation_se3_max_frobenius_error": 1.1542752985792754e-07,
+        "released_to_retarget_world": [
+          [
+            -0.998767421026876,
+            0.015818986865952137,
+            0.047046767687675885,
+            -0.7743404601841543
+          ],
+          [
+            -0.04604312795978407,
+            0.05873825679010801,
+            -0.9972110346145084,
+            2.7211670794572607
+          ],
+          [
+            -0.018538313380732557,
+            -0.9981480736062127,
+            -0.05793750161340735,
+            1.4036023719564612
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 946,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 0,
+      "sequence_id": "2026-06-04_14-16-23_tall_bar_stool_tip_up_04",
+      "frames": 778,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-04_14-16-23_tall_bar_stool_tip_up_04/robot_name=g1/data.parquet",
+      "reference_sha256": "4a9afc155df24d9deed73800e57b9dc59ba533dcf5dbfc926348d39d6d4399a1",
+      "source_manifest_sha256": "521162b6123a4b00a1401a996b31b882601f0060eb2adca776c612bf3301aceb",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000000.npz",
+      "frame_reference_sha256": "618f89e6e8c34f7a44dd1d96697d26e4f2701b015ec9b49d0c63c7174702b2ed",
+      "tier": 2,
+      "verification": {
+        "frames": 778,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 9.474464662524382e-08,
+        "object_rotation_se3_max_frobenius_error": 2.0657893882644584e-07,
+        "released_to_retarget_world": [
+          [
+            0.17234953694474425,
+            -0.05789716418308845,
+            0.9833328813247771,
+            -3.098711550009706
+          ],
+          [
+            -0.9848546214544558,
+            0.009020355925729376,
+            0.17314735856712854,
+            -1.1497788340473538
+          ],
+          [
+            -0.01889475362985143,
+            -0.9982817996730833,
+            -0.055465635547945695,
+            1.3956352906303537
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 778,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 9,
+      "sequence_id": "2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03",
+      "frames": 870,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-04_16-45-04_big_red_bowl_under_skinny_wood_chair_03/robot_name=g1/data.parquet",
+      "reference_sha256": "d60734b47014971175645f275d27dcbd3c23d86a2ed74f7c1880815c4d404698",
+      "source_manifest_sha256": "14bfedc23c74ac1e3814a9e90ad263404c407024788da55362ee904b78247d06",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000009.npz",
+      "frame_reference_sha256": "8810a812ecf6a553c1c4fdb8a927d04d88f951bceeac7f7299e9f87195359a6b",
+      "tier": 2,
+      "verification": {
+        "frames": 870,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 1.0176333914012255e-07,
+        "object_rotation_se3_max_frobenius_error": 1.3216355394635787e-07,
+        "released_to_retarget_world": [
+          [
+            -0.5216187576308841,
+            -0.03779532164984435,
+            0.8523411202969138,
+            -3.4812020519875153
+          ],
+          [
+            -0.8529588979909678,
+            0.04577624764634169,
+            -0.5199669734602911,
+            1.5382990635946814
+          ],
+          [
+            -0.019364659192643914,
+            -0.9982364693862902,
+            -0.05611560532995394,
+            1.3878235633010836
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "b7161801e90c201de75045dcbb5b9bbc3fe12fab45c4b8d2ae46e216b7b9f426",
+        "visible_frames": 870,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 8,
+      "sequence_id": "2026-06-05_15-08-08_skinny_wood_chair_push_10",
+      "frames": 708,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-05_15-08-08_skinny_wood_chair_push_10/robot_name=g1/data.parquet",
+      "reference_sha256": "002eb78cc7e13739061a986fe5b9796ef31836ab87a4cbe5a73e5bff37acaa37",
+      "source_manifest_sha256": "f74fab5f36671e08fd87ae9c279edf1cad8b4b34d188933484d0d5b12db9ed83",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000008.npz",
+      "frame_reference_sha256": "3b4c57f8fb5486f24710702967e871b5ace0191bf040a84ecefd495de0d342a0",
+      "tier": 2,
+      "verification": {
+        "frames": 708,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 6.600833438931799e-08,
+        "object_rotation_se3_max_frobenius_error": 1.2980129862221096e-07,
+        "released_to_retarget_world": [
+          [
+            -0.8018368528205112,
+            0.04791781920538376,
+            -0.59561862299755,
+            0.9522938733715167
+          ],
+          [
+            0.5972656510290864,
+            0.03390312112156863,
+            -0.8013266003815284,
+            2.2304615811958133
+          ],
+          [
+            -0.018204492843799065,
+            -0.9982757439609639,
+            -0.05580443942450863,
+            1.3949396875412114
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 708,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 26,
+      "sequence_id": "2026-06-05_16-05-08_skateboard_rotate_ground_10",
+      "frames": 669,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-05_16-05-08_skateboard_rotate_ground_10/robot_name=g1/data.parquet",
+      "reference_sha256": "9575c49026d9e354c647c5ea6d1c415b600160fbe07daf198011151ff41124b2",
+      "source_manifest_sha256": "9e34f781c59965a2b50e6654adc2ab1a4812a85e94f561a4c40bbf045d61db2c",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000026.npz",
+      "frame_reference_sha256": "07eef311c1bcd45e5ec3b4394ec21417bf7230ba9d4d385f0c30f979ef8ba5a2",
+      "tier": 2,
+      "verification": {
+        "frames": 669,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 6.1156122820515e-08,
+        "object_rotation_se3_max_frobenius_error": 2.0554318634034222e-07,
+        "released_to_retarget_world": [
+          [
+            0.07794003039870011,
+            -0.05752597912327507,
+            0.995296997577787,
+            -3.143197083999347
+          ],
+          [
+            -0.9967695782008952,
+            0.014914864885056897,
+            0.07891739211776612,
+            0.281576902259057
+          ],
+          [
+            -0.019384520490805482,
+            -0.998232592400874,
+            -0.05617768092376638,
+            1.3867218297688941
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 669,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 29,
+      "sequence_id": "2026-06-05_18-27-40_rolling_luggage_left_foot_push_06",
+      "frames": 467,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-05_18-27-40_rolling_luggage_left_foot_push_06/robot_name=g1/data.parquet",
+      "reference_sha256": "6e5be5806e4cf464fc70cbc81f077e67d9df4f8b1d49298892ac646e7f21c222",
+      "source_manifest_sha256": "6694febed7b307ae2e2c9a7e64c965e039d203cc0cdc960d6e411f56fb30bfc6",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000029.npz",
+      "frame_reference_sha256": "8359f014b4f4e175d9b0675988bfb763111a7c2ddb02f60e0be4645a15690ebd",
+      "tier": 2,
+      "verification": {
+        "frames": 467,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 8.782989381646625e-08,
+        "object_rotation_se3_max_frobenius_error": 1.7491756026919313e-07,
+        "released_to_retarget_world": [
+          [
+            0.968221144511631,
+            -0.004887622441841708,
+            -0.2500478483559771,
+            0.5019189966535895
+          ],
+          [
+            0.24933206445249756,
+            -0.059202436986905436,
+            0.9666067416952288,
+            -3.4640333532404357
+          ],
+          [
+            -0.019527850789150872,
+            -0.9982340319793139,
+            -0.05610241030365069,
+            1.3920637056787128
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "4d1d1a74fcede154531e8eda6212c213c4dba83c6e3270deffd2fcf60418768b",
+        "visible_frames": 467,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 20,
+      "sequence_id": "2026-06-08_16-57-34_rice_cooker_clockwise_04",
+      "frames": 553,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-08_16-57-34_rice_cooker_clockwise_04/robot_name=g1/data.parquet",
+      "reference_sha256": "c879f92c10cc1838fd8d82694c35843be1330c4aa04f9706d7a3023a290a5e5b",
+      "source_manifest_sha256": "3126f8f15a397a2ef4e3bed2cc2c201f5ac8048dc1c62a51526c3c0086a18d3d",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000020.npz",
+      "frame_reference_sha256": "e2288e3ac57f363d43aa4e5f1bda24414c9d12b0d7f416f472a1d612cdb4e982",
+      "tier": 2,
+      "verification": {
+        "frames": 553,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 4.8767731083732245e-08,
+        "object_rotation_se3_max_frobenius_error": 1.0544553531924994e-07,
+        "released_to_retarget_world": [
+          [
+            0.054203462877346065,
+            0.05471938895554483,
+            -0.9970294745314383,
+            2.8859831858907885
+          ],
+          [
+            0.9983388461309137,
+            -0.022502009423689743,
+            0.053039682105873315,
+            0.4670426642648432
+          ],
+          [
+            -0.019532867636373227,
+            -0.9982481896022791,
+            -0.05584817846332971,
+            1.386112591587136
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "1a76797209599615a3a4496443163bbcf7ccf72fc5af1a2ba6ffaa0062a5cce8",
+        "visible_frames": 553,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    },
+    {
+      "episode_index": 13,
+      "sequence_id": "2026-06-09_10-19-09_snack_box_desk_through_06",
+      "frames": 922,
+      "reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/assets/human_motion_data/whole_body/challenge_tier2/sequence_id=2026-06-09_10-19-09_snack_box_desk_through_06/robot_name=g1/data.parquet",
+      "reference_sha256": "fe29189aee132ef91fa7c53c5f3e1d25d285dbce981d989ca7ed57b877e13f5a",
+      "source_manifest_sha256": "5a3734805bb4c7a9d8d2992d25bd30cc4c545a45adb038d347c597af25adc9f3",
+      "input_source": "released_tier_input",
+      "frame_reference": "/home/alien51/video_to_data/robotic_grounding/data/track2/tier2/v1/frame_references/episode_000013.npz",
+      "frame_reference_sha256": "b56f0fc1610934d63069467c2892f6a9830c0274f7ded4915e2c60972e05939d",
+      "tier": 2,
+      "verification": {
+        "frames": 922,
+        "robot_joint_count": 43,
+        "object_translation_se3_max_error_m": 9.753996325717217e-08,
+        "object_rotation_se3_max_frobenius_error": 1.967171003159881e-07,
+        "released_to_retarget_world": [
+          [
+            -0.7122498967355543,
+            0.052169236536104904,
+            -0.6999846108018604,
+            1.4237615546846651
+          ],
+          [
+            0.7016694799129366,
+            0.025960136501764753,
+            -0.7120295023884322,
+            2.2433387163970027
+          ],
+          [
+            -0.01897433948523615,
+            -0.9983007773572296,
+            -0.05509566561036642,
+            1.3852229418690958
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "joint_limits_checked": 43,
+        "urdf_sha256": "8c7f768dc8da6c969d8a4b4efb3dcbe3d9d2b05fca5104df12205a69879d19e9",
+        "support_stage_sha256": "fab817f62953cf05f5f9d2bd2c5244402aea334bddb3b7e5d87815fd20bc9e0f",
+        "visible_frames": 922,
+        "contact_feasibility": "REQUIRES_NATIVE_PILOT",
+        "scope": "Kinematic limits and support provenance; not physical contact validation"
+      }
+    }
+  ]
+}

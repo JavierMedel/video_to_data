@@ -1,0 +1,11 @@
+{
+  "episodes": 30,
+  "position_classification_counts": {
+    "white": 0,
+    "random_walk": 1,
+    "mixed": 29,
+    "unclear": 0
+  },
+  "rest_evidence_available": false,
+  "scope": "Pooled observational noise hypotheses; motion and drift are not identifiable from spectra alone"
+}
