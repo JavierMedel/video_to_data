@@ -58,4 +58,3 @@
             self.register_buffer("th_selected_comps", selected_components)
 
         # End
-

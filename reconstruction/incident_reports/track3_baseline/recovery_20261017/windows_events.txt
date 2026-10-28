@@ -3,13 +3,10 @@
 TimeCreated  : 2026-10-17 1:35:37 PM
 Id           : 41
 ProviderName : Microsoft-Windows-Kernel-Power
-Message      : The system has rebooted without cleanly shutting down first. This error could be caused if the system 
+Message      : The system has rebooted without cleanly shutting down first. This error could be caused if the system
                stopped responding, crashed, or lost power unexpectedly.
 
 TimeCreated  : 2026-10-17 1:35:54 PM
 Id           : 6008
 ProviderName : EventLog
 Message      : The previous system shutdown at 1:26:10 PM on ?10/?17/?2026 was unexpected.
-
-
-
