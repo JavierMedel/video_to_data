@@ -102,7 +102,9 @@ jobs:
 
   deploy:
     name: Deploy combined site to GitHub Pages
-    if: github.event_name != 'pull_request'
+    # The fork's research showcase owns its Pages artifact and retains docs/.
+    # Keep the original upstream deployment intact.
+    if: github.event_name != 'pull_request' && github.repository != 'JavierMedel/video_to_data'
     needs: [build]
     runs-on: ubuntu-latest
     timeout-minutes: 10

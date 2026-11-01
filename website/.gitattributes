@@ -1,0 +1,2 @@
+# Small, distributable display assets must be ordinary files for Pages.
+public/media/*.glb -filter -diff -merge binary

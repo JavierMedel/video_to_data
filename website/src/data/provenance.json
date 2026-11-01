@@ -1,0 +1,13 @@
+{
+  "commit": "035bed6af955a59cf9747f1e4f3d20bbd764b52a",
+  "verificationDate": "2026-11-01",
+  "snapshotDate": "2026-10-25T14:47:59.327857+00:00",
+  "snapshotSource": "https://github.com/JavierMedel/video_to_data/blob/035bed6af955a59cf9747f1e4f3d20bbd764b52a/reconstruction/incident_reports/cross_track_validation_plan/snapshots_20261025_completion_v1/summary.json",
+  "links": {
+    "project": "https://github.com/JavierMedel/video_to_data",
+    "upstream": "https://github.com/nvidia-isaac/video_to_data",
+    "challenge": "https://nvidia-isaac.github.io/video_to_data/v2d_challenge/",
+    "dataset": "https://huggingface.co/datasets/nvidia/video_to_data_challenge",
+    "linkedin": "https://www.linkedin.com/in/javier-medel/"
+  }
+}

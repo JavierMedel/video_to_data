@@ -1,0 +1,62 @@
+name: Research showcase Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, v2d-track1-blackwell]
+    paths: ['website/**', 'docs/**', '.github/workflows/website-pages.yml']
+  pull_request:
+    paths: ['website/**', '.github/workflows/website-pages.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+      - name: Stage showcase and preserve existing static documentation
+        run: |
+          mkdir -p ../_showcase_site
+          cp -R ../docs/. ../_showcase_site/
+          cp ../_showcase_site/index.html ../_showcase_site/toolkit.html
+          cp -R dist/. ../_showcase_site/
+          touch ../_showcase_site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _showcase_site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/deploy-pages@v4
+        id: deployment

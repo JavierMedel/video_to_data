@@ -1,0 +1,156 @@
+[
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/episode_000001_step200000_before_after.mp4",
+    "output": "media/t1-comparison.webp",
+    "sha256": "6223792df4fb5a6cd58a209bcdf94637f2239c1cdf500a0c4a772f41e2220fe3",
+    "bytes": 77680,
+    "preparation": "Decoded source frame 210; aspect-preserving WebP poster."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/episode_000001_step200000_before_after.mp4",
+    "output": "media/hero.webp",
+    "sha256": "6223792df4fb5a6cd58a209bcdf94637f2239c1cdf500a0c4a772f41e2220fe3",
+    "bytes": 77680,
+    "preparation": "Complete triptych at frame 210; aspect ratio preserved."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/cari4d_runs/episode_000001_stability/episode_000001/inference/episode_000001_step200000_before_after.mp4",
+    "output": "media/t1-comparison.mp4",
+    "sha256": "0cdccc9d4ce74a467e64422190ab0a6df73b077d863ad7fc72d292be26fb6bf9",
+    "bytes": 1690141,
+    "preparation": "H.264/yuv420p, CRF24, width 1920, full frame range and original frame rate, no audio; no crop or interpolation.",
+    "sourceFps": 30.0,
+    "frameCount": 668,
+    "width": 4608,
+    "height": 1236,
+    "posterFrame": 210
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/2026-09-10_16-14-06_foam_grass_block_rotate_02.0.color.mp4",
+    "output": "media/e15-input.webp",
+    "sha256": "fe3f4db6b50955fc2d173a8c991c38ed97f83b1324ac0444ea04b59f7ed39b84",
+    "bytes": 133622,
+    "preparation": "Decoded source frame 154; aspect-preserving WebP poster."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/object_masks/1/000154.png",
+    "output": "media/e15-segmentation.webp",
+    "sha256": "3992345a266ee59eccd2e79f1d4392bb15b0e9a888493fff0817c001ab5b874b",
+    "bytes": 133166,
+    "preparation": "Frame 154 RGB with SAM2 object mask in translucent green; no change to mask geometry."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/2026-09-10_16-14-06_foam_grass_block_rotate_02.0.color.mp4",
+    "output": "media/e15-input.mp4",
+    "sha256": "6e52d16a95ac35c7b492e85de748637f272b8d227e16ebcd717b67229e1b9c90",
+    "bytes": 648025,
+    "preparation": "H.264/yuv420p, CRF24, width 960, full frame range and original frame rate, no audio; no crop or interpolation.",
+    "sourceFps": 30.0,
+    "frameCount": 501,
+    "width": 1536,
+    "height": 1152,
+    "posterFrame": 154
+  },
+  {
+    "source": "reconstruction/data/track3/pilot/episode_000038/hamer_depth_aligned_overlay.mp4",
+    "output": "media/t3-hands.webp",
+    "sha256": "c5b847ba2c5ebf773d9532564ea33f845e14f76681aa22ba02f2195932da01f7",
+    "bytes": 58986,
+    "preparation": "Decoded source frame 120; aspect-preserving WebP poster."
+  },
+  {
+    "source": "reconstruction/data/track3/pilot/episode_000038/hamer_depth_aligned_overlay.mp4",
+    "output": "media/t3-hands.mp4",
+    "sha256": "5599a76831a9c358cdba86dc127066cca79c723788d560da15a348e82dd4a224",
+    "bytes": 719181,
+    "preparation": "H.264/yuv420p, CRF24, width 960, full frame range and original frame rate, no audio; no crop or interpolation.",
+    "sourceFps": 30.0,
+    "frameCount": 263,
+    "width": 2028,
+    "height": 1520,
+    "posterFrame": 120,
+    "inputVideoFps": 20.0,
+    "inputVideoSource": "reconstruction/data/v2d_challenge/track_3/evaluation/videos/chunk-000/observation.images.ego_cam_a/episode_000038.mp4"
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/moge/depth/000154.png",
+    "output": "media/e15-depth.webp",
+    "sha256": "0a5327d5cf9d39ef5fc60e8d441a486d850468dddc1536e05b911a7f64c75b68",
+    "bytes": 15896,
+    "preparation": "Relative-depth display: grayscale 2nd\u201398th percentile of positive values; dark near, light far, invalid black. No metric calibration asserted."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/sam3d/scale_diagnostic_overlay.png",
+    "output": "media/e15-scale.webp",
+    "sha256": "c932fa623b41d6ab51b09b00db912ac5391656ed84bd8d0c026e99148bdcd715",
+    "bytes": 135856,
+    "preparation": "Aspect-preserving WebP derivative; no enhancement."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/sam3d/pose_check_000212.png",
+    "output": "media/e15-failure.webp",
+    "sha256": "8aeb7c322f544a4c4d729e1a8695770718edb3f79b3a542ca3148479493b8a20",
+    "bytes": 4624,
+    "preparation": "Aspect-preserving WebP derivative; no enhancement."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/diagnostics/depth_jump_364_370.jpg",
+    "output": "media/e15-depth-jump.webp",
+    "sha256": "3637734bc1f41af7ab6f21b22d127c7886a639ce013429631a1395ece35c80ac",
+    "bytes": 62144,
+    "preparation": "Aspect-preserving WebP derivative; no enhancement."
+  },
+  {
+    "source": "reconstruction/incident_reports/track1_improvement/episode_000018_corrected_masks.jpg",
+    "output": "media/t1-masks.webp",
+    "sha256": "80d30c5666d4088d8dc27ca3b79db081960d8f2514a5d5e371dfccdda9929312",
+    "bytes": 270254,
+    "preparation": "Aspect-preserving WebP derivative; no enhancement."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/sam3d/object_simplified_backup.glb",
+    "output": "media/e15-display.glb",
+    "sha256": "3e669d8df2320557fdce280dc2cc014129e3551ce5019b69d8301384e9d71086",
+    "bytes": 1234920,
+    "preparation": "Existing simplified backup copied unchanged for display; original research mesh remains in place.",
+    "vertices": 3156,
+    "faces": 5316,
+    "originalVertices": 254734,
+    "originalFaces": 381436
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/sam3d/object_simplified_backup.glb",
+    "output": "media/e15-mesh.webp",
+    "sha256": "0aae5878318b40925f27fd751155a8519c18e7903daecb5b54dc4780c68c7fe5",
+    "bytes": 14054,
+    "preparation": "Orthographic, flat-shaded rendering of the real display mesh. Neutral shading replaces texture for this poster only; arbitrary units."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/foundationpose_scale_diagnostic",
+    "output": "media/e15-motion.json",
+    "sha256": "28324c217c297252d353008cb252ba5e06a2a7581c3dd7a4dce7dd7b227930cc",
+    "bytes": 50976,
+    "preparation": "Adjacent saved-pose differences; translation in native estimated coordinates (scale unvalidated), rotation geodesic degrees. Independent registration files excluded."
+  },
+  {
+    "source": "reconstruction/data/v2d_challenge/track_1/episode_000015/foundationpose_scale_diagnostic",
+    "output": "media/e15-motion.csv",
+    "sha256": "0369cee3a7531988841854566c351c52562da545832ab42bf2ab8f7f966dc1c3",
+    "bytes": 21500,
+    "preparation": "Same adjacent-pose differences as JSON; no smoothing."
+  },
+  {
+    "source": "https://github.com/nvidia-isaac/video_to_data/blob/main/docs/hydra-0/img/nvidia-logo.png",
+    "output": "brand/nvidia-logo.png",
+    "sha256": "08d500fc2ae088971c83910185942476b5d0ec5d2cfff37dccc99ba2cb310b8f",
+    "bytes": 12302,
+    "preparation": "Official NVIDIA logo, copied unchanged; trademark asset, not dataset evidence."
+  },
+  {
+    "source": "https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/legal-info/logo-brand-usage/_jcr_content/root/responsivegrid/nv_container_392921705/nv_container_412055486/nv_image.coreimg.svg/1776076920317/nvidia-logo-horz.svg",
+    "output": "brand/nvidia-logo-horz.svg",
+    "sha256": "4325ea0c4078941bce84b2b1c6f045c3daf36de44cfc4c89ac5c49186f4874e8",
+    "bytes": 2783,
+    "preparation": "Official NVIDIA logo, copied unchanged; trademark asset, not dataset evidence."
+  }
+]
