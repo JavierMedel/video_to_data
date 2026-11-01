@@ -15,6 +15,20 @@ body { background: #080808; }
 .site-header nav.open { background: #080808; }
 .site-header nav > a[aria-current] { color: var(--green); }
 
+/* The challenge lockup from the supplied reference lives in the sticky header. */
+.site-header { height: 86px; padding: 0 24px; gap: 18px; }
+.site-header .nvidia-credit { flex: 1; min-width: 0; gap: 24px; margin: 0; }
+.site-header .nvidia-credit img { width: clamp(100px, 28cqw, 180px); height: auto; }
+.site-header .nvidia-credit > div { min-width: 0; padding-left: 24px; }
+.site-header .nvidia-credit span { font-size: clamp(8px, 1.95cqw, 12px); letter-spacing: 0; }
+.site-header .nvidia-credit small { font-size: clamp(7.5px, 1.6cqw, 10px); color: #b8b8b8; }
+.site-header .mobile-toggle { display: block; flex-shrink: 0; }
+.site-header nav { display: none; position: absolute; top: 100%; left: 0; right: 0; height: auto; padding: 18px 24px; border-bottom: 1px solid #444; flex-direction: column; align-items: stretch; gap: 0; }
+.site-header nav.open { display: flex; }
+.site-header nav > a { height: auto; padding: 14px 0; font-size: 13px; }
+.site-header nav > a[aria-current]::after { width: 24px; height: 2px; }
+.site-header .nav-code { border-left: 0; border-top: 1px solid #353535; padding-left: 0; padding-top: 20px; height: auto; margin-top: 10px; }
+
 .section, .hero {
   --page-gutter: clamp(20px, 4cqw, 32px);
   padding-inline: var(--page-gutter);
@@ -146,6 +160,11 @@ thead { background: #242424; color: #eee; }
 }
 
 @container showcase (max-width: 540px) {
+  .site-header { padding: 0 14px; gap: 10px; }
+  .site-header .nvidia-credit { gap: 12px; }
+  .site-header .nvidia-credit > div { padding-left: 12px; }
+  .site-header .mobile-toggle { padding: 8px; min-width: 32px; }
+  .site-header .menu-label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
   .challenge-banner { font-size: 8px; padding-block: 10px; margin-bottom: 26px; letter-spacing: .025em; }
   .hero .nvidia-credit { gap: 15px; }
   .hero .nvidia-credit img { width: 128px; }
