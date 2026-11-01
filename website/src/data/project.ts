@@ -34,7 +34,7 @@ export interface Observation {
   hypothesis: string; experiment: string; media: string | null; source: string;
 }
 
-export const project = { title: 'Video to Data', subtitle: 'Reconstructing human–object interaction', author: 'Javier Medel, MSc.', ...provenance };
+export const project = { title: 'Video to Data (V2D) Challenge', subtitle: 'From Human Video to Grounded Data', author: 'Javier Medel, MSc.', ...provenance };
 export const metrics = results as Metric[];
 export { coverage };
 export const asset = (path: string) => `${import.meta.env?.BASE_URL ?? '/video_to_data/'}${path}`;

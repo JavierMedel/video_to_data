@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test('Pages subpath serves valid anchors and lazy media without page errors', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   const requests: string[] = []; page.on('request', r => requests.push(r.url()));
-  await page.goto('./'); await expect(page.getByRole('heading', { level: 1 })).toContainText('To robot behavior.');
+  await page.goto('./'); await expect(page.getByRole('heading', { level: 1 })).toHaveText('Video to Data (V2D) Challenge');
   expect(requests.filter(r => /\.mp4(?:$|\?)/.test(r)).every(r => r.endsWith('/media/t1-comparison.mp4'))).toBe(true);
   expect(requests.filter(r => /MeshViewer|\.glb(?:$|\?)/.test(r))).toHaveLength(0);
   expect(await page.locator('a[href^="#"]').evaluateAll(links => links.every(a => !!document.getElementById(a.getAttribute('href')!.slice(1))))).toBe(true);
