@@ -1,0 +1,162 @@
+/* NVIDIA-inspired research presentation. Logo assets remain unaltered. */
+:root {
+  --brand-green: #76b900;
+  --green: #9bdc35;
+  --line: #333;
+}
+
+body { background: #080808; }
+.site-frame { border-color: #333; border-top: 4px solid var(--brand-green); }
+.site-header { background: #000; border-bottom-color: #333; }
+.brand-mark { font-weight: 800; }
+.brand-name { letter-spacing: .09em; }
+.mobile-toggle { background: var(--brand-green); border-color: var(--brand-green); color: #080808; font-weight: 650; }
+.mobile-toggle:hover { background: #8ed218; }
+.site-header nav.open { background: #080808; }
+.site-header nav > a[aria-current] { color: var(--green); }
+
+.section, .hero {
+  --page-gutter: clamp(20px, 4cqw, 32px);
+  padding-inline: var(--page-gutter);
+}
+.section { border-top-color: #333; }
+h1, h2 { font-weight: 750; letter-spacing: -.045em; }
+h2 { line-height: 1.05; }
+h3 { font-weight: 650; }
+.section .eyebrow { color: var(--green); font-size: 10px; letter-spacing: .1em; }
+.section .eyebrow::before { content: ''; display: inline-block; width: 20px; height: 3px; margin-right: 10px; vertical-align: middle; background: var(--brand-green); }
+.section-top { margin-bottom: 32px; }
+
+/* A flat green event strip and larger official wordmark set the visual identity. */
+.hero { padding-top: 0; background: #080808; }
+.challenge-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-inline: calc(-1 * var(--page-gutter));
+  margin-bottom: 30px;
+  padding: 12px var(--page-gutter);
+  background: var(--brand-green);
+  color: #080808;
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: .055em;
+}
+.challenge-banner > span:last-child { white-space: nowrap; }
+.challenge-banner:hover { background: #8ed218; }
+.hero .nvidia-credit { margin-bottom: 25px; gap: 22px; }
+.hero .nvidia-credit img { width: 164px; }
+.hero .nvidia-credit > div { padding-left: 22px; }
+.hero .nvidia-credit span { font-size: 10px; }
+.hero .nvidia-credit small { color: #b8b8b8; }
+.hero h1 { font-size: clamp(32px, 8.15cqw, 66px); font-weight: 780; line-height: 1.025; }
+.hero h1 > span { color: var(--green); }
+.hero-description { color: #c4c4c4; line-height: 1.65; max-width: 52ch; }
+.hero-actions { gap: 10px; }
+.button { font-weight: 700; border-radius: 0; }
+.button.primary { background: var(--brand-green); color: #080808; }
+.button.primary:hover { background: #8ed218; }
+.button.secondary { background: transparent; border-color: #777; }
+.button.secondary:hover { background: #202020; border-color: #aaa; }
+.hero .byline { color: #fff; }
+.hero-media {
+  margin-inline: calc(-1 * var(--page-gutter));
+  border: 0;
+  border-top: 2px solid var(--brand-green);
+  border-bottom: 1px solid #333;
+  background: #000;
+}
+.hero-media > .media-label { background: #181818; color: #eee; padding-inline: var(--page-gutter); }
+.hero-media .media-label > .mono { color: #b8b8b8; }
+.hero-media .hero-caption { padding-inline: var(--page-gutter); background: #101010; }
+.hero-caption a { color: var(--green); }
+.hero-disclaimer { margin-top: 14px; }
+.track-rail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #333; border: 1px solid #333; margin-top: 26px; }
+.track-rail > a { min-width: 0; display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 17px 14px; background: #151515; }
+.track-rail .mono { grid-column: 1 / -1; font-size: 9px; color: var(--green); letter-spacing: .04em; }
+.track-rail strong { font-size: 12px; line-height: 1.4; font-weight: 600; overflow-wrap: anywhere; }
+.track-rail > a > span:last-child { color: var(--green); font-size: 12px; }
+.track-rail > a:hover { background: #222; }
+
+/* Strong section contrast and precise, square research panels. */
+.gallery-section, .pipeline-section, .metrics-section, .resources-section { background: #141414; }
+.track-card { border: 1px solid #333; border-top: 3px solid var(--brand-green); background: #151515; scroll-margin-top: 90px; }
+.track-card-top { margin-bottom: 24px; }
+.track-number { display: grid; place-items: center; width: 42px; height: 42px; background: var(--brand-green); color: #080808; font-size: 23px; font-weight: 600; }
+.track-card h3 { font-size: 26px; font-weight: 700; }
+.track-card .track-input { color: #eee; }
+.track-score { border-top-color: #444; }
+.track-score strong { color: var(--green); font-size: 31px; }
+.track-score strong > small { color: #ddd; }
+.track-status { font-weight: 500; }
+.media-card, .case-feature { border-color: #444; background: #080808; }
+.media-card-body { border-top: 1px solid #333; }
+.media-card h3 { font-weight: 700; }
+.card-preview:hover img { filter: none; }
+.preview-type { background: #080808; border-left: 3px solid var(--brand-green); padding: 7px 9px; color: #fff; }
+.filter-group button { border-color: #555; color: #ddd; }
+.filter-group button[aria-pressed=true] { background: var(--brand-green); border-color: var(--brand-green); color: #080808; font-weight: 700; }
+.explorer-shell { border-color: #555; border-top: 3px solid var(--brand-green); background: #080808; }
+.explorer-sidebar { background: #151515; }
+.field-label { color: #ddd; font-weight: 600; }
+.episode-info h3 { color: #fff; font-weight: 700; }
+.tag { border-color: #626262; border-radius: 0; }
+.player-controls { background: #181818; }
+.play-button { min-width: 29px; min-height: 29px; justify-content: center; background: var(--brand-green); color: #080808; font-weight: 750; }
+.play-button span { color: #080808; }
+.player-readout { background: #080808; }
+.pipeline-flow { border-color: #555; border-left: 3px solid var(--brand-green); background: #080808; }
+.flow-branches > span { border-color: #444; background: #181818; }
+.stage-number { color: var(--green); font-weight: 650; }
+.stage summary strong { font-weight: 650; }
+.stage summary:hover { background: #1b1b1b; }
+.stage[open] { border-bottom-color: var(--brand-green); }
+.contribution { border-left-width: 3px; }
+.case-facts { border-top: 2px solid var(--brand-green); }
+.case-facts strong { font-weight: 650; }
+.case-still { border-color: #444; background: #151515; }
+.metric-tabs { border-bottom-color: var(--brand-green); }
+.metric-tabs button[aria-selected=true] { background: var(--brand-green); border-bottom-color: var(--brand-green); color: #080808; font-weight: 700; }
+thead { background: #242424; color: #eee; }
+.metrics-table thead { border-bottom: 2px solid var(--brand-green); }
+.metrics-table td.metric-value { font-size: 21px; color: #fff; }
+.chart { border-color: #444; background: #080808; }
+.failure-card { background: #181818; }
+.resource-card { background: #080808; border-color: #444; border-top: 2px solid var(--brand-green); }
+.resource-card > span { display: grid; place-items: center; width: 30px; height: 30px; background: var(--brand-green); color: #080808; font-size: 18px; }
+.resource-card:hover { border-color: var(--brand-green); }
+.resource-card h3 { color: #fff; font-weight: 700; }
+.provenance-panel { border-color: #555; border-left: 3px solid var(--brand-green); background: #080808; }
+.footer { border-top: 3px solid var(--brand-green); background: #000; }
+.footer-author h2 { font-weight: 700; }
+.media-dialog { background: #080808; border-color: #777; border-top: 3px solid var(--brand-green); }
+.media-dialog::backdrop { background: #000e; }
+
+@container showcase (max-width: 780px) {
+  .track-grid { grid-template-columns: 1fr; gap: 18px; }
+  .track-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, .7fr); gap: 12px 24px; padding: 24px; }
+  .track-card-top { grid-column: 1 / -1; margin-bottom: 6px; }
+  .track-card h3 { grid-column: 1; margin-bottom: 0; }
+  .track-card > .track-input { grid-column: 1; margin-bottom: 0; font-size: 11px; }
+  .track-card > p:not(.track-input):not(.track-status) { grid-column: 1; margin-bottom: 0; font-size: 13px; }
+  .track-score { grid-column: 2; grid-row: 2 / 5; flex-direction: column; justify-content: center; align-items: flex-start; border-top: 0; border-left: 1px solid #444; padding: 0 0 0 22px; margin-top: 0; }
+  .track-card .track-status { grid-column: 1 / -1; margin-top: 6px; font-size: 10px; }
+}
+
+@container showcase (max-width: 540px) {
+  .challenge-banner { font-size: 8px; padding-block: 10px; margin-bottom: 26px; letter-spacing: .025em; }
+  .hero .nvidia-credit { gap: 15px; }
+  .hero .nvidia-credit img { width: 128px; }
+  .hero .nvidia-credit > div { padding-left: 15px; }
+  .hero .nvidia-credit span { font-size: 8px; }
+  .hero .nvidia-credit small { font-size: 8px; }
+  .track-rail > a { padding: 13px 9px; gap: 7px 3px; }
+  .track-rail strong { font-size: 10px; }
+  .track-rail .mono { font-size: 8px; }
+  .track-card h3 { font-size: 25px; }
+  .track-card { grid-template-columns: minmax(0, 1fr); }
+  .track-score { grid-column: 1; grid-row: auto; flex-direction: row; justify-content: space-between; align-items: center; border-left: 0; border-top: 1px solid #444; padding: 18px 0 0; margin-top: 8px; }
+  .track-score strong { font-size: 29px; }
+}

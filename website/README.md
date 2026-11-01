@@ -31,6 +31,10 @@ VITE_BASE_PATH=/my-repository/ npm run preview
 
 Every local content URL uses Vite’s base path. There are no server-side routes. For an account root or custom domain use `VITE_BASE_PATH=/`.
 
+## Visual theme
+
+`src/brand.css` defines the NVIDIA-inspired presentation: black section backgrounds, the official green `#76B900` for filled controls and rules, brighter `#9BDC35` for small text, heavier typography, a challenge banner, a larger unaltered official logo, and full-width hero media. Track shortcuts link directly to the three result cards. This is an original independent-project layout; the non-endorsement attribution remains visible.
+
 ## Portrait layout and autoplay
 
 The whole website appears in a centered **2:3 portrait frame** that fits the laptop or phone viewport. Content scrolls inside that frame; navigation remains sticky. Container queries make the layout respond to the frame width. The aspect ratio does not crop or stretch any research media.

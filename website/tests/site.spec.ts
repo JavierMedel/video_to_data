@@ -49,6 +49,7 @@ for (const width of [360, 768, 1440, 1920]) test(`responsive layout at ${width}p
   const bounds = await frame.boundingBox();
   expect(bounds!.width / bounds!.height).toBeCloseTo(2 / 3, 2);
   expect(await frame.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+  expect(await page.locator('.track-card h3').evaluateAll(headings => headings.every(el => el.scrollWidth <= el.clientWidth))).toBe(true);
   if (width === 360) { await page.getByRole('button', { name: 'Menu' }).click(); await page.locator('#main-nav').getByRole('link', { name: 'Results', exact: true }).click(); await expect(page.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false'); }
   await page.screenshot({ path: `test-results/hero-${width}.png` });
   await page.screenshot({ path: `test-results/layout-${width}.png`, fullPage: true });
