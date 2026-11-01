@@ -31,6 +31,14 @@ VITE_BASE_PATH=/my-repository/ npm run preview
 
 Every local content URL uses Vite’s base path. There are no server-side routes. For an account root or custom domain use `VITE_BASE_PATH=/`.
 
+## Portrait layout and autoplay
+
+The whole website appears in a centered **2:3 portrait frame** that fits the laptop or phone viewport. Content scrolls inside that frame; navigation remains sticky. Container queries make the layout respond to the frame width. The aspect ratio does not crop or stretch any research media.
+
+Hero, explorer and dialog videos **autoplay muted and loop when visible**, pause when out of view or when the browser tab is hidden, and allow only one active clip. A manual Pause or Reset stays paused when scrolling away and back. Reduced-motion preferences disable automatic playback; explicit Play still works. If a browser blocks autoplay, the player explains this and keeps its Play control available. Offscreen video files are not downloaded eagerly.
+
+For a local laptop preview, run `npm run dev` and open **http://localhost:5173/video_to_data/**. A static `file://` URL does not provide the website's asset routing.
+
 ## GitHub Pages
 
 `.github/workflows/website-pages.yml` installs with `npm ci`, tests, validates and builds the website, stages existing static `docs/` alongside it, and deploys the combined artifact. The showcase becomes the project homepage. The original toolkit landing page is preserved as `toolkit.html`; documentation subdirectories remain in place. It runs manually or on website/static-doc changes on `main` or the project working branch `v2d-track1-blackwell`. Pull requests build without deploying.

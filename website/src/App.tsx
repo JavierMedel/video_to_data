@@ -9,7 +9,7 @@ function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('overview');
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); }); }, { rootMargin: '-15% 0px -65% 0px' });
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); }); }, { root: document.querySelector('.site-frame'), rootMargin: '-15% 0px -65% 0px' });
     nav.forEach(([id]) => { const section = document.getElementById(id); if (section) observer.observe(section); });
     return () => observer.disconnect();
   }, []);
@@ -21,10 +21,9 @@ function NvidiaCredit() {
 }
 
 function Hero() {
-  const [play, setPlay] = useState(false);
   const item = media[0];
   return <section id="top" className="hero"><div className="hero-intro"><div className="hero-copy"><NvidiaCredit /><h1>From video.<br />To <span>structure.</span><br />To robot behavior.</h1><p className="hero-description">Reconstructing human–object interaction, grounding motion in simulation, and exploring egocentric transfer. My work across all three NVIDIA Video to Data Challenge tracks.</p><div className="hero-actions"><a className="button primary" href="#results">Explore the results <span aria-hidden="true">↘</span></a><a className="button secondary" href={project.links.project}>View project code <span aria-hidden="true">↗</span></a></div><p className="byline">Javier Medel, MSc. <span>Independent research & engineering</span></p></div><aside className="hero-index"><span className="mono muted">THREE CONNECTED QUESTIONS</span>{tracks.map(t => <a href="#overview" key={t.number}><span>{t.number}</span><div>{t.title}<small>{t.input}</small></div><span className="index-arrow" aria-hidden="true">↗</span></a>)}</aside></div>
-    <div className="hero-media"><div className="media-label"><span><span className="live-dot" />Actual project output / Track 1</span><span className="mono">EPISODE 000001 · CARI4D</span></div>{play ? <VideoPlayer item={item} /> : <button className="hero-poster" onClick={() => setPlay(true)} aria-label="Open playback controls for the CARI4D reconstruction video"><img src={asset('media/hero.webp')} alt={item.alt} fetchPriority="high" /><span className="hero-play"><span aria-hidden="true">▶</span> Explore reconstruction</span></button>}<div className="hero-caption"><span>Generated reconstruction · initialization → CoCoNet → contact-guided refinement</span><a href={repoFile(item.sourcePath)}>Inspect source ↗</a></div></div>
+    <div className="hero-media"><div className="media-label"><span><span className="live-dot" />Actual project output / Track 1</span><span className="mono">EPISODE 000001 · CARI4D</span></div><VideoPlayer item={item} /><div className="hero-caption"><span>Generated reconstruction · initialization → CoCoNet → contact-guided refinement</span><a href={repoFile(item.sourcePath)}>Inspect source ↗</a></div></div>
     <p className="hero-disclaimer">A saved early reconstruction run, separate from the scored v8 package. No ground-truth accuracy is implied by the render.</p>
   </section>;
 }
@@ -91,5 +90,5 @@ function Footer() {
 
 export default function App() {
   const [selected, setSelected] = useState<Media | null>(null);
-  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main"><Hero /><Overview /><MediaGallery inspect={setSelected} /><EpisodeExplorer /><Pipeline /><CaseStudy inspect={setSelected} /><MetricsTable /><FailureAnalysis inspect={setSelected} /><Resources /></main><Footer /><MediaDialog item={selected} close={() => setSelected(null)} /></>;
+  return <div className="site-frame"><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main"><Hero /><Overview /><MediaGallery inspect={setSelected} /><EpisodeExplorer /><Pipeline /><CaseStudy inspect={setSelected} /><MetricsTable /><FailureAnalysis inspect={setSelected} /><Resources /></main><Footer /><MediaDialog item={selected} close={() => setSelected(null)} /></div>;
 }

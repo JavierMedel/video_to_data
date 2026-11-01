@@ -22,24 +22,51 @@ export function VideoPlayer({ item }: { item: MediaRecord }) {
   const [rate, setRate] = useState(1);
   const [message, setMessage] = useState('');
   const requestedTime = useRef(0);
+  const userPaused = useRef(false);
   useEffect(() => {
     const el = video.current;
     if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) el.pause(); }, { threshold: 0.05 });
-    const hidden = () => { if (document.hidden) el.pause(); };
+    let disposed = false;
+    let visible = false;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePlayback = () => {
+      if (!visible || document.hidden) { el.pause(); return; }
+      if (reducedMotion.matches) return;
+      const modal = document.querySelector('dialog[open]');
+      if (userPaused.current || (modal && !modal.contains(el))) return;
+      // The observer starts only visible videos; offscreen clips keep preload=none.
+      el.muted = true;
+      void el.play().catch((error: unknown) => {
+        if (!disposed && visible && !userPaused.current && !reducedMotion.matches) {
+          const blocked = error instanceof DOMException && error.name === 'NotAllowedError';
+          setMessage(blocked ? 'Autoplay is blocked by your browser. Press Play to start.' : 'Video could not start. Press Play to retry or download the clip.');
+        }
+      });
+    };
+    const motionChanged = () => { if (reducedMotion.matches) el.pause(); else updatePlayback(); };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting && entry.intersectionRatio >= 0.2;
+      updatePlayback();
+    }, { root: document.querySelector('.site-frame'), threshold: [0, 0.2], rootMargin: '-70px 0px 0px' });
     observer.observe(el);
-    document.addEventListener('visibilitychange', hidden);
-    return () => { observer.disconnect(); document.removeEventListener('visibilitychange', hidden); el.pause(); };
+    document.addEventListener('visibilitychange', updatePlayback);
+    reducedMotion.addEventListener('change', motionChanged);
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', updatePlayback);
+      reducedMotion.removeEventListener('change', motionChanged);
+      el.pause();
+    };
   }, []);
   if (!item.src) return <Missing />;
   async function toggle() {
     const el = video.current;
     if (!el) return;
     if (el.paused) {
-      // A page contains at most one actively playing research clip.
-      document.querySelectorAll('video').forEach(other => { if (other !== el) other.pause(); });
+      userPaused.current = false;
       try { await el.play(); setMessage(''); } catch { setMessage('Playback could not start. Try again or download the clip.'); }
-    } else el.pause();
+    } else { userPaused.current = true; el.pause(); }
   }
   function seek(value: number) {
     requestedTime.current = value;
@@ -50,8 +77,11 @@ export function VideoPlayer({ item }: { item: MediaRecord }) {
     }
   }
   return <div className="video-player">
-    <video ref={video} src={asset(item.src)} poster={item.poster ? asset(item.poster) : undefined} preload="none" playsInline muted aria-label={item.title}
-      onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
+    <video ref={video} src={asset(item.src)} poster={item.poster ? asset(item.poster) : undefined} preload="none" playsInline muted loop aria-label={item.title}
+      onPlay={e => {
+        document.querySelectorAll('video').forEach(other => { if (other !== e.currentTarget) other.pause(); });
+        setPlaying(true);
+      }} onPause={() => setPlaying(false)}
       onTimeUpdate={e => setTime(e.currentTarget.currentTime)}
       onLoadedMetadata={e => { setDuration(e.currentTarget.duration); e.currentTarget.currentTime = requestedTime.current; e.currentTarget.playbackRate = rate; }}
       onWaiting={() => setMessage('Buffering…')} onPlaying={() => setMessage('')}
@@ -61,7 +91,7 @@ export function VideoPlayer({ item }: { item: MediaRecord }) {
       <label className="seek-label"><span className="sr-only">Seek video in seconds</span><input type="range" min="0" max={duration || 1} step={fps ? 1 / fps : 0.01} value={Math.min(time, duration)} onChange={e => seek(Number(e.target.value))} aria-valuetext={`${time.toFixed(2)} seconds`} /></label>
       <output className="time">{time.toFixed(1)} / {duration.toFixed(1)} s</output>
       <label className="speed"><span className="sr-only">Playback speed</span><select value={rate} onChange={e => { const next = Number(e.target.value); setRate(next); if (video.current) video.current.playbackRate = next; }}>{[0.25, 0.5, 1, 1.5, 2].map(r => <option key={r} value={r}>{r}×</option>)}</select></label>
-      <button className="quiet-button" onClick={() => { video.current?.pause(); seek(0); setRate(1); if (video.current) video.current.playbackRate = 1; }}>Reset</button>
+      <button className="quiet-button" onClick={() => { userPaused.current = true; video.current?.pause(); seek(0); setRate(1); if (video.current) video.current.playbackRate = 1; }}>Reset</button>
     </div>
     <div className="player-readout"><span>{fps ? `${item.playbackFps ? 'Output frame' : 'Frame'} ${Math.min(item.frameRange?.[1] ?? Infinity, Math.floor(time * fps) + (item.frameRange?.[0] ?? 0))} · ${item.playbackFps ? `${fps} FPS output / ${item.sourceFps} FPS input` : `${fps} FPS source`}` : 'Precomputed output'}</span><span role="status">{message}</span><a href={asset(item.src)} download>Download clip ↓</a></div>
   </div>;

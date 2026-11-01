@@ -26,3 +26,9 @@ The project repository, upstream repository, official challenge page and dataset
 Local environment: Node **24.21.0**, npm **11.19.0**, Vite **7.3.7**, Chromium managed by Playwright. Missing Chromium shared libraries were downloaded/extracted into a temporary directory; no system packages were changed. Browser tests used `PLAYWRIGHT_BROWSERS_PATH=/tmp/v2d-playwright` and a temporary library path. A normal workstation with Playwright’s Linux dependencies does not need these temporary paths.
 
 No separate linter is configured. Keyboard behavior was verified through browser automation, not a full manual screen-reader audit. Safari/iOS, Firefox, physical touch devices and actual production GitHub Pages hosting have not been tested. The GitHub Actions workflow is prepared but has not been run remotely. No new official scoring was performed: scores are explicitly dated, saved public results. [MISSING.md](MISSING.md) lists all missing media, metrics and unverified historical claims.
+
+## Portrait/autoplay update — November 1, 2026
+
+The website now uses a centered 2:3 frame with internal scrolling and container-based responsive layouts. Videos retain their native proportions and source/output timebases. They start muted when visible and pause offscreen; manual pause persists, reduced-motion preferences prevent autoplay, and browser-policy rejection retains a usable Play control.
+
+The updated production build, content validation and **14 Chromium browser tests** passed. The suite checks the 2:3 frame ratio and internal horizontal overflow at 360/768/1440/1920 px, automatic muted playback, switching between players, persistent manual pause, explicit playback under reduced motion, and blocked-autoplay feedback, alongside the existing interaction and mesh checks. A Vite preview is available locally on port 5173. No source research media was modified.

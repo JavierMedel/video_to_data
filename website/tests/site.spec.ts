@@ -4,10 +4,10 @@ test('Pages subpath serves valid anchors and lazy media without page errors', as
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   const requests: string[] = []; page.on('request', r => requests.push(r.url()));
   await page.goto('./'); await expect(page.getByRole('heading', { level: 1 })).toContainText('To robot behavior.');
-  expect(requests.filter(r => /\.mp4(?:$|\?)/.test(r))).toHaveLength(0);
+  expect(requests.filter(r => /\.mp4(?:$|\?)/.test(r)).every(r => r.endsWith('/media/t1-comparison.mp4'))).toBe(true);
   expect(requests.filter(r => /MeshViewer|\.glb(?:$|\?)/.test(r))).toHaveLength(0);
   expect(await page.locator('a[href^="#"]').evaluateAll(links => links.every(a => !!document.getElementById(a.getAttribute('href')!.slice(1))))).toBe(true);
-  await expect(page.locator('.hero-poster img')).toHaveJSProperty('naturalWidth', 1536);
+  await expect(page.locator('.hero-media video')).toHaveAttribute('poster', '/video_to_data/media/t1-comparison.webp');
   expect(errors).toEqual([]);
 });
 test('gallery dialog traps focus, closes with Escape and restores focus', async ({ page }) => {
@@ -33,6 +33,7 @@ test('explorer changes views, reveals matched mask and handles missing rollout',
   await expect(page.locator('.explorer-content')).toContainText('Preview not yet available');
 });
 test('video seek, play, speed, reset and media failure remain usable', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('./'); const player = page.locator('.explorer-content .video-player');
   await player.getByRole('button', { name: 'Play video' }).click(); await expect(player.locator('video')).toHaveJSProperty('paused', false);
   await player.getByRole('button', { name: 'Pause video' }).click(); await player.getByRole('slider', { name: 'Seek video in seconds' }).fill('5');
@@ -44,9 +45,51 @@ test('video seek, play, speed, reset and media failure remain usable', async ({ 
 for (const width of [360, 768, 1440, 1920]) test(`responsive layout at ${width}px has no page overflow`, async ({ page }) => {
   await page.setViewportSize({ width, height: 1000 }); await page.goto('./');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  const frame = page.locator('.site-frame');
+  const bounds = await frame.boundingBox();
+  expect(bounds!.width / bounds!.height).toBeCloseTo(2 / 3, 2);
+  expect(await frame.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
   if (width === 360) { await page.getByRole('button', { name: 'Menu' }).click(); await page.locator('#main-nav').getByRole('link', { name: 'Results', exact: true }).click(); await expect(page.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false'); }
   await page.screenshot({ path: `test-results/hero-${width}.png` });
   await page.screenshot({ path: `test-results/layout-${width}.png`, fullPage: true });
+});
+
+test('visible videos autoplay muted, preserve manual pause, and pause other players', async ({ page }) => {
+  await page.goto('./');
+  const hero = page.locator('.hero-media');
+  const heroVideo = hero.locator('video');
+  await heroVideo.scrollIntoViewIfNeeded();
+  await expect(heroVideo).toHaveJSProperty('paused', false);
+  await expect(heroVideo).toHaveJSProperty('muted', true);
+  await expect(heroVideo).toHaveJSProperty('loop', true);
+  await hero.getByRole('button', { name: 'Pause video' }).click();
+  await page.locator('#metrics').scrollIntoViewIfNeeded();
+  await heroVideo.scrollIntoViewIfNeeded();
+  await expect(heroVideo).toHaveJSProperty('paused', true);
+  await hero.getByRole('button', { name: 'Play video' }).click();
+  const explorerVideo = page.locator('.explorer-content video');
+  await explorerVideo.scrollIntoViewIfNeeded();
+  await expect(explorerVideo).toHaveJSProperty('paused', false);
+  await expect(heroVideo).toHaveJSProperty('paused', true);
+});
+
+test('reduced motion keeps autoplay off while allowing explicit playback', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('./');
+  const hero = page.locator('.hero-media');
+  await hero.locator('video').scrollIntoViewIfNeeded();
+  await expect(hero.locator('video')).toHaveJSProperty('paused', true);
+  await hero.getByRole('button', { name: 'Play video' }).click();
+  await expect(hero.locator('video')).toHaveJSProperty('paused', false);
+});
+
+test('blocked autoplay explains the browser policy and retains Play', async ({ page }) => {
+  await page.addInitScript(() => { HTMLMediaElement.prototype.play = () => Promise.reject(new DOMException('Autoplay blocked', 'NotAllowedError')); });
+  await page.goto('./');
+  const hero = page.locator('.hero-media');
+  await hero.locator('video').scrollIntoViewIfNeeded();
+  await expect(hero.locator('[role=status]')).toContainText('Autoplay is blocked');
+  await expect(hero.getByRole('button', { name: 'Play video' })).toBeVisible();
 });
 test('WebGL failure preserves a static mesh and download', async ({ page }) => {
   await page.addInitScript(() => { const original = HTMLCanvasElement.prototype.getContext; HTMLCanvasElement.prototype.getContext = function(this: HTMLCanvasElement, type: string, ...args: unknown[]) { if (type.startsWith('webgl')) return null; return original.apply(this, [type, ...args] as Parameters<typeof original>); } as typeof original; });
